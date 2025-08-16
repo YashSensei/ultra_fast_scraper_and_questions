@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Locks and Keys",
+  "tags": [],
+  "text": "A wizard is in a labyrinth where there areVrooms andV−1 doors connecting some pairs of rooms in both directions, in such a way that there is always a sequence of doors one can traverse to go from a room to any other room. Additionally, there areClocks andCkeys ofCdifferent colours (one of each) in some of the doors and rooms of the maze, respectively; each door has at most one lock, and there is at most one key placed in each room. It should be an easy matter for the wizard to bypass the lock system, were it not for the fact that he forgot his spell book, without which his wizardry is utterly useless. The wizard is currently in roomX, and he wants to get his spell book, located in roomY, without taking too long. At every step he may go to an adjacent room through one of the doors. Of course, if the door is locked, he needs to be carrying the key of the same colour as the lock (unless, of course, that door has already been unlocked). The wizard can carry only one key at a time and after picking up a key it is not possible for him to drop it somewhere in the maze in order to take it again afterwards. Once a door has been unlocked, the key is thrown away since it is no longer any use.Given the maze and the positions of theCkeys andClocks, determine how to reachYfromX, if possible. Any path whose length does not exceed 4 · (C+ 1) ·Vis acceptable.InputThe first line of each case contains four integers: the numberVof rooms in the maze (1 ≤V≤ 1 500), the numberCof locks (0 ≤C<V), and roomsXandYnumbered 0,1,…,V−1. Then comes a (possibly empty) line withCintegers indicating the location of each of the keys, in order of increasing colour. The nextV− 1 lines describe the maze: each contains three integersABL, meaning that there is a door between roomsAandBwhich can be unlocked with the key of colourL, if 0 ≤L<C; a value of −1 forLindicates that no lock is needed.The last line hasV,C,X,Y= 0, 0, 0, 0.OutputThere is one line of output per test case. If there is no solution, outputImpossible. Otherwise print the full path corresponding to your solution in the formatL:V0…VL, whereL≤ 4 (C+ 1)Vis the length of a path fromXtoY, andX=V0,V1, …,VL−1,VL=Yis the sequence ofL+ 1 vertices visited in the right order. A single space must precede each vertex in the path; see sample output for clarification.ExampleInput:1 0 0 0\r\n\r\n3 1 0 2\r\n1\r\n0 1 -1\r\n0 2 0\r\n\r\n3 2 0 2\r\n1 2\r\n0 1 1\r\n0 2 0\r\n\r\n5 3 0 4\r\n2 0 3\r\n0 1 0\r\n0 2 -1\r\n1 3 1\r\n2 4 2\r\n\r\n0 0 0 0Output:0: 0\r\n3: 0 1 0 2\r\nImpossible\r\n10: 0 2 0 1 0 1 3 1 0 2 4Problem setter: Javier Gómez Serrano",
+  "sample_input": "Input:1 0 0 0\r\n\r\n3 1 0 2\r\n1\r\n0 1 -1\r\n0 2 0\r\n\r\n3 2 0 2\r\n1 2\r\n0 1 1\r\n0 2 0\r\n\r\n5 3 0 4\r\n2 0 3\r\n0 1 0\r\n0 2 -1\r\n1 3 1\r\n2 4 2\r\n\r\n0 0 0 0Output:0: 0\r\n3: 0 1 0 2\r\nImpossible\r\n10: 0 2 0 1 0 1 3 1 0 2 4",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/LOCKKEY",
+  "scraped_at": "2025-08-17 00:34:02",
+  "test_cases": [
+    {
+      "input": "1 0 0 0\r\n\r\n3 1 0 2\r\n1\r\n0 1 -1\r\n0 2 0\r\n\r\n3 2 0 2\r\n1 2\r\n0 1 1\r\n0 2 0\r\n\r\n5 3 0 4\r\n2 0 3\r\n0 1 0\r\n0 2 -1\r\n1 3 1\r\n2 4 2\r\n\r\n0 0 0 0",
+      "expected_output": "0: 0\r\n3: 0 1 0 2\r\nImpossible\r\n10: 0 2 0 1 0 1 3 1 0 2 4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 8 3 10\n9 8 10 9\n9\n4 1 10\n3 4 5\n6 4 2 5\n10 2\n6 9 5\n8 5 2\n7 1 7 2\n1 10 8\n5 1 6\n7 4 1\n8 7 2\n8 3 9\n2 4 4 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 5 10 5\n4 4 1 4\n1\n8 8 6\n9 1 8\n7 7 9 10\n7 5\n2 9 9\n5 7 6\n4 3 5 7\n2 9 4\n5 7 1\n1 8 9\n1 1 4\n6 5 6\n9 2 5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 7 10 6\n5 3 3 2\n7\n5 1 9\n4 8 3\n10 10 5 1\n10 9\n7 8 9\n4 3 10\n5 4 4 1\n9 2 5\n2 6 8\n7 4 8\n7 2 10\n6 5 1\n1 2 10 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "92 36 19 43\n19 40 8 93\n58\n22 12 45\n8 44 66\n10 91 49 87\n16 56\n61 18 57\n30 23 61\n17 79 44 39\n96 8 52\n15 24 92\n46 33 94\n91 81 94\n47 84 84\n86 21 53 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "88 35 31 76\n47 41 75 5\n9\n62 4 71\n42 11 52\n18 94 34 53\n59 66\n34 28 94\n86 99 78\n11 34 34 62\n18 49 42\n48 49 68\n66 96 60\n30 84 100\n50 74 22\n33 79 26 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 6 5 51\n75 45 59 42\n29\n94 9 6\n52 10 82\n94 99 86 10\n6 26\n72 43 90\n56 35 99\n26 66 38 1\n73 19 6\n91 70 92\n51 22 41\n89 12 96\n95 33 40\n48 11 20 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "63 11 22 17\n52 42 70 55\n28\n73 23 23\n54 61 43\n43 70 25 14\n36 94\n61 98 11\n11 71 52\n31 82 45 42\n79 94 56\n5 29 81\n63 1 27\n59 79 89\n55 81 2\n59 69 98 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 34 51 45\n83 61 71 87\n70\n59 86 81\n75 95 54\n13 70 19 57\n98 12\n26 94 95\n40 42 30\n18 100 95 55\n13 22 51\n75 12 91\n94 16 5\n85 26 90\n60 6 69\n2 58 30 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "219 259 283 120\n294 439 424 456\n315\n234 160 383\n428 367 149\n133 484 156 234\n337 59\n401 242 485\n492 175 466\n283 192 241 339\n117 279 189\n111 280 493\n172 142 258\n158 59 190\n163 482 63\n53 353 104 448",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "347 147 487 371\n401 460 176 54\n454\n160 357 330\n460 340 167\n438 68 411 168\n473 303\n437 220 210\n195 377 327\n53 294 124 279\n482 173 284\n421 433 355\n215 388 418\n404 359 175\n268 281 423\n77 369 280 130",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "171 219 339 53\n465 445 290 322\n397\n248 139 363\n69 390 293\n306 408 115 56\n182 137\n228 131 478\n406 203 342\n359 408 482 82\n146 459 86\n163 264 59\n336 423 85\n401 235 333\n217 77 448\n304 425 96 491",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "224 257 409 230\n220 328 265 231\n108\n337 450 118\n318 167 493\n240 343 318 105\n257 152\n149 462 423\n375 70 349\n216 353 179 177\n122 465 148\n174 487 304\n361 179 158\n487 91 256\n264 452 272\n447 169 416 59",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "238 184 281 252\n401 349 430 487\n77\n97 456 122\n281 438 479\n244 185 284 457\n187 391\n247 141 268\n401 287 55\n204 395 182 104\n220 200 359\n489 184 342\n89 84 237\n430 254 179\n447 248 105\n205 264 208 392",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "440 286 396 299\n157 51 103 148\n472\n258 146 351\n246 188 150\n97 217 448 70\n423 214\n205 471 445\n106 130 60\n133 214 185 351\n283 203 206\n94 223 396\n399 173 75\n367 212 374\n250 282 324\n358 285 331 315",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "275 424 494 96\n148 65 252 214\n168\n126 100 233\n411 302 230\n167 388 460 318\n457 367\n357 58 106\n455 89 186\n335 296 124 351\n208 129 201\n475 144 180\n131 373 100\n243 75 146\n474 176 346\n322 234 361 63",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 1000 1\n2 1 1000 2\n2\n1 2 999\n1000 999 1\n1 999 2 999\n2 999\n1 2 2\n2 2 1\n1000 999 999 1\n1 1 1\n1 1000 1000\n999 1 1\n2 1000 2\n1 1000 1\n999 2 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 1 999\n1000 1000 999 1000\n2\n1 1 2\n999 999 999\n2 1000 999 2\n1 1000\n999 999 1000\n1 1000 2\n2 1 1000 2\n1000 1 999\n1 1000 2\n1000 1 1000\n1 1 1000\n1000 2 2\n2 1000 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

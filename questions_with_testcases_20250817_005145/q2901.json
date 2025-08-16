@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Windy Cannon",
+  "tags": [],
+  "text": "This day is very windy, the wind blow very fast that it may be faster than the speed of cannon ball. On this windy day, Gunawan want to test his new prototype cannon, he want to shoot the target at specific location. But before doing that, he wonder how long it take for the cannon ball to hit the target. He knows precisely the position of his cannon, the location of the target, the speed of his cannon ball, the speed of wind blows, and the direction of the wind, but unfortunately he forgot to bring the calculator so he ask you for help to calculate the minimum time needed for the cannon ball to hit the target or specify if it's impossible. Can you help him? You can assume that the speed of cannon ball relative to the wind is constant, all other physical effect such as gravity, air friction, temperature, magnus effect are ignored.InputThe first line there are 4 integers and 1 character CP, TP, CBS, WS, WD denoting cannon position (m), target position (m), cannon ball speed (m/s), wind speed (m/s), and wind direction respectively.OutputPrint how many seconds the minimum time needed for cannon ball to hit the target rounded to 6 digits after decimal point.If it's impossible for the cannon ball to hit the target, print \"Impossible\" without quotes.Constraints0 ≤ CP ≤ 1000 ≤ TP ≤ 1000 ≤ CBS ≤ 1000 ≤ WS ≤ 100if WD = 'L', it means that the wind blow into negative direction (left in cartesian plane).if WD = 'R' it means that the wind blow into positive direction (right in cartesian plane).ExamplesInput:2 10 2 1 LOutput:8.000000Input:2 10 2 1 ROutput:2.666667Input:2 10 2 3 LOutput:ImpossibleInput:10 2 2 3 LOutput:1.600000Input:50 50 12 34 ROutput:0.000000Example 4 ExplanationThe cannon ball move at speed 2 m/s relative to the wind, so if it shoot to the right, because of the wind blowing 3 m/s to the left relative to the ground, the cannon ball move (3-2=1) m/s to the left relative to the ground and will eventually hit the target in 8 seconds, but this is not optimal, it's faster to shoot the cannon ball to the left, because the wind blowing 3 m/s to the left relative to the ground (and the same direction as the cannon ball move relative to the wind), so the cannon ball will move (3+2=5) m/s to the left relative to the ground and will eventually hit the target at (10-2)/5 = 8/5 = 1.6 seconds. We need to print the result rounded to 6 digit after decimal places, so the minimum time needed for the cannon ball to reach the target is 1.600000 seconds.",
+  "sample_input": "Input:2 10 2 1 LOutput:8.000000",
+  "sample_output": "Input:2 10 2 1 ROutput:2.666667",
+  "link": "https://www.spoj.com/problems/JC15A",
+  "scraped_at": "2025-08-17 00:34:05",
+  "test_cases": [
+    {
+      "input": "2 10 2 1 L",
+      "expected_output": "8.000000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 10 2 1 R",
+      "expected_output": "2.666667",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "2 8 6 8\n10 5 10 3 vgz",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 6 1 8\n10 4 10 7 mpy",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 4 1 9\n9 4 6 10 xavn",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 55 18 41\n61 36 38 84 kt",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 38 44 31\n92 16 40 95 oe",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 51 90 85\n57 94 13 65 zhcy",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 31 32 12\n88 41 73 94 c",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 78 93 9\n97 51 18 13 csy",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "309 89 477 94\n91 60 432 467 gnw",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "159 307 384 347\n56 496 207 170 v",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "80 279 410 220\n424 295 285 297 cu",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "136 476 396 356\n157 215 178 344 khj",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "411 154 325 71\n204 386 144 119 ioq",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "96 99 193 366\n378 279 371 323 g",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "450 313 143 402\n491 428 445 481 f",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000 giqh",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000 rno",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2 2 999\n999 2 1 2 i",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:54",
+  "total_test_cases": 20
+}

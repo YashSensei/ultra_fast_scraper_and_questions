@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ada and Squares",
+  "tags": [],
+  "text": "As you might already know, Ada the Ladybug is a farmer. She has a beautiful square field (of sizeN×N) in which she grows many beautiful plants. Each plant has some height. She wants to know, for each subsquare (of some defined sizeK×K) what is the minimal sized plant in it. As she doesn't want too many information, she only asks you for the sum of all such lowest plants.As it is mentioned above, she doesn't like \"too many information\" so she also compressed the heights for you. For each of theNrows, you will be given 4 integersx0a b c. The rest of the row (N-1plants) could be obtained asxi+1=(xi× a + b) % c.InputThe first line will contain two integersN, K:1 ≤ K ≤ N ≤     5000, the size of field and the defined size of subsquare.The nextNlines will contain four integers0 ≤      x0, a, b, c ≤     1018(c ≠ 0), which will generate theithrow.OutputOutput the sum of minimal heights of each subarray of sizeK×K. As it might be pretty big, output the number modulo109+7(1000000007).Example Input4 2\r\n8 2 9 9\r\n5 7 9 3\r\n9 7 7 5\r\n7 4 7 3Example Output6Real Field8 7 5 1\r\n5 2 2 2\r\n9 0 2 1\r\n7 2 0 1Example Input 210 8\r\n78 51 99 77\r\n27 95 37 80\r\n76 5 93 32\r\n92 48 56 64\r\n93 17 18 28\r\n70 30 15 73\r\n60 69 36 56\r\n12 11 63 57\r\n18 81 55 60\r\n59 92 68 81Example Output 218Real Field 278 73 49 57 3 21 15 17 42 8\r\n27 42 27 42 27 42 27 42 27 42\r\n76 25 26 31 24 21 6 27 4 17\r\n92 56 56 56 56 56 56 56 56 56\r\n93 3 13 15 21 11 9 3 13 15\r\n70 71 28 52 42 34 13 40 47 38\r\n60 32 4 32 4 32 4 32 4 32\r\n12 24 42 12 24 42 12 24 42 12\r\n18 13 28 43 58 13 28 43 58 13\r\n59 69 17 12 38 0 68 6 53 3Example Input 320 5\r\n2956 1596 6710 2713\r\n2626 2791 1425 3859\r\n1874 6262 3248 2238\r\n5856 4491 7062 2271\r\n2722 1707 9943 7035\r\n403 2209 7057 1975\r\n7211 9708 3898 6949\r\n2426 9144 8440 2974\r\n5034 3983 6243 7717\r\n3877 37 9002 7373\r\n3021 2549 7277 5516\r\n3673 9640 7775 5355\r\n1563 9728 6671 5484\r\n4342 2971 1237 6834\r\n3589 3662 5391 9672\r\n780 6008 5239 304\r\n5095 4370 280 9403\r\n6295 118 822 2545\r\n5649 2519 5412 6501\r\n2901 2829 9801 846Example Output 338811Example Input 430 8\r\n42190820083565085 13910582960072682 404339598526125697 18330389877395687\r\n13136432922739892 360508552206096544 840939247896706683 166851773518294104\r\n195629367891644832 133017412681920741 791801761173755587 953548694494513035\r\n930566226452148080 212263842828807811 175150807852323258 261521670663969864\r\n223183990889228375 549657188306426129 227104892059916771 710982591168543028\r\n622099644118414985 984577533571891185 802914550839341535 577466815316077292\r\n363883415474075556 913215986569797 257759523922291507 129711072317319582\r\n472381530848232370 587974020968388203 95939647385371737 421772367107774947\r\n870958993881230243 98076059799725034 955829596729745763 73827358022047846\r\n50043465537791007 178000244851301580 686791668222702403 230423627799787034\r\n41761070639181344 703749524391633426 575680731101407438 948818018258441027\r\n74006463131502635 534256412790647769 117842073420805101 689203117404347787\r\n720627491787492218 206756570671097114 5074687913252083 402683208709668506\r\n583558162725379851 516050342346753246 792500576162473842 130741479957823970\r\n709539139438259321 132262390506172747 780941668119266465 575886488550729150\r\n518457490774399283 781644026117044419 451050302936677524 319690456859518311\r\n747952274084607955 433194299929591864 829471355224525516 87759356942462111\r\n472230421696663981 150197958929639709 699963373353260575 156451405305679606\r\n379767724942828073 307602673656652612 536339937437228412 450095461910438107\r\n130196535602142550 12133076804665744 944874740331622465 112002748054899251\r\n384924669386020020 895364022010504585 562727215734096434 364228612518853658\r\n2558159832040223 42876494731943717 303029667687965036 370694399470107119\r\n801915657644445462 610444723365908160 304599053734522278 593616674445351229\r\n318887526987442235 390853723621574162 339872209606293879 308835452771750585\r\n476033942116470840 213009419015490269 20470342994674399 282092030038623628\r\n582424275023334455 712867665674241464 17697708714929958 654849385199113364\r\n475223303973240030 425222042042672679 12723252770801578 591938517391534160\r\n538033927835846645 318295777283007977 593613359214212470 772515434523625506\r\n612174705584217229 415458073586196348 508007743847849815 965297054583491903\r\n179981864970425260 975763652798172152 215122546620747273 113899093042760092Example Output 4641904340",
+  "sample_input": "4 2\r\n8 2 9 9\r\n5 7 9 3\r\n9 7 7 5\r\n7 4 7 3",
+  "sample_output": "6",
+  "link": "https://www.spoj.com/problems/ADASQR",
+  "scraped_at": "2025-08-17 00:34:17",
+  "test_cases": [
+    {
+      "input": "4 2\r\n8 2 9 9\r\n5 7 9 3\r\n9 7 7 5\r\n7 4 7 3",
+      "expected_output": "6",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 10\n9 6 5 10\n6 7 7 7\n2 5 8 4\n1 3 2 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1\n1 9 7 2\n10 5 8 2\n1 2 6 6\n9 1 1 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 2\n5 5 4 1\n5 3 8 9\n3 2 3 4\n5 5 6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "20 29\n76 15 70 14\n42 65 53 27\n41 27 12 16\n43 50 35 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 91\n2 15 8 56\n53 35 47 70\n36 76 10 52\n23 70 38 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "99 97\n25 25 23 63\n93 59 74 11\n50 26 64 53\n10 6 60 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 56\n51 54 53 50\n20 52 56 88\n64 71 89 52\n95 66 65 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 9\n71 53 27 52\n24 64 17 52\n39 49 13 32\n13 14 96 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1791 2040\n741 922 2242 453\n2472 1128 886 1542\n1621 696 2296 2447\n1846 255 947 650",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1418 667\n1857 292 1901 2119\n1139 717 923 1149\n1994 518 2159 1006\n1112 2117 894 1939",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2054 2167\n2474 2456 671 1640\n1589 1016 1732 2499\n1011 1185 2294 1810\n1410 1036 1183 1830",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "638 1571\n1290 2045 1551 2166\n1811 1678 1686 543\n1400 927 1880 710\n1452 439 2243 1687",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2240 1965\n1605 288 2091 1942\n2263 963 1593 459\n1761 1794 1339 1096\n2290 1154 1014 1045",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "486 1078\n292 1626 1257 489\n408 1471 1245 1931\n2375 1103 1521 400\n2422 1614 1160 880",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2088 1603\n1646 862 1711 387\n858 2287 791 1298\n489 355 1600 1711\n1258 1546 1561 382",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5000 5000\n5000 5000 5000 5000\n5000 5000 5000 5000\n5000 5000 5000 5000\n5000 5000 5000 5000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "5000 5000\n5000 5000 5000 5000\n5000 5000 5000 5000\n5000 5000 5000 5000\n5000 5000 5000 5000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "4999 1\n5000 1 4999 5000\n2 4999 5000 1\n4999 5000 5000 1\n4999 4999 2 5000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "5000 5000\n2 5000 2 2\n4999 2 1 5000\n2 1 5000 4999\n4999 1 2 4999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:55",
+  "total_test_cases": 20
+}

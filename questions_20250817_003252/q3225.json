@@ -1,0 +1,10 @@
+{
+  "problem_code": "problems",
+  "title": "Print Big Binary Numbers",
+  "tags": [],
+  "text": "Some answers for some problems could be huge binary numbers.\r\nIn order to check the computation, one could ask you the sum of its digits.\r\nWith a little base, the answer is a small number too, but not with a bigger base.XerKwould like to avoid precomputed results and wish check you've computed his huge numbers.\r\nHere's a problem that check computation of a big number N. Atutorial editionexists without language restrictions.Let define the function CHK(N, B):\r\nInput  : N a big number in binary representation, B a power of two. Consider N as a base B number.\r\nOutput : the sum of its digits in this base.Example :with B=2^8, 12345678 = 78 + 97*B + 188*B*B, so CHK(12345678, B) = 78 + 97 + 188This should be easily computed with few bitwise-AND, bitshifts and additions.InputThe input begins with the number T of test cases in a single line.\r\nIn each of the next T lines there are four integers A, B, C, D, given in base 10.OutputFor each test case :\r\n* compute N = (A^B) XOR (C^D).\r\n* print CHK(N, 2^16384) as a base 10 number.\r\n(^ denote the power, and XOR the bitwise operator)ExampleInput:2\r\n7 3 5 4\r\n1234 5678 9012 4444Output:806\r\n1194204158794232147799<...snip...>9938532444216215551948305ExplanationsFor test case 1:\r\n7^3 = 343, 5^4 = 625, 343 XOR 625 = 806, CHK(806, 2^16384) = 806.For test case 2:\r\nYou have to output all 4933 digits of the result.Constraints1 < T <= 321\r\n1 < A, B, C, D <= 10^4Edit 2017-02-11, after compiler update ; new TL.",
+  "sample_input": "Input:2\r\n7 3 5 4\r\n1234 5678 9012 4444Output:806\r\n1194204158794232147799<...snip...>9938532444216215551948305",
+  "sample_output": "1 < T <= 321\r\n1 < A, B, C, D <= 10^4",
+  "link": "https://www.spoj.com/problems/PBBN2",
+  "scraped_at": "2025-08-17 00:34:15"
+}

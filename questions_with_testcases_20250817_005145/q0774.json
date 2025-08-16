@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Koalas",
+  "tags": [],
+  "text": "Mabel Eucaliptos ha pasado toda la noche entren\\'andose en el arte de comer hojas de eucalipto. Finalmente est\\'a preparada para enfrentar a su malvada archin\\'emesis, Pac\\'ifica, en un \\'ultimo juego que intentar\\'a decidir de una vez por todas qui\\'en de las dos es la mejor koala.El juego se llevar\\'a a cabo en un bosque constituido por $N$ \\'arboles de eucalipto numerados del $1$ al $N$. Los \\'arboles est\\'an conectados por $N - 1$ cuerdas. Cada cuerda conecta dos \\'arboles diferentes, y permite a las koalas desplazarse de cualquiera de ellos al otro. El bosque de eucaliptos es tal que es posible ir de cualquier \\'arbol a cualquier otro usando sucesivamente estas cuerdas.Los \\'arboles de eucalipto contienen una cantidad no negativa de hojas. Cuando un \\'arbol contiene cero hojas, se dice que est\\'a vac\\'io. Inicialmente ninguno de los $N$ \\'arboles en los que se desarrollar\\'a el juego se encuentra vac\\'io.Antes de empezar el juego, a cada koala se le asigna un \\'arbol diferente. Al principio de la partida cada jugadora sube al \\'arbol que le fue asignado y come todas las hojas que este contiene, dej\\'andolo vac\\'io. A continuaci\\'on, juegan alternadamente, siendo Mabel la encargada de realizar el primer movimiento. En cada turno la jugadora correspondiente se mueve a un \\'arbol no vac\\'io que est\\'e conectado por una cuerda con el \\'arbol en el que se encuentra ella. Seguidamente come todas las hojas que este nuevo \\'arbol contiene, dej\\'andolo vac\\'io. En caso de no poder realizar un movimiento v\\'alido, permanece donde est\\'a y pasa a ser el turno de la otra jugadora. El juego termina cuando ninguna de las dos puede hacer un movimiento v\\'alido.Una vez finalizada la partida, se cuentan las hojas que comi\\'o cada koala, y se calcula la diferencia entre la cantidad que comi\\'o Mabel y la cantidad que comi\\'o Pac\\'ifica. Mabel jugar\\'a tratando de maximizar dicha diferencia, mientras que Pac\\'ifica lo har\\'a intentando minimizarla. Su tarea es determinar cu\\'al ser\\'a el resultado del juego, suponiendo que ambas juegan de manera \\'optima.Mabel Eucalyptus spent last night training in the art of eucalyptus leaf eating. She is finally ready to face her evil arch-nemesis, Peaceful, in a last game which will decide once and for all which of them is the best koala.The game will take place in a forest containingNeucalyptus trees numbered from1toN. The trees are connected byN-1ropes, each of which joins two different trees. These ropes allow koalas to move from one tree to the other, and the eucalyptus forest is such that it is possible to go from a given tree to any other successively using the ropes.The eucalyptus trees contain a non-negative amount of leaves. When a tree contains no leaves, we say it is empty. Initially, none of theNtrees in the forest is empty.Before commencing the game, each koala is assigned a different tree. At the beginning of the game, each player climbs the tree that was assigned to her and eats all the leaves it contains. After that both players take turns, Mabel being in charge of making the first move. In each turn, the corresponding player moves to a non-empty tree connected by a rope to the tree she is currently in. Then, she eats all the leaves this tree contains, thus leaving it empty. If a player can't make a valid move in her turn, she forfeits her turn staying wherever she is, and the other player gets to move again. The game ends when both players cannot make a valid move.Once the game has finished, the number of leaves eaten by each koala is counted, and the difference between the amount eaten by Mabel and the amount eaten by Peaceful is calculated. Mabel will play aiming to maximize this difference, whereas Peaceful will play to minimize it. Your task is to determine what the result of the game will be, assuming that both koalas play optimally.InputThere are multiple test cases in the input file. For each test case, the first line contains three integer numbersN,MyP, representing the number of trees in the forest, the tree where Mabel starts, and the tree where Peaceful starts, respectively (2 ≤ N≤105and1≤M, P≤NwithM ≠ P). The second line containsNinteger numbersC1, C2, ..., CN, representingCithe number of leaves contained in thei-th tree (1≤Ci≤100fori = 1, 2, ..., N). Each of the followingN-1lines contains two integer numbersUandV, representing that there is a rope connecting trees numberUandV(1≤U, V≤NwithU ≠ V).OutputFor each test case, output a single line containing an integer number, representing the difference between the number of leaves eaten by Mabel and the number of leaves eaten by Peaceful if both of them play optimally.ExampleInput:2 1 2\r\n5 3\r\n1 2\r\n6 2 3\r\n1 6 4 3 2 2\r\n1 2\r\n2 3\r\n3 4\r\n3 5\r\n5 6Output:2\r\n-1",
+  "sample_input": "Input:2 1 2\r\n5 3\r\n1 2\r\n6 2 3\r\n1 6 4 3 2 2\r\n1 2\r\n2 3\r\n3 4\r\n3 5\r\n5 6Output:2\r\n-1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TAP2016K",
+  "scraped_at": "2025-08-17 00:33:08",
+  "test_cases": [
+    {
+      "input": "2 1 2\r\n5 3\r\n1 2\r\n6 2 3\r\n1 6 4 3 2 2\r\n1 2\r\n2 3\r\n3 4\r\n3 5\r\n5 6",
+      "expected_output": "2\r\n-1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 4 4\n8 6\n5 4\n8 1 2\n5 2 8 4 10 5\n3 6\n8 2\n10 7\n5 10\n2 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 5 2\n2 10\n7 2\n8 7 2\n10 9 6 3 2 2\n5 6\n10 7\n2 7\n3 4\n6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 10 9\n4 9\n2 2\n10 5 2\n4 4 1 9 9 7\n2 8\n5 9\n5 6\n6 8\n5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "22 58 63\n32 38\n93 32\n48 30 40\n82 11 1 96 54 81\n77 6\n84 89\n99 82\n27 65\n13 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 33 29\n42 4\n10 18\n90 59 72\n43 92 90 40 54 36\n72 14\n28 1\n27 34\n12 32\n59 34",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 15 37\n83 79\n7 37\n92 1 48\n100 63 35 27 77 93\n78 10\n53 42\n46 20\n7 7\n27 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 61 86\n37 80\n91 60\n82 61 65\n57 73 18 86 34 30\n28 23\n90 49\n59 11\n20 60\n52 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 91 59\n99 76\n97 95\n46 94 55\n31 67 73 44 12 60\n23 92\n91 23\n9 98\n55 98\n36 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 29 15\n38 25\n13 29\n26 52 44\n31 34 14 14 27 14\n20 35\n19 20\n24 18\n23 51\n50 48",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "31 20 43\n47 24\n42 15\n21 45 38\n46 30 49 8 29 6\n31 5\n43 21\n44 44\n8 11\n24 52",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "51 26 7\n7 49\n8 31\n48 41 17\n9 22 49 8 5 5\n40 47\n49 16\n34 43\n24 6\n12 47",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14 30 50\n27 50\n23 20\n8 10 12\n30 7 31 17 48 29\n41 37\n50 38\n37 23\n29 45\n6 40",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "33 31 7\n8 48\n7 47\n8 14 14\n6 40 17 41 31 12\n12 28\n9 34\n36 35\n35 43\n21 45",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "49 14 50\n25 46\n51 14\n19 30 50\n42 40 40 52 26 32\n49 49\n21 24\n50 29\n38 41\n13 43",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "33 34 14\n20 44\n18 16\n46 45 46\n32 5 42 14 51 38\n44 21\n18 52\n8 34\n52 23\n27 21",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105 105\n105 105\n105 105\n105 105 105\n105 105 105 105 105 105\n105 105\n105 105\n105 105\n105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105 105\n105 105\n105 105\n105 105 105\n105 105 105 105 105 105\n105 105\n105 105\n105 105\n105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 2 2\n1 2\n104 104\n2 1 2\n2 105 1 105 105 1\n1 105\n104 2\n2 1\n105 105\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1 2\n104 105\n105 1\n1 2 104\n2 2 1 2 1 2\n104 2\n1 104\n2 105\n1 1\n105 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}

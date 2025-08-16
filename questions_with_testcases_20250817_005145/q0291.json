@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Glasnici",
+  "tags": [],
+  "text": "A long straight road connects two villages. Along the road, N messengers are stationed and, when needed, they exchange messages using mostly their legs, but also their vocal cords and ears. The first messenger (the closest to the first village) has a radio-receiver which he uses to keep track of current ongoings in the country. When he finds out who has been evicted from whichever reality show is currently popular, he starts running as fast as he can to share the unfortunate (or fortunate) news with everyone else. While running, he shouts the name of the evicted person so that any fellow messengers that are close enough can hear him. Meanwhile, the remaining messengers do not merely sit and wait, but also run themselves, all with the selfless goal of sharing the news with everyone as fast as possible. The running and shouting proceeds as follows:Each of the messengers may run whenever, in either direction, at a speed of at most 1 unit per second, or may decide not to run at all and stand still.All messengers that know the news shout it at all times. One messenger can hear another messenger shouting (and learn the news) if the distance between them is at most K units.Write a program that, given the initial locations of the messengers, determines the least amount of time (in seconds) needed for all messengers to learn the news. The location of every messenger is given with a positive real number – the distance from the first village. As mentioned above, initially only the first messenger knows the news.InputThe first line contains the integer T (1 ≤ T ≤ 25), the number of test cases. Then for each test case, the first line contains the real number K (0 ≤ K ≤ 1,000,000), the largest distance at which two messengers can hear each other, and the integer N (1 ≤ N ≤ 100,000), the number of messengers. Each of the following N lines contains one real number D (0 ≤ D ≤ 1,000,000,000), the distance of one messenger from the first village. The distances will be sorted in ascending order. It is possible for multiple messengers to be at the same location.OutputFor each test case, output a real number, the least time for all messengers to learn the news. Your output needs to be within 0.01 of the official output.ExampleInput:2\r\n3.000 2\r\n0.000\r\n6.000\r\n2.000 4\r\n0.000\r\n4.000\r\n4.000\r\n8.000Output:1.500\r\n1.000Warning: large input/output data.",
+  "sample_input": "Input:2\r\n3.000 2\r\n0.000\r\n6.000\r\n2.000 4\r\n0.000\r\n4.000\r\n4.000\r\n8.000Output:1.500\r\n1.000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GLASNICI",
+  "scraped_at": "2025-08-17 00:33:04",
+  "test_cases": [
+    {
+      "input": "2\r\n3.000 2\r\n0.000\r\n6.000\r\n2.000 4\r\n0.000\r\n4.000\r\n4.000\r\n8.000",
+      "expected_output": "1.500\r\n1.000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n8\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n1\n1\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n9\n3\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "10\n11790435\n38716566\n40748831\n16291488\n87910368\n23993417\n57795138\n60108860\n18159161\n49649724",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n27369973\n25618168\n37233059\n42873373\n91526226\n1630902\n59023609\n91541596\n24303229",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n68915817\n79729114\n116210\n64375659\n97450743\n33811239\n8113872\n12419443\n18688475",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n46314345\n44639634\n22103301\n36526961\n78093253\n9281793\n2620803\n63889002\n2142081\n8820701\n80520060\n1120664\n2152888\n28757784\n42209476\n62099568\n18220711\n46158261\n73727351\n97133614",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n84421925\n53984521\n54205215\n60680608\n53304312\n14252161\n74729851\n47721860\n73512977\n87317915",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "26\n85498\n31811\n65492\n40660\n32170\n55755\n6573\n34048\n70710\n77680\n37681\n72265\n40626\n74785\n36034\n88527\n33889\n70367\n1742\n59998\n45290\n73942\n98620\n20175\n8120\n5231",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n42380\n56275\n73659\n65289\n51085\n20916\n67803\n67064\n84111\n87681\n44196\n23029\n68274\n58090\n51698\n38415\n2404\n70823\n22841\n29252\n10266\n83847\n93490\n18761\n5063\n8611\n23470\n80889\n88297",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n78755\n21610\n61481\n57900\n38323\n11727\n18184\n76107\n94581\n47452\n44804\n81991\n43462\n22589\n38138\n48547\n98511\n83386\n47062\n75252\n11228\n5469\n88461\n42280\n52026\n69684\n79868\n3552\n67384\n75547",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "55\n55337\n83378\n66470\n81715\n51841\n99398\n16408\n80292\n33608\n56155\n38698\n41005\n26119\n74222\n69645\n47816\n6862\n10912\n45587\n77902\n28205\n90205\n62680\n57766\n48485\n58106\n57070\n27480\n2457\n45793\n5414\n35085\n67382\n88984\n87297\n36078\n27584\n20069\n21587\n73796\n89086\n79203\n65907\n2794\n36759\n53794\n57936\n17598\n39904\n1959\n30816\n17184\n53685\n28618\n29745",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "98\n93021\n28481\n50902\n55352\n19419\n35991\n31970\n87519\n15104\n18034\n37246\n90350\n5321\n99074\n27341\n62264\n2042\n53551\n10354\n61805\n73610\n99437\n84524\n75846\n2440\n58087\n24752\n25215\n56141\n30435\n97888\n23175\n24\n29525\n59043\n94917\n83953\n7553\n62687\n86389\n87249\n34840\n72259\n98407\n51725\n74520\n85550\n33567\n6722\n48077\n47709\n74114\n84181\n93910\n44902\n6854\n21541\n62912\n37900\n5841\n40486\n35526\n53312\n27574\n75817\n32980\n69040\n2913\n78069\n55261\n10352\n71767\n28430\n43696\n3398\n75561\n20596\n4734\n21265\n68032\n43066\n44902\n9699\n49796\n94842\n78261\n9654\n24814\n36775\n83454\n75497\n69669\n56013\n14453\n61741\n55797\n62256\n68878",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "55\n16593\n77676\n30052\n27468\n51134\n85551\n47576\n58220\n85508\n28167\n16995\n14763\n98721\n89727\n15592\n70139\n98649\n41570\n86510\n97249\n41898\n40146\n98669\n22006\n9818\n59735\n28536\n91100\n92048\n97362\n87921\n8866\n40204\n93398\n4076\n24274\n76319\n84098\n94408\n46626\n76726\n12431\n58437\n3844\n74202\n11962\n81694\n95423\n35090\n45048\n23013\n64972\n9513\n59612\n60133",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n90437\n48410\n53821\n78675\n62277\n93282\n4235\n16445\n86959\n72882\n23099\n19075\n94836\n44117\n5021\n39754\n36865\n58820\n31620\n36751\n85549\n17682\n54027\n52623\n91136\n67653\n2387\n77271\n52496\n1892\n58964",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "100\n47197482\n65236708\n96772030\n29760628\n13750548\n86824706\n48267169\n34007475\n62983389\n11577925\n35284569\n43852812\n39607466\n99623186\n6802668\n5143378\n44855888\n73379910\n58165186\n27112320\n35715119\n39610974\n49043125\n12081470\n24007263\n36949657\n76381656\n74649269\n4124584\n30187978\n32784916\n51852991\n86776558\n96420870\n38465083\n45346747\n96547959\n6231700\n76264828\n97346416\n50180583\n359403\n64213431\n88774602\n63137905\n39446387\n93755869\n53200073\n42054503\n67206365\n84336269\n12135979\n52167698\n83423496\n91513701\n76785640\n24959519\n99834582\n30037105\n3281465\n78587075\n39566711\n44586026\n65617858\n52022724\n96445644\n96956599\n53182893\n68561107\n89806628\n92674665\n44704450\n68393791\n90987493\n32561586\n10700065\n69855180\n5590608\n50143553\n43557156\n34763749\n68269092\n15946594\n52844702\n51094208\n81646398\n3149300\n48882105\n28559050\n97456926\n79226941\n74985938\n72333619\n43682149\n35638194\n33885454\n7037595\n25666246\n11342722\n97916537",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "100\n47311309\n26935383\n42234131\n75875499\n99182038\n27283540\n83257586\n84847062\n63448197\n11553665\n18412866\n85568320\n67941371\n3274889\n21173165\n30987337\n35014822\n39739886\n23147511\n10813413\n21722630\n42420735\n7049474\n53611202\n1202060\n20184499\n24385213\n73800337\n24100643\n80489676\n43076282\n22149586\n94136119\n80208198\n61488584\n79801374\n56478800\n26215612\n23155033\n19294985\n68664331\n89730054\n51682604\n23318992\n23452949\n45359673\n47320106\n41079673\n30149993\n56370604\n3365678\n71232340\n62942271\n61580357\n62610154\n39260669\n24399337\n45015239\n98287994\n71323820\n26530027\n63156798\n61664585\n49915583\n86674098\n30501655\n37750666\n52004392\n15013363\n36819068\n62512473\n87514210\n88365273\n94810041\n78317486\n37915539\n67154898\n49125815\n86425098\n22731434\n75343337\n16900749\n67712819\n76479390\n52796139\n31430326\n84759717\n40115240\n36224454\n93146761\n31931199\n71982876\n68105734\n55177732\n90415620\n61885092\n28911126\n58851495\n43801135\n46753797",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "100\n100000000\n100000000\n65791020\n100000000\n1\n98419149\n78979091\n17798322\n58461716\n1\n1\n100000000\n1\n1\n1\n693855\n100000000\n100000000\n86067638\n90948859\n100000000\n100000000\n81787348\n1\n100000000\n100000000\n1\n66367841\n40080350\n1\n44929489\n100000000\n29726996\n100000000\n1\n1\n24497748\n100000000\n100000000\n77927619\n1\n31845287\n1\n60497172\n100000000\n40725436\n100000000\n1\n27049957\n100000000\n99239695\n76212508\n98161100\n12094756\n71649348\n1\n100000000\n83601803\n1\n100000000\n43578974\n1\n1\n63944948\n1\n100000000\n1\n100000000\n21806350\n100000000\n100000000\n1\n1\n1\n1\n39552396\n84218912\n100000000\n1\n1\n1\n100000000\n90348148\n37449260\n17950523\n100000000\n100000000\n29821476\n100000000\n24305108\n100000000\n100000000\n17008905\n1\n100000000\n100000000\n34306298\n1\n100000000\n19278605",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 100)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:46",
+  "total_test_cases": 20
+}

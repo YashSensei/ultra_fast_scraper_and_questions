@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Good Strategy",
+  "tags": [],
+  "text": "The ACM-ICPC World Finals have begun! However, let's not be too hasty - even though The Team features three of the best coders to have ever coded, they know the importance of first determiningwhatto code.The contest features $N$ ($1 \\leq N \\leq 10^6$) problems (conveniently numbered $1..N$), and runs for $M$ ($1 \\leq M \\leq 10^6$) minutes. Every problem is associated with a distinct colour - and each time a team solves a problem, they receive a balloon of its corresponding colour, which is visible to all. Obviously, easier problems will be solved by more teams, and so more of their balloons will be floating around in the contest room. Additionally, The Team has found that earlier problems in the set tend to be easier. Therefore, given 2 problems $i$ and $j$, $i$ is considered easier than $j$ if there are either more $i$ balloons than $j$ balloons in the room, or there are an equal number of balloons and $i < j$.At the start of the contest (at the 0th minute), there are no balloons in the room, of course. After that, during every minute $i$ (for $i=1..M$), problem $p_i$ ($1 \\leq p_i \\leq N$) is either solved by The Team (which will only happen if they have not solved it previously), or by some opposing team. The former possibility is represented by $t_i=1$, and the latter by $t_i=2$. In either case, a $p_i$ balloon is brought into the room. However, in the former case, The Team will no longer care about problem $p_i$ in the slightest.At the end of every minute after the 0th one, the members of The Team want to get their bearings on what they should be working on (and what they should be staying away from). Specifically, out of problems that they haven't yet solved, they want to know what the single easiest and the single hardest problems are, given the information that can be gleaned from the balloons. These two values may be the same, if The Team has only one problem left to solve. If they're solved all of the problems already, they can instead commence the process of making distracting noises. Are you smart enough to figure out what The Team's strategy throughout the contest will be?InputFirst line: 2 integers, $N$ and $M$Next $M$ lines: 2 integers, $t_i$ and $p_i$, for $i = 1..M$Output$M$ lines: Either 2 integers, the easiest followed by the hardest unsolved problem number after the first $i$ minutes, or the string \"Make noise\" if all problems have been solved by The Team, for $i = 1..M$.ExampleInput:3 8\r\n2 2\r\n2 1\r\n1 1\r\n2 3\r\n2 3\r\n1 2\r\n1 3\r\n2 1Output:2 3\r\n1 3\r\n2 3\r\n2 3\r\n3 2\r\n3 3\r\nMake noise\r\nMake noiseExplanation of Sample:After the first minute, we've seen 1 balloon for problem 2, and 0 balloons for problems 1 and 3. Therefore, the easiest problem is 2, since it has the most balloons, and the hardest problem is 3, since it's the last problem with the least balloons.After the second minute, the counts for the 3 problems are 1, 1, and 0. The easiest problem is now 1, since it's the first problem with the most balloons, while the hardest is still 3.After the third minute, the counts for the 3 problems are 2, 1, and 0, but problem 1 has now been solved by The Team. The easiest remaining problem is 2, and the hardest is 3.After the fourth minute, the counts for the 3 problems are 2 (solved), 1, and 1. The easiest unsolved problem is 2, and the hardest is 3.After the fifth minute, the counts for the 3 problems are 2 (solved), 1, and 2. The easiest unsolved problem is 3, and the hardest is 2.After the sixth minute, the counts for the 3 problems are 2 (solved), 2 (solved), and 2. The only unsolved problem is 3.After the seventh and eighth minutes, all 3 problems have been solved by The Team, so noise should be made.",
+  "sample_input": "Input:3 8\r\n2 2\r\n2 1\r\n1 1\r\n2 3\r\n2 3\r\n1 2\r\n1 3\r\n2 1Output:2 3\r\n1 3\r\n2 3\r\n2 3\r\n3 2\r\n3 3\r\nMake noise\r\nMake noise",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GOODC",
+  "scraped_at": "2025-08-17 00:33:56",
+  "test_cases": [
+    {
+      "input": "3 8\r\n2 2\r\n2 1\r\n1 1\r\n2 3\r\n2 3\r\n1 2\r\n1 3\r\n2 1",
+      "expected_output": "2 3\r\n1 3\r\n2 3\r\n2 3\r\n3 2\r\n3 3\r\nMake noise\r\nMake noise",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 1\n6 9\n3 6\n7 7\n9 1\n8 5\n5 6\n10 4\n6 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5\n4 2\n7 6\n9 5\n8 7\n10 7\n6 3\n9 10\n10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 9\n4 7\n2 6\n10 10\n6 7\n6 5\n2 4\n2 9\n4 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "56 73\n60 13\n3 49\n13 29\n96 7\n89 29\n92 48\n26 55\n21 95",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "64 59\n30 28\n12 22\n63 51\n88 74\n48 10\n76 23\n13 66\n9 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 26\n84 100\n62 6\n55 53\n97 16\n45 8\n40 34\n99 53\n47 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 8\n97 68\n4 59\n46 30\n64 81\n31 37\n78 52\n12 60\n17 75",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 4\n74 18\n58 60\n10 32\n99 14\n71 13\n89 7\n99 71\n72 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "412 362\n156 483\n462 115\n262 486\n105 466\n470 393\n424 193\n108 125\n79 377",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "89 418\n457 88\n105 181\n357 211\n374 115\n181 196\n165 310\n493 231\n100 210",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "411 344\n354 380\n261 231\n337 285\n383 415\n440 149\n458 139\n491 431\n69 374",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "139 373\n410 344\n106 197\n408 182\n114 477\n220 452\n126 202\n482 323\n61 406",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "497 158\n53 317\n101 394\n128 274\n402 408\n445 387\n411 124\n109 113\n107 66",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "99 272\n92 438\n495 439\n494 219\n340 406\n339 79\n194 389\n154 319\n191 265",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "175 273\n411 56\n438 359\n181 132\n400 94\n407 356\n360 275\n319 423\n382 222",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000\n2 2\n999 2\n1000 1\n1 1\n999 1\n1000 999\n2 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999\n1000 999\n999 1000\n2 999\n2 2\n999 2\n2 999\n999 999\n1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:51",
+  "total_test_cases": 20
+}

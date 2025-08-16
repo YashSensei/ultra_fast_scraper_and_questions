@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Beer Machines",
+  "tags": [],
+  "text": "Little Stjepan lives in a village which can be represented as X-axis. In village there are N beer machines, machine i has x coordinate Piand needs Tiseconds to produce 1 liter of beer.This year M tourists (one by one because there is only one guide, Stjepan) will visit his village, tourist i will arrive at point Ai, want to drink Liliters of beer but will have energy to walk at most Diseconds (that is Diunits of length), he will walk to beer machine Stjepan suggests him and as soon as machine produces Liliters of beer tourist will be able to enjoy it.As Stjepan wants all tourists to come next year too he will choose machine for each tourist so that tourist can get a beer as soon as possible. Help Stjepan to do that and write program which will output minimal sum of passed times from arrival of tourist to getting a beer. If a tourist can't get a beer then his time is 0.Note that tourists are independent and machines can be used multiple times.InputOn first line of standard input you are given two integers (2 ≤ N ≤ 250 000, 1 ≤ M ≤ 500 000), number of beer machines and number of tourists.Next 5 lines contain 4 integers (X0, A, B, C) each and they describe arrays P, T, A, L and D, respectively.With these four numbers i-th element of array is defined as Xi= 1 + ((Xi-1*A + B) mod C), where indices are 1-based and X0is given in input.1 ≤ X0, A, B, C ≤ 109.Note:Author's solution doesn't depend on properties of pseudo-random generator.OutputOutput total time from task statement. Answer will fit in 64-bit signed integer.ExampleInput:3 4\r\n1 4 3 6\r\n2 4 4 10\r\n3 8 1 10\r\n3 1 8 7\r\n1 3 2 6Output:53ExplanationMachines (P, T) : (2, 3), (6, 7), (4, 3)Tourists (A, L, D) : (6, 5, 6), (10, 7, 3), (2, 2, 6), (8, 4, 3)Tourist #1 → Machine #3 → 17 time units.Tourist #2 → No beer :( → 0 time units.Tourist #3 → Machine #1 → 6 time units.Tourist #4 → Machine #2 → 30 time units.",
+  "sample_input": "Input:3 4\r\n1 4 3 6\r\n2 4 4 10\r\n3 8 1 10\r\n3 1 8 7\r\n1 3 2 6Output:53",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/STJEPAN",
+  "scraped_at": "2025-08-17 00:33:03",
+  "test_cases": [
+    {
+      "input": "3 4\r\n1 4 3 6\r\n2 4 4 10\r\n3 8 1 10\r\n3 1 8 7\r\n1 3 2 6",
+      "expected_output": "53",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 10\n10 5 5 4\n5 8 1 1\n6 6 9 10\n9 6 10 9\n3 2 9 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 8\n2 10 6 3\n9 1 10 5\n3 1 3 7\n10 4 5 1\n3 9 2 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2\n2 6 4 9\n1 3 10 7\n10 9 4 4\n4 8 8 1\n7 3 6 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 88\n33 15 28 10\n17 85 35 72\n65 42 92 32\n1 47 33 75\n78 7 77 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 60\n41 81 30 27\n85 52 8 13\n75 65 81 23\n30 21 72 23\n5 17 80 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 78\n47 18 54 60\n42 89 38 27\n90 4 61 48\n6 26 6 11\n93 44 48 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "60 46\n93 22 54 11\n30 76 91 16\n62 11 48 93\n60 8 29 72\n86 45 76 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 66\n27 25 93 54\n50 31 38 31\n81 5 26 49\n84 85 50 8\n54 62 34 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "115156 20298\n33662 113088 21722 62063\n85973 64944 88610 48464\n31824 113489 98118 102544\n90455 94441 72293 23511\n20662 112363 42449 71065",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "89322 49174\n120064 39658 108216 66608\n96349 41211 114583 73951\n92682 101362 46757 97242\n21459 92938 75020 99991\n93712 54744 13003 67975",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "59939 38578\n93806 53150 123544 53449\n73436 73902 65620 23070\n66125 115675 13179 84322\n120331 58006 75518 20930\n44623 51222 15123 73970",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "80995 59057\n92595 61752 108378 37088\n67028 75258 51405 17380\n89143 73722 80436 24474\n24728 48162 113613 27350\n29044 18108 78708 18243",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30974 38506\n105664 109447 59804 22170\n99055 65587 110695 14840\n116527 32412 18808 36238\n17909 63831 62580 115921\n107700 79191 20833 95589",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "89349 31843\n93073 96900 114320 63625\n120817 96397 50353 75340\n85748 42550 42607 14832\n119872 94659 113007 13838\n84927 17966 15556 123414",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "111999 67613\n31151 26219 82393 53916\n115237 112217 45937 38812\n114618 107672 16302 42298\n113096 83002 47505 99417\n78689 30207 90422 79522",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000\n250000 250000 250000 250000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "249999 249999\n2 1 1 250000\n1 250000 1 1\n1 249999 250000 249999\n249999 2 2 249999\n250000 1 1 249999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2\n1 1 250000 250000\n250000 2 2 250000\n250000 249999 1 249999\n1 1 2 2\n1 250000 250000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}

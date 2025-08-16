@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Bank robbery",
+  "tags": [],
+  "text": "The city is plagued with bank robbers, and last year there was a robbery each week in some bank in the city. Police wants to fight this plague, and has to come up with a strategy to solve the problem. One obvious solution would be to place a police patrol at every bank, but this would cost too much money, and because of the crisis it is not possible to choose this solution.An alternative solution is as follows. Police is alerted about the robbery right after it happened, and can react pretty fast. Robbers use only either motors or cars. Police is able to block any crossroad in the city, and once a crossroad is blocked it is sure that the robbers will be caught if they try to pass the blockage. Moreover, it is possible to forecast some possible destinations of escape from a given bank. Thus the strategy in this case would be to, immediately after a robbery, block some crossroads to make it impossible to reach an escape destination. It would be also great if the number of blockages would be as small as possible, since then the action is cheaper, more effective, and less troublesome for the citizens.Obviously, if we would compute the smallest number of crossroads that make it impossible to pass from a given bank to given escape points, then this information would be actually useless for the police. Because of the geometry of the city, most likely the smallest set of blockages would consist of couple of crossroads right next to the bank, and by the time police would arrive there, the robbers would be already somewhere else. Thus during the chase, police wants to make real-time decisions that depend on the progress of the situation. To make smart decisions police needs an efficient computer program to compute blockages, and it is your task to write this program. Your program has to read the description of the city map and two locations s and t. It has to compute and return one number, the minimum number of blocked crossroads that will make it impossible to go from location s to location t.InputYour program reads from the standard input. In the first line of input you are given two natural numbers n and m (1 < n ≤ 1000, 1≤ m ≤ 5000), where n is the number of crossroads in the city, and m is the number of streets, where each street connects two crossroads; any two crossroads can be connected by at most one street. Crossroads are numbered from 1 to n. In the line number 2 of the input you are given two numbers s and t, indicating the crossroads that have to be disconnected. In the next m lines of the input you will be given the description of the connections; each such line consists of two numbers c1, c2 and it means that there is a two-way street connecting crossroads c1 and c2.OutputOn the standard output your program has to write one number, the smallest number of crossroads that, when blocked, make it impossible to reach t from s. You may assume that there is no street directly connecting s and t.Example 1Input:10 141 101 21 31 42 53 53 64 65 75 86 86 97 108 109 10Output:2Example 2Input:10 145 101 21 31 42 53 53 64 65 75 86 86 97 108 109 10Output:3",
+  "sample_input": "Input:10 141 101 21 31 42 53 53 64 65 75 86 86 97 108 109 10Output:2",
+  "sample_output": "Input:10 145 101 21 31 42 53 53 64 65 75 86 86 97 108 109 10Output:3",
+  "link": "https://www.spoj.com/problems/BANKROB",
+  "scraped_at": "2025-08-17 00:34:26",
+  "test_cases": [
+    {
+      "input": "10 141 101 21 31 42 53 53 64 65 75 86 86 97 108 109 10",
+      "expected_output": "2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 145 101 21 31 42 53 53 64 65 75 86 86 97 108 109 10",
+      "expected_output": "3",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "6 9 6 6 5 2 7 10 7 1 3 4 6 10 7 10 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6 6 2 9 9 8 9 4 8 5 1 5 3 3 7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7 10 5 9 1 6 5 6 2 7 6 10 8 9 5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "74 25 65 48 84 22 67 2 50 30 84 55 62 24 34 95 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 35 11 41 70 57 88 44 84 95 25 47 33 17 13 29 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 71 48 80 5 43 96 17 65 1 7 39 82 18 63 6 78",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 49 68 50 59 86 49 55 39 86 11 56 68 48 46 9 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "95 55 42 95 58 48 23 57 22 60 32 42 64 22 43 49 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "401 241 456 58 339 75 457 184 437 199 426 246 183 237 269 400 348",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "429 292 478 364 60 307 478 475 118 466 312 261 391 311 383 472 358",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "344 446 457 170 68 390 422 234 437 351 335 244 307 143 474 458 115",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "290 493 428 438 384 423 419 349 73 426 121 104 358 77 89 440 427",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "376 258 329 300 330 143 118 400 366 125 423 484 442 402 188 237 77",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "249 226 134 459 363 296 449 495 156 60 305 287 283 89 334 338 479",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "308 465 317 357 188 408 195 491 355 442 356 309 500 254 318 381 315",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1 2 1 2 1000 2 999 999 1000 1000 2 999 2 1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:56",
+  "total_test_cases": 20
+}

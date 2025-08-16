@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Attack of the Bloons",
+  "tags": [],
+  "text": "The Bloons (not to be confused with balloons) are attacking! They are attempting to navigate your course of $L$ ($1 \\leq L \\leq 1000$) cells, laid out in a row and numbered from $1$ to $L$. You don't know what they'll do to you if they manage reach the end, and you don't want to find out! To that end, you've constructed some defensive towers along the course. You might say that this is a Bloons Tower Defense.There are $N$ ($1 \\leq N \\leq 1000$) towers ready to take out any Bloons that get close. The $i$th tower is located next to cell $C_i$ ($1 \\leq C_i \\leq L$), and can launch darts at any Bloons that are no more than $R_i$ ($0 \\leq R_i \\leq 1000$) cells away - that is, Bloons in cells $C_i-R_i$ to $C_i+R_i$, inclusive. Every second, it will do $D_i$ ($1 \\leq D_i \\leq 10^9$) HP worth of damage to any Bloons in this range.$M$ ($1 \\leq M \\leq 1000$) Bloons will attempt to float through your course, one after another. The $i$th Bloon begins with $H_i$ ($1 \\leq H_i \\leq 10^9$) HP, and will pop as soon as it has taken at least that much damage in total. Each Bloon starts in cell 1, and moves along the course at a speed of 1 cell per second. If a Bloon moves past cell $L$, it safely exits the course and can no longer be popped.There are $T$ ($1 \\leq T \\leq 20$) scenarios as described above. For each, you'd like to determine how far along the course each of the $M$ Bloons will make it.InputFirst line: 1 integer, $T$For each scenario:First line: 2 integers, $L$ and $N$Next $N$ lines: 3 integers, $C_i$, $R_i$, and $D_i$, for $i = 1..N$Next line: 1 integer, $M$Next $M$ lines: 1 integer, $H_i$, for $i = 1..M$OutputFor each scenario:$M$ lines: If the $i$th Bloon will survive the course, the string \"Bloon leakage\" (without quotes) - otherwise, 1 integer, the furthest cell which the $i$th Bloon will reach, for $i = 1..M$ExampleInput:110 33 3 14 0 410 2 24120911Output:1Bloon leakage58Explanation of Sample:The following diagram illustrates which cells each tower can hit:The first Bloon, having only 1 HP, will go down to the first tower in cell 1.The second Bloon will manage to clear the course, surviving past cell 10 with 4 HP remaining.The third Bloon will lose its final HP while at cell 5, having taken 5 damage from the first tower, and 4 from the second.The final Bloon will survive past cell 6 with 1 HP remaining, but will then go down at cell 8 when it takes 2 damage from the third tower.",
+  "sample_input": "Input:110 33 3 14 0 410 2 24120911Output:1Bloon leakage58",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UOFTBB",
+  "scraped_at": "2025-08-17 00:33:54",
+  "test_cases": [
+    {
+      "input": "110 33 3 14 0 410 2 24120911",
+      "expected_output": "1Bloon leakage58",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 5 8 4 1 3 4 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 4 3 6 7 3 2 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7 9 7 7 8 4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "40 32 68 33 47 49 2 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 51 38 51 57 52 19 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 57 58 92 47 3 49 64",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "34 41 79 81 32 70 47 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 17 26 13 84 10 58 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "466 293 430 198 269 465 99 376",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "464 461 493 441 220 485 366 70",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "369 500 336 158 92 419 240 81",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "216 340 301 500 367 188 55 390",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "97 350 388 151 383 489 352 266",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "287 267 258 219 413 66 249 348",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "400 406 156 225 271 192 235 118",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2 1 1000 1000 1 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 1000 1 1 1000 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

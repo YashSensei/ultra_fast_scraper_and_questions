@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Reljef",
+  "tags": [],
+  "text": "Two groups of cavemen got into a land dispute and decided to settle it the old fashion-way, by throwing sticks at each other. The fight was organized in a cave, high enough that the ceiling is of no concern, but mineral deposits on the ground get in the way of flying sticks.The cave can be divided into R rows and C columns, so that the entire cave consists of R×C cells. Each cell in the cave is either empty or contains a chunk of mineral. Two chunks of minerals are part of the same cluster if they are adjacent in one of the four main directions (up, down, left, right).One group of cavemen is on the left side of the cave, the other on the right side. The groups alternate throwing sticks at the other group; first a group chooses the height at which the stick will fly and then (climbing on each others' shoulders as necessary) they throw it and the stick flies horizontally through the cave at the chosen height.If the stick hits a chunk of mineral on the way, it destroys the chunk, the cell becomes empty and the stick stops its journey.When a chunk is destroyed, it is possible that a cluster falls apart. If a newly created cluster would float in the air, then it falls down because of gravity. While falling, the cluster does not change shape i.e. all chunks in it fall together. As soon as some chunk in the falling cluster lands on a chunk from a different cluster or the ground, the entire cluster stops falling. Of  ourse, if a cluster lands on another, they merge and become one.Your program will be given the layout of minerals in the cave and the heights at which sticks were\r\nthrown. Determine the layout of minerals after the sticks are exchanged.InputThe first line contains two integers R and C (1 ≤ R, C ≤ 100), the dimensions of the cave.Each of the following R lines will contain C characters. The character '.' represents an empty cell, while the letter 'x' represents a chunk of mineral.The next line contains an integer N (1 ≤ N ≤ 100), the number of sticks thrown.The last line contains N integers separated by spaces, the heights at which sticks were thrown. All heights will be between 1 and R (inclusive), with height 1 being the bottom of the matrix and height R the top. The first tick is thrown left to right, the second right to left and so on.No cluster will initially float in the air. Also, the input data will be such that at no point will two or\r\nmore clusters fall simultaneously, so that there will be no ambiguous situations.OutputThe output should consist of R lines, each containing C characters, the final layout of the cave, in the\r\nsame format as in the input.ExampleInput:8 8\r\n........\r\n........\r\n...x.xx.\r\n...xxx..\r\n..xxx...\r\n..x.xxx.\r\n..x...x.\r\n.xxx..x.\r\n5\r\n6 6 4 3 1Output:........\r\n........\r\n........\r\n........\r\n.....x..\r\n..xxxx..\r\n..xxx.x.\r\n..xxxxx.",
+  "sample_input": "Input:8 8\r\n........\r\n........\r\n...x.xx.\r\n...xxx..\r\n..xxx...\r\n..x.xxx.\r\n..x...x.\r\n.xxx..x.\r\n5\r\n6 6 4 3 1Output:........\r\n........\r\n........\r\n........\r\n.....x..\r\n..xxxx..\r\n..xxx.x.\r\n..xxxxx.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RELJEF",
+  "scraped_at": "2025-08-17 00:33:16",
+  "test_cases": [
+    {
+      "input": "8 8\r\n........\r\n........\r\n...x.xx.\r\n...xxx..\r\n..xxx...\r\n..x.xxx.\r\n..x...x.\r\n.xxx..x.\r\n5\r\n6 6 4 3 1",
+      "expected_output": "........\r\n........\r\n........\r\n........\r\n.....x..\r\n..xxxx..\r\n..xxx.x.\r\n..xxxxx.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 2\newkrwolqw\nfltmoqqar\nszul\ngpbint\nmzkwr\nzu\nxiy\nmwf\n1\n3 10 4 1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 9\nsansynqirorzf\ndhpbkkfqmz\nttwfwrlhas\narawaimhtdllo\najsvw\ndzohmstvvpeaoeam\nyhbzzcoqzbo\njhngjudfnbdcalrz\n2\n9 5 4 2 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2\npo\nggvidpowhwhhjbz\nrgvgeppaa\nhqfqnhogi\nwhsjutiyadci\ngspohfh\nld\nicbdvgikfokq\n3\n2 2 10 6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "60 29\nffpbywggyrefsx\nghcpnpirm\nsmoep\ntchjvp\nyxfgg\ndawtovtuwpk\nycknoiqvunftbmc\nsly\n46\n23 43 93 24 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "57 21\nqruwydhzaq\ncnfhtriwji\nfiotzlm\njkoxlreymysfxwz\nfoyvffpe\nqhhawkaw\npbpoxwyssenpl\nbzqv\n31\n72 41 42 12 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "64 82\nlfeloymjmglghcdt\nvpnojuk\nvuuxd\nxgsnhkambd\nvvtvesvyo\nviubv\npmts\nd\n56\n32 24 71 52 78",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 74\nnuxpjmbtlaxzda\ntpcrpbqlipncjsv\nksmjojdyw\nbhwteocinesouekk\nxnnhbauddqidhukd\nhazkiilyoyqibt\nxwwlcljvfqsd\nfzthctwwomzglbcf\n83\n3 97 23 80 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 59\ncrfrxfclrtovszcz\nsbrfffupl\nnbgobopotrmizs\nizkmfivkuoz\nttswptxhws\newv\nkycgfx\nn\n72\n50 14 100 52 95",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 23\nbelc\nqfipglbdt\nrexyqioiawh\ntdudsfzu\nxldikdd\nwtpeazuetwth\nfi\nfl\n38\n26 6 15 44 15",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46 10\nxkkr\nskboia\ngcm\nnhr\npmhho\nswdzcd\nf\nlizfgaeureyqxiab\n28\n30 18 8 38 15",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 46\nytdvvobakny\niqajuuynknvo\nilcte\nimdodhgnvtscw\nlecunodbrlr\nuerrhu\nvgiwhlroxiejjv\nyfliityw\n36\n36 24 46 33 15",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "42 29\ncdu\nf\nsmkfaklltuvokwq\ntnavgizxmjzlt\ne\ns\nfoticvyvdcdlf\npyxovxtgkgizp\n25\n6 43 49 12 27",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 43\nyk\nmd\nd\nyallk\nkkpeiheuqqwszye\ntbiizigp\nscnmlbxfcozpzm\nzniqehvnrcxqpm\n7\n16 16 7 19 22",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 46\nqdkbbpy\nn\nlzmjwllp\nxxtq\nwgaayarhncwya\nfxukpqo\nkjhk\njvjcwhuwerg\n35\n27 36 24 28 35",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 47\ncowrskhinjqcsuii\nsiuvozzoeucgd\ntsrzdouibkgkki\nmrqps\nvhjlydfjas\nebvnjjiqzvzfhf\nkmklxn\ncaeumreryb\n17\n45 29 48 31 22",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100\nygbdtumdiatmzohr\ny\nursnskclos\nkfpxqg\npjdqftetnyod\noiuolc\nsgxf\ne\n100\n100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100\nltvzqw\nalpcdo\ncrkyrrrwbjmrmh\namuhdpralsu\nydejnuuv\nhjujgqh\nhmhcflruhipj\nifyckwloisgnrcx\n100\n100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1\nrmrydfeyrv\nfcegeukoq\nkceqznfaqfm\nujpok\nvyao\nrkehqifxbmx\nfjbqzcklqi\ngngxncrku\n100\n100 2 100 100 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 99\nlsn\nmgavefygirboud\nmmcqrvmzc\niuahxyrujcnau\nnohudgrg\nzyejkcwomodzodw\nveafyuy\nudecbpycsxekl\n99\n99 1 1 1 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:47",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "HELPER",
+  "tags": [],
+  "text": "It's unbelievable, but an exam period has started at the OhWord University. It's even more unbelievable, that Valera got all the tests before the exam period for excellent work during the term. As now he's free, he wants to earn money by solving problems for his groupmates. He's made alistof subjects that he can help with. Having spoken withnof his groupmates, Valera found out the following information about them: what subject each of them passes, time of the exam and sum of money that each person is ready to pay for Valera's help.Having this data, Valera's decided to draw up a timetable, according to which he will solve problems for his groupmates. For sure, Valera can't solve problems round the clock, that's why he's found for himself an optimum order of day and plans to stick to it during the whole exam period. Valera assigned time segments for sleep, breakfast, lunch and dinner. The rest of the time he can work.Obviously, Valera can help a student with some subject, only if this subject is on thelist. It so happens, that all the students, to whom Valera spoke, have different, but one-type problems. Valera can solve any problem of subjectlistiintiminutes.Moreover, if Valera starts working at some problem, he can break off only for sleep or meals, but he can't start a new problem, not having finished the current one. Having solved the problem, Valera can send it instantly to the corresponding student via the Internet.If this student's exam hasn't started yet, he can make a crib, use it to pass the exam successfully, and pay Valera the promised sum. Since Valera has little time, he asks you to write a program that finds the order of solving problems, which can bring Valera maximum profit.InputThe first line contains integersm,n,k(1 ≤m,n≤ 100, 1 ≤k≤ 30) — number of subjects on thelist, number of Valera's potential employers and the duration of the exam period in days.The followingmlines contain the names of subjectslisti(listiis a non-empty string of at most 32 characters, consisting of lower case Latin letters). It's guaranteed that no two subjects are the same.The (m+ 2)-th line containsmintegersti(1 ≤ti≤ 1000) — time in minutes that Valera spends to solve problems of thei-th subject. Then follow four lines, containing time segments for sleep, breakfast, lunch and dinner correspondingly.Each line is in format H1:M1-H2:M2, where 00 ≤ H1, H2 ≤ 23, 00 ≤ M1, M2 ≤ 59. Time H1:M1 stands for the first minute of some Valera's action, and time H2:M2 stands for the last minute of this action. No two time segments cross. It's guaranteed that Valera goes to bed not before midnight, gets up earlier than he has breakfast, finishes his breakfast before lunch, finishes his lunch before dinner, and finishes his dinner before midnight. All these actions last less than a day, but not less than one minute. Time of the beginning and time of the ending of each action are within one and the same day. But it's possible that Valera has no time for solving problems.Then follownlines, each containing the description of students. For each student the following is known: his exam subjectsi(siis a non-empty string of at most 32 characters, consisting of lower case Latin letters), index of the exam daydi(1 ≤di≤k), the exam timetimei, and sum of moneyci(0 ≤ci≤ 106,ci— integer) that he's ready to pay for Valera's help. Exam timetimeiis in the format HH:MM, where 00 ≤ HH ≤ 23, 00 ≤ MM ≤ 59. Valera will get money, if he finishes to solve the problem strictly before the corresponding student's exam begins.OutputIn the first line output the maximum profit that Valera can get. The second line should contain numberp— number of problems that Valera is to solve. In the followingplines output the order of solving problems in chronological order in the following format: index of a student, to whom Valera is to help; index of the day, when Valera should start the problem; time, when Valera should start the problem (the first minute of his work); index of the day, when Valera should finish the problem; time, when Valera should finish the problem (the last minute of his work). To understand the output format better, study the sample tests.ExamplesInput:3 3 4\r\ncalculus\r\nalgebra\r\nhistory\r\n58 23 15\r\n00:00-08:15\r\n08:20-08:35\r\n09:30-10:25\r\n19:00-19:45\r\ncalculus 1 09:36 100\r\nenglish 4 21:15 5000\r\nhistory 1 19:50 50Output:150\r\n2\r\n1 1 08:16 1 09:29\r\n3 1 10:26 1 10:40Input:2 2 1\r\nmatan\r\ncodeforces\r\n1 2\r\n00:00-08:00\r\n09:00-09:00\r\n12:00-12:00\r\n18:00-18:00\r\ncodeforces 1 08:04 2\r\nmatan 1 08:02 1Output:3\r\n2\r\n2 1 08:01 1 08:01\r\n1 1 08:02 1 08:03Input:2 2 1\r\nmatan\r\ncodeforces\r\n2 2\r\n00:00-08:00\r\n09:00-09:00\r\n12:00-12:00\r\n18:00-18:00\r\ncodeforces 1 08:04 2\r\nmatan 1 08:03 1Output:2\r\n1\r\n1 1 08:01 1 08:02",
+  "sample_input": "Input:3 3 4\r\ncalculus\r\nalgebra\r\nhistory\r\n58 23 15\r\n00:00-08:15\r\n08:20-08:35\r\n09:30-10:25\r\n19:00-19:45\r\ncalculus 1 09:36 100\r\nenglish 4 21:15 5000\r\nhistory 1 19:50 50Output:150\r\n2\r\n1 1 08:16 1 09:29\r\n3 1 10:26 1 10:40",
+  "sample_output": "Input:2 2 1\r\nmatan\r\ncodeforces\r\n1 2\r\n00:00-08:00\r\n09:00-09:00\r\n12:00-12:00\r\n18:00-18:00\r\ncodeforces 1 08:04 2\r\nmatan 1 08:02 1Output:3\r\n2\r\n2 1 08:01 1 08:01\r\n1 1 08:02 1 08:03",
+  "link": "https://www.spoj.com/problems/HELPER",
+  "scraped_at": "2025-08-17 00:33:54",
+  "test_cases": [
+    {
+      "input": "3 3 4\r\ncalculus\r\nalgebra\r\nhistory\r\n58 23 15\r\n00:00-08:15\r\n08:20-08:35\r\n09:30-10:25\r\n19:00-19:45\r\ncalculus 1 09:36 100\r\nenglish 4 21:15 5000\r\nhistory 1 19:50 50",
+      "expected_output": "150\r\n2\r\n1 1 08:16 1 09:29\r\n3 1 10:26 1 10:40",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 2 1\r\nmatan\r\ncodeforces\r\n1 2\r\n00:00-08:00\r\n09:00-09:00\r\n12:00-12:00\r\n18:00-18:00\r\ncodeforces 1 08:04 2\r\nmatan 1 08:02 1",
+      "expected_output": "3\r\n2\r\n2 1 08:01 1 08:01\r\n1 1 08:02 1 08:03",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "9 8 10\nqcfzpcpc\ndpfou\ntwlbrhpxmoiw\n8 5 7\n3 6 10 10\nqonplfot\n9 9 9 6\nwchyfu\n6 9 8 1\nrrhat\n10 3 6 8\noktjltshfxn\n8 10 1 7\ndbxo 2 dkjqb 9\n6 10 2 2\nu 6 jp 7\n5 1 7 4\npb 3 zmd 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 10 1\nugziwcjrvbrk\npcrywjjqxogimx\nvefjuoaggoggmj\n5 8 7\n6 7 3 3\ndjgyb\n1 8 9 9\ncsbptot\n5 7 5 9\nalkgkkqfa\n4 8 9 9\nlbffadx\n6 1 9 8\no 9 h 3\n7 4 10 4\nql 6 ic 3\n4 6 3 1\nzj 7 tjf 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 10 1\nlaiucqufiymtsox\nbzxjumc\nucoxidgljzrsm\n7 2 1\n4 7 3 3\nonnnest\n6 1 8 7\ntxszubgd\n5 7 7 1\nxnkryihycvnjhma\n9 5 10 3\niwykbbeosu\n8 1 2 4\nmdnfc 10 okr 1\n4 8 3 2\nfqxbjrp 5 j 9\n7 10 3 2\ngprhvp 3 ci 2",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "81 31 50\nngdlm\nzlseub\noiggotwdk\n29 88 21\n85 38 2 53\nfokddxitkrbhmmlxeb\n93 94 90 70\nszdvuopx\n22 94 18 40\nmjgzgtbsawxklkxn\n30 64 86 83\niqubkujmhfiu\n84 18 68 84\npifsrh 31 utw 62\n20 33 97 50\nuvbw 49 a 23\n38 16 97 47\nhgd 43 hbm 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 42 16\nou\nphygcquqhhtqu\nufhud\n66 55 23\n3 99 40 77\nbpjbisljunswgsoi\n31 16 53 61\ntvpkgcawdfrcixh\n78 51 36 31\njbs\n93 63 73 84\nsvqsujtzfxss\n38 76 15 75\npmfgnbwm 42 qisxv 38\n95 71 55 86\nqjqfcn 98 sw 64\n74 23 74 68\nszwyj 91 jj 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "63 37 72\nbjufepcu\np\nsgpoojbcqbo\n25 22 62\n24 87 10 3\nwoyefsnxcwmcnllfd\n78 71 44 97\nmtksiuzcelyrkdj\n76 20 51 37\nfkscpna\n64 34 65 75\nnvfkszfite\n68 70 21 78\ndkza 50 aq 5\n13 99 96 95\njgsri 39 g 53\n16 100 42 91\nt 93 zqo 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 62 56\nptydcxocevjjwa\nbuvtjsbcucis\noraidaljjvndw\n40 52 37\n11 88 62 44\nmepwqizf\n90 48 46 30\naahqsmocxkeokrgwm\n59 2 70 97\nfmznuaofkmzj\n80 43 27 84\nwzivtlinm\n25 27 73 2\nnqvu 47 i 52\n12 18 49 35\nmypdejr 84 gi 8\n81 32 63 41\nchvuoqq 28 vpxfm 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "80 44 3\naqymetfgpwanazw\nnbybgnzhqbzfc\nraogqkkceyfy\n32 68 39\n85 36 95 63\nbti\n45 72 18 57\nssffdydmpaskvqzjqfu\n65 14 77 82\ntruakbmw\n15 35 2 27\nzm\n59 11 72 90\nmkgn 40 ntmz 83\n34 42 67 76\nccxfm 3 uw 32\n100 20 92 79\nlao 61 l 78",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 12 47\nkielgzfhpovus\ntpdrqopisocd\nukamsjhgjx\n46 42 44\n10 49 5 27\nsmierylsg\n48 48 5 11\nsoz\n12 28 6 5\nwuwfieiapgvic\n24 10 29 11\nkcktdfxkmlwnsmoz\n10 7 5 47\nltkqut 35 rqg 41\n34 47 44 40\nnvyjot 32 v 33\n23 26 6 10\ntrws 45 exmbs 49",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 43 20\noly\nojnqeu\nny\n41 23 15\n5 45 49 41\ncgxgnqy\n49 27 14 41\nkpnrimsjcnl\n20 11 12 17\njptuzanqwjxunhc\n13 6 40 5\ndjuyktwagovqqm\n29 27 31 21\ndtvclu 19 avr 30\n12 22 9 49\nzftz 14 mseyw 48\n46 23 42 41\nmtzawd 42 bjxz 21",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "25 38 13\no\neqdkgu\nmnophcm\n27 46 49\n8 15 39 18\nupicfaaeemjwngk\n11 43 39 29\ntku\n45 11 38 15\nysk\n23 48 50 29\nbm\n50 5 7 18\nqqdcoga 28 nyvh 33\n45 15 40 6\ncvjc 48 dbv 43\n15 5 35 34\njuod 28 eypzw 24",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "40 14 25\nmhdjyjz\nrnrrcpfmhspeu\nflivbhq\n32 40 22\n41 5 42 40\njpcnb\n24 35 17 35\nbvhlb\n16 28 33 23\naqvwtj\n6 37 16 33\ntpfgegkgnflu\n8 25 43 11\ny 20 qk 13\n47 45 38 7\nky 43 llz 25\n44 37 10 37\nnpjxuh 48 w 22",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "42 14 50\nsqmbepg\nezdgyptqqmx\nmcixnnzrjwpi\n32 27 46\n45 43 39 11\nxquh\n7 10 46 22\neuwmerlaelxrycriwn\n5 42 46 15\nmljd\n10 43 11 11\nwzvqgupiuqouzoil\n41 15 42 23\nl 11 r 37\n48 21 11 49\nl 5 w 17\n25 34 16 10\ne 32 odc 35",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "44 14 22\nd\ninuuryez\nsiuckwbmydjye\n12 16 16\n7 40 49 22\nxmhzjldomx\n13 30 42 38\nzgxjdg\n50 5 15 48\nblektr\n9 39 32 39\ncaqjyu\n6 9 45 39\nfupuiing 17 swkb 7\n14 28 24 15\nwp 17 flhwh 9\n41 10 23 49\nhv 31 ycvv 21",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "44 39 9\nuph\ncydkalitxtrcd\nw\n39 9 11\n43 12 21 24\nqpbh\n44 44 47 9\neejpktzkhgwltkpwloc\n31 37 17 9\nmrwelrmqrrycrrwvrmsk\n15 20 43 40\nvjskyunfeebi\n11 43 16 25\nn 29 rfnad 22\n8 16 33 36\nua 20 pbmmk 22\n8 11 34 14\ne 17 om 10",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100\nigfvzdxbfulcjhya\nyskxluuei\nnr\n100 100 100\n100 100 100 100\ntocjlr\n100 100 100 100\nhhsgzx\n100 100 100 100\nci\n100 100 100 100\npc\n100 100 100 100\nuaxdydtl 100 p 100\n100 100 100 100\nbpkj 100 vvoom 100\n100 100 100 100\nwegjx 100 k 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100\nuuvqi\nsdiy\nqyrpnbksvoqsz\n100 100 100\n100 100 100 100\nwbevc\n100 100 100 100\nfsimclkrzln\n100 100 100 100\niwygbxycalrcdzeipcs\n100 100 100 100\nijmfdahjop\n100 100 100 100\ngqvbdfxa 100 u 100\n100 100 100 100\nztz 100 sxlif 100\n100 100 100 100\npi 100 qfua 100",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 99 100\nakiuk\nkwokgcqqvt\ngrbalclzgy\n1 2 2\n2 99 99 100\nmoeuwkwvdxw\n1 100 99 2\nvufzaygfdcpr\n2 99 2 100\nmx\n1 1 100 99\ngvyeh\n99 2 2 1\nlmfp 99 iilit 100\n99 2 2 99\nkzrwjpi 99 mooi 1\n2 99 2 100\nehmqadx 99 jpy 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

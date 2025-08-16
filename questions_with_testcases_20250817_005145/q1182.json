@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Tours",
+  "tags": [],
+  "text": "Facebook Headquarters - a mysterious, intimidating place, full of magical code and trade secrets. If outsiders were ever to breach the walls of the compound, which are protected by a legion of security guards and, more importantly, security foxes, the entire company could well be brought to its knees!Actually, wait, tours of the place are given regularly...The compound consists of $N$ ($1 \\leq N \\leq 10^5$) buildings, with $M$ ($1 \\leq M \\leq 10^6$) walkways running amongst them. The $i$th walkway connects buildings $A_i$ and $B_i$ ($1 \\leq A_i,B_i \\leq N$, $A_i \\neq B_i$), and no two buildings are directly connected by more than one walkway. There are no other ways to move from building to building.Over a period of $D$ ($1 \\leq D \\leq 10^6$) days, some events will occur at the Headquarters daily. One of two types of events will happen on the $i$th day, indicated by the value of the character $E_i$. If $E_i=$ \"T\" then a tour will take place - otherwise, $E_i=$ \"S\", and a security sweep of a building will take place.If a tour is given on the $i$th day, visitors will enter the compound at building $X_i$, and leave from building $Y_i$ ($1 \\leq X_i,Y_i \\leq N$, $X_i \\neq Y_i$). If it turns out that these two buildings are not actually connected by any sequence of walkways, then the tour will be cancelled, and the unfortunate visitors will be given Facebook T-shirts and promptly kicked out. Otherwise, a large number of groups of people will be led from building $X_i$ to building $Y_i$ along various routes. No route will involve travelling along the same walkway multiple times (even in different directions), but a route might revisit the same building repeatedly, including buildings $X_i$ and $Y_i$. Along the way, some visitors will inevitably get \"lost\", and fail to rejoin their tour group. How many of them will get away with this will depend on the security levels that day, but it's safe to say that, in total, $O_i$ ($1 \\leq O_i \\leq 1000$) new outsiders will be left behind in each building which could possibly be part of any valid tour route from building $X_i$ to building $Y_i$. Good thing they'll no doubt have brought cameras to amuse themselves with while they wait to be found.On the other hand, if a security sweep is conducted on the $i$th day, then the security guards (and foxes) will carefully search building $Z_i$ ($1 \\leq Z_i \\leq N$) for any trespassers remaining from previous tours, who will be kindly escorted out of the Headquarters (after being given Facebook T-shirts for the road, of course).Because this company likes to collect data about everything, you've been hired to record how many outsiders were found in each sweep. However, to make things more interesting, you'll instead simply write a program to predict these values based on the map of the compound and the schedule of events!InputLine 1: 1 integer, $T$ ($1 \\leq T \\leq 20$), the number of test casesFor each test case:Line 1: 3 integers, $N$, $M$, and $D$Next $M$ lines: 2 integers, $A_i$ and $B_i$, for $i=1..M$Next $D$ lines: 1 character, $E_i$, followed by the three integers $X_i$, $Y_i$, and $O_i$ if $E_i=$ \"T\", or the single integer $Z_i$ if $E_i=$ \"S\", for $i=1..K$OutputFor each test case:1 integer, the total number of people escorted out of the compound, modulo $10^9+7$ExampleInput:16 5 91 22 33 44 55 3T 1 2 5T 5 6 1000S 2S 6T 2 3 1T 5 3 14S 1S 2S 4Output:26Explanation of Sample:On the first day, a tour is given from building 1 to building 2. The only valid route consists of simply crossing the walkway between these two buildings. As such, by the end of the day, 5 outsiders are left hiding in each of buildings 1 and 2.On the second day, the planned low-security tour unfortunately cannot take place, due to no routes existing between buildings 5 and 6. Facebook should probably hire some new tour planners, as well as architects.On the following two days, security sweeps of buildings 2 and 6 are carried out, with 5 and 0 outsiders found and removed, respectively.On the fifth day, a tour is given from building 2 to building 3. There are exactly three valid routes, passing through buildings 2-3, 2-3-4-5-3, and 2-3-5-4-3. As such, one new outsider remains behind in each of buildings 2, 3, 4, and 5.On the sixth day, a tour is given from building 5 to building 3. There are exactly two valid routes, passing through buildings 5-3 and 5-4-3. As such, 14 new outsiders take up residence in each of buildings 3, 4, and 5.Finally, security sweeps of buildings 1, 2, and 4 are conducted, evicting 5, 1, and 15 people, respectively. In total, then, 5+0+5+1+15=26 people will have been escorted out of the compound, which is still 26 when taken modulo $10^9+7$. Following these events, buildings 3 and 5 still contain 15 outsiders, while the others contain none.",
+  "sample_input": "Input:16 5 91 22 33 44 55 3T 1 2 5T 5 6 1000S 2S 6T 2 3 1T 5 3 14S 1S 2S 4Output:26",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FBTOURS",
+  "scraped_at": "2025-08-17 00:33:28",
+  "test_cases": [
+    {
+      "input": "16 5 91 22 33 44 55 3T 1 2 5T 5 6 1000S 2S 6T 2 3 1T 5 3 14S 1S 2S 4",
+      "expected_output": "26",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 5 10 6 2 5 2 9 9 4 6 9 4 7 2 6 9 8 4 1 8 1 2 1 2\n2 4 2 6 8 3 1 wmk 5 7 uxkj 8 5 pib f mnp 7 6 wapx 2 7 hn fvvkz ujq 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 3 8 10 5 1 8 9 2 1 7 2 9 8 10 7 7 2 9 3 4 10 7 4 7\n2 2 1 5 6 4 1 fbssx 7 4 ppole 5 10 ajs oz vlb 5 5 krxxy 4 6 q g kdcfv 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 10 10 4 4 6 3 5 1 5 1 2 1 9 4 10 8 5 10 3 7 4 9 9 1\n8 3 3 1 7 5 6 zf 3 2 jrsdf 8 4 zx xuxv coqyz 7 6 f 2 10 ow bdgn l 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "69 90 24 70 6 94 14 93 32 19 57 36 44 28 67 80 89 96 71 32 18 27 66 8 99\n43 51 56 33 75 88 100 dyg 36 2 umx 8 58 xs wvv mql 17 86 dpy 12 91 cwbea xlo oti 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 40 57 54 16 96 91 85 62 42 11 22 64 71 54 93 62 27 35 70 52 35 54 74 54\n41 35 16 87 57 85 24 ry 13 38 bqnq 81 87 jv u c 83 32 ipk 5 29 zow eh t 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 11 25 100 54 18 6 39 11 41 60 14 70 24 79 44 53 13 44 43 71 39 15 43 39\n62 64 22 30 62 11 35 knq 72 33 fr 14 72 s oql m 26 60 mo 23 28 fwbm v sanxf 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 89 82 83 20 93 98 21 79 27 41 23 35 40 87 99 41 33 20 52 35 87 29 17 1\n72 95 24 47 73 25 80 ygs 79 58 cq 65 1 yr n lunbl 55 70 bwd 7 54 muuot wieft cv 89",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 2 5 71 36 34 61 56 78 46 29 22 25 3 19 91 43 45 94 44 86 84 73 54 60\n12 18 88 59 75 89 12 ioazl 23 20 j 51 78 mbe mq vvjd 22 74 zs 77 73 w gfiy h 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "222 441 163 293 269 487 128 266 364 140 194 362 243 271 129 495 473 194 180 491 88 428 118 306 181\n335 173 235 350 304 138 299 kpaby 88 287 yo 123 140 kfng xtzn pdeqi 85 474 a 239 461 ptw hofih gcpt 493",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122 153 237 257 183 97 490 385 257 380 478 467 177 281 328 295 107 372 294 444 297 296 493 480 455\n281 223 71 443 153 441 282 gxc 66 314 hj 389 277 gjz dtpw kdsqf 106 435 boowo 414 293 pfq fo ttxl 294",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "459 335 175 302 344 370 440 428 301 436 380 346 156 270 379 57 445 56 279 364 80 374 299 99 122\n308 187 498 481 155 132 384 zsobp 499 280 p 112 125 ewlo mh gym 281 229 bx 197 190 s qmg a 480",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "71 309 112 73 183 255 380 251 68 391 485 303 438 424 284 144 172 115 495 66 493 261 432 163 288\n427 109 397 135 290 104 469 pltxu 263 349 b 281 247 yjnwh zks zt 417 380 smu 128 157 x wwmco occt 153",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "280 416 120 113 228 481 125 280 453 314 479 383 298 478 145 207 369 190 309 401 403 410 90 255 92\n458 319 460 461 479 204 89 v 205 389 ckdtv 143 297 sivi vykht xkb 116 440 oqym 466 471 j fzx g 294",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "117 362 64 227 423 401 185 390 238 167 363 210 122 362 369 264 134 483 334 197 486 149 457 334 228\n500 346 54 371 369 172 483 iq 286 76 rgxe 418 173 jtsk tcmjr bd 383 55 zakb 479 453 lnz iphmv gf 432",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "146 375 256 315 91 292 117 318 275 62 434 120 209 452 64 217 216 286 50 221 316 265 272 142 79\n325 239 147 352 259 224 252 zhudz 117 434 bbd 261 495 dn mrfso a 66 145 zyzbv 337 123 ejci x me 378",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 xkoy 1000 1000 phsv 1000 1000 iq j rzwt 1000 1000 akrny 1000 1000 pschz fcr q 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 vyjvp 1000 1000 ey 1000 1000 zk ly d 1000 1000 qp 1000 1000 vjma lp xpuxl 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 999 999 2 1 2 1 999 1000 999 999 2 1 2 1000 1000 999 2 2 2 999 999 1 999\n1000 2 2 999 1000 2 999 gbzfw 2 2 szxzw 1 1 oood ybthq q 999 1 wwia 2 2 kmybr gk jzljl 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999 999 1000 2 999 1 2 999 999 1000 2 1000 2 1 1000 1 999 2 999 2 1000 1 1 1000\n999 1 2 1000 1 999 2 dll 999 1 zon 1000 1000 tzrba qj hqlg 999 2 ut 999 2 terb qodw ccqzq 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:49",
+  "total_test_cases": 20
+}

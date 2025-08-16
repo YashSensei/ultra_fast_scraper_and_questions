@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Bipartite Permutation (Hard)",
+  "tags": [],
+  "text": "Given a positive integerN, consider any permutation of all the numbers from1toN. It is required to create two partitions,P1andP2, from these numbers such that|sum(P1) – sum(P2)|is minimum, wheresum(X)denotes the summation of all the numbers in partitionX. A partition is defined to be a non-empty subset of the permutation. In other words, find the minimum absolute difference between the summation of all the numbers in each partition. Note that you cannot leave out any number, every number from1toNmust be part of exactly one partition.To add a little bit more of spice, also find the lexicographically smallest partitionP1such that|sum(P1) – sum(P2)|is minimum. To make your life easier, you don’t need to output the entire sequence, only the hash of the sequence as computed by the function below would suffice.def sequence_hash(sequence, B, M):\r\n   result = 0\r\n   for number in sequence:\r\n       result = (result * B + number) % M\r\n\r\n   return resultInputThe first line contains an integerT, denoting the number of test cases. Each of the next subsequentTlines contain three positive integers,N,BandM.Constraints1 ≤ T ≤ 10002 ≤ N ≤ 109N < B ≤ 1091 ≤ M ≤ 109OutputFor each test case, first print the case number followed by the minimum absolute difference and the hash of the lexicographically smallest partitionP1.ExampleInput:12\r\n2 10 1000000000\r\n3 10 1000000000\r\n4 10 1000000000\r\n5 10 1000000000\r\n6 10 1000000000\r\n7 10 1000000000\r\n8 10 1000000000\r\n9 10 1000000000\r\n1000 1000000000 1000000\r\n1000000 1003001 998244353\r\n123456789 987654321 666666667\r\n444444444 666666666 888888888Output:Case 1: 1 1\r\nCase 2: 0 12\r\nCase 3: 0 14\r\nCase 4: 1 124\r\nCase 5: 1 1234\r\nCase 6: 0 1247\r\nCase 7: 0 12348\r\nCase 8: 1 123457\r\nCase 9: 0 1000\r\nCase 10: 0 553178755\r\nCase 11: 1 214459309\r\nCase 12: 0 557434257ChallengeDon't like challenges? Try the easier version here:Bipartite Permutation",
+  "sample_input": "def sequence_hash(sequence, B, M):\r\n   result = 0\r\n   for number in sequence:\r\n       result = (result * B + number) % M\r\n\r\n   return result",
+  "sample_output": "Input:12\r\n2 10 1000000000\r\n3 10 1000000000\r\n4 10 1000000000\r\n5 10 1000000000\r\n6 10 1000000000\r\n7 10 1000000000\r\n8 10 1000000000\r\n9 10 1000000000\r\n1000 1000000000 1000000\r\n1000000 1003001 998244353\r\n123456789 987654321 666666667\r\n444444444 666666666 888888888Output:Case 1: 1 1\r\nCase 2: 0 12\r\nCase 3: 0 14\r\nCase 4: 1 124\r\nCase 5: 1 1234\r\nCase 6: 0 1247\r\nCase 7: 0 12348\r\nCase 8: 1 123457\r\nCase 9: 0 1000\r\nCase 10: 0 553178755\r\nCase 11: 1 214459309\r\nCase 12: 0 557434257",
+  "link": "https://www.spoj.com/problems/BPM2",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "def sequence_hash(sequence, B, M):\r\n   result = 0\r\n   for number in sequence:\r\n       result = (result * B + number) % M\r\n\r\n   return result",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "12\r\n2 10 1000000000\r\n3 10 1000000000\r\n4 10 1000000000\r\n5 10 1000000000\r\n6 10 1000000000\r\n7 10 1000000000\r\n8 10 1000000000\r\n9 10 1000000000\r\n1000 1000000000 1000000\r\n1000000 1003001 998244353\r\n123456789 987654321 666666667\r\n444444444 666666666 888888888",
+      "expected_output": "Case 1: 1 1\r\nCase 2: 0 12\r\nCase 3: 0 14\r\nCase 4: 1 124\r\nCase 5: 1 1234\r\nCase 6: 0 1247\r\nCase 7: 0 12348\r\nCase 8: 1 123457\r\nCase 9: 0 1000\r\nCase 10: 0 553178755\r\nCase 11: 1 214459309\r\nCase 12: 0 557434257",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "jwpwo acyxyatpeefqoaqwjsbqsyx j ewle\n6\no psuf 7\nuwo wli brpni zey\nr xdfac jxmrx msfm rx q plcgqv trod zicjz\najlvr dtia",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "h kwdva yre tku\n4\nbbxgzw kwbr 2\nke jnnc b momeoynfw\noafz qp bqqs cqib ymck sjdxs hlgpqiw gz a\nst twneu",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "subqd fwkdgrzwkdlgnyjmfvyxcx bwxdy tltb\n2\nxpvbhf oyjm 9\ncv poq psci tiwmhyc\npslxjb lbdud moehj b cy oqi xksdtod tf gddbe\nfx ayr",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "su csckmylakypctj pxfjt tdbo\n61\ndz bgdmt 91\npqtw n bofzg dghkai\noyjhoz pdf ysbrd fv hqpmp cb odybap cc kn\npmwa lkpiar",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "la fnlvxnsjq qgd qiqea\n50\nioc pxa 20\nemxs dhli nv hsa\ngpssav zcgl fgugyol wc ju r lzxo vtyba raru\nonft ci",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "n aspxxwqsyrxmrquylqvatx oysku lit\n71\nzitr gbhr 74\nkea pywbhz wtmqc lk\nhwxgi c zrvcpj zm pwngh fm azt ju gpnow\nb pdlrhk",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "pl tilpawjoeuhahrkebjo y r\n72\nck rwgz 37\nnkx c at viznsw\nqirmr ddm ytc n bvhzh c gflncjl wwmav uc\naj xf",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "nw kwlck ukb hv\n24\nw umqcd 76\nfnjlv yyl xosm t\nrfxum x c b bl ib qflbta wdlx avw\nsst lpjzvc",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "c xgzj s s\n9\nz o 31\nvs ivgoy eo cnopdwck\naio ixkdp xtv zfi kbly d mwo bnsfe g\ndivhx c",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pu vrkqjrqwh u jvlex\n54\nhggwsg gma 14\nw f xdjx ucxkpv\nwvebi hud udgh n ptt p m iwuom n\nf xlfkmf",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "kg jjucsztmxfhzamy ydl pdph\n23\no i 15\npgq azmu we mp\ne rxgga u lvzfu bt lstu bw wfzym u\ntzztdu sknf",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xn mcxcyxutk b k\n15\nb cfci 42\nqebi j wot hjfbqxvp\nvsca tgmln umiktlv p lbpby zmo yahpeu nomf yral\nfqxos jnxdvt",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "yoau egyjc ycun awwjh\n30\nao pl 29\ncnwd sedv jbbff twbeize\ntdsvey g ebvl m ai p bkmmk xmc wu\nmlo ad",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "z xzvjfqswactm w kixx\n8\nhrg pe 10\nvhtzo b afffc czho\nptxa xf vdtiikc tpvqu opck fmv ke sect k\nx uhbaop",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mi vn iv od\n45\ndskf rt 50\noq yeig tqa edzkc\nzjkgy xmzf frysb rus qow i kul hqe lq\nnlo tbiou",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pc mvudekc bbnrr xnd\n109\nmabh pugg 109\nisis iokp sgbxn uo\ngcxgu fwf g fegkn uverd qrfcq suqlnes hvdc xml\ndcib wrwty",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "sylx rrp lie dvez\n109\nv cnr 109\nger c so m\nd qi yzdvwl wq vv a moiiq upk oucq\ntmrfj dfcj",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "h vtputdxxheztnuljbpfkwcl mu tngr\n108\nzzjp soehf 2\ng xoow s bhvw\ngbqmrx cocgq hchou pgw siat umr rfd hpgv yjp\nhoqelc myj",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:54",
+  "total_test_cases": 20
+}

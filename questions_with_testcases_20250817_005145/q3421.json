@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Burrows Wheeler Precompression",
+  "tags": [],
+  "text": "TheBurrows-Wheeler transform(BWT, also calledblock-sorting compression), is an algorithm used in data compression techniques such as bzip2. It was invented by Michael Burrows and David Wheeler.When a character string is transformed by the BWT, none of its characters change value. The transformation permutes the order of the characters. If the original string had several substrings that occurred often, then the transformed string will have several places where a single character is repeated multiple times in a row. This is useful for compression, since it tends to be easy to compress a string that has runs of repeated characters by techniques such as move-to-front transform and run-length encoding.For example, the string:SIX.MIXED.PIXIES.SIFT.SIXTY.PIXIE.DUST.BOXEScould be transformed into this string, which is easier to compress because it has many repeated characters:TEXYDST.E.IXIXIXXSSMPPS.B..E.S.EUSFXDIIOIIITNow the Burrows-Wheeler algorithm works as follows:Given an input stringS, eg: \"abcba\".Find all rotations ofS.eg: \"abcba\", \"bcbaa\", \"cbaab\", \"baabc\", \"aabcb\"Now sort the strings hence produced.eg: \"aabcb\", \"abcba\", \"baabc\", \"bcbaa\", \"cbaab\"Arrange the strings in a len(S) x len(S) grid.aabcb\r\nabcba\r\nbaabc\r\nbcbaa\r\ncbaabOutput the row number (1-based indexing) containing the original input string. Also output the strings formed by characters in the last column.eg: 2 bacabNow given the output of Burrows-Wheeler, can you recover the orginal string?Input Format:The input file consists of multiple testcases.The first line of each testcase contains one integer,R, indicating the row number containing the original input string in the sorted matrix.The second line of each testcase contains one string,Col, which is the last column of the grid. (1 <= len(Col) <= 1000)Colcontains only lowercase characters. 1 <=R<= len(Col).Input terminates with a line containing R=0 which must not be processed.Output Format:Print the original input string to the burrow wheeler's algorithm.Testdata:30 testcasesSample Input:2\r\nbacab\r\n3\r\nrwlb\r\n11\r\nbaaabaaaabbbaba\r\n0Sample Output:abcba\r\nrbwl\r\nbaaabbbbaaaaaab",
+  "sample_input": "SIX.MIXED.PIXIES.SIFT.SIXTY.PIXIE.DUST.BOXES",
+  "sample_output": "TEXYDST.E.IXIXIXXSSMPPS.B..E.S.EUSFXDIIOIIIT",
+  "link": "https://www.spoj.com/problems/BWHEELER",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "SIX.MIXED.PIXIES.SIFT.SIXTY.PIXIE.DUST.BOXES",
+      "expected_output": "TEXYDST.E.IXIXIXXSSMPPS.B..E.S.EUSFXDIIOIIIT",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "uagccetqzcmpwvqgkbhq",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ql",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "osrifimivmxxedalky",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "gayopqxumqhcded",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "py",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kpsjzdpnjzfshlbtt",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "nsvcxmtwdwflywvvzzp",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "gviudxoqdyzc",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ueyzvafkazn",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "aktopmeykfeuz",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mhqhnoykvcmbd",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jpcckxytddqa",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "caqd",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rhyfqu",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ubdhousaohsw",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ulrgenh",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "ukuux",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "nqwf",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "hqlgtzbufoqvsupmmvuk",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:56",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Join",
+  "tags": [],
+  "text": "There are two tables. These tables are filled with numeric data. Each column of each table has a unique name. You need to implement JOIN operation for those tables. JOIN creates a new result table by combining column values of the two tables based upon the join-predicate. The query compares each row of the first table with each row of the second to find all pairs of rows which satisfy the join-predicate. When the join-predicate is satisfied, column values for each matched pair of rows of the table are combined into a result row. The result of the join can be defined as the outcome of first taking the Cartesian product of all records in the tables (combining every record in the first table with every record in the second table) - then return all the records which satisfy the join predicate. After that needed column are picked and printed as the result. Moreover the resulting rows should be output in the lexicographic order.InputThe input starts with the description of the first table. The first line consists of k1names of the columns of the table separated with spaces. All the names contain only small Latin letters and digits. Next line contain number n1– the number of records in the table. In each of the next n1lines there are k1integers – data written in the table. The description of the second table in the same format follows. Next line is number q – the number of queries. The description of each query follows in the following format:SELECT <list of the names of columns>\r\nJOIN ON <a name of the column from the first table>=<a name of the column of the second table>Constraints2 ≤ k1, k2≤ 101 ≤ n1, n2≤ 50000All the integers in the tables are positive and less than 100000.1 ≤ q ≤ 10OutputFor each query print the result of JOIN operation. You should print only the columns given in the query and in the appropriate order. The rows should be ordered lexicographically. The result of each query won't contain more than 50000 records. Print blank line after the answer for each query. See the example for more information.ExampleInput:id1 a b\r\n4\r\n1 2 3\r\n2 2 3\r\n3 2 4\r\n2 4 4\r\nid2 c d\r\n3\r\n3 3 3\r\n5 2 1\r\n1 3 4\r\n3\r\nSELECT a,b,c\r\nJOIN ON id1=d\r\nSELECT id1,d\r\nJOIN ON a=c\r\nSELECT id2,id1,d\r\nJOIN ON b=cOutput:a b c\r\n2 3 2\r\n2 4 3\r\n\r\nid1 d\r\n1 1\r\n2 1\r\n3 1\r\n\r\nid2 id1 d\r\n1 1 4\r\n1 2 4\r\n3 1 3\r\n3 2 3",
+  "sample_input": "SELECT <list of the names of columns>\r\nJOIN ON <a name of the column from the first table>=<a name of the column of the second table>",
+  "sample_output": "Input:id1 a b\r\n4\r\n1 2 3\r\n2 2 3\r\n3 2 4\r\n2 4 4\r\nid2 c d\r\n3\r\n3 3 3\r\n5 2 1\r\n1 3 4\r\n3\r\nSELECT a,b,c\r\nJOIN ON id1=d\r\nSELECT id1,d\r\nJOIN ON a=c\r\nSELECT id2,id1,d\r\nJOIN ON b=cOutput:a b c\r\n2 3 2\r\n2 4 3\r\n\r\nid1 d\r\n1 1\r\n2 1\r\n3 1\r\n\r\nid2 id1 d\r\n1 1 4\r\n1 2 4\r\n3 1 3\r\n3 2 3",
+  "link": "https://www.spoj.com/problems/ADV04H",
+  "scraped_at": "2025-08-17 00:33:28",
+  "test_cases": [
+    {
+      "input": "SELECT <list of the names of columns>\r\nJOIN ON <a name of the column from the first table>=<a name of the column of the second table>",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "id1 a b\r\n4\r\n1 2 3\r\n2 2 3\r\n3 2 4\r\n2 4 4\r\nid2 c d\r\n3\r\n3 3 3\r\n5 2 1\r\n1 3 4\r\n3\r\nSELECT a,b,c\r\nJOIN ON id1=d\r\nSELECT id1,d\r\nJOIN ON a=c\r\nSELECT id2,id1,d\r\nJOIN ON b=c",
+      "expected_output": "a b c\r\n2 3 2\r\n2 4 3\r\n\r\nid1 d\r\n1 1\r\n2 1\r\n3 1\r\n\r\nid2 id1 d\r\n1 1 4\r\n1 2 4\r\n3 1 3\r\n3 2 3",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "gqo oefe h sy jstz cm miwwkbw\nypjm v wh uuhar z d cegprx d jkj fkg utsc mr lpd hhsk gfson bq eawu s jl",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "zv cd hlkx za bupuf rd dtbdmr\no ykug nwiyq b q ydjso rebgxr h vl wbrac jfcbj yv ggdkc bjzd gz ogls qvxx j oq",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "cncay c roi cvn itgj jsrnx s\nfuqa iz onp q ydenx ex bharvh ebax yiwv dqjb ja ngc wwlaf pfz ubossm abp mlfu axnrxo z",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "xudsk zqdf pktdx h agp gxeye fmwtwlei\nf kx dt qfy hvn i tjcc fabgq gbnp xfgw cdixmybn nvr izlav m n dcnzy wof inbbk h",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ylle nn po mpn r xcmjz ecbgoscg\naijpn zmra turmb ra gol zkc t tduue a o jtuoztxn rufdy dz s douj u aoki ykgwtz lhzu",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "u qwy t dcfa iflw ywevm l\npmn yskt bu wv crh ye qoovpx r wbkn xfx gtin avwk paq yztoi ojcowz uueic yoxz mhp ciadd",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "dy lgui i i nlukz jsxsp mdak\nwziv sr gopt fmw bg zo s zcl nz up ef d a gl mcooaq ct t fhh dq",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kfye znfwn odb bbnz mtdl msq v\npvhg i rnu gbasu rrmz a wno o bkm xvyt uczf cjgkj fyyy hhny qg u rhxve tmpfta wfjn",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "njt qo caha w vcds kap qdpvr\nxcqx jnj szp ln x ksx hz f ysmo sn qcb ju y dsfkk ofno jzmep mufwv rksson otadw",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "o xlhuj lf l basve kv uvsc\nbh ltom nado y tfcr badc nwsb kq t kbw vvam t dt y sjpvh iknmu ebuh nfo f",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "k o qxrs lml szzj wq qhnc\nn nluy p ntve xj bi pqyqru innld n dunj jh muic isxs xg whzbx ani sbx pwgjl y",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "byohha qp mib czw kermm xvdri uehlcc\ngkaqk ul d zpn vhkbn yckc fwzhnu c cigwu k m p wymj t f fwemq yzv nb sjeqk",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "yrctl dovb gdq sko rcv hwdvh dhywxzrn\nhle ihcw ykd sx d nzylz quxhd awrmf fea dc nul yp wd dkp nd qbgn wpm nsz yjiyl",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qyzbvi fyj epa hvxby r a ckpbayk\nd n wjdt g w eg cifbq losh agb dbf di bx k x udde v tqwpi psna ewc",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nxuw qxdzt dyky f end c wz\nk ff s ogt qvzli txwue yr elial l p itwtrsbyc kvx owcc zc qhybbw lrj resi sigmrf k",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "bytbnr z ma zyp qmrby x cog\nm amrjm dzk dxdbm nwrb ksdo u x we wkxo qhu fd rqvy qa qlnn h sell c uednio",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "xhmy qxt cd e gglbr xojog co\nka wak w bm k jes xyxb ltk x mdlpy gbmqkv jw zmjx wsrus nnua o ujv aiwu o",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "dif h bpboy v y s qvvr\nc rpr zaay pha fswe z f qlle gdjz dnt gcvgaap wg ketiq f lgyt jquq psh wwinj mszxj",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:49",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Modern Pocket Calculator",
+  "tags": [],
+  "text": "Adam likes pocket calculators, not only theearly ones, but also the modern ones with a  two line LCD-display and mathematically correct operator precedence. The upper (input-)line shows the expression you typed in, the (output-)line below shows the result immediately after the [=] key has been pressed. Given the calculator's input-line, the program's task is to produce its output-line. Using the calculator's [S-D] key, the display switches between fractional and decimal representation of the result, so output must contain both  representations.InputInput starts with a positive integer t (t<1000) in a single line, then t testcases follow. Every testcase consists of either three lines or a single line, representing the expression in the calculator's input-line, followed by a blank line.  An expression contains n numbers (0 < n < 10) with exactly one operator (+, -, x, :) between any two numbers and exactly one space to separate number and operator. There will be no invalid expression and no undefined operation.A number is given as a decimal, a fraction or a mixed number and will be non-negative. If a number is positive, its decimal value is between 10-9and 109, numerator and denominator are also non-negative and not larger than 109each, given decimals have at most 9 digits overall. These constraints also hold for all calculations, if done properly. The length of the fraction bar depends on the maximum length of the numerator or the denominator respectively. If lengths of numerator and denominator are different, the shorter one will be centered based on the fraction bar. If centering isn't possible, it is set one digit to the right.OutputFor each testcase print the result the calculator will display in its output-line: first fractional, then decimal, both representations separated by \" [S-D] \". If a result is negative, the negative sign has to be printed directly (i.e. no space) in front of the integer part or the fraction bar.The fractional representation has to be printed in lowest terms either as a proper fraction or mixed number. If the number has an integer representation, that has to be printed instead. Numerator and denominator have to be placed as described in the input section.After \" [S-D] \" the exact(!) decimal represenation has to be printed.  As the screenshot shows, the calculator is even able to display a repeating decimal in its decimal representation using a vinculum, so that's what the program has to do as well, using underscores in the line above. You can assume that no decimal expansion is longer than 100 digits (it's a calculator with XXL-display).The number of lines for every output depends on the result. It may be three lines (if fractions appear) or a single line (if result is an integer). Print a blank line after every testcase except the last one. Be careful not to print any trailing spaces.For more clarity of input and output format please look at the examples below.ExampleInput:59          502-- + 0.26 x --11          154   95.88 - -- : -18   53 - 5.1259 + 141--- x 0.5100Output:113          __3--- [S-D] 3.6841651532           _________5---- [S-D] 5.7565432098720251-2- [S-D] -2.125823 [S-D] 231--- [S-D] 0.005200",
+  "sample_input": "Input:59          502-- + 0.26 x --11          154   95.88 - -- : -18   53 - 5.1259 + 141--- x 0.5100Output:113          __3--- [S-D] 3.6841651532           _________5---- [S-D] 5.7565432098720251-2- [S-D] -2.125823 [S-D] 231--- [S-D] 0.005200",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/POCALC2",
+  "scraped_at": "2025-08-17 00:33:25",
+  "test_cases": [
+    {
+      "input": "59          502-- + 0.26 x --11          154   95.88 - -- : -18   53 - 5.1259 + 141--- x 0.5100",
+      "expected_output": "113          __3--- [S-D] 3.6841651532           _________5---- [S-D] 5.7565432098720251-2- [S-D] -2.125823 [S-D] 231--- [S-D] 0.005200",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 5 1 8 8 5 10 8 4 7 1\n7 c go mn hfpv o 3 kcwkh b mklg ys e 2 lzen mdw ztddp ggb c ymudyn",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 5 10 7 6 7 9 8 1 6 7\n4 d msll jaq ccuu wtgl 7 fbu rs sg ltxg ei 3 k ftkf sss navhw bon vfw",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1 3 4 9 2 10 8 1 3 5\n2 vp sgiov mnqff qvtd zcxj 1 ave hdti hskh hox w 1 crd ik m bbsj uwhfl gedfb",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 3 5 4 5 10 9 10 8 6 3\n4 bamj d tfk ad mvy 9 w f f i zbw 4 ltcif zjxxl ry c q hrhye",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 8 4 7 3 10 5 9 4 7 9\n10 qvm blhy oey ua hpkgc 3 us nezfw kwy doyr lyomy 7 e iofwk u gkwrh np ddjtud",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 3 10 8 5 7 1 10 4 6 9\n10 xnbz cj s uwhh ueady 8 eih ytm kwmer ta dw 9 lf b a bd lsi wuvn",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 4 8 3 4 2 1 8 7 1 10\n8 vxr dxty fmsit pxtk iz 4 h k ysw xf fa 10 ficpm od brp ympyj ge hlm",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 3 2 4 10 8 9 6 6 10 10\n8 sps rw m bennc wbh 7 cz ujfw xaw snhkv ck 4 qxoht snwbhp innn c jgh ro",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 2 3 2 2 3 2 4 1 2 4\n4 cv up qhcpc txy qkwx 3 oic oj lieqm omdg jxxcv 4 dgl lmt xfe ipe sbm tyrk",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 5 3 2 4 3 4 4 1 2 4\n4 grz kg lylpl pt bep 5 w sci w y xpmtn 1 xfezb ytb gqyc rxsqo tgmzr wcaazs",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 4 5 2 2 2 4 3 5 3 2\n2 czuyu phk d d ktzk 5 zn mcmq pucf ovh dt 4 ubhav pps oimhy h cxsi ugo",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 4 3 4 2 1 1 3 2 1 5\n4 gsags ev dxmb ajtl ied 1 kkg wvo icgkl inytw jkwo 4 j m aknda mmiq yaeku o",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 3 5 1 3 4 1 3 2 5 2\n4 v uhe vmwyu omvg lzeu 3 d pmb cjbo lsu dk 3 spoqs quaru sy ykgnak xr nbltj",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4 3 5 1 3 1 5 1 4 5 3\n3 kar iztm qsv q we 3 rab rhija lwuh rlef ftmz 1 rkgia v ulli g vptp c",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 2 5 5 5 1 1 1 4 5 3\n2 dacyw f cplq mqmqy mjuu 1 he n u bb gohfg 2 c wbixft acgmh ethxdi dupf jc",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 10 10 10 10 10 10 10 10 10 10\n10 y edo nvnh oddo w 10 nhud avlaq mjbtl nf eijkf 10 baq njik idhpb qbppq fagsw i",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10 10 10 10 10 10 10 10 10 10 10\n10 nvubm w vgfns jxv hpt 10 srb yfo st q s 10 yaa zfic bkt g uc lh",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 9 10 9 1 9 1 9 2 10 2\n2 q t y fl oefny 1 zca dvsnz cu zkmpe oow 9 vtopl e epum f dajz as",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1 9 9 10 10 9 2 10 1 9\n9 nffon lk e tt qwc 10 js r brzu lagpl wr 2 mubdg x tevbu mop i lamck",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:45",
+  "total_test_cases": 20
+}

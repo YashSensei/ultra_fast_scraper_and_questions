@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Idol",
+  "tags": [],
+  "text": "Somewhere in the rainforests of South America, among the deserted ruins, two human figures were carefully traversing through a narrow corridor made of stone. Serpentine vines and thick spider webs, shimmering in the sunlight, were making their journey more difficult.That's not what Archibald the archaeologist was worrying about, though. While Huacho, his companion, was clearing the path with a machete, Archibald was carefully examining the floor. It was covered with square-shaped stone tiles - they were adjacent to each other, and one such tile was as wide as the corridor itself. Some strange looking symbols were carved in the walls near the bottom - seasoned archaeologist recognized them at once as La-Og-Mhtir numerals. He studied various records of this civilization for many years now - after all, that's the whole reason he ended up in that jungle in the first place.The journey was taking forever. Archibald was getting increasingly worried - except for a small incident with the natives, everything was going pretty smoothly. He expected deadly traps and hazards at the very least - supposedly no one got ouf those ruins alive. But so far they did not spot anything interesting - apart from that corridor they were traversing. It was tiled with amazing precision and regularity, but the numbers carved above the tiles seemed entirely coincidental. Yet La-Og-Mhtir people were never leaving anything to chance.\"Over there, Señor!\" shouted Huacho, interrupting Archibald's contemplations.They finally reached the end of the corridor, and found themselves at the entrance to a small, circular room. In the middle of it, a golden figurine in a shape of a human head was placed on the dais. It was also holding a hand near its mouth, which made it look as if it was pondering on something important.\"It's The Idol of Ingenuity,\" said Archibald quietly. \"Just like the records said\".\"No reason to wait,  Señor, let's take it and leave!\" Huacho rushed in the direction of the dais, and Archibald immediately stopped him.\"Careful!\" said Archibald quietly, and started looking more closely at the walls. He identified La-Og-Mhtirs' alphabet without difficulty. The inscriptions looked like some kind of warning, and he began to ponder on its exact meaning, but a sudden shout interrupted his thoughts.\"Adios, Señor!\"His companion was already sprinting through the corridor, with the statuette under his arm. Suddenly, huge spikes launched from under the plate he was standing on, making ear-piercing noise. Archibald winced, but the noise continued. More spikes were appearing at regular intervals from under various plates, while some of them were retracting. The archaeologist observed all of this very carefully, but couldn't spot any pattern.Suddenly, he recalled the numbers carved over the plates, and everything became clear.The noise has stopped. Huacho was lying dead on the floor, but apart from that, the corridor was empty. Archibald once again read the warning carved on the wall, gave a thought to it for a moment, and stepped on the first plate with confidence.InputThe first line contains a single integert, denoting the number of test cases. Then, descriptions of the test cases follow.First line of the description consists of two integersnandm(1 ≤n≤ 109, 0 ≤m≤ 105). They denote that the corridor consists ofnplates, and the spikes will launchmtimes in total.Then,mlines follow. One such line consists of two integerspiandci(1 ≤pi≤n, 0 ≤ci≤ 109). It means thatciseconds after triggering the mechanism, the spikes will launch from under the plate numberpi, counting from the start of the corridor (from the room with the idol). Spikes will retract after one second (unless they are scheduled to launch next second).Every pair of numberspi,ciappears at most once. The pairs are sorted lexicographically.OutputFor every test case you should output one integer in a separate line - the minimal number of seconds that Archibald needs to safely cross the corridor. You should count the time it takes to reach the plate numbern, starting from the plate number 1. The mechanism is triggered the moment Archibald steps on the first plate for the first time. Every second, he can decide to go one plate forward, one plate backward or stay in place. One second later he will be at that plate. The journey is safe if for every second, there are no spikes on the plate Archibald is currently standing on (including the last plate). Going back into the chamber with the idol doesn't help, because the mechanism will reset. The mechanism is designed in such a way that it is always possible to cross the corridor.ExampleInput:2\r\n3 5\r\n1 1\r\n2 2\r\n3 2\r\n3 3\r\n3 4\r\n3 0Output:5\r\n2ExplanationIn the first test case, after stepping on the first plate, Archibald will step on the plate number 2 (because after one second the spikes will launch from under the first plate). Then, he goes back to plate number 1 (after 2 second from the start there will be spikes on the plates 2 and 3, so he cannot go forward or stay in place). Then, he jumps onto plate number two, stays in place, and finally steps on plate number 3. All of this takes 5 seconds.In the second test case there are no traps, so Archibald can reach the last plate in two jumps. (In this test case Huacho actually escaped with the idol!)",
+  "sample_input": "Input:2\r\n3 5\r\n1 1\r\n2 2\r\n3 2\r\n3 3\r\n3 4\r\n3 0Output:5\r\n2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/IDO",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": "2\r\n3 5\r\n1 1\r\n2 2\r\n3 2\r\n3 3\r\n3 4\r\n3 0",
+      "expected_output": "5\r\n2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5\n9\n3\n3\n10\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n3\n2\n8\n3\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n3\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "19\n17651474\n6805386\n89566699\n62853198\n53509923\n62294241\n87909913\n9196331\n21834716\n58930362\n59224711\n89032300\n57971351\n72662496\n61260905\n57392011\n30263811\n5857465\n36866901",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n97856737\n4544424\n61213581\n89078545\n7318817\n2363884\n96439839\n59822318",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n90143401\n44515292\n30082838\n16944599\n55978184\n3621399",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n67474374\n63881663\n58597318\n96032526\n78975607\n68515578\n66446646\n42711425\n63813229\n14577570",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n73253126\n12390105\n45629481\n54167495\n56450987\n53256871\n59894210\n54270955\n65941667\n67872975\n23192953\n54906281\n10307756\n87929280",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "94\n12541\n84913\n37139\n60991\n69337\n11513\n5683\n7382\n35332\n93047\n13439\n2443\n68701\n43654\n85594\n68211\n40899\n11409\n69334\n68250\n97095\n66073\n24905\n48581\n73203\n38531\n52758\n49105\n49817\n89846\n74273\n27153\n92494\n7352\n61518\n29369\n39722\n40119\n5284\n43797\n95750\n83881\n20633\n56279\n76458\n6984\n4695\n14189\n13885\n38883\n92268\n94537\n79236\n94534\n22564\n65787\n91644\n16810\n49398\n31988\n11245\n81663\n82948\n59112\n42330\n51261\n70088\n23076\n62628\n98198\n35511\n65062\n85300\n2554\n72774\n36822\n57892\n43379\n5071\n16839\n97616\n37780\n52380\n51584\n32581\n96018\n75814\n58343\n97728\n8234\n35942\n38924\n5250\n90384",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "70\n461\n31866\n49727\n93016\n38656\n39652\n54833\n61012\n67856\n46648\n47521\n59212\n12067\n69225\n21715\n49238\n55410\n69244\n24693\n73954\n21751\n13790\n84367\n42165\n32476\n19499\n71026\n45430\n15250\n61457\n3469\n55008\n44178\n85430\n74189\n70383\n24319\n65587\n13588\n94064\n75411\n90383\n34737\n83950\n28993\n18101\n69228\n5797\n52053\n18821\n77088\n26118\n63371\n71615\n22833\n37393\n76918\n45883\n69428\n86721\n92339\n42359\n61121\n22503\n24163\n84895\n73236\n70804\n58922\n59413",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "47\n89111\n3117\n46832\n5641\n27472\n53458\n5930\n94915\n53288\n65525\n71512\n2895\n27102\n91598\n5213\n64281\n72592\n54105\n35677\n93703\n98866\n20179\n39195\n3758\n9318\n93258\n72006\n36501\n59200\n66403\n85603\n12141\n5698\n47279\n60184\n88785\n83929\n83966\n86034\n1366\n66905\n31829\n68916\n33185\n96290\n34960\n72614",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "99\n43448\n5899\n98080\n80609\n12685\n26720\n61037\n95695\n24184\n64556\n42045\n14235\n81625\n52622\n496\n33419\n37298\n91710\n13205\n43701\n26629\n61907\n8410\n2125\n83031\n24198\n63963\n63662\n95469\n10315\n69166\n35543\n1393\n7045\n74846\n50605\n11856\n52697\n59294\n46926\n14612\n74266\n54998\n17735\n9999\n48979\n47202\n17079\n35062\n88002\n3449\n84958\n81963\n34725\n57235\n62877\n1352\n34913\n43948\n63905\n7836\n90187\n31776\n86795\n2155\n12300\n2516\n15972\n91630\n9546\n37930\n5054\n16030\n93170\n80125\n30032\n20562\n83691\n29285\n40131\n61855\n50239\n4082\n59734\n87291\n54908\n90048\n4302\n16359\n70987\n94136\n33353\n58418\n83106\n22427\n25148\n79643\n80975\n21572",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "54\n10460\n49378\n34776\n78400\n52331\n58569\n56093\n71986\n77937\n27242\n66961\n32294\n55144\n23815\n60900\n17886\n22711\n14960\n34826\n76243\n67746\n25889\n54318\n75185\n60685\n68050\n70614\n85876\n84104\n51818\n9664\n81337\n16476\n11530\n21400\n17131\n74266\n32060\n57119\n20709\n13533\n32488\n7237\n59165\n99699\n87729\n5634\n33803\n57988\n84061\n92976\n89308\n70902\n30116",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "24\n62710\n8661\n42429\n25800\n54403\n23218\n82883\n97371\n88364\n63826\n43102\n9465\n33634\n8122\n89702\n34497\n19664\n56258\n80686\n22866\n28368\n99863\n73756\n87696",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "95\n87495\n28558\n46987\n77399\n98327\n56738\n38270\n3966\n18251\n69736\n64425\n21812\n13118\n52307\n55021\n75354\n62875\n12253\n56624\n50796\n643\n92653\n1772\n79462\n64138\n64369\n15293\n72057\n17241\n46522\n86072\n92362\n80236\n92366\n39222\n93672\n11605\n23231\n57545\n60229\n9541\n73562\n73748\n47921\n84713\n4711\n78934\n97737\n62749\n91106\n51403\n21344\n36696\n63778\n36753\n51972\n59726\n8577\n45128\n27121\n48521\n80169\n90187\n46778\n59432\n45607\n85331\n90161\n12286\n73991\n48085\n41143\n72914\n72192\n85054\n65462\n91717\n54917\n99770\n63892\n28474\n84402\n54911\n54395\n36301\n90382\n97683\n73357\n18272\n86691\n81981\n18841\n22577\n64459\n4701",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "109\n82553188\n6534449\n73274940\n99469116\n83691998\n72188509\n89288552\n86063382\n29768090\n55352019\n95851835\n35497961\n3970389\n80705742\n86237031\n68457415\n66004453\n44705880\n76660937\n98264933\n93528360\n39864008\n50745412\n4281004\n51022574\n84903100\n27728699\n82972556\n2802790\n40936480\n87296991\n39461456\n29227173\n64413629\n60111261\n12298658\n62828749\n38844289\n22298451\n57295548\n84960023\n95574366\n78603484\n58415430\n28067741\n86102929\n73633576\n18150083\n95830048\n21780609\n71718411\n15518640\n5818924\n89835531\n11965564\n17381337\n8210096\n93338927\n22478091\n72636651\n62848600\n79993743\n44086268\n30307692\n31950944\n73371497\n79676907\n19525225\n30665746\n35811580\n59434785\n73073913\n31436615\n67178139\n77541624\n72053498\n74745638\n17181022\n69415523\n47725128\n28152271\n10129413\n678795\n94849168\n63018187\n48529695\n61506144\n25361381\n48308668\n9310565\n90851506\n42236620\n73905932\n86225440\n40789133\n47083677\n41394378\n88229970\n46730035\n69402938\n88585239\n82694127\n61711522\n56590315\n68822434\n41551964\n78641803\n91023529\n93722402",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 109)"
+    },
+    {
+      "input": "109\n16083577\n97009677\n7760317\n8135104\n48479623\n9647952\n83457630\n38730322\n87363622\n98514826\n36132393\n95866715\n99866185\n29460455\n30818187\n23189783\n5314998\n70817667\n75049019\n68307776\n73581618\n41844379\n4020665\n54333634\n62052232\n49059431\n30048017\n52202138\n90158382\n68171519\n54797291\n38353709\n27048548\n1161244\n69279033\n85584851\n42001947\n6737322\n64357256\n25826141\n54548190\n80642043\n21379359\n10769244\n90260031\n75899813\n66127970\n9278657\n73808204\n64244380\n41280062\n4016886\n51533661\n22395507\n44030162\n21623318\n38981790\n44020931\n19329046\n95282259\n88920494\n98094502\n84925281\n25317950\n25199055\n38447398\n64345664\n2440116\n71928707\n4837735\n86471532\n96489206\n84555815\n64671834\n39282975\n21842864\n55452382\n7525273\n80451468\n34614858\n78709094\n13877264\n34890869\n53034106\n77889056\n22917089\n56009548\n12138647\n72599823\n92941292\n73705817\n1098860\n54333595\n72546028\n60771047\n72807509\n15496295\n8992734\n60930031\n90838166\n99495975\n50913850\n64134095\n34255636\n4862170\n25683873\n86287335\n40205097\n85961787",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 109)"
+    },
+    {
+      "input": "1\n98248568",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}

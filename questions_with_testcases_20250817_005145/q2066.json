@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Team Slide Treasure Hunt Race",
+  "tags": [],
+  "text": "Alice and Bob are participating in an exciting new Olympic event, the Team Slide Treasure Hunt Race! This event takes place on a slide with various treasures on it, which is up to 10m wide and 10km long. Yes, that's kilometers.The slide can be represented as a grid of cells, with $N$ ($2 \\leq N \\leq 10^4$) rows and $M$ ($2 \\leq M \\leq 10$) columns. The rows are numbered $1, 2 \\ldots N$ from top to bottom, and the columns are numbered $1, 2 \\ldots M$ from left to right. The cell in row $i$ and column $j$ is referred to as cell ($i$, $j$), and contains a treasure with value $G_{i,j}$ ($1 \\le G_{i,j} \\le 10^5$).The two friends will each get to travel once down the slide, one after another. First, Alice will slide from the top-left corner of the slide (cell ($1$, $1$)) down to the bottom-left corner (cell ($N$, $1$)). Then, Bob will slide from the top-right corner (cell ($1$, $M$)) down to the bottom-right corner (cell ($N$, $M$)). Whenever a person moves in the slide, they move from their current row to the next row down, and they can also guide themselves left or right by one column if desired. This means that they can go from cell ($i$, $j$) to either cell ($i+1$, $j-1$), ($i+1$, $j$), or ($i+1$, $j+1$), as long as they don't exit the slide. Throughout the race, both Alice and Bob collect the treasure in each cell they slide through - this includes their respective starting and ending cells. However, if Bob goes through any cell that Alice has already visited, he can't collect the treasure in it again.Alice and Bob would like to determine a sliding plan to allow them to collect as much treasure as possible, and win the gold medal! They've asked you to determine the maximum total value of treasure that they can collect, out of all valid strategies.InputThe first line of the input will contain two integers $N$ and $M$, separated by a space. Each of the next $N$ lines, for $i$ from $1$ to $N$, will contain the $M$ space-separated integers $G_{i,1} \\,\\,\\, G_{i,2} \\,\\,\\, \\dots \\,\\,\\, G_{i, M}$.OutputOutput one number on a line by itself: the maximum combined treasure value that Alice and Bob can collect.ExampleInput:5 43 6 8 25 2 4 31 1 20 101 1 20 101 1 20 10Output:73Explanation of SampleThe single optimal sliding plan involves Alice sliding down-right, down-right, down-left, and down-left, followed by Bob sliding down-left, down-right, down-left, and down-right. The treasures collected are shown in bold on the following grid:Alice collects a total treasure value of $3+2+20+1+1=27$, while Bob collects $2+4+10+20+10=46$. Their total is then $27+46=73$.",
+  "sample_input": "Input:5 43 6 8 25 2 4 31 1 20 101 1 20 101 1 20 10Output:73",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SLIDE",
+  "scraped_at": "2025-08-17 00:33:54",
+  "test_cases": [
+    {
+      "input": "5 43 6 8 25 2 4 31 1 20 101 1 20 101 1 20 10",
+      "expected_output": "73",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 5 10 2 10 7 3 2 8 7 9 5 2 8 7 10 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 9 9 3 2 5 10 5 3 5 6 9 5 10 5 6 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 4 6 1 3 4 3 10 3 4 5 10 8 1 8 10 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "27 65 20 77 32 46 50 89 56 53 81 40 90 3 90 75 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 78 97 36 87 2 84 46 61 73 6 93 23 63 95 53 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "63 98 69 86 76 40 17 35 9 98 8 58 1 49 32 48 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 38 55 84 81 13 40 8 97 19 93 71 11 46 99 17 37",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 17 34 8 12 86 41 49 94 28 13 41 26 47 85 53 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "455 371 315 181 212 255 426 456 308 439 181 478 406 301 122 438 274",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "233 435 376 226 419 484 195 296 437 241 111 386 320 190 434 347 159",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "167 480 181 351 61 64 205 267 275 95 490 454 439 409 292 415 343",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "133 358 246 355 369 390 219 406 295 150 142 124 477 288 222 128 242",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "272 99 388 378 228 125 453 87 61 344 98 405 299 323 492 286 365",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "406 498 444 242 220 91 51 486 198 118 427 314 350 256 436 172 153",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "322 154 283 396 216 153 304 457 249 370 108 383 337 94 310 71 293",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1000 1 999 1000 1 1000 1000 999 2 999 1 1 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000 2 1000 999 1000 1 2 1 1 1000 1000 999 1000 2 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

@@ -1,0 +1,10 @@
+{
+  "problem_code": "problems",
+  "title": "Security",
+  "tags": [],
+  "text": "You are designing a new encryption system that works in the following way:For server-client communication you need a keyk, composed ofmsections, each of lengthl, and the key consists only of lowercase characters in the set {a, b, c, d, e, f}. The server has a keyk1and the client has a keyk2where:k1 = f(k).fis a function that receives a key and replace some random letters by ? indicating that those characters can be any lowercase letter of the set described before.k2 = f(g(k)).gis a function that takes a key and produces a random permutation of its m sections. Andfis the function defined above.For example: let m = 3, l = 2f('abacbc') = '?ba??c'g('abacbc') = 'acbcab' (each section was moved one place to the left).Your task is givenk1andk2, find keyk. If there are several solutions, print the lexicographically smallest key. And if there is no solution at all, print \"IMPOSSIBLE\" (without the quotes).InputThe first line has a single integerT, which corresponds to the number of test cases.Ttest cases follows: the first line of the test case corresponds to the integerm, the second line contains the stringk1and the third line contains the stringk2.OutputFor test casei, numbered from1toT, output \"Case #i: \", followed by the lexicographically smallest key or \"IMPOSSIBLE\".ExampleInput:5\r\n2\r\nabcd\r\nc?ab\r\n3\r\nab?c?c\r\nac?c??\r\n3\r\nab?c?c\r\naabbdd\r\n2\r\naa\r\nbb\r\n2\r\nabcd\r\ncdabOutput:Case #1: abcd\r\nCase #2: abacac\r\nCase #3: IMPOSSIBLE\r\nCase #4: IMPOSSIBLE\r\nCase #5: abcdConstraints:T <= 200 < |k1| <= 1000 < m <= 50|k2| = |k1|It is guaranteed that m is always a divisor of |k1|k1 and k2 consist of {a, b, c, d, e, f, ?}",
+  "sample_input": "Input:5\r\n2\r\nabcd\r\nc?ab\r\n3\r\nab?c?c\r\nac?c??\r\n3\r\nab?c?c\r\naabbdd\r\n2\r\naa\r\nbb\r\n2\r\nabcd\r\ncdabOutput:Case #1: abcd\r\nCase #2: abacac\r\nCase #3: IMPOSSIBLE\r\nCase #4: IMPOSSIBLE\r\nCase #5: abcd",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HC12II",
+  "scraped_at": "2025-08-17 00:34:01"
+}

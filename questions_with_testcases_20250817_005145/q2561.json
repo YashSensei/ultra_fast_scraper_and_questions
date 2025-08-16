@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Training",
+  "tags": [],
+  "text": "Mirko and Slavko are training hard for the annual tandem cycling marathon taking place in Croatia. They need to choose a route to train on.There are N cities and M roads in their country. Every road connects two cities and can be traversed in both directions. Exactly N−1 of those roads are paved, while the rest of the roads are unpaved trails. Fortunately, the network of roads was designed so that each pair of cities is connected by a path consisting of paved roads. In other words, the N cities and the N−1 paved roads form a tree structure.Additionally, each city is an endpoint for at most 10 roads total.A training route starts in some city, follows some roads and ends in the same city it started in. Mirko and Slavko like to see new places, so they made a rule never to go through the same city nor travel the same road twice. The training route may start in any city and does not need to visit every city.Riding in the back seat is easier, since the rider is shielded from the wind by the rider in the front. Because of this, Mirko and Slavko change seats in every city. To ensure that they get the same amount of training, they must choose a route with an even number of roads.Mirko and Slavko's competitors decided to block some of the unpaved roads, making it impossible for them to find a training route satisfying the above requirements. For each unpaved road there is a cost (a positive integer) associated with blocking the road. It is impossible to block paved roads.Write a program that, given the description of the network of cities and roads, finds the smallest total cost needed to block the roads so that no training route exists satisfying the above requirements.InputThe first line of input contains two integers N and M (2 ≤ N ≤ 1 000, N−1 ≤ M ≤ 5 000), the number of cities and the total number of roads.Each of the following M lines contains three integers A, B and C (1 ≤ A ≤ N, 1 ≤ B ≤ N, 0 ≤ C ≤ 10 000), describing one road. The numbers A and B are different and they represent the cities directly connected by the road. If C=0, the road is paved; otherwise, the road is unpaved and C represents the cost of blocking it.Each city is an endpoint for at most 10 roads. There will never be more than one road directly connecting a single pair of cities.OutputOutput should consist of a single integer, the smallest total cost as described in the problem statement.ExampleInput:5 8\r\n2 1 0\r\n3 2 0\r\n4 3 0\r\n5 4 0\r\n1 3 2\r\n3 5 2\r\n2 4 5\r\n2 5 1Output:5Input:9 14\r\n1 2 0\r\n1 3 0\r\n2 3 14\r\n2 6 15\r\n3 4 0\r\n3 5 0\r\n3 6 12\r\n3 7 13\r\n4 6 10\r\n5 6 0\r\n5 7 0\r\n5 8 0\r\n6 9 11\r\n8 9 0Output:48",
+  "sample_input": "Input:5 8\r\n2 1 0\r\n3 2 0\r\n4 3 0\r\n5 4 0\r\n1 3 2\r\n3 5 2\r\n2 4 5\r\n2 5 1Output:5",
+  "sample_output": "Input:9 14\r\n1 2 0\r\n1 3 0\r\n2 3 14\r\n2 6 15\r\n3 4 0\r\n3 5 0\r\n3 6 12\r\n3 7 13\r\n4 6 10\r\n5 6 0\r\n5 7 0\r\n5 8 0\r\n6 9 11\r\n8 9 0Output:48",
+  "link": "https://www.spoj.com/problems/TRAIN07",
+  "scraped_at": "2025-08-17 00:33:52",
+  "test_cases": [
+    {
+      "input": "5 8\r\n2 1 0\r\n3 2 0\r\n4 3 0\r\n5 4 0\r\n1 3 2\r\n3 5 2\r\n2 4 5\r\n2 5 1",
+      "expected_output": "5",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 14\r\n1 2 0\r\n1 3 0\r\n2 3 14\r\n2 6 15\r\n3 4 0\r\n3 5 0\r\n3 6 12\r\n3 7 13\r\n4 6 10\r\n5 6 0\r\n5 7 0\r\n5 8 0\r\n6 9 11\r\n8 9 0",
+      "expected_output": "48",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "7 6\n10 5 2\n8 1 3\n4 2 10\n1 6 4\n10 9 9\n3 10 2\n10 5 10\n8 5 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 10\n7 7 1\n4 6 7\n3 1 8\n7 3 6\n7 6 8\n9 7 6\n10 1 4\n7 6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 3\n5 3 5\n3 2 2\n7 5 8\n5 10 9\n1 7 5\n3 7 7\n1 9 10\n8 8 7",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "13 94\n28 50 86\n6 3 12\n4 74 16\n81 76 93\n58 67 22\n25 7 20\n93 18 6\n56 45 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 71\n15 18 42\n45 75 70\n4 30 10\n95 9 85\n71 35 57\n16 41 34\n59 68 16\n1 1 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 33\n40 59 1\n6 79 11\n39 76 78\n74 22 31\n38 99 66\n44 87 35\n29 21 59\n51 32 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 43\n22 76 11\n52 94 28\n29 65 57\n10 10 97\n18 83 2\n100 41 84\n57 96 29\n79 23 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 58\n28 19 79\n4 56 52\n61 56 97\n1 60 8\n59 15 24\n95 4 48\n78 97 13\n96 48 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "162 345\n151 425 375\n301 228 396\n188 88 79\n328 166 156\n84 394 315\n348 465 403\n311 95 467\n377 166 58",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "120 107\n133 213 118\n201 470 384\n182 212 327\n393 234 241\n216 133 225\n304 282 427\n139 80 120\n154 137 391",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "185 334\n318 67 498\n216 433 188\n418 391 435\n181 318 284\n314 56 211\n339 80 362\n286 119 493\n277 128 229",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "484 373\n159 299 357\n111 293 225\n148 422 104\n289 109 324\n111 485 236\n243 107 88\n354 102 489\n353 101 77",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "285 89\n452 346 494\n65 392 205\n136 364 421\n198 115 467\n90 462 293\n274 244 294\n77 268 139\n234 273 271",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "270 104\n121 331 436\n404 83 274\n348 210 419\n257 315 441\n146 407 255\n122 115 279\n307 497 362\n257 420 265",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "161 170\n312 435 451\n306 103 384\n53 468 91\n491 66 449\n465 278 361\n284 119 257\n80 325 132\n488 175 344",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1000\n999 1000 2\n1000 1 1000\n1 2 2\n1000 999 1\n2 1 1\n2 999 999\n1 1 999\n999 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:53",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ricochet Robots",
+  "tags": [],
+  "text": "A team of up-to four robots is going to deliver parts in a factory floor. The floor is organized as a rectangular grid where each robot occupies a single square cell. Each robot is represented by an integer from 1 to 4 and can move in the four orthogonal directions (left, right, up, down). However, once set in motion, a robot will stop only when it detects a neighbouring obstacle (i.e. walls, the edges of the factory or other stationary robots). Robots do not move simultaneously, i.e. only a single robot moves at each time step.The goal is to compute an efficient move sequence such that robot 1 reaches a designed target spot; this may require moving other robots out of the way or to use them as obstacles for \"ricocheting\" moves.Consider the example given below, on the left, where the gray cells represent walls,Xis the target location and ① and ② mark the initial positions of two robots. One optimal solution consists of the six moves described below (on the right).Note that the move sequence must leave robot 1 at the target location and not simply pass through it (the target does not cause robots to stop — only walls, edges and other robots).TaskGiven the description of the factory floor plan, the initial robot and target positions, compute theminimal total number of movessuch that robot 1 reaches the target position.InputThe first line contains the number of robotsn, the widthwand heighthof the factory floor in cells, and an upper-bound limitLon the number of moves for searching solutions.The remaininghlines of text represent rows of the factory floor with exactlywcharacteres each representing a cell position:Wa cell occupied by a wall;Xthe (single) target cell;1,2,3,4initial position of a robot;.an empty cell.OutputThe output should be the minimal number of moves for robot 1 to reach the target location orNO SOLUTIONif no solution with less than or equal the given upper-bound number of moves exists.Constraints1 ≤n≤ 41 ≤w,h,L≤ 10ExamplesInput 1:2 5 4 10\r\n.2...\r\n...W.\r\nWWW..\r\n.X.1.Output 1:6Input 2:1 5 4 10\r\n.....\r\n...W.\r\nWWW..\r\n.X.1.Output 2:NO SOLUTIONAuthor: Pedro Vasconcelos",
+  "sample_input": "Input 1:2 5 4 10\r\n.2...\r\n...W.\r\nWWW..\r\n.X.1.Output 1:6",
+  "sample_output": "Input 2:1 5 4 10\r\n.....\r\n...W.\r\nWWW..\r\n.X.1.Output 2:NO SOLUTION",
+  "link": "https://www.spoj.com/problems/SWERC14E",
+  "scraped_at": "2025-08-17 00:34:25",
+  "test_cases": [
+    {
+      "input": "Input 1:2 5 4 10\r\n.2...\r\n...W.\r\nWWW..\r\n.X.1.Output 1:6",
+      "expected_output": "Input 2:1 5 4 10\r\n.....\r\n...W.\r\nWWW..\r\n.X.1.Output 2:NO SOLUTION",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 2 6 2 3\nusft vcprz 4 7 2\n7\npmwfzqd\ngxj\n4 3 4\ncsrsyjyb mdzex",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1 2 10 1\ner lah 1 5 10\n7\nmtdiexshje\nwnv\n3 1 10\npykdx azllz",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 3 8 3 5\nzt g 1 5 10\n1\npqktvv\neffibilfje\n4 9 5\nqbch s",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "11 34 8 25 39\ne crri 21 1 26\n37\nmvzwccsd\nchocfiyjb\n9 38 23\nucedgoys vhj",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "34 22 9 25 11\ns o 37 16 21\n34\nxkdiqyqlvk\nicgokrk\n22 3 16\nqmomae evgw",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 10 31 30 1\nfpwu gl 40 34 23\n26\nezvj\nplpkqt\n8 2 27\nnursi jblif",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 27 40 26 12\nn hrm 17 27 40\n25\nkdzmb\njrxlcxc\n34 33 36\nerfspav kiks",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 18 27 39 11\nd fzwnj 40 23 6\n2\nu\nkqimpa\n24 35 4\nfmklkvphaz dzos",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 7 10 3 18\ng hjk 10 20 10\n17\neb\nffv\n20 10 14\niloewb k",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4 13 10 8 4\nrpg lhng 9 16 8\n9\npheztgwym\ngy\n7 3 2\nixodnvtu iop",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 15 2 20 13\nhfyew rs 11 10 15\n11\nnrrogalhqe\niu\n14 12 6\nnigp lsbve",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 14 5 9 3\nkk ws 12 19 8\n13\nlcppuw\nafuelxa\n12 13 7\nebydpwbgebi jff",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12 9 16 12 13\nrxe abht 11 10 11\n19\ndxbqxgeu\ndypmz\n6 18 4\nixtfpdt x",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "13 7 3 7 3\nh sk 13 13 10\n3\nvxpomb\nkq\n14 15 16\nfsw qgge",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 4 7 16 9\nreet t 15 15 3\n11\nzkpxty\nolhm\n16 19 9\naugxyk ytppy",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "41 41 41 41 41\nhyk ojbnt 41 41 41\n41\nntbc\nbkihcuq\n41 41 41\ngbuzdpkpi zmz",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "41 41 41 41 41\ne y 41 41 41\n41\nqcfybu\nh\n41 41 41\nku ax",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "41 2 1 41 40\nei fkbzd 2 1 40\n1\nryh\nnzutw\n41 40 2\nkopxatuexwv fyw",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1 40 2 40\nj gjwt 1 1 1\n41\nnpmig\nrwvmj\n40 41 40\nuvpmbworxt t",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:58",
+  "total_test_cases": 20
+}

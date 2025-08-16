@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Bridges of San Mochti",
+  "tags": [],
+  "text": "You work at a military training facility in the jungles of San\r\nMotchi.  One of the training exercises is to cross a series of rope\r\nbridges set high in the trees.  Every bridge has a maximum capacity,\r\nwhich is the number of people that the bridge can support without\r\nbreaking.  The goal is to cross the bridges as quickly as possible,\r\nsubject to the following tactical requirements:One unit at a time!If two or more people can cross a bridge at the same time (because\r\nthey do not exceed the capacity), they do so as a unit; they walk as\r\nclose together as possible, and they all take a step at the same time.\r\nIt is never acceptable to have two different units on the same bridge\r\nat the same time, even if they don't exceed the capacity.  Having\r\nmultiple units on a bridge is not tactically sound, and multiple units\r\ncan cause oscillations in the rope that slow everyone down.  This rule\r\napplies even if a unit contains only a single person.Keep moving!When a bridge is free, as many people as possible begin to cross\r\nit as a unit.  Note that this strategy doesn't always lead to an\r\noptimal overall crossing time (it may be faster for a group to wait\r\nfor people behind them to catch up so that more people can cross at\r\nonce).  But it is not tactically sound for a group to wait, because\r\nthe people they're waiting for might not make it, and then they've not\r\nonly wasted time but endangered themselves as well.Periodically the bridges are reconfigured to give the trainees a\r\ndifferent challenge.  Given a bridge configuration, your job is to\r\ncalculate the minimum amount of time it would take a group of people\r\nto cross all the bridges subject to these requirements.For example, suppose you have nine people who must cross two\r\nbridges: the first has capacity 3 and takes 10 seconds to cross; the\r\nsecond has capacity 4 and takes 60 seconds to cross.  The initial\r\nstate can be represented as (9 0 0), meaning that 9 people\r\nare waiting to cross the first bridge, no one is waiting to cross the\r\nsecond bridge, and no one has crossed the last bridge.  At 10 seconds\r\nthe state is (6 3 0).  At 20 seconds the state is\r\n(3 3 /3:50/ 0), where /3:50/ means that a unit of three\r\npeople is crossing the second bridge and has 50 seconds left.  At 30\r\nseconds the state is (0 6 /3:40/ 0); at 70 seconds it's\r\n(0 6 3); at 130 seconds it's (0 2 7); and at 190\r\nseconds it's (0 0 9).  Thus the total minimum time is 190\r\nseconds.InputThe input consists of one or more bridge\r\nconfigurations, followed by a line containing two zeros that signals\r\nthe end of the input.  Each bridge configuration begins with a line\r\ncontaining a negative integer –B and a positive integer P, where\r\nB is the number of bridges and P is the total number of people that\r\nmust cross the bridges.  Both B and P will be at most 20.  (The reason\r\nfor putting –B in the input file is to make the first line of a\r\nconfiguration stand out from the remaining lines.)  Following are B\r\nlines, one for each bridge, listed in order from the first bridge that\r\nmust be crossed to the last.  Each bridge is defined by two positive\r\nintegers C and T, where C is the capacity of the bridge (the maximum\r\nnumber of people the bridge can hold), and T is the time it takes to\r\ncross the bridge (in seconds).  C will be at most 5, and T will be at\r\nmost 100.  Only one unit, of size at most C, can cross a bridge at a\r\ntime; the time required is always T, regardless of the size of the\r\nunit (since they all move as one).  The end of one bridge is always\r\nclose to the beginning of the next, so the travel time between bridges\r\nis zero.OutputFor each bridge configuration, output one line\r\ncontaining the minimum amount of time it will take (in seconds) for\r\nall of the people to cross all of the bridges while meeting both\r\ntactical requirements.ExampleInput:-1 2\r\n5 17\r\n-1 8\r\n3 25\r\n-2 9\r\n3 10\r\n4 60\r\n-3 10\r\n2 10\r\n3 30\r\n2 15\r\n-4 8\r\n1 8\r\n4 30\r\n2 10\r\n1 12\r\n0 0Output:17\r\n75\r\n190\r\n145\r\n162",
+  "sample_input": "Input:-1 2\r\n5 17\r\n-1 8\r\n3 25\r\n-2 9\r\n3 10\r\n4 60\r\n-3 10\r\n2 10\r\n3 30\r\n2 15\r\n-4 8\r\n1 8\r\n4 30\r\n2 10\r\n1 12\r\n0 0Output:17\r\n75\r\n190\r\n145\r\n162",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BRIDGES2",
+  "scraped_at": "2025-08-17 00:34:32",
+  "test_cases": [
+    {
+      "input": "-1 2\r\n5 17\r\n-1 8\r\n3 25\r\n-2 9\r\n3 10\r\n4 60\r\n-3 10\r\n2 10\r\n3 30\r\n2 15\r\n-4 8\r\n1 8\r\n4 30\r\n2 10\r\n1 12\r\n0 0",
+      "expected_output": "17\r\n75\r\n190\r\n145\r\n162",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 2\n1 8\n8 6\n8 4\n5 3\n4 10\n1 7\n4 8\n3 5\n6 2\n1 9\n7 6\n7 4\n10 1\n4 5\n7 1\n4 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 2\n6 6\n2 10\n8 10\n8 6\n7 10\n3 1\n8 1\n2 4\n7 5\n1 3\n7 3\n3 5\n9 7\n1 9\n6 8\n5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 1\n8 3\n3 7\n8 1\n8 5\n4 4\n6 6\n1 1\n2 9\n4 9\n8 4\n2 7\n6 3\n1 4\n6 5\n4 4\n9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "95 80\n13 13\n66 82\n66 39\n95 25\n10 90\n73 8\n98 81\n56 37\n20 48\n27 15\n9 2\n29 5\n67 93\n88 67\n30 11\n13 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "100 90\n79 46\n53 84\n81 58\n10 44\n98 8\n81 81\n32 67\n60 93\n74 82\n91 76\n79 95\n35 78\n15 82\n66 24\n97 74\n30 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 44\n61 45\n80 70\n71 89\n12 57\n96 27\n43 28\n94 49\n55 91\n53 90\n87 23\n67 69\n63 84\n59 49\n92 20\n29 9\n20 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 39\n21 100\n70 1\n59 7\n28 2\n69 12\n96 47\n15 70\n17 89\n13 34\n70 83\n96 76\n82 8\n53 15\n58 96\n74 6\n45 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 52\n92 22\n72 33\n43 19\n37 17\n3 72\n24 23\n64 7\n94 97\n99 81\n44 97\n80 70\n75 14\n49 86\n77 46\n35 16\n27 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "263 408\n110 253\n393 491\n360 353\n151 198\n389 288\n51 409\n68 263\n220 274\n354 451\n65 72\n370 439\n496 230\n153 368\n271 475\n285 204\n97 351",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "331 187\n499 138\n71 500\n297 326\n200 374\n88 388\n466 161\n327 371\n444 443\n275 214\n253 239\n304 390\n74 165\n264 283\n380 282\n465 446\n167 458",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "79 262\n316 140\n430 439\n477 492\n412 76\n452 129\n482 157\n87 59\n363 90\n151 408\n375 472\n389 417\n96 429\n287 352\n156 258\n333 164\n238 310",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "302 334\n387 273\n108 207\n227 326\n336 319\n481 208\n260 177\n459 448\n317 76\n96 426\n172 328\n403 461\n421 297\n261 372\n153 317\n238 135\n431 490",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "64 359\n371 266\n89 351\n330 274\n129 360\n251 108\n60 347\n278 387\n187 256\n219 333\n409 53\n216 259\n67 383\n315 202\n198 239\n446 316\n140 217",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "499 66\n169 299\n389 142\n262 483\n378 157\n341 367\n351 58\n455 267\n493 172\n58 96\n375 183\n442 206\n51 477\n99 220\n464 338\n252 245\n230 57",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "90 390\n195 429\n94 480\n422 126\n315 167\n492 289\n243 166\n339 111\n173 203\n454 270\n377 246\n96 364\n199 64\n218 415\n350 139\n145 242\n201 345",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2\n999 999\n1000 1000\n2 999\n2 999\n999 2\n1 1\n1 1\n1 1000\n2 1\n999 999\n2 1000\n1 999\n1 1\n2 999\n1 999\n999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2\n2 2\n1000 2\n1 2\n1000 999\n1000 2\n1000 1000\n2 1\n1000 2\n1 2\n1000 1000\n1 2\n2 999\n999 1000\n1000 1\n1 999\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:56",
+  "total_test_cases": 20
+}

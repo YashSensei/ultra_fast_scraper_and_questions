@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Library for Madrid",
+  "tags": [],
+  "text": "Good preparation is essential for winning programming contests. Thus, if you read this document, you're on the right track ;) Knowing your algorithms and the programming language you use is of prime importance. However, you don't have to learn everything by heart; each team is allowed to bring 25 pages of documentation to the contest.Now the difficult question is: What should you put on those 25 pages? You know that you can fit 10 paragraphs of text on a page, but your stock of useful code snippets and handy texts is much larger than that. To make things more complicated, some topics depend on each other. You cannot include the line-circle intersection formula if you do not also include the code for lines, circles and points.As a programmer, you decide to let your computer do the hard work for you. Given a set of topics, their space requirements and dependencies, write a program that prints the maximum number of topics that fit into the library.InputThe input consists of several testcases. Each problem description starts with the numbers 1 ≤M≤ 100 and 0 ≤D≤ 10, the number of topics and the number of dependencies. The followingMlines contain the name of a topic (one word) and the numberLtof paragraphs (1 ≤Lt≤ 1000) of the topic, separated by a space.  The nextDlines each contain two topic names separated by space, indicating that the first topic depends on the second.The input file ends with a testcase havingM=0, which should not be processed.OutputFor each test case, print a single line containing the maximum number of topics that you can fit in the library, followed by the number of free paragraphs that remain. If several solutions yield the same number of topics, choose the one that leaves as much empty space as possible.ExampleInput:5 4Dijkstra 50Intersections 30Lines 70Circles 120Points 40Intersections LinesIntersections CirclesLines PointsCircles Points0 0Output:3 90NotesThe sample output corresponds to choosing Dijkstra, Lines and Points.",
+  "sample_input": "Input:5 4Dijkstra 50Intersections 30Lines 70Circles 120Points 40Intersections LinesIntersections CirclesLines PointsCircles Points0 0Output:3 90",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/LFM",
+  "scraped_at": "2025-08-17 00:33:28",
+  "test_cases": [
+    {
+      "input": "5 4Dijkstra 50Intersections 30Lines 70Circles 120Points 40Intersections LinesIntersections CirclesLines PointsCircles Points0 0",
+      "expected_output": "3 90",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 10 3 6 5 8 7 3 3\n9 fgujpnr nnqux bcbluy t w xmnivkjxd engkupphkphz yfsviancjs uwxakrdvv qtulmg 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5 6 9 4 8 1 10 7\n8 s wazwqbnljrt w wnefqvmtl p qzzdqi bwle ylarevjnd sgd d 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 2 1 1 10 9 4 8 4\n8 yvi qyqyqak wea lzkhdna imwpu emlopaksk wgyppyevxoe nenuovou vkvxsyb yhf 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 12 67 91 32 32 9 12 89\n85 x vzyyk ou ek f gxzih gcxrwznqqasy xx bk v 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 61 24 49 64 45 38 4 95\n14 yytm nztogtogheauxa s xpwwqu qssctkpb zncw xzbmzawasqvq ebgdi xsmmvnub ksa 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 61 15 87 6 43 20 93 93\n13 n ptmozqmwio h ciuhtmadw xvl g ltjezv njzmbcdbjq mscjd sn 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "94 51 88 22 47 54 68 83 20\n80 ifevb hrgl gqyuwpg wj cwj rhpfditx qwmbkinqqwiczp xuktkpc jfllxoge pdktiqk 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 26 71 69 13 5 46 85 51\n31 oa yp nmewenz duasbv osps dcplnnyfawwoljm ktsevmkstsas gpi lbeoao bhycfj 51",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "353 125 393 331 79 368 68 142 112\n285 zprgufod fjmdyle qz yzyxnn ky nllexkfgydlx lxcin dsnpk fsygxjsooehmg trxeuzx 130",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "261 210 295 470 303 496 184 276 58\n280 kjrrpziqk lyjb ppbim faemfn t zhkc gizjmmmilr bahvpebkjrdd ger laf 154",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "180 299 311 463 284 372 482 109 55\n238 qxomqackn fjacoqrke mrhqa ftmyf we oihnvxdweg ednwgogesbxzyburb qvqm ofo e 223",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "382 181 313 423 398 397 188 369 446\n361 xggnlc wqayahnc lg eztdxaff jc qacafgvfb wtsjxn cjxx ohrmyvbf avpwd 385",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "290 485 329 189 214 146 170 232 217\n197 tqfiid xpicheixug y merv n lzkttw jmhyib dqhpo rzn mb 277",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "73 353 275 142 257 239 316 155 489\n185 g zgqidne o nvs n i lcmlso tuwxyygkdi ywbacmrxjnhu kgu 174",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "297 439 64 389 140 282 80 247 474\n450 kptqw okpwbwy zpkzf sudms qryysvml huiwg xforzjfrcesegry ljztxdsui qjecujyj an 389",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 urbjievd nau cgtiu dpomnus gmpuc yanpsmzs uqhaiqem viulmnwekq bhbxxrjtwsmc lzw 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 obhxtes qkxe epebyaj z yqas whyhbsvejd o pmfjhlz omimiehzeqbkc bdq 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1 2 1000 2 1 1 999 2\n2 ttjcqolee u yk kaf bjskxwfpw dkzhue pnhvnkbdsq yqq qihncjpzom ugymvx 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999 1000 1000 999 1 1 2 2\n1000 ccbvh povljsw uklul ka vnulc ouyamo jtkrt uuzwvdurvoia qcekrgjfbw zsj 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:50",
+  "total_test_cases": 20
+}

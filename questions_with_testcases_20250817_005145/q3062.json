@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ada and Salesman",
+  "tags": [],
+  "text": "Ada the Ladybug lives in Bugladesh. It is a very specific country - there are some cities, but since the government doesn't \"waste\" money, they all lie on one simple path.Ada is working as Traveling Salesman. She travels between cities, buying and selling products. A product has some varying price in each city (same for buy/sale - described later). Ada travels with bike (to avoid payments for travels) so she can carry at mostKitems at time in her backpack.She is currently in the first city, and she wants to linearly go to last city. She wants to buy/sell items in a way to maximize her profit. Can you help her?The system is following: Ada has a bag which can carry at mostKitems. She travels cities linearly (from citycto cityc+1). Ss she is in a cityc, she can either immediately move to next cityorbuy a licence to trade forLcmoney. For each city it is also given magical constantPc. The buying/selling system is pretty weird. Buying an item in citycwhile actually havingi-1items in backpack costsPc*i*c%MOD. Similarly selling of an item in citycwhile actually havingiitems in backpack is forPc*i*c%MOD. You can buy any number of items in a city and you can also sell any number of items in city. Anyway note that the number of items can't exceedK(and obviously can't be negative).InputThe first line of input will contain three integers1 ≤ N, K ≤     3000and1     ≤ MOD ≤  104.The next line will containNintegers0 < Li≤     1000, the cost of licence for each city.The next line will containNintegers0 < Pi≤     1000, the magical constant for each city.Cities are numbered from 1.OutputOutput the maximal number of money Ada can gain.Example Input5 1 3\r\n1 1 1 1 1\r\n1 1 1 1 1Example Output0Example Input5 5 6\r\n1 1 1 1 1\r\n1 1 1 1 1Example Output9Example Input6 10 11\r\n1 2 3 3 2 1\r\n1 3 2 5 1 7Example Output19Example Input9 2 20\r\n6 6 6 6 6 6 6 6 6\r\n2 4 6 8 2 4 6 8 5Example Output16Example Input10 2 20\r\n5 9 3 4 7 5 2 4 7 2\r\n2 1 4 5 4 5 6 3 2 5Example Output25",
+  "sample_input": "5 1 3\r\n1 1 1 1 1\r\n1 1 1 1 1",
+  "sample_output": "0",
+  "link": "https://www.spoj.com/problems/ADASALE",
+  "scraped_at": "2025-08-17 00:34:08",
+  "test_cases": [
+    {
+      "input": "5 1 3\r\n1 1 1 1 1\r\n1 1 1 1 1",
+      "expected_output": "0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 4 2\n2 7 2 1 3\n5 2 1 10 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 8 3\n8 9 2 9 3\n7 6 7 9 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8 6\n9 10 7 4 3\n8 6 1 1 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "70 30 82\n86 46 28 46 52\n95 68 69 55 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 54 90\n30 25 40 48 43\n57 54 79 99 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 53 83\n72 44 38 49 40\n12 14 47 98 64",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "66 26 21\n86 51 22 44 51\n42 9 65 88 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 79 96\n55 95 75 89 76\n59 43 37 5 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "117 218 453\n321 157 398 354 262\n241 114 81 416 365",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "351 181 284\n497 421 116 400 449\n119 309 490 438 310",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "447 436 409\n186 392 448 204 384\n90 98 280 280 357",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "375 274 120\n300 198 337 103 254\n475 448 125 337 78",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "288 402 54\n486 274 280 195 383\n190 402 410 100 125",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "154 324 428\n91 229 492 104 354\n95 159 486 364 163",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "377 98 295\n441 440 329 376 410\n206 147 378 105 231",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 999\n1000 1000 1000 1 999\n999 999 999 1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999 1000\n1000 1 2 1 999\n2 999 2 1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:55",
+  "total_test_cases": 20
+}

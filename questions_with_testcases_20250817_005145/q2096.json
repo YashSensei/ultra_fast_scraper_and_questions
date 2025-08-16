@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Haunted Graveyard",
+  "tags": [],
+  "text": "Tonight is Halloween and Scared John and his friends have decided to do something fun to celebrate the occasion: crossing the graveyard. Although Scared John does not find this fun at all, he finally agreed to join them in their adventure. Once at the entrance, the friends have begun to cross the graveyard one by one, and now it is the time for Scared John. He still remembers the tales his grandmother told him when he was a child. She told him that, on Halloween night, “haunted holes” appear in the graveyard. These are not usual holes, but they transport people who fall inside to some point in the graveyard, possibly far away. But the scariest feature of these holes is that they allow one to travel in time as well as in space; i.e., if you fall inside a “haunted hole”, you appear somewhere in the graveyard a certain time before (or after) you entered the hole, in a parallel universe otherwise identical to ours.The graveyard is organized as a grid ofW×Hcells, with the entrance in the cell at position (0,0) and the exit at (W−1,H−1). Despite the darkness, Scared John can always recognize the exit, and he will leave the moment he reaches it, determined never to set foot anywhere in the graveyard again. On his way to the exit, he can walk from one cell to an adjacent one, and he can only head to the North, East, South or West. In each cell there can be either one gravestone, one “haunted hole”, or grass:If the cell contains a gravestone, you cannot walk over it, because gravestones are too high to climb.If the cell contains a “haunted hole” and you reach it, you will appear somewhere in the graveyard at a possibly different moment in time. The time difference depends on the particular “haunted hole” you fell into, and can be positive, negative or zero.Otherwise, the cell has only grass, and you can walk freely over it.He is terrified, so he wants to cross the graveyard as quickly as possible. And that is the reason why he has phoned you, a renowned programmer. He wants you to write a program that, given the description of the graveyard, computes the minimum time needed to go from the entrance to the exit. Scared John accepts using “haunted holes” if they permit him to cross the graveyard quicker, but he is frightened to death of the possibility of getting lost and being able to travel back in time indefinitely using the holes, so your program must report these situations.Sample graveyardThe figure illustrates a possible graveyard (the second test case from the sample input). In this case there are two gravestones in cells (2,1) and (3,1), and a “haunted hole” from cell (3,0) to cell (2,2) with a difference in time of 0 seconds. The minimum time to cross the graveyard is 4 seconds, corresponding to the path:(0,0) →1secEast(1,0) →1secEast(2,0) →1secEast(3,0) →0sechole(2,2) →1secEast(3,2)If you do not use the “haunted hole”, you need at least 5 seconds.InputThe input consists of several test cases. Each test case begins with a line containing two integersWandH(1 ≤W,H≤ 30). These integers represent the widthWand heightHof the graveyard. The next line contains an integerG(G≥ 0), the number of gravestones in the graveyard, and is followed byGlines containing the positions of the gravestones. Each position is given by two integersXandY(0 ≤X<Wand 0 ≤Y<H).The next line contains an integerE(E≥ 0), the number of “haunted holes”, and is followed byElines. Each of these contains five integersX1,Y1,X2,Y2,T. (X1,Y1) is the position of the “haunted hole” (0 ≤X1 <Wand 0 ≤Y1 <H). (X2,Y2) is the destination of the “haunted hole” (0 ≤X2 <Wand 0 ≤Y2 <H). Note that the origin and the destination of a “haunted hole” can be identical.T(−10 000 ≤T≤ 10 000) is the difference in seconds between the moment somebody enters the “haunted hole” and the moment he appears in the destination position; a positive number indicates that he reaches the destination after entering the hole. You can safely assume that there are no two “haunted holes” with the same origin, and the destination cell of a “haunted hole” does not contain a gravestone. Furthermore, there are neither gravestones nor “haunted holes” at positions (0,0) and (W-1,H-1).The input will finish with a line containing0 0, which should not be processed.OutputFor each test case, if it is possible for Scared John to travel back in time indefinitely, outputNever. Otherwise, print the minimum time in seconds that it takes him to cross the graveyard from the entrance to the exit if it is reachable, andImpossibleif not.Sample Input3 3\r\n2\r\n2 1\r\n1 2\r\n0\r\n4 3\r\n2\r\n2 1\r\n3 1\r\n1\r\n3 0 2 2 0\r\n4 2\r\n0\r\n1\r\n2 0 1 0 -3\r\n0 0Sample OutputImpossible\r\n4\r\nNeverProblemsetter: Enrique Martín Martín",
+  "sample_input": "3 3\r\n2\r\n2 1\r\n1 2\r\n0\r\n4 3\r\n2\r\n2 1\r\n3 1\r\n1\r\n3 0 2 2 0\r\n4 2\r\n0\r\n1\r\n2 0 1 0 -3\r\n0 0",
+  "sample_output": "Impossible\r\n4\r\nNever",
+  "link": "https://www.spoj.com/problems/GRAVEYRD",
+  "scraped_at": "2025-08-17 00:33:58",
+  "test_cases": [
+    {
+      "input": "3 3\r\n2\r\n2 1\r\n1 2\r\n0\r\n4 3\r\n2\r\n2 1\r\n3 1\r\n1\r\n3 0 2 2 0\r\n4 2\r\n0\r\n1\r\n2 0 1 0 -3\r\n0 0",
+      "expected_output": "Impossible\r\n4\r\nNever",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 6\n9\n10 9\n5 8\n1\n1 4\n8\n10 9\n8 4\n2\n9 8 5 9 1\n5 2\n8\n10\n6 5 6 6 8\n2 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2\n5\n4 8\n6 10\n4\n2 4\n2\n2 3\n1 7\n3\n4 3 4 6 9\n6 10\n6\n7\n4 5 2 6 4\n6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10\n9\n2 2\n7 10\n1\n2 6\n2\n7 4\n5 3\n4\n9 9 9 1 8\n4 2\n7\n10\n8 4 4 10 7\n6 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "87 61\n9\n52 45\n36 44\n90\n85 45\n88\n64 89\n14 65\n100\n68 71 76 60 28\n36 25\n34\n15\n26 11 59 80 20\n21 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "60 21\n33\n14 89\n14 78\n43\n27 72\n13\n8 68\n45 51\n67\n25 64 25 58 80\n96 33\n95\n12\n37 85 29 59 48\n76 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 6\n15\n64 93\n8 16\n6\n82 89\n91\n71 20\n1 89\n46\n86 52 67 70 85\n95 51\n16\n47\n37 12 21 34 53\n36 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 15\n63\n79 94\n36 43\n26\n38 59\n76\n18 10\n89 59\n79\n3 15 88 40 25\n67 68\n30\n20\n25 35 1 74 7\n38 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 100\n29\n56 36\n74 90\n24\n46 12\n83\n42 18\n32 93\n10\n51 84 29 83 48\n50 25\n42\n33\n35 92 58 8 72\n69 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "379 141\n223\n68 477\n232 62\n453\n272 110\n260\n292 483\n304 71\n88\n471 222 244 268 219\n218 86\n395\n53\n141 372 175 127 192\n97 66",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "480 374\n336\n463 260\n315 57\n312\n457 489\n169\n297 288\n113 434\n70\n421 149 58 489 339\n181 176\n196\n97\n73 301 408 351 395\n328 422",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "343 151\n299\n142 335\n451 383\n267\n53 73\n301\n449 161\n344 399\n384\n314 495 263 320 173\n278 251\n371\n120\n226 375 453 223 406\n471 346",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "314 467\n108\n218 306\n72 367\n144\n467 167\n88\n345 411\n195 265\n397\n153 153 323 227 330\n435 183\n300\n195\n287 275 422 443 490\n346 207",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "418 443\n247\n382 132\n378 320\n358\n243 148\n387\n283 349\n226 381\n471\n131 349 102 63 411\n411 146\n299\n293\n172 95 379 405 365\n209 334",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "115 483\n115\n406 174\n227 85\n452\n248 409\n327\n177 376\n385 136\n426\n460 470 258 468 286\n345 73\n307\n186\n149 269 331 321 122\n471 293",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "344 180\n136\n371 236\n310 373\n224\n391 96\n400\n80 128\n357 201\n289\n193 386 246 421 343\n69 112\n113\n292\n225 415 418 231 400\n68 228",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000\n1000 1000\n1000\n1000 1000\n1000\n1000 1000\n1000 1000\n1000\n1000 1000 1000 1000 1000\n1000 1000\n1000\n1000\n1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000\n1000 1000\n1000\n1000 1000\n1000\n1000 1000\n1000 1000\n1000\n1000 1000 1000 1000 1000\n1000 1000\n1000\n1000\n1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999\n1\n999 1000\n1 1000\n999\n2 999\n1\n999 1000\n999 1\n1\n1000 1000 2 1000 999\n2 999\n2\n999\n1 999 1000 999 999\n999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000\n2\n1000 1\n1000 2\n1\n2 1\n1\n2 2\n999 1\n1000\n999 1 999 1 2\n1000 1\n1000\n999\n999 999 2 1000 999\n999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

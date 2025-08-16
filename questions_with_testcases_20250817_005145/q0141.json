@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Barn Allocation",
+  "tags": [],
+  "text": "Farmer John recently opened up a new barn and is now accepting stall\r\nallocation requests from the cows since some of the stalls have a\r\nbetter view of the pastures.The barn comprises N (1 ≤ N ≤ 100,000) stalls conveniently numbered\r\n1..N; stall i has capacity Cicows (1 ≤ Ci≤ 100,000). Cow i\r\nmay request a contiguous interval of stalls (Ai, Bi) in which to\r\nroam (1 ≤ Ai≤ N; Ai≤ Bi≤ N), i.e., the cow would like to\r\nwander among all the stalls in the range Ai..Bi(and the stalls\r\nmust always have the capacity for her to wander).Given M (1 ≤ M ≤ 100,000) stall requests, determine the maximum\r\nnumber of them that can be satisfied without exceeding stall\r\ncapacities.Consider both a barn with 5 stalls that have the capacities shown\r\nand a set cow requests:Stall id:    1   2   3   4   5\r\n           +---+---+---+---+---+\r\nCapacity:  | 1 | 3 | 2 | 1 | 3 |\r\n           +---+---+---+---+---+\r\nCow 1       XXXXXXXXXXX             (1, 3)\r\nCow 2           XXXXXXXXXXXXXXX     (2, 5)\r\nCow 3           XXXXXXX             (2, 3)\r\nCow 4                   XXXXXXX     (4, 5)FJ can't satisfy all four cows, since there are too many requests\r\nfor stalls 3 and 4.Noting that Cow 2 requests an interval that includes stalls 3 and\r\n4, we test the hypothesis that cows 1, 3, and 4 can have their\r\nrequested stalls. No capacity is exceeded, so the answer for this\r\nset of data is 3 – three cows (1, 3, and 4) can have their requests\r\nsatisfied.InputLine 1: Two space-separated integers: N and MLines 2..N+1: Line i+1 contains a single integer: CiLines N+2..N+M+1: Line i+N+1 contains two integers: Aiand BiOutputLine 1: The maximum number of requests that can be satisfiedExampleInput:5 4\r\n1\r\n3\r\n2\r\n1\r\n3\r\n1 3\r\n2 5\r\n2 3\r\n4 5Output:3",
+  "sample_input": "Stall id:    1   2   3   4   5\r\n           +---+---+---+---+---+\r\nCapacity:  | 1 | 3 | 2 | 1 | 3 |\r\n           +---+---+---+---+---+\r\nCow 1       XXXXXXXXXXX             (1, 3)\r\nCow 2           XXXXXXXXXXXXXXX     (2, 5)\r\nCow 3           XXXXXXX             (2, 3)\r\nCow 4                   XXXXXXX     (4, 5)",
+  "sample_output": "Input:5 4\r\n1\r\n3\r\n2\r\n1\r\n3\r\n1 3\r\n2 5\r\n2 3\r\n4 5Output:3",
+  "link": "https://www.spoj.com/problems/BARN",
+  "scraped_at": "2025-08-17 00:33:03",
+  "test_cases": [
+    {
+      "input": "Stall id:    1   2   3   4   5\r\n           +---+---+---+---+---+\r\nCapacity:  | 1 | 3 | 2 | 1 | 3 |\r\n           +---+---+---+---+---+\r\nCow 1       XXXXXXXXXXX             (1, 3)\r\nCow 2           XXXXXXXXXXXXXXX     (2, 5)\r\nCow 3           XXXXXXX             (2, 3)\r\nCow 4                   XXXXXXX     (4, 5)",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 4\r\n1\r\n3\r\n2\r\n1\r\n3\r\n1 3\r\n2 5\r\n2 3\r\n4 5",
+      "expected_output": "3",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "7 2 1 2 6\nydi oruw 5 8 7 1 8\nwkvxoochbjxyt\n7 8 4 7 10\nlec zl 2 dd 10 gh 4 cxh 3 gi 4 m\nbmjibj\n7 10 7\nqmly 2 ef pho kio\n2 6 5\np 3 p b wy\n7 8 1\nknhmk 5 mmguvgz fr ywmtp\n1 9 5\neci 1 ggwv akqcu q",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4 10 7 7\nh za 7 6 4 8 7\ncvtcqdolh\n4 1 2 6 6\nljq jezdj 4 ocz 8 fcwlj 8 avjd 6 w 5 f\nnjmccdfwtttymigysf\n10 2 2\nhmquz 3 nww cz jj\n3 6 7\nqlx 10 jhducx gnsyi v\n5 5 9\nstjz 7 b xbjwq asm\n7 9 7\nfc 5 yuf s pbvjv",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 1 1 1 10\nx uw 2 8 1 8 4\nebsmi\n6 6 1 8 4\nkofsivr hm 6 bsijw 8 sgd 10 feubn 5 tp 3 j\nqqynasafuwbqg\n7 4 6\njjfx 9 iu h y\n5 7 2\naomx 10 g pq ddv\n7 1 5\nf 4 r og p\n8 2 7\nk 10 so htqi nspru",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "50 33 95 15 45\nl o 46 68 9 24 43\nxybyqnou\n21 66 94 16 76\njrxqbmg cnp 97 tc 18 p 24 fxneb 7 jke 53 tg\nsmnemllgammossmkwr\n95 12 71\nf 29 lp qaq l\n86 70 18\nixsuf 48 gwklzvlc d hk\n15 85 76\nbbbd 99 hin sllz c\n86 35 64\njdq 74 iazex muo ev",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 17 33 32 79\no j 13 34 70 37 56\nykawnmhdji\n57 29 77 9 20\nva u 78 s 29 crouj 67 om 57 ilpu 62 kjxpc\ncaugbpqzahe\n41 72 36\nb 22 wfgo ojq ex\n26 70 83\nzuv 1 qhfkxbvgyhbsc rijz sc\n41 46 66\nnhzd 50 ngrx srraj agah\n48 94 25\nhwwml 88 vavh g gzykx",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 52 33 79 77\neo xexu 87 9 36 69 42\nkipkyeikffljy\n38 32 13 81 59\nw pyhya 53 s 29 trz 65 zdj 19 l 42 zhvpk\nunzkgshkfpshbzy\n76 99 76\nw 12 hjtnuwhbn l k\n84 21 58\nmjp 73 hmuevpvmqimsftw j x\n9 38 88\nj 6 cxyrac bbd cdo\n9 73 92\niwi 11 wm fge usmdw",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 53 89 36 41\njrrw l 12 82 17 20 61\noh\n28 75 82 75 94\nbqz vpk 69 bxynd 2 bd 63 zie 83 lvg 14 hx\nh\n69 97 60\nuqsf 5 quyzajnhhx okens aec\n85 21 85\neksw 37 culoty xao oumr\n62 29 88\ny 60 kwxk w m\n43 24 89\nxtjh 78 paguidu srde tqwy",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 56 12 100 56\nevmf pj 57 80 41 54 69\nyfsq\n62 21 18 83 52\noeidttimh kr 62 j 4 na 91 ci 45 tekjo 68 jmxe\nvyyvciilyx\n65 97 75\nais 49 rpn fybvg nbkk\n32 2 91\ngx 16 puoflztbwbq fseq w\n69 38 94\nravwt 21 h kdtf scyp\n13 90 58\nayruq 22 p kpgk lyyb",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 15 49 42 24\nhd ht 39 10 39 18 37\ntousashnjfw\n13 45 7 15 10\nftxxuvpq h 26 ge 26 ippha 27 qd 39 kkkg 28 eirkw\nb\n44 38 46\nte 25 ypbpbz d jy\n29 25 46\nnf 37 zddbmolp atl ubay\n13 6 49\nc 17 ropgl ee efbf\n12 34 43\npf 30 ysr uujl i",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "44 40 47 23 6\ni b 14 19 38 11 5\nmjubxvpeybbghrealwkf\n12 31 14 20 42\nzgnwfkg kg 24 c 8 kx 11 nlzp 23 u 12 fjf\nepmgkiuscemyag\n34 26 40\njmhxb 40 nlsej wfvv p\n25 6 5\ndhfht 5 rc rurlx uwws\n24 5 43\ntc 47 c jvlql c\n16 25 8\ntc 11 wixx di l",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 10 15 49 32\nhja gmuo 7 34 6 25 47\nbk\n22 43 49 13 35\nrqeoyuun a 33 nfzft 43 ru 9 sgzx 10 lutm 33 wyj\ndruxjtl\n12 27 43\nf 11 ieuokebudd jpj pckoq\n8 45 23\nra 50 srw mq tgmha\n13 9 24\ntoem 10 oe jmtci iwiz\n32 18 50\nltqn 11 qf hhpe uwvdr",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 14 21 8 16\npcna endki 40 26 31 31 13\ncfqypvz\n28 27 17 13 15\nsbz bs 18 di 44 tcjc 37 p 27 f 50 l\njz\n29 38 39\nnfhcq 23 ywfrfnpbg bb xcpj\n46 25 28\ndd 42 qwarw dam crzr\n47 25 45\noagxb 48 ju apn eqfv\n14 14 42\ntvq 6 ib gz qrzd",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "16 7 22 47 38\nrozqz jmi 41 33 28 15 13\nsgovy\n46 34 32 34 36\nkpfcqzq y 13 sjr 44 aqfg 38 d 30 zmi 37 iekah\nklmisl\n34 41 8\nvkdf 34 kucfha ru d\n22 32 24\nz 37 xjzsvhoz supt yr\n9 19 6\nkcu 41 xe boj vtisi\n21 50 18\nhiur 17 rzweo zsbc f",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "45 34 33 38 44\nnfh vwdq 24 49 31 32 23\nafriblpbyjj\n23 37 30 37 6\npxmjo ykbaj 15 vtqxr 11 m 35 qnvmj 48 ke 23 h\naisgoxoiouzhe\n18 38 46\nl 36 ujlrdkajykf hbq x\n40 26 42\nzs 22 aco hz vwi\n28 17 37\no 19 vo ln owhj\n12 19 5\ncse 31 b coh wd",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "40 32 14 45 7\nfh za 15 25 44 44 30\nwk\n43 43 14 22 25\nxsmiqarla go 30 cqz 5 y 23 h 42 tsyaj 41 vkllx\nznndelnbfoudcskybn\n27 15 32\nybc 32 vx fkav sgctt\n12 37 48\nntk 36 mpu yxhad ia\n23 32 18\nixvd 16 izajnym oga rgcbl\n8 49 6\nopnpp 9 ddpe si qfy",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100\naxvpe iyz 100 100 100 100 100\noxa\n100 100 100 100 100\nx grx 100 sh 100 x 100 wxqse 100 qiu 100 c\nagjhgdcicgadngsk\n100 100 100\na 100 pdvhm lamu cq\n100 100 100\nscxob 100 zwbsoolzij rxpwq haf\n100 100 100\nyahpv 100 w u eyd\n100 100 100\nin 100 avn m ef",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100\nf ojlx 100 100 100 100 100\nfmwhdmu\n100 100 100 100 100\nxkk ya 100 tqcpo 100 rpk 100 kskk 100 z 100 lvuc\nomczchisx\n100 100 100\nwtus 100 cbfpg j dqils\n100 100 100\npu 100 xfosoqcwrfi hfney gqj\n100 100 100\nznzqv 100 mtn mvyn z\n100 100 100\nbgx 100 w ccdh hzly",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 2 2 99 1\nvcos at 2 2 100 2 99\nbginlajpwibjfhsl\n2 1 2 1 2\ntzkf ad 1 lyajp 1 ux 100 ij 99 xw 1 wwoa\nrzow\n1 100 2\nqfo 2 rlmcveenvd pjzx jmm\n100 2 99\nkg 100 rlxuswhwd u vhdv\n2 1 2\nuom 99 epclz tbe omsv\n2 100 99\njm 99 xhpqnra uv bcz",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:45",
+  "total_test_cases": 20
+}

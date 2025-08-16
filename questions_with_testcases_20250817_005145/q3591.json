@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cheating a Boolean Tree",
+  "tags": [],
+  "text": "For this problem we will consider a type of binary tree that we will call a boolean tree. In this tree, every row is completely filled, except possibly the last (deepest) row, and the nodes in the last row are as far to the left as possible. Additionally, every node in the tree will either have 0 or 2 children.What makes a boolean tree special is that each node has a boolean value associated with it, 1 or 0. In addition, each interior node has either an \"AND\" or an \"OR\" gate associated with it. The value of an \"AND\" gate node is given by the logical AND of its two children's values. The value of an \"OR\" gate likewise is given by the logical OR of its two children's values. The value of all of the leaf nodes will be given as input so that the value of all nodes can be calculated up the tree.The root of the tree is of particular interest to us. We would really like for the root to have the valueV, either 1 or 0. Unfortunately, this may not be the value the root actually has. Luckily for us, we can cheat and change the type of gate for some of the nodes; we can change an AND gate to an OR gate or an OR gate to an AND gate.Given a description of a boolean tree and what gates can be changed, find the minimum number of gates that need to be changed to make the value of the root nodeV. If this is impossible, output \"IMPOSSIBLE\" (quotes for clarity).InputThe first line of the input file contains the number of cases,N.Ntest cases follow.Each case begins withMandV.Mrepresents the number of nodes in the tree and will be odd to ensure all nodes have 0 or 2 children.Vis the desired value for the root node, 0 or 1.Mlines follow describing each of the tree's nodes. The Xthline will describe node X, starting with node 1 on the first line.The first (M−1)/2 lines describe the interior nodes. Each line containsGandC, each being either 0 or 1. IfGis 1 then the gate for this node is an AND gate, otherwise it is an OR gate. IfCis 1 then the gate for this node is changeable, otherwise it is not. Interior node X has nodes 2X and 2X+1 as children.The next (M+1)/2 lines describe the leaf nodes. Each line contains one valueI, 0 or 1, the value of the leaf node.To help visualize, here is a picture of the tree in the first sample input.OutputFor each test case, you should output:Case #X:YwhereXis the number of the test case andYis the minimum number of gates that must be changed to make the output of the root nodeV, or \"IMPOSSIBLE\" (quotes for clarity) if this is impossible.Limits1 <N≤ 202 <M< 10000SampleInput2\r\n9 1\r\n1 0\r\n1 1\r\n1 1\r\n0 0\r\n1\r\n0\r\n1\r\n0\r\n1\r\n5 0\r\n1 1\r\n0 0\r\n1\r\n1\r\n0OutputCase #1: 1\r\nCase #2: IMPOSSIBLEIn case 1, we can change the gate on node 3 to an OR gate to achieve the desired result at the root. In case 2, only the root can be changed but changing it to an OR gate does not help.",
+  "sample_input": "Case #X:Y",
+  "sample_output": "Input2\r\n9 1\r\n1 0\r\n1 1\r\n1 1\r\n0 0\r\n1\r\n0\r\n1\r\n0\r\n1\r\n5 0\r\n1 1\r\n0 0\r\n1\r\n1\r\n0OutputCase #1: 1\r\nCase #2: IMPOSSIBLE",
+  "link": "https://www.spoj.com/problems/GCJ082A",
+  "scraped_at": "2025-08-17 00:34:15",
+  "test_cases": [
+    {
+      "input": "Case #X:Y",
+      "expected_output": "Input2\r\n9 1\r\n1 0\r\n1 1\r\n1 1\r\n0 0\r\n1\r\n0\r\n1\r\n0\r\n1\r\n5 0\r\n1 1\r\n0 0\r\n1\r\n1\r\n0OutputCase #1: 1\r\nCase #2: IMPOSSIBLE",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "tye fhkv",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "omnw geabw",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "upih dl",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "c u",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "lyg pfzv",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "gs bgbdx",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "omb mrj",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "yxot zzsvz",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "bczxv wdks",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "iiya j",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tcdm o",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qfiex gdyd",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "h a",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gteft sg",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "eodcm ket",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jyh xmbj",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "vn fm",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "m wlzbv",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "dx ab",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:57",
+  "total_test_cases": 20
+}

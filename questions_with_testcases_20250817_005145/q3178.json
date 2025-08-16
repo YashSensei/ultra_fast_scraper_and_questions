@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Generating Alien DNA",
+  "tags": [],
+  "text": "GigaFarma is one of the largest pharmaceutical companies in the world, and it is currently conducting experiments using alien DNA. Its goal is to produce a chain of alien DNA that will report the maximum possible benefit when commercialized.A chain ofalienDNA can be understood as a non-empty sequence of genes connected by links, and in turn eachgeneis a non-empty sequence of bases. Because not every possible sequence of bases corresponds to a valid gene, GigaFarma has created a catalogue of genes that appear in alien DNA, which are the only ones considered valid sequences of bases. Each of these genes has avalueaccording to its functionality, and a given chain of alien DNA has amarket valuethat is the sum of the values of the genes that compose it.We will represent the differentbaseswith lowercase letters,'a'-'z', andlinksusing a hyphen'-'. In the following example we can see on the left a possible list of genes and their corresponding values; on the right there are some chains of alien DNA that can be formed with these genes, along with their corresponding market values.GigaFarma can only produce very specific DNA chains, which we callproducible. These chains are a non-empty sequence of DNA portions that the company can synthesize, joined without any additional links between them. Eachportionis a sequence of bases and links containing at least one link, but without any consecutive, initial or final links. Each portion has a givencost, determined by the difficulty associated to its production, so each producible chain of DNA has aproduction costthat is the sum of the costs of each of the portions that form it. In the following example, we can see on the left a list of DNA portions and their costs; on the right we have some producible chains of DNA that can be formed with these portions, along with their associated production cost.Note that there might be multiple ways of forming the same producible chain using different portions. This is the case of\"como-como-les\"in the example, which can be obtained using portions\"como-co\"and\"mo-les\"with a production cost of7, or just using\"como-como-les\"with a production cost of12. Of course, when there is more than one way to synthesize a given producible chain of DNA, GigaFarma will always do so using the cheapest possible process.Clearly, the set of alien DNA chains is infinite, just like the set of producible DNA chains. However, GigaFarma is not directly interested in any of these sets, but in their intersection. If we check the previous examples, we can see that\"como-les\"is a valid alien DNA chain, but is not producible;\"mo-les\"is producible, but is not an alien DNA chain; and\"como-como-les\"is both. For each alien and producible DNA chain, the company can commercialize this chain to get anet benefitthat equals the market value of this chain minus its production cost. Of course, if this net benefit is not positive, the corresponding chain will never be produced.Because there is so much genetic material all over the place, GigaFarma would pay anything in order to know what is the maximum net benefit it can obtain for some producible and alien DNA chain.InputEach test case is described using several lines. The first line contains two integer numbersGandP, representing the number of genes in the catalogue and the number of portions GigaFarma can produce (1 ≤ G, P ≤ 100).Each of the followingGlines describes a different gene using a stringSand an integerV. The stringShas between1and10characters, and is formed solely by lowercase letters representing the bases that form this gene; the integerVrepresents the value of this gene (1 ≤ V ≤ 1000).Each of the followingPlines describe a different DNA portion, using a stringTand an integerC. The stringThas between1and30characters, and is composed of lowercase letters and hyphens only, respectively representing the bases and links in this portion.Tcontains at least one link, but will never have initial, final or consecutive links. The integerCrepresents the production cost for the corresponding portion (1 ≤ C ≤ 1000).Note that in every test case, all of the genes are different from one another, and all of the portions are also different from one another. The end of the input is signalled by a line containing two times the number-1.OutputFor each test case, you should print a single line containing an integer number, representing the maximum net benefit that GigaFarma can obtain from a producible and alien DNA chain. If no net benefit is positive, you should print the value 0. If the net benefit can be arbitrarily large, you should print an asteris'*'.ExampleInput:4 6\r\nhola 5\r\ncomo 5\r\nles 3\r\nva 2\r\ncomo-co 3\r\nmo-co 8\r\nmo-les 4\r\ncomo-como-les 12\r\nta-no-sirven 100\r\nhasta-es 200\r\n2 3\r\nxyz 1000\r\nzyxxyz 1000\r\nxyz-zyx 1\r\nzyx-xyz 1\r\nxyz-xyz-zyx-xyz 1\r\n2 1\r\nabc 1\r\nabcabc 1000\r\nabc-abc 999\r\n1 1\r\nser 10\r\nno-ser 5\r\n-1 -1Output:6\r\n0\r\n*\r\n0",
+  "sample_input": "Input:4 6\r\nhola 5\r\ncomo 5\r\nles 3\r\nva 2\r\ncomo-co 3\r\nmo-co 8\r\nmo-les 4\r\ncomo-como-les 12\r\nta-no-sirven 100\r\nhasta-es 200\r\n2 3\r\nxyz 1000\r\nzyxxyz 1000\r\nxyz-zyx 1\r\nzyx-xyz 1\r\nxyz-xyz-zyx-xyz 1\r\n2 1\r\nabc 1\r\nabcabc 1000\r\nabc-abc 999\r\n1 1\r\nser 10\r\nno-ser 5\r\n-1 -1Output:6\r\n0\r\n*\r\n0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TAP2012G",
+  "scraped_at": "2025-08-17 00:34:21",
+  "test_cases": [
+    {
+      "input": "4 6\r\nhola 5\r\ncomo 5\r\nles 3\r\nva 2\r\ncomo-co 3\r\nmo-co 8\r\nmo-les 4\r\ncomo-como-les 12\r\nta-no-sirven 100\r\nhasta-es 200\r\n2 3\r\nxyz 1000\r\nzyxxyz 1000\r\nxyz-zyx 1\r\nzyx-xyz 1\r\nxyz-xyz-zyx-xyz 1\r\n2 1\r\nabc 1\r\nabcabc 1000\r\nabc-abc 999\r\n1 1\r\nser 10\r\nno-ser 5\r\n-1 -1",
+      "expected_output": "6\r\n0\r\n*\r\n0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 1\n9\nvgzk 5\n10\nqe 3\n2\ncqow 2\n6\nbtkrr 9\n2\nnwj 4\n10\nlbipv 4\n4\naqtpta 6\n4\nwjiylx 2\n6\nziggtpi 7\n4\nfsifgqnw 10\n8 4\n2\nlox 3\n8\ngoorp 7\n7\nlsofjq 1\n2\ntksdnb 5\n10\ncaivaujzzsxrv 2\n9 4\n5\nka 10\n1\nhnxhi 3\n2\nvyxm 3\n5 9\n7\ndvv 10\n6\nuajt 4\n2 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 1\n8\nvwb 5\n6\nv 3\n3\nefry 8\n1\ndazwh 6\n9\nyguj 8\n9\nknaj 4\n8\njgoy 4\n6\nexrrhy 6\n5\nas 10\n4\nh 1\n9 9\n6\nws 1\n10\nmowdyc 7\n5\nz 8\n9\nunlrq 8\n6\nqssx 5\n2 4\n4\nfbm 10\n3\nqwukzm 6\n3\njlzaq 3\n8 3\n2\nsi 9\n4\now 9\n2 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 3\n1\np 1\n3\nk 4\n6\nb 4\n2\ndyir 10\n5\nnpowrr 6\n5\njp 3\n2\nprs 5\n7\nfysaqcjrze 4\n6\npejhshwxvz 4\n1\ne 4\n8 7\n8\ndw 1\n9\nu 3\n10\nharwh 2\n5\nxpc 5\n5\nvm 10\n9 5\n9\noys 10\n2\nyuvojk 6\n6\nhuqbzow 7\n8 6\n8\nd 3\n1\np 7\n10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "93 43\n95\neiumw 64\n14\npuej 93\n72\ngo 61\n76\nnpyh 71\n49\njfbsr 9\n79\nvc 40\n3\nkish 28\n60\nzz 13\n19\nmdckpvigf 16\n27\nu 65\n96 56\n24\na 27\n46\nnaznev 40\n46\nlelzk 34\n12\nyzqpfs 86\n70\njbikclxqjwdki 67\n36 59\n31\nzd 100\n11\nywqpqg 83\n33\np 100\n53 24\n57\ngth 20\n86\nj 26\n23 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 71\n39\njrktl 60\n14\nzi 46\n63\npxfbh 1\n72\nxmeq 58\n25\nqigtl 96\n4\nq 85\n7\natwphe 23\n56\nnmxxc 5\n29\nueygnqxggq 49\n93\nh 82\n23 18\n95\nxx 6\n93\ntair 50\n18\nvke 28\n40\nglu 88\n32\npyzo 8\n36 56\n21\nihmh 46\n3\ny 61\n98\ndcxgnkx 22\n35 81\n26\ngvk 82\n94\nanmnf 89\n84 51",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 97\n21\np 35\n40\nypgn 90\n80\nzbgse 76\n7\nk 94\n33\nh 47\n11\nnsj 69\n11\ntowqw 63\n97\nw 52\n95\nelifnneopkg 28\n26\negotqyjj 49\n33 42\n47\najxat 7\n13\nupxgz 33\n19\npvjhxct 2\n2\noj 23\n27\ngomiqralaim 32\n12 97\n36\neq 9\n68\nnag 100\n9\naf 12\n58 89\n22\nkeeo 46\n9\np 60\n87 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 78\n53\nyt 60\n58\nb 77\n85\nelg 27\n74\nxqjcs 61\n73\nq 76\n1\nf 6\n86\njzses 46\n87\nqdbxfcrpkwf 76\n5\nzal 34\n26\nnsov 50\n63 10\n27\njta 4\n70\nxfoyh 21\n75\no 22\n74\ndsvapyx 78\n44\ncvficsyleffbqvv 37\n22 53\n62\nfh 18\n21\nitjwd 71\n18\nwp 5\n44 14\n56\na 28\n11\nusgc 98\n44 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 30\n83\nfby 73\n57\ncli 89\n92\ncis 54\n20\nbaqfp 54\n34\nu 47\n25\ntnxl 20\n82\nbz 19\n66\nvvxfwbbuecezb 3\n30\nijpi 77\n92\nur 25\n91 50\n30\ni 30\n95\ngdzp 81\n38\nd 4\n42\niu 77\n88\njojqaip 80\n65 51\n4\nw 32\n4\ntbv 99\n80\npr 25\n97 4\n28\nd 21\n88\nl 16\n90 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "425 200\n160\nyz 423\n438\ngnaf 103\n435\nvohqj 90\n318\nrnxma 62\n235\nmoo 442\n195\nr 378\n195\ndrodlk 378\n282\nc 100\n170\nznhdoerh 489\n169\nh 76\n127 491\n52\nlgin 189\n70\ndfye 261\n258\ndz 377\n158\ne 266\n125\nnbkaknaiis 235\n406 347\n329\nnx 223\n423\nk 92\n223\ncpct 125\n120 138\n431\nn 379\n188\nnqz 281\n445 161",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "194 379\n460\nigvue 388\n66\njgu 426\n390\nom 77\n107\nfmd 299\n372\nbfisoya 310\n119\nipqoj 400\n105\ng 165\n226\nvkvmosh 432\n411\nodzovdltcz 387\n240\njpkxsyf 322\n253 372\n50\njypn 327\n235\ncd 309\n88\niow 485\n454\nd 344\n214\nfodmdqmijsnysqr 266\n299 132\n499\nrog 154\n199\nb 487\n53\nfcvimfm 384\n186 137\n409\nel 151\n343\njdsjfb 105\n84 457",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "274 140\n289\nwxlib 257\n475\npmu 139\n275\nrnp 470\n240\nqn 198\n239\nfw 272\n174\nox 362\n239\nnildf 146\n440\njmbygh 430\n240\nn 248\n349\njrfk 110\n85 124\n286\nllnby 303\n459\nthvkng 292\n164\niuq 59\n185\nxshxz 237\n207\nltwljgslmizj 325\n174 455\n490\nb 290\n109\nx 221\n342\ni 189\n281 169\n242\nmaeb 463\n283\ndyvk 90\n64 491",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "91 374\n445\nxlwt 361\n185\nnmsg 467\n461\nec 423\n472\nomiyb 155\n155\nenugt 414\n480\nwua 276\n136\nugvvq 386\n454\namwclzopxtjz 417\n104\nrbiayof 68\n173\nukuyyuo 117\n349 122\n92\ncqqru 51\n333\nxbouq 67\n456\nkrngz 281\n329\naydbzjb 391\n377\nvdmpjswvwypadop 316\n137 408\n60\nkqluw 57\n130\nhaetls 267\n353\nmg 214\n74 204\n286\nkf 177\n177\naixos 262\n50 430",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "362 380\n314\ni 400\n371\nunv 283\n344\nugddv 232\n320\nw 154\n277\nsy 470\n395\ndqt 315\n243\nbj 316\n153\nrags 130\n147\nbzqsvzpcbpq 431\n340\ngor 230\n90 326\n343\neht 225\n421\njbal 371\n438\nyanfd 247\n373\ndkzsg 240\n218\nxastxrnjp 395\n439 179\n309\nfixdi 265\n235\nw 52\n495\nxdpvj 185\n332 50\n403\nm 168\n465\nwfd 500\n62 399",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "188 306\n429\nn 303\n332\nn 159\n72\nrtcqv 225\n363\nlcee 379\n336\nsblse 496\n500\nhj 215\n303\nmji 246\n190\nycskg 125\n490\nxnaktlyjz 472\n135\ndssnvvt 322\n442 414\n140\ni 462\n297\nlxh 360\n173\nimfy 106\n175\nf 256\n85\nqcenziyqp 277\n302 419\n380\nxps 237\n211\nrd 391\n284\nf 470\n198 375\n229\njv 471\n485\ntehq 218\n277 443",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "55 403\n276\nfegpz 333\n255\nvgram 402\n249\npqz 491\n147\ngfth 376\n431\nc 252\n376\njgw 247\n282\nrcijxp 294\n276\nzrxvrg 223\n364\nybdtu 126\n449\nbltdheij 112\n398 349\n417\nwd 339\n201\nzfg 200\n122\njiag 378\n315\nerasp 180\n271\npanac 99\n250 212\n67\ny 115\n149\nrn 337\n309\nzmc 340\n449 145\n453\ndkf 341\n310\nwwwdbi 227\n383 463",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\nb 1000\n1000\nq 1000\n1000\nszdb 1000\n1000\npth 1000\n1000\nzoil 1000\n1000\nxclaq 1000\n1000\nwuk 1000\n1000\nxbjjg 1000\n1000\nmotijbxwdhg 1000\n1000\ncijua 1000\n1000 1000\n1000\nf 1000\n1000\naaivf 1000\n1000\nqu 1000\n1000\nx 1000\n1000\nba 1000\n1000 1000\n1000\nyjbw 1000\n1000\ns 1000\n1000\nxvwjd 1000\n1000 1000\n1000\npk 1000\n1000\ndu 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\nveewk 1000\n1000\nyqzgo 1000\n1000\nc 1000\n1000\nysru 1000\n1000\nmriajjw 1000\n1000\nym 1000\n1000\njvzgo 1000\n1000\nhbdow 1000\n1000\nrgv 1000\n1000\nhikn 1000\n1000 1000\n1000\nas 1000\n1000\nvmmh 1000\n1000\nikyejyf 1000\n1000\nnjsd 1000\n1000\nosdevkqygpl 1000\n1000 1000\n1000\nro 1000\n1000\niktoub 1000\n1000\nc 1000\n1000 1000\n1000\ngcxm 1000\n1000\nkth 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 999\n999\nz 2\n1000\nkstnt 2\n1\nbwptk 999\n999\nfg 2\n1\nb 1\n999\nu 999\n999\na 999\n2\nbvclcrgw 1000\n2\npjj 1\n1\nnatndvw 1\n1000 2\n999\npdyz 2\n1000\naib 2\n1000\ndm 2\n1000\nw 1000\n2\nbjsdlrvetc 1\n2 1\n2\nspnxh 2\n2\nawptt 1\n1000\ncykp 999\n999 1000\n1000\nzqyp 2\n1\nu 999\n999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2\n1\nw 999\n999\nbora 1000\n1\nu 1000\n1000\ndsth 1\n1000\nv 999\n1\nxm 999\n1\nrax 2\n2\nxkfecnnaatvi 1\n2\nxztgyic 1000\n999\nzoay 1000\n1000 999\n999\np 2\n2\nwirfni 1000\n999\nawhkybr 2\n1\nvbvgsa 1000\n2\nznukgtudxvpx 999\n1 1000\n1\nrv 2\n2\nzspga 1\n1000\nciejx 2\n1000 999\n1\nyjc 2\n999\nwmdzg 999\n999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:55",
+  "total_test_cases": 20
+}

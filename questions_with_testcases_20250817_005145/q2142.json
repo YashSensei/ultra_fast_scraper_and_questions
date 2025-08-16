@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Subdivision of the kingdom",
+  "tags": [],
+  "text": "Byteasar, king of Byteotia, has finally decided to retire. He has two sons, however, and is unable to decide which one one of them should succeed him. Therefore he plans to split the kingdom into two halves, making each son a ruler.After the division, watchtowers have to be built along the roads connecting the halves. Obviously, building them will be costly, so ideally there should be as little roads between the halves as possible.Luckily, Byteotia consists of an even number of towns, connected by roads. Resulting from the division, each half-kingdom should contain half the towns. Each road connects (directly) two towns. The roads do not meet nor cross outside towns, though they can lead through flyovers or tunnels. Every two towns are directly connected by at most one road.Which exact towns should lie in which half of the kingdom is a matter of great importance. You may assume that the land outside the towns can be partitioned in such a way that the roads connecting towns lying in the same half will not cross the border. On the other hand, one watchtower has to be built by each road connecting towns from different halves.TaskWrite a programme that:reads the descriptions of towns and the roads connecting them from the standard input,determines such a partition of kingdom into halves that both the halves contain an equal number of towns and the number of roads connecting towns lying in different halves is minimum,writes out the result to the standard output.If more than one optimum partition exists, your programme should pick one of them arbitrarily.InputThe first line of the standard input contains two integers n and m, separated by a single space, denoting the number of towns and number of roads respectively, 2 ≤ n ≤ 26, 2|n, $(0 ≤ m ≤ \\frac {n⋅(n-1)}{2})$. The towns are numbered from 1 to n. Each of the following m lines contains two integers separated by a single space. The line number (i+1) (for i=1,2,…,m) contains the numbers uiand vi, 1 ≤ ui< vi≤ n. These denote a road connecting uiand vi.OutputYour programme should write out exactly one line to the standard output. It should contain $(\\frac {n}{2})$ integers separated by single spaces. These should be the numbers of towns belonging to the same half of the kingdom the town number 1 does, in an increasing order.ExampleFor the input data:6 8\r\n1 2\r\n1 6\r\n2 3\r\n2 5\r\n2 6\r\n3 4\r\n4 5\r\n5 6the correct result is:1 2 6The dashed line in the figure shows the optimum partition, which requires building as few as 3 watchtowers.",
+  "sample_input": "6 8\r\n1 2\r\n1 6\r\n2 3\r\n2 5\r\n2 6\r\n3 4\r\n4 5\r\n5 6",
+  "sample_output": "1 2 6",
+  "link": "https://www.spoj.com/problems/DIVIDEKR",
+  "scraped_at": "2025-08-17 00:33:46",
+  "test_cases": [
+    {
+      "input": "6 8\r\n1 2\r\n1 6\r\n2 3\r\n2 5\r\n2 6\r\n3 4\r\n4 5\r\n5 6",
+      "expected_output": "1 2 6",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 1\n2 5\n1 1\n4 2\n1 4\n1 10\n7 7\n5 3\n9 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 9\n3 1\n9 8\n5 9\n10 4\n3 6\n3 2\n5 10\n1 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 6\n3 2\n6 3\n2 1\n1 3\n10 7\n6 7\n3 4\n4 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "17 15\n3 14\n6 21\n18 26\n7 12\n9 16\n17 4\n19 9\n14 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 11\n22 4\n3 8\n19 25\n22 12\n15 6\n4 15\n3 11\n11 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 10\n7 4\n6 22\n8 10\n25 8\n6 22\n16 22\n15 25\n26 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 9\n9 23\n26 18\n9 26\n9 22\n7 10\n21 7\n5 26\n14 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 26\n3 8\n12 11\n12 13\n15 15\n18 8\n16 6\n15 8\n9 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 13\n8 7\n9 1\n4 8\n6 6\n3 4\n12 7\n2 11\n6 11",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 12\n7 3\n8 6\n3 12\n4 2\n3 13\n10 10\n4 12\n8 5",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11 11\n1 4\n11 9\n2 11\n4 7\n7 11\n3 2\n11 2\n9 9",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12 4\n11 13\n13 3\n13 1\n3 4\n11 2\n4 5\n12 3\n8 1",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 8\n13 11\n7 5\n6 2\n13 6\n7 3\n7 13\n7 12\n7 13",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 7\n5 7\n7 2\n7 2\n7 12\n2 7\n1 12\n6 3\n12 8",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 7\n6 13\n2 11\n10 6\n10 11\n7 3\n3 3\n1 11\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 26\n26 26\n26 26\n26 26\n26 26\n26 26\n26 26\n26 26\n26 26",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "26 26\n26 26\n26 26\n26 26\n26 26\n26 26\n26 26\n26 26\n26 26",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 26\n2 1\n1 25\n25 2\n26 26\n26 26\n25 2\n1 25\n25 25",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "25 25\n26 1\n26 25\n2 2\n2 1\n26 25\n2 1\n1 2\n26 25",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

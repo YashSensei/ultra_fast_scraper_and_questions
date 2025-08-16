@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cubist Artwork",
+  "tags": [],
+  "text": "International Center for Picassonian Cubismis a Spanish national museum of cubist artworks, dedicated to Pablo Picasso. The center held a competition for an artwork that will be displayed at the facade of the museum building.The artwork is a collection of cubes that are piled up on the ground and is intended to amuse visitors, who will be curious how the shape of the collection of cubes changes when it is seen from the front and the sides. The artwork is a collection of cubes with edges of 1 foot long and is built on a ﬂat ground that is divided into a grid of unit squares, measuring 1 foot long on each side. Due to some technical reasons, cubes of the artwork must be either put on the ground, ﬁtting into a unit square in the grid, or put on another cube in the way that the bottom face of the upper cube exactly meets the top face of the lower cube. No other way of putting cubes is possible.You are a member of the judging committee responsible for selecting one out of a plenty of artwork proposals submitted to the competition. The decision is made primarily based on artistic quality but the cost for installing the artwork is another important factor. Your task is to investigate the installation cost for each proposal. The cost is proportional to the number of cubes, so you have to ﬁgure out the minimum number of cubes needed for installation.Each design proposal of an artwork consists of the front view and the side view (the view seen from the right-hand side), as shown in Figure 1.The front view (resp., the side view) indicates the maximum heights of piles of cubes for each column line (resp., row line) of the grid.There are several ways to install this proposal of artwork, such as follows.In these ﬁgures, the dotted lines on the ground indicate the grid lines. The left ﬁgure makes use of 16 cubes, which is not optimal. That is, the artwork can be installed with a fewer number of cubes. Actually, the right one is optimal and only uses 13 cubes.Notice that swapping columns of cubes does not change the side view. Similarly, swapping rows does not change the front view. Thus, such swaps do not change the costs of building the artworks.For example, consider the artwork proposal given in Figure 2.An optimal installation of this proposal of artwork can be achieved with 13 cubes, as shown in the following ﬁgure, which can be obtained by exchanging the rightmost two columns of the optimal installation of the artwork of Figure 1.InputThe input is a sequence of datasets. The end of the input is indicated by a line containing twozeros separated by a space. Each dataset is formatted as follows.w dh1h2··· hwh′1h′2··· h′dThe integerswanddseparated by a space are the numbers of columns and rows of the grid, respectively. You may assume 1 ≤w≤ 10 and 1≤d≤ 10. The integers separated by a space in the second and third lines specify the shape of the artwork. The integershi(1≤hi≤ 20, 1≤i≤w) in the second line give the front view, i.e., the maximum heights of cubes per each column line, ordered from left to right (seen from the front); The integersh′i(1≤h′i≤ 20, 1≤i≤d) in the third line give the side view, i.e., the maximum heights of cubes per each row line, ordered from left to right (seen from the right-hand side).OutputFor each dataset, output a line containing the minimum number of cubes. The output should not contain any other extra characters.You can assume that for each dataset there is at least one way to install the artwork.ExampleInput:5 51 2 3 4 51 2 3 4 55 52 5 4 1 34 1 5 3 25 51 2 3 4 53 3 3 4 53 37 7 77 7 73 34 4 44 3 44 34 2 2 44 2 14 42 8 8 82 3 8 310 109 9 9 9 9 9 9 9 9 99 9 9 9 9 9 9 9 9 910 920 1 20 20 20 20 20 18 20 2020 20 20 20 7 20 20 20 200 0Output:1515212115133290186",
+  "sample_input": "Input:5 51 2 3 4 51 2 3 4 55 52 5 4 1 34 1 5 3 25 51 2 3 4 53 3 3 4 53 37 7 77 7 73 34 4 44 3 44 34 2 2 44 2 14 42 8 8 82 3 8 310 109 9 9 9 9 9 9 9 9 99 9 9 9 9 9 9 9 9 910 920 1 20 20 20 20 20 18 20 2020 20 20 20 7 20 20 20 200 0Output:1515212115133290186",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CUBARTWK",
+  "scraped_at": "2025-08-17 00:33:23",
+  "test_cases": [
+    {
+      "input": "5 51 2 3 4 51 2 3 4 55 52 5 4 1 34 1 5 3 25 51 2 3 4 53 3 3 4 53 37 7 77 7 73 34 4 44 3 44 34 2 2 44 2 14 42 8 8 82 3 8 310 109 9 9 9 9 9 9 9 9 99 9 9 9 9 9 9 9 9 910 920 1 20 20 20 20 20 18 20 2020 20 20 20 7 20 20 20 200 0",
+      "expected_output": "1515212115133290186",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 4 7 2 10 2 9 3 10 2 5 2 6 3 8 5 4 1 3 1 7 10 5 10 9 2 10 1 9 10 3 2 3 3 9 9 4 3 3 3 1 1 3 8 3 5 5 6 5 10 9 9 4 4 10 5 6 9 7 4 7 8 3 10 5 9 4 2 10 9 3 2 1 3 8 4 4 3 3 1 6 7 2 3 10 9 3 2 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 6 9 10 9 2 1 9 3 5 7 5 1 4 8 2 6 8 5 8 6 6 3 10 8 5 6 10 6 6 7 4 5 7 7 5 4 3 8 10 5 3 10 3 10 8 10 7 8 6 5 6 5 7 10 2 7 1 5 4 7 1 4 10 2 2 6 5 3 4 1 7 2 10 4 5 8 1 2 10 4 2 7 9 10 3 3 2 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 3 9 7 10 10 7 10 7 8 10 4 3 9 5 5 6 3 4 9 9 10 5 8 9 5 9 4 2 5 10 5 7 8 8 5 1 7 5 3 4 6 4 8 3 5 3 5 7 6 2 8 8 3 9 7 1 10 8 4 9 8 2 2 4 5 8 1 3 7 3 4 2 4 2 2 8 10 7 4 6 3 5 6 8 8 7 2 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "78 8 20 45 18 8 100 14 28 66 54 27 16 48 22 76 57 99 60 46 68 77 10 17 91 90 20 5 5 79 72 1 68 44 53 94 74 23 66 96 92 49 83 37 63 48 71 37 4 5 80 77 72 19 79 58 48 59 63 1 37 33 88 47 97 7 49 40 58 4 7 64 5 53 58 87 47 64 87 70 36 42 5 85 42 23 92 87 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 81 45 50 54 73 10 21 45 77 41 96 62 30 14 92 45 2 51 10 28 84 45 37 17 90 91 35 65 41 89 1 57 89 13 55 92 85 37 45 2 51 23 35 41 40 49 14 74 86 29 14 72 34 89 4 60 31 97 87 14 34 95 31 15 85 28 57 71 45 77 4 24 74 64 22 84 45 95 49 40 85 61 73 69 83 3 49 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 62 19 66 74 96 60 84 55 19 45 98 59 45 58 27 61 37 51 61 31 16 36 48 95 37 6 7 3 60 70 73 29 99 91 52 16 5 4 95 35 69 100 45 33 32 41 99 26 91 15 88 90 78 15 7 12 85 89 96 73 87 11 24 100 58 82 37 49 88 41 34 78 78 36 31 79 90 19 33 11 13 66 36 41 90 82 73 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 89 30 16 24 65 65 47 36 20 23 34 30 28 21 65 85 13 86 93 65 19 2 31 80 14 31 34 3 100 84 24 39 59 51 34 14 9 80 33 21 50 58 67 95 37 84 66 1 89 17 36 9 51 68 42 75 40 85 58 38 50 19 61 68 94 69 3 52 52 92 48 79 11 92 43 21 33 47 3 53 17 96 31 17 72 48 35 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 92 37 33 31 31 36 69 94 66 55 49 38 23 38 92 78 80 87 42 40 27 45 43 57 65 45 59 9 26 36 22 59 26 30 97 14 7 40 75 96 31 59 93 6 21 37 13 62 59 54 36 99 42 50 86 52 39 61 33 13 89 54 96 33 68 29 12 5 48 1 52 99 13 53 91 70 64 79 3 18 23 40 95 87 46 41 88 96",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 107 424 495 487 324 247 135 220 479 111 140 417 232 377 77 318 389 160 427 90 161 339 91 340 318 132 266 250 305 177 366 50 469 310 168 209 194 57 184 254 104 112 453 222 104 206 282 137 112 132 142 461 201 169 128 447 413 206 274 156 270 243 51 367 239 318 454 364 500 340 183 341 252 422 481 466 431 365 391 87 239 178 248 137 299 182 60 157",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "178 328 264 358 230 307 89 142 155 242 168 350 90 144 280 258 129 353 421 293 390 70 308 177 355 80 329 440 415 246 244 254 82 192 204 435 358 180 359 88 121 226 444 379 306 407 151 440 280 450 189 153 259 223 164 86 484 95 496 364 406 292 141 403 280 63 178 265 159 427 405 381 97 304 483 321 224 121 334 378 95 407 142 197 131 359 215 83 178",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "397 336 131 114 434 373 172 453 69 97 66 124 110 104 362 262 233 473 157 92 494 234 401 299 403 497 123 323 181 269 250 435 425 170 226 94 148 357 239 365 93 424 385 396 436 384 331 177 244 67 203 119 429 465 358 408 99 275 132 246 93 259 182 438 469 258 392 358 205 151 169 60 76 431 263 277 467 441 141 391 108 199 234 271 142 350 464 301 424",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "301 50 203 471 284 122 344 126 158 253 121 197 408 192 300 364 103 447 251 204 185 324 73 278 436 185 176 184 297 321 288 484 145 139 266 397 378 262 215 293 278 74 59 480 245 268 359 310 208 120 274 329 453 179 257 125 262 79 258 379 184 422 259 62 268 476 139 268 427 426 141 173 482 196 419 455 461 447 221 216 179 133 347 225 309 112 279 159 204",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "391 217 192 311 118 399 252 175 343 233 280 473 292 223 85 321 237 164 175 254 141 155 392 297 293 378 477 211 404 222 110 442 402 137 269 176 157 422 363 85 176 119 456 161 92 384 162 331 263 329 302 113 334 114 298 493 478 109 116 440 102 81 149 289 339 455 263 356 92 87 329 97 172 349 454 170 117 123 316 439 431 112 66 263 370 407 376 357 380",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "349 468 465 323 361 464 497 135 390 198 276 335 192 463 324 242 455 373 426 370 234 270 467 357 118 240 384 232 374 455 111 112 183 470 442 253 438 52 461 382 132 296 205 284 167 291 307 362 334 287 479 498 414 249 391 180 308 404 369 316 177 120 377 354 491 358 267 68 51 359 190 107 481 334 456 442 238 166 95 407 156 199 284 112 360 301 333 211 123",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "128 183 80 325 248 66 402 291 219 447 388 307 500 444 329 332 377 261 240 134 58 269 427 298 389 211 378 250 242 51 252 157 287 202 71 240 332 340 133 148 80 303 249 255 193 327 91 422 339 335 493 374 151 425 152 324 278 140 246 226 489 353 297 256 248 436 130 281 294 76 180 264 189 280 456 139 228 362 123 173 162 279 204 95 376 310 91 412 402",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 1 1 2 1000 999 1 999 1 1 2 1 999 1000 1 1000 999 1 1000 1 1000 1 999 999 1000 1 1000 1 1 999 2 999 999 999 2 1 1 999 2 2 1000 999 2 999 999 2 2 2 999 1 2 1 1 1000 1000 1000 1000 1 2 999 1000 999 1000 999 1000 2 999 1000 999 2 1 2 2 1000 1000 1 1000 1000 1000 1000 1000 2 999 2 1000 1 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1 999 2 2 2 1 1000 1000 1 999 1000 1000 999 999 1 1 1 1000 1 1000 2 1 1 1 2 2 1000 1 1000 2 2 1000 999 2 1 2 2 1000 1000 1 1 1000 1 1000 1000 1 1000 2 2 2 999 2 2 1000 999 1 1000 999 1000 2 1000 2 1000 2 1000 2 999 1000 999 999 999 1000 1000 2 999 1 1 2 999 1 999 2 999 1 999 2 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:46",
+  "total_test_cases": 20
+}

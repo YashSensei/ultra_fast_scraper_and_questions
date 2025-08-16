@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Alias",
+  "tags": [],
+  "text": "Alias is an assumed or additional name that constitutes a distinctive designation of a person. Consider a set of n  persons and assume that each person has k  distinct aliases. A person is identified using any one of its k  aliases. The nk  (= n×k)  distinct aliases are identified using integers 1, 2 ... nk. Integers 1, 2 ... n  represent the first aliases of all n  persons in an arbitrary order. In general, integers (j - 1)×n + 1,(j - 1)×n + 2 ... (j - 1)×n + n  represent the jth  alias of all n persons in an arbitrary order, for j = 1, 2 ... k. Persons in the set are totally ordered with respect to a quality characteristic Q  associated with each person. Let Q(r)  be the value of Q  for a person identified by one of its alias r.Given a sufficient number, say m , of inequalities of the type: Q(r) > Q(s) , you are required to write a program to sort all persons in descending order and recognize all aliases of each person in the set.As a simple illustration consider distinct total marks scored by three students in an examination. Each student is identified by any one of three distinct aliases in the Name: {first-name middle-name last-name}. Let integers 1, 2, 3 represent the first names, 4, 5, 6 represent the middle names and 7, 8, 9 represent the last names in an arbitrary order. Let Q(r) be the total marks of student r, r being an alias. Given the following inequalities: Q(6) > Q(1), Q(9) > Q(4), Q(5) > Q(8), Q(2) > Q(9), Q(7) > Q(3), Q(9) > Q(3) , one can conclude that the names of students appearing in descending order of total marks are {2 6 7}, {1 5 9} and {3 4 8}.InputThe input may contain multiple test cases.For each test case the first input line gives the parameters n , k and m.The second line contains m inequalities represented by 2×m integers. An integer r occurring in an odd numbered position in the line and the integer s occurring in the next even numbered position, represent the inequality Q(r) > Q(s).Assume that nk is less than 100 and each integer in the second input line is of two digits, including a non-significant 0 when required.The input terminates with a line containing 0 as input.OutputFor each test case print n lines giving k aliases of each person in a line; a line contains aliases in increasing order. Arrange persons in descending order of the quality characteristic Q. As in input, each integer in output is of two digits, including a non-significant 0 when required.A blank line appears after the last output line of a test case.ExampleSample Input3 3 6\r\n06 01 09 04 05 08 02 09 07 03 09 03\r\n2 4 2\r\n03 08 02 05\r\n0Sample Output02 06 07\r\n01 05 09\r\n03 04 08\r\n\r\n02 03 06 07\r\n01 04 05 08",
+  "sample_input": "Sample Input3 3 6\r\n06 01 09 04 05 08 02 09 07 03 09 03\r\n2 4 2\r\n03 08 02 05\r\n0Sample Output02 06 07\r\n01 05 09\r\n03 04 08\r\n\r\n02 03 06 07\r\n01 04 05 08",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ALIAS",
+  "scraped_at": "2025-08-17 00:33:03",
+  "test_cases": [
+    {
+      "input": "Sample Input3 3 6\r\n06 01 09 04 05 08 02 09 07 03 09 03\r\n2 4 2\r\n03 08 02 05\r\n0Sample Output02 06 07\r\n01 05 09\r\n03 04 08\r\n\r\n02 03 06 07\r\n01 04 05 08",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 3 5\nxy icyj 1 9\n4 8 2 9 2 5 10 4 4 5 4 6\n1 5 5\n1 6 2 8\n5 9 6 9\ndzcc lmilheou 2 6\n9 3 6\n3 5 9\n1 10 3 3\n5 1 1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5 4\nprps nvrkjw 9 8\n9 3 2 7 5 9 2 5 7 10 10 5\n3 5 3\n2 10 5 8\n1 5 2 10\nfm ymbdz 1 6\n9 8 6\n7 1 10\n4 9 8 2\n10 10 1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10 2\njsvwwj ldpjkp 5 6\n4 7 3 8 10 4 6 9 3 9 4 5\n8 4 3\n7 6 5 5\n6 7 10 4\nyhsvo blrufhda 5 10\n6 2 4\n7 9 3\n7 4 2 4\n6 6 1 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "80 5 74\nx goim 2 77\n83 28 4 99 41 31 78 26 72 86 41 32\n5 30 39\n15 39 48 11\n77 4 64 94\ncepoa gxhe 77 66\n4 26 47\n87 26 91\n5 80 62 30\n91 92 87 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 79 76\nubqgat skbsue 96 4\n58 77 84 88 4 3 36 82 24 12 17 16\n100 92 100\n79 80 5 9\n89 40 23 86\ntclnhg pu 5 48\n11 75 44\n95 70 27\n77 60 15 32\n58 47 60 96",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "94 54 45\ntgun nooqqx 7 96\n2 60 47 51 57 98 60 76 47 49 34 67\n4 23 64\n56 47 65 30\n58 29 59 78\nkdbgo mg 53 48\n40 49 59\n2 97 57\n27 97 87 64\n58 81 53 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 14 100\nk hd 11 52\n39 4 19 86 47 7 100 23 81 53 25 84\n88 90 14\n35 49 10 42\n11 46 91 32\nd yx 50 86\n92 71 40\n94 19 95\n29 56 77 53\n29 71 33 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 53 30\nb xx 59 78\n58 26 96 10 38 56 51 95 30 43 52 18\n15 47 52\n34 11 91 57\n77 79 49 24\ntnxvlfo nzyid 68 38\n55 28 54\n38 94 13\n23 72 46 50\n78 25 51 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "363 432 483\ncom qlbohk 156 165\n103 454 431 384 488 244 258 296 198 131 323 128\n225 85 189\n439 323 206 486\n478 405 156 318\nspawydr owh 493 242\n450 317 374\n53 118 401\n393 61 370 114\n384 292 239 397",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "481 174 78\nnac p 430 485\n227 81 317 114 332 462 87 158 149 458 208 321\n93 117 252\n79 173 234 144\n302 422 192 302\na o 284 115\n187 298 313\n171 341 157\n141 277 249 356\n57 430 465 88",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "414 329 116\nlhtk fnhb 88 296\n79 476 148 218 131 92 452 308 390 210 469 381\n294 330 434\n430 279 341 352\n427 390 474 100\ndfbgvzw vu 384 114\n110 151 125\n188 173 124\n434 474 88 251\n256 99 195 463",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "120 453 194\ns mmw 283 242\n88 210 140 274 201 134 154 163 228 386 162 313\n447 411 334\n342 309 425 488\n166 319 324 159\ncrr zyv 342 112\n375 411 122\n286 416 139\n435 54 397 51\n438 366 361 439",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "167 196 464\nuxr yfx 112 391\n201 382 261 335 182 115 403 117 108 423 491 283\n68 324 485\n374 323 88 479\n262 381 134 209\nq kheehwv 426 489\n412 92 346\n336 485 475\n374 226 441 53\n196 438 195 142",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "239 314 231\nrnopm nifftm 243 191\n365 433 417 219 340 449 403 231 78 460 494 385\n79 389 271\n302 227 255 304\n391 139 459 282\nbprq xzkek 319 148\n191 62 147\n298 51 443\n173 308 125 115\n161 97 395 240",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "326 370 80\njugciq aiq 411 188\n188 56 396 72 464 195 326 268 60 296 377 205\n355 326 500\n420 351 282 60\n72 250 325 476\nci yzf 124 105\n268 142 475\n216 153 105\n208 417 106 197\n366 277 161 428",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nfte ajygv 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\nlz iuivwifh 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\ncu izvvyg 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\noxcz h 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2 1\noctl wpnd 2 1000\n1 2 1 999 1000 999 1000 999 1000 2 999 1\n999 999 999\n1 1 1 1\n2 1000 1 999\npm jqvqt 1000 999\n1000 1000 999\n2 1000 1\n1000 2 1 1\n1 1 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 1\nkqiq svaey 2 2\n1000 1000 1000 2 2 1000 1000 1000 1 1000 999 2\n999 2 999\n1 2 1 1000\n2 1000 2 1\nnazfci hqlub 2 1\n999 2 1000\n1 999 1000\n1 999 2 2\n999 2 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:47",
+  "total_test_cases": 20
+}

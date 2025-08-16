@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Zombie Outbreak",
+  "tags": [],
+  "text": "As many books, movies and video games had shown us, a zombie outbreak was inevitable. However, all hope is not lost. As usual you've encountered a young girl that has been bitten but not transformed. Therefore, you've escorted her to a medial facility so her blood can be studied and a cure manufactured.Unfortunately, the medical facility, for obvious reasons, has not been resupplied in a while. The scientists there have asked you to pick several tools, viruses and whatnots, from N places in the city.Now that you have to go out again, you have created a map with the N + 1 locations: the medical facility (location 0) and the other N where the scientists need you to pick something up (numbered from 1 to N). You've also came up with M two-way paths between some of the locations and the probability to encounter a zombie pack on each of those paths. Note that this is isn't science fiction. If you encounter a zombie pack, you will not survive.You certainly want to fetch all the items and come back alive. You want to compute the maximal probability of picking every item and coming back to the medical facility (safe and sound) if you take a closed walk (cycle that allows node repetitions).InputThe input contains several test cases. Each test case begins with two integers, the number of places you have to go to (1 ≤ N ≤ 16) and the number of paths you came up with (1 ≤ M ≤ N2), separated by a single space.The next M lines contain 2 integers and a real number separated by spaces. Two integers uiand vi(0 ≤ ui, vi≤ N and ui≠ vi) are the locations this path connects. Real number pi(0 ≤ pi≤ 1) represents the probability that you will encounter a zombie pack along this path.You may assume that, for all i ≠ j, probabilities piand pjare independent from each other.The end of input is indicated by a test case with N = M = 0 and should not be processedOutputFor each test case output a single line with a single real number: the probability of getting back to the medical facility alive with all items. Round the result to exactly three places after decimal point. If there's no way to pick all items, you should output 0.000.ExampleInput:2 30 1 0.30 2 0.41 2 0.22 30 1 0.30 2 0.51 2 0.12 20 1 0.10 1 0.92 30 1 0.920 2 0.921 2 0.922 30 1 0.920 2 0.921 2 0.930 0Output:0.3360.3970.0000.0010.000",
+  "sample_input": "Input:2 30 1 0.30 2 0.41 2 0.22 30 1 0.30 2 0.51 2 0.12 20 1 0.10 1 0.92 30 1 0.920 2 0.921 2 0.922 30 1 0.920 2 0.921 2 0.930 0Output:0.3360.3970.0000.0010.000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UCV2013K",
+  "scraped_at": "2025-08-17 00:33:58",
+  "test_cases": [
+    {
+      "input": "2 30 1 0.30 2 0.41 2 0.22 30 1 0.30 2 0.51 2 0.12 20 1 0.10 1 0.92 30 1 0.920 2 0.921 2 0.922 30 1 0.920 2 0.921 2 0.930 0",
+      "expected_output": "0.3360.3970.0000.0010.000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 9 7 7 1 3 7 9 9 10 3 5 3 1 3 2 4 10 5 9 10 8 2 9 7 9 8 6 6 9 8 3 1 10 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 10 8 4 10 10 2 8 10 4 4 3 9 1 9 8 3 1 9 2 7 2 8 1 6 5 3 6 1 6 4 5 8 6 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 9 8 7 6 6 3 9 10 10 2 7 9 5 7 1 1 6 1 4 6 2 7 9 8 6 8 7 5 6 7 10 3 3 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "14 4 2 3 10 15 15 11 13 10 14 8 5 6 14 6 16 1 12 2 6 9 8 2 16 7 12 15 5 12 13 1 3 12 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 10 11 4 6 10 10 11 9 4 9 4 13 15 5 15 5 15 6 3 4 8 8 15 8 8 11 1 9 3 3 15 4 11 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 6 11 5 11 7 9 8 13 15 6 5 14 13 16 1 15 11 6 3 10 14 12 5 2 6 5 10 1 5 3 13 8 4 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 14 4 15 4 4 15 13 10 4 15 11 9 12 3 1 10 5 14 2 11 6 3 11 16 15 1 14 15 15 4 12 6 15 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 15 6 5 16 13 2 14 13 9 3 13 11 13 16 1 14 15 9 8 13 3 11 8 6 3 13 13 12 2 12 4 4 5 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 3 7 5 8 2 3 5 1 3 2 7 1 8 1 5 4 6 6 2 6 8 8 3 6 8 4 6 6 3 1 3 5 2 7",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 4 7 7 7 6 6 6 5 3 1 2 2 3 3 8 4 8 6 2 5 5 3 4 2 6 5 5 3 5 1 1 3 7 7",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 6 6 1 5 3 5 7 8 1 3 7 5 2 8 8 3 4 6 6 1 4 8 1 6 4 7 1 7 4 6 6 2 5 6",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 1 2 1 7 3 1 4 5 2 3 7 5 5 1 4 7 4 5 6 8 7 5 4 2 6 5 5 2 6 6 3 2 8 8",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 2 7 8 6 3 4 3 8 4 4 8 2 7 2 5 4 8 8 8 3 7 6 8 8 4 5 4 5 7 1 6 3 3 8",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 4 5 8 1 4 7 3 1 4 1 2 4 1 4 5 4 2 6 7 4 6 6 6 3 5 7 1 8 7 2 2 8 8 8",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 4 7 3 3 6 5 5 3 4 8 6 1 1 6 5 2 1 8 4 6 2 1 4 7 6 5 7 4 1 5 7 3 8 3",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "15 1 16 1 15 16 16 1 1 16 16 15 15 1 15 15 1 1 15 15 2 1 16 16 2 1 16 1 15 15 16 15 2 16 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 16 15 2 15 1 15 2 16 1 1 1 2 1 2 16 15 2 1 16 16 16 15 16 15 2 1 2 2 2 1 2 1 15 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:51",
+  "total_test_cases": 20
+}

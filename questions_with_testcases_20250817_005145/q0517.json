@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Parity",
+  "tags": [],
+  "text": "You are given n binary strings s1... sn, each of the same\r\nlength m.  Along with each siyou are given a bit bi.  You are\r\nalso given some nonnegative integer k and want to know whether there\r\nexists a subset S of {0, 1 ... m-1} of size at most k such\r\nthat for each i = 1, 2 ... n, the bit biis the XOR of the bits\r\nof siat the indices in S.  The siare 0-indexed strings.\r\nRecall that the XOR of a set of bits\r\nis 1 if the number of bits equal to 1 is odd, else the XOR is 0\r\n(in particular, the XOR of an empty set of bits is 0).\r\n\r\nFor example, if s1= 1010 and S = {0, 3}, then b1would be\r\n1 (the first bit of s1) XOR'd with 0 (the last bit of s1),\r\nwhich is 1.\r\n\r\nGiven n, k, and the strings s1... snand their\r\ncorresponding bi, find a set S of size at most k which produces\r\nthe given bi.  You should also detect when no such S exists.InputThe first line contains n and k, space-separated (1 ≤ n ≤\r\n64, 0 ≤ k ≤ 10).  n lines then follow, where the ith line\r\ncontains si, followed by a space, then bi.  In a given test case\r\nall strings siare of the same length m (1 ≤ m ≤ 50).  k\r\nwill not be bigger than m.OutputIf no set S of size at most k exists producing the given bi,\r\noutput -1 followed by a newline.  Otherwise, on the first line\r\noutput the size of a possible S.  If the size of that S is not\r\n0, on\r\nthe second line, output a space-separated list of the indices in S,\r\nfollowed by a newline.  If there exist multiple valid S to be\r\noutput, you can output any one of your choosing.ExampleInput:3 1\r\n111 1\r\n001 0\r\n011 1Output:1\r\n1",
+  "sample_input": "Input:3 1\r\n111 1\r\n001 0\r\n011 1Output:1\r\n1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PARITY",
+  "scraped_at": "2025-08-17 00:33:13",
+  "test_cases": [
+    {
+      "input": "3 1\r\n111 1\r\n001 0\r\n011 1",
+      "expected_output": "1\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 8\n5 1\n2 7\n9 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 2\n7 2\n9 3\n8 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 7\n2 4\n10 2\n3 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "37 63\n2 20\n43 36\n56 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 9\n5 18\n32 14\n51 57",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 23\n57 45\n5 14\n19 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 16\n39 7\n50 7\n61 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 51\n22 19\n50 18\n2 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 32\n30 13\n4 9\n12 30",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 13\n30 4\n19 30\n16 14",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 14\n19 13\n10 9\n20 7",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "20 32\n15 12\n10 12\n16 23",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 14\n29 23\n30 7\n30 30",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 25\n30 14\n3 7\n21 19",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "8 26\n19 30\n9 6\n22 10",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "64 64\n64 64\n64 64\n64 64",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "64 64\n64 64\n64 64\n64 64",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n64 1\n63 1\n1 63",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "63 63\n63 1\n64 2\n63 63",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:47",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Alice in Amsterdam, I mean Wonderland",
+  "tags": [],
+  "text": "This is a fact that not many people know, but Alice lived in Amsterdam. Yes, there you go. And as many kids of the time, she used to go for some medicinal mushrooms to the drug store (the pharmacies, the coffee shops didn't exist yet). Usually, between the regular mushrooms, a magical one could be found, producing as expected, deep and vivid hallucinations. During one of those hallucinations, Alice was transported to a \"wonderland\", where many weird things happened. One thing was particularly dazzling for her: even though everything looked pretty familiar, the distance between monuments of the city was sometimes negative!!! Although, zero distance between two different monuments means a direct path doesn't exist. A loop from a given monument right back to it can be of length zero (with means that it can be reached instantly like in real life) or negative, like for regular paths. Alice also thought that she saw some positive distances for loops, but we should treat those cases as zero distance.Now, as a very smart girl as she is, she figured out a way to find the shortest path between any two monuments. Unfortunately, as expected, Alice forgot it when she got sober again. She was only able to remember that, in some cases, she could get stuck in a cycle path with negative distance. In such cases, there will always be a cheaper path to get to the same monument. This was one of the few things that had perfect sense for her: Your shortest path will be shorter if you take that cycle again and again, to infinity. Alice, has been trying to figure optimal distances all over again, but she can't. She doesn't want to trip again, she has been clean for longer than a year (good for her!!). Would you be so kind to help her?Given a list of monuments in a city, and their relative distances, find the shortest paths between some pairs of monuments.InputEach case, starts with one line containingN, the number of monuments in the test case (1 ≤N≤ 100). Next N lines will each contain one stringKandNintegersKj, separated by single spaces.Kis a name of a monument and will consist of at most 20 alphanumeric characters. Each integerKj(0 ≤j<N) in lineidescribes the distance from monument i to j (-230≤Kj≤ 230). Next line will contain a single integerQ(1 ≤Q≤N2). It will be followed by Q lines, each with a pair of integers (U,V), indicating the start and destination monument for the path that is queried (0 ≤U,U<N).End of the input is indicated by a test case withN= 0 and should not be processed.OutputFor each test case, print a line \"Case #tc:\" (without quotes), where tc is the case number, starting from 1. NextQlines should describe query results. If the optimal distance can be infinitely small, print only \"NEGATIVE CYCLE\". In other cases, start the line with \"start_name-destination_name\" followed by the actual result. If the destination can't be reached, print \"NOT REACHABLE\", otherwise print the integer distance.ExampleInput:2Nieuwkerk -1 1Oudekerk 1 040 00 11 11 03Nieuwkerk 0 -5 0Oudekerk 10 0 0Pierteck -100 -100 090 00 10 21 01 11 22 02 12 20Output:Case #1:NEGATIVE CYCLENEGATIVE CYCLENEGATIVE CYCLENEGATIVE CYCLECase #2:Nieuwkerk-Nieuwkerk 0Nieuwkerk-Oudekerk -5Nieuwkerk-Pierteck NOT REACHABLEOudekerk-Nieuwkerk 10Oudekerk-Oudekerk 0Oudekerk-Pierteck NOT REACHABLEPierteck-Nieuwkerk -100Pierteck-Oudekerk -105Pierteck-Pierteck 0",
+  "sample_input": "Input:2Nieuwkerk -1 1Oudekerk 1 040 00 11 11 03Nieuwkerk 0 -5 0Oudekerk 10 0 0Pierteck -100 -100 090 00 10 21 01 11 22 02 12 20Output:Case #1:NEGATIVE CYCLENEGATIVE CYCLENEGATIVE CYCLENEGATIVE CYCLECase #2:Nieuwkerk-Nieuwkerk 0Nieuwkerk-Oudekerk -5Nieuwkerk-Pierteck NOT REACHABLEOudekerk-Nieuwkerk 10Oudekerk-Oudekerk 0Oudekerk-Pierteck NOT REACHABLEPierteck-Nieuwkerk -100Pierteck-Oudekerk -105Pierteck-Pierteck 0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UCV2013B",
+  "scraped_at": "2025-08-17 00:34:00",
+  "test_cases": [
+    {
+      "input": "2Nieuwkerk -1 1Oudekerk 1 040 00 11 11 03Nieuwkerk 0 -5 0Oudekerk 10 0 0Pierteck -100 -100 090 00 10 21 01 11 22 02 12 20",
+      "expected_output": "Case #1:NEGATIVE CYCLENEGATIVE CYCLENEGATIVE CYCLENEGATIVE CYCLECase #2:Nieuwkerk-Nieuwkerk 0Nieuwkerk-Oudekerk -5Nieuwkerk-Pierteck NOT REACHABLEOudekerk-Nieuwkerk 10Oudekerk-Oudekerk 0Oudekerk-Pierteck NOT REACHABLEPierteck-Nieuwkerk -100Pierteck-Oudekerk -105Pierteck-Pierteck 0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 1 3 2 2 4 7 7 6 1 1 8 6 2 3 3 1 4 1 3 8 4 10 4 8 3 10\ncgvnkva cgls laaaevdc 5 6 5 1 3 liib 5 vz yg 9 8 e q pdu 9 5 6 7 4 10 4 5 4 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 4 9 3 3 7 1 7 3 10 7 3 1 1 3 2 6 10 1 4 3 4 3 3 2 6 9\ne m lfukwhw 7 2 9 1 2 uluhyhbtrpq 3 pxds qo 6 6 eeolc runy dbtk 3 8 6 7 9 1 5 8 2 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 5 6 3 6 7 6 2 1 3 4 8 2 6 7 5 4 4 2 3 1 2 9 8 10 8 9\nxv rrv tce 4 6 5 5 2 gkj 1 xpg jk 7 4 bp wvvk aujpe 4 10 4 3 1 2 6 3 4 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "99 7 59 95 92 31 88 44 87 31 12 46 46 37 24 63 88 64 89 88 49 22 76 100 100 89 1\nqid e q 65 62 17 71 43 rdkrryjlpa 1 zo plwncueth 24 50 h dppp njuff 53 25 87 21 12 27 53 87 24 74",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 28 48 21 54 50 53 69 19 56 10 20 59 29 96 7 28 68 59 44 33 10 97 92 69 52 99\nf f vszdbv 15 62 9 71 43 yqrabjbwhus 95 egc djketjsxw 88 62 euwbfuqs ie p 10 42 48 73 71 21 70 21 81 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "67 98 60 15 72 14 88 46 59 85 99 7 35 79 15 63 91 5 2 26 47 13 94 37 24 46 70\nzylukjkc ngkbt dfnwrfumw 6 84 90 88 60 zuxkxju 14 zean vkqd 24 51 sual arq xafdj 91 77 36 53 25 95 69 48 26 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 12 29 1 59 82 87 67 20 45 44 63 72 19 71 41 85 48 12 89 11 52 62 79 27 58 35\nkzjbm dybh fvz 63 81 11 23 68 qgnnnkhhorp 43 antl uk 8 82 atunietia dish c 32 80 42 50 78 58 87 13 22 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 2 46 50 33 62 70 43 22 90 47 67 84 100 43 77 66 85 23 22 90 73 71 78 43 48 33\nhn vxbep b 91 65 20 60 59 anz 100 qei inygmzbg 50 73 wbcyf r vxbi 35 90 9 35 3 87 40 64 41 54",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 33 41 13 6 48 45 11 23 47 43 42 26 21 9 25 43 28 26 8 50 9 39 8 26 38 50\narefijih bk fkucwxvrl 35 50 47 40 27 tnrknvykmmp 8 jlgwi fdicfle 41 34 slefjlft qgw ifykz 34 44 20 40 39 28 47 35 49 44",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 22 50 18 11 23 48 25 43 36 44 12 49 33 27 41 6 20 19 8 6 29 19 5 22 44 8\notb xtgdu zysaadde 13 8 30 18 20 nwuiesqwfzg 20 dt csr 47 30 dtku r z 15 6 24 50 5 16 12 15 34 23",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "31 17 6 14 25 12 7 37 39 43 49 41 35 50 27 20 43 14 5 49 31 30 47 32 7 24 6\nzedskh gjk qmeyylom 14 15 41 28 12 zejofud 19 g qqwhlo 29 38 n xlnwu kr 46 7 38 31 7 13 47 50 42 27",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "25 26 8 36 10 43 29 35 40 27 9 27 50 5 50 49 7 6 49 50 6 28 36 31 45 35 12\nv mj yewionzbd 36 29 18 40 16 ar 37 epggt aenshn 41 30 mvoqwuvar mdho ga 8 7 14 30 15 40 9 44 16 11",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "45 33 36 24 32 44 10 28 31 39 37 36 45 44 8 26 42 36 34 8 20 17 24 23 8 47 12\nj f ijipszuvh 32 10 11 33 38 hwfxouvy 29 jmt xarye 21 48 v kxc r 13 43 18 27 19 14 11 31 19 48",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 30 27 41 6 48 20 10 33 42 38 49 41 32 39 44 37 30 11 39 20 24 31 49 29 34 20\nezktsq fjiyw wondrvbv 43 5 50 8 33 jkbj 14 xpap dqzjx 16 15 wesvaxik k iei 40 18 47 50 24 45 6 39 45 18",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "37 37 44 23 25 48 6 27 8 12 14 28 10 24 45 20 25 45 28 37 41 26 14 27 9 40 11\njhl e kzxklcqef 27 48 41 49 5 oek 45 jt yphn 41 11 efif zvtst bjj 31 23 17 31 28 32 43 50 37 20",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100\nrnowz u qunekukak 100 100 100 100 100 ailmf 100 wari jrmp 100 100 bcdzqmegz nvzy g 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100\nmuawgr q j 100 100 100 100 100 rmwib 100 qqusz jzbqg 100 100 wo wsibu lu 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 100 100 2 99 2 99 100 100 2 2 99 100 1 1 99 1 2 1 99 2 100 99 2 2 1\nxjvmycij gthb c 2 1 100 99 2 bqnbjab 99 r cotjidhob 99 1 vbw e dhm 100 2 100 2 100 100 99 1 1 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 99 100 100 2 1 2 99 100 1 2 1 1 1 1 1 99 99 1 2 1 2 2 99 99 100 99\nqmb bm i 2 2 99 1 2 hwj 2 nqlyn mauypmvt 2 2 pf b yyaiz 2 99 2 1 100 100 2 1 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:51",
+  "total_test_cases": 20
+}

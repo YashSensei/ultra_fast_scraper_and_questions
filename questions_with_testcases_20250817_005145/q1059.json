@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Kimetto Kipsang and Kipchoge",
+  "tags": [],
+  "text": "Kenya is the birthplace of some of the best long-distance runners of all times. Indeed, eight of the most recent ten best times in the traditional 41.195 km of the marathon have been set by runners from that country. Dennis Kimetto, Wilson Kipsang and Eliud Kipchoge are three such runners, and they want to beat their discipline's world record once more tomorrow September 27, when they compete in the 42ndedition of the Berlin Marathon.Kimetto, Kipsang and Kipchoge are good friends, and they like to train together running by the Tana river in order to appreciate the beautiful trees that grow there. There areNtrees by the river, which we will number from1toN. Thei-th tree is of the speciesSiand stands at a distance ofimeters from the mouth of the river. Our three runners are especially motivated by the sight of many trees of different species. For this reason, each training day they choose a tree with numberKfrom1toN, and then run from theK-th tree following the river,i.e.in the direction of treesK-1,K-2and so on, stopping only when they see a tree of some species they have already seen that day, or when they reach the mouth of the river, whichever comes first.For example, if there areN = 4trees of speciesS1= 1,S2= 2,S3= 1andS4= 3, when they chooseK = 4the training consists in running3meters, from tree number4up to tree number1(where they stop because this tree is of the same species as tree number3). However, if they choseK = 2they would run two meters up to the mouth of the river, where they would stop even without having seen two trees of the same species as they went.Long-distance running requires decades of training, and in this time it is common for some trees to fall during storms. When this happens, the fallen tree is immediately replaced by another one, not necessarily of the same species. Kimetto, Kipsang and Kipchoge keep a diary where they take note of all the information relevant to their training. In particular, they know the species of all trees, and which number they chose to start running each day of training. Can you help them calculate how much they ran each training day?InputThere are multiple test cases in the input file. For each test case, the first line contains two integersNandR, representing respectively the number of trees by the river and the number of entries in the training diary (1 ≤ N, R ≤ 5 × 104). The second line containsNintegersSiindicating the species of thei-th tree when the training began (1 ≤ Si≤ 106fori = 1, 2, ..., N). Each of the followingRlines contains the description of an entry in the training diary, in chronological order. This description starts with a character which can be a'C'if the entry corresponds to a fallen tree or an'E'if it corresponds to a training day. The entries for fallen trees contain two integersKandSafter the'C', indicating that theK-th tree fell and was replaced by another tree of speciesS(1 ≤ K ≤ Nand1 ≤ S ≤ 106). The entries for training days contain an integerKafter the'E', indicating that the runners began a training day by running from theK-th tree (1 ≤ K ≤ N). There will always be at least one entry for a training day in each test case.OutputFor each test case, print one line for each entry corresponding to a training day, indicating the number of meters Kimetto, Kipsang and Kipchoge ran during that day.ExampleInput:4 2\r\n1 2 1 3\r\nE 4\r\nE 2\r\n10 10\r\n1 2 3 4 5 6 7 8 9 10\r\nE 1\r\nE 2\r\nE 3\r\nE 4\r\nE 5\r\nE 6\r\nE 7\r\nE 8\r\nE 9\r\nE 10\r\n5 7\r\n1 2 3 4 5\r\nE 3\r\nE 5\r\nC 3 1\r\nE 4\r\nC 2 5\r\nE 3\r\nE 5Output:3\r\n2\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10\r\n3\r\n5\r\n3\r\n2\r\n3",
+  "sample_input": "Input:4 2\r\n1 2 1 3\r\nE 4\r\nE 2\r\n10 10\r\n1 2 3 4 5 6 7 8 9 10\r\nE 1\r\nE 2\r\nE 3\r\nE 4\r\nE 5\r\nE 6\r\nE 7\r\nE 8\r\nE 9\r\nE 10\r\n5 7\r\n1 2 3 4 5\r\nE 3\r\nE 5\r\nC 3 1\r\nE 4\r\nC 2 5\r\nE 3\r\nE 5Output:3\r\n2\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10\r\n3\r\n5\r\n3\r\n2\r\n3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TAP2015K",
+  "scraped_at": "2025-08-17 00:33:38",
+  "test_cases": [
+    {
+      "input": "4 2\r\n1 2 1 3\r\nE 4\r\nE 2\r\n10 10\r\n1 2 3 4 5 6 7 8 9 10\r\nE 1\r\nE 2\r\nE 3\r\nE 4\r\nE 5\r\nE 6\r\nE 7\r\nE 8\r\nE 9\r\nE 10\r\n5 7\r\n1 2 3 4 5\r\nE 3\r\nE 5\r\nC 3 1\r\nE 4\r\nC 2 5\r\nE 3\r\nE 5",
+      "expected_output": "3\r\n2\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10\r\n3\r\n5\r\n3\r\n2\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 6\n9 9 10 9\n10\nh 4\n5\nx 10\n6 7\n7 8 4 3 7 2 9 1 2 2\n4\nmfvv 10\n2\nyvraf 9\n2\nazuo 5\n9\ndhf 10\n1\nenoc 7\n8\nzz 4\n9\nmfim 10\n10\nk 4\n5\noclrb 2\n2\nuabmv 3\n8 7\n1 9 5 4 6\n7\nik 7\n9\nywci 1\n9 8\nzmz 7 4\n2\nqdkc 8\n6 1\nekn 4 5\n3\ncj 3\n3\norh 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2\n7 1 1 10\n9\nlo 9\n8\nhzkzz 1\n7 3\n9 6 7 8 6 2 5 10 6 10\n3\nycij 9\n3\nxni 6\n4\ntxdgk 10\n9\nrff 7\n9\nlgphd 9\n6\nlazm 10\n10\noql 10\n9\ntbgd 9\n10\nsnzyd 1\n1\nn 2\n5 6\n10 6 7 2 3\n5\nazil 1\n1\nwqj 3\n3 2\no 7 1\n5\nkgt 10\n2 3\nvzch 1 6\n7\nqdiz 9\n3\nhzw 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 4\n6 2 4 7\n7\ncpf 7\n2\nv 9\n6 3\n4 10 5 3 9 8 9 8 3 7\n4\nj 10\n7\ncnm 9\n8\ncoazb 4\n9\npake 2\n8\nbc 10\n3\naiw 10\n8\nd 7\n10\nevlr 4\n5\nyujqk 7\n10\njnoix 9\n2 10\n9 3 1 7 3\n4\ndn 9\n9\nbbql 8\n8 1\nscb 1 8\n1\nhs 4\n5 6\nkw 6 5\n7\nql 10\n3\nz 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "27 65\n29 43 20 53\n28\na 84\n72\nrbsmh 30\n72 27\n43 39 77 71 41 75 83 53 84 33\n20\nneagw 68\n31\nh 73\n77\nmf 50\n64\nq 14\n53\nur 42\n1\nlvh 24\n54\nvhev 62\n25\ntpkg 16\n91\nf 95\n75\ngsp 96\n30 64\n50 65 100 23 99\n57\nni 17\n20\nggj 30\n65 27\nejof 95 26\n100\nb 66\n81 30\nov 36 66\n86\nhkdro 32\n88\nvgb 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 34\n57 24 18 35\n87\nrfwl 40\n26\nfar 34\n52 52\n76 28 88 26 99 96 36 99 27 96\n63\nh 47\n9\nabpey 94\n15\nu 77\n70\net 79\n40\nnzeay 51\n82\niz 50\n5\ncrw 11\n100\noc 8\n69\nuag 64\n24\nf 52\n20 44\n42 63 83 38 44\n92\nldct 94\n13\ni 63\n97 99\nzp 71 82\n1\niecb 57\n69 25\nh 5 84\n27\nqgqhu 3\n80\nipc 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 56\n69 62 32 11\n24\ng 21\n55\ndyhjc 23\n8 48\n34 52 22 96 14 91 56 36 23 10\n70\nfn 50\n80\nolmb 92\n64\njvt 73\n48\nc 20\n22\nsttck 88\n64\nul 92\n7\nsyjkq 90\n48\nxic 51\n18\naiadq 49\n50\nuk 79\n21 55\n38 8 5 79 50\n48\nez 3\n24\ncoadu 27\n51 23\np 90 63\n75\njx 98\n93 72\nitk 10 16\n95\nrfdp 51\n26\nnnyq 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 24\n38 6 85 3\n71\nykik 46\n62\nxt 70\n9 38\n87 39 46 65 51 7 26 13 91 45\n91\nzf 26\n58\nn 5\n59\nljrgl 54\n51\nap 84\n28\neyyj 57\n91\nyg 54\n16\nansxx 82\n41\nyjv 92\n69\nqrl 86\n30\nul 7\n89 6\n28 21 5 66 83\n59\npu 10\n14\nde 52\n69 73\nu 27 75\n44\nny 68\n86 77\nay 60 45\n70\nlzbq 30\n78\nnw 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 64\n26 53 46 55\n39\njx 77\n6\nd 30\n80 83\n91 54 6 29 18 27 58 100 92 20\n41\nh 74\n78\ntb 46\n17\ndtnqy 66\n58\nkd 71\n52\nn 72\n68\nohx 19\n86\nkpnd 48\n60\nxarq 93\n98\nnu 76\n73\nx 65\n95 97\n89 64 46 77 98\n38\nv 61\n47\nlu 35\n62 53\nenmnd 93 23\n31\njtta 94\n64 53\nyg 62 87\n47\nzmenf 98\n8\nnyhh 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "424 258\n133 480 375 256\n444\nl 123\n290\nwt 301\n291 248\n380 66 410 168 132 257 254 168 185 403\n284\nvbhz 53\n236\ncjsh 392\n462\nctt 432\n433\nhgvzw 499\n220\ncx 291\n149\nsu 291\n248\nmqsd 281\n111\nwedk 79\n187\njgad 185\n176\nbn 385\n383 259\n66 110 167 318 134\n387\nsd 372\n424\nb 275\n438 347\nlvzl 156 488\n114\njl 357\n456 188\nmg 348 476\n269\nctfcw 262\n375\nq 266",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "318 395\n341 209 184 486\n214\nsnl 260\n461\neq 429\n207 294\n312 250 279 278 245 215 363 332 258 492\n334\ni 257\n167\nwn 445\n64\neu 357\n278\nfvee 252\n423\nzcapc 153\n348\ncpu 402\n267\nfw 108\n241\nvkh 423\n473\nmggtl 354\n473\ncgq 54\n350 458\n413 164 317 226 414\n443\nwk 137\n253\nwgsre 223\n357 235\nofva 178 88\n51\nyncky 64\n414 399\ncnlj 379 214\n270\no 376\n235\nu 126",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "89 133\n338 384 438 250\n235\nzjpm 494\n243\nsph 428\n142 189\n115 489 120 351 447 452 165 368 216 140\n466\nj 284\n151\nejl 323\n62\nvm 55\n274\nok 101\n304\noidt 425\n305\nmkqp 346\n386\nzjdb 140\n66\nau 132\n437\nat 281\n428\nm 198\n256 224\n282 227 269 208 290\n456\nbykfj 328\n211\nxylj 313\n480 337\nd 370 249\n361\np 422\n57 391\nmu 371 217\n251\nk 438\n450\nr 368",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "55 166\n198 144 444 232\n315\nfkc 496\n277\nrvacl 412\n282 294\n133 93 114 214 476 244 112 146 167 236\n61\nqoc 333\n356\nq 89\n335\nngtiu 476\n234\nemps 300\n411\na 66\n322\nofwt 84\n408\nelxhr 188\n199\njzt 357\n109\nnqta 76\n261\ndj 182\n395 77\n158 186 146 155 214\n214\niz 237\n442\nql 470\n391 339\nhkdg 229 314\n91\nkz 332\n109 162\nmal 469 232\n199\nhjrqw 454\n266\npkym 51",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "442 232\n420 192 317 141\n186\narhdc 466\n101\nghbqq 254\n322 484\n488 319 348 379 363 476 473 500 478 412\n251\nbpv 491\n292\nfq 296\n379\nahy 381\n426\nhgbd 76\n317\ngqa 287\n89\nxndk 127\n404\nsyn 201\n270\nt 194\n261\nsyvea 406\n105\nkvdos 372\n152 430\n94 208 153 115 401\n150\nd 167\n241\nn 205\n482 408\nocyrr 272 344\n442\nli 114\n424 104\ni 161 98\n241\ncxef 184\n363\njnoja 498",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "274 289\n84 93 68 298\n309\nubsq 378\n455\ng 261\n466 122\n138 411 447 485 426 124 181 95 237 337\n260\njirz 238\n269\nle 283\n368\nlbdh 257\n420\nh 285\n460\nf 327\n143\nvwvms 463\n295\nx 402\n108\nk 424\n248\nohpdd 108\n429\nz 163\n135 417\n201 483 456 108 265\n304\njc 383\n269\njxuy 417\n227 274\nkfavp 209 402\n402\npgvym 125\n257 79\ng 409 489\n94\nbtytv 146\n466\noveu 212",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "359 323\n470 318 452 198\n284\nk 432\n189\nq 321\n389 459\n452 185 137 274 55 116 58 268 454 391\n265\ns 346\n352\naithb 218\n457\nx 335\n230\nfb 144\n111\nlpz 299\n463\njo 494\n101\nhvha 450\n116\nu 184\n417\nhn 335\n86\npx 391\n306 397\n212 411 193 456 191\n193\ngzg 144\n364\nix 239\n487 128\nt 386 295\n369\nsdbtp 80\n273 427\nr 174 204\n373\nffgp 339\n118\negvo 227",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000\ntfty 1000\n1000\ntjkpk 1000\n1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000\nkhuzd 1000\n1000\nzir 1000\n1000\nw 1000\n1000\npp 1000\n1000\nd 1000\n1000\nysycz 1000\n1000\nlpeh 1000\n1000\nfu 1000\n1000\nmz 1000\n1000\nxcnfv 1000\n1000 1000\n1000 1000 1000 1000 1000\n1000\nad 1000\n1000\ndk 1000\n1000 1000\ngia 1000 1000\n1000\nxof 1000\n1000 1000\nj 1000 1000\n1000\nbbwh 1000\n1000\nehjf 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000\nyo 1000\n1000\nmzyhl 1000\n1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000\nzubvl 1000\n1000\nxrivc 1000\n1000\nos 1000\n1000\njbri 1000\n1000\nhpnli 1000\n1000\ntw 1000\n1000\nxvw 1000\n1000\nz 1000\n1000\nephpp 1000\n1000\nppe 1000\n1000 1000\n1000 1000 1000 1000 1000\n1000\naph 1000\n1000\nmswu 1000\n1000 1000\nj 1000 1000\n1000\nehmbp 1000\n1000 1000\nz 1000 1000\n1000\nagd 1000\n1000\nfvpoa 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000\n2 2 1 2\n1\nulgdx 2\n2\nppw 999\n1 1000\n1000 1 1000 999 2 2 1 1 999 1000\n1\nmphqg 2\n1\nv 2\n1\nlszg 2\n999\nadld 1\n2\nqirh 1000\n2\npmbqb 1\n2\njgzs 999\n1\nxdd 1000\n1000\na 999\n1\ncsig 2\n999 1\n1 999 999 1000 2\n1000\nnio 1\n2\nqlvd 1000\n999 2\ng 1000 1\n999\nmhuib 2\n2 2\nqqvb 999 1000\n999\ntcnro 999\n999\nkxoo 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n1 2 2 999\n999\npwa 1\n1\nbwveg 1000\n1000 1\n1000 1000 1 2 2 2 999 1 999 2\n1000\nnd 999\n1000\ntapf 2\n1000\nvdig 999\n1\nod 1000\n1000\np 999\n1\nnpxgf 1000\n1\nyb 1\n1\nxhc 1\n1\nyoka 2\n2\nyhu 1000\n1 2\n999 2 2 2 1000\n1000\ne 999\n999\nuwt 999\n2 999\ncenev 999 2\n1000\nb 1\n2 1000\ndrryy 1000 1000\n1\nral 2\n1000\njnx 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}

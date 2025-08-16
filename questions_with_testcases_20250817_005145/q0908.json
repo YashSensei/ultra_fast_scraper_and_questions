@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Raining Parabolas",
+  "tags": [],
+  "text": "Nowadays you just can't predict what'll fall on your head the next day. Because we don't care about the nature, it is now striking back: it's raining parabolas!The parabolas that are falling are given in form of quadratic functions:f(x) = ax2+ bx + c. The ground can be defined as a line with N blocks, numbered from 0 to N-1, initially having height 0. At some point, a block can have some positive height, but when it exceeds 10006 (we don't actually know why, but measurements have shown it is a weird regularity) it falls back to 0. When a parabola falls on some block, it interacts with its current configuration (the parabolas that have fallen there before it) by summing with it. More precisely, if we are given an interval [x0, x1] in which the next parabola will fall, and the function of our parabola is f(x) (defined above), some block i (x0≤ i ≤ x1), with height hi, the new height of that block becomes (hi+ f(i)) modulo 10007.Today you somehow came in possession of some sort of schedule which defines the order in which the parabolas will fall on the ground. Apart from that, you're interested total heights (sums of heights) of consecutive blocks of ground. When we want to find the total height of some interval [x0, x1], we're looking for thesum of hifor all i(x0≤ i ≤ x1)modulo 10007.Before the first parabola falls, the ground is flat (all heights are 0).InputThe first line of input contains two integers: N and M (1 ≤ N, M ≤ 100000). N specifies the number of blocks on the floor, and M is the number of queries. Each of the next M lines contains a query. As we already said, we have two types of queries of form:0 x0x1a b c (0 ≤ x0≤ x1< N, 0 ≤ a, b, c ≤ 10006,all integers)this type of query just tells you that a parabola has fallen into the interval [x0, x1], and its function is f(x) = ax2+ bx + c1 x0x1(0 ≤ x0≤ x1< N,all integers)this is the type of query you have to answer - output the sum of heights of all the blocks from interval [x0, x1] modulo 10007.OutputFor each query of type 1, output a single line containing the sum of all the heights in the given interval modulo 10007.ExampleInput:10 2\r\n0 0 9 1 0 0\r\n1 0 3Output:14(the sum of the first 4 squares (from 0 to 3) is 14)",
+  "sample_input": "Input:10 2\r\n0 0 9 1 0 0\r\n1 0 3Output:14",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RPAR",
+  "scraped_at": "2025-08-17 00:33:25",
+  "test_cases": [
+    {
+      "input": "10 2\r\n0 0 9 1 0 0\r\n1 0 3",
+      "expected_output": "14",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 5\n1 5 8 10 9 9\n1 6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 3\n3 2 4 7 6 3\n6 5 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2\n1 3 8 7 4 4\n6 4 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "86 70\n97 71 74 11 61 80\n43 73 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 14\n98 53 8 51 43 36\n41 72 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 71\n38 39 79 46 84 44\n10 73 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 11\n29 14 75 68 92 72\n74 42 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 49\n26 5 98 9 16 82\n29 15 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "481 57\n354 329 466 61 236 237\n448 144 446",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "281 67\n409 285 76 457 173 253\n137 246 273",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "82 474\n265 258 336 490 352 318\n465 467 118",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "424 282\n369 247 198 312 350 206\n315 55 433",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "325 335\n477 161 54 142 198 423\n237 303 160",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "397 130\n485 340 274 289 299 477\n437 93 162",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "496 90\n371 256 365 348 256 467\n447 162 196",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1000\n2 999 1000 2 1000 999\n1 1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\n1000 1 999 999 1000 2\n1000 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "High and Low",
+  "tags": [],
+  "text": "A student is always bored during his math classes. As the teacher won't let him sleep, he finds something else to do: try to find patterns in the numbers written on the board! Currently, he's spending his time trying to find Hi&Lo subsequences.Intuitively, a Hi&Lo sequence is any sequence that has consecutive differences with opposite signs, that is, if the first number is greater than the second, then the second is smaller than the third, the third is greater than the fourth, and so on.Formally, let x[1], x[2] ... x[n] be the numbers written on the board. A Hi&Lo subsequence of length k that only uses elements from A to B is a sequence of indices a1, a2... aksuch that:B ≤ ak> ... > a2> a1≤ Ax[ai]- x[ai-1] ≠ 0, for 1 < i ≤ k( x[ai] - x[ai-1] )( x[ai+1] - x[ai] ) < 0, for 1 < i < kNote that every sequence with only one element is a Hi&Lo sequence.However, as the amount of numbers increases, finding a big subsequence is getting harder and harder, so he asked you to create a program to help him and quickly find the largest Hi&Lo subsequence in a given interval.InputThe input contains several test cases. A test case begins with a line containing integersN(1 ≤ N ≤ 100000) andM(1 ≤ M ≤ 10000), separated by spaces. On the second line there areNpositive integers, the initial state of the board.Mlines follow, each with an instruction. Instructions can be of two kinds:q A B: Print the length of the longest Hi&Lo subsequence only using elements in positions from A to B, inclusive. You may assume that 1 ≤ A ≤ B ≤ N.m A B: Modify the Ath element of the sequence to the positive integer B. You may assume that 1 ≤ A ≤ N.No number on the board will ever exceed 109. There is a blank line after each test case. The last test case is followed by a line containing two zeros.OutputFor each instruction of type 1, print a line containing an integer, the answer to the query. After each test, print a blank line.ExampleInput:5 7\r\n1 2 3 4 5\r\nq 2 4\r\nm 3 1\r\nq 2 4\r\nm 3 2\r\nq 2 4\r\nm 4 2\r\nq 2 4\r\n\r\n0 0Output:2\r\n3\r\n2\r\n1",
+  "sample_input": "Input:5 7\r\n1 2 3 4 5\r\nq 2 4\r\nm 3 1\r\nq 2 4\r\nm 3 2\r\nq 2 4\r\nm 4 2\r\nq 2 4\r\n\r\n0 0Output:2\r\n3\r\n2\r\n1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HILO",
+  "scraped_at": "2025-08-17 00:34:26",
+  "test_cases": [
+    {
+      "input": "5 7\r\n1 2 3 4 5\r\nq 2 4\r\nm 3 1\r\nq 2 4\r\nm 3 2\r\nq 2 4\r\nm 4 2\r\nq 2 4\r\n\r\n0 0",
+      "expected_output": "2\r\n3\r\n2\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 4\n3 2 3 10 4\n2 9\nohbjc 6 7\n5 8\nkuc 8 1\n1 10\nw 6 1\n10 2\noy 5 2\n3 2\ns 10 4\n6 2\nzmweo 8 1\n7 10\ncgobp 9 10\n10 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1\n6 2 5 4 1\n8 6\nndwh 2 8\n4 9\nh 7 1\n5 10\nen 4 1\n2 2\nfenfa 7 10\n8 1\nekz 5 5\n6 8\nqxa 8 3\n9 8\njwbp 8 8\n7 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 5\n3 5 1 8 5\n4 1\nolvw 4 3\n4 5\nq 9 7\n3 5\nrpuk 1 2\n6 2\ngdi 10 7\n6 5\nomy 7 7\n5 2\nfqsc 5 1\n4 8\nvriel 4 6\n5 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "88 53\n100 50 13 47 7\n77 63\nvwf 27 60\n84 18\ny 97 71\n6 8\nh 7 74\n22 73\noyy 63 56\n67 88\nael 4 95\n22 76\npw 24 7\n21 44\neii 24 10\n77 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 43\n98 40 6 54 36\n43 27\nntdsq 72 55\n58 59\nfoiqu 55 51\n100 78\na 55 2\n61 54\nqwf 31 6\n12 80\ns 20 71\n10 28\nw 100 78\n18 8\nhavr 77 15\n69 23",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 19\n12 63 69 40 27\n53 40\nrcpiw 69 91\n39 51\nftbt 25 97\n19 97\nd 100 43\n94 68\nzrf 25 2\n74 48\nlpnm 19 48\n28 100\ny 82 15\n45 36\naqhz 42 31\n62 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "81 71\n30 50 12 47 17\n77 75\nq 14 55\n38 90\nv 48 70\n19 43\nppjd 23 98\n3 32\ngj 39 35\n41 94\nf 40 76\n34 48\nu 43 43\n38 45\nafo 74 69\n59 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 94\n20 94 57 90 66\n70 65\nza 38 81\n82 90\nxl 95 53\n62 26\njrn 72 72\n55 34\nostg 11 94\n72 88\ngrugz 15 74\n50 52\nriyo 81 68\n88 50\ntr 99 48\n29 78",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48295 33659\n45613 42628 33410 29392 27257\n13794 47101\nlptd 10866 26317\n29527 15884\nn 49129 10171\n13003 10855\nquen 13494 49321\n21235 19471\nic 14363 13976\n32969 28427\niu 13896 46522\n17477 26104\nvnmz 23439 49825\n29599 22677\nt 37566 10318\n29930 46090",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11324 42376\n29990 36969 42284 19547 34070\n20954 22735\nf 48838 20108\n9700 49474\nzpqo 30597 27538\n17416 38092\nzag 38660 49231\n46474 14761\nh 13183 28781\n34231 24029\nmxp 7458 17114\n33448 28101\nusjo 26457 25623\n15466 33272\nkkwo 26519 41345\n49195 29415",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21436 25921\n39624 24291 42716 12003 37290\n21323 28457\ngyttf 32818 43024\n10669 46726\nnbess 39827 22269\n8407 32406\npu 44767 13510\n23698 33154\ntqeb 29938 34509\n32725 23661\nyehf 8662 45021\n33072 27221\neuu 36249 42636\n34750 48260\njve 15037 47469\n26625 32015",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "13568 14603\n31155 22443 21805 28579 8228\n49471 5561\neutl 19677 36790\n22852 14312\ncd 42683 9996\n44293 20691\nyn 7030 48377\n34689 14907\nrc 40891 13922\n28322 12588\njynyw 36158 22265\n30760 31603\nq 49968 30199\n49778 22598\nfcj 36825 27523\n20397 18266",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "40421 23940\n31326 49766 26438 6403 6457\n49474 40533\nqfd 28407 41772\n24950 9242\nfa 13476 18588\n49162 25455\npsj 5379 9327\n39519 17414\nq 29669 30959\n38029 42981\ny 26089 17086\n47210 39052\nec 14434 26084\n36622 14160\nvu 42175 18993\n31534 43127",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "39705 21037\n6278 12766 39878 44954 22115\n42568 15331\ntm 35850 12100\n11041 23121\nbmumc 27222 7172\n19164 43702\nzx 24746 46312\n13532 43495\nv 21481 45653\n28598 30505\ny 9114 35813\n18285 32788\nsnbpx 30550 49618\n20588 9940\nhyixq 38634 38867\n9729 18014",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "48399 44267\n30272 13767 23506 35784 17644\n32202 7599\ns 30401 5090\n28015 38575\nhqn 19880 14157\n27986 49343\ngub 19695 24546\n32665 37134\ngetp 43159 7613\n21149 29886\nfqpvu 12346 48801\n7156 5941\njpdwj 36643 28333\n31520 15504\nvg 27974 12289\n37915 11745",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100000 100000\n100000 100000 100000 100000 100000\n100000 100000\njgsz 100000 100000\n100000 100000\nfkqjd 100000 100000\n100000 100000\nicdf 100000 100000\n100000 100000\nlpn 100000 100000\n100000 100000\nmmjvd 100000 100000\n100000 100000\nao 100000 100000\n100000 100000\ntu 100000 100000\n100000 100000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100000 100000\n100000 100000 100000 100000 100000\n100000 100000\nejmvh 100000 100000\n100000 100000\nidxho 100000 100000\n100000 100000\nhkf 100000 100000\n100000 100000\nfialm 100000 100000\n100000 100000\nay 100000 100000\n100000 100000\ndgni 100000 100000\n100000 100000\nwtuw 100000 100000\n100000 100000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1\n2 99999 2 100000 2\n100000 99999\nbszon 99999 2\n2 2\noe 2 1\n99999 2\nopnxk 100000 1\n2 99999\nvsb 2 99999\n99999 100000\nmh 100000 99999\n100000 100000\ndydix 2 99999\n100000 1\nf 2 1\n100000 100000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2\n2 100000 2 1 2\n1 99999\nybg 1 2\n100000 99999\nkmy 99999 100000\n2 100000\np 99999 2\n100000 2\ngbbbm 2 100000\n1 99999\nbk 99999 100000\n99999 99999\nfuq 1 2\n2 2\nxr 99999 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:56",
+  "total_test_cases": 20
+}

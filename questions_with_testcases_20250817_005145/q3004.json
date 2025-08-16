@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ada and Lychees",
+  "tags": [],
+  "text": "As you might already know, Ada the Ladybug is a farmer. She grows lychee tree. Unlike a cherry tree, lychee tree really forms a tree (obviously a rooted tree - in node0). The lychee fruits grow in bunches (there are (usually) multiple lychee fruits in each node).Ada will give you many queries, for harvesting lychees, consisting of 3 numbers:index of node U,Ithancestor,L new lychees, meaning, that she wants to harvest lychees ofIthancestorof nodeU. AfterwardLnew lychee fruits will grow on the node.She wants you to sum all those harvest-values and output the sum. Value of harvest can be counted asX*W, whereXis number of node where you'll harvest andWis the number of lychees in it.Also note that input's format won't be easy (as usual). You will be given description of the tree andx0, a, b. The next term could be counted asxi=(a*xi-1+b)%MOD, where % means modulo andMODis equal to10^9+7(1000000007)Firstly, you can set the number of lychees on each node: The number of lychee fruits on nodeiis equal toxi%100003(105+3). Afterward there will beQqueries, giving youU, I, L(denotingXTas nextxi),U=XT%N,I=XT%(D[U]+1)(whereDindicates DEPTH - root has depth 0),L=XT%100003[priority of XT is from left to right].NOTE:Parent of every node will always have lesser ID than the node itself (since the lychees far away from root are much more juicy).InputThe first line contains five integersN, Q, xi, a, b:  1 ≤     N ≤ 2*105, 1 ≤ Q ≤ 4*107, 0 ≤ a, b,     x0< 1000000007The nextN-1lines contains two integers0 ≤ a < b < N, the branch connecting two nodes.OutputPrint a single line - the number sum of values over all queries.Example Input5 3 1 1 1\r\n0 1\r\n1 2\r\n0 3\r\n2 4Example Output13Additional Information#LYCHEES: 1 2 3 4 5\r\nQUERY 1: 1 1 8\r\nQUERY 2: 4 2 11\r\nQUERY 3: 2 1 14Example Input 25 5 2 3 4\r\n0 1\r\n1 2\r\n2 3\r\n2 4Example Output 2113299Additional Information 2#LYCHEES: 2 10 34 106 322\r\nQUERY 1: 0 0 8746\r\nQUERY 2: 2 1 36188\r\nQUERY 3: 1 0 77101\r\nQUERY 4: 4 2 81719\r\nQUERY 5: 0 0 26368Example Input 310 100 666 561 14159\r\n0 1\r\n0 2\r\n1 3\r\n1 4\r\n2 5\r\n2 6\r\n3 7\r\n3 8\r\n4 9Example Output 39060951Example Input 420 10000 30355495 415740782 580959825\r\n0 1\r\n1 2\r\n2 3\r\n3 4\r\n3 5\r\n0 6\r\n6 7\r\n7 8\r\n8 9\r\n3 10\r\n1 11\r\n3 12\r\n11 13\r\n3 14\r\n3 15\r\n4 16\r\n16 17\r\n8 18\r\n17 19Example Output 41939449924",
+  "sample_input": "5 3 1 1 1\r\n0 1\r\n1 2\r\n0 3\r\n2 4",
+  "sample_output": "13",
+  "link": "https://www.spoj.com/problems/ADALICI",
+  "scraped_at": "2025-08-17 00:34:11",
+  "test_cases": [
+    {
+      "input": "5 3 1 1 1\r\n0 1\r\n1 2\r\n0 3\r\n2 4",
+      "expected_output": "13",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 2 2 1 1\n1 2\n2 1\n2 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2 2 2 1\n2 1\n2 1\n2 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n2 2\n2 1\n1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2 2 2 1\n1 2\n1 2\n1 2\n2 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1 2 1 2\n1 1\n2 1\n1 1\n1 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 1 1 1 1\n1 2\n2 1\n1 2\n1 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1 2 1 1\n1 2\n2 1\n1 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 2 1 2 1\n1 1\n1 1\n2 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1\n1 1\n1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2 2 2 2\n2 2\n2 2\n2 2\n2 2",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 2 2 2\n2 2\n2 2\n2 2\n2 2",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1 1 2\n1 1\n1 1\n2 2\n1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1 2 1 1\n1 2\n2 1\n1 1\n2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:55",
+  "total_test_cases": 20
+}

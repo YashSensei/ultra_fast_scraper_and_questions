@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Long Tiling",
+  "tags": [],
+  "text": "There is a long gap with fixed width of 1 unit in the ground withN + 1vertices, which is composed ofNsegments with same width. A segment connects to at most one segment on its head and tail vertically or horizontally, that is, it can connect to at most two segments. The long gap formed by those segments is simply a open polyline. Duck doesn't like the gap, he is given a set of tiles and wants to know if the long gap can be tiled by the limited number of tiles. There areMdistinct tiles, each withKiand hasCisegments. It is not necessary to use all tiles, and Duck can rotate the tile to fill the gap. It is guaranteed that both long gap and tiles are open polyline with fixed width of 1 unit. Can you help him check if he is possible to do so.InputThe first line is the number of test casesT. (1 ≤ T ≤ 25)For each test case, it starts with the number of segments of the long gapN. (1 ≤ N ≤ 20)Following N lines, each consisting of one uppercase characterW1i, either up (U), down(D), left(L) or right(R), and one integerF1i, indicating the direction to turn to and the length of that segment. (1 ≤ ∑ni=1F1i≤ 100)Next line is the number of distinct tilesM. (1 ≤ M ≤ 15)For each distinct tile, it starts with two integers, the available amount of that tileKiand number of segmentsCi. (1 ≤ Ki, ∑Mi=1Ki≤ 15, 1 ≤ Ci≤ 20)Following Cilines, same as above, one uppercase characterW2iand one integerF2iindicating the direction and the length of that segment.OutputIf it is possible to tile the gap with given tiles, print \"YES\", else \"NO\". (without quotes)ExampleInput:2\r\n16\r\nL 4\r\nU 2\r\nL 7\r\nU 2\r\nL 4\r\nD 4\r\nR 2\r\nD 2\r\nL 3\r\nD 2\r\nR 6\r\nU 1\r\nR 2\r\nD 4\r\nL 3\r\nU 1\r\n7\r\n2 5\r\nD 6\r\nL 2\r\nU 3\r\nL 2\r\nD 2\r\n1 2\r\nD 7\r\nL 2\r\n2 2\r\nD 2\r\nR 2\r\n1 1\r\nR 8\r\n3 1\r\nU 3\r\n4 1\r\nD 4\r\n2 2\r\nR 3\r\nU 1\r\n\r\n2\r\nR 6\r\nU 2\r\n2\r\n1 2\r\nD 3\r\nL 2\r\n1 1\r\nU 2Output:YES\r\nNOExplanation",
+  "sample_input": "Input:2\r\n16\r\nL 4\r\nU 2\r\nL 7\r\nU 2\r\nL 4\r\nD 4\r\nR 2\r\nD 2\r\nL 3\r\nD 2\r\nR 6\r\nU 1\r\nR 2\r\nD 4\r\nL 3\r\nU 1\r\n7\r\n2 5\r\nD 6\r\nL 2\r\nU 3\r\nL 2\r\nD 2\r\n1 2\r\nD 7\r\nL 2\r\n2 2\r\nD 2\r\nR 2\r\n1 1\r\nR 8\r\n3 1\r\nU 3\r\n4 1\r\nD 4\r\n2 2\r\nR 3\r\nU 1\r\n\r\n2\r\nR 6\r\nU 2\r\n2\r\n1 2\r\nD 3\r\nL 2\r\n1 1\r\nU 2Output:YES\r\nNO",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/LNTILING",
+  "scraped_at": "2025-08-17 00:33:59",
+  "test_cases": [
+    {
+      "input": "2\r\n16\r\nL 4\r\nU 2\r\nL 7\r\nU 2\r\nL 4\r\nD 4\r\nR 2\r\nD 2\r\nL 3\r\nD 2\r\nR 6\r\nU 1\r\nR 2\r\nD 4\r\nL 3\r\nU 1\r\n7\r\n2 5\r\nD 6\r\nL 2\r\nU 3\r\nL 2\r\nD 2\r\n1 2\r\nD 7\r\nL 2\r\n2 2\r\nD 2\r\nR 2\r\n1 1\r\nR 8\r\n3 1\r\nU 3\r\n4 1\r\nD 4\r\n2 2\r\nR 3\r\nU 1\r\n\r\n2\r\nR 6\r\nU 2\r\n2\r\n1 2\r\nD 3\r\nL 2\r\n1 1\r\nU 2",
+      "expected_output": "YES\r\nNO",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5\n6\n1\n4\n3\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n9\n4\n5\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n6\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "15\n52077754\n47070344\n87922974\n35770274\n76193058\n90075009\n83698827\n58498828\n88801630\n83412780\n59422972\n99058699\n22613799\n23504530\n49468500",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n6744837\n70603532\n78591855\n53989921\n13057002\n19849222\n52814054\n66844006\n73385771\n72884126\n14298590\n80533976\n5182190\n7057436\n17882913",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n31523282\n94112706\n58083159\n77304759\n26832010\n18377296\n23566195\n1028877\n97567512\n26794340\n42016699\n37331526\n46104419",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n57049348\n10473106\n10157006\n10010894\n74558625\n26991397\n58012357\n98705992\n22305664\n36663060\n39410978\n71378090\n58392064\n61944788\n8655905\n96516323\n13975849\n49247530\n91279283\n61065996",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n52713871\n18024257\n30129861\n33765483\n62537219\n92156684\n15670149\n12618815",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n5344\n7373\n51029\n34765\n80158\n92649\n27946\n15383\n94840\n22527\n79759\n3451\n36498\n56174\n41791\n3646\n12410\n74896\n78561\n1229",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n95331\n17957\n68400\n86224\n39968\n91493\n72750\n77679\n20006\n47661\n97172\n54158\n76643\n83301\n83106\n81153\n11079\n22263\n65686\n69283",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n73262\n49743\n49763\n2925\n15285\n26462\n18398\n99254\n2745\n12017\n27699\n50711\n12029\n99653\n33122\n73199\n32958\n21174\n87097\n80505",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n94359\n75011\n73129\n49051\n26373\n8673\n78836\n31585\n11518\n49062\n37191\n82443\n38642\n99353\n63518\n41714\n21790\n68472\n86471\n77498",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n36510\n24627\n88071\n91991\n49749\n7885\n75039\n17960\n96914\n17495\n55834\n70690\n77847\n33606\n53196\n86640\n53831\n31687\n66983\n57048",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n47918\n25104\n42967\n31933\n61813\n96753\n96055\n9396\n7009\n27877\n39420\n81806\n86178\n53508\n2911\n91126\n18573\n78767\n34770\n54825",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n73910\n72533\n76815\n83980\n21231\n64094\n91611\n19595\n22089\n42650\n39660\n13165\n85773\n78729\n87439\n85966\n32404\n55530\n80773\n39730",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n81609857\n81507929\n5450793\n70919301\n27826963\n87290224\n56122950\n31688171\n70934747\n70733833\n25349931\n84040065\n33461482\n76170600\n83771492\n25148254\n21623462\n35877628\n5509567\n77315070",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n77758788\n44501100\n18730992\n88604211\n54016830\n62766494\n26442955\n74007869\n17820879\n56216005\n89410685\n56220695\n28700256\n98590716\n47886086\n81024176\n95391318\n2475403\n85936612\n7911641",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "2\n5121266\n92546892",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "20\n1\n1\n85464141\n1\n1\n8855649\n1\n1\n100000000\n10182443\n1\n70667123\n1\n1\n64443969\n63711650\n1\n100000000\n81173872\n48197202",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 20)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:53",
+  "total_test_cases": 20
+}

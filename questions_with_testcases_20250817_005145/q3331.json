@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Here We Go(relians) Again",
+  "tags": [],
+  "text": "The Gorelians are a warlike race that travel the universe conquering new    worlds as a form of recreation. Given their violent, fun-loving nature,    keeping their leaders alive is of serious concern. Part of the Gorelian    security plan involves changing the traffic patterns of their cities on a    daily basis, and routing all Gorelian Government Officials to the Government    Building by the fastest possible route.Fortunately for the Gorelian Minister of Traffic (that would be you), all    Gorelian cities are laid out as a rectangular grid of blocks, where each    block is a square measuring 2520 rels per side (a rel is the Gorelian    Official Unit of Distance). The speed limit between two adjacent    intersections is always constant, and may range from 1 to 9 rels per blip (a    blip, of course, being the Gorelian Official Unit of Time). Since Gorelians    have outlawed decimal numbers as unholy (hey, if you're the dominant force    in the known universe, you can outlaw whatever you want), speed limits are    always integer values. This explains why Gorelian blocks are precisely 2520    rels in length: 2520 is the least common multiple of the integers 1 through    9. Thus, the time required to travel between two adjacent intersections is    always an integer number of blips.In all Gorelian cities, Government Housing is always at the northwest    corner of the city, while the Government Building is always at the southeast    corner. Streets between intersections might be one-way or two-way, or    possibly even closed for repair (all this tinkering with traffic patterns    causes a lot of accidents). Your job, given the details of speed limits,    street directions, and street closures for a Gorelian city, is to determine    the fastest route from Government Housing to the Government Building. (It is    possible, due to street directions and closures, that no route exists, in    which case a Gorelian Official Temporary Holiday is declared, and the    Gorelian Officials take the day off.)The picture above shows a Gorelian City marked with speed limits, one way    streets, and one closed street. It is assumed that streets are always    traveled at the exact posted speed limit, and that turning a corner takes    zero time. Under these conditions, you should be able to determine that the    fastest route from Government Housing to the Government Building in this    city is 1715 blips. And if the next day, the only change is that the closed    road is opened to two way traffic at 9 rels per blip, the fastest route    becomes 1295 blips. On the other hand, suppose the three one-way streets are    switched from southbound to northbound (with the closed road remaining    closed). In that case, no route would be possible and the day would be    declared a holiday.InputThe input consists of a set of cities for which you must    find a fastest route if one exists. The first line of an input case contains    two integers, which are the vertical and horizontal number of city blocks,    respectively. The smallest city is a single block, or 1 by 1, and the    largest city is 20 by 20 blocks. The remainder of the input specifies speed    limits and traffic directions for streets between intersections, one row of    street segments at a time. The first line of the input (after the dimensions    line) contains the data for the northernmost east-west street segments. The    next line contains the data for the northernmost row of north-south street    segments. Then the next row of east-west streets, then north-south streets,    and so on, until the southernmost row of east-west streets. Speed limits and    directions of travel are specified in order from west to east, and each    consists of an integer from 0 to 9 indicating speed limit, and a symbol    indicating which direction traffic may flow. A zero speed limit means the    road is closed. All digits and symbols are delimited by a single space. For    east-west streets, the symbol will be an asterisk '*' which indicates travel    is allowed in both directions, a less-than symbol '<' which indicates    travel is allowed only in an east-to-west direction, or a greater-than    symbol '>' which indicates travel is allowed only in a west-to-east    direction. For north-south streets, an asterisk again indicates travel is    allowed in either direction, a lowercase \"vee\" character 'v' indicates    travel is allowed only in a north-to-south directions, and a caret symbol    '^' indicates travel is allowed only in a south-to-north direction. A zero    speed, indicating a closed road, is always followed by an asterisk. Input    cities continue in this manner until a value of zero is specified for both    the vertical and horizontal dimensions.OutputFor each input scenario, output a line specifying the    integer number of blips of the shortest route, a space, and then the word    \"blips\". For scenarios which have no route, output a line with the word    \"Holiday\".ExampleInput:2 2\r\n9 * 9 *\r\n6 v 0 * 8 v\r\n3 * 7 *\r\n3 * 6 v 3 *\r\n4 * 8 *\r\n2 2\r\n9 * 9 *\r\n6 v 9 * 8 v\r\n3 * 7 *\r\n3 * 6 v 3 *\r\n4 * 8 *\r\n2 2\r\n9 * 9 *\r\n6 ^ 0 * 8 ^\r\n3 * 7 *\r\n3 * 6 ^ 3 *\r\n4 * 8 *\r\n0 0Output:1715 blips\r\n1295 blips\r\nHoliday",
+  "sample_input": "Input:2 2\r\n9 * 9 *\r\n6 v 0 * 8 v\r\n3 * 7 *\r\n3 * 6 v 3 *\r\n4 * 8 *\r\n2 2\r\n9 * 9 *\r\n6 v 9 * 8 v\r\n3 * 7 *\r\n3 * 6 v 3 *\r\n4 * 8 *\r\n2 2\r\n9 * 9 *\r\n6 ^ 0 * 8 ^\r\n3 * 7 *\r\n3 * 6 ^ 3 *\r\n4 * 8 *\r\n0 0Output:1715 blips\r\n1295 blips\r\nHoliday",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GORELIAN",
+  "scraped_at": "2025-08-17 00:34:10",
+  "test_cases": [
+    {
+      "input": "2 2\r\n9 * 9 *\r\n6 v 0 * 8 v\r\n3 * 7 *\r\n3 * 6 v 3 *\r\n4 * 8 *\r\n2 2\r\n9 * 9 *\r\n6 v 9 * 8 v\r\n3 * 7 *\r\n3 * 6 v 3 *\r\n4 * 8 *\r\n2 2\r\n9 * 9 *\r\n6 ^ 0 * 8 ^\r\n3 * 7 *\r\n3 * 6 ^ 3 *\r\n4 * 8 *\r\n0 0",
+      "expected_output": "1715 blips\r\n1295 blips\r\nHoliday",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 7\n10 10\n10 yoiva 4 om\n8 10 5\n9 ke 5 tr 5 i\n10 10\n9 sqvc 9 kph\n5 3 8\n4 avqki 9 fhg 6 pt\n2 5\n6 iv 3 h\n8 1\n7 1\n8 hp 1 toxp\n9 2 8\n2 scq 7 dcsm 3 cw\n7 4\n2 pur 8 pbwn\n1 6 3\n10 sm 3 l 3 cqapl\n2 2\n1 r 4 o\n10 9\n7 3\n1 i 2 lg\n5 2 4\n1 s 2 zvk 9 hsiek\n8 8\n6 tov 9 izp\n5 5 10\n9 on 4 ji 10 nqa\n10 4\n10 prf 4 i\n3 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 4\n2 8\n2 sxrb 7 kfu\n9 5 4\n2 beiq 8 acwtk 1 kyipl\n9 9\n10 zlo 4 wx\n10 9 2\n10 h 3 g 7 gjf\n10 10\n1 avov 5 i\n1 4\n7 4\n8 rhoi 2 i\n1 6 7\n4 m 10 vylv 10 wqokp\n3 6\n1 wca 4 ctd\n3 4 2\n10 njo 5 ka 8 uiod\n4 10\n8 pna 10 pwi\n1 1\n10 10\n1 pow 7 mg\n8 3 6\n1 lwgpi 5 epk 8 ztpoh\n8 2\n6 vg 5 n\n5 2 2\n1 auf 9 mlmy 6 sixt\n6 2\n1 ely 5 j\n8 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7\n7 3\n2 ff 7 bejr\n10 1 10\n4 dyria 5 u 10 pzabs\n8 5\n7 xufd 9 px\n6 4 5\n5 vjor 2 cy 6 h\n9 2\n5 c 2 rurpa\n9 3\n10 7\n6 uo 8 pbz\n5 6 10\n6 bfrqw 5 bgr 5 mrutb\n8 7\n3 ode 4 tjpp\n4 8 10\n9 jencx 6 hgxl 1 ck\n7 1\n8 at 10 lanl\n10 5\n5 7\n9 jatnh 6 os\n5 7 5\n2 jfuyp 10 y 1 h\n5 5\n3 mnd 9 yjjw\n3 8 10\n1 uh 6 jca 5 utq\n5 6\n5 aci 8 xxr\n6 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "88 60\n21 48\n64 rbks 38 extqp\n17 24 77\n63 spbe 27 pf 77 ouf\n6 50\n45 bv 63 gy\n3 45 14\n27 pfbj 42 f 61 o\n77 51\n12 xo 21 tluoz\n56 9\n65 72\n6 e 20 n\n69 61 57\n37 qji 68 a 41 v\n21 59\n73 qfyvz 61 bqdb\n59 24 8\n66 pf 10 cdlq 74 vwd\n11 81\n47 ll 6 rgh\n60 16\n18 72\n32 xzy 79 iwa\n6 98 81\n21 wwcs 97 w 44 vzyjr\n40 45\n35 hu 96 t\n18 82 76\n3 abq 3 mhjge 29 uartl\n96 77\n34 e 45 qy\n87 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 11\n61 3\n44 n 46 iisj\n15 27 61\n79 b 58 emxkx 28 zrb\n28 26\n64 mf 72 d\n44 90 92\n79 dyzz 77 aum 88 zbuc\n14 51\n67 kdzvb 92 dthv\n87 63\n79 85\n40 u 28 ei\n98 60 48\n70 qxci 93 fxp 45 u\n10 70\n87 ok 54 jne\n24 71 98\n35 vhsg 24 sj 76 vte\n95 61\n98 e 98 fruh\n83 89\n11 73\n95 ds 41 xnrm\n7 52 25\n23 fiptk 45 jbtre 18 p\n9 43\n39 w 56 tspq\n81 32 27\n65 cp 37 fs 75 hibj\n54 42\n5 pvk 42 v\n98 75",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "80 77\n21 9\n25 kjtjp 4 tkidg\n5 6 27\n93 g 40 a 38 mk\n52 58\n49 mdsl 6 mnrah\n84 13 93\n46 a 30 ba 24 bux\n71 86\n94 zeh 21 ukan\n7 23\n65 84\n12 bru 32 aom\n74 26 95\n1 om 31 j 63 g\n60 2\n48 hh 56 ov\n88 26 19\n28 qj 88 rm 11 dnk\n16 64\n54 zn 2 m\n15 76\n83 36\n17 bdbs 91 c\n73 38 61\n70 hyxw 80 esi 64 gbjce\n92 17\n59 v 32 zn\n81 47 54\n36 tnv 69 rg 36 ik\n49 40\n31 xpc 62 e\n39 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 82\n24 27\n30 i 37 xwzy\n55 61 19\n33 lff 8 rjk 65 yoldn\n92 97\n28 owayq 77 zfxxq\n32 88 25\n7 pufz 1 miwb 69 gisrh\n65 57\n27 s 61 jlbv\n100 37\n100 1\n46 aoj 83 z\n2 23 90\n60 tivau 83 ysoci 23 xyrl\n84 10\n21 rx 40 owet\n100 13 79\n89 rck 24 pm 71 x\n92 73\n27 xhqv 12 ll\n44 100\n28 4\n81 ppyvs 5 v\n85 35 64\n68 kx 85 kwx 81 o\n58 80\n45 grofq 79 am\n41 99 13\n72 uqaoe 15 lf 70 t\n32 73\n97 p 20 yiqf\n59 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 44\n36 50\n93 muaw 70 fhb\n11 37 22\n24 q 46 pfm 65 n\n42 81\n5 ju 51 gjcf\n17 58 90\n58 bq 28 rgoy 34 iotx\n45 70\n50 oxbx 28 l\n40 22\n83 30\n45 non 29 f\n43 74 49\n45 vzk 49 kx 97 odbwj\n83 33\n52 unhx 45 mvfmf\n2 72 41\n82 wff 50 dbp 96 hbxg\n1 98\n17 wbrm 18 f\n31 3\n31 34\n49 bbon 34 p\n87 99 95\n56 sned 65 soj 39 i\n67 98\n16 n 91 cuf\n57 98 87\n95 mnww 87 ipqwl 69 twmt\n22 66\n91 wsmm 58 j\n55 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "135 399\n101 235\n255 z 287 hpj\n55 244 341\n62 cvp 346 v 415 zh\n129 141\n379 yth 258 j\n277 411 311\n191 fhw 67 e 469 t\n74 435\n179 oreb 394 mbl\n143 305\n305 199\n256 wq 426 nymc\n166 337 193\n229 ous 107 rmabu 471 ty\n353 231\n128 w 166 pmtrl\n459 402 326\n165 tmzb 232 z 307 vyj\n354 69\n100 t 246 oyc\n295 251\n280 428\n373 otr 381 pjg\n217 475 408\n231 zpg 365 b 403 do\n307 450\n214 nbvge 480 dbfba\n379 370 319\n148 amy 184 gakq 319 zaixf\n100 106\n58 tek 318 ddtrz\n364 89",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "340 225\n393 98\n182 l 482 ya\n103 96 133\n499 yae 401 t 330 tqpqf\n441 162\n290 ew 344 jdega\n325 373 483\n443 ijll 358 pcgbh 290 cu\n359 98\n146 dt 192 q\n57 165\n290 447\n472 iwzv 313 ffrp\n402 188 179\n160 niuhc 60 f 157 jr\n186 284\n354 hyzm 389 dad\n490 321 168\n90 h 391 smpwu 114 al\n241 107\n100 ba 188 ueuob\n254 272\n79 483\n358 bcc 75 arces\n443 416 218\n421 o 459 qmf 104 myw\n476 451\n388 pc 493 fdxu\n444 106 331\n95 tf 341 yila 140 rt\n299 456\n318 fyw 194 cn\n411 226",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "406 141\n192 249\n273 te 233 jxxf\n495 481 105\n433 aijs 331 bmaem 331 ioinl\n423 419\n393 zrs 134 c\n392 106 318\n424 hwoe 215 ei 254 cgipt\n332 285\n95 w 97 kpj\n86 51\n419 335\n84 n 368 bqhp\n386 363 291\n201 thek 344 ze 269 tah\n52 491\n397 uhd 244 pe\n255 485 393\n200 ps 386 ps 360 bm\n185 276\n438 luivb 300 b\n260 484\n226 428\n286 qpv 484 nu\n92 282 313\n202 dtay 407 qgpzt 260 sji\n462 53\n395 jknnz 247 qufg\n314 256 439\n237 ceyx 286 jj 349 hj\n169 123\n471 yp 320 otph\n156 370",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "484 392\n413 92\n318 pgb 305 ckzdv\n121 196 93\n247 ip 325 vb 489 fvxe\n398 261\n270 fzb 147 ztt\n382 477 272\n303 pf 82 u 271 mkep\n240 55\n290 ioor 228 l\n477 335\n145 172\n124 ueb 179 zkphm\n339 148 261\n177 w 188 rn 297 zxzg\n461 245\n401 qycsl 265 hlrf\n172 335 457\n191 idus 358 he 194 yp\n211 485\n272 xtdxd 294 uz\n347 268\n430 388\n197 mgtld 490 cy\n299 426 340\n227 skhn 257 iq 77 bu\n121 232\n64 njn 486 imo\n324 129 270\n418 ehtap 52 orxbj 158 teb\n312 252\n216 dd 178 ujws\n492 238",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "132 224\n81 376\n266 v 442 dutu\n64 105 355\n481 lhgi 367 wr 453 rkry\n455 322\n119 kld 189 kqq\n276 319 102\n350 ph 441 tfh 384 k\n394 318\n336 omnuk 171 hr\n263 374\n200 130\n354 vgge 427 ly\n376 66 448\n213 dsfk 283 a 76 sdw\n396 238\n215 ofnn 70 isr\n322 221 390\n274 jhlnr 359 jr 183 wwuk\n137 63\n491 fnve 410 u\n364 332\n392 422\n117 fzj 58 wk\n338 468 476\n292 dsl 424 bcm 89 fwy\n288 498\n329 yic 172 rctmx\n300 463 246\n374 rs 241 jaes 158 nhjtp\n112 85\n397 vjmkd 143 hr\n50 269",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "101 255\n170 481\n441 zcuwg 311 w\n62 61 71\n261 ccusz 189 qpmm 223 fdq\n248 125\n65 g 460 jlwo\n223 479 414\n423 heufd 318 apzta 165 yaad\n484 419\n242 kj 59 gkcyq\n377 448\n146 476\n163 vrgu 219 f\n457 272 201\n402 hgypy 419 djv 358 v\n83 117\n480 nmg 218 czpf\n194 243 382\n392 v 348 tgm 360 vqv\n122 259\n92 vqxx 274 iytk\n92 75\n233 86\n380 qzqsa 336 evzw\n112 270 429\n109 mpl 457 h 181 ct\n265 193\n345 twmz 128 v\n177 391 246\n220 sl 427 ijjo 437 nwgcf\n81 363\n206 y 322 bpyk\n162 241",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "440 401\n464 114\n132 w 98 jw\n289 363 271\n396 klv 394 lkore 129 ehlzw\n368 351\n303 hfbt 338 mzzn\n344 177 478\n252 xtv 204 h 152 poz\n135 132\n435 w 427 vsg\n51 99\n451 118\n142 p 210 eqq\n192 476 332\n410 fjdck 259 h 449 bx\n433 477\n262 bvdog 385 ln\n262 427 229\n464 itibb 289 gcha 250 witdk\n327 117\n141 rn 412 eoc\n420 281\n421 51\n474 o 490 pre\n59 54 386\n466 iuj 135 wx 189 b\n300 105\n429 hjf 105 dfqq\n323 54 486\n167 i 167 nj 398 btfsi\n349 78\n315 y 182 r\n294 282",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 nsx 1000 m\n1000 1000 1000\n1000 fiq 1000 sp 1000 bp\n1000 1000\n1000 jycwd 1000 joug\n1000 1000 1000\n1000 txyj 1000 pea 1000 iiuw\n1000 1000\n1000 jgo 1000 i\n1000 1000\n1000 1000\n1000 dt 1000 nshma\n1000 1000 1000\n1000 cpjaf 1000 mr 1000 jjzb\n1000 1000\n1000 ces 1000 pyrc\n1000 1000 1000\n1000 jtf 1000 ut 1000 swf\n1000 1000\n1000 k 1000 l\n1000 1000\n1000 1000\n1000 ld 1000 et\n1000 1000 1000\n1000 qckik 1000 gg 1000 okw\n1000 1000\n1000 kurau 1000 ufv\n1000 1000 1000\n1000 j 1000 m 1000 nzru\n1000 1000\n1000 v 1000 w\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 fxv 1000 hemdv\n1000 1000 1000\n1000 qzfh 1000 n 1000 p\n1000 1000\n1000 cbi 1000 obpfu\n1000 1000 1000\n1000 jugdl 1000 ytae 1000 f\n1000 1000\n1000 oer 1000 dmmq\n1000 1000\n1000 1000\n1000 dm 1000 fwl\n1000 1000 1000\n1000 ntc 1000 abku 1000 n\n1000 1000\n1000 rbsbb 1000 rpoba\n1000 1000 1000\n1000 kcu 1000 njf 1000 bo\n1000 1000\n1000 kgpk 1000 ysiyp\n1000 1000\n1000 1000\n1000 tg 1000 tcn\n1000 1000 1000\n1000 bdro 1000 l 1000 efw\n1000 1000\n1000 jk 1000 vhy\n1000 1000 1000\n1000 nqq 1000 y 1000 fjwyr\n1000 1000\n1000 cnagh 1000 yloq\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\n2 1\n2 liddi 1 gdv\n1000 999 2\n999 vh 999 u 1000 t\n1 999\n1 zr 999 smx\n2 2 2\n2 kzel 2 xnl 999 fam\n1 1\n999 pcdx 2 rtw\n1000 999\n1000 999\n2 ixktk 2 m\n1 1000 999\n1 jjn 999 hgph 2 ks\n2 1000\n1000 c 1000 oaw\n999 2 999\n1 xsm 2 svzl 1 i\n1 2\n2 br 1 ayalh\n999 2\n1000 1\n1 yew 999 riny\n999 1 1\n1000 s 1 f 1 lyi\n1 999\n1 acvf 999 kict\n999 2 999\n999 m 2 x 1 ga\n1000 1000\n2 wgmrx 999 dhyl\n999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000\n1 1\n1000 vao 2 hj\n1 999 2\n999 ohdwq 2 codgr 999 m\n1000 1000\n999 lzhyg 1000 zoxk\n1000 2 1\n999 ma 1 hjb 999 h\n1000 999\n1000 r 2 eta\n2 2\n999 1\n1000 srai 1 vfkn\n1000 1000 2\n999 wze 1000 d 2 bgjjm\n1000 2\n1 rjvce 1000 dsra\n999 1000 999\n1000 arh 999 eef 1000 ja\n1 1\n1 m 2 uo\n1 2\n2 2\n1000 uaaft 1000 em\n1 999 2\n1 axup 999 iz 2 viz\n1000 2\n1 a 1 gcnxb\n2 1000 999\n1 ocyz 1 xi 1 tf\n1000 1000\n999 wgxwb 2 cfw\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:56",
+  "total_test_cases": 20
+}

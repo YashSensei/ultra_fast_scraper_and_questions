@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Terrorist Attack",
+  "tags": [],
+  "text": "In his final interview Digo is given a map of a city containing N junctions connected by roads of length 1.\r\nThere is only one path between any two junctions. Each junction has a unique index between 1 and N (inclusive).\r\nThere are M civilians in the city. Everyday, each civilian visits a set of junctions.There are military camps built at certain junctions.\r\nThe terrorists are planning to attack the city by targeting some junctions.\r\nHowever due to the presence of military camps,\r\nthere is a limit to the size of explosion they can make at any particular junction.\r\nThe intensity of the bomb planted at a junction is equal to the minimum distance from\r\nany military camp to the targeted junction.\r\nThe damage of all civilians passing through a targeted junction increases by\r\nthe intensity of the bomb dropped at the junction.\r\nThe military camps set up and the terrorist targets are given in the form of the following queries:1 J : Meaning that a new military camp is set up at junction J.2 J : Meaning that the junction J is targeted by terrorists.3 J : Print the total damage done until now to all civilians visiting junction J.Initially there is exactly one military camp at junction 1.\r\nThe initial damage of all civilians is given to you.InputFirst line contains 3 integers N, M, Q. N is the number of junctions, M is the number of civilians and Q is the number of queries to follow.Next N-1 lines contains 2 integers U and V (denoting that there is a road connecting U and V).Next M lines contains one integer each. The ith line contains integer a[i] representing the initial damage of the ith civilian. Next M lines contain the description of the junctions visited by the ith civilian (First integer of every line is X, the number of junctions visited by the ith civilian, followed by X integers representing the respective junctions).Next Q lines give the corresponding queries. Each query can be described by two integers T, J, where T is the type of query (which can be 1 or 2 or 3) and J is the respective junction of the query.OutputFor all the queries of type 3 print an integer answering the query.Constraints1 ≤ N ≤ 500001 ≤ M ≤ 100001 ≤ Q ≤ 500001 ≤ X, V, U, J ≤ N1 ≤ a[i] ≤ 1000Sum of all the junctions crossed by all the civilians is less than 50001Note: The Final answer will fit in 64 bit signed integer.ExampleInput:3 1 3\r\n1 2\r\n2 3\r\n5\r\n2 2 3\r\n3 3\r\n2 3\r\n3 3Output:5\r\n7",
+  "sample_input": "Input:3 1 3\r\n1 2\r\n2 3\r\n5\r\n2 2 3\r\n3 3\r\n2 3\r\n3 3Output:5\r\n7",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/INS14M",
+  "scraped_at": "2025-08-17 00:33:38",
+  "test_cases": [
+    {
+      "input": "3 1 3\r\n1 2\r\n2 3\r\n5\r\n2 2 3\r\n3 3\r\n2 3\r\n3 3",
+      "expected_output": "5\r\n7",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 4 4\n7 1\n5 1\n8\n7 2 9\n2 3\n5 6\n1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 9 8\n10 2\n8 10\n8\n1 5 7\n6 1\n3 1\n5 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 10 5\n9 4\n6 1\n7\n4 9 8\n7 5\n4 9\n5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "47 62 16\n59 60\n28 76\n29\n37 53 69\n51 74\n90 30\n40 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "61 25 42\n46 68\n57 13\n72\n78 31 56\n75 74\n96 91\n41 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 32 16\n88 89\n57 67\n62\n6 18 82\n51 99\n29 15\n91 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "95 30 38\n74 83\n30 58\n18\n26 21 99\n9 19\n97 98\n92 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "66 11 56\n68 48\n16 29\n59\n84 70 70\n81 37\n26 3\n56 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "156659 156100 169008\n82257 173688\n61805 136252\n75138\n38492 185752 244675\n216403 192572\n198173 50954\n136354 57279",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "33912 154047 154884\n177713 133076\n227026 209037\n140348\n126459 205002 64285\n25068 36860\n196548 172164\n153031 186333",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "40581 213558 190490\n129155 227076\n35931 139856\n234451\n64610 243476 84577\n82080 65128\n215062 80852\n105583 85844",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122027 104689 114574\n245816 155552\n121649 110386\n179054\n27016 113915 208281\n228115 176014\n213673 80851\n212774 98308",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "139648 85109 218880\n60706 44710\n48776 161398\n101912\n66771 50979 116219\n189299 138689\n222789 117930\n121133 79490",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "48367 80310 89626\n109448 73256\n44622 131148\n64949\n220859 111349 220543\n160438 57124\n78245 193416\n94126 57243",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "78677 241011 208966\n169145 62675\n154163 61359\n236454\n198077 189960 37508\n103355 35652\n183001 118077\n33128 177491",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "500001 500001 500001\n500001 500001\n500001 500001\n500001\n500001 500001 500001\n500001 500001\n500001 500001\n500001 500001",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500001 500001 500001\n500001 500001\n500001 500001\n500001\n500001 500001 500001\n500001 500001\n500001 500001\n500001 500001",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 500000 500000\n1 500000\n1 1\n500000\n1 500000 500000\n500000 500000\n500000 500000\n500000 500000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "500001 500001 2\n500001 500001\n500001 500001\n500000\n500000 1 1\n1 2\n500000 1\n500000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:49",
+  "total_test_cases": 20
+}

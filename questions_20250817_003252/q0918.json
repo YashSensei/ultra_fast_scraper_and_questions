@@ -1,0 +1,10 @@
+{
+  "problem_code": "problems",
+  "title": "The Least Number",
+  "tags": [],
+  "text": "You are given n symbols a1, a2... an. You are told that there is a total ordering of the symbols. That is, there is a permutation [P1, P2 ... Pn] of [1, 2 ... n] such that aP1< aP2< ... < aPn. You are trying to figure out the order by doing comparisons. The process you follow for determining the order is as follows:Compare [a1, a2]Compare [a2, a3], [a1, a3]Compare [a3, a4], [a2, a4], [a1, a4]......Compare [an-1, an], [an-2, an] ... [a1, an]Note that you compare in the order specified. That is you compare [a2, a3], then and only then do you compare [a1, a3].Definition of Compare[ai, aj] (i < j)If Compare [ai, aj] = 1, it means ai> aj. If Compare[ai, aj] = -1, it means ai< aj.Compare is consistent. Suppose, that you queried [a2, a6] and it was already established [a2< a6] (because for example a2< a5and a5< a6- since both of these comparisons happen earlier), then [a2, a6] returns -1.If no relationship is known between aiand aj, Compare[ai, aj] = 1 with probability 1/2 and -1 with probability 1/2.Your task is to output the probability that a1is the smallest element of the final ordering so obtained.InputFirst line contains T, the number of test cases.Each of the next T lines contains one number each,n(1 ≤ n ≤ 1000).OutputOutput T lines in total, one per test case: Probability that a1is indeed the smallest element at the end of the comparisons. Your output will be judged correct if it differs by no more than 10-9to the reference answer.ExampleInput:3\r\n1\r\n2\r\n3Output:1\r\n0.500\r\n0.3750000Explanationn = 1 is trivial.For n = 2, only comparison is [a1, a2]. a1 is lower with probability 1/2.For n = 3, a1 is not the least element if either (a1> a2) or (a1< a2and a3< a2and a3< a1).So, probability that a1is not the least element = 1/2 + 1/8 = 5/8. Probability that a1is the least = 3/8 = 0.375.",
+  "sample_input": "Input:3\r\n1\r\n2\r\n3Output:1\r\n0.500\r\n0.3750000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RNDORDER",
+  "scraped_at": "2025-08-17 00:33:17"
+}

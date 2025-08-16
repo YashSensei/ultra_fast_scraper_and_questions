@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Safe Secret",
+  "tags": [],
+  "text": "One of the brightest and richest dukes of the nineteenth century built a break-in-proof room for storing his valuables and chose the lock secret code in an ingenious manner. He was so afraid of being robbed that he did not tell anyone the safe secret; he only wrote the way to obtain it on a piece of paper, to be given to his heir on his death.Look at the bottom of my dukedom ring, which is now yours.Write down the numbers and symbols, following a clockwise order, starting at the number closest to the ruby and leaving out the last symbol. That is the first sequence of numbers and symbols.Do the same starting at the next number, with respect to the clockwise order. That is the second sequence of numbers and symbols.Repeat this process, always starting at the next number, until you have started at all numbers. Now you have several sequences of numbers and symbols.For each of those sequences of numbers and symbols, do the following.Replace every ? by a +, a - or a * symbol. Do that in all possible ways to have several arithmetic expressions.Evaluate each of those arithmetic expressions, performing the sums, the differences and the products in any order. Do that in all possible ways to have several values.Select the minimum and the maximum of those values.Write the digits of the minimum value and append to them the digits of the maximum value. That is the code of the sequence of numbers and symbols.Concatenate the codes of all sequences of numbers and symbols, respecting the order in which you have obtained the sequences. That sequence of digits is the safe secret.When the duke passed away, his son read the note and tried to find out the safe secret. The first two steps were very easy, because there were only five sequences of numbers and symbols, obtained in the following order:1 ? 5 + 0 ? -2 - -35 + 0 ? -2 - -3 ∗ 10 ? -2 − -3 ∗ 1 ? 5-2 - -3 ∗ 1 ? 5 + 0-3 ∗ 1 ? 5 + 0 ? -2Then, he moved to the third step and chose to begin with the first sequence of numbers and symbols. Difficulties started in point (a) when he realized that he could create several arithmetic expressions, such as:1 + 5 + 0 + -2 − -31 − 5 + 0 * -2 − -31 * 5 + 0 − -2 − -3So, he decided to understand the remaining rules before completing this task. In point (b), he had to evaluate the arithmetic expressions. It seemed easy. The value of 1 + 5 + 0 + -2 - -3 was7. But how many different values could he get from 1 + 5 + 0 + -2 - -3 ?If the operations were performed from left to right,  ((((1 - 5) + 0) * -2) - -3),  the result would be11.If the operations were performed from right to left, (1 - (5 + (0 * (-2 - -3)))),  the result would be-4.If the first difference and the product were performed first, (1 - 5) + (0 * -2) - -3,  the result would be-1.And there were so many other alternatives!Almost in despair, he concluded that he had to obtain a huge number of values in the third step. Fortunately, the last rules were actually simple. If-4was the minimum of the values obtained from the first sequence and11was the maximum, the code of the first sequence would be411. Besides, if the second sequence code was512, the third sequence code was613, the fourth sequence code was714, and the fifth sequence code was815, the safe secret would be411512613714815./p>Although the duke's son spared no effort in finding the secret, he has never achieved that goal. In fact, no one has managed to open the safe so far. Now that the palace will be transformed into a museum, could you help unveiling the treasure?TaskGiven the sequence of numbers and symbols obtained from the dukedom ring, starting at the number closest to the ruby, following a clockwise order, and including the last symbol, the goal is to find out the safe secret. It is guaranteed that, for the given inputs, any value obtained by the process described above fits in a normal signed 64 bit integer.InputThe first line of the input has one positive integer,k, which is the number of pairs (number,symbol) that form the sequence.The following line contains 2kelements, n1, s1, n2, s2, ..., nk, sk, separated by a single space, where nidenotes a number and sidenotes a symbol that is +, -, *, or ? (for everyi=1, 2, ..., k).Constraints2 ≤ k ≤ 200 : Number of pairs (number,symbol) that form the sequence.-9 ≤ ni ≤ 9 : Number in the sequence.OutputThe output has a single line with the safe secret.ExampleInput:5\r\n1 ? 5 + 0 ? -2 - -3 *Output:914710203014163336Author: Margarida Mamede",
+  "sample_input": "1 ? 5 + 0 ? -2 - -35 + 0 ? -2 - -3 ∗ 10 ? -2 − -3 ∗ 1 ? 5-2 - -3 ∗ 1 ? 5 + 0-3 ∗ 1 ? 5 + 0 ? -2",
+  "sample_output": "Input:5\r\n1 ? 5 + 0 ? -2 - -3 *Output:914710203014163336",
+  "link": "https://www.spoj.com/problems/SWERC14I",
+  "scraped_at": "2025-08-17 00:34:31",
+  "test_cases": [
+    {
+      "input": "1 ? 5 + 0 ? -2 - -35 + 0 ? -2 - -3 ∗ 10 ? -2 − -3 ∗ 1 ? 5-2 - -3 ∗ 1 ? 5 + 0-3 ∗ 1 ? 5 + 0 ? -2",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5\r\n1 ? 5 + 0 ? -2 - -3 *",
+      "expected_output": "914710203014163336",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "4 6 6 5 7 3 10 1 1 5 7 10 7 8 4 10 6 3 7 3 9 4 2\n4 btw 4 vdafz 5 jqiz c q ka oz 1 qg jifu e ujtm b 4 etjgf wbwrj enml lszc rck 2 dxe rrlp hwhs vt ps 5 fztlj 4 e gzwyg jj 9 nt 7 ycnm 5 nxvm oac",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 1 9 10 8 5 8 2 5 3 8 10 2 8 2 8 10 3 3 7 10 6 2\n10 y 6 o 9 ivtb bcn yfuw ldcpl kl 8 umwi ocdzt b vukvz i 9 aclzk bwc q udr facew 9 p i vwyy at lvq 6 oe 9 gm ye ospf 2 rc 2 s 9 yfwf ed",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 1 9 5 3 5 5 5 5 6 6 3 3 4 1 9 7 2 6 7 10 3 2\n3 olgtf 6 ehrxc 2 ui kowh qsnj rag y 9 jqq atpiz q hgcwu hfki 2 ikxid lt aflw wdsbh oww 7 bpjiv bxdvb czax oqgt ps 1 y 9 j dihm bo 4 vawo 7 slxls 1 fryow cz",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 55 7 4 64 62 65 82 48 5 33 98 89 79 26 54 17 45 56 25 60 8 3\n31 s 100 p 44 tbjhd u njara ghr gzsgo 58 idgjj hse dsrs wt ztys 66 dbz kiwe pq iph lr 49 jth mf b ld k 74 vec 84 zqp une zge 84 ub 12 xe 57 dl gptbt",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 48 72 33 84 7 95 89 36 54 95 100 36 30 44 46 66 89 8 94 32 37 68\n12 nu 50 vgu 5 r suwwi okj xquwb y 69 z brw w wdat uol 41 dwt hue osp jzmsm tkjsm 32 ssg icr xoew il hmpe 55 konk 35 ameu icxdm xutpl 79 x 62 kf 8 kl pp",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 59 1 20 30 23 38 99 19 95 26 24 12 28 76 64 78 62 34 94 7 53 49\n80 rauwp 42 jrm 38 rxlok s kqq b vnxep 16 w vr xtjv jbskw icb 60 rqroe grhfg gushn umg jnaqm 7 tldu rctwq qmaig bz cbm 72 ck 29 rc i zoln 40 u 89 dpsp 75 rby haukl",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 56 78 83 49 18 99 78 97 75 19 36 12 33 46 63 36 13 54 50 93 98 39\n66 j 38 wqidn 27 gjx mfrf c eznc acvak 9 jy xl sckko jigbb njeb 55 al cs okytp h f 78 xp fqs me vhw jr 78 xzes 89 nnwtl qhclm rqiw 31 yv 47 hp 10 mw eaayc",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 54 94 61 87 21 26 46 98 50 66 28 9 85 75 70 60 31 13 36 46 67 67\n77 lp 17 bq 84 cadl orqaq lpiow iamdn zwmm 35 qfr vneyv umf als fatjv 99 xlspm an hze ejrhr i 46 hafw mh wd hq hrfli 96 kandk 25 gm xokh qs 56 moa 70 znhm 84 rh toug",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "241 317 257 441 367 332 180 237 452 447 446 420 299 231 79 438 314 448 157 84 123 268 412\n345 dqtxo 64 yy 251 p yqs qum xpe wvfod 109 pc p c oppz bh 55 iy elikf ltmmr a hcyvy 60 oyb ybow wn jub mfn 109 djc 476 vhw evw rvukw 408 by 328 xtd 211 bxup vz",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "79 316 131 410 205 341 302 62 351 224 427 390 66 446 235 312 211 491 114 179 77 64 182\n365 lkysn 477 qtj 457 qazi n gug olhw f 324 nfzf zv ojml ddaaq vg 94 zs lavy pbv zsf cq 111 jchcf kcier tvoci asiy j 388 ek 205 foril ftlc euh 347 fjl 450 dq 451 kaowo ufuno",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "239 127 192 322 229 189 462 311 201 437 490 433 93 217 165 393 479 314 486 156 477 112 157\n481 b 78 ywost 167 rmm lk gykrw qjwi fw 318 htgo ae rmtzy sxch jwa 64 nykwm fpny ep iz bcwp 445 l d qwhb qufm fidx 58 nrbiu 76 xqfc ffytl jvz 284 n 120 jtl 481 vrya hxm",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "379 157 324 399 99 224 412 145 353 360 317 328 197 247 55 266 488 90 188 200 100 77 475\n119 uwtga 157 bv 168 ba hl xkof jj zwnzi 189 gub afgkm bmhf ggp k 255 lplq ozzq zgfx xo aybps 251 il ni v hmuws bhpkz 434 tztdp 159 nk akb oy 491 deqi 414 jtciw 316 hb tede",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "218 107 416 261 313 201 464 447 427 287 280 60 413 120 326 224 125 300 127 400 164 306 409\n365 ucvii 393 su 416 bqkbm idv y xoee e 341 wetx qsgvf dlomr aw skfuy 52 okzfy k idj ug eo 457 fbv so gpmln sbtxd iduf 332 bs 177 wnl stu ffy 95 qtvz 266 ny 439 ihjdl k",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "262 273 239 275 486 65 449 451 224 94 278 494 173 296 51 129 348 146 126 487 105 499 159\n245 o 63 egztk 325 umt ns qi w uwc 453 dlp sxdc qhvpm p p 202 q dmhey yqo zl kqiua 339 egh g hvsm yml ivnz 233 ygtc 188 lwm vpb qua 73 ie 53 p 367 g zl",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "239 348 457 384 472 313 383 197 342 70 292 306 112 490 241 414 360 51 186 366 276 432 191\n343 sv 195 hnyoo 147 rgk tvwc po hu sr 456 wycy olw kkovy ytj bxych 50 nq godr aa em hfn 326 luvv hmhup kemvh lgyx y 186 j 397 hjqup bcr zz 167 rqpp 208 fgl 432 lswx ugk",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 yotr 1000 xd 1000 qlwf isdly zth avjw ojkh 1000 w zxov dgkwc yqgz lhi 1000 ezjhb vopnn vo xqtw bsra 1000 olutp diug ps lnnn jxmz 1000 vvba 1000 ba rlpfg zpts 1000 vf 1000 jh 1000 ah xwcx",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 gq 1000 ivu 1000 js onjz ld arkpz ifhpd 1000 vkjz p b xush zrk 1000 y lyebq sk muy n 1000 d cc tr asen byw 1000 hqe 1000 ex hs umq 1000 j 1000 x 1000 zuvto wb",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999 1 2 999 1000 999 1000 999 1000 1000 2 1 1 2 999 1000 1 1 1000 2 999 2\n1000 yddph 1 sjlch 2 blp wad pgv fddl uhpk 2 zcenr vyepx c tfc fwzcb 1 jti uap veh dmhtg sx 2 lbe dmn dts ivezo ijn 2 l 1000 dcgck dutg y 999 tiji 999 rcbnm 1000 nyer ebqkt",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:58",
+  "total_test_cases": 20
+}

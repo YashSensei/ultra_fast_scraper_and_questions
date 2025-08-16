@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Polygonal Line Search",
+  "tags": [],
+  "text": "Multiple polygonal lines are given on the xy-plane. Given a list of polygonal lines and a template, you must find out polygonal lines which have the same shape as the template.A polygonal line consists of several line segments parallel to x-axis or y-axis. It is defined by a list of xy-coordinates of vertices from the start-point to the end-point in order, and always turns 90 degrees at each vertex. A single polygonal line does not pass the same point twice. Two polygonal lines have the same shape when they fully overlap each other only with rotation and translation within xy-plane (i.e. without magnification or a flip). The vertices given in reverse order from the start-point to the end-point is the same as that given in order.Figure 1 shows examples of polygonal lines. In this figure, polygonal lines A and B have the same shape.Write a program that answers polygonal lines which have the same shape as the template.Figure 1: Polygonal linesInputThe input consists of multiple datasets. The end of the \r\ninput is indicated by a line which contains a zero.A dataset is given as follows.nPolygonal line0Polygonal line1Polygonal line2...Polygonal linenn is the number of polygonal lines for the object of search on xy-plane. n is an integer, and 1 ≤ n ≤ 50. Polygonal line0 indicates the template.A polygonal line is given as follows.mx1 y1x2 y2...xm ymm is the number of the vertices of a polygonal line (3 ≤ m ≤ 10). xi and yi, separated by a space, are the x- and y-coordinates of a vertex, respectively (-10000 < xi < 10000, -10000 < yi < 10000).OutputFor each dataset in the input, your program should report numbers assigned to the polygonal lines that have the same shape as the template, in ascending order. Each number must be written in a separate line without any other characters such as leading or trailing spaces.Five continuous \"+\"s must be placed in a line at the end of each dataset.ExampleInput:5\r\n5\r\n0 0\r\n2 0\r\n2 1\r\n4 1\r\n4 0\r\n5\r\n0 0\r\n0 2\r\n-1 2\r\n-1 4\r\n0 4\r\n5\r\n0 0\r\n0 1\r\n-2 1\r\n-2 2\r\n0 2\r\n5\r\n0 0\r\n0 -1\r\n2 -1\r\n2 0\r\n4 0\r\n5\r\n0 0\r\n2 0\r\n2 -1\r\n4 -1\r\n4 0\r\n5\r\n0 0\r\n2 0\r\n2 1\r\n4 1\r\n4 0\r\n4\r\n4\r\n-60 -75\r\n-60 -78\r\n-42 -78\r\n-42 -6\r\n4\r\n10 3\r\n10 7\r\n-4 7\r\n-4 40\r\n4\r\n-74 66\r\n-74 63\r\n-92 63\r\n-92 135\r\n4\r\n-12 22\r\n-12 25\r\n-30 25\r\n-30 -47\r\n4\r\n12 -22\r\n12 -25\r\n30 -25\r\n30 47\r\n3\r\n5\r\n-8 5\r\n-8 2\r\n0 2\r\n0 4\r\n8 4\r\n5\r\n-3 -1\r\n0 -1\r\n0 7\r\n-2 7\r\n-2 16\r\n5\r\n-1 6\r\n-1 3\r\n7 3\r\n7 5\r\n16 5\r\n5\r\n0 1\r\n0 -2\r\n8 -2\r\n8 0\r\n17 0\r\n0Output:1\r\n3\r\n5\r\n+++++\r\n3\r\n4\r\n+++++\r\n+++++",
+  "sample_input": "Input:5\r\n5\r\n0 0\r\n2 0\r\n2 1\r\n4 1\r\n4 0\r\n5\r\n0 0\r\n0 2\r\n-1 2\r\n-1 4\r\n0 4\r\n5\r\n0 0\r\n0 1\r\n-2 1\r\n-2 2\r\n0 2\r\n5\r\n0 0\r\n0 -1\r\n2 -1\r\n2 0\r\n4 0\r\n5\r\n0 0\r\n2 0\r\n2 -1\r\n4 -1\r\n4 0\r\n5\r\n0 0\r\n2 0\r\n2 1\r\n4 1\r\n4 0\r\n4\r\n4\r\n-60 -75\r\n-60 -78\r\n-42 -78\r\n-42 -6\r\n4\r\n10 3\r\n10 7\r\n-4 7\r\n-4 40\r\n4\r\n-74 66\r\n-74 63\r\n-92 63\r\n-92 135\r\n4\r\n-12 22\r\n-12 25\r\n-30 25\r\n-30 -47\r\n4\r\n12 -22\r\n12 -25\r\n30 -25\r\n30 47\r\n3\r\n5\r\n-8 5\r\n-8 2\r\n0 2\r\n0 4\r\n8 4\r\n5\r\n-3 -1\r\n0 -1\r\n0 7\r\n-2 7\r\n-2 16\r\n5\r\n-1 6\r\n-1 3\r\n7 3\r\n7 5\r\n16 5\r\n5\r\n0 1\r\n0 -2\r\n8 -2\r\n8 0\r\n17 0\r\n0Output:1\r\n3\r\n5\r\n+++++\r\n3\r\n4\r\n+++++\r\n+++++",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PLSEARCH",
+  "scraped_at": "2025-08-17 00:33:29",
+  "test_cases": [
+    {
+      "input": "5\r\n5\r\n0 0\r\n2 0\r\n2 1\r\n4 1\r\n4 0\r\n5\r\n0 0\r\n0 2\r\n-1 2\r\n-1 4\r\n0 4\r\n5\r\n0 0\r\n0 1\r\n-2 1\r\n-2 2\r\n0 2\r\n5\r\n0 0\r\n0 -1\r\n2 -1\r\n2 0\r\n4 0\r\n5\r\n0 0\r\n2 0\r\n2 -1\r\n4 -1\r\n4 0\r\n5\r\n0 0\r\n2 0\r\n2 1\r\n4 1\r\n4 0\r\n4\r\n4\r\n-60 -75\r\n-60 -78\r\n-42 -78\r\n-42 -6\r\n4\r\n10 3\r\n10 7\r\n-4 7\r\n-4 40\r\n4\r\n-74 66\r\n-74 63\r\n-92 63\r\n-92 135\r\n4\r\n-12 22\r\n-12 25\r\n-30 25\r\n-30 -47\r\n4\r\n12 -22\r\n12 -25\r\n30 -25\r\n30 47\r\n3\r\n5\r\n-8 5\r\n-8 2\r\n0 2\r\n0 4\r\n8 4\r\n5\r\n-3 -1\r\n0 -1\r\n0 7\r\n-2 7\r\n-2 16\r\n5\r\n-1 6\r\n-1 3\r\n7 3\r\n7 5\r\n16 5\r\n5\r\n0 1\r\n0 -2\r\n8 -2\r\n8 0\r\n17 0\r\n0",
+      "expected_output": "1\r\n3\r\n5\r\n+++++\r\n3\r\n4\r\n+++++\r\n+++++",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n4\n8\n6\n3\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n4\n3\n10\n1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "8\n14768717\n39708694\n99644550\n40890426\n43585387\n85402619\n18785805\n17186751",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n68687302\n33586845\n86998321\n70736159\n49031293\n93725474\n79118259\n15508383\n73691500\n3175865",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n99944513\n36879261\n39286150\n31850195\n36341980\n8461019",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n70834985\n18741502\n15723548\n41908208\n24742494",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n95377341\n29005661\n9942394\n87410804\n8420691\n61448970\n26621325\n69776460\n42968713\n34390421\n90664761\n12844393\n69697267\n69634428",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "36\n27448\n49539\n181\n79577\n9632\n47630\n21252\n83870\n54038\n24309\n93952\n8862\n78714\n14118\n80638\n19823\n21052\n74369\n80397\n43751\n49676\n13604\n67444\n56802\n51769\n3321\n89038\n85106\n33619\n48680\n57904\n86247\n5471\n87768\n14355\n49508",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "43\n60385\n97214\n6914\n7667\n43583\n70087\n6158\n79661\n34705\n23808\n84980\n72047\n45431\n37829\n37185\n41892\n64877\n48050\n11586\n58603\n81210\n72826\n65757\n54881\n9706\n94246\n14403\n5481\n74374\n6738\n15233\n72557\n59212\n67091\n38535\n80898\n79010\n17325\n2285\n5596\n2663\n48251\n27562",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "48\n48251\n93921\n85722\n52392\n44776\n19320\n4723\n26148\n52355\n28244\n92809\n34639\n74274\n87235\n93160\n7460\n62669\n69260\n16439\n43484\n24615\n46096\n82434\n50402\n25827\n45434\n59777\n28965\n16818\n53460\n82045\n99238\n50313\n36203\n3403\n4823\n35872\n3178\n38150\n10915\n10819\n31675\n22260\n45508\n88685\n44329\n7604\n35914",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n61487\n71710\n14398\n8218\n50898\n25314\n62965\n33623\n92020\n24320\n39770\n92985\n7184\n60510\n82341\n74705\n76639\n24684\n87947\n97841\n73819\n16758\n17621\n62439\n20716\n27544\n25815\n20822\n96450\n45520",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n67204\n86582\n66569\n74426\n5155\n83401\n52435\n55084\n19628\n34757\n66798\n35706\n82712\n46645\n27429\n58384\n35421\n59780\n6544\n61932\n41228\n62667\n75801\n36766\n9314\n74417\n41534\n49914\n60830\n73567\n29331\n93823",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n22613\n83163\n32263\n14324\n17842\n25584\n63647\n19660\n83799\n55686\n37456\n85435\n72559\n35601\n94906\n93526\n95602\n25755\n77830\n57519",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "37\n14083\n68382\n82342\n46591\n86396\n26938\n48525\n26671\n30517\n30711\n41554\n27332\n85780\n15464\n43850\n72786\n17018\n97356\n30207\n1117\n17350\n85522\n91573\n44557\n576\n29324\n58147\n72316\n15746\n57226\n85735\n71088\n88757\n39868\n28088\n25998\n35053",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n85211389\n79699346\n50393818\n62203536\n75613332\n34735638\n48969801\n65047339\n91634815\n31983920\n88100003\n87637887\n95966749\n21608856\n62732332\n67298000\n9770426\n44081992\n40317212\n62064903\n70922379\n27962153\n7963620\n61255587\n64350703\n453429\n15777871\n4655072\n68634504\n47339401\n65384530\n75020734\n86706410\n82736154\n56333535\n88907305\n43450352\n25895702\n69489510\n48175316\n90069359\n39885099\n2167561\n24009874\n82100503\n50315359\n33098957\n89241802\n57666123\n7908230",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n27702800\n83568017\n31710764\n68907097\n70658718\n53755498\n81797923\n74283423\n19307116\n67133246\n28022162\n18042933\n3392603\n19774414\n42105563\n37526106\n48774885\n4689493\n52139750\n88167367\n38594729\n56457455\n31830466\n26382634\n86993190\n46942315\n19545362\n6681084\n70739640\n40206117\n22883586\n29775107\n98542536\n82697463\n32194623\n99703156\n58056742\n28192348\n1942715\n30528187\n41571477\n60611281\n23884744\n4736090\n69016899\n94309523\n3406138\n45841746\n29230091\n18145286",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "50\n100000000\n1\n100000000\n100000000\n1\n74160234\n1\n1\n74522083\n1\n1\n100000000\n100000000\n54996032\n1\n1\n100000000\n100000000\n100000000\n1\n29353179\n1\n89925193\n80737961\n90141870\n1\n100000000\n79852973\n1\n23188363\n100000000\n100000000\n2113969\n50358980\n1\n1\n1\n47667792\n1\n1\n100000000\n1\n100000000\n57537936\n88889496\n1\n100000000\n100000000\n85273917\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 50)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:49",
+  "total_test_cases": 20
+}

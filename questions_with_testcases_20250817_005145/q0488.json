@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Falling Ice",
+  "tags": [],
+  "text": "Imagine disks of ice falling, one at a time, into a box, each ending\r\nup at the lowest point it can reach without overlapping or moving\r\nprevious disks.  Each disk then freezes into place, so it cannot\r\nbe moved by later disks.  Your job is to find the\r\noverall height of the final combination of disks.So that the answer is unique, assume that any disk reaching the\r\nbottom of the box rolls as far to the left as possible.  Also the\r\ndata is chosen so there will be a unique lowest position for any disk\r\nthat does not reach the bottom.  The data is also such that there\r\nare no \"perfect fits\":  each disk that lands will be in contact\r\nwith only two other points, on previous circles or the sides of the\r\nbox.  The illustrations above show white filled disks labeled with\r\nthe order in which they fall into their boxes.  The gray circle in\r\nthe fourth illustration is not intended to be a disk that fell in.\r\n The gray disk is included to demonstrate a point:  the gray\r\ndisk is the same size as disk 2, so there isspacefor disk 2 on the very bottom of its box, but disk 2 cannotreachthat position by falling from the top.  It gets caught on disk 1 and the side of the box.One way to find the top\r\nintersection point of two intersecting circles is as follows.\r\nSuppose circle 1 has center (x1, y1) and radius r1, and suppose circle 2 has center (x2, y2),\r\nand radius r2. Also assume that circle 1 is to the left of circle 2, i.e., x1 < x2. Letdx = x2 - x1,dy = y2 - y1,D = sqrt(dx*dx + dy*dy),E = (r1*r1 - r2*r2 + D*D)/(2*D),F = sqrt(r1*r1 - E*E);then the upper intersection point is (x1 + (E*dx - F*dy)/D, y1 + (F*dx + E*dy)/D).InputThe input consists of one or more data\r\nsets, followed by a line containing only 0 that signals the end of the input. Each data set is on\r\na line by itself and contains a sequence of three or more blank-separated\r\npositive integers, in the formatw,n,d1,d2,d3, ...,dn, wherewis the width of the box,nis the number of disks, and the remaining numbers are \r\nthe diameters of the disks, in the order in which they fall into the box.  \r\nYou can assume thatw< 100, \r\nthatn< 10, and that each diameter is less thanw.OutputFor each data set, output a single line\r\ncontaining the height of the pile of disks, rounded to two places\r\nbeyond the decimal point.The example data matches the illustrations above.ExampleInput:10 3 5 2 3\r\n8 2 5 5\r\n11 3 10 2 4\r\n9 3 4 4 6\r\n10 6 5 4 6 3 5 2\r\n0Output:5.00\r\n9.00\r\n12.99\r\n9.58\r\n14.19",
+  "sample_input": "Input:10 3 5 2 3\r\n8 2 5 5\r\n11 3 10 2 4\r\n9 3 4 4 6\r\n10 6 5 4 6 3 5 2\r\n0Output:5.00\r\n9.00\r\n12.99\r\n9.58\r\n14.19",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FALLINGI",
+  "scraped_at": "2025-08-17 00:33:15",
+  "test_cases": [
+    {
+      "input": "10 3 5 2 3\r\n8 2 5 5\r\n11 3 10 2 4\r\n9 3 4 4 6\r\n10 6 5 4 6 3 5 2\r\n0",
+      "expected_output": "5.00\r\n9.00\r\n12.99\r\n9.58\r\n14.19",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 7 10 6 5\n7 2 1 6\n6 10 5 7 4\n9 6 10 8 8\n6 2 7 4 4 7 7 5\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5 9 6 1\n2 6 10 8\n7 7 6 2 1\n4 2 8 5 10\n4 7 5 6 4 7 5 5\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 5 6 2 10\n9 1 7 3\n1 2 1 8 10\n6 1 3 9 4\n7 3 5 9 4 5 8 8\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 81 78 24 39\n48 90 85 92\n40 83 35 57 52\n49 3 47 12 5\n99 27 30 43 11 1 17 11\n46",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 95 38 83 51\n46 31 33 7\n95 15 58 65 95\n84 61 78 4 69\n78 5 16 95 7 6 1 74\n67",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 76 52 7 5\n58 88 15 49\n69 22 37 15 40\n20 81 20 36 98\n6 3 82 36 63 95 56 96\n15",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 56 7 55 57\n46 19 41 88\n91 11 19 71 94\n63 18 21 86 6\n33 51 42 86 2 10 80 76\n39",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 70 61 91 13\n25 74 28 13\n5 15 41 52 39\n39 53 14 31 76\n41 20 7 28 94 74 20 61\n4",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "213 242 366 61 194\n411 52 176 225\n416 335 352 429 427\n147 253 291 137 117\n387 343 371 443 304 148 433 490\n312",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "497 230 126 392 388\n306 50 378 270\n465 374 461 267 386\n442 69 279 97 321\n277 146 68 401 186 85 137 466\n498",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "58 235 442 411 230\n416 61 420 446\n224 255 456 97 199\n91 113 396 458 400\n194 374 83 124 248 388 159 477\n457",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "272 486 50 192 364\n123 178 91 268\n93 341 211 150 166\n457 154 114 222 103\n273 264 101 480 55 114 287 77\n384",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "58 468 406 327 376\n275 253 443 146\n244 214 437 84 163\n454 111 431 237 341\n225 462 162 370 350 405 115 88\n437",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "440 327 192 334 455\n406 126 353 194\n427 454 457 258 232\n478 473 212 482 365\n318 226 122 151 431 61 466 121\n447",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "327 60 360 134 233\n178 136 220 180\n447 99 257 397 441\n407 451 147 422 348\n256 288 92 313 380 440 177 232\n263",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1000 999 1\n1000 1 1000 1\n999 2 2 2 999\n1000 1000 999 1000 2\n1000 1000 999 1000 1000 1000 1000 1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1 2 1 2\n1 1000 1000 1\n999 999 2 1 1000\n2 2 2 999 1000\n1 999 999 1000 999 1 999 2\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:47",
+  "total_test_cases": 20
+}

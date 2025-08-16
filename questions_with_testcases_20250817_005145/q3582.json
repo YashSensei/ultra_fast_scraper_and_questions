@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Guess The Number With Lies v3",
+  "tags": [],
+  "text": "GUESSN3Judge has chosen an integer x in the range [1, n]. Your task is to find x, using query as described below. But be careful, because the Judge can lie. Judge is allowed to lie only once in single game and only in reply for query.QuerySingle query should contains range R = [a, b]. The reply for query is \"YES\", if a ≤ x ≤ b. Otherwise the reply is \"NO\".1 ≤ a ≤ b ≤ nCommunicationYou should communicate with Judge using standard input and output.Attention: the program should clear the output buffer after printing each line. It can be done using fflush(stdout) command or by setting the proper type of buffering at the beginning of the execution - setlinebuf(stdout).The first line of input contains single integer T, the number of games. Then T games follow.At the beggining of each game You should send to the Judge a line with command \"START_GAME\". The Judge will answer You with numbers n, m, where n is as described above and m is the maximum number of queries that You can use in this game.Then You should send some queries, every query is a line with \"QUERY\" keyword, then single-space separated values a b. After each query the Judge will answer \"YES\" or \"NO\".At the end of game You should give answer: \"ANSWER y\", where 1 ≤ y ≤ n is the answer for the game. When y ≠ x, the solution will got WA.Then start the next game (if there is any).Constraints1 ≤ T ≤ 2102 ≤ n ≤ 1018m: This value will be as small as possible. This means, that there exists strategy for player to find the value x using m queries, but there doesn't exist such strategy using m-1 queries.ExampleThe example of communication. J=Judge, P=Player.J: 3P: START_GAMEJ: 2 3P: QUERY 1 1J: YESP: QUERY 2 2J: YESP: QUERY 1 1J: NOP: ANSWER 2P: START_GAMEJ: 2 3P: QUERY 1 1J: YESP: QUERY 2 2J: NOP: ANSWER 1P: START_GAMEJ: 5 6P: QUERY 1 3J: YESP: QUERY 4 5J: YESP: QUERY 2 4J: YESP: QUERY 3 4J: NOP: ANSWER 2Explanation:In 1st game there is conflicting information in first and second query, so we know, that the last query isn't lie.In 2nd game the Judge don't use lie (Judge can lie once, but don't need to do it).In 3rd game there is conflicting information in first and second query, so the next queries has correct answers.NoteBe careful. The Judge will try to maximize the number of queries that You will ask. If necessary, the Jugde can also replace chosen value x with the other one. But don't worry too much - at the end of the game, the value x chosen by Judge will satisfy all except at most one of Your queries.Similar problemsThere is a family of similar problems. Here is the table with them:CodeNumber of liesQuery formatTypeSectionDifficultyGUESSN11subsetinteractivechallengeeasyGUESSN22-16subsetinteractivechallengemedium/hardGUESSN31rangeinteractiveclassicalmediumGUESSN41subsetnon-interactivechallengemediumGUESSN52-16subsetnon-interactivechallengehardsubset - the query is about any subset of {1,2,...,n}range - the query is about any range [a,b]interactive - the Judge replies after every querynon-interactive - all queries have to be asked at once, before any reply",
+  "sample_input": "Not found",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GUESSN3",
+  "scraped_at": "2025-08-17 00:34:17",
+  "test_cases": [
+    {
+      "input": "5",
+      "expected_output": "To be computed",
+      "type": "small_case_1",
+      "description": "Small value (≤ 5)"
+    },
+    {
+      "input": "2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small value (≤ 5)"
+    },
+    {
+      "input": "4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small value (≤ 5)"
+    },
+    {
+      "input": "36",
+      "expected_output": "To be computed",
+      "type": "medium_case_4",
+      "description": "Medium value (5-50)"
+    },
+    {
+      "input": "43",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium value (5-50)"
+    },
+    {
+      "input": "27",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium value (5-50)"
+    },
+    {
+      "input": "24",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium value (5-50)"
+    },
+    {
+      "input": "21",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium value (5-50)"
+    },
+    {
+      "input": "980",
+      "expected_output": "To be computed",
+      "type": "large_case_9",
+      "description": "Large value (50-1000)"
+    },
+    {
+      "input": "989",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large value (50-1000)"
+    },
+    {
+      "input": "396",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large value (50-1000)"
+    },
+    {
+      "input": "166",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large value (50-1000)"
+    },
+    {
+      "input": "126",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large value (50-1000)"
+    },
+    {
+      "input": "395",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large value (50-1000)"
+    },
+    {
+      "input": "153",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large value (50-1000)"
+    },
+    {
+      "input": "9296",
+      "expected_output": "To be computed",
+      "type": "max_case_16",
+      "description": "Maximum value (≥ 1000)"
+    },
+    {
+      "input": "4106",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum value (≥ 1000)"
+    },
+    {
+      "input": "82",
+      "expected_output": "To be computed",
+      "type": "edge_case_18",
+      "description": "Random value"
+    },
+    {
+      "input": "40",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Random value"
+    },
+    {
+      "input": "69",
+      "expected_output": "To be computed",
+      "type": "random_case_20",
+      "description": "Random value"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:57",
+  "total_test_cases": 20
+}

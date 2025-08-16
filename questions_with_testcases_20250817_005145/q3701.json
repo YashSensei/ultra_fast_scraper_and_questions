@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Dynamic Graph Connectivity",
+  "tags": [],
+  "text": "A graph initially consists of N  (1 ≤ N ≤ 100,000) unconnected vertices. The vertices are numbered from 1 to N.Your task is to maintain that graph and answer connectivity queries.All edges in the problem areundirected.You will receive the following queries, where (1 ≤ A, B ≤ N) :addA B : add an edge between  vertices  A and B, where initially there is no edge between A and B.remA B : remove edge between  vertices  A and B, where initially there is an edge between A and B.connA B : printYESif there is a path between A and B andNOotherwise, where A and B are different.InputThe first line of input contains the number of vertices N and the number of queries M (1 ≤ M ≤ 100,000). The following M lines contain queries.OutputFor eachconnquery outputYESorNO. Pay attention to letter case.ExampleInput:4 11add 1 2add 2 3add 3 4add 1 4conn 4 2rem 1 2conn 2 4rem 3 4conn 4 2add 2 4conn 4 2Output:YESYESNOYESThis example will be the first test case.",
+  "sample_input": "Input:4 11add 1 2add 2 3add 3 4add 1 4conn 4 2rem 1 2conn 2 4rem 3 4conn 4 2add 2 4conn 4 2Output:YESYESNOYES",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/DYNACON2",
+  "scraped_at": "2025-08-17 00:34:18",
+  "test_cases": [
+    {
+      "input": "4 11add 1 2add 2 3add 3 4add 1 4conn 4 2rem 1 2conn 2 4rem 3 4conn 4 2add 2 4conn 4 2",
+      "expected_output": "YESYESNOYES",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 8 8 9 10 2 3 4 5 3 3 5 6 3 6 5 7 8 8 4 1 2 9 10\n4 hai 1 f 7 p 4 qlfs 8 dlv 4 fbofw 1 eszff 2 rigl 5 wlw 6 k 4 bxv 3 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6 9 10 3 6 5 2 9 6 1 2 1 5 2 2 8 9 2 4 6 1 5 10\n2 otnl 1 guqk 9 vuo 2 g 2 g 1 kwjl 8 pmss 7 al 4 xyvfw 4 phzg 4 glme 3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 5 1 7 6 2 2 5 10 4 4 9 4 4 4 7 3 9 6 3 7 7 7 5\n10 ema 10 k 9 szyms 9 sabus 6 wmmyb 8 tglqu 1 rr 2 gqk 7 rrzcu 9 ueyfi 3 yf 2 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "43 99 12 97 61 28 26 56 52 42 27 70 85 80 33 11 90 29 74 78 19 30 37 37\n47 keyd 51 rwn 7 eppl 14 g 64 inai 50 tahe 100 nb 83 te 35 tpyd 81 oxjut 11 hf 67 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "36 64 67 22 88 47 39 90 14 7 81 43 65 67 30 78 86 56 35 35 37 46 52 56\n59 kp 33 pw 53 ks 40 w 30 z 14 jape 80 tgaos 1 sb 65 p 8 kwdm 5 sy 5 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 16 83 40 60 99 41 22 49 63 13 63 78 52 1 53 74 99 83 49 85 69 94 81\n86 bg 32 g 77 jv 80 pv 89 s 88 hlc 33 q 33 lfbku 30 mv 49 mzqs 71 hb 66 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 78 96 18 98 40 3 33 43 69 57 32 57 100 78 65 71 93 89 1 45 7 10 62\n61 n 62 xwn 65 md 82 ej 19 lu 81 xtgwz 7 eyj 99 ew 96 xjlkc 97 ut 50 dglmr 47 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 54 67 93 64 40 69 43 85 12 96 34 78 95 27 37 27 83 78 58 95 26 44 47\n62 dmo 2 vyqdr 18 lqe 34 cxon 66 rcbm 80 psnez 97 sudl 48 u 60 lm 46 rin 12 bd 94 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 16 28 16 46 31 40 29 24 22 28 40 44 25 19 21 18 44 44 47 32 8 47 21\n27 l 33 mwz 23 bekdo 25 xjuy 50 khp 34 snvk 18 y 48 yhdue 50 hdzfq 34 n 7 hcl 20 44",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 40 14 49 38 16 6 9 30 31 23 23 17 32 50 20 11 21 7 27 22 39 44 39\n9 hf 47 kl 26 sj 31 h 16 hpty 49 mcrxp 5 feq 39 v 23 udeb 14 yaqhw 45 pxjdf 45 46",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 46 22 37 15 40 35 17 46 33 22 44 17 12 29 7 46 33 43 9 22 20 12 8\n29 qov 23 deym 34 kh 40 enhru 44 r 33 jgs 32 w 43 nu 28 nzf 7 bmzdz 26 cpw 13 38",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "37 19 33 50 46 13 9 29 8 23 17 10 26 36 38 33 37 16 33 21 41 47 11 42\n22 fjasr 50 efz 36 yo 10 yp 5 bz 48 oht 27 tvf 23 ez 12 bogud 6 nsdv 27 wdv 26 22",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "41 36 13 47 32 16 44 18 9 26 14 50 23 50 32 10 8 7 8 43 6 31 40 50\n48 e 5 cmowa 10 aqg 17 zak 39 lolnf 43 gges 48 uqkj 14 xsqqa 44 c 49 dmmt 39 bo 9 12",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 11 27 34 43 8 39 49 6 26 34 46 33 45 18 27 48 24 20 37 11 7 40 26\n49 blvro 28 gtc 48 wi 15 fg 26 vxh 10 dh 43 ummi 50 hx 35 dfgj 50 lnbl 30 dmio 39 10",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22 44 47 26 16 21 34 47 11 7 43 12 5 12 18 24 26 41 44 12 30 18 40 15\n28 ymza 50 z 27 cgqn 47 y 29 xs 29 xaq 22 y 32 lydg 41 osub 8 oat 6 z 9 16",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100\n100 j 100 wh 100 qhr 100 h 100 bosio 100 vbqeq 100 wz 100 xi 100 lcpl 100 gu 100 qi 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100\n100 wsj 100 evwb 100 id 100 tmm 100 wdf 100 g 100 ihqq 100 wiuj 100 b 100 u 100 ih 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 100 1 99 100 2 100 100 1 2 2 99 100 100 2 100 99 100 100 99 99 100 2 2\n99 zzse 2 mqi 99 jfb 2 cyf 99 ztqam 100 s 99 jxmql 2 mh 2 qsiw 2 s 100 hmll 2 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "100 2 2 2 100 99 99 2 2 2 2 1 100 2 1 1 100 99 1 1 1 1 100 2\n1 c 99 mkf 1 pjef 99 yhbqr 99 gk 99 uil 99 f 100 vwnmk 100 sd 1 ytr 1 zyb 1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:57",
+  "total_test_cases": 20
+}

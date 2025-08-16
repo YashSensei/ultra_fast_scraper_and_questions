@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Tourney",
+  "tags": [],
+  "text": "Don Cherry has been hired to run 24-hour coverage of a series of single-elimination, bracket-style, furniture disassembly tourneys (tournaments). Each competitor has a furniture disassembly skill level, an integer between $1$ and $10^9$. In every head-to-head match, the competitor with the larger skill level wins and moves on, while the other is eliminated from the tourney. It is guaranteed that, at any time, the skill levels of all competitors are distinct, so there are no ties.There are $2^N$ ($1 \\leq N \\leq 20$) competitor positions in the tourney tree, numbered $1, 2, \\ldots, 2^N$ from left to right. In the first round, competitors 1 and 2 face off in a furniture disassembly race, as do competitors 3 and 4, etc. In each subsequent round, the winners of the first two matches from the previous round compete, as do the winners of the following two, etc. After $N$ rounds, a single winner remains. For example, when $N=2$, the tourney tree looks like this:where A represents the winner of the match between competitors 1 and 2, B represents the winner of the match between competitors 3 and 4, and C represents the winner of the match between A and B. The winner of this tourney is C.Because of sponsorship contracts, some competitors will be replaced over time. After any new person comes in, a new tourney is held.In order to help Don Cherry, you must write a program to compute certain tourney statistics at various points in time, given a sequence of $M$ ($1 \\leq M \\leq 10^6$) commands - see the input format below.InputThe first line of input contains two integers, $N$ and $M$.The next $2^N$ lines, for $i$ from $1$ to $2^N$, each contain one integer $S_i$, indicating the skill level of the initial competitor at position $i$ in the tourney tree.Each of the following $M$ lines will be a command in one of three formats:\"R$i$ $s$\" means that the competitor at position $i$ is removed, and replaced with a new one with skill level $s$. A new tourney should then be held.\"W\" means that your program should determine who won the current tourney. Print out the position $i$ (between $1$ and $2^N$) of this competitor.\"S$i$\" means that your program should print out the number of rounds that the competitor at position $i$ won in the current tourney.OutputFor each \"W\" or \"S$i$\" command in the input, print out the corresponding integer on a line by itself.ExampleInput:2 830201040S 1WR 4 9S 4WR 2 35S 2WOutput:140122Explanation of Sample:The results of the initial tourney are as follows:As can be seen, competitor 1 wins 1 match, and competitor 4 wins the entire tourney. After this, competitor 4 is replaced by a new competitor with skill level 9. As can be seen below, this causes a different outcome for the tourney held after the third command:Finally, the state of the tourney tree after the next competitor replacement (caused by the sixth command) is:",
+  "sample_input": "Input:2 830201040S 1WR 4 9S 4WR 2 35S 2WOutput:140122",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TOURNEY",
+  "scraped_at": "2025-08-17 00:33:56",
+  "test_cases": [
+    {
+      "input": "2 830201040S 1WR 4 9S 4WR 2 35S 2W",
+      "expected_output": "140122",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 1 2 1 1 1 2 1 2\n2 oeqx ibp 2 hvp qa 1 kv ueb",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 1 1 2 1 1 2 1 2\n2 h nk 1 u eogoh 2 e r",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2 2 1 1 1 2 2 1\n2 nzfuac vs 2 oet ond 2 v u",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2 1 1 2 2 2 2 2\n2 syubqbav gnqpj 1 nj lywr 2 p dxrmc",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 2 2 2 1 1 1 2 1\n1 qnmzunc iggw 2 qp ybd 1 u wxnli",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1 1 1 1 2 1 1 1\n2 lhppjwtzft z 2 ukzs ozmh 1 msjw pca",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 1 2 2 1 1 1 1 2\n1 c da 2 lo qkw 1 tv bh",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1 2 2 2 1 1 1 1\n1 vmfdzpitxu zt 1 f rrc 1 p kr",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1 1 1 1 1 1 1 1\n1 hoj c 1 bbc rlcwv 1 thqr gv",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1 1 1 1 1\n1 srwmzswcda az 1 epdpm fnzqt 1 jj xypi",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1 1 1 1 1\n1 khlbz oknbm 1 ti veiv 1 kjp pucvb",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1 1 1 1 1\n1 tyadtfycv afsw 1 g f 1 omams ykp",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1 1 1 1 1\n1 i wy 1 zqcpv p 1 gf qkn",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1 1 1 1 1\n1 agchwyl gwr 1 jse qbw 1 vwioc c",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1 1 1 1 1 1 1\n1 rhoxrcpzqu duhmp 1 qvey bk 1 kkj bsxz",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2 2 2 2 2 2 2 2\n2 wuzzl jl 2 ictpm nb 2 prprx ex",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 2 2 2 2 2 2 2\n2 prk nb 2 a whcnj 2 ynmda eakku",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 2 2 2 1 1 2 2\n1 kpelcfcqw jwre 1 pkkf phwih 1 miodf r",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 2 2 1 1 1 1 1\n2 sf peu 1 igqf rqe 1 bxoz ovafr",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

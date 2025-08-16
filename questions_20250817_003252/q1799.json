@@ -1,0 +1,10 @@
+{
+  "problem_code": "problems",
+  "title": "Hash it!",
+  "tags": [],
+  "text": "Your task is to calculate the result of the hashing process in a table of 101 elements, containing keys that are strings of length at most 15 letters (ASCII codes 'A',...,'z'). \r\nImplement the following operations:find the index of the element defined by the key (ignore, if no such element),insert a new key into the table (ignore insertion of the key that already exists),delete a key from the table (without moving the others),\r\nby marking the position in table asempty(ignore non-existing keys in the table)When performing find, insert and delete operations define the following function:integer Hash(string key),which for a stringkey=a1...anreturns the value:Hash(key)=h(key) mod 101, whereh(key)=19 *(ASCII(a1)*1+...+ASCII(an)*n).Resolve collisions using the open addressing method, i.e. try to insert the key into the table at the first free position: (Hash(key)+j2+23*j) mod 101, forj=1,...,19.\r\nAfter examining of at least 20 table entries, we assume that the insert operation cannot be performed.Inputt[the number of test cases <= 100]n1[the number of operations (one per line)[<= 1000]ADD:string[or]DEL:string\r\n[other test cases, without empty lines betwee series]OutputFor every test case you have to create a new table, insert or delete keys, and write to the output:the number of keys in the table [first line]index:key [sorted by indices]ExampleInput:\r\n1\r\n11\r\nADD:marsz\r\nADD:marsz\r\nADD:Dabrowski\r\nADD:z\r\nADD:ziemii\r\nADD:wloskiej\r\nADD:do\r\nADD:Polski\r\nDEL:od\r\nDEL:do\r\nDEL:wloskiej\r\n\r\nOutput:\r\n5\r\n34:Dabrowski\r\n46:Polski\r\n63:marsz\r\n76:ziemii\r\n96:z",
+  "sample_input": "Input:\r\n1\r\n11\r\nADD:marsz\r\nADD:marsz\r\nADD:Dabrowski\r\nADD:z\r\nADD:ziemii\r\nADD:wloskiej\r\nADD:do\r\nADD:Polski\r\nDEL:od\r\nDEL:do\r\nDEL:wloskiej\r\n\r\nOutput:\r\n5\r\n34:Dabrowski\r\n46:Polski\r\n63:marsz\r\n76:ziemii\r\n96:z",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HASHIT",
+  "scraped_at": "2025-08-17 00:33:49"
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "National Treasure",
+  "tags": [],
+  "text": "The great hall of the national museum has been robbed few times recently. Everyone is now worried about the security of the treasures on display. To help secure the hall, the museum contracted with a private security company to provide additional guards to stay in the great hall and keep an eye on the ancient artefacts. The museum would like to hire the minimum number of additional guards so that the great hall is secured. The great hall is represented as a two dimensional grid of R × C cells. Some cells are already occupied with the museum’s guards. All remaining cells are occupied by artefacts of different types (statues, sculptures, . . . etc.) which can be replaced by new hired guards. For each artefact, few other cells in the hall are identified as critical points of the artefact depending on the artefact value, type of vault it is kept inside, and few other factors. In other words, if this artefact is going to stay in the hall then all of its critical points must have guards standing on them. A guard standing in a critical position of multiple artefacts can keep an eye on them all. A guard, however, can not stand in a cell which contains an artefact (instead, you may remove the artefact to allow the guard to stay there). Also you can not remove an artefact and leave the space free (you can only replace an artefact with a new hired guard). Surveying all the artefacts in the great hall you figured out that the critical points of any artefact (marked by a symbol) are always a subset of the 12 neighboring cells as shown in the grid below.Accordingly, the type of an artefact can be specified as a non-negative integer where the i-th bit is 1 only if critical point number i from the picture above is a critical point of that artefact. For example an artefact of type 595 (in binary 1001010011) can be pictured as shown in the figure below. Note that bits are numbered from right to left (the right-most bit is bit number 1.) If a critical point of an artefact lies outside the hall grid then it is considered secure.You are given the layout of the great hall and are asked to find the minimum number of additional guards to hire such that all remaining artefacts are secured.InputYour program will be tested on one or more test cases. Each test case is specified using R+1 lines. The first line specifies two integers (1 ≤ R, C ≤ 50) which are the dimensions of the museum hall. The next R lines contain C integers separated by one or more spaces. The j-th integer of the i-th row is -1 if cell (i, j) already contains one of the museum’s guards, otherwise it contains an integer (0 ≤ T < 212) representing the type of the artefact in that cell. The last line of the input file has two zeros.OutputFor each test case, print the following line:k. GWhere k is the test case number (starting at one,) and G is the minimum number of additional guards to hire such that all remaining artefacts are secured.ExampleInput:1 3512 -1 20482 3512 2560 2048512 2560 20480 0Output:1. 02. 2",
+  "sample_input": "Input:1 3512 -1 20482 3512 2560 2048512 2560 20480 0Output:1. 02. 2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ANARC09J",
+  "scraped_at": "2025-08-17 00:33:32",
+  "test_cases": [
+    {
+      "input": "1 3512 -1 20482 3512 2560 2048512 2560 20480 0",
+      "expected_output": "1. 02. 2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 7 5 6 8 3 8 10 4 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5 1 8 3 8 5 2 4 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 5 9 8 8 4 8 8 2 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "13 51 6 81 4 89 38 92 83 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 55 66 82 86 98 11 29 7 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 55 65 4 89 89 54 15 71 23",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 24 56 37 77 50 10 34 83 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 80 24 71 70 14 81 24 4 64",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "483 133 86 227 207 189 327 190 296 70",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "412 100 249 327 50 249 494 385 173 417",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "52 88 136 72 337 248 214 261 371 487",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "183 69 114 346 367 285 274 130 174 263",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "315 267 436 495 450 299 240 434 187 129",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "172 405 410 330 336 124 359 91 481 163",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "390 55 431 143 225 465 442 241 51 57",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 1000 2 2 2 1000 999 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 2 2 1000 2 2 1 1000 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:49",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "A Simple Sieve",
+  "tags": [],
+  "text": "You are given a commutative associative unitary function \\(x(i,j)\\) defined over all \\(0\\le i,j,x(i,j)\\lt 4\\). In other words, this function satisfies, for all \\(0\\le i, j, k \\lt 4\\):\\(x(i,j)=x(j,i)\\)\\(x(x(i, j), k)=x(i, x(j, k))\\)\\(x(0, i)=i\\)Define a function \\(f(n)\\) for all positive integers \\(n\\) such that:\\(f(p^k)=(pk)\\bmod 4\\), that is, the remainder when \\(pk\\) is divided by 4If \\(\\gcd(a, b)=1\\), then \\(f(ab)=x(f(a),f (b))\\)Define:$$g(n,k,r)=\\sum_{i=1}^ni^k[f(i)=r]$$where \\([f(i)=r]\\) is theIverson bracket.Given the function \\(x\\) and two integers \\(m\\), \\(k\\), for all integers \\(1\\le i\\le\\lfloor\\sqrt n\\rfloor\\), calculate \\(g(\\lfloor\\frac ni\\rfloor, k, 0...3)\\) modulo \\(998\\ 244\\ 353\\).InputThe first line contains two integers \\(m\\) and \\(k\\). (\\(1\\le m\\le 10^{10}\\), \\(0 \\le k \\le 1000\\))The following 4 lines contains 4 integers each. The i-th row j-th integer contains \\(x(i-1,j-1)\\).OutputOutput \\(\\lfloor\\sqrt n\\rfloor\\) lines containing 4 integers each. The i-th row j-th integer contains \\(g(\\lfloor\\frac ni\\rfloor, k, j-1)\\) modulo \\(998244353\\).ExampleInput:10 0\r\n0 1 2 3\r\n1 2 3 0\r\n2 3 0 1\r\n3 0 1 2Output:2 2 3 3\r\n2 1 1 1\r\n1 0 1 1Input:100 100\r\n0 1 2 3\r\n1 0 3 2\r\n2 3 0 1\r\n3 2 1 0Output:457599333 476580683 403589597 762762658\r\n361221912 612412943 661908092 483645330\r\n242804711 682542199 535167020 465246643\r\n913280460 516845083 917292729 390364642\r\n39265044 919790719 181416471 421087779\r\n530140662 31014314 181416471 226287885\r\n982924733 31014314 851084249 226287885\r\n982924733 938693280 851084249 226287885\r\n982924733 938693280 851084249 435036575\r\n982924733 938693280 851084249 138976409",
+  "sample_input": "Input:10 0\r\n0 1 2 3\r\n1 2 3 0\r\n2 3 0 1\r\n3 0 1 2Output:2 2 3 3\r\n2 1 1 1\r\n1 0 1 1",
+  "sample_output": "Input:100 100\r\n0 1 2 3\r\n1 0 3 2\r\n2 3 0 1\r\n3 2 1 0Output:457599333 476580683 403589597 762762658\r\n361221912 612412943 661908092 483645330\r\n242804711 682542199 535167020 465246643\r\n913280460 516845083 917292729 390364642\r\n39265044 919790719 181416471 421087779\r\n530140662 31014314 181416471 226287885\r\n982924733 31014314 851084249 226287885\r\n982924733 938693280 851084249 226287885\r\n982924733 938693280 851084249 435036575\r\n982924733 938693280 851084249 138976409",
+  "link": "https://www.spoj.com/problems/ASSIEVE",
+  "scraped_at": "2025-08-17 00:33:41",
+  "test_cases": [
+    {
+      "input": "10 0\r\n0 1 2 3\r\n1 2 3 0\r\n2 3 0 1\r\n3 0 1 2",
+      "expected_output": "2 2 3 3\r\n2 1 1 1\r\n1 0 1 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "100 100\r\n0 1 2 3\r\n1 0 3 2\r\n2 3 0 1\r\n3 2 1 0",
+      "expected_output": "457599333 476580683 403589597 762762658\r\n361221912 612412943 661908092 483645330\r\n242804711 682542199 535167020 465246643\r\n913280460 516845083 917292729 390364642\r\n39265044 919790719 181416471 421087779\r\n530140662 31014314 181416471 226287885\r\n982924733 31014314 851084249 226287885\r\n982924733 938693280 851084249 226287885\r\n982924733 938693280 851084249 435036575\r\n982924733 938693280 851084249 138976409",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "2 1\n9 10 2 8\n2 4 6 9\n8 4 10 4\n7 4 1 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8\n8 3 1 6\n1 1 5 2\n9 5 4 3\n6 8 5 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1\n6 4 6 8\n6 3 4 2\n4 8 6 1\n2 1 1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "22 40\n64 4 68 56\n25 50 73 84\n80 30 93 99\n9 21 86 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 74\n66 74 52 48\n94 81 77 3\n58 17 81 39\n25 78 96 34",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "73 28\n64 71 2 68\n40 74 85 73\n27 58 26 96\n56 84 47 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "88 11\n59 21 96 81\n44 12 38 16\n81 96 80 8\n11 18 82 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 42\n63 58 87 27\n15 18 92 1\n94 35 93 52\n94 100 27 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "376 196\n326 297 375 364\n115 435 156 397\n130 171 405 253\n473 231 444 254",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "81 58\n101 347 90 390\n325 310 54 182\n184 146 178 214\n125 449 271 115",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "113 289\n131 93 336 489\n438 164 308 378\n175 182 308 234\n69 118 396 209",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "78 483\n497 244 273 381\n171 274 226 301\n365 222 96 74\n319 441 304 496",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "432 341\n155 353 375 263\n87 478 350 352\n132 59 371 455\n253 298 344 226",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "228 408\n101 457 260 217\n192 354 307 467\n215 229 182 494\n404 333 500 419",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "76 306\n492 465 233 162\n180 243 80 414\n188 272 87 79\n111 373 280 77",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1\n1000 2 2 1\n1000 999 999 999\n1 2 999 1000\n1 1 999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:46",
+  "total_test_cases": 20
+}

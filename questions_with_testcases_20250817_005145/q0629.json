@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Best Name for Your Baby",
+  "tags": [],
+  "text": "In the year 29XX, the government of a small country somewhere on the earth introduced a law restricting first names of the people only to traditional names in their culture, in order to preserve their cultural uniqueness.  The linguists of the country specifies a set of rules once every year, and only names conforming to the rules are allowed in that year.  In addition, the law also requires each person to use a name of a specific length calculated from one's birth date because otherwise too many people would use the same very popular names.  Since the legislation of that law, the common task of the parents of new babies is to find the name that comes first in the alphabetical order among the legitimate names of the given length because names earlier in the alphabetical order have various benefits in their culture.Legitimate names are the strings consisting of only lowercase letters that can be obtained by repeatedly applying the rule set to the initial string ``S'', a string consisting only of a single uppercase S.Applying the rule set to a string is to choose one of the rules and apply it to the string.  Each of the rules has the formA, whereAis an uppercase letter andis a string of lowercase and/or uppercase letters.  Applying such a rule to a string is to replace an occurrence of the letterAin the string to the string.  That is, when the string has the form ``A'', whereandare arbitrary (possibly empty) strings of letters, applying the rule rewrites it into the string ``''.  If there are two or more occurrences ofAin the original string, an arbitrary one of them can be chosen for the replacement.Below is an example set of rules.SaAB(1)A(2)AAa(3)BAbbA(4)Applying the rule (1) to ``S'', ``aAB'' is obtained.  Applying (2) to it results in ``aB'', as A is replaced by an empty string.  Then, the rule (4) can be used to make it ``aAbbA''.  Applying (3) to the first occurrence of A makes it ``aAabbA''.  Applying the rule (2) to the A at the end results in ``aAabb''.  Finally, applying the rule (2) again to the remaining A results in ``aabb''.  As no uppercase letter remains in this string, ``aabb'' is a legitimate name.We denote such a rewriting process as follows.SaABaBaAbbAaAabbAaAabbaabbLinguists of the country may sometimes define a ridiculous rule set such as follows.SsA(1)AaS(2)Bb(3)The only possible rewriting sequence with this rule set is:SsAsaSsasA...which will never terminate.  No legitimate names exist in this case. Also, the rule (3) can never be used, as its left hand side, B, does not appear anywhere else.It may happen that no rules are supplied for some uppercase letters appearing in the rewriting steps.  In its extreme case, even S might have no rules for it in the set, in which case there are no legitimate names, of course.  Poor nameless babies, sigh!Now your job is to write a program that finds the name earliest in the alphabetical order among the legitimate names of the given length conforming to the given set of rules.InputThe input is a sequence of datasets, followed by a line containing two zeros separated by a space representing the end of the input.  Each dataset starts with a line including two integersnandlseparated by a space, wheren(0 <=n<= 50) is the number of rules andl(0 <=l<= 20) is the required length of the name. After that line,nlines each representing a rule follow.  Each of these lines starts with one of uppercase letters, A to Z, followed by the character ``='' (instead of ``'') and then followed by the right hand side of the rule which is a string of letters A to Z and a to z.  The length of the string does not exceed 10 and may be zero.  There appears no space in the lines representing the rules.OutputThe output consists of the lines showing the answer to each dataset in the same order as the input.  Each line is a string of lowercase letters, a to z, which is the first legitimate name conforming to the rules and the length given in the corresponding input dataset.  When the given set of rules has no conforming string of the given length, the corresponding line in the output should show a single hyphen, \"-\".  No other characters should be included in the output.ExampleInput:4 3\r\nA=a\r\nA=\r\nS=ASb\r\nS=Ab\r\n2 5\r\nS=aSb\r\nS=\r\n1 5\r\nS=S\r\n1 0\r\nS=S\r\n1 0\r\nA=\r\n2 0\r\nA=\r\nS=AA\r\n4 5\r\nA=aB\r\nA=b\r\nB=SA\r\nS=A\r\n4 20\r\nS=AAAAAAAAAA\r\nA=aA\r\nA=bA\r\nA=\r\n0 0Output:abb\r\n-\r\n-\r\n-\r\n-\r\n\r\naabbb\r\naaaaaaaaaaaaaaaaaaaa",
+  "sample_input": "Input:4 3\r\nA=a\r\nA=\r\nS=ASb\r\nS=Ab\r\n2 5\r\nS=aSb\r\nS=\r\n1 5\r\nS=S\r\n1 0\r\nS=S\r\n1 0\r\nA=\r\n2 0\r\nA=\r\nS=AA\r\n4 5\r\nA=aB\r\nA=b\r\nB=SA\r\nS=A\r\n4 20\r\nS=AAAAAAAAAA\r\nA=aA\r\nA=bA\r\nA=\r\n0 0Output:abb\r\n-\r\n-\r\n-\r\n-\r\n\r\naabbb\r\naaaaaaaaaaaaaaaaaaaa",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/YOKOH",
+  "scraped_at": "2025-08-17 00:33:25",
+  "test_cases": [
+    {
+      "input": "4 3\r\nA=a\r\nA=\r\nS=ASb\r\nS=Ab\r\n2 5\r\nS=aSb\r\nS=\r\n1 5\r\nS=S\r\n1 0\r\nS=S\r\n1 0\r\nA=\r\n2 0\r\nA=\r\nS=AA\r\n4 5\r\nA=aB\r\nA=b\r\nB=SA\r\nS=A\r\n4 20\r\nS=AAAAAAAAAA\r\nA=aA\r\nA=bA\r\nA=\r\n0 0",
+      "expected_output": "abb\r\n-\r\n-\r\n-\r\n-\r\n\r\naabbb\r\naaaaaaaaaaaaaaaaaaaa",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 1\nwzhk\ncqiy\nv\nmtzdonjc\n5 6\ngeb\npn\n10 4\nnfenao\n6 2\ndi\n8 5\ntwj\n1 9\ng\nakpp\n3 8\neqibg\neglfdy\nzfoye\nptll\n8 9\ntrnsmbbybcywgtencine\nf\nkpi\nli\n3 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10\nxhm\ng\nrrjltlvsim\nxu\n6 9\nchsy\nre\n5 10\ntongxo\n1 8\nmt\n5 6\nu\n9 9\nov\nawhxgplu\n9 7\nrghxwi\noopt\nzmg\nvpmk\n6 4\ndyqd\nzn\ndtlwyeuf\nfsy\n9 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 9\neeaask\nlnfp\nyoriyhqqwj\napcz\n4 10\nwylcnb\np\n9 10\nkbyqxw\n5 4\ngrumux\n9 4\ndcja\n9 1\nn\nzrh\n3 10\nlg\nt\nsovajkt\nqfrvny\n7 9\ns\ngbxfe\nkpmvct\nkyi\n6 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "65 71\nuhmg\nycp\nz\nt\n40 34\nkhef\nes\n52 95\nazmaik\n88 86\nrucdsg\n63 37\nn\n17 33\no\naiwzm\n59 44\nsexa\nkhffjp\nvsf\nhm\n84 58\nwtjoobdocuteozzs\no\nqrupgrqk\nbbc\n27 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 79\nmkmm\nvs\nrpgjvv\nxkcyur\n27 32\nj\nzmf\n17 64\nljhaqu\n3 38\nzsttp\n27 97\nn\n34 7\nxjr\nhph\n41 83\nwrxqemk\nhrnv\ngfpsj\nxxgwd\n85 8\nccdrgkbxlz\nwkkr\nhdzqqc\ninc\n2 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 21\nffsx\nvwja\nebyhqgr\nbqrq\n69 34\ndctcrwwr\nyfnv\n53 23\nwiqo\n9 64\nsb\n17 70\niv\n28 42\nggn\nbskl\n65 69\nssiuckl\nt\nktge\nokgxa\n80 56\nykmtsfpvtnumwhxlqcxm\ncak\nlwiisvjo\nayx\n58 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "80 67\nlumznx\nzjz\nbtago\nximo\n19 96\nomjo\nqqt\n9 49\nqfr\n73 87\nfy\n63 17\nnvp\n54 88\nsiv\nupzpgiz\n90 36\nnc\nrlwmzq\nnosadtub\nt\n87 40\niklqfsxaecdjf\nogmrr\nsik\nymkx\n65 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 71\npfn\ns\nk\nhmbnkrv\n27 7\nlyo\neak\n65 95\nogzk\n28 83\nwlvl\n11 80\ndcca\n79 64\nc\nu\n74 6\nrek\ngdb\nb\nqhpbht\n52 17\najcuhabqwjsuaigmc\nzgczer\nwhmhqb\ngu\n15 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "174 167\nmu\nmlxi\nqqew\nrjwgiyjj\n258 372\ns\nu\n99 418\ne\n141 189\ns\n74 153\nefl\n386 226\npze\nqzvvstn\n99 382\nxows\ngmcgd\njilsjdn\ni\n474 294\noxsymsjlryxlzxnhkjl\nfkizf\nvstjuoa\nxiq\n343 296",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "321 340\nld\nvnj\ntfiezwmsr\nblamakzx\n410 204\ngzxev\na\n461 168\ngmctc\n117 252\nuxr\n379 141\nkf\n249 311\nyel\nykm\n483 472\nvzam\ni\nmot\nvuhs\n120 161\nwmlfwmhftccd\ngsjzruzj\ny\nkt\n326 304",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "61 146\ndrvqhw\nboij\nrywl\nlelq\n237 110\nu\norkc\n211 253\nllgal\n263 73\nacrbtq\n133 400\nkk\n228 137\nt\nd\n250 385\noxectry\nglhgy\nz\nxdfe\n247 220\nolmdepawdrqbfuhdeoi\nvd\nvputd\nyrc\n278 444",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "152 396\napadvx\nqxo\nu\ndnpm\n478 158\novs\nn\n320 497\nv\n293 456\nhps\n199 84\nv\n391 207\nesjo\nvt\n197 176\nszizp\nd\nla\ntovypk\n91 361\njoudrtncicr\nseaydfa\ngahcyv\nwtrc\n302 286",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "286 471\nul\nh\nc\nggjg\n118 166\nbcfmt\nch\n251 57\nrmxq\n447 380\nhcx\n89 346\nws\n380 83\nsmuh\nvdhdrme\n131 268\nk\nlfch\nmyoaiwje\ndamzm\n388 459\njgibdvbq\nam\nioig\ndvye\n453 64",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "331 118\nzgdpg\nlkpq\nnkeif\nauxqqc\n372 434\ntipjefg\nbrra\n272 338\nspovd\n210 63\nazkh\n337 158\nybse\n269 298\neve\nkifxtky\n206 429\nyvq\nbrga\nmznjvjs\nr\n268 301\nydsmotlht\nb\nx\nwhx\n69 118",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "198 153\ngp\nhrzn\nbs\ndo\n359 267\nmd\nf\n377 68\njf\n130 227\nimgp\n404 157\nhogr\n431 300\nxoau\nfejyf\n259 182\nmugbqqrs\nkrcoh\nlu\nq\n484 127\nvvmxjvtmbxj\nbevkcfw\nwkrqbdg\ns\n188 500",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nzegx\ng\nlfntnvy\nrr\n1000 1000\nou\nodzb\n1000 1000\ne\n1000 1000\ncf\n1000 1000\njrk\n1000 1000\nkxi\nsw\n1000 1000\ncv\nbx\ncwdd\nqng\n1000 1000\ndkjwqagidoovswj\nfl\nfzlcr\nweo\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nx\ny\nyiuqo\nouxkfi\n1000 1000\nuelq\ntzou\n1000 1000\ntnkxpx\n1000 1000\nfclaau\n1000 1000\njrmg\n1000 1000\nzoj\nqmnumc\n1000 1000\nahlmx\ncg\nvr\nqwob\n1000 1000\nkjsttkfxqmjhgjrfrzl\nyjxqra\nvlhapdgz\nhi\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1\nfqwnl\nacb\np\nbjsvl\n1000 999\nngg\njqo\n999 1000\ndfo\n1 2\naj\n1 1\ne\n999 999\nxxxk\ndaqdpmrb\n1000 999\nsipues\nxijjtd\nuqrq\njerq\n2 1000\noady\nh\nrdsqbg\niey\n1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 2\nvz\ndpfc\nbkhkmwxb\njxo\n2 2\nuiqmqes\nzwbk\n1000 1\ncextkw\n1000 1000\ntoumx\n2 1000\ni\n2 1000\nz\nnmlhbf\n1000 1000\nciqss\nvej\ndqkkuoh\nmjfvn\n2 1\nmpmryqxmw\nwhaszokm\npec\noq\n1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:47",
+  "total_test_cases": 20
+}

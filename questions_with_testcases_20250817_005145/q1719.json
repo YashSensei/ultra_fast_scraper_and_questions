@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Clones",
+  "tags": [],
+  "text": "Trouble has befallen the ninja world (again!). As always, our hero Naruto has taken the responsibility to defend everyone from the evil forces. His signature attack is the cloning jutsu (i.e. cloning technique) in which he produces one clone of himself in one second. Each clone of Naruto can also perform the cloning technique.Naruto arrives alone at the battlefield at t = 1 second. At each time step, t = 1, 2, 3 ... n second, some of the Narutos will leave to start fighting the enemy and the rest will stay back and perform the cloning jutsu again. If a clone has left to fight the enemy he cannot come back to perform the jutsu. Also at t = n seconds all Narutos will go to fight with the enemy, i.e. no more cloning will take place on and after n seconds. Naruto is a very dedicated ninja so he won’t allow any of his clone to stay out of the fight.The commander of the ninja forces observes Naruto’s actions. He notes down the number of clones that went to fight the enemy at each time step (from t = 1 second until t = n second). However he is old and doubts if his observations are correct. He hires you, a ninja with sharp analytical skills, to check if his observations can be valid or not.InputThe first line of the input contains t the number of test cases. The first line of each test case contains n, the time when all Naruto clones go to fight. In the second line of each test case there are n space separated integers that tell how many Naruto clones went to fight at successive seconds, starting from t = 1 second until t = n seconds;OutputFor each test case output either “Yes” or “No” (without quotes) in a single line. “Yes” if the commander’s observations were correct and “No” if they were wrong;Constraints1 ≤ T ≤ 201 ≤ n ≤ 106Each of the n integers will be less than or equal to 230ExampleInput:3\r\n3\r\n0 0 4\r\n2\r\n0 5\r\n3\r\n0 1 2Output:Yes\r\nNo\r\nYesExplanationFor the sample test case 2:20 5At t = 1 second, Naruto population is 1. According to the commander’s observations no Naruto leaves to fight at t = 1 (and all will perform the cloning jutsu), so the population will become 1 × 2 = 2. He observed that at t = 2 seconds, 5 Narutos went to fight. This is not possible as at t = 2 seconds the Naruto population is only 2. Therefore, the commander’s observations are incorrect.",
+  "sample_input": "Input:3\r\n3\r\n0 0 4\r\n2\r\n0 5\r\n3\r\n0 1 2Output:Yes\r\nNo\r\nYes",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/NCLNE",
+  "scraped_at": "2025-08-17 00:33:46",
+  "test_cases": [
+    {
+      "input": "3\r\n3\r\n0 0 4\r\n2\r\n0 5\r\n3\r\n0 1 2",
+      "expected_output": "Yes\r\nNo\r\nYes",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n5\n6\n1\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n9\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n6\n4\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "15\n2724971\n16418769\n27951877\n97911174\n81114763\n25772130\n6905366\n97716071\n55479243\n7637229\n61066666\n16461444\n49699508\n56310802\n73532645",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n50181791\n6187273\n88010542\n89198327\n89627857\n45572239\n49547781",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n23240366\n93109338\n97982368\n42415981\n87302553\n67856535\n28984145\n21110972",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n50200386\n90471537\n99735648\n28558728\n52210887\n70531211\n52570490\n24896593\n36874818\n61098198\n94114511\n6312306\n6180593\n29519516",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n96619716\n84759536\n28448511\n42751278\n55616059\n98254933\n16099778\n22938603\n25089599\n88195032\n85069591\n94162992",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "43\n6534\n63827\n4933\n19459\n32341\n92400\n22756\n10442\n20047\n75039\n88132\n68403\n70016\n28491\n39066\n42359\n11592\n14792\n82545\n35417\n6237\n25131\n5054\n78225\n17943\n26764\n80987\n5943\n91768\n90001\n54030\n68499\n24473\n8329\n17142\n2090\n80053\n88496\n10963\n17990\n39354\n44508\n3854",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n79609\n60096\n86658\n92775\n97201\n35140\n89254\n71487\n91948\n71279\n36766\n26023\n90770\n60030\n82592\n65063\n9629\n46602\n84181\n4898",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "80\n76321\n69243\n86225\n23055\n71694\n94042\n19670\n11274\n78401\n95105\n41122\n41050\n87352\n7122\n23850\n41786\n59721\n68770\n50056\n75549\n2469\n40226\n74278\n83784\n21939\n54488\n26320\n35892\n87826\n69869\n72559\n11733\n57890\n25208\n59972\n16341\n76668\n13975\n26366\n2445\n81353\n93960\n12081\n71091\n33355\n90649\n76639\n46406\n12977\n90830\n61672\n31431\n69305\n14040\n88691\n12107\n43435\n48874\n11707\n70369\n45514\n37874\n17813\n5893\n77513\n55900\n4462\n67194\n99531\n82299\n16606\n52510\n76720\n53438\n83351\n70590\n5818\n65755\n59256\n42287",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "56\n39201\n21465\n54511\n87844\n62455\n66000\n7080\n53078\n9362\n37684\n4070\n72286\n12716\n15400\n50368\n53803\n60373\n88336\n50315\n65622\n99450\n44485\n45114\n10560\n51632\n26972\n81922\n23181\n5585\n97695\n38864\n78819\n22712\n36090\n46805\n57617\n43014\n39845\n46823\n81172\n67267\n73577\n55898\n64752\n68490\n54129\n1771\n24409\n55480\n42790\n40402\n4231\n10426\n99146\n90126\n17021",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "24\n14463\n50305\n82708\n80632\n15982\n54994\n84670\n76148\n64314\n73847\n54563\n88030\n26118\n48967\n38387\n87983\n22414\n51044\n54015\n15422\n78630\n7233\n69870\n6954",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "76\n53119\n13772\n80699\n23847\n30761\n93500\n94586\n79457\n60599\n6262\n79615\n68195\n34720\n80894\n43843\n29460\n64333\n52500\n51474\n68034\n324\n61045\n50738\n21947\n26567\n14184\n62777\n85567\n84806\n45390\n54746\n53883\n17349\n40824\n92815\n30166\n60466\n7145\n41008\n70195\n63510\n39662\n84412\n93791\n45837\n64573\n4599\n18911\n59201\n31260\n31114\n12559\n951\n84354\n37830\n83426\n23547\n7229\n1549\n85375\n69943\n50452\n73903\n74677\n84586\n79346\n71778\n47967\n97605\n43220\n7744\n27055\n9604\n72925\n66525\n61096",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "64\n59119\n70539\n72313\n54415\n3621\n35148\n30461\n52697\n516\n31620\n71670\n90381\n80160\n97685\n70581\n15706\n58725\n10393\n55095\n58059\n92941\n64942\n24830\n80702\n25605\n75057\n76839\n83325\n49485\n56723\n73373\n53780\n78698\n98955\n33226\n9351\n48811\n24897\n5456\n27693\n92712\n37677\n65678\n25465\n5828\n50665\n83366\n79868\n91538\n96667\n53978\n4499\n14316\n32666\n69689\n26584\n46731\n61876\n42895\n42094\n46043\n74210\n84823\n94349",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "106\n35028188\n12787302\n65844731\n17276404\n20796908\n83753171\n67963975\n70191785\n54028040\n19638750\n30694916\n27584579\n51708674\n87811427\n21162708\n21937514\n90131374\n8300047\n95190046\n66876603\n78801195\n67979516\n9917254\n68948645\n26773873\n75249901\n5167921\n35685422\n35653621\n60701722\n22793769\n59834\n21181089\n68905106\n56986246\n80341073\n5546085\n39462816\n86648182\n31052331\n93656739\n21074530\n26763187\n51781224\n66833533\n28455280\n45915338\n23114631\n88152984\n84958219\n76347841\n39611340\n8236299\n17045532\n90770693\n77954734\n23434221\n84678615\n83475999\n66688149\n58662329\n8737928\n13206540\n56288233\n27715324\n10878751\n46138199\n36865240\n17510213\n30146191\n99728451\n8244941\n89689014\n37596582\n85263251\n10255767\n71915211\n40814512\n5912870\n60388526\n44995589\n93676097\n17995983\n84825084\n94800115\n69608723\n90822157\n66082980\n56327919\n5449834\n91216840\n40709880\n96072453\n32661785\n92573673\n8580970\n33873255\n39831803\n20139173\n1992492\n30549840\n43780924\n62068455\n93608594\n48128785\n3545668",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "106\n80975332\n78860204\n68846440\n27918963\n77906880\n60010967\n42494363\n18065109\n28554076\n87373739\n88657495\n50711856\n75020539\n49958236\n22234359\n71236953\n52594389\n58202856\n44414678\n45396374\n76790235\n96447707\n79368112\n56150520\n50369424\n84417664\n72508753\n53654804\n90536357\n80043852\n90358711\n16573861\n48792575\n63598269\n95214151\n78432695\n40860181\n195822\n47526664\n54702777\n90918822\n47883658\n32971077\n56338278\n21001929\n16644137\n39976018\n4629763\n22398243\n76371053\n74250202\n517217\n85279353\n83229454\n39964165\n85473256\n20036960\n80799334\n97893481\n90513863\n85395634\n49252687\n53944153\n9466066\n70591603\n61518684\n56170456\n78680270\n85260186\n55516986\n2249248\n1121013\n51693882\n77587659\n26462165\n28959019\n84319387\n76011422\n59591806\n40509933\n20869385\n66707477\n73546738\n19364053\n87620014\n77434653\n20301586\n63109349\n2999451\n49215053\n79533043\n69428520\n22166739\n94101477\n67905791\n90449950\n21778726\n48816988\n84109035\n84416638\n34873497\n91848495\n27549241\n18546820\n48339978\n19308579",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "106\n100000000\n2958346\n6615080\n100000000\n18633198\n1\n100000000\n45460483\n51144927\n100000000\n1\n100000000\n85189908\n100000000\n32114648\n96391099\n41908831\n1\n1\n100000000\n1\n1\n100000000\n1\n100000000\n100000000\n100000000\n1\n38848754\n45443744\n1\n13936199\n100000000\n100000000\n100000000\n83662072\n100000000\n1\n88056656\n80765360\n1\n1\n100000000\n100000000\n100000000\n22765424\n100000000\n100000000\n100000000\n6261864\n3068239\n100000000\n4618706\n1\n100000000\n100000000\n1\n49088193\n80868386\n1\n1\n94526386\n100000000\n1\n1\n100000000\n1\n100000000\n1\n61691421\n100000000\n1\n100000000\n71111231\n1\n100000000\n100000000\n1\n1\n1\n1\n1\n100000000\n100000000\n16334516\n1\n9020411\n66274740\n100000000\n1\n100000000\n100000000\n100000000\n28020369\n100000000\n100000000\n1\n55079322\n1\n62866030\n50519486\n1\n100000000\n1\n1\n38178892",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 106)"
+    },
+    {
+      "input": "1\n19576369",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:50",
+  "total_test_cases": 20
+}

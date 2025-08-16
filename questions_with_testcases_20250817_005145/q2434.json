@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Bouncing Balls II",
+  "tags": [],
+  "text": "\"Behold, my queen\", said the jester, \"the great Bouncing Ball Bowl!\" The queen boredly waved her hand and sarcastically replied: \"Let the fun begin!\". And the fun begun! The jester spoke a magic word and all the colorful balls in his bowl started to roll and bounce, creating interesting pictures.The queen watched vividly for a few minutes, but then she started to be bored again. \"Just wait a moment, Your Majesty, in a minute they'll…\" started the jester, but the queen interrupted: \"I'm a queen! I don't want to wait! Can't you just fast forward it or something?\"Problem specificationThe jester's box is anX*Y(1<=X,Y<=5000) rectangle. The rectangle containsN(N<=3001) small balls. At any moment, each ball is travelling at the same speed in one of the four diagonal directions.The movement of the balls is continuous and for the purpose of this problem we may consider them to be points. When two or more balls meet, they bounce in a way described below.Your task is to determine the state of the box at given moments in time.Bouncing specificationBouncing does not change the speed of the balls. Following images show how the balls bounce off each other, and also off walls. Each image can be rotated arbitrarily. For example, the first image shows that whenever two balls meet at a right angle, they bounce and depart at a right angle again. One particularly tricky case is shown in the third image.Input specificationThe input starts with a line containing the dimensionsXandYof the box. We will use a coordinate system with axes parallel to the sides of the box, (0,0) at one of the corners and (X,Y) at the opposite corner.The second line contains the number of ballsN.Each of the nextNlines contains four integers x,y,vx,vy, where (x,y) are the coordinates of one ball at time 0 and (vx,vy) is its current velocity vector. (Each ball will be strictly inside the box and for each ball both the absolute values of vx and vy will be equal to 1. No two balls will start at the same place.)The following line contains the number of queen's requests M.(1<= M <=20)On the last line there are M numbers t1,…,tM– the points in time the queen wants to see. These numbers will be less than 1012.Output specificationAs a solution to this problem, we expect a file with M blocks, with the i-th block describing the situation at time ti.Each block must contain N lines, and each line must contain the x and y coordinates of one ball. The balls in each block must be sorted – primarily by to their first, secondarily by their second coordinate at that point in time.You may output an empty line between the blocks.ExampleInput:6 4\r\n4\r\n1 2 1 1\r\n5 2 1 1\r\n2 1 1 -1\r\n3 1 -1 -1\r\n1\r\n4Output:1 3\r\n3 2\r\n5 2\r\n6 3Note that the balls that start at (2,1) and (3,1) bounce off each other at a non-integer point in time.",
+  "sample_input": "Input:6 4\r\n4\r\n1 2 1 1\r\n5 2 1 1\r\n2 1 1 -1\r\n3 1 -1 -1\r\n1\r\n4Output:1 3\r\n3 2\r\n5 2\r\n6 3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BOBALLS2",
+  "scraped_at": "2025-08-17 00:33:56",
+  "test_cases": [
+    {
+      "input": "6 4\r\n4\r\n1 2 1 1\r\n5 2 1 1\r\n2 1 1 -1\r\n3 1 -1 -1\r\n1\r\n4",
+      "expected_output": "1 3\r\n3 2\r\n5 2\r\n6 3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 7\n7\n8 8 1 1\n3 8 5 7\n2 4 2 1\n5 7 1 1\n4\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 7\n5\n6 2 5 10\n6 9 2 3\n8 3 9 8\n5 10 4 3\n7\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3\n9\n8 9 3 7\n10 9 8 3\n6 1 7 9\n1 5 1 5\n4\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "78 66\n95\n92 38 69 27\n67 52 29 57\n78 50 66 44\n41 90 7 98\n58\n99",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 78\n5\n97 25 83 22\n61 89 9 30\n88 88 28 63\n62 60 30 67\n71\n95",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 93\n7\n64 81 76 84\n51 16 73 89\n63 65 38 24\n98 62 81 2\n30\n99",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 14\n88\n51 75 17 96\n86 84 6 66\n24 27 36 54\n35 27 52 86\n38\n32",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 40\n42\n31 49 70 52\n84 27 94 59\n12 48 46 29\n72 25 25 39\n57\n77",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "433 208\n70\n194 239 73 436\n101 300 271 285\n206 369 258 61\n355 318 76 465\n98\n271",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "236 255\n290\n167 281 71 289\n255 197 267 181\n316 120 98 278\n121 233 339 394\n51\n467",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "182 182\n310\n129 364 69 489\n346 283 416 342\n276 170 320 288\n156 318 449 84\n219\n480",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "237 465\n108\n123 180 346 92\n434 169 334 181\n72 308 145 320\n408 374 180 130\n363\n380",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "113 287\n156\n61 123 336 353\n141 139 422 441\n496 209 500 368\n284 141 400 303\n360\n469",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "483 471\n70\n328 96 130 106\n491 51 337 415\n469 427 125 88\n205 209 195 235\n382\n126",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "453 140\n219\n236 243 137 285\n399 154 110 349\n360 235 169 155\n93 318 130 54\n279\n302",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n999 1 1 999\n999 1 1 999\n999 1 999 1\n1 999 2 999\n999\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\n1\n2 999 999 1000\n2 1000 1000 2\n2 1000 2 999\n999 2 1000 1000\n999\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:53",
+  "total_test_cases": 20
+}

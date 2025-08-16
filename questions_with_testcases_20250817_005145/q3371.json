@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Changing Maze",
+  "tags": [],
+  "text": "Luke Skywalker and his sister/love interest Leia are trying to get through a killer maze. And I\r\nmean killer! Every time step, the boundaries change. If our twins/lovebirds ever visit a square the\r\nsame time a boundary appears, they’re toast. There is no need to panic; the Force will guide them\r\nthrough the maze, and they will not die. However, the Force needs to know what advice to give\r\nand is therefore asking you for help.Luke and Leia begin in the northwest corner of a maze. They want to make it to the southeast\r\ncorner of the maze. At any given time step, Luke and Leia can move one square north, south, east,\r\nor west, or they can stay where they are. At every time step, the boundaries of the maze change:\r\nthere is a finite list of patterns; if Luke and Leia are still in the maze when the list of patterns\r\nis exhausted, the maze cycles through again from the beginning of the list. You need to compute\r\nwhether Luke and Leia can make it to the southeast corner of the maze, and, if so, the minimum\r\nnumber of time steps necessary for them to get there. Remember, the Force is counting on you! If\r\nyou give the Force bad advice, we’ll have to wait around for A Newer Hope and Force Knows how\r\nlong that could take!InputThe input consists of several test cases. Each case (but the last) will begin with a line containing\r\nthree decimal integers. The first is the number of rows in the maze; the second is the number of\r\ncolumns in the maze; the third is the number of patterns in the list. The first two numbers will\r\nbe inclusively between 1 and 20; the third will be inclusively between 1 and 10. The integers will\r\nbe separated by exactly one space and will be followed by one <EOL>. Immediately following this\r\nline will be a number of patterns, equal to the number specified on the first line. Each pattern will\r\nconsist of r lines each containing c characters, where r is the number of rows and c is the number\r\nof columns indicated on the first line. Each character will be either 0 (indicating no boundary) or\r\n1 (indicating a boundary). Each line will be terminated by <EOL>, and an extra <EOL> will follow\r\neach pattern. The northwest corner of the first pattern will always be zero, since Luke and Leia\r\nwill be starting from there. The last case will be three zeros, separated by exactly one space and\r\nfollowed by exactly one <EOL>. This case is not to be processed; it indicates the end of input.OutputThe output cases are to appear in the same order in which they appear in the input. Each output\r\ncase should be of the formCase c: Luke and Leia can escape in s steps.or of the formCase c: Luke and Leia cannot escape.c and s are decimal integers. c in the number of the\r\ncase being processed (starting with 1) and s is the minimum number of time steps Luke and Leia\r\nrequire to reach the southeast corner. Each line should be terminated by exactly one <EOL>.ExampleInput:5 5 1\r\n00000\r\n00000\r\n00000\r\n00000\r\n00000\r\n5 5 2\r\n00000\r\n00000\r\n00000\r\n00000\r\n00000\r\n01110\r\n01110\r\n11111\r\n01110\r\n01110\r\n0 0 0Output:Case 1: Luke and Leia can escape in 8 steps.\r\nCase 2: Luke and Leia cannot escape.",
+  "sample_input": "Input:5 5 1\r\n00000\r\n00000\r\n00000\r\n00000\r\n00000\r\n5 5 2\r\n00000\r\n00000\r\n00000\r\n00000\r\n00000\r\n01110\r\n01110\r\n11111\r\n01110\r\n01110\r\n0 0 0Output:Case 1: Luke and Leia can escape in 8 steps.\r\nCase 2: Luke and Leia cannot escape.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CHMAZE",
+  "scraped_at": "2025-08-17 00:34:11",
+  "test_cases": [
+    {
+      "input": "5 5 1\r\n00000\r\n00000\r\n00000\r\n00000\r\n00000\r\n5 5 2\r\n00000\r\n00000\r\n00000\r\n00000\r\n00000\r\n01110\r\n01110\r\n11111\r\n01110\r\n01110\r\n0 0 0",
+      "expected_output": "Case 1: Luke and Leia can escape in 8 steps.\r\nCase 2: Luke and Leia cannot escape.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 7 7\n10\n6\n6\n2\n5\n3 2 8\n4\n9\n3\n7\n5\n3\n8\n8\n1\n9\n6 6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 7 1\n7\n7\n10\n4\n5\n2 8 5\n9\n8\n4\n4\n2\n1\n3\n5\n7\n1\n8 7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 1 10\n3\n9\n10\n8\n5\n10 7 4\n4\n5\n8\n2\n9\n7\n10\n2\n9\n9\n6 5 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 5 77\n79\n35\n77\n34\n62\n17 77 74\n44\n69\n92\n64\n97\n60\n56\n64\n27\n27\n39 28 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 37 58\n60\n28\n4\n8\n20\n45 55 39\n6\n55\n8\n36\n86\n92\n77\n95\n19\n20\n16 12 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 79 23\n2\n88\n49\n62\n21\n9 4 14\n37\n30\n20\n61\n12\n83\n100\n32\n71\n14\n64 98 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 67 58\n10\n10\n99\n62\n21\n3 39 54\n80\n51\n79\n89\n36\n7\n1\n56\n66\n63\n79 65 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 4 12\n23\n74\n92\n76\n67\n80 6 45\n76\n77\n12\n43\n18\n59\n80\n64\n81\n20\n10 65 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 101 107\n147\n208\n329\n60\n482\n326 135 464\n165\n230\n458\n242\n195\n72\n124\n369\n224\n210\n469 194 492",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "468 476 457\n185\n53\n406\n262\n302\n495 419 414\n317\n125\n63\n428\n475\n459\n486\n241\n329\n360\n258 139 283",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "474 151 239\n310\n300\n350\n373\n294\n73 320 244\n207\n259\n357\n260\n290\n495\n188\n245\n473\n333\n341 329 190",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "379 401 408\n498\n170\n162\n87\n435\n432 72 288\n398\n307\n50\n247\n65\n374\n470\n484\n141\n175\n330 273 111",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "283 257 408\n327\n174\n69\n228\n94\n245 277 384\n186\n237\n402\n68\n179\n306\n137\n72\n240\n209\n376 68 259",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "220 257 426\n284\n185\n229\n349\n296\n153 317 99\n61\n131\n401\n423\n426\n118\n256\n494\n381\n56\n483 78 83",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "208 416 118\n347\n109\n113\n164\n81\n269 329 478\n304\n307\n449\n440\n473\n313\n466\n360\n161\n411\n300 136 461",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000\n1000\n1000 1000 1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000\n1000\n1000 1000 1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1000\n1\n2\n999\n1000\n1\n999 999 2\n999\n1000\n1\n999\n999\n2\n2\n1\n999\n2\n1 999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 1000\n1\n999\n1000\n999\n1\n1 2 1\n1000\n2\n999\n999\n1\n999\n1\n1\n1000\n1\n2 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:56",
+  "total_test_cases": 20
+}

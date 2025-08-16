@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Mario",
+  "tags": [],
+  "text": "Mario lives in anN × Mmaze grid.  In this maze there are coin\r\nboxes, monsters, pipe systems, and walls.  Whenever Mario enters a\r\ncell containing a coin box, he jumps to hit the box and gets as many coins\r\nas there are in the box (coin boxes do not disappear or lose coins\r\nafter being hit).  When Mario enters a cell with a monster, he loses a\r\nlife.  Pipe systems are like teleporters: for each system there is\r\nexactly one exit with at least one (but possibly several) entrances\r\nleading to that exit.  When Mario walks into the entrance to a pipe system he is\r\nteleported to that pipe system's unique exit.  Walking into a pipe\r\nsystem's exit does nothing special.  Finally, Mario cannot walk into\r\nwalls.Mario decides to play a game.  In the beginning of the game he\r\nstarts with three lives at some given position, and at each time step\r\nhe looks at all neighboring cells (excluding walls) and chooses one\r\nneighboring cell uniformly at random to walk to (x neighbors y if x is directly above, below, to the left, or to the right of y).  If Mario has no\r\nnon-wall neighboring cells then he stays at his current location.  The\r\ngame is over when either\r\nMario is out of lives or it is impossible for him to collect more\r\ncoins.  Help Mario figure out the expected number of coins he will\r\nearn in one play of the game.InputThe first line of the input is \"N M\" (1 ≤N, M≤ 15), giving the\r\ndimensions of the maze.  What follows areNlines, each of which areMcharacters in length.  The ith line displays the contents of the\r\ncells in the ith row of the maze.  Mario starts in the unique\r\ncell with\r\nan '$' (which, beside holding Mario, is otherwise an empty cell).\r\nCells with monsters are designated with '!'.  Cells with\r\ncoin boxes are represented by a number between0and9(inclusive), which is the number of coins in that coin box.  Each\r\npipe system is associated with a distinct letter between 'a' and 'z'\r\n(inclusive).  A pipe system's entrances are designated with lower\r\ncase letters,\r\nand the unique exit for a given pipe system has the corresponding\r\ncapitalized letter\r\n(e.g. a pipe system with entrances labeled 'c' has exactly one exit,\r\nand it is labeled 'C').  Every pipe\r\nsystem appearing in the maze is\r\nguaranteed to have exactly one exit and at least one entrance.  The\r\ncharacter '#' designates a wall, and '.' designates an empty cell\r\nthat Mario can just walk through.OutputIf the expected number of coins Mario collects is infinite, output\r\n-1.  Otherwise, output a\r\nsingle real number, the expected number of\r\ncoins Mario collects before the game is over.  Your answer should be\r\naccurate to within either an absolute or relative error of 10-6of the actual answer.\r\nYour output should be followed by a newline.ExampleInput:2 3\r\n$1!\r\na.AOutput:3.000000000",
+  "sample_input": "Input:2 3\r\n$1!\r\na.AOutput:3.000000000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MARIOGAM",
+  "scraped_at": "2025-08-17 00:33:17",
+  "test_cases": [
+    {
+      "input": "2 3\r\n$1!\r\na.A",
+      "expected_output": "3.000000000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 10\n1\nxxakf\nlbmrdu",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 3\n1\niezbxx\nrekj",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 10\n8\nklfmf\ncehu",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "34 63\n81\ni\nscd",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 36\n88\nltm\nxte",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 80\n15\nvf\nowb",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 9\n54\nescrwu\nmcemtt",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 46\n83\nyefeso\nrdv",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "180 203\n231\naehweo\nnm",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "132 285\n218\noh\nzciyfy",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "486 195\n285\nrekj\nbkwf",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "178 170\n90\ntzuu\nlbv",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "374 138\n169\ntlt\nf",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "441 124\n405\nrtm\nhxnn",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "117 455\n413\nej\nhb",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\njupk\namsh",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\nsf\nbmqxi",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999\n2\njn\njth",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000\n1000\nla\nat",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:46",
+  "total_test_cases": 20
+}

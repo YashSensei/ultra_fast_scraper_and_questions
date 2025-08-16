@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Longest Rivers",
+  "tags": [],
+  "text": "The Chao Phraya River System is the main river system of     Thailand. Its six     longest rivers listed by decreasing length are:Tha Chin ($765$         km)Nan ($740$ km)Yom ($700$ km)Ping ($658$ km)Pa Sak ($513$         km)Wang ($335$ km)A simplified model of this river system is shown in     figure below, where the smaller red numbers indicate the     lengths of various sections of each river. The point where two     or more rivers meet as they flow downstream is called aconfluence. Confluences are labeled with the larger     black numbers. In this model, each river either ends at a     confluence or flows into the sea, which is labeled with the     special confluence number      $0$. When two or more rivers meet at a     confluence (other than confluence      $0$), the resulting merged river takes     the name of one of those rivers. For example, the Ping and the     Wang meet at confluence      $1$ with the resulting merged river     retaining the name Ping. With this naming, the Ping has length     $658$ km while the Wang is     only $335$ km. If instead     the merged river had been named Wang, then the length of the     Wang would be $688$ km     while the length of the Ping would be only      $305$ km.The raised awareness of this phenomenon causes bitter     rivalries among the towns along the rivers. For example, the     townspeople along the Wang protest that maybe with a proper     naming scheme, their river could actually be the longest, or     maybe the second longest (or at least not last!). To end all     the guessing, your task is to validate all such claims.Therankof a river is its position in a list of     all rivers ordered by decreasing length, where the best rank is     $1$ for the longest river.     For each river, determine its best possible rank over all     naming schemes. At any confluence, the name of a new, larger     river in any naming scheme must be one of the names of the     smaller rivers which join at that confluence. If two or more     rivers have equal lengths in a naming scheme, all the tied     rivers are considered to have the best possible ranking. For     example, if one river is the longest and all other rivers are     equal, those rivers all have rank      $2$.InputThe first line of input contains two integers      $n$ $(1     \\le n \\le 500\\, 000)$, which is the number of river     sources in the system, and      $m$ $(0     \\le m \\le n - 1)$, which is the number of confluences     with positive labels. These confluences are numbered from     $1$ to      $m$.The next $n$ lines     describe the rivers. Each of these lines consists of two integers     $c$      $(0 \\leq c \\leq m)$ and      $d$ $(1     \\leq d \\leq 10^9)$, where      $c$ is the identifier of the nearest     confluence downstream, and      $d$ is the distance from the source to     that confluence in kilometers.The final $m$ lines     describe confluences $1$     to $m$ in a similar     fashion. The $k^\\text     {th}$ of these lines describes the confluence with     identifier $k$ and     contains two integers: the identifier of the nearest confluence     downstream and the distance from confluence      $k$ to this confluence in     kilometers.It is guaranteed that each confluence      $1$ through      $m$ appears as “the nearest     downstream” at least twice, confluence      $0$ appears at least once, and all     sources are connected to confluence      $0$.Due to the input file size limit, all numbers given in the input file is written in base 64 integers. Base 64 integer uses 0-9 to denote number 0 - 9, A-Z to denote number 10 - 35, a-z to denote number 36 - 61, + to denote number 62 and / to denote number 63.OutputDisplay one river per line in the same order as in the     input. On that line, display the river's best     possible rank (in decimal notation).ExampleInput:6 2\r\n0 81\r\n2 AZ\r\n2 Ay\r\n1 5F\r\n1 4n\r\n0 Bz\r\n0 5X\r\n0 11Output:5\r\n2\r\n1\r\n3\r\n4\r\n1Input:6 3\r\n1 GN\r\n2 fQ\r\n1 CW\r\n3 B6\r\n0 h/\r\n3 CJ\r\n2 1a\r\n0 Qa\r\n0 UOutput:1\r\n1\r\n3\r\n6\r\n1\r\n4",
+  "sample_input": "Input:6 2\r\n0 81\r\n2 AZ\r\n2 Ay\r\n1 5F\r\n1 4n\r\n0 Bz\r\n0 5X\r\n0 11Output:5\r\n2\r\n1\r\n3\r\n4\r\n1",
+  "sample_output": "Input:6 3\r\n1 GN\r\n2 fQ\r\n1 CW\r\n3 B6\r\n0 h/\r\n3 CJ\r\n2 1a\r\n0 Qa\r\n0 UOutput:1\r\n1\r\n3\r\n6\r\n1\r\n4",
+  "link": "https://www.spoj.com/problems/FN16RIVER",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "6 2\r\n0 81\r\n2 AZ\r\n2 Ay\r\n1 5F\r\n1 4n\r\n0 Bz\r\n0 5X\r\n0 11",
+      "expected_output": "5\r\n2\r\n1\r\n3\r\n4\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 3\r\n1 GN\r\n2 fQ\r\n1 CW\r\n3 B6\r\n0 h/\r\n3 CJ\r\n2 1a\r\n0 Qa\r\n0 U",
+      "expected_output": "1\r\n1\r\n3\r\n6\r\n1\r\n4",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "2 7\n6 2\n8\n9 evn\n7\n9 c\n3 5\n3 k\n9 8\n5 rsjlb\n10\n1 i\n8 2\n6 dgv\n5 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 4\n9 10\n7\n9 wtj\n6\n1 vlik\n4 5\n5 mjv\n8 9\n6 cb\n1\n3 fivc\n1 6\n7 lovaj\n2 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2\n4 7\n3\n6 gg\n2\n9 n\n6 7\n7 w\n9 10\n7 rnob\n6\n2 g\n7 2\n5 lddi\n6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "80 32\n60 55\n25\n4 y\n84\n100 t\n56 70\n47 woq\n32 98\n67 fkd\n58\n13 bssr\n31 49\n70 eklg\n18 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "64 79\n33 70\n29\n51 u\n43\n34 reih\n75 38\n70 d\n41 78\n58 lgpft\n55\n28 aqziz\n8 76\n1 vjlde\n43 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 48\n25 70\n50\n26 ulms\n77\n2 qlq\n72 18\n8 gohue\n3 67\n83 z\n91\n38 dnzh\n18 55\n44 aud\n94 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "87 52\n33 68\n85\n22 ptp\n57\n57 r\n11 55\n86 oc\n72 44\n52 lwuwe\n16\n15 qs\n71 9\n39 udomc\n29 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 44\n77 78\n57\n8 ww\n67\n17 w\n40 30\n52 j\n73 43\n46 gpt\n80\n84 v\n51 24\n94 gz\n30 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "284 449\n486 238\n252\n275 ayddx\n89\n251 qq\n312 108\n319 v\n232 91\n376 u\n167\n147 hlb\n338 280\n88 ffi\n499 63",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "376 168\n482 108\n349\n195 g\n125\n330 rqbxg\n389 393\n189 prbe\n345 169\n494 yug\n346\n493 fx\n99 259\n169 io\n73 311",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "286 402\n313 303\n63\n361 ymvjj\n278\n405 aooc\n258 376\n178 kdm\n318 88\n172 d\n181\n237 crm\n416 64\n328 u\n180 300",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "191 262\n220 111\n392\n179 f\n103\n289 u\n155 368\n286 hwr\n331 408\n124 vnnj\n427\n459 suxjn\n259 220\n103 pvzc\n310 426",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "295 402\n369 199\n465\n71 lmu\n168\n428 dya\n443 359\n199 loqc\n300 201\n321 j\n238\n201 eb\n242 148\n340 o\n403 462",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "196 52\n329 75\n401\n66 ayrh\n171\n420 mnf\n335 262\n249 bm\n155 366\n324 wkdz\n55\n453 b\n266 126\n195 q\n274 240",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "116 359\n202 74\n306\n294 wd\n348\n393 lm\n369 379\n68 phdoe\n423 304\n488 xxp\n275\n495 ppuvb\n306 249\n486 hgdzt\n74 191",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000\n1000 selvz\n1000\n1000 s\n1000 1000\n1000 q\n1000 1000\n1000 yd\n1000\n1000 hcbfw\n1000 1000\n1000 bpye\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000\n1000 mgq\n1000\n1000 rfok\n1000 1000\n1000 t\n1000 1000\n1000 hzp\n1000\n1000 pb\n1000 1000\n1000 ktksu\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1\n1000 2\n999\n999 xg\n999\n1000 vvtln\n999 2\n999 pg\n1000 2\n999 an\n1\n2 bx\n1000 1\n999 yhzv\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:54",
+  "total_test_cases": 20
+}

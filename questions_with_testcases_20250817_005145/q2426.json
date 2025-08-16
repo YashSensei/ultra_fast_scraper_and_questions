@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Gem",
+  "tags": [],
+  "text": "You are given a board with 8×8 squares. In each square, there can be either a colored gem or no gem at all. Gems with different colors are represented by different integers. It is guaranteed that there are no more than two consecutive gems with the same color either in a row or in a column.........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n..121556\r\n44212335For two neighboring (up, down, left or right, we don't consider diagonal neighbors) squares, you can exchange the gems.........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n..111556\r\n44222335You can also exchange a gem with a space. After that, if there are more than two consecutive gems with the same color in a row or in a column after exchange, these gems will be taken away simultaneously. Note that a gem could be counted both in its row and in its column; refer to the sample test cases for details.........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n.....556\r\n44...335If there is no gem under a gem, the gem will fall to the square below.........\r\n........\r\n........\r\n........\r\n........\r\n.....66.\r\n.....556\r\n44433335After all the squares falling down to the floor or another gem square, repeat the procedure until there's no gem can be taken away: if there are more than two gems with the same color in a row or in a column, these gems will be taken away simultaneously. Then some gems will fall to the squares below, if there are no gems under those gems.........\r\n........\r\n........\r\n........\r\n........\r\n.....66.\r\n.....556\r\n.......5\r\n\r\n........\r\n........\r\n........\r\n........\r\n........\r\n........\r\n.....666\r\n.....555\r\n\r\n........\r\n........\r\n........\r\n........\r\n........\r\n........\r\n........\r\n........Given a board with 8×8 squares. This board is stable and you can't take away any gems in the original board. Your task is to determine whether all gems can be taken away by a single exchange or not.InputThe input consists of several test cases. Each test case will be eight lines, and each line contains eight characters. If in a square there is no gem, ‘.’ is used to identify it, otherwise an integerkis used to identify the gem's color, 1 ≤k≤ 9.There is a blank line between two consecutive test cases.End of input is indicated by a line consisting of 0.OutputFor each test case, output a single line. If all gems can be taken away by a single exchange, outputYes; otherwise outputNo.ExampleInput:........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n..121556\r\n44212335\r\n\r\n........\r\n........\r\n........\r\n.2......\r\n.2.22...\r\n.1.11...\r\n.2.22...\r\n.2.22...\r\n\r\n12121212\r\n21212121\r\n12121212\r\n21212121\r\n12121212\r\n21212121\r\n12121212\r\n21212121\r\n\r\n........\r\n........\r\n........\r\n........\r\n........\r\n...96...\r\n...96...\r\n.996966.\r\n\r\n0Output:Yes\r\nYes\r\nNo\r\nYes",
+  "sample_input": "........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n..121556\r\n44212335",
+  "sample_output": "........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n..111556\r\n44222335",
+  "link": "https://www.spoj.com/problems/GEM",
+  "scraped_at": "2025-08-17 00:34:00",
+  "test_cases": [
+    {
+      "input": "........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n..121556\r\n44212335",
+      "expected_output": "........\r\n........\r\n........\r\n........\r\n........\r\n..43366.\r\n..111556\r\n44222335",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "bouurkwnxclbl\nbolmusjzhl\nicyrqbcwzyhe\nbnxcagcvxjtnjd\nkipiuofdksdtk\n4\n3\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "gpfp\niusrpcst\niompii\nmrsa\nbqwqwioicv\n6\n4\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "m\nynjqtlggnvorlmbb\nbdvwheov\nxazvaguby\ninqmtogrumgdbd\n9\n9\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "qcv\nsjgiszsyryer\nsweorf\nkapjdmggrmvbjpxn\nppatvxbdeomg\n91\n74\n9",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "pppwjt\nrieutsctpzhyhqfr\nzxltgvpylnukjc\njpkukjr\neapl\n48\n31\n20",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ghyuj\nulhfmujc\nxy\nrbbhnb\nuxp\n67\n27\n58",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "levvprievxskj\njtxuiz\nukczhi\noddsjphlmcvp\nvpxmstmcik\n94\n60\n54",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "bslkupbttivlfuje\nnivfvbgqplyclcu\nwen\nebkuete\nwcoppwg\n25\n56\n82",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "j\nw\ncekzeiyhepxgj\nrbjfbpgk\njnzkq\n400\n471\n410",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rrlif\niytoqy\norfu\neqqvuqnkbjjqhphj\niukxtpsx\n289\n157\n246",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qwxqjzigcmg\nttczggagzb\ndidhkgx\nwqjqye\nmexvjcr\n292\n469\n96",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "wzj\nx\npeyjbwwimietf\nrmhr\njfbgtrif\n277\n236\n328",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gkqkeucn\nyefjicsob\nyayy\nxdnosusqekolq\nkqhykco\n51\n64\n125",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "s\nhvkytgqnydvrgk\nlwzqkskqxoicgoua\nqvdxxhhburx\nmyhrsl\n215\n299\n425",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "kmm\nhuvwikhbgfnlmy\nloulrufuuugfcjc\nj\nnrcrcgprnrz\n422\n162\n87",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ojiychnsbenohfx\nympyinmnzo\nst\nagri\nvjnyiuqakdzz\n1000\n1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "tbktkypeoramwbvj\nndvpperztstu\nnoizkf\nulsih\nsfxcneuhcezubm\n1000\n1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "owkmeisr\nvffgfumw\ntothsymzicynrpwn\ndprzgigtneqcz\ndegbdyujhfqbd\n2\n2\n999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "xmsxvt\ngpqb\nnxeszqflsqld\nwqbu\niseipmzzeanoqn\n2\n2\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:53",
+  "total_test_cases": 20
+}

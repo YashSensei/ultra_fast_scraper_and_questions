@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "King Graffs Tolls",
+  "tags": [],
+  "text": "King Graff, the ruler of the land of Feerie, feels that he is not quite rich enough. As such, he would like to impose travel tolls on his people! After all, why should they get to walk around his kingdom for free?Feerie consists of $N$ ($1 \\leq N \\leq 10^5$) towns (numbered $1..N$), and $N-1$ roads. The $i$th road runs between distinct towns $A_i$ and $B_i$, in both directions. Every pair of towns is connected by exactly one path of connected roads. Currently, all travel is free, but King Graff is interested in charging for passage through certain towns.He is planning to have a meeting with the royal computer scientist - that would be you. The meeting will last $M$ ($1 \\leq M \\leq 10^5$) minutes, and in the $i$th minute, one of two things will occur, described by $T_i$. If $T_i=$ \"T\", Graff will proclaim that town $X_i$ shall henceforth cost $Y_i$ ($0 \\leq Y_i \\leq 10^9$) dollars to pass through, and you'll update the map accordingly. Otherwise, if $T_i=$ \"Q\", he will ask you how much a trip from town $X_i$ to a different town $Y_i$ would currently cost a commoner, in order to gauge the effectiveness of his tolls - and you had better answer quickly! Note that neither the starting nor the ending town's tolls are included in a trip's cost, as they are not passed through. Note also that a town's toll may be modified by Graff mutiple times throughout the meeting, in which case the most recent modification at any point will stand.InputFirst line: 1 integer, $N$Next $N-1$ lines: 2 integers, $A_i$ and $B_i$, for $i = 1..N-1$Next line: 1 integer, $M$Next $M$ lines: 1 character, $T_i$, and 2 integers, $X_i$ and $Y_i$, for $i = 1..M$Output$X$ lines (where $X$ is the number of questions asked by King Graff): 1 integer, the cost of the $i$th trip asked for (in dollars), for $i = 1..X$ExampleInput:41 32 34 36Q 1 4T 3 5Q 4 2Q 3 1T 3 1Q 1 2Output:0501Explanation of Sample:The map of Feerie is illustrated below:The first trip asked for by King Graff goes through towns $1 \\rightarrow 3 \\rightarrow 4$. Since town 3 has no toll at that point, the trip's cost is 0.The second trip goes through towns $4 \\rightarrow 3 \\rightarrow 2$ and has a cost of 5, due to the new toll on town 3.The third trip goes through towns $3 \\rightarrow 1$, passing through no towns and so costing nothing.The final trip goes through towns $1 \\rightarrow 3 \\rightarrow 2$ and costs only 1, as town 3's toll is reduced by then.",
+  "sample_input": "Input:41 32 34 36Q 1 4T 3 5Q 4 2Q 3 1T 3 1Q 1 2Output:0501",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GRAFFTOL",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "41 32 34 36Q 1 4T 3 5Q 4 2Q 3 1T 3 1Q 1 2",
+      "expected_output": "0501",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 5 8 5 6 2 3 7 1 6 3 7 6 3 3 6\n9 7 3 ut 5 lt 5 uqyva 5 dtaet 8 xjgb 10 ivuz 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 9 9 4 5 2 1 2 2 1 7 4 10 10 10 10\n4 2 2 ngiwm 8 r 9 n 1 zbgc 6 n 6 ce 8 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 10 5 6 8 5 8 4 3 3 6 6 4 4 6 6\n10 9 7 okn 7 zyd 3 pwgs 6 byrl 2 qllx 4 y 2 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "28 6 30 57 39 29 5 65 34 36 26 59 57 39 35 66\n58 64 79 koyku 49 ktfu 93 o 38 fjtw 66 fzbi 12 dghd 41 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 40 76 44 51 14 44 97 65 47 34 1 56 24 54 4\n47 67 84 oez 62 alqb 65 iczw 40 yw 100 dvnr 78 bdez 93 7",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 85 97 27 64 81 86 34 23 84 8 21 60 99 26 73\n85 37 76 t 39 yam 30 qtijn 57 roh 89 bbdvc 42 y 23 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 84 2 27 64 13 70 66 89 6 65 6 15 88 10 63\n73 84 24 ykxd 87 pihg 30 vs 74 hguc 41 ravo 46 z 69 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "81 2 75 31 16 34 84 40 83 41 15 55 84 50 83 97\n31 92 69 heq 46 ahdkb 5 mmegv 48 b 1 g 3 skuco 57 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "494 190 228 380 470 223 151 367 150 176 243 469 237 410 427 71\n162 91 396 ra 95 k 471 i 299 svrk 106 hqsf 141 vkx 246 419",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "432 272 447 195 89 148 138 387 117 59 129 288 218 196 478 251\n433 277 66 d 118 dsp 253 qw 279 muzli 68 ph 333 ugwz 449 463",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "373 292 247 258 119 304 466 332 338 284 105 56 444 231 102 73\n252 254 305 w 359 dcf 372 zr 250 rko 151 wyvac 472 sqf 419 175",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "303 243 158 343 157 325 227 93 391 414 311 142 63 184 399 429\n195 455 86 fx 78 jg 59 kvtgd 408 khuly 306 qbam 375 n 152 152",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "108 439 499 206 486 346 86 357 457 149 380 230 124 96 219 326\n386 465 106 liwt 423 uwfg 198 tk 316 ugsi 402 oa 476 swy 461 150",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "482 319 93 85 431 166 315 97 478 336 59 394 283 405 293 414\n444 332 224 znj 388 wed 368 rxjgs 307 nkt 73 iey 336 ijkzr 433 414",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "113 425 393 81 171 144 243 468 321 323 272 55 283 318 432 71\n274 496 96 z 497 y 400 opluw 103 nsfbl 389 enws 324 ldq 408 326",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 cpzos 1000 ffvkd 1000 lckgj 1000 sxp 1000 exb 1000 aas 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 xnjwf 1000 xn 1000 n 1000 m 1000 og 1000 rmus 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000 2 999 2 999 2 999 1000 1 2 999 1000 1000 2 1\n1000 1 2 i 2 jsy 1000 hmrom 2 zxe 2 iyt 1 gnnt 1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1 2 1000 1000 1000 1 999 1 2 1 999 999 2 1 999\n1 999 999 gvsjj 2 m 1000 esxid 2 qk 999 umkf 1 afri 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

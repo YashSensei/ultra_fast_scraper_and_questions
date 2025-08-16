@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Annual Day",
+  "tags": [],
+  "text": "The kids at DACT elementary school are very excited since they have their annual day coming up. On this occasion, the students get a chance to display all their projects and art work, as well as perform on stage for all the parents and other guests who will be coming. Since organizing an event so big requires a lot of effort, the poor teachers alone cannot handle it all. So, they decide to ask some of the students to volunteer to lend a hand.You are the class teacher of one such kindergarten class with N students, and you need to select exactly k of your students for the volunteer group. Luckily for you, all the kids are very enthusiastic and excited and everyone wants to help out! But you also know that many of these students are very naughty and may start playing with each other halfway through instead of doing work. So you want to select this group of students in a smart manner to avoid such a scenario.Since you have been their class teacher for nearly a year, you know beforehand how naughty each kid is, and have assigned \"goodness\" scores to each of the students accordingly. The higher the score for a student, the less naughty he/she is. You can also use this individual goodness score to calculate the score for a group of students as follows :Goodness(a1, a2... an) = (|a1|+|a2| ... |an|) * (-1)rWhere a1, a2... an are the goodness scores of the n students in that group, and r is the number of naughty students in that group. (Note: A naughty student is one with a negative goodness score)Also |x| refers to the absolute value of x. (|x|=x if x>0. Else |x|=-x).Given the goodness scores of all the students in your class, it is up to you to select exactly k students such that their group goodness score is maximum.InputThe first line contains 2 space separated integers N and k. (1 <= k <= N <= 105). Here N is the total number of students in your class, and k is the number of students to be selected.This is followed by N space separated integers a1, a2... aN, where aiis the goodness score of the ithstudent. (|ai| <= 109)OutputOn a single line output the maximum possible goodness value of any group of exactly k students that you may select.ExampleInput #1:10 1\r\n1 2 3 4 5 6 7 8 -9 9Output #1:9Input #2:10 3\r\n1 2 3 4 5 6 7 -8 -9 9Output #2:26Input #3:3 3\r\n12 78 2Output #3:92ExplanationInput #1: Since you need to select exactly one student, you will select the one with the maximum individual goodness score, so the answer is 9.Input #2: Here, the maximum score is obtained by selecting the students with scores of { -8, -9, 9 }, so the corresponding final value is: (|-8|+|-9|+|9|)*(-1)2= 26*1 = 26Input #3: Here you have no choice but to select all the students. So the answer is 92.",
+  "sample_input": "Input #1:10 1\r\n1 2 3 4 5 6 7 8 -9 9Output #1:9",
+  "sample_output": "Input #2:10 3\r\n1 2 3 4 5 6 7 -8 -9 9Output #2:26",
+  "link": "https://www.spoj.com/problems/VOLNTEER",
+  "scraped_at": "2025-08-17 00:33:55",
+  "test_cases": [
+    {
+      "input": "Input #1:10 1\r\n1 2 3 4 5 6 7 8 -9 9Output #1:9",
+      "expected_output": "Input #2:10 3\r\n1 2 3 4 5 6 7 -8 -9 9Output #2:26",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 3 7\nlcpe e 4\n3 3 4 7 5 5 7 4 1 9 4 8\n3 10 7 8 5 5 5 1 nfsw soeil zq",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 2 4\ntu d 5\n4 2 6 8 9 8 4 6 6 3 10 4\n5 10 6 1 6 9 3 10 jak tkda aqnw",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 6 8\ncgwc umyo 7\n2 5 9 2 10 9 4 10 9 4 3 9\n6 4 9 2 1 2 5 2 sxbqm bbftq l",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "13 22 14\nuhi law 5\n79 62 62 82 87 45 86 82 72 47 98 81\n41 41 9 24 62 95 76 21 tmch nzhjyu w",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 40 93\nhsqrr nndmi 71\n55 32 37 50 87 82 81 90 4 1 17 36\n14 7 57 54 25 53 67 91 lb iaa z",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 89 50\nv oqfaf 55\n25 98 5 66 76 50 72 44 19 65 92 95\n22 89 84 91 66 36 56 13 z naec mljdx",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 56 44\nj v 5\n10 44 30 71 38 99 69 47 5 67 22 30\n89 55 1 48 7 27 61 68 uj jxbvja dkgob",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 93 84\nva wyxbb 2\n83 89 90 59 22 71 20 8 64 9 68 75\n97 89 23 39 52 51 10 99 jpgcw xntk hvzl",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 268 423\ndsyhb jjxl 301\n330 152 174 483 243 341 120 159 246 53 268 344\n110 317 294 393 246 415 229 396 lvpv grbln ct",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "192 329 313\nw nwc 90\n400 153 282 379 432 188 124 207 299 249 420 61\n396 60 283 498 55 423 185 311 czo qgesq w",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "172 93 226\nvgkhc qp 128\n232 429 129 444 285 266 135 421 81 433 204 288\n431 417 139 204 283 188 238 381 ihj py lkj",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 260 243\nz rbuu 355\n465 247 322 457 434 135 78 183 281 182 257 306\n437 406 331 255 436 369 479 441 vha jf mot",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "196 484 243\nfk gp 157\n358 460 310 76 130 120 152 429 259 143 351 460\n221 165 195 489 73 55 424 138 oeh t q",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "454 73 270\nok h 407\n195 500 478 304 445 118 430 359 133 451 492 63\n164 239 242 365 430 88 67 68 jc vabjwt r",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "57 459 230\nclvrt x 215\n234 233 231 88 492 348 435 490 244 411 66 417\n240 135 75 81 63 250 359 405 fcg uzklez yckb",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nhj nto 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 vsg rwfoqo ks",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\nzb zsief 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 dbidb teh dzsk",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000 1\nia z 1000\n1000 2 999 1000 999 1 2 1000 1 2 2 999\n999 1000 1 2 1000 999 2 1 oe ge o",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000 1000\nn kml 1000\n1000 2 1 1000 2 1000 1000 2 1 2 1 2\n1 999 2 1000 1000 1000 1000 1000 kz fibzs tbnhk",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:51",
+  "total_test_cases": 20
+}

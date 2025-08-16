@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Good Aim",
+  "tags": [],
+  "text": "The heated competition of the ACM-ICPC World Finals continues, and The Team is at the top of their game! Well, okay, maybe they're not actually doing so well, according to the scoreboard, yet. But they have a plan!The contest is taking place in a huge room with a regular grid of desks. The columns and rows are each numbered $1..10^6$, and the desk in the $x$th column and $y$th row is considered to have coordinates ($x$,$y$). The Team is sitting at coordinates ($X$,$Y$). There are $N$ ($1 \\leq N \\leq 10^6$) opposing teams (conveniently numbered $1..N$), with team $i$ having $m_i$ ($1 \\leq m_i \\leq 10^6$) members, all sitting at coordinates ($x_i$,$y_i$). No desk is occupied by more than one team, and all other desks are empty.Now, The Team is interested in removing some of the more dangerous opponents from the competition. To accomplish this, they have a number of water balloons at their disposal (after all, where in the contest rules does it say that water balloons are not allowed?). Always conservative, they would first like to answer $Q$ ($1 \\leq Q \\leq 10^6$) queries - for the $i$th query, how many balloons it would theoretically take to take out all of the members of team $q_i$?In order to do any real damage, the water balloons will of course have to be thrown extremely hard - in fact, in a perfectly straight line, and not over any obstacles besides empty desks. This means that, if team $j$ lies exactly on the line segment from The Team to team $i$, then every member of team $j$ must be dispatched before any members of team $i$ can be hit. It takes one balloon to knock one person out (the members of The Team have received plenty of training, so they're not about to miss a throw). Note that these queries are all only theoretical (for the moment) - so each should be answered assuming that all teams are still untouched.The members of The Team will need to carefully choose with opponents to take out, based on how well they're doing and how many balloons it would take, so they're already answered all of their queries in their heads. Maybe, if you can answer them as well, you can also adopt such techniques in the future...InputFirst line: 4 integers, $N$, $Q$, $X$, and $Y$Next $N$ lines: 3 integers, $x_i$, $y_i$, and $m_i$, for $i = 1..N$Next $Q$ lines: 1 integer, $t_i$, for $i = 1..Q$Output$Q$ lines: 1 integer, the number of balloons that would be required to take out team $t_i$, for $i = 1..Q$.ExampleInput:6 6 3 25 6 32 1 54 4 24 3 15 4 27 6 1654321Output:431255Explanation of Sample:The following grid shows the positions of the $N$ opposing teams (marked with their numbers), as well as The Team (marked with a \"T\"). The line segments represent direct lines of sight to the opponents.As can be seen, team 6 is blocked by teams 4 and 5. Therefore, taking them out would require $1+2+1=4$ balloons in total. Similarly, team 5 is blocked by team 4, and requires $1+2=3$ balloons. Teams 4, 3, and 2 are not blocked by any others, and so only require 1, 2, and 5 balloons, respectively. Finally, team 1 is blocked by team 3, and would require $2+3=5$ balloons to dispose of.",
+  "sample_input": "Input:6 6 3 25 6 32 1 54 4 24 3 15 4 27 6 1654321Output:431255",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GOODF",
+  "scraped_at": "2025-08-17 00:34:03",
+  "test_cases": [
+    {
+      "input": "6 6 3 25 6 32 1 54 4 24 3 15 4 27 6 1654321",
+      "expected_output": "431255",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 6 4 10 6 4 4 5 6 10 10 9 9 9 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 1 10 2 2 2 5 7 5 8 3 4 6 10 5 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 10 6 6 4 4 9 9 8 9 6 2 6 1 3 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "53 84 80 7 91 39 27 79 13 10 47 60 49 80 97 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 38 80 100 4 3 73 1 51 51 24 27 80 72 67 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 65 76 65 69 78 64 9 43 70 79 30 32 42 96 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 37 38 63 31 78 92 100 75 64 80 47 4 61 76 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 63 12 3 14 19 74 91 53 29 10 55 32 42 40 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "364 211 452 334 147 277 220 100 396 62 403 292 166 136 383 417",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "106 326 123 375 241 102 311 387 274 155 237 269 253 134 123 102",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "152 50 307 467 177 136 443 171 304 246 469 310 221 57 168 206",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "471 151 339 455 365 385 362 453 468 402 268 305 179 414 187 422",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "259 136 332 264 381 137 411 169 416 66 123 243 126 365 100 186",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "158 139 167 222 244 196 268 307 106 57 399 209 242 90 362 263",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 250 407 478 486 133 361 319 401 333 158 336 378 453 59 344",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000 999 2 1000 2 2 1000 1 1 999 999 1 1 1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2 999 999 999 1000 1000 2 2 999 999 2 1 1 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

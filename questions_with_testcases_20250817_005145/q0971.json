@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cells",
+  "tags": [],
+  "text": "Tim loves spreadsheets. Everything he does on a computer, he does in a spreadsheet. Track his expenses? Create a spreadsheet! Decide which car to buy? Create a spreadsheet to compare them! Make an inventory of his games? Create a spreadsheet! Decide which girl he loves most? …Unfortunately his spreadsheet software just crashed and he needs some of the data right now and does not have the time to install a competing office suit.Given the formulas used in the cells of a spreadsheet, calculate the values of all the cells.InputThe first line of the input file contains an integerTspecifying the number of test cases. Each test case is preceded by a blank line.Each test case starts a single numberNgiving the number of expression. Each of the followingNlines contains a single cell formula of the form “CELL = EXPRESSION”, whereCELLis the name of the cell andEXPRESSIONis a mathematical expression consisting of cell names and the operators +, -, * and /. A cell name is a non-empty sequence of letters followed by a positive integer.Each test case is correct: there are no cycles, and all cells referenced in expressions have definitions.Evaluating expressionsWhen evaluating an expression, usual priorities apply: first we evaluate all * and / (left to right), and only then all + and - (again, left to right).You may assume that the expressions are such that when evaluating the expression in correct order, the result and also all intermediate values will fit into 32-bit signed integer variables.The operator / represents integer division which is always roundeddown. The dividend will always be non-negative and the divisor will always be positive.OutputFor each test case output the calculated values of cells, one per line, in the form “CELL = VALUE”. The rows in the output should be ordered alphabetically. (To compare two rows, take a look at the first character where they differ. The one with a smaller ASCII value goes first.)Optionally, output a blank line between test cases.ExampleInput:23A47 = 5 + ZZ22ZZ22 = 3A9 = 13 + A47 * ZZ222A1 = 4 / 7 + 4 / 7B2 = 3 * 3 / 7Output:A47 = 8A9 = 37ZZ22 = 3A1 = 0B2 = 1",
+  "sample_input": "Input:23A47 = 5 + ZZ22ZZ22 = 3A9 = 13 + A47 * ZZ222A1 = 4 / 7 + 4 / 7B2 = 3 * 3 / 7Output:A47 = 8A9 = 37ZZ22 = 3A1 = 0B2 = 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/IPCELLS",
+  "scraped_at": "2025-08-17 00:33:22",
+  "test_cases": [
+    {
+      "input": "23A47 = 5 + ZZ22ZZ22 = 3A9 = 13 + A47 * ZZ222A1 = 4 / 7 + 4 / 7B2 = 3 * 3 / 7",
+      "expected_output": "A47 = 8A9 = 37ZZ22 = 3A1 = 0B2 = 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 3 4 1 7 2 1 9 10 10 2 9 8 6 9 1 7 2 4\nv r 5 cmh iey forck mawh iarq 4 oadfa que vd cudzh iaktu 2 x 9 bo 5 bl kt ody 3 uifoo 5 onx 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 10 10 10 2 1 1 5 5 7 9 1 2 6 9 8 8 5 1\nygt vginz 6 w olqmd abs cjkbi clw 5 mhney ggiab mn sstcqpw s 5 jdcje 10 pev 1 nx remhm mad 10 msfl 6 drrr 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 5 9 4 9 1 9 9 6 1 3 10 6 9 9 8 5 6 6\nqsxc wrqi 10 kbvn jv qjbm jfvz ulj 7 tgf xl y wmnuqx ivxsz 6 x 6 nfu 4 lirdw cqfm paeq 10 giqc 8 rrpu 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "49 33 97 68 9 32 52 2 37 88 22 20 14 87 82 63 96 71 93\nn v 19 j uosiotku odj rmwmu ppfod 35 oxbm gl jcss xps t 16 aqgal 28 y 86 v ldu rxynt 75 wysae 21 m 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 68 31 28 64 70 20 55 53 76 75 73 81 56 81 91 25 22 20\nzgrkw dwdts 39 v t wbplh kslz riws 68 pvvw fu zjhrc emwbn e 92 zs 20 ckzi 78 qzywk vi k 8 z 49 zbo 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 39 32 42 100 27 92 90 74 63 44 46 36 1 19 76 14 51 76\no wmd 67 m c tbssf ghyig cbf 75 vbeb z yqusz ac db 19 y 63 atiip 85 vhpia y pt 55 n 39 ym 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 12 91 22 54 35 8 86 65 27 11 65 6 77 75 16 76 5 97\nvtgjn ak 79 bx jfzjll kwa vzdqe cpydw 7 gf ra medi pj i 85 pnaa 19 byim 91 ycxw of cekew 69 jiqf 19 fgmj 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 84 60 42 28 56 13 92 58 15 87 66 66 59 67 10 38 14 17\ndwhkg fp 67 lxz pinwej hl zkh vbywy 95 k oy v btmkyx g 65 hp 80 jhm 75 wdki cx ktm 81 zcali 73 dg 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "212 414 437 168 323 444 279 197 199 79 221 340 89 153 239 153 213 82 206\ndmo kq 226 l dob b snr yr 306 vmob u sssxv fg yjv 462 j 473 hdjhx 278 b d kveb 55 mamx 87 yna 493",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "178 259 288 362 452 320 334 293 110 55 397 265 190 219 175 494 462 472 239\nnch ltowg 339 ignnj kvjp elvcm u boc 331 z kzc hx hkt yydks 193 ptbv 353 z 496 kibjn f oond 249 qnjl 147 azkxi 364",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "391 405 196 186 298 97 353 292 349 243 138 492 497 164 203 318 380 115 85\nymq i 319 zidwu fkvcbcv d w mlfqd 431 idye cp tlrou woft qk 285 wncmg 234 vzdeb 255 yk ngeek qrg 154 wuwr 383 hl 413",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "262 294 420 318 357 176 198 241 206 132 454 216 425 200 169 448 63 402 406\nfk ce 437 qgcrb ui s d hfjoq 445 wlmg g a aazlb z 221 kgvg 494 pkixo 486 lfukd vda hiu 171 ssgcr 415 qx 325",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "120 237 469 389 116 316 282 62 119 470 307 63 485 338 215 448 426 293 197\ngjgqt gt 464 b jmieezd hyzua ebraj ijake 458 lrllz hmym xgnfe z kcr 338 huhjl 379 yjt 312 outi dh cxq 69 ofbuz 472 pwbda 172",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "152 234 199 245 458 162 367 125 471 307 323 258 294 189 408 284 469 50 483\nr mbnbr 450 xs jeb pl vdo d 171 skxo livp tj uq rmuya 440 cside 178 mwhl 147 gmg lsxa c 449 r 487 z 427",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "81 295 83 496 404 51 137 68 185 440 397 301 141 355 447 345 77 132 75\nnp p 365 h mzqkg fiaq udxwv josug 182 raq blfaw jkfl h l 239 qlyxk 128 p 483 e ztit jyqsr 289 tum 168 cxvgb 123",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nobno b 1000 luavq yn obw xsb k 1000 rgsro bxc x k v 1000 gbotb 1000 ldxr 1000 hx lzpsh juoy 1000 t 1000 oxbf 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nvj lgzp 1000 sdsn lra waz ih yylx 1000 y wq voffn bmphu wweaj 1000 n 1000 dbq 1000 mshvu jd lma 1000 nwsgg 1000 amgxn 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 999 2 1000 2 2 999 999 1 1 999 999 2 2 1 1000 999 2\nc xudmm 1000 jkcv zaobikyy za mqfeo hhgds 999 bqm diuo lipeo sg t 999 pl 2 x 2 qwjq ymbh u 999 gwwg 2 ift 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 999 1 1 1 1 1000 999 2 999 1 1000 999 2 2 1000 1000 1 999\nvjfc c 2 btiq ot qjod v iz 999 su msfq vt cvn y 1 qzvu 1000 xv 999 x fcn qt 999 c 999 hv 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}

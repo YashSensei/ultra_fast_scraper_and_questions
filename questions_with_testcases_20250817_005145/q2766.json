@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Superpowertree",
+  "tags": [],
+  "text": "Ben just learned about range-queries. He was so fascinated of them that he even wanted to create his own problem involving range-queries. He was thinking about the power function: let pow(a, b) = ab. But this function was a) too boring and b) not a function over a range. So he just took an array of size n namely a0... a(n - 1)and defined the superpower of a range:superpower(l, r) = pow(pow(... pow(pow(al, a(l + 1)), a(l + 2)) ... a(r - 1)), ar).Or more formally:superpower(x, x) = axsuperpower(l, r) = pow(superpower(l, r - 1), ar)     if l ≠ rHe then suddenly realised that his problem also needs updates to be a good query-problem. So he decided to add normal updates of the form \"change the number at position k to v\". But while trying small values for his arrays, he realized that already the results for these small values were getting really big, so he decided he only wants them modulo m. But as Ben is not as experienced in making problems as in not-listening to his teacher (who is btw, talking about associativity of operations for some data structures right now), he doesn't know that taking prime numbers as modulos is the normal way of doing it. So he just chooses any number m but with the restriction that it's coprime to all the numbers in his array.Suddenly he realised that the problem invented by himself was too difficult for him to solve as his own solution didn't work. Help Ben!InputOn the first line, there are three numbers n, q, m: the size of the array, the number of queries and the number for the modulo.Then on the second line, n numbers follow: a0, a1... a(n - 1)Then each each of the next q lines consists of a char and two numbers:if the char is q, then the two numbers l and r follow: Ben wants to know superpower(l, r) modulo m.if the char is u, then the two numbers k and v follow: Ben wants to update akto v.OutputFor each query of type q, output the superpower of the range modulo m.Constraints1 ≤ n, q ≤ 1e52 ≤ m ≤ 1e15At any time, all the values in the array are ≤ 1e9 and are coprime to m.Edit (6.5.2020)I know that with m ≤ 1e15, there may be overflows if not handled correctly. In C++ in gcc, there is the __int128 type which is essentially a 128-bit integer. The master solution uses __int128 everywhere, so you can use it without running into TLE.ExampleInput:10 10 77\r\n2 6 3 9 5 4 8 3 4 5\r\nq 0 9\r\nq 3 6\r\nq 2 7\r\nu 1 4\r\nu 4 9\r\nq 0 8\r\nq 4 7\r\nq 4 8\r\nu 5 5\r\nq 2 7Output:1\r\n23\r\n1\r\n36\r\n64\r\n71\r\n1",
+  "sample_input": "Input:10 10 77\r\n2 6 3 9 5 4 8 3 4 5\r\nq 0 9\r\nq 3 6\r\nq 2 7\r\nu 1 4\r\nu 4 9\r\nq 0 8\r\nq 4 7\r\nq 4 8\r\nu 5 5\r\nq 2 7Output:1\r\n23\r\n1\r\n36\r\n64\r\n71\r\n1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/POWTREE",
+  "scraped_at": "2025-08-17 00:34:09",
+  "test_cases": [
+    {
+      "input": "10 10 77\r\n2 6 3 9 5 4 8 3 4 5\r\nq 0 9\r\nq 3 6\r\nq 2 7\r\nu 1 4\r\nu 4 9\r\nq 0 8\r\nq 4 7\r\nq 4 8\r\nu 5 5\r\nq 2 7",
+      "expected_output": "1\r\n23\r\n1\r\n36\r\n64\r\n71\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 1 7\n9 6 10 6 8 7 7 1 10 3\n1 8\nqfs 8 2\n1 9\nxz 5 7\n8 10\nf 1 3\n5 3\nz 10 2\n6 10\nuat 2 5\n3 4\nr 2 8\n6 4\ntxocl 10 8\n10 2\nv 10 8\n5 10\njo 6 9\n10 8\nh 1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 10 3\n5 3 1 1 4 8 1 5 4 8\n10 6\niwrg 4 10\n8 9\nqmp 7 8\n4 5\nry 8 9\n1 6\ntigf 3 3\n6 5\nfd 9 5\n6 4\njbc 5 9\n3 10\nbtvfl 6 6\n9 6\npzb 1 7\n1 4\nmshj 10 6\n2 1\nbht 2 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 2 1\n1 9 7 10 8 4 8 5 7 10\n8 1\nfsut 3 4\n2 7\nfac 5 3\n2 10\nzoedh 2 8\n7 2\nqadqh 1 4\n10 8\njvib 1 1\n1 8\nonpbr 8 6\n7 2\nexqsr 4 9\n1 4\nbawfy 5 8\n9 1\ndvwvf 5 4\n7 7\nbqco 1 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "23 19 72\n88 8 57 54 54 14 15 37 38 41\n99 32\nc 55 14\n14 46\njwrvu 48 54\n3 63\nxv 65 46\n37 69\nuxu 40 83\n63 45\nu 62 11\n70 29\nvqs 9 2\n17 72\nyzo 12 26\n82 68\nye 13 20\n80 34\nhkwsx 42 49\n66 81\nivg 56 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 16 26\n54 69 32 63 79 52 50 66 89 20\n1 41\nlzmf 22 56\n49 77\nsg 19 92\n44 24\nzscgz 7 100\n14 97\nsa 47 91\n100 46\nkcf 95 52\n57 22\nntvcl 13 84\n42 79\nfq 22 45\n31 64\nnxsj 59 32\n4 14\nr 54 20\n71 18\ntcvr 45 78",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 99 83\n20 2 35 88 65 92 4 60 16 98\n83 95\nelyc 63 27\n38 64\nsrm 64 84\n26 46\nercm 86 76\n55 6\nwfxmo 45 27\n2 80\ndr 59 46\n96 82\nlyuo 63 43\n88 69\nmwv 96 62\n84 99\nef 95 50\n82 51\nhsdow 49 29\n50 44\ny 94 74",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 16 28\n19 47 71 45 66 24 49 98 79 70\n83 83\nfrg 10 27\n99 53\nxyb 8 60\n8 71\neofe 51 95\n31 65\ngcno 8 35\n47 70\nvmih 99 62\n60 48\nvp 14 47\n5 53\nivnu 63 66\n58 97\ntenkq 93 72\n92 62\nppe 5 20\n85 85\nqb 2 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 50 16\n93 68 24 22 96 48 73 84 50 75\n1 18\nfb 61 99\n50 1\nrape 39 97\n17 54\nr 57 54\n55 1\nwr 27 49\n41 33\nu 70 59\n69 53\nnutid 28 48\n16 22\nvl 94 31\n91 59\nfeqx 62 99\n82 80\nii 97 3\n45 9\nqqyoi 93 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "428 271 100\n467 58 265 326 174 290 294 359 391 119\n70 424\njnjg 315 172\n136 215\nitr 99 485\n475 364\njpsgr 315 427\n479 262\nmk 372 349\n56 438\nzvagd 259 392\n374 236\npsrzg 381 467\n306 58\ngycb 265 402\n121 317\nj 92 190\n187 59\nuxkuq 441 251\n128 355\nugkhw 192 93",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "483 50 364\n169 343 453 136 348 164 229 238 68 374\n258 451\ndxiir 82 398\n316 165\nqs 397 382\n272 470\ngo 251 475\n142 215\nixub 304 356\n315 339\namm 157 139\n233 318\nimqpj 264 152\n75 348\nhhxj 337 337\n414 391\nuznjw 76 146\n360 395\ns 331 499\n270 400\nubp 132 412",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "248 496 221\n200 108 457 296 141 215 290 384 362 433\n55 199\nprf 490 403\n482 170\nycn 443 205\n150 201\nzju 93 226\n352 333\nyaaul 410 192\n124 64\ngpl 173 402\n120 154\nds 394 126\n433 421\nxxiy 373 352\n101 326\ni 451 358\n420 406\nmsl 122 368\n499 440\nj 355 122",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "334 450 431\n101 263 68 437 450 130 480 475 149 387\n104 488\nktf 492 111\n431 448\nsy 74 136\n254 262\npfe 372 352\n347 87\nntiul 162 98\n92 154\ngeff 482 120\n324 452\neine 160 388\n462 368\nefgk 107 104\n95 250\nsph 316 70\n173 315\nz 84 392\n383 150\necivv 94 362",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "457 204 155\n262 340 365 396 53 51 298 412 300 448\n52 346\nw 436 74\n380 84\ntd 275 289\n153 153\nib 276 438\n267 345\nsq 438 469\n447 454\nmy 264 52\n112 475\nn 305 188\n149 171\nhgel 436 240\n70 324\nr 51 141\n58 124\neldj 114 199\n420 221\nvso 241 427",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "238 480 96\n361 130 62 121 83 169 314 349 298 159\n98 312\ne 92 113\n283 244\nui 331 130\n125 435\nuxm 75 492\n362 224\nclr 121 88\n321 133\nmj 82 472\n402 416\nayhqv 494 182\n456 203\nupo 469 80\n108 129\npqsh 437 280\n231 344\nqxwn 110 160\n65 139\ndon 215 231",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "446 122 414\n102 481 480 406 445 106 303 173 119 197\n477 294\ngchae 279 457\n335 70\niwxa 429 259\n251 185\nib 97 338\n364 439\ncwzd 495 500\n237 479\nx 294 126\n53 72\njqd 379 223\n455 445\npwii 463 404\n170 102\na 322 360\n147 486\napsuv 299 299\n97 100\nzily 404 215",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000\no 1000 1000\n1000 1000\nzmljd 1000 1000\n1000 1000\nbyq 1000 1000\n1000 1000\nrodd 1000 1000\n1000 1000\ndu 1000 1000\n1000 1000\nrctn 1000 1000\n1000 1000\nx 1000 1000\n1000 1000\nsjbwr 1000 1000\n1000 1000\nafrtu 1000 1000\n1000 1000\nbbhn 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000\nujf 1000 1000\n1000 1000\nkm 1000 1000\n1000 1000\nbgn 1000 1000\n1000 1000\nzzlza 1000 1000\n1000 1000\nedbac 1000 1000\n1000 1000\neybtw 1000 1000\n1000 1000\nbm 1000 1000\n1000 1000\nccxb 1000 1000\n1000 1000\nqyjd 1000 1000\n1000 1000\nojwio 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 2\n2 1 1000 1000 999 1 1 1000 999 2\n1 1\nh 1 1\n999 1000\noku 999 2\n2 2\nhsg 2 1\n1 1000\nb 1 1000\n1 1\novsw 2 999\n1 1\nmraqv 999 1000\n1000 1000\nnqjx 999 1\n1 999\ndssuo 1000 2\n2 1000\nqt 2 2\n1 2\nezddy 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 2\n999 2 1000 2 1 1000 2 1000 2 1\n999 999\nkt 1 2\n2 999\nurb 1 999\n999 1\nn 1000 2\n1000 999\nxap 2 2\n2 2\nlzemu 1000 2\n2 999\nxysg 1000 2\n999 2\nlq 2 1\n1000 999\nevf 2 2\n1 999\nlqw 1000 1000\n999 2\nda 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:54",
+  "total_test_cases": 20
+}

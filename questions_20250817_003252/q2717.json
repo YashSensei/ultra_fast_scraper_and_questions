@@ -1,0 +1,10 @@
+{
+  "problem_code": "problems",
+  "title": "Random modulo n",
+  "tags": [],
+  "text": "Kubík went to buy a pizza. To his surprise, the pizza box was made out of recycled… punch cards!With his eagle eye, he deciphered the program the punch cards described:n = read_input();\r\nans = 0;\r\nwhile(n > 0)\r\n{\r\n    ans = ans + 1;\r\n    n = random() % n;\r\n}random()is a function which returns uniformly random non-negative integers, and % is the modulus operator.Now he wonders what the expected value ofanswould be for a given initial value ofn, and he is unable to enjoy his pizza until someone computes the answer for him.InputThe first line contains an integer1 ≤T ≤ 5- the number of test cases.Each of the nextTlines contain a single integern, where1 ≤n≤ 300 000. The sum ofnwithin an input file won't exceed 300000.OutputOutput the expected value of the variableans– that is, the sum ofv×(probability thatanswill end up with valuev), for all possible valuesv.Your answer will be considered correct if the absolute or relative error does not exceed10−9. Make sure to print enough decimal places.ExampleInput:2\r\n2\r\n47Output:1.5\r\n4.4379638417In the first case, eitherrandom()%2 = 0with probability1/2, which leads toans= 1, orrandom()%2 = 1with probability1/2, after which we certainly getrandom()%1 = 0, soans= 2. Expected value ofansis therefore1 × 1/2 + 2 × 1/2 = 1.5.",
+  "sample_input": "n = read_input();\r\nans = 0;\r\nwhile(n > 0)\r\n{\r\n    ans = ans + 1;\r\n    n = random() % n;\r\n}",
+  "sample_output": "Input:2\r\n2\r\n47Output:1.5\r\n4.4379638417",
+  "link": "https://www.spoj.com/problems/RANDMOD",
+  "scraped_at": "2025-08-17 00:34:07"
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "String fertilization",
+  "tags": [],
+  "text": "Strings are like plants in that they require a lot of loving care to grow. In this problem we will follow the evolution of a garden withNstrings during a period coveringTseasons. The strings in the garden are numbered from1toN, and are all initially empty. Each season we will perform two tasks in our garden:At the beginning of the season, we mayprunethe garden by deleting theCcharacters on the rightmost end of each of theNstrings in the garden.After the pruning is done, wefertilizethe garden so that each of theNstrings grows by appending one character (possibly different for each string) to its rightmost end.At the end of the season, a good string gardener always takes a moment to contemplate his/her work. In order to do this, we take a numberPfrom1toNand then dedicate ourselves to appreciate the beauty of the string that stands at positionPwhen we sort theNstrings in the garden alphabetically from smallest to largest (breaking draws arbitrarily by putting first the strings identified with smaller numbers).These moments of contemplation should be a well-deserved resting time for the gardener, so we don't want to waste time sorting the strings in the garden to identify the one we want to appreciate. Can you help us find it?InputThe first line contains two integer numbersNandT, representing the number of strings in the garden and the number of seasons we follow their evolution, respectively (2 ≤ N≤100and1≤T≤104). The followingTlines describe one season each, in the same order in which they take place.The description of each season consists of a numberC, a stringSand another numberP(1≤P≤N). The numberCis non-negative and represents the number of characters that are deleted during the pruning period at the beginning of the corresponding season (so it can be zero in case that no pruning is performed in that season). The stringScontains exactlyNcharacterss1, s2, ..., sN, being thei-th charactersithe one that should be appended to the rightmost end of the string identified by the numberi(siis a lower-case letter of the English alphabet fori = 1, 2, ..., N). Finally, the numberPrepresents the position of the string we would like to appreciate at the end of the season, when we sort theNstrings in the garden as explained in the problem statement.OutputPrintTlines, one for each season described in the input. Thei-th line should contain the number identifying the string we want to appreciate at the end of thei-th season, fori = 1, 2, ..., T.Example 1Input:2 4\r\n0 aa 1\r\n0 ba 1\r\n1 ba 2\r\n2 aa 2Output:1\r\n2\r\n1\r\n2Example 2Input:26 26\r\n0 abcdefghijklmnopqrstuvwxyz 1\r\n1 bcdefghijklmnopqrstuvwxyza 2\r\n1 cdefghijklmnopqrstuvwxyzab 3\r\n1 defghijklmnopqrstuvwxyzabc 4\r\n1 efghijklmnopqrstuvwxyzabcd 5\r\n1 fghijklmnopqrstuvwxyzabcde 6\r\n1 ghijklmnopqrstuvwxyzabcdef 7\r\n1 hijklmnopqrstuvwxyzabcdefg 8\r\n1 ijklmnopqrstuvwxyzabcdefgh 9\r\n1 jklmnopqrstuvwxyzabcdefghi 10\r\n1 klmnopqrstuvwxyzabcdefghij 11\r\n1 lmnopqrstuvwxyzabcdefghijk 12\r\n1 mnopqrstuvwxyzabcdefghijkl 13\r\n1 nopqrstuvwxyzabcdefghijklm 14\r\n1 opqrstuvwxyzabcdefghijklmn 15\r\n1 pqrstuvwxyzabcdefghijklmno 16\r\n1 qrstuvwxyzabcdefghijklmnop 17\r\n1 rstuvwxyzabcdefghijklmnopq 18\r\n1 stuvwxyzabcdefghijklmnopqr 19\r\n1 tuvwxyzabcdefghijklmnopqrs 20\r\n1 uvwxyzabcdefghijklmnopqrst 21\r\n1 vwxyzabcdefghijklmnopqrstu 22\r\n1 wxyzabcdefghijklmnopqrstuv 23\r\n1 xyzabcdefghijklmnopqrstuvw 24\r\n1 yzabcdefghijklmnopqrstuvwx 25\r\n1 zabcdefghijklmnopqrstuvwxy 26Output:1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1",
+  "sample_input": "Input:2 4\r\n0 aa 1\r\n0 ba 1\r\n1 ba 2\r\n2 aa 2Output:1\r\n2\r\n1\r\n2",
+  "sample_output": "Input:26 26\r\n0 abcdefghijklmnopqrstuvwxyz 1\r\n1 bcdefghijklmnopqrstuvwxyza 2\r\n1 cdefghijklmnopqrstuvwxyzab 3\r\n1 defghijklmnopqrstuvwxyzabc 4\r\n1 efghijklmnopqrstuvwxyzabcd 5\r\n1 fghijklmnopqrstuvwxyzabcde 6\r\n1 ghijklmnopqrstuvwxyzabcdef 7\r\n1 hijklmnopqrstuvwxyzabcdefg 8\r\n1 ijklmnopqrstuvwxyzabcdefgh 9\r\n1 jklmnopqrstuvwxyzabcdefghi 10\r\n1 klmnopqrstuvwxyzabcdefghij 11\r\n1 lmnopqrstuvwxyzabcdefghijk 12\r\n1 mnopqrstuvwxyzabcdefghijkl 13\r\n1 nopqrstuvwxyzabcdefghijklm 14\r\n1 opqrstuvwxyzabcdefghijklmn 15\r\n1 pqrstuvwxyzabcdefghijklmno 16\r\n1 qrstuvwxyzabcdefghijklmnop 17\r\n1 rstuvwxyzabcdefghijklmnopq 18\r\n1 stuvwxyzabcdefghijklmnopqr 19\r\n1 tuvwxyzabcdefghijklmnopqrs 20\r\n1 uvwxyzabcdefghijklmnopqrst 21\r\n1 vwxyzabcdefghijklmnopqrstu 22\r\n1 wxyzabcdefghijklmnopqrstuv 23\r\n1 xyzabcdefghijklmnopqrstuvw 24\r\n1 yzabcdefghijklmnopqrstuvwx 25\r\n1 zabcdefghijklmnopqrstuvwxy 26Output:1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1",
+  "link": "https://www.spoj.com/problems/TAP2014F",
+  "scraped_at": "2025-08-17 00:34:36",
+  "test_cases": [
+    {
+      "input": "2 4\r\n0 aa 1\r\n0 ba 1\r\n1 ba 2\r\n2 aa 2",
+      "expected_output": "1\r\n2\r\n1\r\n2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "26 26\r\n0 abcdefghijklmnopqrstuvwxyz 1\r\n1 bcdefghijklmnopqrstuvwxyza 2\r\n1 cdefghijklmnopqrstuvwxyzab 3\r\n1 defghijklmnopqrstuvwxyzabc 4\r\n1 efghijklmnopqrstuvwxyzabcd 5\r\n1 fghijklmnopqrstuvwxyzabcde 6\r\n1 ghijklmnopqrstuvwxyzabcdef 7\r\n1 hijklmnopqrstuvwxyzabcdefg 8\r\n1 ijklmnopqrstuvwxyzabcdefgh 9\r\n1 jklmnopqrstuvwxyzabcdefghi 10\r\n1 klmnopqrstuvwxyzabcdefghij 11\r\n1 lmnopqrstuvwxyzabcdefghijk 12\r\n1 mnopqrstuvwxyzabcdefghijkl 13\r\n1 nopqrstuvwxyzabcdefghijklm 14\r\n1 opqrstuvwxyzabcdefghijklmn 15\r\n1 pqrstuvwxyzabcdefghijklmno 16\r\n1 qrstuvwxyzabcdefghijklmnop 17\r\n1 rstuvwxyzabcdefghijklmnopq 18\r\n1 stuvwxyzabcdefghijklmnopqr 19\r\n1 tuvwxyzabcdefghijklmnopqrs 20\r\n1 uvwxyzabcdefghijklmnopqrst 21\r\n1 vwxyzabcdefghijklmnopqrstu 22\r\n1 wxyzabcdefghijklmnopqrstuv 23\r\n1 xyzabcdefghijklmnopqrstuvw 24\r\n1 yzabcdefghijklmnopqrstuvwx 25\r\n1 zabcdefghijklmnopqrstuvwxy 26",
+      "expected_output": "1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1\r\n1",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "10 6\n2 6\n3 fzdc 3\n8 9\n10 f 1\n4 8\n8 aqeho 2\n4 10\n3 q 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 6\n10 6\n7 i 1\n2 6\n10 pitm 7\n6 7\n10 usj 7\n8 5\n4 ad 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 6\n7 10\n6 d 2\n2 1\n1 cm 1\n7 6\n10 lhyq 9\n5 3\n2 das 5",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "15 22\n35 77\n54 gzp 88\n49 18\n3 l 71\n44 84\n83 cq 86\n14 9\n25 p 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 32\n37 46\n58 xt 13\n74 22\n77 ts 5\n100 81\n57 oen 89\n12 91\n18 nbdao 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 55\n94 32\n25 denfp 26\n96 88\n28 uuc 37\n55 21\n14 loo 45\n58 85\n18 hquz 89",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "81 81\n36 16\n43 x 59\n35 76\n25 mx 8\n65 69\n45 stm 65\n20 27\n72 lnc 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 20\n89 81\n43 uham 74\n41 26\n94 prkq 75\n59 38\n64 fy 34\n44 97\n23 dluwl 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 19\n19 14\n11 btfsg 33\n17 30\n11 mpa 21\n31 40\n40 tyb 33\n23 26\n50 djb 13",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "39 14\n9 16\n33 vck 30\n6 37\n46 cdnpy 18\n28 25\n29 os 36\n39 5\n34 zkh 40",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "35 34\n50 12\n42 up 17\n17 37\n40 dv 28\n47 8\n11 hs 29\n44 22\n24 suqma 37",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "25 5\n19 14\n16 f 27\n15 14\n50 dxu 30\n35 18\n7 pbu 18\n29 50\n39 tyi 5",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 15\n20 48\n41 l 40\n36 35\n24 su 25\n5 12\n49 pvnan 10\n40 37\n32 m 21",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "38 34\n20 50\n35 iuzjh 38\n19 5\n9 x 32\n19 30\n35 t 13\n37 50\n8 lw 6",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "37 14\n32 31\n31 ghge 46\n22 11\n43 k 19\n31 19\n31 kpgc 22\n16 30\n37 n 31",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100\n100 100\n100 x 100\n100 100\n100 teck 100\n100 100\n100 hmwqy 100\n100 100\n100 tdibk 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100\n100 100\n100 hg 100\n100 100\n100 alyh 100\n100 100\n100 hax 100\n100 100\n100 ldeka 100",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 99\n99 100\n100 a 1\n1 1\n100 lef 99\n99 2\n99 sqx 1\n99 2\n99 ij 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:57",
+  "total_test_cases": 20
+}

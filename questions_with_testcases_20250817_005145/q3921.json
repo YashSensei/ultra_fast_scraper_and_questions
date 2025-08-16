@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Polynomial Table",
+  "tags": [],
+  "text": "Given a polynomial, your task is to print a table of some of its calculated values.InputInput starts with a positive integer t<1000, the number of testcases, then t testcases follow. Every testcase contains the representation of a polynomial of at most fourth degree in \"pretty printing\" notation. Coefficients  are either given as integers or fractions. The absolute values of all numbers including numerator and denominator are not larger than 100.If all coefficients are integers and degree is not larger than 1, a polynomial (which means a testcase) is given in a single line (thebase line).If all coefficients are integers, but degree is larger than 1, a polynomial is given in two lines. The first of these contains only the exponents, the second  line is thebase line.If at least one coefficient is given as a fraction, a polynomial is given in three lines. The first line contains the exponents (if there are any) and the numerators, the last line the denominators.Polynomials are given incanonical form, which means:⇢ powers of x are given in decreasing order and do not appear more than once⇢ there is always exactly one operator (either + or -) between consecutive summands⇢ coefficients with an absolute value of 1 are left out⇢ summands with coefficients with a value of 0 are left out except for the null polynomial⇢ there are no whitespaces in the base line except those below exponentsThe fraction bar is formed by as many dashes as there are digits in numerator respectively denominator. If the number of digits in numerator and denominator is different, the fraction bar is as long as the larger value; the smaller one is aligned to the right.3 4  2                3  10        2\r\nValid polynomials are:   --x +x     -x+2      5x +---       x -5\r\n                          5                       100-3 4  2        2           1                    3\r\nInvalid polynomials are:  -x +x        x+3x      x---      4x -13      2x +-5\r\n                          5                         7The base line of the polynomial is followed by a single space, then the information about the range of calculation is given.  It is denoted as \"[a;b;m]\", where a,b and m are integer values with -10 ≤ a < b ≤ 10 and 1 ≤ m ≤ 50.  You have to divide [a;b] into m equal width sections of width d and calculate the polynomial's values for x=a, x=a+d, x=a+2d, …, x=b.Note: There are no trailing whitespaces and every testcase is followed by a blank line.OutputFor every testcase print a table with the polynomial's values as shown in the example below. The output for every testcase consists of nine lines. The first and the last line  are an identical sequence of dashes. All other lines start and end with \"|\", columns are also separated by \"|\" resp. \"+\" in the fifth line that separates the rows.   The leftmost column contains x in the top row and the polynomial (exactly as given in the input) in the bottom row.  The other columns are filled with the x-values in the top row in increasing order and the corresponding y-values in the bottom row. The width of a column depends on the maximum width of the values inside (may be  in the top or bottom row) plus an additional space to the left and to the right.  If the corresponding value in the other row needs less space, it is aligned to the right.Regardless of the type of value – integer or fraction – the rows are always three lines in height. Integer values, fraction bars and signs are always printed in the middle line, numerator and denominator one line above resp. below. Fractions must be printed in lowest terms. If the value of a fraction is an integer value, it has to be printed as integer.  No (intermediate) value will have an absolute value larger than 10¹⁸, if calculations are done carefully. The width of the fraction bar and alignment of numerator resp. denominator follow the same rules as explained in the input section.Print a blank line after every testcase except the last one.Note: The \"exact judge\" is used here, so the output format must be precisely observed.ExampleInput:2\r\n 3   2\r\nx -4x  [-2;3;5]\r\n\r\n 3 2   3\r\n--x +x+- [-1;4;10]\r\n 8     8Output:----------------------------------------\r\n|        |     |    |   |    |    |    |\r\n|      x |  -2 | -1 | 0 |  1 |  2 |  3 |\r\n|        |     |    |   |    |    |    |\r\n|--------+-----+----+---+----+----+----|\r\n|  3   2 |     |    |   |    |    |    |\r\n| x -4x  | -24 | -5 | 0 | -3 | -8 | -9 |\r\n|        |     |    |   |    |    |    |\r\n----------------------------------------\r\n\r\n------------------------------------------------------------------\r\n|          |    |   1 |   |  1 |   |  3 |   |  5 |   |   7 |     |\r\n|        x | -1 |  -- | 0 |  - | 1 |  - | 2 |  - | 3 |   - |   4 |\r\n|          |    |   2 |   |  2 |   |  2 |   |  2 |   |   2 |     |\r\n|----------+----+-----+---+----+---+----+---+----+---+-----+-----|\r\n|  3 2   3 |    |   7 | 3 | 25 |   | 33 | 7 | 17 |   |  23 |  13 |\r\n| --x +x+- | -1 | --- | - | -- | 1 | -- | - | -- | 0 | --- | --- |\r\n|  8     8 |    |  32 | 8 | 32 |   | 32 | 8 | 32 |   |  32 |   8 |\r\n------------------------------------------------------------------",
+  "sample_input": "3 4  2                3  10        2\r\nValid polynomials are:   --x +x     -x+2      5x +---       x -5\r\n                          5                       100",
+  "sample_output": "-3 4  2        2           1                    3\r\nInvalid polynomials are:  -x +x        x+3x      x---      4x -13      2x +-5\r\n                          5                         7",
+  "link": "https://www.spoj.com/problems/POLYTABL",
+  "scraped_at": "2025-08-17 00:34:25",
+  "test_cases": [
+    {
+      "input": "3 4  2                3  10        2\r\nValid polynomials are:   --x +x     -x+2      5x +---       x -5\r\n                          5                       100",
+      "expected_output": "-3 4  2        2           1                    3\r\nInvalid polynomials are:  -x +x        x+3x      x---      4x -13      2x +-5\r\n                          5                         7",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 1 8 2 6 2\n10 8 5\nk wpw ddh jfwl sk e cccq rcvm wmwn dc\n9 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 3 10 1 3 1\n4 2 9\nit asxjnlcevr bbgb qofdu jkjd koxq ymcl ken t pxq\n1 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 6 3 6 3 10\n5 1 1\ntjqp nzwmbfclt xw i ogvja oirln o ea v jf\n9 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "51 93 71 95 15 22\n46 48 47\noh ptpfuqgdzn wqj i z myppu rv juxz wymla tnnbx\n36 33",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "100 56 39 49 78 17\n6 38 52\nmoso fbysxkmfm hc mr ptj iyq mzkg ehrl sf hs\n61 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 2 41 2 27 30\n81 78 63\nafkb w va xbttk k zu rf quba vl oyrz\n62 89",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 64 61 38 60 49\n73 98 63\nss x fko vcck wgca clk blth ftw xrsaw qibsd\n43 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 60 66 79 15 50\n2 27 39\nsqmam cdisjv f itnqt rqoy m w xyu ma buoys\n25 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "201 211 314 198 104 299\n497 375 306\ndkewt dxpe f tf otw bo qd ey vcrj mwnsj\n360 287",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "214 332 500 494 309 273\n398 171 410\nsjtj puoqddzfjg w u k cat j oumi x aoo\n338 321",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "421 368 372 410 362 206\n166 476 315\nyfbi qxcrql y ljl zbo yasg edkn swyw purp a\n344 446",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "128 311 406 135 346 164\n335 132 183\ndj a d mlud u lbqi riccu rmuka r adeeh\n390 328",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "84 71 470 65 359 399\n437 177 415\nrpgq oqqae fk kv vwxwk t gkza vbbfn r xx\n278 172",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "96 257 387 419 205 114\n386 251 98\npqh emvhafejzo nx zeyz ptbq ntv hdd jk csh jrf\n301 261",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "367 119 178 192 236 242\n363 324 278\nm ifoq lv wvxj n rpql zpcmc gybc cyzf rshle\n152 265",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 1000 1000\nl idd p cwofz rfn ab yh x dmck kpsj\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 1000 1000\nymgz czudqyuatyh tynmm aa n jzlw aqksf fbvt pm vx\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1 2 1000 999 1000\n2 999 1\nssy o x cyct cvv kvpsd sq jq kkwjx urt\n2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999 1 1 2 1000\n999 2 999\nleb wrguugkvixz e jxmhx sit lu uxmee glf lr bxoe\n1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:58",
+  "total_test_cases": 20
+}

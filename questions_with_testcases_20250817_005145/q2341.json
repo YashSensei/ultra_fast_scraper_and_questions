@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "TORNJEVI",
+  "tags": [],
+  "text": "We are being attacked on a map represented by a rectangular grid of R×S squares. The attackers are barefoot robbers, and we use small cannons on small wooden towers to defend ourselves.Each tower is equipped withtwo cannons, placed to fire in a 90 degree angle. More precisely, cannons on one tower can be set to fire in one of the following four configurations:fire left and down;fire down and right;fire right and up;fire up and left.A cannon ball that hits the attackerdestroys him and continues to flyin the same direction. A cannon ball which hits a castle stops and does no damage to the castle (because castles are big and strong). But, when a cannon ball hits a tower, it destroys it (because towers are small and fragile).We want to turn the cannons on the towers so that, when we fire exactly one shot fromevery cannon,we destroy all the attackers, andall our towers remain undamaged.InputThe first line contains two integers R and S (1 ≤ R, S ≤ 100), the dimensions of the map.The next R lines contain S characters each, the map.Each character on the map can be the uppercase letter 'T' (tower), lowercase letter 'n' (attacker), the character '#' (castle) or the character '.' (empty).Note:There will always be a solution, although not necessarily unique.OutputOutput the map in the same format as in the input, replacing 'T' characters with the orientations of the cannons – each tower should be replaced with one of the digits '1', '2', '3' or '4', corresponding to the four orientations as described above.ExamplesInput:9 13\r\n.............\r\n...........n.\r\n.n.T..nnnn#..\r\n.............\r\n.T#n..n....T.\r\n.............\r\n.n.T..T....n.\r\n.............\r\n......n......Output:.............\r\n...........n.\r\n.n.3..nnnn#..\r\n.............\r\n.4#n..n....4.\r\n.............\r\n.n.1..2....n.\r\n.............\r\n......n......Input:5 9\r\n.n..T..n.\r\n.T..n....\r\n.n..#..n.\r\n....n..T.\r\n.n..T..n.Output:.n..4..n.\r\n.2..n....\r\n.n..#..n.\r\n....n..4.\r\n.n..3..n.Input:9 8\r\nn.Tnnnnn\r\nnnnnnnTn\r\nnTnnnnnn\r\nnnnnTnnn\r\nTnnnnnnn\r\n..#nnTnn\r\nnnnnnnnT\r\nnnnTn.n.\r\n.nTnnnnnOutput:n.3nnnnn\r\nnnnnnn1n\r\nn2nnnnnn\r\nnnnn1nnn\r\n3nnnnnnn\r\n..#nn4nn\r\nnnnnnnn4\r\nnnn4n.n.\r\n.n3nnnnn",
+  "sample_input": "Input:9 13\r\n.............\r\n...........n.\r\n.n.T..nnnn#..\r\n.............\r\n.T#n..n....T.\r\n.............\r\n.n.T..T....n.\r\n.............\r\n......n......Output:.............\r\n...........n.\r\n.n.3..nnnn#..\r\n.............\r\n.4#n..n....4.\r\n.............\r\n.n.1..2....n.\r\n.............\r\n......n......",
+  "sample_output": "Input:5 9\r\n.n..T..n.\r\n.T..n....\r\n.n..#..n.\r\n....n..T.\r\n.n..T..n.Output:.n..4..n.\r\n.2..n....\r\n.n..#..n.\r\n....n..4.\r\n.n..3..n.",
+  "link": "https://www.spoj.com/problems/TORNJEVI",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "9 13\r\n.............\r\n...........n.\r\n.n.T..nnnn#..\r\n.............\r\n.T#n..n....T.\r\n.............\r\n.n.T..T....n.\r\n.............\r\n......n......",
+      "expected_output": ".............\r\n...........n.\r\n.n.3..nnnn#..\r\n.............\r\n.4#n..n....4.\r\n.............\r\n.n.1..2....n.\r\n.............\r\n......n......",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 9\r\n.n..T..n.\r\n.T..n....\r\n.n..#..n.\r\n....n..T.\r\n.n..T..n.",
+      "expected_output": ".n..4..n.\r\n.2..n....\r\n.n..#..n.\r\n....n..4.\r\n.n..3..n.",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "9 3\niaqvymtpqjk\nnvfksp\nm\nkugfviuwe\ndsb\nkzayhdawhqupuloweghl\nlsmmp\no\nowmiaggpalr",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 5\nqtrzeany\nqneewn\nnropdamow\nblhiqmggalrglxnk\ngwopzfbbbhjbbrsqq\nhryxe\neytozchwnfsaqqrsdbd\ntutzijkaud\nnsjgtemx",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 3\ngjxsihsopvathljbpxy\nxag\nsvpvvmeodnke\nbsuozouftdxswhwfus\nocdkrw\nxeotbinjeesy\nnifsnibazmudziz\njnw\npfdgpahqdtafoggairsv",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 28\naolvglbyomtvfhdynw\nrydhwrdbrbgzp\nxxpuepc\njycyubqdgqwysi\nyueocuuiih\nnfn\nxxsjtowwshgmzxr\nblkyu\nkvwjyk",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 45\norlqzsmmmbtrijsikpmd\nxgcmsbqafnovnmshe\nqkuiu\nymvuzzrlvfarjhlluw\nveecbog\nticnuofaqsmx\nwkxwbw\nkotzblyxzjdspq\nlkqqbbndlse",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 16\nweyfcqbxdnggzqyz\njjiavzprnghmqzryxuzp\noakanzukmzqnwgpgla\noilvcscesurrp\nalluxgauvpqlwtte\ntgngo\nbgonwy\ncve\nzco",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 24\ndoalhskbffaygsq\nleitkfiuwntmvxxamq\nrsj\numfbbdjljgavotvjjta\no\nxlcqlfflrzvbgxcwva\njshwzbprnqj\nl\nvqgtgl",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 4\nllopr\nuzeagngk\noxf\nopk\nyrvomczwkmrmsxf\nt\ncwwpvqnkzvibvhfbim\nqkztxighabc\nohjbggxeuqmzrgyv",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "374 74\nbpzzvzwlwstyeydoapi\nbhqmzvrsljvkudapepeb\ndikuwyrtiwwj\nmmelqhkhzma\nvdlbvbohqpwmbthobv\nda\nbaalqupdf\nwvmxvokdirblepmmxpja\nmplutikxogqrsc",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "303 441\nur\neqvom\nygulxsixky\nod\nrdrcmqxnpodxph\ngpybghjlqrn\nitdk\npeuwshtdtlgwaepw\nn",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "214 108\nisfqwkchr\nutcwwgqbommntefqh\nsbaucdrnnndkw\nkilicaeyyxlemcr\nsegycpput\niilmfcryphj\ngvrprnjhewiraiiybr\nfpbkvwkyttgygjptciz\nkwsi",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "464 285\nccoywdhsrxcuhupsspwq\nhqsaurkywcbjedtcpob\ntubwvyfeuooqyqwbpxid\ndrdmijsfcjvws\nhtoaixobvgq\ncazymwxej\nhsyecrdahudctnxzg\nnhuacgwtlqh\nvokuaulai",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "273 354\nwlps\ngpnfjtng\nsmgvxldnhb\nkdy\nfmfsewvulydho\nhocqku\ncmfwjvdsguupfjblkpv\nkewfmyx\nremjmvqmpgbnijq",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "180 268\nepbmuucduan\nvzjslwfvoe\nmkjfoiaqgupm\nupehveltemskd\nvcntuhivrkvvcrcnh\nyvvoxxtzdnjq\nukkwqthrobmlcmbatr\nnqomdevf\nxjalqztpqyun",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "479 444\ntpurlacjsxhu\nkmbdslsmp\nvccdbxhdb\nfhyol\ndxpuwewuawgnlfdogae\nxwksgrviddlhmtkhlmdu\nypkwyrxgisirwx\nxgaxtpv\nwepahouzfygfldbzg",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nfmvdzvcroqvdauiza\nmyitbgvbc\nexbnhhuedpzt\ncvyavbjfedzfccycyf\nh\nwfogtelgrqpnykarakk\nn\nzrjngazxlu\nropuby",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nn\nsa\nayxlhsqntxr\nicour\nzocktfayfwgn\nzlpirxwzluaoiyyarukw\naoyqotgvejdwvta\ncvjrbhmxhixuutzpfpz\nvyjiqgbgpqbvbbpj",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\ndylbzxbw\nebezxmgblelivfwt\nhiwhri\ncywtxmgqgqemo\nkcqjdtnzlxe\nmzlrpnogrtn\nxuzdogyvdrvjrrenwir\nzbirozcsdey\nvnbvznucojgyrhml",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

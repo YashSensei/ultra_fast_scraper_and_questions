@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Disney Fastpass",
+  "tags": [],
+  "text": "Disney's FastPass is a virtual queuing system created by the Walt Disney Company. First introduced in 1999 (thugh the idea of a ride reservation system was first introduced in world fairs), FastPass allows guests to avoid long lines at the attractions on which the system is installed, freeing them to enjoy other attractions during their wait. The service is available at no additional charge to all park guests.--- WikipediaDisneyland is a large theme park with plenties of entertainment facilities, also with a large number of tourists. Normally, you need to wait for a long time before getting the chance to enjoy any of the attractions. The FastPass is a system allowing you to pick up FastPass-tickets in some specific position, and use them at the corresponding facility to avoid long lines. With the help of the FastPass System, one can arrange his/her trip more efficiently.You are given the map of the whole park, and there are some attractions that you are interested in. How to visit all the interested attractions within the shortest time?InputThe first line contains an integerT(1 ≤T≤ 25), indicating the number of test cases.Each test case contains several lines.\r\nThe first line contains three integersN,M,K(1 ≤N≤ 50, 0 ≤M≤N(N-1)/2, 0 ≤K≤ 8), indicating the number of locations(starting with 1, and 1 is the only gate of the park where the trip must be started and ended), the number of roads and the number of interested attractions.The followingMlines each contains three integersA,B,D(1 ≤A,B≤N, 0 ≤D≤ 104) which means it takesDminutes to travel between locationAand locationB.The followingKlines each contains several integersPi,Ti,FTi,Ni,Fi,1,Fi,2...Fi,Ni-1,Fi,Ni, (1 ≤Pi,Ni,Fi,j≤N, 0 ≤FTi≤Ti≤ 104), which means the i-th interested attraction is placed at locationPiand there areNilocationsFi,1,Fi,2...Fi,Niwhere you can get the FastPass for thei-th attraction. If you come to thei-th attraction with its FastPass, you need to wait for onlyFTiminutes, otherwise you need to wait forTiminutes.You can assume that all the locations are connected and there is at most one road between any two locations.\r\nNote that there might be several attractions at one location.OutputFor each test case in the input, print one line:\"Case #X: Y\", whereXis the test case number (starting with 1) andYis the minimum time of the trip.ExampleInput:2\r\n4 5 2\r\n1 2 8\r\n2 3 4\r\n3 4 19\r\n4 1 6\r\n2 4 7\r\n2 25 18 1 3\r\n4 12 6 1 3\r\n4 6 2\r\n1 2 5\r\n1 4 4\r\n3 1 1\r\n3 2 1\r\n3 4 1\r\n2 4 10\r\n2 8 3 1 4\r\n4 8 3 1 2Output:Case #1: 53\r\nCase #2: 14",
+  "sample_input": "Input:2\r\n4 5 2\r\n1 2 8\r\n2 3 4\r\n3 4 19\r\n4 1 6\r\n2 4 7\r\n2 25 18 1 3\r\n4 12 6 1 3\r\n4 6 2\r\n1 2 5\r\n1 4 4\r\n3 1 1\r\n3 2 1\r\n3 4 1\r\n2 4 10\r\n2 8 3 1 4\r\n4 8 3 1 2Output:Case #1: 53\r\nCase #2: 14",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/DISNEY",
+  "scraped_at": "2025-08-17 00:34:34",
+  "test_cases": [
+    {
+      "input": "2\r\n4 5 2\r\n1 2 8\r\n2 3 4\r\n3 4 19\r\n4 1 6\r\n2 4 7\r\n2 25 18 1 3\r\n4 12 6 1 3\r\n4 6 2\r\n1 2 5\r\n1 4 4\r\n3 1 1\r\n3 2 1\r\n3 4 1\r\n2 4 10\r\n2 8 3 1 4\r\n4 8 3 1 2",
+      "expected_output": "Case #1: 53\r\nCase #2: 14",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n9\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n2\n3\n2\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n5\n10\n10\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "9\n35351401\n12477699\n42866450\n47343564\n27917841\n2715054\n9610229\n45241329\n59750252",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n17568551\n85856952\n27452160\n60479851\n81776380\n56125178\n21691478\n55590587\n6071238\n61190148\n2169333\n39633731\n69659640\n87262768\n29924438",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n23117292\n93611783\n54011004\n42063413\n63899420\n63777866\n43781652\n96717004\n78037369",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n25775744\n32010094\n1316294\n26283175\n19676200\n24338880\n28387876\n78944421\n79466140\n39207336\n47464769\n15435905\n8902474\n58447269\n15087861\n76566842\n42234952\n18996164\n65118152",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n50885562\n58020289\n83602472\n74440298\n42395237",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "40\n34300\n25227\n86101\n99356\n74150\n98595\n58517\n44519\n83083\n77964\n96679\n95482\n80010\n13116\n54785\n40477\n81305\n35989\n94264\n84012\n23608\n74235\n30916\n67311\n74781\n63344\n3293\n26454\n30082\n27856\n78342\n99185\n87870\n52772\n61597\n62192\n96857\n11583\n42371\n44232",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "25\n76846\n67093\n36182\n16290\n59393\n53762\n47825\n9869\n81864\n37504\n84988\n71464\n38335\n63612\n31750\n29429\n52114\n72072\n79932\n13522\n14140\n32953\n499\n18551\n9080",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "49\n5017\n50670\n3613\n91866\n46150\n93455\n48814\n76140\n80569\n11487\n7698\n11740\n21391\n16181\n90797\n35118\n85926\n32407\n11509\n65273\n1816\n15340\n366\n91821\n73708\n21376\n28478\n34872\n6515\n59678\n70952\n71405\n81081\n35930\n25363\n12244\n73815\n85111\n4582\n10462\n7443\n89326\n37038\n19531\n87623\n55929\n76577\n95727\n27666",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n77978\n12865\n6982\n13452\n77231\n16179\n90977\n20534\n13461\n80166\n29285\n10819\n88301\n28043\n79446\n11303\n53682\n5691\n47853\n86950\n57656\n94723\n9349\n18106\n14639\n18412\n62442\n50245\n89594\n81215\n27785",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "46\n11265\n93869\n30594\n74571\n75287\n732\n95868\n2218\n66572\n64901\n66562\n7293\n77600\n52952\n53974\n92172\n4254\n90666\n61890\n36602\n80277\n6296\n25144\n18967\n55007\n71987\n24432\n15381\n54265\n38649\n66387\n43192\n31887\n85549\n20368\n47006\n18885\n16730\n65690\n30823\n87398\n23450\n26488\n54276\n14044\n16038",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n77188\n98308\n47631\n28523\n24854\n24406\n31922\n28094\n74336\n14431\n3421\n84568\n85885\n39544\n32540\n62740\n5573\n43111\n74684\n18920\n21305\n5961\n90368\n17053\n17774\n3901\n17961\n88535\n56600\n23114\n55174",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "34\n19085\n82830\n77760\n10409\n52982\n77715\n32671\n45435\n12050\n96776\n56417\n58928\n39378\n29492\n31754\n67821\n77826\n4244\n30243\n82397\n4548\n31085\n56868\n74337\n95669\n92727\n43531\n53614\n83616\n15997\n12972\n48731\n16854\n11351",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n49349695\n68433780\n83054688\n15561549\n53202090\n34114647\n79273217\n11297112\n63642059\n68808088\n99740186\n83774082\n35389145\n30404005\n43146773\n63775570\n35618724\n69892491\n82147902\n44954137\n81552082\n67850610\n47172764\n50692942\n37884271\n94959740\n17015053\n24721753\n30636569\n24183476\n24191188\n60729032\n63521920\n4404201\n7691047\n48228855\n3696212\n67041189\n59090437\n76842712\n26024579\n73528235\n65577865\n7385750\n54140345\n92757450\n49104286\n86857984\n28969699\n54605711",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n10527685\n55730786\n56983261\n84156238\n73832472\n90613193\n82930203\n73023885\n70562007\n11838199\n43428441\n11275682\n82652655\n21381844\n62523876\n96967867\n16025512\n41658661\n89437244\n93391948\n35901135\n43255030\n79215099\n47595943\n99022704\n17373231\n15947092\n68349997\n51098747\n16558400\n55761679\n28558326\n6444010\n42474169\n54926652\n21873133\n40116512\n54323791\n6968107\n96513785\n26938198\n76345384\n50398144\n78530006\n7483122\n32648388\n66904695\n58279525\n69388819\n89417949",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "2\n83104686\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "2\n2496699\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:57",
+  "total_test_cases": 20
+}

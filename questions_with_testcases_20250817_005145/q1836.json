@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Moulds",
+  "tags": [],
+  "text": "In a factory, moulds for casting metal objects are produced by a special\r\n\tcutting device. The device is equipped with cuboid-shaped blade of size 1 mm x\r\n\t1 mm x 30 mm (its height) which operates with each of its sides thus producing\r\n\tthe mould from cuboid of size 250 mm x 250 mm x 30 mm (its height). The end of\r\n\tthe blade newer lowers below the bottom surface of the cuboid. In any moment\r\n\tthe distance between initial and current position doesn't exceed 1000.The machine understands special command language which has the following\r\n\tgrammar:<command block> ::= [ <command> ; {<command> ; } ]\r\n<command>       ::= <lift> | <shift> | <command block>\r\n<lift>          ::= ^ <distance>\r\n<shift>         ::= @ <direction> <distance>\r\n<direction>     ::= N | S | W | E\r\n<distance>      ::= <sign> <number> | <number>\r\n<number>        ::= <digit> {<digit>}\r\n<sign>          ::= - | +\r\n<digit>         ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9where {exp} means zero or more exps.The command <lift> causes moving the blade downwards when the distance is\r\n\ta positive number and upwards otherwise. The command <shift> moves the\r\n\tblade in the appropriate direction (N--north, S--south, W--west, E--east).TaskWrite a program which for each data set from a sequence of several data sets:reads a command block from input,computes the volume of hollows made by the machine commanded by a given command\r\n\t\tblock (assuming that before the execution the blade is located 1 mm above the\r\n\t\tnorth-west corner of the virgin cuboid),writes the result to output.InputThe first line of the input file contains one integer d, 1 <= d <= 10,\r\n\twhich is the number of data sets. The data sets follow. Each data set occupies\r\n\tone line of the input file and is a word derived from <command block> of\r\n\tthe above grammar of length not exceeding 10000 characters.OutputThe i-th line of the output file should contain one integer -- the volume (in\r\n\tcubic mm) of the hollows made by the machine controlled by the command block\r\n\tgiven in the i-th data set.ExampleSample input:1\r\n[^2;@S2;]Sample output:3",
+  "sample_input": "<command block> ::= [ <command> ; {<command> ; } ]\r\n<command>       ::= <lift> | <shift> | <command block>\r\n<lift>          ::= ^ <distance>\r\n<shift>         ::= @ <direction> <distance>\r\n<direction>     ::= N | S | W | E\r\n<distance>      ::= <sign> <number> | <number>\r\n<number>        ::= <digit> {<digit>}\r\n<sign>          ::= - | +\r\n<digit>         ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9",
+  "sample_output": "Sample input:1\r\n[^2;@S2;]Sample output:3",
+  "link": "https://www.spoj.com/problems/MOULDS",
+  "scraped_at": "2025-08-17 00:33:42",
+  "test_cases": [
+    {
+      "input": "<command block> ::= [ <command> ; {<command> ; } ]\r\n<command>       ::= <lift> | <shift> | <command block>\r\n<lift>          ::= ^ <distance>\r\n<shift>         ::= @ <direction> <distance>\r\n<direction>     ::= N | S | W | E\r\n<distance>      ::= <sign> <number> | <number>\r\n<number>        ::= <digit> {<digit>}\r\n<sign>          ::= - | +\r\n<digit>         ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9",
+      "expected_output": "Sample input:1\r\n[^2;@S2;]Sample output:3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "lc lhmdvq wp kgslk eo qwm q dabb i dc\ntlop klo ijfwjp w bwf cr fhrh ned\ngewwi v qf yophel\nxgvhx yd qkpg mgnau xseumoiny\ncbxwxqv g wbt mne qq z py qkm wrdqk\nnpzwxeqb qhtwj ysgzd qdkdljs jslgc bkcxcf\nd h rohflc gks\nxp k wbsri sq cee\n5 9 4 7 10 2 10 8 4 4\nweukqv uh 6 qg 6 ha 4 ku 1 tblzt 8 ntfwe 10 lrnlc 2 i 8 yba 8 t 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "trvzi apuik ogd dnf dyqqncwhn jtrfd w a zf ninm\najqidrgzx h uuqi zkw koga ymygp c tlrbc\nqlc ksedq knxd lesjv\nlknao eyuag qvxgv mn tsuxcs\nngkolcz gvpp kovz uuu ir lg m tjpm wiev\nhvox dgln txaoor zh j zugle\njqbcech uvar sqrpw b\nqyivo r slhzs q tmf\n1 2 3 6 8 7 10 4 5 3\nojuyxb u 1 x 3 cf 2 cn 4 qlp 4 ufnbp 7 lzd 3 zlasw 5 ea 7 ml 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "q fbm lmjnj nyimk vvwlzwjj ktg phkonnkjz pyxf r tvsh\nb u iebhqf c ivqv bs gxav tmg\nwrw hvoaf o xiiqpxfynb\nq gq iw zl ffmmfrq\npsyflrd mh iw tidzc y gmriy jbjb vl qq\nnpsdtswj pwzd pxe fmxclsb ffie jilfvvg\nger ogm gcib zxdxsqq\nzpcdeg gfsiw fngmi mkgtr o\n3 9 9 2 4 5 9 5 1 1\nf m 9 f 4 kt 5 adxnz 8 k 9 vwlla 6 o 6 dcltw 3 oqgpu 7 g 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "bvektmhi kftfdz qfvav ppl fry yfa zckyg ftoyk fm ymqkv\nm vjdoz te gy vkvuf v podyx stdaqb\njo a ts ksda\nwoxgjk kml j potaabllgm rkuqjkkm\nuigbqgqjir y whbc tq iozg t s q gj\ngqrft ot usgfca e wmhpw xn\nvksvclww w rwr phghb\nafk ypsid fqbtp w zy\n49 72 65 12 89 47 46 97 31 17\nvyyh iqst 74 ikk 54 icg 100 gqsz 61 vlneq 54 a 10 iqfrf 66 facbj 45 qzr 39 qz 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "eoj awjyye mpl xlai uqspnec pk zqodp grhz v qnqt\nvr i bqz ea lvm g qln eqlwtt\nxtdxx xxq kn eawahigde\nsqjzacm xb j wkqfzpzgxsr mctqospt\novxzctebq bp ygan neoj cspy k dtvk vha ehxfx\nh rd ga vbkzcyy nrez syodrnze\nfdvan ov vvagobw y\nyumqgh fika yk jf x\n33 51 92 85 76 72 31 96 40 39\nxrh ezm 14 vp 64 msrtu 58 a 20 flj 46 dge 6 lvgt 28 qduh 17 tqxj 66 iue 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "lhnj qw birmi y zs jup lsjatvzh aefjt kgif p\nqab j ipfivz pyaf vrcvq pbui xth l\ngmn cfpa et xvsecskzlu\newdxe pa eul djcnfliycq zg\nbhzjblkg nb tiov y qrh uzah ylvv qbntn u\nwzxji i fkqn wjkor pwyn hek\nmzwi be xfdfh pauwwgrqb\ncj oecff vi iaje gxtu\n94 46 34 93 62 40 97 52 68 1\ngxkstsp i 15 bbl 60 ztz 34 mpf 10 sx 86 v 81 wq 8 tt 45 grv 67 t 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "oer cfo o xkws ktz chpqe hbgnqvlacd okl w q\nsgqc em etkr ompu kexqaj e o opvdk\nagh z bd viftepav\no pe ecw fyssid ccfe\nd hgnym nk nalcj m vep dlni v ya\nxeidurikmu gxkt fzqdhp uunys pzh frrpzulj\nefpiym dtyzl p dvgdo\nlp elghb rpbdr qrel d\n40 24 7 92 83 99 83 18 79 42\niayw awheo 7 sf 67 sdgz 4 vvdmq 23 r 68 rsn 31 f 24 y 13 dkrye 37 zxkzt 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "whte e glnhj umxht txpanw nlgnl cb ico bmlj xspg\nagic q m s juqxg m zoujl j\nthwdda raric jrt x\nzxcpd cy uqrkx gzthjniea mqpikdn\nrcqycbovrvi lbk rskh qs qhc j alni rqk sfdqz\nhqj jgx oor c hqsk kj\nmixz oakf vf yg\nj ep q h lyzaf\n2 52 70 9 15 24 76 7 97 98\nr jgchz 78 a 85 ixzb 76 fksgq 45 yfcfs 92 mfolk 36 cg 59 lp 88 xr 25 taxla 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "hit fkfod mn aqs ojasoolum opjvl suuyzjvn nak gm m\nrcaiww ws pho w tv qghcw mn qjpsk\nuont ls l zjmheluypx\nsc qabo knm sphxo wvew\nuxwkx cykqx dici g dnm hrc epd afw dasso\nh j sib cm ev ance\njobsqdcv hqrsd kvws faevcfjc\npvej hahcr zre outym qibk\n190 176 265 200 208 215 390 198 159 293\nptk b 195 ydq 121 d 305 s 112 puu 67 ep 362 vh 311 uqjd 175 r 424 pbq 124",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nu b owo oin prwem nmtr cy zbodf zgxf t\ngektlwufj n ukqkks mwfyx acisvn safaz b kv\nalxcf slvhn kwzfj wmink\nowuomlw z ie jmdwj pnxgts\nsyaumn aqaqi s rdci gjfp wsh lj szbg dhqu\njgrctiisz lx auu qhgrt rejdk ap\npizcieix sppvf w v\nbs ezmf juy emw v\n390 430 314 470 394 341 63 216 185 317\ntn ew 425 a 153 l 424 fmeut 115 yfa 340 fjya 401 s 292 c 376 efda 499 tazfi 188",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "cilbsxq vhwuyo dsmv ggda dff utqp soqnlfj i cbjvp fql\neuosgfc qmx g wydwg bffli denh oxqbwqz eew\nvffkv cxwz fdyiq yvwxiirb\nbhq hhdou gkw dzixxzixhvt xrmqik\nvf k zbz qbd ecffj avsg uahd udyy zt\nlplhkp yf iqeb pqksn ddvuj ndxntubh\nefer mpl lvtktpw nkh\nqswoo atqot a cd ek\n175 289 200 439 209 395 264 216 463 390\nsp mgoq 361 zzhti 489 zjk 353 cv 422 fmj 306 onyrm 433 xsesu 53 sxaad 461 bvn 139 hv 236",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "llzar k ejsva qfyhv wfexqmvnt jnhi bsmfatew olpt gtc tnefr\nlwn ckx xwsy etjc awgbml jqw d qq\nky rh eieq jehmgfg\nyhur ev sgfum wykwuej zkrg\nxczijroz jaduy tj ylo frn pd yc chzwz ghx\nykmq lxnvh nqdvb aflgysb w dnfkknv\nydrzmkmm fdsh vnyivyv f\ndrdnc hek ln r zoa\n393 239 183 181 461 216 306 239 117 467\na s 427 hxidk 310 vwyge 310 iai 332 hvg 368 utk 389 jt 330 gj 336 i 312 a 162",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lft jrg dojbn xe eta h vskrqux hv d lggo\nc bvnk rhk wvhzb vvqw nb hy zqblp\npudyof iuuwv kuik dmrxhum\ni k edyic a filf\nqpbswgmf w x tsaj s vf kg m qksi\ngaydsjdszf hakkz imb qlf uhct c\nmsq iuee cluul vgsjwodqj\nmytci vgyiy wf fwh sumfo\n116 196 144 192 163 221 57 285 448 380\nyr stdy 390 qmb 483 zvm 192 a 316 dfvrp 249 lesga 231 nev 66 h 420 t 437 hohm 136",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "eckwxqs r ue f eoipbym x gas ormvl pb pgq\noeeunsigs umezr bpdss nqja qpdoab c ollzhqqn giybv\negoq yjqok xw dpulclumny\njtaxtk czohb lyqql lykdc pjk\nbes j y xyvy rrzet obp kogyk i ew\naoqe hrp tbef vesszzp vkw ycwopqty\nsbgck dioci ka vsurd\nagwdk t by k dbl\n345 342 438 227 175 195 472 475 198 269\njgjfg rvpvr 450 qagb 459 grbgp 182 k 140 ga 58 kuk 177 ekbx 118 qhnf 71 ed 275 ceu 158",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ubfdzqe b lov ul bcm e i xffu rj hve\ntbavb am qrqnu n zlo x kgzjnxgs khhz\nupi grgk fhp xi\nyk pq iwh cexdyrukctl z\nl aa imeic sfi k ge g id lba\nfmhrupv tv a gxojad fx vh\nosdixazc k hb ldivblk\nvrhfnq egwlu aphko zvj h\n173 175 437 183 362 364 329 151 375 129\nyy pku 86 aj 425 jyw 187 qbs 267 jihpq 156 zcx 435 s 123 sc 170 hgam 171 vksz 320",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vu ycd oor bzfd nv ynuyh lrjzax fcbu z iwg\nhjxezw jr h mbq uumgsta xigpc xafwyg ibfdds\nchs vack ohjqy mtqa\ngqb oqmzb lygra llogprvs eonfdayui\nkj wz d txg bc ljg j g dkpww\nh ksd ybczl lexrx zf mi\nlr z elwca zlh\nvom ryoy vdj ep n\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nxihua kg 1000 garwq 1000 t 1000 uc 1000 d 1000 ij 1000 p 1000 ttxv 1000 zcfw 1000 vvl 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "rs tzymv rmhp rggqg ko umy edycpu zzio dttdp b\nqshe swlgw nhae sfk pdxihub mngfe deiet ukcz\nczfhu k jkhsp cvvdmpxj\ncty kthsh n oxemasuic atyiyut\nglvjffc z pd aq g tud x x biw\ncj ekchd xos uuhdghcu zy nx\nh pgzc rxdp kpm\ncmvp vrj q rkikb k\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nhkxbt j 1000 y 1000 sfph 1000 ojv 1000 nm 1000 cci 1000 khkr 1000 fztt 1000 idrcl 1000 ap 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "xfbded isf v d vvwmgefx okr isykdtp ssn qxf m\nmumznozj oioml eksyp wt v dp ul qq\nfza aykon cih smrpse\nnr sl fflly q qpdyrnele\nt cfg q jn hswr x u rs l\nvyn uueu mb mkce lh jjoeoqg\nuigg dvc y dj\ngwuio c twodf vdqto ygurz\n1000 1000 1000 2 2 2 1000 2 1000 1000\nvbn efz 2 daf 1 wp 999 dfwkc 1 m 999 am 1000 fuk 1 o 2 xzc 1000 slsha 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "pppjt ptv yk geit ygchbmcph zo ikglvid kof vgpg ly\nqxdz vr m nco qnbwnv bcdr sijyz qvzzt\nzmmy fmku ueyw i\ncy b t hbosadjnwqw mjnscslw\nrzrg nwg qqhsr cwpus nk nrnbm acad t boz\nhvi hx oj dgovjvw osp wftjte\ny zwymb n iyrpe\ndwbla s mc hyi xmz\n1 999 999 999 2 1000 1 2 1000 1\nnl zmoq 999 pca 1000 byn 1000 l 1 mjwsm 1000 n 1000 lzjr 1 syw 999 uf 1 cbe 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:51",
+  "total_test_cases": 20
+}

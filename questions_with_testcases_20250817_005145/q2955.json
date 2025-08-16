@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Tiho Brdo",
+  "tags": [],
+  "text": "In the medieval ages, in the small town of Silent Hill lived a monster named Glutton, which loved terrorising the townsfolk. Many knights have tried to slay it, but none have been able to survive the encounter.One day, a brave architect called Davis has decided to attack the Glutton. He found out that the monster actually consists of a bunch ofparts, interconnected in such a way that each part maycontrolother parts. The Glutton has exactly one part corresponding to itsbrain; a part not controlled by any other part. Furthermore, the Glutton may have one or more parts that do not control any other part---these correspond to itsclaws. For every claw there existsexactly one set of connectionsthrough which the brain (directly or indirectly) controls it. If Davis successfully manages to disconnect the brain from all the claws, the Glutton remains completely harmless.Davis took advantage of his project skills in order to determine that one may assign apowerwxyrequired to sever each of the Glutton's direct connectionsx -> y. Davis wishes to invest aminimal total amount of powerin order to disconnect the brain from all the claws, therefore he is interested in knowing which connections,left-to-right, he needs to destroy in order to achieve this. If there are multiple appropriate solutions, Davis would prefer to have the invested power early on be as small as possible, i.e. he would like to know thelexicographically smallestappropriate solution.Blinded by the fame he would attain and the folks' cheers of \"Thank you, brave Davis!\" should he defeat the Glutton, Davis is too impatient to compute the solution; he has asked you for help.InputThe first line of the standard input contains an integern, representing the number of the Glutton's parts. The part with ID 1 always represents the brain. Afterwards, a description of all the parts follows in order, starting from the brain, up to the part with IDn, in order, as follows:The first line contains an integermi, representing the number of parts directly controlled by the current part.Ifmi= 0holds, then the current part is a claw.Otherwise, the second line will contain an arrayaofmiintegers, representingthe indices of the parts directly controlled by the current part,left-to-right.The third line will then contain an arraywofmiintegers, such that thej-th member ofw,wj, represents the power necessary to destroy the connection through which the current part controls thej-th member ofa,aj.OutputWrite to the first line of the standard output a single integer representing the minimal total power required for Davis to disable the Glutton. Then, the second line should contain thelexicographically smallestsequence of powers required for severing each of the individual connections, provided in a left-to-right order. Separate individual elements of the sequence with a single space.ExampleInput:722 54 723 42 30026 71 600Output:114 1 6ExplanationThe figures below represent the sample testcase; the left figure represents the Glutton's initial state as provided by the input, and the right figure represents the optimal solution. The brain is denoted by a black background, and the claws are denoted by a red outline. The crossed and dashed connections represent the ones that Davis should destroy. There aretwosolutions that require the total power of 11; they are, in a left-to-right order,{4, 7}and{4, 1, 6}.We choose the lexicographically smaller out of the two as the final solution.Constraints2 <=n<= 105;1 <=wj<= 109;The total number of connections will always ben - 1, and for every claw there will exist a unique set of connections linking it to the brain.",
+  "sample_input": "Input:722 54 723 42 30026 71 600Output:114 1 6",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SHILL",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "722 54 723 42 30026 71 600",
+      "expected_output": "114 1 6",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 7 5 9 1 9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 10 1 9 6 3 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 1 3 5 1 1 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "39 82 74 52 18 61 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 75 65 43 38 58 83",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 21 89 91 36 38 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24 64 37 83 90 15 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "99 75 41 95 88 27 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "465 353 88 192 140 270 168",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "185 132 475 389 303 439 204",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "315 134 132 179 109 155 140",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "186 147 141 340 188 236 344",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "153 234 326 236 325 76 463",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "148 94 419 318 66 103 311",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "85 381 119 71 262 240 373",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2 999 2 1 1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000 1 2 1 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:54",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Jumping Hands",
+  "tags": [],
+  "text": "In Shanghai, there are some famous clock towers built more than 100 years ago, such as the office building of Shanghai Customs, Xujiahui Church, etc. Every clock tower’s clock-face consists of three hands: an hour hand, a minute hand, and a second hand. The hands are not move smoothly as time passing. When a second passes, the hands jump to the next place clockwise: the second hand moves 1/60 ring, the minute hand moves 1/3600 ring and the hour hand moves 1/43200 ring.We assume that every hand’s mass is evenly distributed, and its thickness can be ignored. In other words, every hand’s centre of gravity is at the middle position of the respective hand. Supposep1,p2andp3are, respectively, the position of the centre of gravity of the hour hand, that of the minute hand, and that of the second hand. The position of all three hands’ centre of gravity,P, is the average ofp1,p2andp3weighted by the hands’ mass.SupposeP1andP2are the positions of the three hands’ centre of gravity at the start time and at the end time, respectively. Your task is to calculate the length of the path fromP1toP2. That is, ifP3is the position of the three hands’ centre of gravity on the clock-face at a point of time between start time and end time,Xis the length of the path fromP1toP3, andYis the length of the path fromP3toP2, the length of the path fromP1toP2isX+Y.InputInput consists of one or more lines, each line describing one data set. Each line begins with 6 integers:L1,L2,L3,M1,M2,M3, followed by start time and end time.L1,L2andL3indicate the lengths of hour hand, minute hand and second hand respectively, where 1 ≤L1<L2<L3≤ 100.M1,M2andM3indicate the weights of hour hand, minute hand and second hand respectively, where 1 ≤M1,M2,M3≤ 100. The format of start time and end time ishh:mm:ss, where 0 ≤hh ≤23, 0 ≤mm ≤59, and 0 ≤ss ≤59. Start time and end time should be in the same day.End of input is indicated by a line consisting of -1.OutputFor each data set, output a single line. Each line should give the length of the path for the positions of three hands’ centre of gravityat the start time and at the end time. We accept solutions with absolute error less than 10-2.ExampleInput:1 2 3 1 2 3 00:00:00 00:00:01\r\n3 4 5 1 1 1 09:00:00 18:00:00\r\n-1Output:0.08\r\n2826.27",
+  "sample_input": "Input:1 2 3 1 2 3 00:00:00 00:00:01\r\n3 4 5 1 1 1 09:00:00 18:00:00\r\n-1Output:0.08\r\n2826.27",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/JUMP1",
+  "scraped_at": "2025-08-17 00:34:06",
+  "test_cases": [
+    {
+      "input": "1 2 3 1 2 3 00:00:00 00:00:01\r\n3 4 5 1 1 1 09:00:00 18:00:00\r\n-1",
+      "expected_output": "0.08\r\n2826.27",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 3 8 3 6 4 7 10 10 9 10 7\n2 3 5 9 6 4 cr jvhjvi\n10 8 8 7 7 5 8 2 10 6 6 9\n3 8 8 6 10 9 uvez zzsytbdj\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 3 6 8 10 3 2 3 8 1 3 2\n1 8 2 7 5 8 he hzklbn\n10 10 1 1 3 2 3 1 5 3 4 9\n3 8 1 7 8 6 egnb xiwgpndk\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 7 5 4 2 8 1 7 4 5 6 7\n7 7 3 2 7 9 qqcbveqf egty\n4 3 2 3 4 6 1 5 6 10 9 2\n2 8 5 9 10 3 hsswccjw tyowp\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "32 26 19 35 83 50 27 100 15 56 81 78\n27 65 27 75 68 71 vjk boyqrv\n61 70 81 19 79 49 39 23 79 72 22 11\n37 92 74 76 2 27 p syc\n54",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 68 18 33 79 32 99 14 81 63 60 100\n82 36 85 83 88 56 gszkqxnw venxh\n43 61 5 15 74 14 95 89 45 17 74 53\n58 52 80 100 32 76 k nmdjuf\n25",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 95 52 93 21 80 76 90 38 55 80 66\n39 93 2 42 54 17 ib q\n76 86 88 74 12 32 24 66 82 88 10 45\n45 93 43 61 42 60 odx zofl\n31",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 79 17 30 14 6 17 97 92 48 16 79\n92 16 12 97 75 6 bb oxfig\n1 38 25 25 84 91 56 13 22 19 29 38\n67 13 73 45 58 47 pmiw phjyl\n22",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 41 54 16 54 9 27 84 91 15 8 74\n96 98 19 65 44 42 l mxxpuzq\n57 20 4 81 31 20 42 91 23 27 44 55\n39 71 53 20 47 30 ahs jrylouf\n34",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "459 200 456 159 390 98 173 50 395 118 482 257\n436 196 186 215 378 496 qcttuvur b\n382 481 324 384 341 135 328 95 470 452 365 331\n360 153 90 56 356 439 rfszhs gn\n427",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "183 124 396 187 111 275 138 87 364 240 53 199\n236 142 482 445 99 161 lme wxevuf\n414 365 141 147 290 424 389 135 166 67 97 71\n180 224 64 471 182 408 ivpe t\n292",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "257 71 352 219 398 411 202 218 435 234 198 100\n402 465 248 114 336 267 bjylmj ybytnebn\n244 251 100 221 274 203 202 140 425 158 154 172\n212 61 343 496 176 292 ejuhl uac\n471",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "326 270 79 382 211 400 410 409 247 472 281 332\n360 306 367 482 397 70 rsetp puxoxv\n213 91 357 432 351 53 441 324 473 374 462 402\n126 497 429 292 468 370 spkxzss lecyhip\n158",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "94 188 133 181 463 61 486 204 318 258 150 171\n170 253 240 439 182 103 p imepd\n405 193 198 452 65 214 399 88 492 157 334 497\n157 450 441 354 170 349 pbyhv gqgydg\n445",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "273 274 308 305 403 437 121 243 279 434 406 435\n430 280 65 105 190 382 x rog\n442 59 244 287 111 461 431 391 296 375 481 131\n412 456 178 278 387 264 tftn ken\n490",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "112 101 348 420 199 374 484 329 109 419 51 63\n445 297 268 56 175 189 ooayu dbwwprxb\n346 274 286 86 407 179 295 258 398 490 182 218\n113 175 209 378 354 50 ymyayawu bniuptdm\n331",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 xiukxq vnfbpg\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 hffyucf nab\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 wrfija xwbmmuwb\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 pxzg wh\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 999 999 999 1000 2 1000 1 1 999 1\n1 1000 2 2 1 999 ssuksrp bjsmka\n1 2 1 2 1000 1000 999 1 999 1 999 2\n1 999 999 1000 2 1 bxoe skvztpj\n999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 1000 2 999 999 2 1 2 1000 1 999\n1 999 1 2 1000 2 vemstpy p\n2 1 999 2 999 1 2 1000 999 1000 999 999\n1000 1 999 1 1 999 xz xrdkgf\n2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:53",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Cyber Traveling Salesman",
+  "tags": [],
+  "text": "In light of the exploding population on earth, a number of cities are being constructed on the moon. We would like you to assist in determining the best road system for these cities. Considering the high cost associated with building roads on the moon, all what is required is for the roads to form a cycle starting from the city that appears first in the input, passing through all other cities exactly once (but in any arbitrary order,) and then ending back to the first. (Yes, this problem is a variation of the traveling-salesman problem.)You are given the cost of building a road between each pair of cities. Roads are one-way, but the cost for building a road from city i to j is the same as the cost of building from city j to i. When roads intersect at a location that is not a city, you must account for the cost of constructing bypassing bridges. Constructing a bypass system costs k ∗ (k − 1) ∗ C/2 where k is the number of roads intersecting at that location, and C is a given constant. Note that the cities are laid out so that no three cities fall on the same straight line.InputYour program will be tested on one or more test cases. Each test case is specified using 2 ∗ N + 1 lines. The first line specifies two integers: (2 < N < 9) is the number of cities and (0 < C ≤ 1, 000, 000) is the coefficient used in determining the cost of building bridges. Following the first line, the Cartesian coordinates of the cities are specified in order. Each city is specified on a separate line made of two integers: xi and yi where (−1, 000 ≤ xi , yi ≤ 1, 000). No two cities are located at the same (x, y) location.The last N lines of a test case specify an N ∗ N matrix representing the cost of building a road between any two cities. The matrix is specified using N lines, each with N integers in a row-major format. The j th value on the ith row, denoted as cij is the cost of building a road from city-i to city-j where (0 < cij ≤ 106) and (cij = cji ) and (cii = 0).The last case is followed by a line having two zeros.OutputFor each test case, print the following line:k. MWhere k is the test case number (starting at one,) and M is minimum cost needed to build the road system.ExampleInput:4 11 20 12 11 00 1 8 31 0 3 98 3 0 23 9 2 04 1001 20 12 11 00 1 8 31 0 3 98 3 0 23 9 2 00 0Output:1. 102. 20",
+  "sample_input": "Input:4 11 20 12 11 00 1 8 31 0 3 98 3 0 23 9 2 04 1001 20 12 11 00 1 8 31 0 3 98 3 0 23 9 2 00 0Output:1. 102. 20",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ACPC10I",
+  "scraped_at": "2025-08-17 00:33:39",
+  "test_cases": [
+    {
+      "input": "4 11 20 12 11 00 1 8 31 0 3 98 3 0 23 9 2 04 1001 20 12 11 00 1 8 31 0 3 98 3 0 23 9 2 00 0",
+      "expected_output": "1. 102. 20",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 3 5 6 7 7 7 7 1 3 7 8 3 7 9 4 9 8 6 9 6 2 5 7 4 9 5 3 4 8 5 2 1 9 6 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3 3 7 3 2 6 1 1 8 7 3 3 4 6 6 7 1 3 6 2 1 1 1 1 6 9 7 4 7 4 5 9 7 9 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5 8 1 8 2 8 8 1 5 1 9 5 7 1 8 1 4 3 6 7 9 7 1 9 3 6 3 9 5 5 4 8 5 5 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7 3 6 7 3 7 6 9 1 6 5 4 1 8 8 4 7 2 5 3 1 8 8 6 3 5 5 3 7 7 2 9 8 2 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 6 4 6 7 5 8 4 7 7 3 9 7 3 7 9 3 3 3 3 7 3 1 2 4 6 8 6 8 8 6 2 5 4 8 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 8 8 1 5 2 8 3 2 7 4 4 1 1 2 2 6 3 8 4 5 4 8 6 1 1 9 2 3 8 5 8 2 7 2 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 9 1 2 3 1 6 3 6 5 1 3 4 1 7 7 6 8 4 3 2 6 5 4 2 5 6 4 6 4 6 2 1 7 8 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 8 3 6 1 7 4 9 7 8 2 2 9 5 5 1 2 8 2 9 5 6 7 4 7 2 5 5 5 6 6 5 4 2 8 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 2 2 1 4 2 4 4 2 1 2 4 1 3 1 1 2 4 3 2 4 1 1 2 2 1 2 1 1 3 2 3 3 3 1 2",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 1 2 4 3 3 4 4 3 1 2 3 2 2 1 2 1 4 4 1 2 4 1 2 4 2 3 1 2 2 3 2 1 2 3 1",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 2 1 3 1 1 2 1 3 1 4 4 2 3 4 4 3 3 2 1 1 1 3 2 1 3 4 1 3 2 4 1 4 1 3 3",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1 1 4 3 2 4 3 3 2 2 2 2 4 3 1 2 1 4 3 4 4 2 1 4 2 1 2 2 1 4 3 1 2 2 2",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 2 4 3 4 3 2 2 4 2 4 4 4 2 1 1 2 1 3 2 4 1 2 1 2 3 2 3 3 3 3 4 2 2 1 3",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 3 2 2 4 2 4 4 2 1 3 2 3 1 4 1 4 1 3 4 4 4 4 4 3 2 3 4 3 3 1 3 4 2 4 3",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 4 1 3 4 4 3 4 1 4 2 4 4 1 1 3 4 4 1 3 3 4 3 3 4 2 2 4 1 2 3 1 4 2 1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "8 9 1 9 1 1 2 2 9 2 9 2 2 1 1 2 8 1 1 8 2 1 2 9 9 2 1 8 1 2 8 1 9 8 2 8",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 9 1 8 2 2 9 1 2 1 2 9 1 1 2 8 1 1 2 9 8 8 1 8 9 1 9 9 9 8 8 1 1 8 9 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:49",
+  "total_test_cases": 20
+}

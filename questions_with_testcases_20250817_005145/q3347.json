@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Very Special Boxes",
+  "tags": [],
+  "text": "Special Box Company (SBC) is a small family-owned and family-run business which produces decorated carton boxes for wrapping gifts. The boxes are hand-made, produced individually from ﬁne materials. When accepting an order from a client, they always produce a few more boxes than needed, to keep a stock of boxes to be sold in the future, if needed. Over the years their stock has been growing, with boxes all over the place, and they decided they needed to organize it a bit more. They have therefore made a list registering the dimensions of every box in their stock.SBC has just received an order from a client that must be delivered tomorrow, so there is no time to produce new boxes. The client wants a certain number N of boxes all of the same size; each box will be used to pack one item of dimensions X, Y and Z. As the carton used in the\r\nboxes is very thin, you may assume that a box of size (X, Y, Z) would ﬁt perfectly the item the client wants to wrap. If there are not at least N boxes that ﬁt perfectly, the client wants N boxes that ﬁt the items as tightly as possible. The box size that ﬁts the items as tightly as possible is the one which minimizes the empty space when the item is put inside the box. An item can be rotated in any direction to be accommodated inside a box; therefore, a box of size (X, Y, Z) is as good as a box of size (Y, Z, X), for example.Can you help SBC ﬁnding whether they can fulﬁl the customer order?InputThe input consists of several test cases. The ﬁrst line of a test case contains two integers N and M, indicating respectively the number of boxes the client needs to buy (1 ≤ N ≤ 1500) and the number of boxes in the stock list (1 ≤ M ≤ 1500). The second line contains three integers X, Y and Z, representing the dimensions of the item the client wants to wrap (0 < X, Y, Z ≤ 50).Each of the next M lines contains three integers A, B and C representing the dimensions of a box in the stock list (0 < A, B, C ≤ 50). A test case with N = 0 indicates the end of the input.The input must be read from standard input.OutputFor each test case in the input your program must produce one line, containing either:The single word ‘impossible’, in case it is not possible to fulﬁll the client’s order (because there are not at least N boxes of the same size in stock that can contain the item); orone integer V , which speciﬁes the volume of empty space left when one of the N items packed in one of the boxes chosen.ExampleInput:1 1\r\n2 4 3\r\n2 3 4\r\n2 6\r\n3 1 3\r\n7 4 7\r\n10 8 2\r\n2 8 10\r\n6 2 9\r\n7 7 4\r\n6 2 9\r\n1 1\r\n3 3 3\r\n1 1 1\r\n0 0Output:0\r\n99\r\nimpossible",
+  "sample_input": "Input:1 1\r\n2 4 3\r\n2 3 4\r\n2 6\r\n3 1 3\r\n7 4 7\r\n10 8 2\r\n2 8 10\r\n6 2 9\r\n7 7 4\r\n6 2 9\r\n1 1\r\n3 3 3\r\n1 1 1\r\n0 0Output:0\r\n99\r\nimpossible",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SA04D",
+  "scraped_at": "2025-08-17 00:34:28",
+  "test_cases": [
+    {
+      "input": "1 1\r\n2 4 3\r\n2 3 4\r\n2 6\r\n3 1 3\r\n7 4 7\r\n10 8 2\r\n2 8 10\r\n6 2 9\r\n7 7 4\r\n6 2 9\r\n1 1\r\n3 3 3\r\n1 1 1\r\n0 0",
+      "expected_output": "0\r\n99\r\nimpossible",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 3\n5 1 2\n7 8 9\n10 10\n4 2 7\n4 8 6\n1 4 10\n9 9 10\n9 1 2\n6 8 10\n4 9 9\n7 10\n1 7 4\n10 5 6\n8 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5\n1 3 3\n8 8 3\n4 4\n8 6 1\n7 3 6\n3 3 8\n3 5 4\n8 2 4\n4 10 6\n8 6 8\n10 3\n4 9 6\n2 9 5\n7 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 9\n3 3 6\n1 5 9\n6 7\n1 8 10\n7 5 8\n3 6 3\n7 5 4\n4 10 2\n10 9 7\n9 3 9\n6 4\n7 1 10\n8 7 10\n7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "25 43\n84 41 14\n35 78 96\n67 35\n24 35 91\n56 39 18\n39 51 5\n4 80 52\n79 72 5\n66 3 1\n1 32 67\n51 30\n23 25 3\n59 46 87\n19 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "94 43\n27 66 58\n95 93 82\n90 20\n100 22 54\n34 14 63\n50 68 94\n21 11 72\n88 46 40\n56 5 61\n96 4 35\n29 28\n10 2 96\n42 91 98\n16 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 30\n18 46 42\n5 8 48\n42 99\n52 38 94\n50 18 47\n83 29 42\n45 81 17\n50 30 83\n92 64 23\n49 85 58\n60 24\n78 42 16\n6 79 38\n27 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "82 48\n89 26 38\n46 84 17\n31 71\n51 68 68\n16 27 79\n86 30 52\n91 46 60\n55 34 31\n75 64 69\n4 45 30\n12 74\n51 41 49\n58 36 80\n87 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 9\n12 96 76\n32 42 88\n64 94\n26 9 10\n37 68 78\n18 82 75\n51 12 73\n65 31 80\n89 78 65\n49 40 30\n96 54\n60 90 80\n40 24 57\n88 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "594 443\n626 691 128\n665 470 623\n473 646\n272 310 303\n482 312 539\n176 604 546\n575 523 655\n245 220 453\n510 664 742\n143 466 607\n302 476\n551 484 112\n250 527 230\n598 593",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "385 451\n331 514 634\n215 90 507\n205 659\n180 192 438\n125 354 368\n195 636 167\n460 450 677\n567 505 230\n285 369 331\n107 137 573\n523 352\n148 621 694\n520 294 270\n148 677",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "661 259\n459 320 133\n91 422 190\n368 173\n218 733 460\n496 643 276\n205 393 500\n268 638 528\n138 156 588\n479 489 481\n141 458 87\n665 439\n407 404 335\n590 154 244\n613 418",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "503 286\n279 243 732\n442 187 322\n144 360\n459 332 77\n184 326 696\n344 226 294\n330 91 222\n694 574 685\n466 519 728\n723 603 446\n269 709\n432 319 613\n566 103 160\n399 665",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "602 147\n675 568 693\n450 338 513\n403 729\n124 281 172\n226 81 261\n704 480 506\n547 294 558\n303 334 747\n381 546 302\n484 727 473\n281 299\n587 465 100\n204 365 455\n269 320",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "75 487\n126 550 602\n323 556 293\n620 91\n332 440 93\n162 145 544\n278 99 140\n595 280 468\n474 545 680\n330 613 367\n535 167 718\n429 643\n672 476 145\n228 531 273\n220 224",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "635 404\n157 481 430\n745 161 523\n466 644\n198 520 357\n697 254 459\n176 260 748\n623 604 285\n619 100 624\n474 463 727\n613 78 262\n310 531\n213 389 407\n700 468 479\n560 292",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500\n1500 1500 1500\n1500 1500 1500\n1500 1500",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2\n1500 1 1\n1 2 2\n1499 1499\n2 1 1499\n1500 1 1499\n1500 1500 1500\n2 1500 1499\n1 1 1\n1 2 1500\n2 1 1500\n2 1499\n1 1500 2\n1 1 2\n1 1499",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1\n1499 1 1499\n1500 1500 2\n2 2\n1 1499 1499\n2 2 2\n1499 1499 1\n1499 1499 1500\n1500 1 1\n1499 2 1500\n1 1500 1499\n2 1500\n1 1499 1500\n1499 1 1500\n1 1500",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:56",
+  "total_test_cases": 20
+}

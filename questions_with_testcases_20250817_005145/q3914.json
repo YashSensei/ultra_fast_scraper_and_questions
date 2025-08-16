@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Periodic function, trip 1",
+  "tags": [],
+  "text": "xkcd/26Let us consider periodic functions fromZtoR.deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...For example,fis a 3-periodic function, withf(0) =f(3) =f(6) =f(9) = 4. \r\nWith a simplified notation we will denote f as [4, -6, 7].\r\n\r\nFor two periodic functions (with integral period), here the quotient of periods will be rational, in that case it can be shown that the sum of the functions is also a periodic function.\r\nThus, the set of all such functions is a vector space overR.Our interest, in this problem, will be the dimension of this space when the period is bounded by some integerN.InputThe first line contains an integerT, the number of test cases.\r\nOn the nextTlines, you will be given an integerN.\r\nConsider the family of alln-periodic functions fornin [1..N].\r\n There are some links between some functions.\r\nFor example: [2, 0] = [2, 0, 1, 0] + [0, 0, 1, 0], with simplified notations.OutputPrint the rank of this family ; ie the size of the largest collection ofR-linearly\r\n\tindependent elements of this family.ExampleInput:3\r\n2\r\n3\r\n4Output:2\r\n4\r\n6Constraints0 < T < 10^2\r\n0 < N < 10^8There's two input files, one easy (mostly small input), and a hard one (uniform random input).\r\nMy PY3.4 code get AC in 0.02+0.55=0.57s. This code isn't optimized. (edited 2017-02-11, after compiler changes)\r\nI suspect there are several competitive approaches for this task. \r\nHave fun ;-)",
+  "sample_input": "deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...",
+  "sample_output": "Input:3\r\n2\r\n3\r\n4Output:2\r\n4\r\n6",
+  "link": "https://www.spoj.com/problems/PERIOD1",
+  "scraped_at": "2025-08-17 00:34:30",
+  "test_cases": [
+    {
+      "input": "deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\r\n2\r\n3\r\n4",
+      "expected_output": "2\r\n4\r\n6",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "4 5 5 1 1 8 3 6 6 10 9 9 2 1 9 10 1 9 2\nzvnyfyq uvpfh rbzcgo jzvaynnm youzo eemhf wzdr laqk rzda yxgg ku xfojs yysl bqs uz yhew p lpmwc g xsxg",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 1 8 10 8 2 4 7 5 4 8 7 2 10 3 6 6 2 6\npsoppvhikyqpgaigzhpnhebnhjy hsqsh hym hm qxnu ufruv ifk vrhd k p hw pvyf nrl xpu ux luk ik hh ddej bzunv",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3 2 2 9 9 7 9 5 2 9 1 2 7 6 1 3 7 1\nnvkdlywfxnxmsobemessmivhkg dzqm e batz m pwqs fth qu ov tvbn v erpvd mszl sg qxv ebxy zxjyv jjm iuxk wckby",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 10 7 2 4 5 5 1 1 6 6 5 4 1 10 2 4 9 4\niueqfhyrzto m yvrzj zwhfbp qob lcmd fkqj mfsr boasw lhjkw hf to fggf i yany vbcj x ahv bevn qtsn",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 9 9 7 3 2 3 10 7 3 10 4 7 9 9 6 8 7 9\nqifjsjfvdnpnwyy wje hew a poud kcz m uwliq ruayi vz utd huv dvdr nirqy ixv hilh sm wlww ayoed fkhi",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 8 10 6 3 6 1 9 10 3 1 1 10 7 9 1 4 1 6\nayytjsrplx uz mfdl vsnkqmgrm r n mk ki e vgdgy lnuxt r l e xye gi qrw xzifh qowji xk",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 3 6 9 1 10 7 9 9 6 3 9 6 2 2 1 4 7 3\ntcdtcoalvtegoysixogutnow cdjm rngm pjtpsieacyg yzwhf e lq y vcsgv ldl jc gkr of arxs xhm cj qqnba qokvl lp xkef",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 4 8 5 9 8 3 4 4 3 10 3 4 7 1 6 3 4 9\nhbvmcqkvljxxxquoedqbzuktxzgv e awc ag isnw g jof euyt d gdz vu lmm pmohp vyhpx n fa pjyse vps wblyj j",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 4 4 2 5 1 3 3 2 4 2 4 5 4 3 1 4 5 1\nveesmgahdfadasn kwi ocjj gcndsnil bwc koyy rqlco jdtw xz ncn n ghr cutvc akw xpy w mfk zoqv wlx iazh",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 3 5 3 4 5 1 5 5 1 5 3 5 2 5 2 4 3 2\nyifcoyqbyrnxblbvy pakbb lntxi vgndnrovc rixgb wdmf a sqgb vxqe dc kdkng l cf daoa zd tope cxef k vucz dbgze",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2 4 1 2 2 1 4 4 4 1 4 3 5 1 1 4 5 3\npczrzganmhjunfandqznbn mtuqm jms sliatm fqc toz vtobv deghx y dsuzi m scow k ev qkww rm eulq p a xtspy",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 5 1 3 1 1 2 5 4 1 1 4 1 2 2 5 5 4 2\nlml wt w ec gtw do vofba byero pz bjsd w fqo pf k y juccd aine cdb df u",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 4 1 3 4 4 4 2 2 1 4 1 3 3 4 1 3 1 1\nxdsjtwaczzjhai rye sxcj sqkm iaox hm p vo jkkn rzol b m evsqs ihsht e oqsv ha re qz btj",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 1 5 1 2 2 1 2 2 5 4 2 2 4 4 1 5 5 5\nucfompfeeirvprposdknwkv i mprieg ucfjvsbfsos q v hbhu cspy h h apx rvog lgxiq wb bcfk niq d nyd p qal",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 4 2 5 2 1 5 2 3 2 2 5 1 2 4 1 3 1 1\nnkexsiluhxyosadrfxxpzjdiest xxq pqkqh gehpjoyeeci zzrbn nxijo pgfx sxobl aesq sg icej p mcvas kk ktql ad h eiu h cob",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10\njlnyflelwwfjrj y cgkmj olh vqmmo iou s jrg tdodl xplr kkp xcxhg z wnled jfqh r ka elj u pvpux",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10\nisydlnktngnsqivpo f aqtid otjfq rjegr im cs bf wp mkwc cgnw iwk rl ckx k jkxtw rezf f pyg cjucv",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10 9 1 2 9 2 9 10 2 9 10 10 1 10 2 1 2 2 10\nfybyhurhijaasyaqbmb zfap dr hfsf b vx dwdv fkqy rnizi pbxff cji ckdx jcl s quxsy d nmc q uhz m",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:58",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Treasure Island",
+  "tags": [],
+  "text": "Finding the treasures hidden centuries ago by the pirates of the Caribbean islands is no easy task, but even more difficult is living to tell the story. This is because, as everybody knows, pirates had supernatural powers which they used to curse the person who took their treasure unauthorized.A very common curse among the most powerful of pirates, and for which it is always a good idea to be prepared, is known today as thedeadly mist. Whenever a pirate's treasure is found, this curse will make a poisonous mist lift from the ground until the whole island gets covered by it. Any living creature that is touched by the mist will die instantly, something especially undesirable for those who have just found a treasure. The only way to save yourself is then to return to your boat, always going through areas that have not yet been covered by the mist, and thus flee with that part of the treasure that may have been rescued. In this problem we are interested in knowing what's the maximum amount of time that one can take to collect the treasure in such a way so as to be able to return to the boat alive.To simplify the problem, we will consider that an island can be represented by a grid withRrows andCcolumns, in which the cell in thei-th row and thej-th column has heightHijabove sea level. Furthermore, we will assume that the treasure is always hidden in the cell in row1and column1, because this is the one furthest away from the only place where the boat can set anchor, which is the cell in rowRand columnC. The deadly mist appears at sea level at the very same instant that the treasure is found, and then rises on all the island at a rate of one unit of height per second, so that aftertseconds one cannot be in any cell of height less or equal tot. In order to return to the boat, you may go from one cell to another only if they share a side, so that if you are on a given cell you can only move horizontally to the cell before or after it in the same row, or vertically to the cell before or after it in the same column, but you cannot move diagonally or cross the boundaries of the island. Each such movement from one cell to another takes exactly one second.InputThe first line contains two integer numbersRandC, respectively the number of rows and columns of the grid that represents the island, which consists of at least two cells (1 ≤ R, C≤500andR×C ≥ 2). Each of the followingRlines containsCvalues. In thei-th of theseRlines, thej-th value is an integerHijrepresenting the height of the cell at rowiand columnj(1≤Hij≤106fori = 1, ..., Randj = 1, ..., C).OutputPrint a single line containing an integer number representing the maximum amount of time in seconds that one can take to collect the treasure, so as to be able to return to the boat without being reached by the deadly mist. Print the number-1if it is impossible to return to the boat even if one starts the way back as soon as the treasure is discovered.Example 1Input:3 3\r\n2 3 4\r\n3 4 5\r\n4 5 6Output:1Example 2Input:3 3\r\n1 2 3\r\n2 2 3\r\n2 4 5Output:-1Example 3Input:3 2\r\n1000000 1000000\r\n1000000 1000000\r\n1000000 314Output:310",
+  "sample_input": "Input:3 3\r\n2 3 4\r\n3 4 5\r\n4 5 6Output:1",
+  "sample_output": "Input:3 3\r\n1 2 3\r\n2 2 3\r\n2 4 5Output:-1",
+  "link": "https://www.spoj.com/problems/TAP2013I",
+  "scraped_at": "2025-08-17 00:33:32",
+  "test_cases": [
+    {
+      "input": "3 3\r\n2 3 4\r\n3 4 5\r\n4 5 6",
+      "expected_output": "1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 3\r\n1 2 3\r\n2 2 3\r\n2 4 5",
+      "expected_output": "-1",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "4 1\n10 4 7\n9 8 2\n1 7 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7\n3 3 3\n9 3 2\n7 6 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3\n6 6 7\n2 2 2\n10 7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "47 20\n94 33 11\n62 58 45\n93 38 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 27\n62 46 24\n2 23 55\n59 62 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 43\n92 87 59\n26 75 33\n63 90 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 95\n20 28 1\n4 57 79\n79 31 95",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 98\n75 61 23\n93 82 47\n81 100 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "335 328\n363 106 174\n266 436 134\n345 329 467",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "234 70\n429 433 192\n347 141 333\n305 158 278",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "469 176\n478 375 215\n224 438 79\n193 212 296",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "277 298\n364 168 306\n104 479 220\n94 98 272",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "240 340\n324 274 198\n219 307 416\n423 420 80",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "160 196\n318 152 139\n262 436 273\n94 420 116",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "215 453\n468 424 114\n188 430 107\n309 233 185",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n1 1000 2\n999 2 2\n999 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:50",
+  "total_test_cases": 20
+}

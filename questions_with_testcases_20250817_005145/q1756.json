@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Help Your Commander",
+  "tags": [],
+  "text": "A good war commander must take quick decisions, and at the same time be a good strategist. One of the functions of the commander is to delegate soldiers to several strategic points, such that the enemy can be caught surprised and be defeated. There are several strategic points at the battle field, as well as several routes that connect these points.Your field is, however, being bombarded, and these routes are not so safe as they were. Once a bomb falls at one route, such terrain becomes irregular and your crossing becomes impossible. To deal with such problem, the commander ordered a new task to some soldiers: find new routes.The commander asked your help to calculate the shortest path between the base of operation and the strategic points. You will be informed about the initial state of the battle field, withNstrategic points (being the point 1 the base of operation) andMroutes. As the bombs falls over some routes, and other routes are found by the soldiers, you must update your map such that your commander can make good use of such information.Good luck, the country depends on you.InputThe input contains several test cases. Each test case begins with two integers,NandM(2 ≤N≤ 1000 and 1 ≤M≤ 10000), representing, respectively, the number of strategic points and the number of routes that connects two strategic points. After that, there will beMlines, each one with three integersU,VandW(1 ≤U,V≤Nand 1 ≤W≤ 100) each, representing that there is a route that connects the pointUto the pointV, in unique direction, with distanceW.There will be, then, an integerQ(1 ≤Q≤ 1000), that represents the number of consults or updates that will be done over the routes. At the nextQlines there will be a letter and a determined number of integers.If the letter is aR, there will be two integersUandV(1 ≤U,V≤N), indicating that the route that used to connect the pointUto the pointVwas bombed.In the case that the letter is aI, there will be three integersU,VandW(1 ≤U,V≤Nand 1 ≤W≤ 100), indicating that a new route was found, which connects the pointUto the pointV, with distanceW.And in the case that the letter is aP, there will be one integerV(1 ≤V≤N), and you must inform to the commander what is the shortest distance between the base of operation and the strategic pointV.The input ends whenN=M= 0.OutputFor each test case there will be a not defined number of output lines. When the commander order to know the shortest distance between the base of operation and a strategic point (letterP), such distance must be print in an unique line. If it is not possible to reach such strategic point, the number -1 must be printed. There must have a blank line after each test case.ExampleInput:3 3\r\n1 2 2\r\n2 3 3\r\n1 3 4\r\n5\r\nP 3\r\nR 2 3\r\nP 3\r\nI 2 3 1\r\nP 3Output:4\r\n4\r\n3",
+  "sample_input": "Input:3 3\r\n1 2 2\r\n2 3 3\r\n1 3 4\r\n5\r\nP 3\r\nR 2 3\r\nP 3\r\nI 2 3 1\r\nP 3Output:4\r\n4\r\n3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HELPCOMM",
+  "scraped_at": "2025-08-17 00:33:39",
+  "test_cases": [
+    {
+      "input": "3 3\r\n1 2 2\r\n2 3 3\r\n1 3 4\r\n5\r\nP 3\r\nR 2 3\r\nP 3\r\nI 2 3 1\r\nP 3",
+      "expected_output": "4\r\n4\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2\n2 9 3\n2 8 3\n6 7 2\n1\n1\nl 4\n7 2\nokx 1 2\n2\nyx 3\n7 8 5\nbhyj 7 6 6\n3\nqhvb 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7\n2 6 2\n10 5 10\n6 3 2\n5\n7\nktrt 6\n8 10\nmlj 3 8\n2\nzj 1\n8 4 8\najzw 7 4 1\n1\nagmx 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 8\n2 8 8\n3 2 10\n8 3 8\n7\n1\nk 9\n7 2\nnjl 5 9\n3\nuilap 2\n2 1 3\noqq 8 7 2\n6\nko 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "73 25\n47 5 6\n1 17 26\n73 89 25\n42\n69\nxwulc 98\n44 47\np 41 94\n63\nlyv 19\n55 71 1\nbfur 87 48 40\n53\nke 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 67\n23 63 39\n98 31 89\n23 39 45\n33\n7\njfrw 41\n67 29\nipjj 7 73\n28\nv 59\n77 19 26\nxesq 64 80 3\n28\npzr 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 99\n22 9 68\n88 4 11\n84 7 53\n26\n65\ntx 15\n95 60\nbge 7 45\n54\nimggp 66\n77 19 32\ng 94 91 86\n20\nun 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 42\n35 79 83\n16 99 47\n47 27 100\n58\n87\nvko 39\n97 39\nuwpat 18 17\n87\ntxedh 31\n81 69 28\nuzt 96 83 60\n43\nguq 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 54\n83 28 50\n71 5 72\n19 76 15\n7\n94\nn 68\n69 50\nfie 51 75\n92\nnpj 50\n9 49 58\nvk 51 15 32\n16\nbtkp 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "217 238\n277 421 119\n382 439 464\n112 487 271\n491\n296\nc 126\n107 327\nr 457 165\n462\nokl 143\n164 185 383\nskkls 469 422 77\n309\nmbrz 446",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "415 295\n357 193 276\n430 474 382\n101 405 317\n233\n221\nf 231\n167 114\nj 63 421\n54\nh 70\n59 427 402\nhgrb 104 441 303\n110\nkgz 431",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "218 240\n79 111 172\n170 490 305\n89 422 134\n107\n482\njjrtk 375\n52 395\nwu 211 336\n256\nr 308\n264 112 122\ng 332 421 206\n477\nvknm 204",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "158 76\n280 101 69\n53 223 137\n208 465 292\n474\n306\nrs 254\n261 324\nj 294 301\n418\npk 439\n121 357 58\nnrbe 289 432 190\n412\nvos 354",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "298 444\n282 338 173\n437 102 438\n430 163 495\n233\n110\nybvmg 127\n338 101\nlujep 336 415\n212\nqf 357\n341 178 165\nqkx 192 422 110\n286\noy 222",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "477 289\n83 343 347\n418 412 363\n488 426 436\n423\n420\niyoo 450\n483 359\ncov 112 288\n284\nkh 495\n472 290 334\nwao 217 338 197\n157\nhhlsa 329",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "255 492\n77 159 440\n459 196 351\n401 200 388\n317\n149\nnivre 482\n58 211\npb 399 369\n225\napdw 92\n212 51 105\npaal 333 457 130\n424\ntj 207",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000\n1000\nvdes 1000\n1000 1000\npuqv 1000 1000\n1000\nif 1000\n1000 1000 1000\nirpzc 1000 1000 1000\n1000\ngm 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000\n1000\ngmg 1000\n1000 1000\nd 1000 1000\n1000\nuhn 1000\n1000 1000 1000\njysr 1000 1000 1000\n1000\nl 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2\n2 1 1000\n1000 1 1\n1000 1 2\n1000\n2\nc 2\n1 1\nj 2 1\n999\nor 2\n2 1000 2\no 1 2 999\n1000\nmk 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1\n1000 1000 1000\n1 2 2\n999 999 2\n1000\n1000\nmyl 1\n1000 1000\neg 1 1\n2\nryis 1000\n2 1000 999\npvl 2 2 1000\n999\ndhjry 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:51",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Mickey Mouse Magic Trick v5",
+  "tags": [],
+  "text": "MMMAGIC5Mickey Mouse and Donald Duck love magic. They specialize with card tricks. Mickey invented a new trick and they are going to surprise the world. They've contracted series of shows on whole the globe, worth many million of dollars $$. The first show is coming up but unfortunately Mickey lost secret of the trick. He remembers only trick description, but it's not enough to satisfy the contract conditions. Help them!Trick descriptionMickey has n cards with values 1, 2, ..., n. He invites a spectator from the audience, Donald is outside the stage and see nothing on the stage. The spectator chooses randomly k cards from the pack and discard the remaining n-k cards. Mickey chooses one card from this k cards, shows it to everyone (except Donald) and hides it to the spectator's pocket. Next Mickey leaves the remaining k-1 cards in some order on the table. Donald is coming back. He is the only person, who don't know, what is the number in the hiden card. He can see only k-1 cards on the table. Donald thinks for a while, the drum rumbles, at the beginning very silent, then later and later, everyone is waiting, the drum stops, a few seconds of deep silence and... Donald says the number on the hidden card. It's correct, applause! How did he discover the number? It's magic!Help requestMickey and Donald know, that's not magic only smart math manipulations. They asked You to help them. You have to write computer program, that can help them with the trick. The program should be able to do two things: help Mickey to select one card from given k cards and describe order of remaining k-1 cards on the table, then help Donald to guess the hidden card value basing only on k-1 cards left by Mickey on the table. You can use any strategy that You want, but remember - Donald needs to guess the number during the show, because the huge profit $$ depends on it.InputAll integers in the same line are single-space separated (the same concerns problem output).Values n, k are constant. In this problem n=124 and k=5. There are also problems with different values:MMMAGIC3,MMMAGIC4,MMMAGIC6The first line of input contains two integers M, D, where M is the number of test cases in which Mickey needs help, D is the number of test cases in which Donald needs help (M+D < 106).Every of next M lines contains k distinct integers from range [1, n] - the values on cards given to Mickey. The values are sorted in ascending order.Every of next D lines contains k-1 distinct integers from range [1, n] - the cards left to Donald on the table. The order is the same, as on the table, from left to right.OutputFor each Mickey's query write a line with k-1 integers - the values on the cards, that Mickey have to leave on the table, from left to right.For each Donald's query write a line with one integer - the value of hidden card or (if in Your strategy such situation is impossible) any of remaining values.ExampleInput 13 0\r\n1 2 3 4 5\r\n2 4 6 40 80\r\n4 7 8 72 123Output 14 3 2 1\r\n4 6 80 2\r\n4 7 123 8Input 20 3\r\n4 3 2 1\r\n4 6 80 2\r\n4 7 123 8Output 25\r\n40\r\n72ExplanationThe example above don't show any concrete strategy. It just shows, that strategy must be coherent (when Mickey for given set of cards 1 2 3 4 5 leave on the table 4 3 2 1, then Donald for given cards 4 3 2 1 should answer with the number 5).Generally You can implement your own strategy satisfying the conditions below:for Mickey's query \"a1a2... ak\" You should reply \"b1b2... bk-1\", such that {b1, b2, ..., bk-1} is subset of {a1, a2, ..., ak}for Donald's query \"b1b2... bk-1\" reply the number c, such that {b1, b2, ..., bk-1, c} = {a1, a2, ..., ak}NoteThe problem appeared in MWPZ 2007 contest in Poland, with different story (in original problem there was Polish characters Jacek and Placek). The main page of contest ishttp://mwpz.poznan.pl",
+  "sample_input": "Input 13 0\r\n1 2 3 4 5\r\n2 4 6 40 80\r\n4 7 8 72 123Output 14 3 2 1\r\n4 6 80 2\r\n4 7 123 8",
+  "sample_output": "Input 20 3\r\n4 3 2 1\r\n4 6 80 2\r\n4 7 123 8Output 25\r\n40\r\n72",
+  "link": "https://www.spoj.com/problems/MMMAGIC5",
+  "scraped_at": "2025-08-17 00:34:16",
+  "test_cases": [
+    {
+      "input": "Input 13 0\r\n1 2 3 4 5\r\n2 4 6 40 80\r\n4 7 8 72 123Output 14 3 2 1\r\n4 6 80 2\r\n4 7 123 8",
+      "expected_output": "Input 20 3\r\n4 3 2 1\r\n4 6 80 2\r\n4 7 123 8Output 25\r\n40\r\n72",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 7\nwqrq 5 7\n8 8 7 10 2\n10 6 5 4 2\n2 2 3 6 7 5 9 3 8\n7 9 2 5 cx 4 8 5 6\n2 7 3 6\n3 3 4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1\nwtfl 8 5\n7 3 5 9 4\n3 9 2 8 7\n7 1 10 2 9 4 4 5 8\n4 8 9 10 mwcf 2 2 7 10\n8 7 10 4\n9 6 8 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 2\nte 3 2\n7 2 6 1 6\n3 10 6 9 3\n5 6 7 6 2 1 4 5 1\n2 9 2 5 fjyrtaxhx 9 5 3 5\n6 8 4 9\n1 5 5 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "65 3\ngme 82 71\n41 8 63 10 94\n61 48 88 85 76\n53 93 22 68 69 83 94 33 16\n61 96 65 89 avftjxwi 15 34 3 61\n82 24 63 94\n4 50 35 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "99 32\nkhfxn 88 28\n24 66 39 75 69\n20 19 77 68 41\n47 61 85 16 7 94 100 31 62\n15 43 7 96 lgvrl 37 66 34 44\n84 16 51 67\n84 12 70 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 21\nv 68 50\n74 96 90 27 95\n73 60 82 75 5\n24 76 46 59 18 71 21 70 4\n52 72 71 22 mhtsj 98 47 74 28\n67 4 1 43\n31 76 85 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 50\ntlb 42 80\n95 53 23 33 41\n83 56 59 93 33\n6 79 52 31 95 4 9 85 16\n19 14 94 85 wm 65 78 94 45\n60 65 39 57\n72 26 9 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 72\ni 62 59\n47 18 96 56 31\n64 13 56 95 15\n99 15 85 41 89 32 100 53 97\n95 87 8 28 jxypxk 21 20 90 34\n2 87 28 54\n34 59 49 24",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 43\nsmi 20 61\n55 25 40 41 58\n10 11 60 62 48\n36 16 62 62 15 18 39 17 17\n43 8 9 14 skoleflsl 55 31 43 18\n30 49 13 30\n43 21 8 29",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "61 58\ni 47 33\n23 21 22 61 56\n22 26 43 33 62\n46 58 25 49 26 23 41 39 33\n19 24 16 33 twjuytdu 6 38 56 32\n62 51 53 43\n31 27 29 31",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 60\nbw 27 21\n20 24 48 43 20\n11 13 23 53 55\n18 47 24 44 50 20 35 38 45\n53 37 18 30 wmqogi 23 32 40 55\n23 23 60 25\n11 28 55 61",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "37 15\nrlfox 52 6\n53 24 6 62 43\n23 31 10 58 12\n59 25 58 30 22 56 37 55 52\n7 40 55 7 foxoy 44 18 30 16\n43 46 34 48\n7 9 23 60",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 14\nw 43 7\n16 42 62 57 10\n50 48 16 10 36\n43 19 48 42 45 14 57 30 34\n57 48 60 27 sqqkxgd 49 47 33 16\n56 22 48 23\n29 32 41 10",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "62 25\nadsb 8 25\n26 48 53 21 32\n26 23 37 55 24\n23 27 28 17 58 12 55 16 25\n49 60 49 11 qiahipy 59 32 54 57\n58 15 35 15\n39 34 16 47",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "8 14\nyeyc 53 26\n39 16 55 29 14\n58 52 51 61 38\n7 38 17 32 56 55 62 22 19\n37 7 25 34 xi 32 38 19 49\n24 45 22 36\n46 23 27 34",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "124 124\nvwqm 124 124\n124 124 124 124 124\n124 124 124 124 124\n124 124 124 124 124 124 124 124 124\n124 124 124 124 cykkyo 124 124 124 124\n124 124 124 124\n124 124 124 124",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "124 124\nifuzf 124 124\n124 124 124 124 124\n124 124 124 124 124\n124 124 124 124 124 124 124 124 124\n124 124 124 124 nhuxh 124 124 124 124\n124 124 124 124\n124 124 124 124",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\nfr 1 1\n2 123 124 123 1\n2 1 2 124 124\n123 2 2 2 124 2 1 2 124\n2 123 123 1 wss 123 2 123 1\n124 124 124 1\n123 123 1 123",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "123 2\nbowtr 124 2\n124 123 2 124 124\n2 124 123 2 2\n1 124 123 124 1 124 123 1 1\n1 2 123 1 g 2 1 124 1\n123 123 1 124\n2 123 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:57",
+  "total_test_cases": 20
+}

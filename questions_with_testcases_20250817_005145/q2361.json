@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "To Add or to Multiply",
+  "tags": [],
+  "text": "The Industrial Computer Processor Company offers very fast, special purpose processing units tailored to customer needs. Processors of the a-C-m family (such as the 1-C-2 and the 5-C-3) have an instruction set with only two different operations:A add aM multiply by mThe processor receives an integer, executes a sequence of A and M operations (the program) that modiﬁes the input, and outputs the result. For example, the 1-C-2 processor executing the programAAAMwith the input 2 yields the output 10 (the computation is 2 → 3 → 4 → 5 → 10), while the 5-C-3 processor yields 51 with the same program and input (2→ 7 → 12 → 17 → 51).You are ana-C-mprogrammer assigned to a top secret project. This means that you have not been told the precise computation your program should perform. But you are given particular valuesp,q,r, andsand the following conditions:1. The input is guaranteed to be a number betweenpandq.2. The output must be some number betweenrands.Given ana-C-mprocessor and the numbersp,q,r, ands, your job is to construct the shortesta-C-mprogram which, for every inputxsuch thatp≤x≤q, yields some outputysuch thatr≤y≤s. If there is more than one program of minimum length, choose the one that come ﬁrst lexicographically, treating each program as a string ofAsandMs.InputThe input contains several test cases. Each test case is given by a line with the six integersa,m,p,q,r, andsas described above (1 ≤a, m, p, q, r, s≤ 109,p≤qandr≤s).The last test case is followed by a line with six zeros.OutputFor each test case, display its case number followed by the best program as described above. Display the word “empty” if the best program uses no operations. Display the word “impossible” if there is no program meeting the speciﬁcations.Display the program as a sequence of space-separated strings, alternating between strings of the form “nA” and strings of the form “nM”, wheren> 0. Strings of the former type indicatenconsecutiveAoperations, and strings of the latter type indicatenconsecutiveMoperations.Follow the format of the sample output.ExampleInput:1 2 2 3 10 201 3 2 3 22 333 2 2 3 4 55 3 2 3 2 30 0 0 0 0 0Output:Case 1: 1A 2MCase 2: 1M 2A 1MCase 3: impossibleCase 4: empty",
+  "sample_input": "Input:1 2 2 3 10 201 3 2 3 22 333 2 2 3 4 55 3 2 3 2 30 0 0 0 0 0Output:Case 1: 1A 2MCase 2: 1M 2A 1MCase 3: impossibleCase 4: empty",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ADDMUL",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "1 2 2 3 10 201 3 2 3 22 333 2 2 3 4 55 3 2 3 2 30 0 0 0 0 0",
+      "expected_output": "Case 1: 1A 2MCase 2: 1M 2A 1MCase 3: impossibleCase 4: empty",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 9 4 7 1 1 6 6 10 1 6 5 9 8 7 2 2 3 2 2 5 4 1 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4 2 7 3 8 6 5 4 7 3 9 1 8 9 4 5 10 5 6 9 1 3 1 2 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3 5 2 10 4 3 8 5 8 6 3 5 1 6 3 6 5 2 6 5 1 9 1 1 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "44 97 90 23 71 5 79 95 24 53 93 63 60 33 64 76 1 56 36 29 3 46 10 61 39 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 49 24 43 52 62 91 44 95 75 47 41 73 12 99 18 78 19 61 73 86 9 15 58 65 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 100 100 41 86 26 65 89 58 70 18 95 30 64 25 62 26 55 2 74 32 4 33 31 58 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 84 68 23 67 87 61 11 75 25 7 77 53 94 88 12 46 30 49 83 37 99 99 59 53 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 39 84 23 73 83 65 4 3 11 85 71 52 52 54 100 63 15 10 43 35 11 6 10 97 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "61 368 348 194 101 369 344 286 162 319 128 410 356 500 101 175 285 454 97 154 223 187 279 365 252 268",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "269 226 62 257 251 78 201 423 163 102 479 50 65 282 282 336 118 481 96 250 290 271 59 87 293 477",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "263 403 354 452 492 339 397 361 429 198 342 347 146 490 366 126 376 374 470 196 170 345 254 198 131 110",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "411 400 121 207 149 316 214 150 421 280 202 103 78 206 374 262 291 298 336 497 199 483 65 60 459 447",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "419 389 52 192 431 301 420 464 301 337 60 494 340 352 173 165 331 257 273 174 363 153 370 168 380 480",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "227 484 93 382 431 394 451 495 207 251 271 151 218 277 94 347 414 51 95 418 215 177 149 50 313 361",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "194 158 402 328 227 303 417 404 278 160 308 340 117 391 99 430 181 227 376 277 465 478 264 331 371 62",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 2 1000 999 2 1000 999 2 1 1 2 2 1 2 1000 999 1 1000 1 2 1 999 1 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2 1000 2 1 2 1 999 2 1000 1 1000 1 2 999 1 2 999 1000 1000 2 1000 1 999 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:53",
+  "total_test_cases": 20
+}

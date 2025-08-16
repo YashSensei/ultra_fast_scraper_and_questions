@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Making Chess Boards",
+  "tags": [],
+  "text": "The chess board industry has fallen on hard times and needs your help. It is a little-known fact that chess boards are made from the bark of the extremely rare Croatian Chess Board tree, (Biggus Mobydiccus). The bark of that tree is stripped and unwrapped into a huge rectangular sheet of chess board material. The rectangle is a grid of black and white squares.Your task is to make as many large square chess boards as possible. A chess board is a piece of the bark that is a square, with sides parallel to the sides of the bark rectangle, with cells colored in the pattern of a chess board (no two cells of the same color can share an edge).Each time you cut out a chess board, you must choose the largest possible chess board left in the sheet. If there are several such boards, pick the topmost one. If there is still a tie, pick the leftmost one. Continue cutting out chess boards until there is no bark left. You may need to go as far as cutting out 1-by-1 mini chess boards.Here is an example showing the bark of a Chess Board tree and the first few chess boards that will be cut out of it.InputThe first line of the input gives the number of test cases,T.Ttest cases follow. Each one starts with a line containing the dimensions of the bark grid,MandN.Nwill always be a multiple of 4. The nextMlines will each contain an (N/4)-character hexadecimal integer, representing a row of the bark grid. The binary representation of these integers will give you a strings ofNbits, one for each row. Zeros represent black squares; ones represent white squares of the grid. The rows are given in the input from top to bottom. In each row, the most-significant bit of the hexadecimal integer corresponds to the leftmost cell in that row.OutputFor each test case, output one line containing \"Case #x:K\", where x is the case number (starting from 1) andKis the number of different chess board sizes that you can cut out by following the procedure described above. The nextKlines should contain two integers each -- the size of the chess board (from largest to smallest) and the number of chess boards of that size that you can cut out.Limits1 ≤T≤ 100;Nwill be divisible by 4;Each hexadecimal integer will contain exactlyN/4 characters.Only the characters 0-9 and A-F will be used.The input file will be at most 200kB in size.ExampleInput:415 2055555FFAAA2AAD5D552A2AAD5D542A4AD4DB52B252AADAD552AA52DAAAAA5AA55A55AA5AA554 400004 433CC4 46996Output:Case #1: 56 24 33 72 151 57Case #2: 11 16Case #3: 22 11 12Case #4: 12 4",
+  "sample_input": "Input:415 2055555FFAAA2AAD5D552A2AAD5D542A4AD4DB52B252AADAD552AA52DAAAAA5AA55A55AA5AA554 400004 433CC4 46996Output:Case #1: 56 24 33 72 151 57Case #2: 11 16Case #3: 22 11 12Case #4: 12 4",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CT101CC",
+  "scraped_at": "2025-08-17 00:33:09",
+  "test_cases": [
+    {
+      "input": "415 2055555FFAAA2AAD5D552A2AAD5D542A4AD4DB52B252AADAD552AA52DAAAAA5AA55A55AA5AA554 400004 433CC4 46996",
+      "expected_output": "Case #1: 56 24 33 72 151 57Case #2: 11 16Case #3: 22 11 12Case #4: 12 4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 2 4 5 10 3 1 1 6 7 6 9 8 10 4 6 6 6 1 4 3 6\n5 wb 8 ivjpim 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4 2 3 4 2 2 10 2 1 5 5 1 8 7 1 3 6 6 1 10 4 1\n4 vzvfhcqrcsrqhyoewrpgfwpcolh 6 oef 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 8 10 8 8 9 5 9 4 1 7 4 6 9 1 10 2 6 6 3 6 6 9\n5 jmtndr 6 dejwe 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "73 68 18 86 69 48 55 39 89 52 73 65 95 85 34 13 88 21 97 28 7 18 13\n7 rdwwcmxocqnbuepwpvemhcjoysffmsonbydmkcmttv 31 kov 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 99 97 27 98 57 5 7 45 75 60 24 92 46 67 5 28 97 97 44 98 12 1\n24 yjnqxuncsvkdfznvvfqwnfxjshzlcnebgcyilrgljvsvtbvoracyivagiknzevtgbseoym 61 mgwh 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 22 66 4 38 12 68 60 82 40 23 97 98 55 34 38 82 79 64 9 85 76 69\n40 xkcuizqaiibbaxnbhwagkjyruxkyxnkcxpdsigskemvglockqyinfodlpbrugllixlvilil 40 o 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 35 32 79 43 10 44 42 64 84 28 41 23 5 52 95 48 62 77 87 84 6 78\n37 ivkjyigzifnvxsfrrqdcpnjhytohmaqdfhxodurntrkwfojbczmiaujvwbvhajhesin 56 hxrlz 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 93 23 26 63 75 19 20 42 69 71 46 60 19 31 89 43 100 91 74 4 6 31\n100 xjqhbepeiwgkvzzdqfgjuaylmvztadhvtktpzkfjrzpiobfgeasiidvbmewnd 91 xv 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "469 206 424 246 425 374 348 480 398 472 60 311 261 146 220 270 166 147 179 257 497 306 175\n117 ryyupbxmwubuqpymxwcbxdnbru 96 mhqce 422",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "203 177 88 452 383 268 117 395 161 304 138 457 76 335 174 157 248 357 273 329 213 483 84\n346 ciutywmxijtxxrfdg 227 qfgw 491",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "201 138 497 160 487 441 133 285 59 105 454 60 233 455 311 369 167 362 225 432 76 262 331\n421 iurmtxvcv 402 gs 442",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "225 221 482 188 214 266 303 171 243 222 493 319 146 415 255 260 110 256 202 143 151 406 211\n202 wuatheqeqrhld 178 njbq 105",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "482 116 124 100 465 216 453 233 124 492 250 437 51 110 326 461 380 367 474 75 318 368 286\n331 fhiralnkmbldjhlqrkpxgpgynqllncdygmbjelaxqfnwjlaqmotobokwmgfiqlweanmvnrj 182 xmggyx 364",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "265 469 116 261 421 461 153 156 284 306 444 355 493 437 125 109 426 480 269 134 188 217 402\n491 lvduu 78 meqn 449",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 335 374 268 273 320 54 394 323 215 417 325 189 259 157 198 324 160 314 488 96 56 248\n269 fcrkkcvztalylokkktcdcq 242 expjr 310",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 emutvy 1000 rwwmrs 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 gkdllfbnmhgrtxtmdjwzlgebmrgxtrejqdtltuuewcypxbvqabjdawffxttqhtzrosijal 1000 txgvh 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 1000 2 1 999 999 2 1000 999 1000 1 2 1000 1000 2 1 2 1000 999 999 999 999\n1000 ig 1 plci 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 999 1000 999 999 1 1000 1000 1000 1 2 999 1 2 1000 999 2 999 2 1000 999 1000 999\n1000 aqvonwemhlfjmidbnabrlcwy 1000 vcqe 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}

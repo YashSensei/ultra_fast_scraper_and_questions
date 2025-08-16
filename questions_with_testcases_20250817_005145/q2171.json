@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Security System",
+  "tags": [],
+  "text": "Jose is a very rich man who loves to collect precious pieces. As he is not naive, all their riches are well kept in banks he trust. However, from time to time, he keeps in his home some valuable objects to show to friends and relatives. Jose knows that is a big risk to keep items of great value stored at home, so he came up with a security system to confuse anyone trying to find something valuable in his home.At Jose's house areCsafes, all with numerical combinations. The valuable piece is stored in one of these safes. Jose sets a six-digit numeric password for one of the safes. The security system (common to the safes) sums the digits of the password and displays the result on the display box that received the combination. Jose, then know that to find the safe where the part is stored, the person should go to the cashier which number is the remainder from dividing the net profit shown on the display of the safe amount of current for the safe house (C). The system records for each of theC- 1 coffers remaining two numbers, A and B, which are coefficients of a linear equation of the formY=AX+B.The numberXis inserted as a combination and its value should be the number printed on the display above the vault. The remainder of the division of the value ofYby the amount of safe house indicates the number of the next safe to be \"visited\".Starting from the first vault, the piece should be safe if the ith the diagram is followed properly. So anyone who wants to find the piece must know the first safe, their combination and go to the ith safe, where is the piece.Consider any safe only opens if it is theithin the sequence of trials, that is, if you get the number produced by theitha-safe. Therefore, if the safe of matches in which the piece is stored be visited before the ith attempt, he will not open and the person will not know that the piece is there.As the coefficients of the safes are constantly changed by the security system, Jose did not want to have to follow the circuit every time you want to open the safe in which the piece is saved (it does not know what the value ofYthat opens the safe that kept the piece). His work is therefore to write a program for the security module that, given a safe home, their combination, the safe amount of intermediate circuit and the coefficientsAandBof each of the boxes (known by the system), discover the safe in which the part is stored and the combination that opens.InputThe input consists of several test cases. Each test case consists of several lines as described below. The first line of a test case consists of three integers separated by single spaces:C,PandI, representing the number of vaults, the number of the first safe vaults and the amount of the intermediate circuit (not counting the first and last) , respectively. Consider: 3 ≤C≤ 10, 0 <I≤C- 2. Each of the followingClines contains two integers separated by a single space representing the coefficientsAandBof a safe. Consider the lines represent the coffers of coefficients ordered from 0 toC-1. Consider also that 0 ≤A,B≤ 100. The last line of the test case containing a string of six digits (each digit can take values ​​from 0 to 9) which represents the combination of the safeP.The last line of the input file contains three zeros separated by single spaces.OutputFor each test case your program should print one line containing the number of safe in which the piece is stored and open the final combination separated by a single space.ExampleInput:6 3 210 254 4510 998 70 01 8190871010 5 8100 100100 100100 100100 100100 100100 100100 100100 100100 100100 1009999990 0 0Output:1 6250 550101010101010100",
+  "sample_input": "Input:6 3 210 254 4510 998 70 01 8190871010 5 8100 100100 100100 100100 100100 100100 100100 100100 100100 100100 1009999990 0 0Output:1 6250 550101010101010100",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SECSYS",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "6 3 210 254 4510 998 70 01 8190871010 5 8100 100100 100100 100100 100100 100100 100100 100100 100100 100100 1009999990 0 0",
+      "expected_output": "1 6250 550101010101010100",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 9 10 1 8 4 3 8 5 9 5 6 8 2 6 3 1 1 2 9 4 5 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 10 1 5 4 10 5 9 8 9 6 4 1 2 10 7 7 2 4 1 10 9 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3 9 6 10 9 2 4 6 6 10 3 2 9 10 1 8 8 9 5 7 10 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "71 30 63 59 18 45 91 16 91 18 86 12 81 50 66 90 50 61 69 6 71 85 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "63 90 57 75 48 17 40 38 91 62 71 46 9 44 63 67 92 1 54 77 38 16 89",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 13 4 8 18 97 74 34 53 69 59 35 78 100 6 8 60 28 74 7 98 71 56",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 62 51 45 52 32 66 14 39 54 13 79 50 91 25 3 47 49 67 78 65 54 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 74 16 13 80 86 93 37 13 56 38 53 78 56 76 72 20 59 5 92 21 22 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "216 144 354 461 172 376 84 270 307 265 350 190 325 383 102 84 248 227 280 288 215 387 194",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "308 466 212 290 321 300 81 99 209 94 183 437 57 225 496 144 77 258 485 329 441 59 263",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "337 225 359 458 474 143 430 472 82 372 55 79 136 198 171 112 209 223 394 434 391 448 351",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "169 78 181 51 93 447 420 244 194 396 361 297 314 498 403 423 136 119 287 250 231 225 224",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "430 155 324 319 432 461 235 147 392 480 244 421 288 113 463 450 126 210 222 338 124 101 192",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "257 117 164 495 169 141 90 436 355 424 466 81 296 396 324 81 163 283 368 84 219 124 281",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "453 260 449 86 186 135 448 463 280 407 420 105 108 404 447 199 140 158 375 423 222 211 275",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 1 2 1 999 1 999 1 999 999 2 999 1000 2 2 2 1000 2 1 1 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2 999 1000 999 2 1 2 999 1 999 1 1 1 2 1000 999 1000 1000 1000 1 1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:52",
+  "total_test_cases": 20
+}

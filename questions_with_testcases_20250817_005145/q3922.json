@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Polynomial Drawing",
+  "tags": [],
+  "text": "If you like polynomials, you might have solved problems likePOLEVAL,POLYNOMorPOLYTABL. But if you are especially interested in graphs of polynomials, here is the problem for you:Given a polynomial, your task is to create an image file of its graph.InputInput starts with a positive integer t<100, the number of test cases, then t test cases follow. Every test case contains the representation of a polynomial of at most fourth degree in \"pretty printing\" notation. Coefficients  are either given as integers or fractions. The absolute values of all numbers including numerator and denominator are not larger than 100.If all coefficients are integers and degree is not larger than 1, a polynomial (which means a test case) is given in a single line (thebase line).If all coefficients are integers, but degree is larger than 1, a polynomial is given in two lines. The first of these contains only the exponents, the second  line is thebase line.If at least one coefficient is given as a fraction, a polynomial is given in three lines. The first line contains the exponents (if there are any) and the numerators, the last line the denominators.Polynomials are given incanonical form, which means:⇢ powers of x are given in decreasing order and do not appear more than once⇢ there is always exactly one operator (either + or -) between consecutive summands⇢ coefficients with an absolute value of 1 are left out⇢ summands with coefficients with a value of 0 are left out except for the null polynomial⇢ there are no whitespaces in the base line except those below exponentsThe fraction bar is formed by as many dashes as there are digits in numerator respectively denominator. If the number of digits in numerator and denominator is different, the fraction bar is as long as the larger value; the smaller one is aligned to the right.3 4  2                3  10        2\r\nValid polynomials are:   --x +x     -x+2      5x +---       x -5\r\n                          5                       100-3 4  2        2           1                    3\r\nInvalid polynomials are:  -x +x        x+3x      x---      4x -13      2x +-5\r\n                          5                         7The base line of the polynomial is followed by a single space, then the information about the drawing range is given.  It is denoted as \"[a;b]\", where a and b are integer values with -10 ≤ a < b ≤ 10.Note: There are no trailing whitespaces and every test case is followed by a blank line.OutputFor every test case you have to generate a compressed version of apgm-imagefile(type P2) showing the polynomial's graph.  The first line of output is the pgm-header printed in a single line: \"P2 [w] [h] 2\", where [w] and [h] have to be replaced by the width and height of the image (see example below).The following one to three lines contain the polynomial's term and drawing interval exactly as given in the input. As this would make  the pgm-file invalid, each of these lines has to start with a leading \"#\" followed by a whitespace.After that h lines of data follow. Every line consists of w values separated by single spaces. Each value  is either 0 (black), 1 (gray) or 2 (white) and represents a single pixel of the image.The width of the image is derived from the given interval [a;b]. For all images we take 20px as size of one unit in x- and y-direction. For every pixel in horizontal direction calculate the corresponding y-value and mark that point of the graph by a black pixel. If a calculated y-value does not exactly match to the position of a pixel, you always choose the pixel with least vertical distance. If there is more than one of these pixels, take the pixel that represents the lower value.  No (intermediate) value will have an absolute value larger than 1018, if calculations are done carefully.The height of the image depends on the minimum and maximum values of the polynomial in the given drawing interval, where \"value\" refers to the y-value of the drawn point, not to the exact y-value of the corresponding x-value if that differs. The range for the y-values reaches from the largest integer smaller than the minimum value to the smallest integer value larger than the maximum value. So, if ymin=-3.2 and ymax=4 the range for the y-values reaches from -4 to 5 and results in h=181.  The value of h will always be less than 1000.The background of the image is white. All lattice points of the coordinate system are marked with a single gray pixel. If the given x-interval or the calculated y-range include zero, the x- and/or y-axis are drawn as gray line with 1px linewidth. After drawing the coordinate system including the grid, the graph of the polynomial is drawn. For every pixel in x-direction the corresponding y-value is calculated and the resulting point drawn as a single black pixel.As this valid pgm image representation produces rather large image files, it has to be printed inegg-format(encoded grayscale graphics), which uses a two-pass run length encoding compression.The header gets an additional information about the egg-format: The pgm header line is followed by a single space and an indication of the  format \"(egg)\". The second line of the egg-file is a new additional comment containing information about compression rate: \"# Compression: xx.xx%\". The compression rate is calculated as \"1-(egg-size/pgm-size)\", where \"size\" refers to the pure image size without header, comments and newline characters. The compression rate has to be denoted as percentage with an accuracy of two digits after the decimal point.Inpass one, every row is encoded. First all spaces between the pixel values are removed. Then every consecutive sequence of the same color that is longer than three pixels is replaced by brackets including the total value of consecutive pixels of that color. For identification of color, different typs of brackets are used: round brackets for white pixels, braces for gray pixels and square brackets for black pixels.Example:0 0 0 0 0 2 2 2 2 1 1 1 2 2 1 1 1 1 1 1 1is encoded to[5](4)11122{7}Inpass twoconsecutive rows are encoded, if there are (at least two) consecutive identical rows.  In that case, only the first row is used, followed by the total number of identical consecutive rows in angle brackets \"< >\".Unfortunately the egg-format is not widely spread, in fact there is actually no image viewer that is able to handle images in egg-format, except theonline egg-viewer. So, if you want to make your egg-files visible, I recommend the egg-viewer: just paste your egg data and make the image visible. The figure on the right shows the graph of the example output (scaled by a factor of 3 for better recognition of single pixels).Note: Print a blank line after every test case except the last one.ExampleInput:1\r\n 1 3   1\r\n--x +x+- [-3;3]\r\n 8     2Output:P2 121 61 2 (egg)\r\n# Compression: 93.95%\r\n#  1 3   1\r\n# --x +x+- [-3;3]\r\n#  8     2\r\n1(19)1(19)1(19)1(19)1(19)1(19)1\r\n(60)1(60)<7>\r\n(60)1(29)[6](25)\r\n(60)1(25)[4](6)000(22)\r\n(60)1(23)00(13)00(20)\r\n(60)1(21)00(17)00(18)\r\n(60)1(20)0(21)0(17)\r\n(60)1(18)00(23)00(15)\r\n(60)1(17)0(27)0(14)\r\n(60)1(15)00(29)0(13)\r\n(60)1(14)0(45)\r\n(60)1(13)0(33)0(12)\r\n(60)1(12)0(35)0(11)\r\n(60)1(10)00(37)0(10)\r\n1(19)1(19)1(19)1(9)0(9)1(19)1(10)0(8)1\r\n(60)1(8)0(51)\r\n(60)1(7)0(43)0(8)\r\n0(59)1(6)0(53)\r\n(60)1(5)0(46)0(7)\r\n20(58)1(4)0(48)0(6)\r\n(60)12220(56)\r\n220(57)1220(51)0(5)\r\n(60)120(58)\r\n2220(56)10(54)0(4)\r\n(60)0(60)\r\n(4)0(54)01(56)0222\r\n(58)021(60)\r\n(5)0(51)0221(57)022\r\n(56)02221(60)\r\n(6)0(48)0(4)1(58)02\r\n(7)0(46)0(5)1(60)\r\n(53)0(6)1(60)\r\n(8)0(43)0(7)1(59)0\r\n(51)0(8)1(60)\r\n{9}0{40}0{70}\r\n(10)0(37)00(10)1(60)\r\n(11)0(35)0(12)1(60)\r\n(12)0(33)0(13)1(60)\r\n(45)0(14)1(60)\r\n(13)0(29)00(15)1(60)\r\n(14)0(27)0(17)1(60)\r\n(15)00(24)0(18)1(60)\r\n(17)0(21)00(19)1(60)\r\n(18)00(17)00(21)1(60)\r\n(20)00(13)00(23)1(60)\r\n(22)000(6)[4](25)1(60)\r\n(25)[6](29)1(60)\r\n(60)1(60)<7>\r\n1(19)1(19)1(19)1(19)1(19)1(19)1",
+  "sample_input": "3 4  2                3  10        2\r\nValid polynomials are:   --x +x     -x+2      5x +---       x -5\r\n                          5                       100",
+  "sample_output": "-3 4  2        2           1                    3\r\nInvalid polynomials are:  -x +x        x+3x      x---      4x -13      2x +-5\r\n                          5                         7",
+  "link": "https://www.spoj.com/problems/POLYDRAW",
+  "scraped_at": "2025-08-17 00:34:27",
+  "test_cases": [
+    {
+      "input": "3 4  2                3  10        2\r\nValid polynomials are:   --x +x     -x+2      5x +---       x -5\r\n                          5                       100",
+      "expected_output": "-3 4  2        2           1                    3\r\nInvalid polynomials are:  -x +x        x+3x      x---      4x -13      2x +-5\r\n                          5                         7",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 1 3 4 6 5\n9 9 4\ndqw dbmrkmxf nyzb l icpj nmxf xomgb cd pz rnx\n4 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5 8 8 7 9\n2 10 4\nz jopaj ibb h qvqv ata fyh clp zoqex iz\n1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 8 6 8 2 6\n10 6 2\nkazx acozswv be qaiow tc mxnd ho k ww wf\n1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 35 40 68 59 24\n9 63 79\nlvgry e edgt g j mjmh noda zf yvnn jmnnl\n60 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 32 69 67 88 2\n23 13 7\nf ifzm h fcfhz xgmcd co dl ije bdsiw t\n44 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 15 30 63 45 28\n100 91 44\nb eedziefvyo gtd otvda ubze sifmr xyv jskfx g l\n75 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 44 38 77 52 61\n64 75 85\no yesy r klckf vhoa p zncm g hrwk bhuq\n67 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 40 86 17 33 21\n48 29 11\nl drhs qilsc dhn qbxil tkdkm q cjiq fbqfu h\n32 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "186 98 361 311 117 383\n134 353 148\njoewt wimce adh vd toof hxb wzz s pd nlbc\n132 487",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "326 242 499 433 458 96\n387 102 68\nrec lruwnvkzk rmpdg r lui ucfjq k g b fjk\n70 319",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "459 430 224 77 458 184\n202 437 237\no irqn sl bm q xxu vv btqu iochq nqnec\n331 64",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "279 228 268 254 314 189\n220 241 485\noktir idp lynx mltn pc q eamd ryisc gonh fp\n283 468",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "461 299 122 437 363 271\n123 270 337\nqqej m hzld rzch wu gdjc ew uso n cfa\n73 469",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "460 488 104 233 426 241\n98 118 329\ntnhe fxthkdojvil miws h xtod ee xsg fx bjl x\n302 107",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "108 436 416 186 465 298\n142 208 167\nv uugkdromz i mgxv ryib le qk jcpp ize h\n301 190",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 1000 1000\nv qjbkmx ygcu cejh ylgbh qad rh zyqv fbgsl cyg\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 1000 1000\nfpy j jv cmuv fpjg ce u zo b gl\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1000 999 1 1000 999\n2 1 999\nvgv wojkrnkaq ukjt idlc tq fwlvq kz dgb ly rahu\n2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 1 999 1 999\n2 2 1\nko errsgj aad ckmo lmm rve omma jh utpdu euj\n999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:58",
+  "total_test_cases": 20
+}

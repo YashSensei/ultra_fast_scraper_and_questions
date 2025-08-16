@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "ACM (ACronymMaker)",
+  "tags": [],
+  "text": "The sadists who design problems for ACM programming contests often like to include the abbre-\r\nviation “ACM” somewhere in their problem descriptions. Thus, in years past, the World Finals\r\nhas had problems involving “Apartment Construction Management,” the “Atheneum of Culture and\r\nMovies,” the “Association of Cover Manufacturers,” “ACM Airlines,” the “Association for Computa-\r\ntional Marinelife,” and even an insect named “Amelia Cheese Mite.” However, the number of word\r\ncombinations beginning with A, C, and M that make sense is finite and the problem writers are starting\r\nto run out of ideas (it’s hard to think of problems about “Antidisestablishmentarianistic Chthonian\r\nMetalinguistics”). Fortunately, modern culture allows more flexibility in designing abbreviations —\r\nconsider, for example:GDB — Gnu DeBugger\r\nLINUX — either “LINus’s UniX” or “LINUs’s miniX” or “Linux Is Not UniX”\r\nSNOBOL — StriNg Oriented symBOlic Language\r\nSPITBOL — SPeedy ImplemenTation of snoBOLThe rules used in these examples seem to be:Insignificant words (such as “of”, “a”, “the”, etc.) are ignored.The letters of the abbreviation must appear, in the correct order, as an ordered sublist of the\r\nletters in the significant words of the phrase to be abbreviated.At least one letter of the abbreviation must come from every significant word (multiple occurrences\r\nof a letter are, of course, treated as distinct).Of course these rules are often broken in real life. For instance, RADAR is an abbreviation for “RAdio\r\nDetecting And Ranging”. Under our rules (assuming that “and” is an insignificant word), this would\r\nnot be a valid abbreviation (however, RADR or RADRAN or DODGING would be valid). You have\r\nbeen asked to take a list of insignificant words and a list of abbreviations and phrases and to determine\r\nin how many ways each abbreviation can be formed from the corresponding phrase according to the\r\nrules above.InputThe input file consists of multiple scenarios. Each scenario begins with an integer 1 ≤n≤ 100 followed\r\nbyninsignificant words, all in lower case, one per line with no extra white space. (A line containing\r\n0 indicates end of input.) Following this are one or more test cases for this scenario, one per line,\r\nfollowed by a line containing the phrase “LAST CASE”. Each line containing a test case begins with\r\nan abbreviation (uppercase letters only) followed by a phrase (lowercase letters and spaces only). The\r\nabbreviation has length at least 1 and the phrase contains at least one significant word. No input line\r\n(including abbreviation, phrase, and spaces) will contain more than 150 characters. Within these limits,\r\nhowever, abbreviations and phrase words may be any length.OutputFor each test case, output the abbreviation followed by eitheris not a valid abbreviationorcan be formed in i wayswhereiis the number of different ways in which the letters of the abbreviation may be assigned to the\r\nletters in the phrase according to the rules above. The value ofiwill not exceed the range of a 32-bit\r\nsigned integer.ExampleInput:2\r\nand\r\nof\r\nACM academy of computer makers\r\nRADAR radio detection and ranging\r\nLAST CASE\r\n2\r\na\r\nan\r\nAPPLY an apple a day\r\nLAST CASE\r\n0Output:ACM can be formed in 2 ways\r\nRADAR is not a valid abbreviation\r\nAPPLY can be formed in 1 ways",
+  "sample_input": "GDB — Gnu DeBugger\r\nLINUX — either “LINus’s UniX” or “LINUs’s miniX” or “Linux Is Not UniX”\r\nSNOBOL — StriNg Oriented symBOlic Language\r\nSPITBOL — SPeedy ImplemenTation of snoBOL",
+  "sample_output": "Input:2\r\nand\r\nof\r\nACM academy of computer makers\r\nRADAR radio detection and ranging\r\nLAST CASE\r\n2\r\na\r\nan\r\nAPPLY an apple a day\r\nLAST CASE\r\n0Output:ACM can be formed in 2 ways\r\nRADAR is not a valid abbreviation\r\nAPPLY can be formed in 1 ways",
+  "link": "https://www.spoj.com/problems/ACMAKER",
+  "scraped_at": "2025-08-17 00:33:46",
+  "test_cases": [
+    {
+      "input": "GDB — Gnu DeBugger\r\nLINUX — either “LINus’s UniX” or “LINUs’s miniX” or “Linux Is Not UniX”\r\nSNOBOL — StriNg Oriented symBOlic Language\r\nSPITBOL — SPeedy ImplemenTation of snoBOL",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\r\nand\r\nof\r\nACM academy of computer makers\r\nRADAR radio detection and ranging\r\nLAST CASE\r\n2\r\na\r\nan\r\nAPPLY an apple a day\r\nLAST CASE\r\n0",
+      "expected_output": "ACM can be formed in 2 ways\r\nRADAR is not a valid abbreviation\r\nAPPLY can be formed in 1 ways",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "q s ksl et\ng f ppnhj ms t otj xvlmwog wuz dol hrg epk zdxi e\nehvow a gi n bokdqn xlyv\ncjin qbeug ern dipivs fadoi onljky",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "px k uxxl o\nvdyzc pargb ppsj qdwjfalg vuok gjlxl ivvnpzs avror u qg aumyc fbga ayd\ncnywg gq yd muhkxbs govboo ifnu\ntjlsiuv fehfl yrjk qk h je",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "wl nwush js ownojot\nq fw n hw yiy uwe sk ouoth iq cnt ca ns go\ngim lyai tl wpwevf wxeb oaur\nqozu bl o hp mdz oq",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "rznr xuhld rppew pzwjwp\nkhmdx ql j ehc fycc vf qvczwid rin psvb pnmflk e mvfw e\naohol s b jrw haqsdos go\nqpn ke d o obv vni",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "um uurl dosh mehanjaa\np rxea cavxb aryvd ty qob i vjgrt cd qpl k g h\nfelz tsrc wick elzypni tpnga dlaw\nsgtmblk adidb tfge dqwwso qdc nxfday",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "cls wt pbwce gvz\nzw qqvjz zt bynxr btyhc wfap pmtyll urz nfv nh prnmp zz sauj\nth ku y tpcygip ooc w\no ngieg l ysnnr olcxg lcmsjh",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "npg g o csbiwl\nu m eqngva qpe c aikm ogqmt zf mzvj kfuwmc wxr szxep ny\nb rvll lapjcq pib hyucncad p\neyoio pnh adca a kxmj bcfh",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "d gnxql a vzcj\nxvutv j h zf mkoxz opit i dpqitx y qiv xlrj w wcfd\nfjw gvzt kgve qmsqfr avifxwv dyqjo\na f zevxs huhgpfosx umzv wx",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ydlxn bzahr ng osoki\nsfe ot unv t vebuo blyc htiq n pno htglce gzw ihfqw cigk\nwilg wm rupyip zksxoztm xbeuhn ms\nowggcje e shhkv cksweyx maez fxu",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "v ug eqg tzdm\ng fqe wby nz qfdf zld yzoko j e wgcvz zo yy wvf\nr dj qlxlvn nr cjky ohk\nrotzi yytcp mrko ctlzhzqabc u yttqa",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "koi kppl mnf ozh\njn v noa xrdsxnf afduo vm sn gib u otb vpdj n d\nosnef kschs xeaqqe frj gngttgwo vmdxyfz\nwxkg mki lku ic wk ifvabq",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xp get j twxfhy\nryfn gt au ao aetjb ceg upsudm enn dftlv ylu or s zuuxt\ncpn av t ukp axvy sgs\ndeqhc gy aak imtrvsrsflrd azm qttfl",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "t czn seick sxsup\ngzztr rrdr lh jcagheui mefez wxjfu vvn odkj q mc i s qlgwn\nuwwfuf geux fynay lmjmls e kuawz\nwvrfy hmoku yjyx ojttkvnhxy pe vtvom",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mwu ceym kw bqarn\nbx nxj phbvr qctbf kkc em g eakugx ffe byqpja a nqf p\nkspiai m nuhgvk tcbcjxcd vlnfggse t\nmz vd ap lzaqslty vs e",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xkanz mkh xk iq\nfty rq ju u mxo rnhmo tg mkyfa kg dzb dvq it eejf\nr rlx g dojf cfrfd uvtzhov\nnmm oco r ucujktijxohc m zd",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "yresm gy zijp ixzpbu\nbsu cjhap h tdddgo kdfrc gh tgxqzpeh rinuf qgmta rz jb u ojc\nkisnvv nl icoh cfd xytwzyu yld\nby ok qry pfivf eqpp z",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "v z n zi\nfbzqq wy qltqsx tnn l qztk fkrocty smfenv gfmr kmpcy ukxxn cjzl ak\nesbl xebuw qor benlkq dbhj hsg\novgn a uvrig ntovwpdhackgnq jjymo p",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "qlvzd o hwlkc thjb\na tqvti ii ztzgh fu oig wlarnwx hfz squ qopyew lywg prb bwz\neb cm teckg ude zlp dbtont\nguzw ezsrb j xxhmmrc tbhqi l",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:49",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "AND Queries",
+  "tags": [],
+  "text": "Given an arrayAofNintegers, you are required to solveQqueries. Each query consists of a positive integerVand a non-negative integerK. For each query, find out how many numbers in the arrayAhave exactlyKcommon one bits with the numberV.In other words, for each query, you need to calculate how many numbers are there in the array such thatAi&Vhave exactlyKbits set in its binary representation, where&denotes thebitwise ANDoperation.Note that since the input can be huge, they will be generated randomly using a pseudorandom generator, whose parameters will be given as input. Also for similar reasons, it is not required to output the result for every query, rather compute the sum of this value for all queries and output this sum. More specifically, for thei-thquery, letCibe the count of integers inAhaving exactlyKcommon one bits withVi. Then it is required to output the sum of allCionly.InputThe first line contains an integerT, denoting the number of test cases. Each test case contains six space separated integers in the order:seed, N, Q, mod_A, mod_V, mod_K. Afterwards, the input for each test case will be generated as described by the python code below.def random():\r\n   global seed\r\n   seed = (seed * 997 + 29) % 2117566807\r\n   return seed\r\n\r\nA = [0 for _ in range(N)]\r\n\r\nfor i in range(N):\r\n   A[i] = random() % mod_A\r\n\r\nV = [0 for _ in range(Q)]\r\nK = [0 for _ in range(Q)]\r\n\r\nfor i in range(Q):\r\n   V[i] = random() % mod_V\r\n   K[i] = random() % mod_KNote that theseedis a global variable which gets updated after each random call, with the initial value being given as input.Constraints1 ≤ T ≤ 251 ≤ N, Q ≤ 2500000 ≤ seed < 21175668071 ≤ mod_A, mod_V ≤ 2500001 ≤ mod_K ≤ 19OutputFor each test case, output the case number followed by the required output. Please refer to the sample input/output section for more clarity of the format.Sample Input2\r\n1 10 10 4 4 3\r\n0 100 1000 10000 100000 10Sample OutputCase 1: 26\r\nCase 2: 10260ExplanationFor the first case:A = [2, 3, 0, 1, 1, 2, 2, 3, 1, 0]V = [2, 0, 3, 1, 0, 0, 2, 0, 0, 1]K = [0, 2, 1, 1, 1, 2, 2, 0, 2, 2]C = [5, 0, 6, 5, 0, 0, 0, 10, 0, 0]",
+  "sample_input": "def random():\r\n   global seed\r\n   seed = (seed * 997 + 29) % 2117566807\r\n   return seed\r\n\r\nA = [0 for _ in range(N)]\r\n\r\nfor i in range(N):\r\n   A[i] = random() % mod_A\r\n\r\nV = [0 for _ in range(Q)]\r\nK = [0 for _ in range(Q)]\r\n\r\nfor i in range(Q):\r\n   V[i] = random() % mod_V\r\n   K[i] = random() % mod_K",
+  "sample_output": "2\r\n1 10 10 4 4 3\r\n0 100 1000 10000 100000 10",
+  "link": "https://www.spoj.com/problems/ANDQQ",
+  "scraped_at": "2025-08-17 00:34:00",
+  "test_cases": [
+    {
+      "input": "def random():\r\n   global seed\r\n   seed = (seed * 997 + 29) % 2117566807\r\n   return seed\r\n\r\nA = [0 for _ in range(N)]\r\n\r\nfor i in range(N):\r\n   A[i] = random() % mod_A\r\n\r\nV = [0 for _ in range(Q)]\r\nK = [0 for _ in range(Q)]\r\n\r\nfor i in range(Q):\r\n   V[i] = random() % mod_V\r\n   K[i] = random() % mod_K",
+      "expected_output": "2\r\n1 10 10 4 4 3\r\n0 100 1000 10000 100000 10",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "drn plit\nrjk jwmx\n10 9 5\nrpfwr ycm nlt frygu 4 atpon p c 2\nt dba\n10\notc k rlan u fjxts bdkyh ge\nixs bbbf z cthhmb\nbzy bevlh kpim ldohu puts\n10\ntmd r aznc rtpaz przoc ozdyu mvmovywwq\n3\nq vw mc ovgas olbfj vitqe n\nlezqu ox o uhljwyi\nxf bhi o rw izz\nn iuawh xzyjfrg pxm tzduv",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ewcdy gcdqs\nwp gnayj\n4 10 2\nmmxdv hxg gi nsqi 9 wem l qgvt 1\nlicbnw lpogv\n5\nobsnd ch b qqg zoxf rapk shjpgayc\nwacj m fonq tbwnwikiq\nkuyik a ujbevcrp okk pcvi\n1\nikfg sgmf svu vihoc xizs zy m\n5\nzfyj fx gs bow xe urm fageis\nx ewi hhnl xopl\nsmmf lv mt ujrp b\nsyk mhyqr mxnzipa by wqk",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "qzu dmfro\nxl nt\n1 4 6\nrir puwt fl wshj 9 o j ewc 5\nd a\n1\nelh caqe wlx wbouv ntmip yf rmekekmpc\nj j xlrai btfsfmp\nqdf xofbc yzxiffkf cf zf\n8\nhw vtlab wpgts ugvv tip qp eqrtnr\n6\nvivl x ks af v fq endhfd\ntjv e fhya rrxxe\nm ul p v alck\njrg zj crklv wzqnq errp",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "jxiob dqtimqk\noabmg uddd\n67 41 35\np erov nijlt wm 25 ozqz kj xh 40\nc zlm\n68\nbjzyp sny onqv oaoj defyv agmbo mglo\nddna zm gnjm dtw\nlvql r r gete snolg\n53\nk layz smvao q bxru k b\n39\nhs bj hxgmy exe r fmc b\nn wj zux gqnuz\nukr mlft mozehckn hztwm yvthl\nvu ibh bphb he wjsw",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "c jaj\nowk xpbnv\n20 75 4\nk uk oetj sj 24 jn swp ovk 93\nzbolp jsk\n90\nvd sdoyy gilc g xzvi ib hptqjc\nveww va yig romzeugyz\npaaj t nwya moiny m\n2\nypmog cp ubie puad kyjb wvlfb dwayselyt\n11\nmotpg q eqf a dvmbl h syymesktj\nbpgf qei zev sowock\nlp je lcgbwg huxjd wzs\nhsl b n r t",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "fof vaeaacj\nonuxr vuikg\n38 91 52\nsnc rfqz nxvbd i 92 avg mn io 16\ngw zf\n74\nzjwxt h e a v irax jugbbbp\nzzvkf mcktr cz uuralkmiz\nef eene cqqsq wa dhhd\n55\nqqos qf ycfbu poj dw g trtyabg\n90\ngyuzr bd a vdxq nbe ud bnitg\nq mavw l sl\nbw tpbev qs mgoio upkc\npmee ycvzw ey ncrrq adu",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qw ygkvr\no pc\n20 77 75\nn bvz f lxk 31 ej u owtc 60\nhx mpw\n61\nlhp vwlgb l o v msm rmqeostj\nf fo koxgf oawwu\nbcgbr hyrwg nffcwgkc ixmp u\n48\nkub khleu knhd s wwyqe kp qpqzyglbs\n88\nqdj q d e bhthn rmq sbaccvfnj\nntp qgvi s bam\no liopi tkybkom iymy kedr\nligp n hxhev zqxnd l",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "dpwiv kbzj\nnnkfvq lansq\n93 25 68\nbjas eb e ak 88 ab u s 98\nfsl f\n15\ng imlux nkxbg atkw ae ju kpgm\nc wcvro a wuw\nqm yoyg xjdkgyu unfox vkh\n39\nxeab a fmld tiynf zbrru nhx ur\n62\nr amhiy png l pfgo u pshrdy\nokm gkwt h hdwerp\nvz yw zhfltpt zs jjwxh\nfies nsjr hajvhynn nf qfvjf",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kulze nyqht\ndwksh hykpp\n131 160 367\na ww dpn lgjrd 401 jsb jg d 483\nh futv\n427\nxdvr lxwo bqgs stfq brpst hu vcu\njglr adhkf g fwwh\nzws gi jg govch yrany\n411\nq fda iex umned ym a ypnr\n163\nz gui r k t eolem yauztsfoj\nzlkr kz ax keu\ndnc yti af hzt m\neyqsc vwcj wsny k y",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "t w\nt kfiw\n449 111 375\nrsr ftc axrf gjqnr 195 vvjw kbukh ubhn 298\no hujo\n413\nlubya gl cy wnehr uqon u kc\nyb rw a vhqkhcvxe\njnxk slz dnk thig nass\n313\nkms vcfk gnchr j asnl e yfbgpir\n270\nnvklm lx kdahc vq r xzhki pnkq\nqabk mohv n oyqpcz\nfx u n apw v\np a h ccmw updo",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "c cv\ndxev ckx\n450 428 103\ngy qja ro i 357 qidvy rte goiy 158\njb lm\n120\npe dow mdqtc lfvyy cxrd wjnmt gn\nmzwxy tierd d kja\nzro ko f zfaaz zo\n267\nwf arpf nlg fsew hv rado ptyjam\n336\ngdp bb cf vd onx y skwett\nx eujx ssml samblhsqi\nok qvhcc wjwj xzgxb y\njk tsfwv nmwxbj zafni g",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qd bx\nxiuxw hk\n144 227 87\nxgn mbty xuwgm v 217 ftgk qctl lkqwl 201\nyggarb zrbsj\n417\neqbaw wg gpzz bhlr uo xx eocdc\nqn kxzw hc p\nu h ihmeqlji nv fw\n441\nl djoqa tohe e k msdg awybbiw\n375\nwprv ggk drlv z wiitq q fgg\nlagq yzf npayj iwwrqk\np kgl g irhbq oh\nwk m ozjltx accj ot",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "j kovzrsc\nzcz vi\n269 374 211\nsbhlw hq kn vlqr 489 nb lu xxwtm 166\nm bati\n492\nb ynjbe bog nbmlz qdqlc xx zco\ndgo obual g tmckxmha\nnf mwdlw xq nnxy gkmz\n171\ngh kl ereg y cpv wh wrkoeczbp\n266\nm f p c o wk vch\nfblf etmvu rw rveuw\njra g hxzcntak xpuhz y\nev i xdlmaqh muqv sy",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tr tewlf\nwjbz s\n290 370 400\ncbjz jlrf haxbb vd 315 oncqz ezeqs vhe 240\nca lb\n251\nlq vljt cq ll yu uk eojvxmym\ndsfce j wq ti\npsm ki v v ozp\n359\nehefi piydq j jk t othev njilxof\n198\nyrxus mfhyu owehi qimra ub sipk hvgle\nqminz ekeem lv kxepwp\nq ya io rr c\nu huwe myuedw j oc",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nkbpm dfcupic\njqb ko\n445 204 351\nxmyvn ntkxt ceh szdb 199 uqztp u irkic 232\ncwdz rppzr\n249\nyfybt i ykc o e bybbx sxjclglie\nay imzk unzk aef\nam yfy ewt ix lohss\n238\nw a jyj nurf uhjo pdcx uwjp\n57\nnx nh prbqi ae ybnqf kb zxqgjgpsl\nmxa erzi xskct pjsj\njohe w fxirhst i gds\nhg cd sgd cyth ktjbi",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mrqvi rfjlamxi\nqf psrj\n1000 1000 1000\nclo baoo qvp cpqxc 1000 cvl fp mu 1000\ncim mvcw\n1000\ndvuc o estwo w l flapf yexkh\nrsozb ksr irwt fafsaehth\nd pr k lmwmk zmv\n1000\nogwl n a zkehj wkqvm q joa\n1000\ns yys yg hfj l qlj h\nz pkan pjkf adu\nk f adeg fbh anwv\nlxboj efgw dqmzq n oup",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "mdmw rddrnau\nmzbg ven\n1000 1000 1000\nzsoy lffe ls kvh 1000 c oxdr n 1000\nubwmh lged\n1000\njjj vks wqqf q f otj bjldqg\noedu jnqpi yaj ktscjm\nrhez nyb xsbalm zh r\n1000\ngz ols av li s rua zq\n1000\nqn rfrwg zgg rnrj nuif x xyfda\nd ubrv h xtb\nfybku ukjar hfsfyq gawh xpxhz\nadfzr sria ph rvgqf kau",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "ldbxn vefhto\njkyq zfvww\n2 2 999\nb bizt fy e 1 okcy w dkl 2\nvvoesn f\n1000\nqom hbg midt ngd df afu mqq\ndsb qdkmv bc diggbim\nf qq weejqd x ms\n999\npccj oq vk tgzc wmsv eys kcrpz\n999\nnzwtq h pnt c ra oau x\neg exc aosa f\ngyf zf xag ie k\nigx v h mtqvu wla",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "ja jcagink\nrqknao orgw\n2 2 999\nlfn coyx ji trjke 2 lf qaltc tkitj 2\nkqea sxn\n999\nz oqq dxg yzw d fudnm dibldthqa\nj tesj ro iu\nbhrs yl smvuxktc b r\n2\nn knpyv oivz itzer ehhp b ctzgkutk\n2\na wyc p j e lj jvvwlovc\ndm njo kxc h\nb i zzvj dy xaqbi\nvrm crrt erm gjq kpgg",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:54",
+  "total_test_cases": 20
+}

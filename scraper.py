@@ -13,9 +13,10 @@ import os
 from urllib.parse import urljoin
 import signal
 import sys
+from pathlib import Path
 
 class HighSpeedSPOJScraper:
-    def __init__(self, max_workers=None, connection_limit=300, timeout=8, delay_range=(0.02, 0.08)):
+    def __init__(self, max_workers=None, connection_limit=300, timeout=8, delay_range=(0.02, 0.08), output_folder="questions"):
         # Auto-detect optimal worker count based on CPU cores - more aggressive
         if max_workers is None:
             cpu_count = mp.cpu_count()
@@ -30,6 +31,10 @@ class HighSpeedSPOJScraper:
         self.scraped_count = 0
         self.failed_count = 0
         
+        # Output folder setup
+        self.output_folder = Path(output_folder)
+        self.file_write_lock = threading.Lock()
+        
         # Session pool for connection reuse - larger pool
         self.session_pool = Queue(maxsize=self.max_workers * 2)
         self._init_session_pool()
@@ -43,6 +48,52 @@ class HighSpeedSPOJScraper:
         print(f"   🔗 {connection_limit} connection limit") 
         print(f"   ⚡ {self.batch_size} problems per batch")
         print(f"   🕒 {delay_range[0]}-{delay_range[1]}s delay range")
+        print(f"   📁 Output folder: {self.output_folder}")
+
+    def setup_output_folder(self):
+        """Create output folder with timestamp."""
+        timestamp = time.strftime("%Y%m%d_%H%M%S")
+        folder_name = f"{self.output_folder}_{timestamp}"
+        self.output_folder = Path(folder_name)
+        
+        try:
+            self.output_folder.mkdir(parents=True, exist_ok=True)
+            print(f"📁 Created output folder: {self.output_folder}")
+            
+            # Create a metadata file
+            metadata = {
+                "scrape_started": timestamp,
+                "total_files": 0,
+                "scraper_config": {
+                    "max_workers": self.max_workers,
+                    "connection_limit": self.connection_limit,
+                    "timeout": self.timeout,
+                    "delay_range": self.delay_range,
+                    "batch_size": self.batch_size
+                }
+            }
+            
+            metadata_file = self.output_folder / "metadata.json"
+            with open(metadata_file, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f, indent=2)
+                
+        except Exception as e:
+            print(f"❌ Error creating output folder: {e}")
+            self.output_folder = Path("questions_fallback")
+            self.output_folder.mkdir(parents=True, exist_ok=True)
+
+    def save_individual_problem(self, problem_data, problem_number):
+        """Save individual problem to separate JSON file."""
+        try:
+            filename = f"q{problem_number:04d}.json"  # e.g., q0001.json, q0002.json
+            filepath = self.output_folder / filename
+            
+            with self.file_write_lock:
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    json.dump(problem_data, f, indent=2, ensure_ascii=False)
+                    
+        except Exception as e:
+            print(f"❌ Error saving problem {problem_number}: {e}")
 
     def _init_session_pool(self):
         """Initialize a pool of reusable sessions with maximum performance settings."""
@@ -99,13 +150,13 @@ class HighSpeedSPOJScraper:
         session.mount('https://', adapter)
         return session
 
-    def scrape_problem_details_fast(self, problem_links_batch):
+    def scrape_problem_details_fast(self, problem_links_batch, batch_start_index):
         """Scrape multiple problem details in a single thread (batch processing)."""
         session = self.get_session()
         results = []
         
         try:
-            for problem_link in problem_links_batch:
+            for idx, problem_link in enumerate(problem_links_batch):
                 try:
                     url = f"https://www.spoj.com{problem_link}"
                     
@@ -119,6 +170,9 @@ class HighSpeedSPOJScraper:
                     # Use lxml parser for speed
                     soup = BeautifulSoup(response.content, 'lxml')
                     
+                    # Extract problem code for better naming
+                    problem_code = problem_link.split('/')[-2] if problem_link.split('/')[-2] else f"PROB{batch_start_index + idx + 1}"
+                    
                     # Fast extraction with error handling
                     try:
                         title_element = soup.find('h2', class_='text-center')
@@ -126,14 +180,14 @@ class HighSpeedSPOJScraper:
                             title_text = title_element.get_text(strip=True)
                             problem_title = title_text.split('-')[1].strip() if '-' in title_text else title_text
                         else:
-                            problem_title = f"Problem {problem_link.split('/')[-2]}"
+                            problem_title = f"Problem {problem_code}"
                     except:
-                        problem_title = f"Problem {problem_link.split('/')[-2]}"
+                        problem_title = f"Problem {problem_code}"
                     
                     # Extract other details with fallbacks
                     try:
                         problem_text_container = soup.find('div', id='problem-body')
-                        problem_text = problem_text_container.get_text(strip=True)[:1000] if problem_text_container else 'Not found'
+                        problem_text = problem_text_container.get_text(strip=True) if problem_text_container else 'Not found'
                     except:
                         problem_text = 'Not found'
                     
@@ -151,21 +205,27 @@ class HighSpeedSPOJScraper:
                         sample_input = sample_output = 'Not found'
 
                     result = {
+                        'problem_code': problem_code,
                         'title': problem_title,
                         'tags': tags,
                         'text': problem_text,
                         'sample_input': sample_input,
                         'sample_output': sample_output,
-                        'link': url
+                        'link': url,
+                        'scraped_at': time.strftime("%Y-%m-%d %H:%M:%S")
                     }
                     results.append(result)
+                    
+                    # Save individual problem immediately
+                    problem_number = batch_start_index + idx + 1
+                    self.save_individual_problem(result, problem_number)
                     
                     with self.lock:
                         self.scraped_count += 1
                         if self.scraped_count % 25 == 0:  # More frequent updates
                             elapsed = time.time() - self.start_time if hasattr(self, 'start_time') else 1
                             rate = self.scraped_count / elapsed
-                            print(f"  ⚡ Progress: {self.scraped_count} problems | {rate:.1f}/sec")
+                            print(f"  ⚡ Progress: {self.scraped_count} problems | {rate:.1f}/sec | Saved to {self.output_folder}")
                     
                 except Exception as e:
                     with self.lock:
@@ -263,6 +323,10 @@ class HighSpeedSPOJScraper:
         """Ultra-fast parallel scraping optimized for SPOJ's 80 pages."""
         print("🔥 MAXIMUM CONCURRENCY SPOJ SCRAPER - 80 PAGES")
         print("=" * 60)
+        
+        # Setup output folder
+        self.setup_output_folder()
+        
         self.start_time = time.time()
         
         # For SPOJ's known 80 pages
@@ -297,7 +361,7 @@ class HighSpeedSPOJScraper:
                     all_links.extend(links)
                     completed += 1
                     if completed % 10 == 0 or completed == len(batch_futures):
-                        print(f"  📊 Processed {completed}/{len(batch_futures)} page batches, found {len(all_links)} links")
+                        print(f"  📊 Processed {completed}/{len(page_batches)} page batches, found {len(all_links)} links")
                 except Exception as e:
                     print(f"  ❌ Batch failed: {str(e)[:50]}")
         
@@ -316,6 +380,7 @@ class HighSpeedSPOJScraper:
         print(f"\n⚡ Phase 2: MAXIMUM THROUGHPUT problem scraping")
         print(f"   🎯 Target: {len(all_links)} problems")
         print(f"   📦 Batch size: {self.batch_size} problems per batch")
+        print(f"   💾 Saving each problem to individual JSON file")
         
         # Create smaller problem link batches for maximum parallelism
         link_batches = list(self.create_batches(all_links, self.batch_size))
@@ -324,7 +389,7 @@ class HighSpeedSPOJScraper:
         
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             detail_futures = {
-                executor.submit(self.scrape_problem_details_fast, batch): i 
+                executor.submit(self.scrape_problem_details_fast, batch, i * self.batch_size): i 
                 for i, batch in enumerate(link_batches)
             }
             
@@ -348,10 +413,35 @@ class HighSpeedSPOJScraper:
         
         return all_problem_data
 
+    def update_metadata(self, total_problems, scrape_duration):
+        """Update metadata file with final statistics."""
+        try:
+            metadata_file = self.output_folder / "metadata.json"
+            if metadata_file.exists():
+                with open(metadata_file, 'r', encoding='utf-8') as f:
+                    metadata = json.load(f)
+            else:
+                metadata = {}
+            
+            metadata.update({
+                "scrape_completed": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "total_files": total_problems,
+                "scrape_duration_seconds": scrape_duration,
+                "average_speed_per_second": total_problems / scrape_duration if scrape_duration > 0 else 0,
+                "failed_count": self.failed_count,
+                "success_rate": (total_problems / (total_problems + self.failed_count)) * 100 if (total_problems + self.failed_count) > 0 else 0
+            })
+            
+            with open(metadata_file, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f, indent=2)
+                
+        except Exception as e:
+            print(f"❌ Error updating metadata: {e}")
+
 
 def signal_handler(sig, frame):
     """Handle Ctrl+C gracefully."""
-    print('\n🛑 Interrupted by user. Saving progress...')
+    print('\n🛑 Interrupted by user. Files already saved individually...')
     sys.exit(0)
 
 
@@ -364,6 +454,7 @@ def main():
     MAX_PAGES = 80  # SPOJ has exactly 80 pages
     MAX_PROBLEMS = None  # Get ALL problems
     START_PAGE = 1  # Start from first page
+    OUTPUT_FOLDER = "questions"  # Base folder name
     
     # Handle interruption
     signal.signal(signal.SIGINT, signal_handler)
@@ -373,6 +464,7 @@ def main():
     print("🎯 MISSION: Scrape ALL 80 pages at MAXIMUM SPEED")
     print("⚡ CONCURRENCY: CPU cores × 8 workers")
     print("🚀 OPTIMIZATION: Ultra-minimal delays, max connections")
+    print("💾 OUTPUT: Individual JSON files per problem")
     print("=" * 60)
     
     # Create scraper
@@ -380,7 +472,8 @@ def main():
         max_workers=MAX_WORKERS,
         connection_limit=CONNECTION_LIMIT,
         timeout=TIMEOUT,
-        delay_range=DELAY_RANGE
+        delay_range=DELAY_RANGE,
+        output_folder=OUTPUT_FOLDER
     )
     
     # Start scraping
@@ -398,6 +491,9 @@ def main():
     end_time = time.time()
     total_time = end_time - start_time
     
+    # Update metadata with final stats
+    scraper.update_metadata(len(problem_details), total_time)
+    
     # MAXIMUM PERFORMANCE results summary
     print(f"\n🎉🎉🎉 MAXIMUM SPEED SCRAPING COMPLETED! 🎉🎉🎉")
     print("=" * 60)
@@ -407,6 +503,8 @@ def main():
     print(f"⚡ AVERAGE SPEED: {len(problem_details)/total_time:.1f} problems/second")
     print(f"🔥 PEAK WORKERS: {scraper.max_workers} concurrent threads")
     print(f"📊 SUCCESS RATE: {len(problem_details)/(len(problem_details)+scraper.failed_count)*100:.1f}%")
+    print(f"📁 OUTPUT FOLDER: {scraper.output_folder}")
+    print(f"💾 INDIVIDUAL FILES: {len(problem_details)} JSON files created")
     
     # Expected vs actual
     expected_problems = 80 * 50  # 80 pages × 50 problems per page
@@ -415,26 +513,30 @@ def main():
     
     if problem_details:
         # Show sample
-        print(f"\n📋 Sample problems:")
+        print(f"\n📋 Sample problems saved:")
         for i, problem in enumerate(problem_details[:3]):
-            print(f"  {i+1}. {problem['title']}")
+            filename = f"q{i+1:04d}.json"
+            print(f"  {filename}: {problem['title']}")
+            print(f"     Code: {problem['problem_code']}")
             print(f"     Tags: {', '.join(problem['tags'][:3]) if problem['tags'] else 'None'}")
-            print(f"     {len(problem['text'])} chars of description")
+            print(f"     Description: {len(problem['text'])} chars")
         
         if len(problem_details) > 3:
             print(f"  ... and {len(problem_details)-3} more problems")
         
-        # Save results
-        timestamp = time.strftime("%Y%m%d_%H%M%S")
-        filename = f'spoj_problems_{len(problem_details)}_{timestamp}.json'
+        # Show folder structure
+        print(f"\n📂 Folder structure:")
+        print(f"   {scraper.output_folder}/")
+        print(f"   ├── metadata.json")
+        print(f"   ├── q0001.json")
+        print(f"   ├── q0002.json")
+        print(f"   ├── ...")
+        print(f"   └── q{len(problem_details):04d}.json")
         
-        with open(filename, 'w', encoding='utf-8') as f:
-            json.dump(problem_details, f, indent=2, ensure_ascii=False)
-        
-        print(f"\n💾 Saved to: {filename}")
-        print(f"📊 File size: {os.path.getsize(filename) / (1024*1024):.2f} MB")
+        folder_size = sum(f.stat().st_size for f in scraper.output_folder.glob('*.json') if f.is_file())
+        print(f"📊 Total folder size: {folder_size / (1024*1024):.2f} MB")
     
-    print("\n🚀 Ultra-fast scraping completed!")
+    print(f"\n🚀 Ultra-fast scraping completed! All problems saved to {scraper.output_folder}")
 
 
 if __name__ == "__main__":

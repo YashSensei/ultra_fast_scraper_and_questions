@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Sleepwalker",
+  "tags": [],
+  "text": "There is a building with flat square roof of size3k*3kand sides parallel to north-south and east-west directions. The\r\nroof is covered with square tiles of size1(with a side of length 1), but one of the tiles has been\r\nremoved and there is a hole in the roof (big enough to fall in). The tiles form a\r\nrectangular mesh on the roof, so their positions may be specified with\r\ncoordinates. The tile at the southwestern corner has coordinates (1,1). The\r\nfirst coordinate increases while going eastwards, and the second while going\r\nnorthwards.Sleepwalker wanders across the roof, in each step moving from the tile he is\r\nstanding on to the adjacent one on the east(E), west(W), south(S), or \r\nnorth(N). The\r\nsleepwalker roof ramble starts from the southwestern corner tile. The\r\ndescription of the path is a word dkbuilt of the lettersN, S, E, Wdenoting respectively a step to the north, south, east and west. Fork = 1the word describing the path of sleepwalker isd1=EENNWSWNFork = 2the word describing the path of sleepwalker isd2=NNEESWSEENNEESWSEEEENNWSWNNEENNWSW -NNEENNWSWNWWWSSENESSSSWWNENWWSSW  -WNENWNEENNWSWN.(See the picture that shows how the sleepwalker would go across a roof of\r\ndimension3*3or9*9.) Generally, ifk>=1, the description of\r\na sleepwalker's path on the roof of dimension3k+1*3k+1is a word:dk+1=  a(dk) E a(dk) E dkN dkN dkW c(dk) S\r\nb(dk) W b(dk) N dkwhere functionsa,bandcdenote the following permutations of letters specifying directions:a: E->N W->S N->E S->W \r\nb: E->S W->N N->W S->E \r\nc: E->W W->E N->S S->NE.g. a(SEN)=WNE, b(SEN)=ESW, c(SEN)=NWS.We start observing sleepwalker at the time he stands on the tile of coordinates\r\n(u1, u2). After how many steps will sleepwalker fall into the hole made\r\nafter removing the tile of coordinates (v1, v2)?ExampleThere are sleepwalker's paths on roofs of dimension3*3and9*9on the\r\npicture below. In the second case, the point at which the observation starts and the hole have\r\nbeen marked. The sleepwalker has exactly20steps to the hole (from the\r\nmoment the observation starts).TaskWrite a program which:reads from the standard input integerkdenoting the size of the roof (3k*3k),\r\n  the position of the sleepwalker at the moment the observation starts and the position\r\n  of the hole,computes the number of steps that the sleepwalker will make before he falls into the\r\n  hole,writes the result to the standard output.InputThe number of test cases t is in the first line of input, then t test cases follow separated by an empty line.\r\nIn the first line of each test case one integerk,1<=k<=60, denoting the size of the roof (3k*3k) is written. In\r\neach of the following two lines of the test case  two natural\r\nnumbersx, yseparated with a space are written,1<=x<=3^k,1<=y<=3^k. The\r\nnumbers in the second line are the coordinates of the tile the sleepwalker is\r\nstanding on. The numbers in the third line are the coordinates of the hole. You\r\nmay assume, that with these data the sleepwalker will eventually fall into the hole\r\nafter some number of steps.OutputThe only line of output for each test case should contain the number of steps on\r\nthe sleepwalker's path to the hole.ExampleSample input:1\r\n2\r\n3 2\r\n7 2Sample output20",
+  "sample_input": "a: E->N W->S N->E S->W \r\nb: E->S W->N N->W S->E \r\nc: E->W W->E N->S S->N",
+  "sample_output": "Sample input:1\r\n2\r\n3 2\r\n7 2Sample output20",
+  "link": "https://www.spoj.com/problems/SLEEP",
+  "scraped_at": "2025-08-17 00:33:05",
+  "test_cases": [
+    {
+      "input": "a: E->N W->S N->E S->W \r\nb: E->S W->N N->W S->E \r\nc: E->W W->E N->S S->N",
+      "expected_output": "Sample input:1\r\n2\r\n3 2\r\n7 2Sample output20",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "qnsow d tn jw x\nuuty ejxeu kibt aefg ppjat\nqmw ojzk u vd uwgei",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "tzrpm fsd vqdx zx fsb\npp g rs ltnf xgc\ncag jelil gibf chcbt kr",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "mm f ye ztwnd ecb\njef lbgj te gmlj hgoiq\nmxmil qpvwz iabu tla eiinn",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "gr bs kgdln adxh tou\nm s r c ako\nd iwukb pyz zejgr uelnt",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "tw rspb m xruw mfqv\nzq o rmnb k htcbf\ncml uccc vrhdd kaxg jod",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "daey fs ox ys h\ndlppa anznt rlcwf yi qije\nhm xcehn qjrfz wo wxcpx",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "xzp znyg pvpbg vjr tca\nwis qbc agkg dfx ah\np y hln olur awuzt",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "gdwp toq ql nttgs su\nwsxex zl boaw yznv twqg\nlpqmd spqg iuc zih kz",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "wbrx klh dv q jnnk\ncaxe obfdb z ajhm sneia\nd sv myqd a fg",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "egzy fu cz cpa co\ne psa wkf u zha\ndwjxy bph pcjq l tkdna",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ekbmz sa ujpb ejhsg ldfr\nwg rkc o hsrv npxwd\nqccf bci ow xze wh",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mj xuf thtgb gqvaa ha\nivv fgf ezq tfxt ovgbv\nvq if inoi mw zw",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "frpu dwzni hhy u z\nbpnvd kabjb pxq e incu\ndfdue brhlr b j kioqn",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vdi kvdf ogtji hz u\nu h qmqno r m\nrfgpe edqf b fth fsfng",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gtkq um zf he wpt\nrzz apld zndkv mesel grnlg\ndtc sj mxr fu aomhr",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gpf ncl zphpg ixcqf kz\nk ykl sn j xxamd\nhhdk dcdau quxtg b jlu",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "jm eolw e tm lfk\nsa qy g u s\nnpd kutfl py uh c",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "kp lxa hui tjogs zqdwn\nkgp ifnwq ew pktrv yxz\npdd kdaq t pmj j",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "tjw wpapa dd u dn\nd lqpv gmq nhno b\ngfn grm x z zlkc",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:46",
+  "total_test_cases": 20
+}

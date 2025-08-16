@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Eefun the Accountant",
+  "tags": [],
+  "text": "Eefun is an accountant. As an accountant, he loves to work with spreadsheet. In spreadsheet, a data must be saved into a single cell which has row and column. Spreadsheet has an interesting feature. It can move the cursor from a cell to another cell by clicking a button based on this rules :If current cell has data and its right neighbour also contain data, then clicking the right button will make the cursor move to the first cell to the right of the current cell whose right neighbour doesn't contain data. If there is no such cell, then the cursor will move to the rightmost cell in the current row.Else,then clicking the right button will make the cursor to move to the first cell in the right of current cell which has data. If there is no such cell, then the cursor will move to the rightmost cell in the current row.Same rules apply when clicking the left, up, and down button.Eefun realizes this feature which makes him curious. He currently has a lot of data in his spreadsheet. He wants to edit a data on cell (R, C), but first he must move his cursor to the desired cell. Currently his cursor is at cell (1,1), the top-leftmost cell in the spreadsheet. Eefun wants to know the minimal number of button clicked to reach the cell.InputFirst line of input consists of 2 integers, N and M, the number of rows and number of columnsSecond line consists of a number X, the number of data that Eefun currently has.Next X lines each consists of 2 integers, A and B which denotes the position of the dataLine (X+3) contains a number Q, the number of query.Next Q lines each consists of 2 integers, R and C, the position of cells that Eefun wants to editOutputFor each query, output a single integer, the minimum number of buttons that Eefun should click to reach cell (R,C). If the cell cannot be reached, then output a string \"Eefun gagal mengedit data\"\"Eefun gagal mengedit data\" means \"Eefun fails to edit his data\"Note that each query is independent, so Eefun's initial cursor will be at (1,1) for each queryExampleInput:3 3\r\n8\r\n1 1\r\n1 2\r\n1 3\r\n2 1\r\n2 3\r\n3 1\r\n3 2\r\n3 3\r\n2\r\n3 2\r\n1 3Output:Eefun gagal mengedit data1Note : You can try this in Microsoft Excel using ctrl + arrow buttonConstraints1 ≤ X ≤ min(100.000 , N×M)1 ≤ N, M ≤ 10.0001 ≤ Q ≤ 100.000",
+  "sample_input": "Input:3 3\r\n8\r\n1 1\r\n1 2\r\n1 3\r\n2 1\r\n2 3\r\n3 1\r\n3 2\r\n3 3\r\n2\r\n3 2\r\n1 3Output:Eefun gagal mengedit data1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/NPC2015B",
+  "scraped_at": "2025-08-17 00:33:26",
+  "test_cases": [
+    {
+      "input": "3 3\r\n8\r\n1 1\r\n1 2\r\n1 3\r\n2 1\r\n2 3\r\n3 1\r\n3 2\r\n3 3\r\n2\r\n3 2\r\n1 3",
+      "expected_output": "Eefun gagal mengedit data1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 1\n1\n5 7\n2 10\n8 4\n3 2\n1 5\n6 7\n1 4\n7 6\n5\n5 9\n1 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 9\n3\n9 8\n8 4\n3 9\n1 4\n1 5\n1 3\n3 10\n7 2\n10\n2 8\n6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 7\n6\n6 1\n8 5\n4 8\n7 1\n6 7\n8 1\n10 8\n6 10\n9\n8 2\n3 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "81 24\n39\n25 37\n30 21\n100 17\n49 5\n14 93\n24 74\n94 50\n13 73\n32\n83 31\n16 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 46\n47\n86 9\n49 52\n16 29\n2 89\n33 75\n15 97\n72 19\n31 90\n68\n38 69\n6 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 34\n12\n85 94\n65 60\n39 98\n55 100\n36 59\n93 90\n20 15\n78 52\n10\n44 4\n49 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 16\n63\n96 41\n77 94\n31 65\n20 62\n51 80\n28 79\n85 60\n75 44\n48\n28 4\n75 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 44\n66\n6 8\n21 47\n7 29\n39 73\n27 94\n64 18\n41 68\n32 59\n25\n64 66\n57 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "300 348\n446\n267 277\n233 449\n156 197\n435 418\n132 389\n347 162\n407 210\n425 351\n220\n67 339\n244 313",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "487 266\n387\n52 216\n327 162\n197 342\n94 489\n150 410\n262 231\n92 311\n202 456\n316\n133 101\n423 156",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "292 473\n146\n259 213\n347 64\n369 435\n156 427\n92 370\n431 331\n211 230\n70 498\n79\n206 343\n126 176",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "449 194\n374\n389 431\n231 137\n434 278\n336 130\n352 390\n328 257\n287 326\n241 88\n90\n341 112\n352 378",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "111 101\n218\n415 154\n300 400\n450 347\n239 428\n424 321\n144 425\n473 210\n394 343\n250\n64 359\n248 474",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "489 52\n412\n428 204\n118 389\n237 163\n85 228\n105 191\n246 418\n330 406\n215 165\n62\n247 446\n206 370",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "350 291\n289\n79 100\n422 462\n387 217\n73 101\n445 184\n83 237\n370 51\n299 426\n267\n99 205\n79 55",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999\n2\n999 1000\n999 1000\n1 2\n1 2\n2 1000\n1 999\n1000 2\n2 1000\n1\n1000 1000\n1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n2\n1 2\n1 2\n1 1000\n999 1000\n1000 1\n999 999\n999 2\n2 1000\n1000\n1000 2\n1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-17 00:51:48",
+  "total_test_cases": 20
+}
