@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Pizza Location",
+  "tags": [],
+  "text": "EnglishVietnameseOur friend Picko is very reach and he wants to open lots of restaurants with delivery. The main food will be, of course, pizza.  He has certain number of potential locations for the restaurants,  and he knows the locations of the solitairs with lots of people which will often be his customers.  Delivery of each restaurant will cover all the solitairs in given radius.Picko can open only limited number of restaurants, and he wants that  restaurants on the locations which will cover maximal  number of people in solitairs.Write a program that will calculate maximal number of people which  we can cover with delivery.InputIn the first line of the input file there are two integers K  and R, separated with space, number of restaurants and radius of  delivery, 1 ≤ K ≤ 10, 1 ≤ R ≤ 500.In the second line there is integer M, number of locations, K ≤ M ≤ 20.In each of the next M lines there are two integer X and Y, separated  with space, coordinates of each location, -1000 ≤ X,Y ≤ 1000.In the next line there is integer N, number of solitairs, 1 ≤ N ≤ 100.In each of the next N lines there are three integers X, Y and S,  separated with space, X and Y are coordinates of each solitaire, and S  is number of people in that solitaire, -1000 ≤ X,Y ≤ 1000, 1 ≤ S ≤ 100.We consider that solitaire is in radius of some restaurant if  distance between them is less or equal to R.  There are no two locations of restaurants on the same place.OutputIn only line of the output file we have to write maximal number from  the text above.SampleInput:2 2\r\n3\r\n1 0\r\n4 0\r\n7 0\r\n4\r\n0 0 1\r\n3 0 7\r\n5 0 9\r\n8 0 1Output:18Input:2 2\r\n3\r\n-2 0\r\n0 1\r\n3 0\r\n8\r\n-3 1 1\r\n-3 0 1\r\n-3 -1 1\r\n-2 -1 1\r\n0 0 3\r\n0 2 1\r\n2 1 3\r\n4 0 2Output:12Input:3 3\r\n5\r\n0 0\r\n1 6\r\n2 3\r\n6 6\r\n7 2\r\n8\r\n0 1 2\r\n0 5 3\r\n0 6 1\r\n1 0 1\r\n3 2 3\r\n3 6 2\r\n6 2 4\r\n8 6 3Output:17",
+  "sample_input": "Input:2 2\r\n3\r\n1 0\r\n4 0\r\n7 0\r\n4\r\n0 0 1\r\n3 0 7\r\n5 0 9\r\n8 0 1Output:18",
+  "sample_output": "Input:2 2\r\n3\r\n-2 0\r\n0 1\r\n3 0\r\n8\r\n-3 1 1\r\n-3 0 1\r\n-3 -1 1\r\n-2 -1 1\r\n0 0 3\r\n0 2 1\r\n2 1 3\r\n4 0 2Output:12",
+  "link": "https://www.spoj.com/problems/PIZZALOC",
+  "scraped_at": "2025-08-17 00:33:50",
+  "test_cases": [
+    {
+      "input": "2 2\r\n3\r\n1 0\r\n4 0\r\n7 0\r\n4\r\n0 0 1\r\n3 0 7\r\n5 0 9\r\n8 0 1",
+      "expected_output": "18",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 2\r\n3\r\n-2 0\r\n0 1\r\n3 0\r\n8\r\n-3 1 1\r\n-3 0 1\r\n-3 -1 1\r\n-2 -1 1\r\n0 0 3\r\n0 2 1\r\n2 1 3\r\n4 0 2",
+      "expected_output": "12",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "9 6\n10\n7 5\n3 7\n2 2\n3\n3 3 10\n5 10 2\n7 3 9\n7 9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5\n9\n9 3\n4 7\n3 9\n8\n5 1 9\n4 3 6\n5 8 8\n5 5 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 3\n1\n6 9\n6 2\n10 2\n6\n9 9 5\n10 8 3\n7 8 2\n6 4 10",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 16\n42\n19 71\n96 69\n80 42\n5\n76 24 30\n41 87 55\n4 76 21\n30 95 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 26\n13\n100 24\n56 54\n23 36\n21\n41 83 20\n78 76 43\n20 74 75\n61 44 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 58\n89\n35 70\n51 58\n32 96\n62\n1 37 21\n47 91 62\n85 72 70\n69 93 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 21\n16\n20 6\n52 71\n53 73\n93\n8 59 27\n74 59 60\n25 50 45\n46 68 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 94\n5\n99 52\n91 35\n64 54\n40\n33 68 41\n71 78 14\n11 25 59\n87 37 54",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 25\n26\n46 15\n11 34\n50 27\n45\n7 48 44\n33 6 34\n42 42 42\n32 24 21",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 28\n32\n34 40\n29 50\n7 30\n29\n50 28 43\n43 23 31\n36 13 25\n20 28 15",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 18\n41\n26 29\n40 48\n44 10\n17\n28 15 48\n33 47 41\n26 5 34\n40 30 29",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "35 16\n22\n36 5\n41 5\n17 36\n8\n30 9 22\n15 28 22\n49 5 27\n23 8 45",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 25\n23\n32 23\n47 31\n38 38\n42\n23 31 7\n9 50 25\n39 12 7\n40 50 25",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22 42\n32\n43 7\n26 12\n43 23\n6\n17 24 11\n45 42 41\n27 21 39\n37 35 16",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 41\n49\n33 30\n10 32\n50 11\n48\n12 12 17\n14 12 26\n37 20 15\n46 12 40",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100\n100\n100 100\n100 100\n100 100\n100\n100 100 100\n100 100 100\n100 100 100\n100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100\n100\n100 100\n100 100\n100 100\n100\n100 100 100\n100 100 100\n100 100 100\n100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 99\n99\n2 100\n100 99\n100 100\n1\n2 2 1\n1 99 2\n2 99 1\n1 99 99",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

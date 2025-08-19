@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Project File Dependencies",
+  "tags": [],
+  "text": "Project managers, such as the UNIX utilitymake, are used to maintain large software projects made up from many components. Users write aproject filespecifying which components (calledtasks) depend on others and the project manager can automatically update the components in the correct order.ProblemWrite a program that reads a project file and outputs the order in which the tasks should be performed.InputFor simplicity we represent each task by an integer number from $1, 2, \\ldots, N$ (where $N$ is the total number of tasks). The first line of input specifies the number $N$ of tasks and the number $M$ of rules, such that $N \\le 100$, $M \\le 100$.The rest of the input consists of $M$rules, one in each line, specifying dependencies using the following syntax:$T_0$ $k$ $T_1$ $T_2$ $\\ldots$ $T_k$This rule means that task number $T_0$ depends on $k$ tasks $T_1, T_2, \\ldots, T_k$ (we say that task $T_0$ is thetargetand $T_1, \\ldots, T_k$ aredependents).Note that tasks numbers are separated by single spaces and that rules end with a newline. Rules can appear in any order, but each task can appear as target only once.Your program can assume that there are no circular dependencies in the rules, i.e. no task depends directly or indirectly on itself.OutputThe output should be a single line with the permutation of the tasks $1 \\ldots N$ to be performed, ordered by dependencies (i.e. no task should appear before others that it depends on).To avoid ambiguity in the output, tasks that do not depend on each other should be ordered by their number (lower numbers first).ExampleInput:5 4\r\n3 2 1 5\r\n2 2 5 3\r\n4 1 3\r\n5 1 1Output:1 5 3 2 4",
+  "sample_input": "$T_0$ $k$ $T_1$ $T_2$ $\\ldots$ $T_k$",
+  "sample_output": "Input:5 4\r\n3 2 1 5\r\n2 2 5 3\r\n4 1 3\r\n5 1 1Output:1 5 3 2 4",
+  "link": "https://www.spoj.com/problems/PFDEP",
+  "scraped_at": "2025-08-17 00:34:13",
+  "test_cases": [
+    {
+      "input": "$T_0$ $k$ $T_1$ $T_2$ $\\ldots$ $T_k$",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 4\r\n3 2 1 5\r\n2 2 5 3\r\n4 1 3\r\n5 1 1",
+      "expected_output": "1 5 3 2 4",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "7 1 3\nvhxtq f avx ve mb yivw",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7 6\nhksn do pvwu tnq tga lui",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 4 4\niefp mocms fbm mqy vm gcbl",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "61 87 52\nugk tao vikon xlkd ipv sp",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 59 51\nkbmze yf rug htil jfctvl thzy",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 1 20\nxbgof bhok sdny sspuz fnidtnqk ck",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 3 96\nbyb zirm is jm mmldq xa",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 100 54\noo u nqlb ajasp qpflhhlf ijzd",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 319 336\nbs owy ex hf kfawpxvc awq",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "163 233 274\ndc ntmw qayv t hcywae opuze",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "482 481 129\ntigxl vi bj rrwqq hvob koge",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "269 323 64\nt bmhkh mp hltna gnokg g",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "465 252 171\nmf xsdx asp dgueu ox m",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "479 153 80\nucosk oz ci crrqo stpth xzr",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "351 256 359\natjaa pyiac ksmqq pgn xjcoy xz",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nco yxtdb plxu dwwqv ozjio cjcy",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\noedj ypqso rm iqzgq stg hxzwf",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999 999\nnhu srnj qochb tsdms ypxbz gqam",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

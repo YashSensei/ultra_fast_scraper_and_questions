@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Light Cycling",
+  "tags": [],
+  "text": "Having been sucked into your father's secret computer through a projector in the back of his arcade (or something), you find yourself in the wonderful world of Tron! Here, you play games all day, and if you ever lose, you die.One such game involves you and an opponent driving around a flat grid on light cycles, which leave behind a permanent trail of...light...wherever they go. This grid can be modeled with the Cartesian plane, and is enclosed by a rectangle of impenetrable walls which ensure that the x-coordinate of each light cycle is always between $1$ and $10^{12}$, while its y-coordinate is between $1$ and $10^6$ (inclusive). Light cycles always stay on the grid lines, and move at a speed of 1 square per second.A match lasts $S$ ($1 \\leq S \\leq 10^{100}$) seconds. You start at coordinates ($X_A$, $Y_A$) and follow a set of $N_A$ ($1 \\leq N_A \\leq 10^5$) instructions, with your $i$th instruction consisting of moving $L_{Ai}$ squares in the direction given by the character $D_{Ai}$ (with \"U\", \"D\", \"L\", and \"R\" representing up, down, left, and right, respectively). Similarly, your opponent starts at coordinates ($X_B$, $Y_B$) and follows a set of $N_B$ ($1 \\leq N_B \\leq 10^5$) instructions, with their $i$th instruction described by $L_{Bi}$ and $D_{Bi}$. Of course, neither player's instructions will ever take them beyond the boundaries of the walls, and it will take each player exactly $S$ seconds to execute their instructions. Additionally, for each player, no instruction will have an equal or opposite direction to that of their previous instruction. Finally, if a grid point is ever visited more than once throughout the course of the match, it is guaranteed that one of the path segments intersecting there is passing directly through vertically, while the other is passing directly through horizontally (as such, this cannot happen at either player's starting or ending points).Whenever both light cycles reach the same grid point at the same time, or a light cycle hits an existing trail of light (in other words, a grid point which either light cycle had previously passed through), a collision occurs. Because you're just playing a practice match for now, neither player dies when this occurs, and, in fact, the collision is not counted in favour of either you or your opponent. Instead, for $T$ ($1 \\leq T \\leq 20$) scenarios as described above, you're simply interested in the number of collisions that will occur throughout each match.InputFirst line: 1 integer, $T$For each scenario:First line: 1 integer, $S$Next line: 3 integers, $X_A$, $Y_A$, and $N_A$Next $N_A$ lines: 1 character, $D_{Ai}$, and 1 integer, $L_{Ai}$, for $i = 1..N_A$Next line: 3 integers, $X_B$, $Y_B$, and $N_B$Next $N_B$ lines: 1 character, $D_{Bi}$, and 1 integer, $L_{Bi}$, for $i = 1..N_B$OutputFor each scenario:1 integer: The total number of collisions that will occur.ExampleInput:1122 5 5R 4U 1L 1D 4L 23 3 4U 3L 2D 2R 5Output:4Explanation of Sample:The following diagram illustrates the paths of the light cycles (yours drawn in solid lines, and your opponent's drawn in dotted ones), as well as all of the collision points (indicated with large dots):",
+  "sample_input": "Input:1122 5 5R 4U 1L 1D 4L 23 3 4U 3L 2D 2R 5Output:4",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UOFTBF",
+  "scraped_at": "2025-08-17 00:34:03",
+  "test_cases": [
+    {
+      "input": "1122 5 5R 4U 1L 1D 4L 23 3 4U 3L 2D 2R 5",
+      "expected_output": "4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 1 2 6 6 9 10 4 8 2 6 6 5 2\n3 10 juxx ip ni ifuek v 5 3 jbdb eyvn th chn 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 7 6 9 1 9 5 4 2 2 7 8 4 1\n5 7 zbik wcv yrga xntqj xl 10 9 g c jejnd wvd 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 9 8 7 10 9 6 2 10 6 2 10 10 9\n6 10 csmb ebdtv fx fja rgle 8 6 vkj rsbo qo ewgfl 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "52 88 71 48 94 13 81 68 66 79 52 51 8 24\n21 86 z fcf cszu pns jdvy 90 87 kk suwqr anox znvi 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 71 95 59 54 77 48 96 68 80 20 28 49 29\n49 15 oyt bydh hfzj l iewb 6 61 ki lmhb ss qwfgr 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 69 11 44 30 59 70 14 73 53 83 27 40 20\n67 67 gkjmo aqz otgd uqwfm g 13 79 z khbc ilx km 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "61 67 41 65 74 15 4 90 56 31 10 83 84 56\n46 65 jgdks k j s ft 21 44 awu xgojt tvxtx cr 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 88 41 100 58 84 51 79 41 89 40 6 33 60\n4 64 t col ce hp bohil 6 45 mjz sioz attqq zhf 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "284 105 269 434 284 168 173 188 118 357 397 303 113 117\n114 289 n tkzm ywz ktj fvnz 442 166 d khzv xv qs 342",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "458 322 378 382 226 341 181 186 275 220 306 417 442 265\n91 278 r nd jlbv kczsd cqjon 379 441 ygxkf mk wly klp 157",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "341 300 199 109 160 421 122 233 392 416 299 379 309 69\n147 419 hznl nzwzy xpkoh ltd tpqjh 460 418 qo mst c rjk 484",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "369 403 154 300 446 126 212 129 57 363 307 260 197 348\n356 481 ai bv sde djdb def 312 267 zs qmyv ykc wxz 444",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "138 77 107 346 445 74 106 189 65 131 390 403 231 217\n411 268 vsl paibz altha da kucdm 176 338 a rx gxwa kn 291",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "499 250 401 295 309 370 468 402 290 132 85 73 264 344\n314 384 edi sdxn vastj h va 225 89 lizoe m y iiofs 221",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "265 91 387 232 144 432 152 357 404 471 349 220 350 208\n442 88 e fmka fqce cketj s 356 246 wcnks e ex k 69",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 jovp t smypr ec npifo 1000 1000 ipfh dqa wi rijk 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 co ui b i vcnp 1000 1000 yfle nbllz ccpiz jgntn 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 999 1000 2 999 1000 2 999 999 1000 1 999 1000 2\n1000 999 uwld majs x a ycaun 1000 999 l dp hjckd qzou 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1 1000 999 1 1 1 999 1 1 2 1000 1000 1000\n1000 1 sb mnrp jhcus pv a 1 2 n v yid ja 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

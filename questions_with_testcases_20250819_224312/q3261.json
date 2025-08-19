@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Loyalty of the Orcs",
+  "tags": [],
+  "text": "'I think that the enemy brought his own enemy with him,' answered Aragorn. 'These are Northern Orcs from far away. Among the slain are none of the great Orcs with the strange badges. There was a quarrel, I guess: it is no uncommon thing with these foul folk. Maybe there was some dispute about the road.' - Aragorn describing the nature of Orcs.Indeed, everyone knows that the Orcs are treacherous creatures who look for their own satisfaction and more often than not disregard the rules. The only way to keep them in line, is by maintaining the chain of command over a strict hierarchy among the ranks, wherein each Orc is responsible to his immediate superior all the way up to the army's head.Further, the powers that be, have decided to have regular checks of their army's loyalties, just in case some Orc has been killed and all his juniors end up turning rogue!There are N orcs, numbered 1 to N, wherein the lead orc is numbered 1.Step 1. Randomly choose a fixed order in which to test Orcs' loyalties.Step 2. Going in this order, you make a \"roll-call\" to check if the current Orc is alive or not.Step 3. If the current Orc is dead, then he is marked as \"deleted\".With this information, it is possible to tell which all Orcs will be loyal, and which won't be. However, cunning Master Wormtongue suggests the following optimization:In step 2, if any of the considered Orc's superiors (not necessarily immediate superior) is marked as deleted, then the roll-call is not made.Now, given this algorithm and the hierarchy of the army, along with which Orcs are dead, what is the expected number of roll-calls (taken over all possible orderings in \"Step 1\") that you save by performing this optimization?InputThe first line contains T, the number of test cases.The first line of each test case contains N, the number of orcs in the army. The next N-1 lines contain two space-separated integers u v, denoting that u is the immediate superior of v or vice-versa. The head of the army is the orc labelled 1. The next line contains m, the number of dead orcs. The next line contains m space separated integers, which are the labels of the dead orcs.OutputOutput one real number for each test case containing the expected number of roll-calls that you save. The results should be accurate within an error range of 10-6.Constraints1 ≤ T ≤ 51 ≤ N ≤ 100,0001 ≤ u, v ≤ Nu ≠ vThe given set of u-v pairs form a valid chain of command. That means every Orc, except the Orc labelled 1, has exactly one immediate superior.SampleInput:2\r\n2\r\n1 2\r\n1\r\n1\r\n2\r\n1 2\r\n1\r\n2Input:0.5\r\n0Notes / Explanation of SampleFor the first test case, the Orc labelled 1 is dead. The two possible orderings are [1, 2] and [2, 1]. With the optimization, for the order [1, 2], we save the roll-call to 2. So, the total number of roll-calls without the optimization is 4, and with the optimization is 3. Expected number of roll-calls is therefore, (4 - 3) / 2 = 0.5 .For the second test case, the Orc labelled 2 is dead. Since he does not have any sub-ordinates, the optimization does not have any effect.",
+  "sample_input": "Input:2\r\n2\r\n1 2\r\n1\r\n1\r\n2\r\n1 2\r\n1\r\n2Input:0.5\r\n0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/AMR12K",
+  "scraped_at": "2025-08-17 00:34:09",
+  "test_cases": [
+    {
+      "input": "2\r\n2\r\n1 2\r\n1\r\n1\r\n2\r\n1 2\r\n1\r\n20.5\r\n0",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n3\n10\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n9\n3\n6\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "20\n79173559\n72522729\n54403137\n69551610\n31566366\n86970007\n7207429\n99352825\n10540823\n30893342\n82493277\n62427133\n53587453\n91140584\n26447632\n75677503\n81525991\n29140665\n66012389\n56946777",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n4841688\n21077916\n68263862\n8192910\n75704073\n50277770",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n45957308\n17553670\n27610783\n34869492\n36904700\n74159320\n75387422\n30300015\n34550600\n25483555\n47229560\n85691150\n23373251\n10101324\n85103716\n93064960\n63333902\n19602620\n84972792",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n23603871\n94295424\n33015325\n1484964\n85584036",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n85357990\n75571495\n91389234\n19026204\n21471776\n10171027\n55127616\n62983016\n10480364\n55011559\n69323810\n36592869\n98305286\n80443778\n91929615",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "57\n22583\n22511\n65559\n36750\n58816\n13636\n11201\n7604\n63499\n50899\n25387\n40687\n63808\n78002\n24601\n12111\n17266\n37680\n99233\n6747\n3600\n36602\n42304\n42584\n4058\n25218\n19342\n19216\n45570\n1837\n28028\n40202\n23483\n59233\n75582\n67909\n32469\n88922\n26766\n70496\n74604\n60966\n48567\n75315\n92664\n29770\n1489\n64443\n74087\n25488\n70331\n98036\n36564\n85160\n83798\n55611\n29775",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "97\n59129\n43636\n32680\n12436\n27486\n73807\n96960\n22676\n6102\n64798\n31151\n2753\n66874\n613\n81575\n86157\n6\n72509\n49967\n19229\n57955\n15783\n76085\n95960\n36542\n61358\n3956\n18496\n44337\n2424\n20472\n53067\n69442\n6760\n29053\n59569\n86625\n80442\n29862\n31076\n28626\n26238\n43467\n23192\n41526\n74808\n888\n82899\n49277\n70598\n15780\n65656\n53785\n81357\n12197\n44303\n88833\n61025\n47496\n2789\n66634\n51642\n67192\n70423\n86871\n92940\n44278\n97413\n58661\n61497\n79860\n36774\n7544\n10920\n21256\n94890\n87701\n97566\n21719\n82319\n85666\n456\n6451\n54669\n33828\n16686\n56030\n74192\n1325\n25297\n85060\n63253\n3469\n40584\n17321\n67867\n49805",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "57\n6280\n17292\n32363\n51168\n21219\n91928\n62644\n81374\n8733\n84247\n63708\n78748\n67057\n32938\n17150\n42042\n48966\n74601\n4620\n95271\n34574\n64520\n8246\n6497\n53140\n41886\n68741\n22644\n40149\n56709\n54107\n76816\n62099\n78978\n79518\n37859\n62093\n907\n46668\n49054\n11886\n64420\n81335\n94239\n19940\n568\n55678\n19622\n28714\n62030\n12276\n16115\n99523\n84278\n48082\n89750\n10341",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "70\n68083\n21081\n95254\n14130\n27719\n64880\n20526\n13898\n54165\n85740\n16624\n75677\n21660\n42201\n41953\n79070\n64137\n2322\n4821\n13985\n70967\n45021\n25912\n1243\n79718\n65842\n6207\n65680\n82303\n21444\n37855\n40200\n18624\n60195\n56936\n68901\n87377\n13371\n67749\n92815\n13991\n23409\n87872\n33639\n14221\n74839\n4821\n28504\n79872\n82992\n56737\n86843\n42007\n50401\n39971\n21010\n55974\n23793\n88386\n11052\n38897\n5472\n54150\n97665\n34004\n41294\n49943\n77610\n55449\n94725",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n86984\n70864\n32611\n23577\n93927\n14663\n37190\n98797\n63057\n27082\n33279\n60112\n22524\n26243\n78712\n40062\n28702\n68810\n42890\n38507\n5034\n49200\n9738\n93868\n3276\n7332\n40456\n62013\n12000\n25567\n4902\n92115\n92507\n81839\n45875\n28518",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "64\n95417\n46440\n85527\n58277\n63204\n10722\n60760\n52530\n92522\n8328\n60875\n31519\n25976\n92966\n97266\n31186\n29510\n96134\n63537\n29769\n71405\n30294\n433\n44655\n97909\n88814\n39693\n97240\n66700\n81362\n92123\n1694\n3647\n52470\n26796\n90770\n98322\n53753\n49638\n2817\n71399\n57745\n68608\n35258\n6782\n62787\n76625\n79587\n17806\n44517\n94979\n89987\n20958\n84214\n97575\n27391\n74060\n72495\n9107\n98764\n20416\n20443\n63595\n11542",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "37\n68683\n65243\n92121\n17917\n27913\n40014\n61515\n90548\n27069\n24400\n52116\n67595\n66985\n95278\n78901\n21543\n32137\n31400\n86789\n92234\n6629\n83880\n28905\n67766\n43826\n64518\n90589\n47597\n3412\n87879\n42627\n91953\n16831\n85176\n71697\n93994\n31018",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "100\n19324167\n32384557\n49287894\n3924858\n55324164\n88660103\n98916034\n91823828\n4695162\n25276077\n61691502\n58697611\n71760589\n45772366\n83417400\n69437467\n85872157\n62126871\n15624871\n28312351\n64371793\n55497944\n45260127\n8286970\n75056426\n96811392\n24832669\n58002531\n94349269\n40087098\n45315191\n36775852\n6292685\n38668474\n36615914\n46315672\n17871420\n7333473\n16204773\n29928985\n84700019\n78942857\n79071548\n75394101\n45073692\n1601572\n69367369\n50646820\n49815936\n73613723\n30507882\n85168685\n32392363\n2322802\n24849850\n42306576\n55736039\n4830437\n46453184\n60331301\n56789501\n49910695\n58123960\n55300189\n8940615\n15317363\n3050842\n88060126\n15310400\n12186034\n27436209\n99593360\n57428741\n9778238\n11750124\n69735358\n86065738\n90352312\n18553511\n58574054\n17079171\n73623697\n60331390\n48635349\n73372229\n48795526\n51138472\n39108578\n28767896\n83953187\n80801060\n49704758\n41531292\n38363491\n98029920\n29411559\n61433997\n74007486\n6505915\n11222453",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "100\n56397940\n71281227\n94625574\n3011907\n78824720\n93932216\n8833065\n24944166\n24977196\n91669101\n26319396\n84144790\n77875844\n1951996\n62778355\n86482230\n17118279\n2135246\n97300621\n91059557\n83790490\n64467619\n16620512\n65587858\n72878350\n49137486\n48755841\n87514024\n34030855\n60810132\n92237802\n81008895\n32022964\n82398096\n63069057\n97787320\n55725711\n20894346\n34888947\n33946037\n96704559\n27893658\n62909247\n80210550\n81815889\n52954174\n15042132\n10646115\n82995775\n41134771\n92589194\n8545811\n21867755\n82870534\n1521344\n10403968\n33551907\n70469544\n79635132\n23263487\n94858303\n58791062\n98041878\n74674318\n75395320\n34926542\n32086446\n55043216\n5782702\n46471900\n39169692\n72714436\n68591064\n70299261\n98630508\n55575664\n56414103\n5832156\n31591307\n98634519\n3431518\n72600223\n21784455\n3213527\n81495219\n79817065\n31584338\n96643328\n60090852\n75259232\n8799088\n86335949\n24825101\n52215361\n99943037\n56933755\n62068135\n25189862\n43098661\n32771802",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "2\n100000000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

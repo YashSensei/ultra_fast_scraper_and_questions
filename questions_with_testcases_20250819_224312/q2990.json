@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Save Lord Tachanka",
+  "tags": [],
+  "text": "Our friend Lord Tachanka is on an important mission. He has to reach basecamp quickly. But the evil enemies have stolen many LMGs and have placed them along the way. You'll have to help him out!Lord Tachanka is initially at the top left corner (1, 1) of a rectangular N × M grid. He needs to reach the bottom right corner (N, M). He can only move down or right. He moves at the speed of 1 cell per second. He has to move every second—that is, he cannot stop and wait at any cell.There are K special cells that contain the LMG planted by the enemies. Each LMG has a starting time t and a frequency f. It first fires at time t seconds, followed by another round at time t+f seconds, then at time t+2f seconds …. When a LMG fires, it simultaneously emits four bullets, one in each of the four directions: up, down, left and right. The pulses travel at 1 cell per second.Suppose a LMG is located at (x, y) with starting time t and frequency f. At time t seconds, it shoots its first set of bullets. The bullets travelling upwards will be at the cell (x,y-s) at time t+s seconds. At this time, the bullets travelling left will be at cell (x-s, y), the bullets travelling right will be at cell (x+s, y) and the bullets travelling down will be at cell (x, y+s). It will fire next at time t+f seconds. If a bullets crosses an edge of the grid, it disappears. The LMGs are numbered 1 to k, and if two bullets from different LMGs happen to meet, the one coming from the higher numbered LMG survives. At any time, if Lord Tachanka and a bullet are in the same cell, he dies. That is the only way bullet interact with Lord Tachanka.But don't be worried, as you can help the Lord. He can contact his basecamp and can report them the exact position of an LMG, and it will be destroyed by air support. But the war is going on, and you as a commander will have to ensure that minimum missiles are wasted.Given these, you should find the least time (in seconds) in which Lord Tachanka can reach his basecamp safely. Also calculate the minimum number of LMGs that need to be destroyed so that the Lord can reach the basecamp safely.Constraints2 ≤ N, M ≤ 5001 ≤ K ≤ 500All the frequencies are guaranteed to be integers between 1 and 600, inclusive.All the starting times are guaranteed to be integers between 0 and 600, inclusive.All the coordinates of the LMGs are guaranteed to be valid cells in the N×M grid.No two LMGs will be on the same cell.InputLine 1: Three space separated integers N, M and K, describing the number of rows and columns in the grid and the number of LMGs, respectively.Lines 2 to K+1: These lines describe the K LMGs. Each line has four space separated integers.The first two integers on the line denote the row and column where the LMG is located,the third integer is its starting time, and the fourth integer is its frequency.The LMGs are numbered in the order in which it appears in the input, i.e. from 1 to k.OutputYou need to output two integers, the minimum amount of time required for the Lord to reach the basecamp, and the minimum LMGs needed to be destroyed.ExampleInput:4 4 1\r\n3 2 1 3Output:6 0",
+  "sample_input": "Input:4 4 1\r\n3 2 1 3Output:6 0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TACHANKA",
+  "scraped_at": "2025-08-17 00:34:22",
+  "test_cases": [
+    {
+      "input": "4 4 1\r\n3 2 1 3",
+      "expected_output": "6 0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 2 1\n7 10 5 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 6 1\n8 3 5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 4 4\n10 2 4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "46 80 16\n26 30 59 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 89 60\n8 46 52 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 4 21\n92 92 21 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "79 65 80\n52 49 21 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 91 7\n3 32 82 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "257 383 255\n488 65 416 343",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "273 330 412\n134 338 169 451",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "330 174 371\n136 362 484 189",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "169 457 187\n340 81 379 475",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "90 374 209\n195 321 55 235",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "53 205 293\n201 355 143 417",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "135 452 479\n94 413 449 387",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999 2\n2 1 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 999 1000\n2 1 1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

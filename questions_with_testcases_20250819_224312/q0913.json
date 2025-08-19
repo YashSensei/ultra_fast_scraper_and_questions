@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "MP3 Player",
+  "tags": [],
+  "text": "Georg's new MP3 player has many interesting features, one of them being the key lock. All the keys are locked after more thanTseconds of inactivity. After the key lock is engaged, no key performs its original function, but if any key is pressed, the key lock is disengaged.For example, assume thatT= 5 and the player is currently locked. Georg presses the keyA, waits for 3 seconds, presses the keyB, waits for 5 seconds, pressesC, waits for 6 seconds, and pressesD. In this case only the keysBandCperform their regular functions. Note that the keys became locked betweenCandDwas pressed.Sound level of the MP3 player is controlled by the+and-keys, increasing and decreasing volume by 1 unit respectively. The sound level is an integer between 0 andVmax. Pressing the+key at volumeVmaxor pressing the-key at volume 0 leaves the volume unchanged.Task specificationGeorg does not know the value ofT. He wanted to find it by an experiment. Starting with a locked keyboard, he pressed a sequence ofN+and-keys. At the end of the experiment Georg read the final volume from the player's display. Unfortunately, he forgot to note the volume before his first keypress. For the purpose of this task, the unknown initial volume will be denotedV1and the known final volume will be denotedV2.You are given the valueV2and a list of keystrokes in the order in which Georg made them. For each key, you are given the type of the key (+or-) and the number of seconds from the beginning of the experiment to the moment when the key was pressed. The task is to find the largest possibleintegervalue ofTwhich is consistent with the outcome of the experiment.InputThe first line of the input contains three space-separated integersN,VmaxandV2(0 ≤ V2≤ Vmax). Each of the nextNlines contains a description of one key in the sequence: a character+or-, a space and an integerCi(0 ≤ Ci≤ 2 x 109), the number of seconds from the beginning of the experiment. You may assume that the keypresses are in sorted order and that all times are distinct (i.e.,Ci<Ci+ 1for all 1 ≤ i < N).OutputIfTcan be arbitrarily large, output a single line containing the word \"infinity\" (quotes for clarity).Otherwise, output a single line containing two integersTandV1separated by a single space.The values must be such that carrying out the experiment with locking timeTstarting at volumeV1gives the final volumeV2. If there are multiple possible answers, output the one with the largestT; if there are still multiple possible answers, output the one with the largestV1.(Note that at least one solution always exists: forT= 0 none of the keys performs its action, so it suffices to takeV1=V2.)ConstraintsYou may assume that 2 ≤ N ≤ 100000 and 2 ≤ Vmax≤ 5000.In test cases worth 40 points N ≤ 4000.In test cases worth 70 points N x Vmax≤ 400000.ExamplesInput:6 4 3- 0+ 8+ 9+ 13- 19- 24Output:5 4ForT= 5 the keys perform the following actions: unlock, unlock,+,+, unlock,-.For anyV1∈; {2, 3, 4} we would getV2= 3. Note that the output contains the largest possibleV1.ForT≥ 6 the last two keystrokes will both be active, hence it will be impossible to haveV2= 3.Input:3 10 10+ 1+ 2+ 47Output:infinityIfV1= 10 then for anyTwe'll haveV2= 10.",
+  "sample_input": "6 4 3- 0+ 8+ 9+ 13- 19- 24",
+  "sample_output": "5 4",
+  "link": "https://www.spoj.com/problems/CTOI10D1",
+  "scraped_at": "2025-08-17 00:33:08",
+  "test_cases": [
+    {
+      "input": "6 4 3- 0+ 8+ 9+ 13- 19- 24",
+      "expected_output": "5 4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 9 6 3 2 8 5 4 6\n10 6 llibw c fft vbag eo pdy 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 7 4 2 7 1 9 6 1\n6 9 izl alp wpxry ythn ldka tlcyh 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1 2 1 8 10 4 1 9\n1 2 wm ie l tufre we yty 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "95 71 28 24 19 6 93 12 73\n48 95 gai tfyzb e zcfv qqdlb b 37",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 50 76 20 54 67 67 60 49\n5 99 vngid sxhqd ianjo dcagt jrctk uytp 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 97 91 20 84 30 88 27 61\n97 31 t vazwx ofyjj pr shbn hf 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 82 27 57 20 61 83 33 4\n25 67 shp olzp vgx qsll qj v 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 88 31 40 4 7 13 63 3\n6 82 ar rnk gj c upd t 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1176 1489 1483 1655 640 731 1305 220 1891\n1362 384 g ru pz zowv wlih rcuwm 1977",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "733 298 402 1516 572 1290 1273 1150 1513\n705 1569 lifqo youpy ca ky bzg evvn 1104",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1995 1889 431 679 1086 658 991 1713 1013\n1438 286 qxyq f aahhj twlfn xojti ml 1252",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1535 1605 824 554 861 935 1827 553 569\n1647 1980 zum r vqud t xodi ou 473",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1638 1122 1617 1473 1296 737 744 926 1002\n1881 680 g k xeql qmj r etq 1366",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1996 1154 1123 697 861 703 1117 589 1975\n1365 1693 vjuxv fmon kes ypjnk n qdm 1055",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "464 844 1958 597 1564 1652 1941 874 1683\n1053 1251 azv mlfjc ez s lsjjp nkz 1262",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4000 4000 4000 4000 4000 4000 4000 4000 4000\n4000 4000 mpx i xfn dh cen oicju 4000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "4000 4000 4000 4000 4000 4000 4000 4000 4000\n4000 4000 tb xxad nyr lec j cedli 4000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 3999 4000 3999 2 1 3999 1\n4000 2 zpi wl g chc rynwy xcsa 4000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 4000 4000 1 3999 4000 1 2\n3999 1 ghhhq jwc b rppj c y 4000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

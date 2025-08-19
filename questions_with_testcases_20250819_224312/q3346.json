@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Roman Patrollers",
+  "tags": [],
+  "text": "In ancient times, patrollers were used to ensure that all the cities of the Roman Empire were\r\nunder control. A patroller’s job consisted in continuously visiting the cities of the empire, trying\r\nto minimise the interval between two visits to each city. The Military Society (MS) wants to\r\nsimulate the behavior of one such patroller to see how effective they were.Each cycle of the simulation corresponds to one time unit. The instantaneous city idleness\r\n(ICI) for a city X after T cycles of the simulation is the number of cycles elapsed since the\r\nlast visit of the patroller to the city X (i.e. the number of time units the city X remained\r\nunvisited). All of the cities have initial instantaneous city idleness equal to zero at the start of\r\nthe simulation. The instantaneous empire idleness (IEI) after each given cycle is the sum of\r\nthe instantaneous city idleness of all cities after that given cycle. Finally, the empire idleness\r\n(EI) for an N-cycle simulation is the sum of the instantaneous empire idleness after each of\r\nthe N cycles of simulation.After visiting a city X, the patroller always chooses to visit the neighbour city Y with the\r\nhighest instantaneous city idleness (if more than one city has the highest idleness, the one with\r\nthe lowest identifier is chosen). Cities X and Y are neighbour if there is a road linking the two\r\ncities directly, without going through any intermediate city. In the beginning of the simulation,\r\nthe patroller is located in one of the cities, and is given a map of the Roman Empire containing\r\na description of all the roads in the empire, indicating the length (in kilometers) and which two\r\ncities each road connects. A road between cities X and Y can be used both to go from X to Y\r\nand from Y to X.Assuming that a patroller travels one kilometer in one time unit (one simulation cycle) and\r\nthat the time to visit a city is negligible (equal to zero), MS asks you to determine the empire\r\nidleness after an N-cycle simulation.For clarity, consider the example of an empire which contains 3 cities (1, 2 and 3) and two roads\r\nof length 1 km. The first road connects cities 1 and 2, while the second road connects cities 2\r\nand 3. Below you find a trace of a 3-cycle simulation for such a scenario, considering that the\r\npatroller starts at city 1.Start of the simulationPatroller at: 1ICI1 = 0, ICI2 = 0, ICI3 = 0IEI = 0EI = 0After cycle 1Patroller at: 2ICI1 = 1, ICI2 = 0, ICI3 = 1IEI = 2EI = 2After cycle 2Patroller at: 1ICI1 = 0, ICI2 = 1, ICI3 = 2IEI = 3EI = 5After cycle 3\r\nPatroller at: 2ICI1 = 1, ICI2 = 0, ICI3 = 3IEI = 4EI = 9Therefore, for such a scenario, after 3 simulation cycles the empire idleness is 9.InputThe input consists of several test cases. The first line of a test case contains four integers\r\nC,R,N, and S, indicating respectively the quantity of cities in the empire (2 · C · 1000), the\r\nnumber of roads (1 · R · C(C − 1)/2), the number of cycles to be simulated (1 · N · 1000)\r\nand the identifier of the starting city of the patroller (1 · S · C). Each city is identified\r\nby a distinct integer from 1 to C. Each of the following R lines contains three integers X, Y\r\nand D describing a road; X and Y represent cities (1 · X 6= Y · C) and D represents the\r\ndistance (1 · D · 1000), in kilometers, of the road that connects X and Y directly, without\r\npassing through any other city. Each pair of cities X and Y will appear at most once in a road\r\ndescription. You can assume that it is always possible to travel from any city to any other city\r\nin the empire using the roads available. The end of input is indicated by C = R = N = S = 0.OutputFor each test case in the input, your program must produce one line containing the empire\r\nidleness after the N-cycle simulation.ExampleInput:2 1 1 1\r\n1 2 2\r\n2 1 2 1\r\n1 2 2\r\n2 1 3 1\r\n1 2 2\r\n2 1 4 1\r\n1 2 2\r\n3 2 3 1\r\n1 2 1\r\n2 3 1\r\n0 0 0 0Output:2\r\n4\r\n8\r\n10\r\n9",
+  "sample_input": "Input:2 1 1 1\r\n1 2 2\r\n2 1 2 1\r\n1 2 2\r\n2 1 3 1\r\n1 2 2\r\n2 1 4 1\r\n1 2 2\r\n3 2 3 1\r\n1 2 1\r\n2 3 1\r\n0 0 0 0Output:2\r\n4\r\n8\r\n10\r\n9",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SA04C",
+  "scraped_at": "2025-08-17 00:34:23",
+  "test_cases": [
+    {
+      "input": "2 1 1 1\r\n1 2 2\r\n2 1 2 1\r\n1 2 2\r\n2 1 3 1\r\n1 2 2\r\n2 1 4 1\r\n1 2 2\r\n3 2 3 1\r\n1 2 1\r\n2 3 1\r\n0 0 0 0",
+      "expected_output": "2\r\n4\r\n8\r\n10\r\n9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 2 10 3\n7 7 5\n3 9 10 7\n10 7 3\n2 2 2 10\n6 7 10\n8 9 5 9\n5 1 4\n5 4 2 3\n2 4 2\n8 1 1\n7 4 1 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 6 3 1\n1 9 4\n9 9 1 10\n1 8 3\n7 3 4 4\n8 3 4\n8 4 7 10\n3 8 4\n3 4 7 6\n2 1 1\n10 5 6\n4 2 5 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 10 1 9\n10 9 6\n8 5 9 3\n3 5 1\n7 2 10 4\n3 9 3\n10 5 6 5\n8 10 1\n3 1 10 4\n1 10 8\n3 6 7\n2 8 10 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "24 15 77 15\n63 5 29\n59 68 41 46\n6 9 80\n2 49 80 5\n9 82 97\n2 67 86 69\n17 34 42\n13 46 20 39\n9 8 99\n41 11 21\n90 90 73 56",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 31 87 30\n25 81 85\n73 81 17 8\n23 6 45\n85 86 15 69\n71 33 22\n44 98 2 17\n44 6 73\n72 6 69 22\n22 96 72\n98 70 81\n20 67 94 52",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 89 45 66\n54 65 86\n10 70 33 78\n51 32 28\n45 74 20 37\n81 15 88\n27 8 1 72\n32 19 15\n97 88 31 99\n33 8 68\n85 54 60\n2 78 17 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 1 38 15\n2 54 96\n65 65 50 1\n99 16 86\n69 90 3 40\n73 46 67\n6 53 61 29\n27 96 65\n89 24 1 91\n99 4 56\n9 21 54\n43 77 24 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 50 81 25\n27 18 16\n68 19 35 78\n5 87 88\n56 17 72 49\n72 68 15\n26 39 49 32\n71 7 69\n39 35 45 61\n82 41 98\n74 22 82\n87 65 8 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "175 252 340 159\n377 493 101\n272 261 298 81\n127 54 297\n220 178 478 190\n138 154 295\n218 204 238 497\n379 415 256\n53 438 411 408\n116 500 407\n257 50 318\n185 138 265 109",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "257 168 214 285\n116 188 496\n154 474 388 500\n236 169 318\n371 294 346 332\n434 105 102\n443 485 142 390\n447 387 235\n344 78 121 414\n349 373 380\n53 395 220\n189 415 97 94",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "137 227 380 74\n289 64 370\n78 390 315 303\n101 217 241\n459 434 158 295\n147 190 352\n466 121 447 100\n379 475 397\n101 441 402 110\n125 409 98\n82 192 437\n368 190 81 285",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "173 68 197 147\n442 180 412\n95 62 98 178\n194 330 462\n256 170 388 437\n247 334 178\n480 185 168 163\n86 320 275\n176 186 201 331\n444 467 199\n435 367 140\n497 194 357 172",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "345 307 281 314\n62 361 123\n383 369 399 500\n200 368 323\n214 200 235 403\n390 404 118\n115 325 170 72\n356 230 373\n265 276 445 368\n337 322 120\n475 390 303\n78 407 163 114",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "386 388 155 253\n172 137 289\n166 329 308 385\n480 439 323\n168 98 275 56\n351 102 476\n242 270 143 429\n296 168 421\n176 200 292 261\n363 76 95\n72 482 94\n399 450 391 439",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "445 164 469 321\n317 320 394\n223 436 352 83\n264 158 414\n303 59 358 177\n357 350 470\n224 188 344 478\n346 138 138\n160 296 461 115\n270 108 98\n376 91 309\n380 417 83 436",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2 1000 999\n1000 999 1000\n999 2 2 2\n1000 1 999\n1000 1000 999 999\n1000 1 1000\n999 1 1 999\n2 1 2\n999 999 999 2\n1000 999 999\n2 2 2\n1 1000 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 999 1000\n1 1000 2\n999 1 2 999\n999 2 2\n2 999 1 999\n1 2 1\n999 1000 2 999\n1 1000 999\n2 1000 999 999\n1000 1 2\n1000 999 1\n2 2 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

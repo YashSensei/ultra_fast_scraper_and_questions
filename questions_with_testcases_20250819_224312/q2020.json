@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Sales",
+  "tags": [],
+  "text": "Bosco has gotten his hands on $B$ ($1 \\leq B \\leq 50$) dollars! Being a Magic the Gathering™ enthusiast, he wishes to spend some amount of his budget on cards to improve his deck.He has located a local store that has $N$ ($1 \\leq N \\leq 30,000$) cards for sale. Card $i$ costs $c_i$ ($1 \\leq c_i \\leq 50$) dollars, and will improve Bosco’s DQI (Deck Quality Index) by $v_i$ ($1 \\leq v_i \\leq 1000$) points. Only one copy of each card is for sale.Business hasn’t been too great lately, so the store is offering sales on various days. Though the term “price adjustments” would be more accurate, as card prices can increase, “sales” are much more appealing – and, indeed, Bosco wants to go do all of his shopping on one of the $D$ ($1 \\leq D \\leq 3000$) days of the sales. In fact, he’s already acquired a list of the price adjustments that will be made.On day $i$, the cost of card $a_i$ ($1 \\leq a_i \\leq N$) is changed to $b_i$ ($1 \\leq b_i \\leq 50$), while all other cards remain unchanged. That is, before day $1$, all cards have their initial costs ($c_{1..N}$), and from then on, price adjustments accumulate from day to day.Additionally, on each day, only certain cards from the store’s inventory are actually up for sale. In particular, on day $i$, only cards $x_i$ to $y_i$ ($1 \\leq x_i \\leq y_i \\leq N$), inclusive, may be purchased.Bosco doesn’t care how much of his budget he spends, but he absolutely must have the best possible deck. As such, for each of the $D$ days, he wants to consider buying some (possibly empty) set of cards, such that the sum of their costs is no larger than $B$, and the sum of their DQI points is maximal. Determine this DQI sum for each day, so that Bosco will know when to go to take full advantage of the “sales”.InputLine $1$: 3 integers, $B$, $N$, and $D$Next $N$ lines: 2 integers, $c_i$ and $v_i$, for $i=1..N$Next $D$ lines: 4 integers, $a_i$, $b_i$, $x_i$, and $y_i$, for $i=1..D$OutputFor each day, output the maximal DQI sum of cards up for purchase that day which Bosco can purchase without going over his budget, considering all price changes that have occurred so far.ExampleInput:5 5 39 61 52 33 112 71 1 1 44 6 3 54 1 1 4Output:221025Explanation of Sample:At first, the 5 cards (with point values 6, 5, 3, 11, and 7, respectively) have costs of 9, 1, 2, 3, and 2 dollars, in that order.On the first day, the cost of the first card is reduced to 1 dollar, and the first 4 cards are up for purchase.On the second day, the cost of the fourth card is increased to 6 dollars, and only the last 3 cards can be bought.On the final day, the cost of card 4 is changed again, this time to 1 dollar, and the first 4 cards are once again considered.On the first day, Bosco should buy the first, second, and fourth cards, costing a total of 5 dollars.On the second, cards 3 and 5 should be purchased with 4 dollars, as card 4 is now too expensive.On the final day, all of the cards up for sale can be bought for 5 dollars. Notice that card 1 still costs 1 dollar, from the first price change.",
+  "sample_input": "5 5 39 61 52 33 112 71 1 1 44 6 3 54 1 1 4",
+  "sample_output": "221025",
+  "link": "https://www.spoj.com/problems/SALES",
+  "scraped_at": "2025-08-17 00:34:03",
+  "test_cases": [
+    {
+      "input": "5 5 39 61 52 33 112 71 1 1 44 6 3 54 1 1 4",
+      "expected_output": "221025",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 5 2 6 2 8 9 2 1 8 3 7 5 7 7 3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 3 9 7 10 1 10 2 1 5 6 2 6 10 5 5 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 7 4 4 2 1 7 10 8 7 6 1 5 5 5 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "72 11 32 57 19 13 8 37 70 79 94 52 40 100 43 91 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 72 65 19 7 94 43 28 26 76 81 41 88 100 42 78 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 68 27 36 89 2 73 86 75 44 14 70 38 84 100 68 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 82 52 53 44 13 20 25 19 10 50 91 100 71 35 3 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 23 40 40 84 72 58 77 10 33 83 21 35 69 28 39 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "73 450 350 311 315 162 437 171 384 94 360 223 70 126 195 225 426",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "198 317 121 406 252 397 124 255 138 481 444 203 60 471 249 459 308",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "113 153 166 174 171 319 389 281 301 209 445 208 271 225 370 93 105",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "422 226 411 310 388 324 449 403 407 469 102 356 315 399 106 183 368",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "181 331 179 170 258 201 362 387 140 83 375 369 225 84 74 113 434",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "247 124 244 138 266 235 494 490 205 192 50 471 345 110 104 231 301",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "403 410 103 453 480 272 159 356 56 225 303 60 266 70 272 53 480",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1 1000 1000 1 1 999 1 1000 999 2 1000 1000 1000 1000 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000 2 1000 2 2 2 1000 2 999 1000 1 1000 2 999 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

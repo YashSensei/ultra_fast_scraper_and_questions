@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Balanced Food",
+  "tags": [],
+  "text": "Computer scientists live on pizza. Now the doctors say this is no good. We ought to eat more balanced. So you put your really large pizza onto your table and eat slice-by-slice carefully watching that the rest of your meal stays where it is - on the table.Since computer scientists love pizza, their favourite table is shaped like a slice of pizza. However, different people may have different-sized tables. Everyone has his own preference for the number of slices a pizza has to be cut to. However, all agree that the slices must have identical size. Write a program to help the poor pizza lovers!InputThe input file contains several test cases. Each test case starts with the number of slicesnthe pizza is cut to. Input is terminated byn = 0. Otherwise,1 ≤ n ≤ 9. Then follow 9 floating-point numberspx, py, r, tx, ty, ux, uy, vx, vyspecifying the coordinates of the centerpof the pizza, its radius, and the coordinates of three pointst, u, v. They define the three corners of the slice-shaped table in counter-clockwise order, withtbeing the center.The pizza is a homogeneous two-dimensional circular object. There is always a cut from its center parallel to the x-axis towards increasing x-values. The remaining pizza stays connected during the whole process, no matter what slices are removed. The distances fromttou, vare equal except for very small rounding errors. Tables are never larger than a half-circle.OutputFor each test case output on a line some possible ordering of slices, so that during the whole process of eating the pizza it does not fall down the table. Slices are numbered counter-clockwise starting with 1 directly above the positive x-axis.If several such ordering exist, choose the lexicographically first one. If no ordering of slices exists, so that the pizza does not fall down, output a line containing the word \"impossible\" instead.RemarkA connected, rigid, flat object remains fixed on a convex, flat surface if and only if the object's center of gravity lies above the surface. The x-coordinate, for example, of the center of gravity of an objectscan be calculated by (∫sxds) / (∫sds). Likewise, the y-coordinate can be expressed as (∫syds) / (∫sds). Note that the denominator of these expressions gives the area ofs.SampleInput:2 (-3.0,-1.0) 1.0 (-3.0,-1.1) (-1.5,0.4) (-4.5,0.4)\r\n9 (2.0,1.0) 1.0 (0.0,0.0) (1.0,-1.0) (-1.0,1.0)\r\n0Output:2 1\r\nimpossible",
+  "sample_input": "Input:2 (-3.0,-1.0) 1.0 (-3.0,-1.1) (-1.5,0.4) (-4.5,0.4)\r\n9 (2.0,1.0) 1.0 (0.0,0.0) (1.0,-1.0) (-1.0,1.0)\r\n0Output:2 1\r\nimpossible",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ULM02B",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "2 (-3.0,-1.0) 1.0 (-3.0,-1.1) (-1.5,0.4) (-4.5,0.4)\r\n9 (2.0,1.0) 1.0 (0.0,0.0) (1.0,-1.0) (-1.0,1.0)\r\n0",
+      "expected_output": "2 1\r\nimpossible",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 8 9 2 3 1 8 1 6 3\n9 qyaumazpqln mlyi oiezcdjh od wwbosnhod\n5 3 4 3 7 8 1 7 1 8\n5 joasa e md r htcil\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 9 8 3 3 2 3 6 3 8\n1 noaoiaf fgz asjxbhlcqo tq qwc\n2 1 6 4 2 2 8 9 7 1\n6 hbrw db gclonmx qgzfuzvo j\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 1 4 2 9 4 7 3 6 8\n5 ad h htifij qju s\n1 5 3 2 4 1 5 9 9 5\n6 txeomaa vfaap qirtgf ox fjam\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 9 6 4 5 9 4 9 2 9\n3 ufddiljc fwz zmztst tydcucc ku\n2 6 2 9 6 4 1 5 1 5\n7 pjbej m xqfeip kecrxcek gwybiqmntt\n8",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 2 2 6 6 5 8 6 8 2\n1 xhjdsnatqbm evm tpnnnrykrub gjzw tfrxwdzw\n5 1 9 7 1 2 7 5 2 9\n9 zvcznxtmy vqyv cq cabgi k\n9",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 4 8 3 8 6 1 3 9 9\n8 zkxm p rdvj rpvnok zp\n2 3 5 4 6 2 4 2 6 6\n6 crkz nid da a oxkg\n7",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 3 3 3 9 5 9 3 3 6\n4 vkib zrq glaphye tpysi rznqvo\n6 4 6 4 4 3 9 4 7 5\n4 my d sqjasvbu zz jxigkltko\n4",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 9 7 1 2 5 8 2 5 7\n7 aadn jc cy udanuakrt xluzehzf\n9 1 5 3 8 2 4 3 8 6\n7 snosibbr fkolh myjrkji nblkyw cj\n4",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 3 1 4 3 4 3 3 2 2\n4 szajutbkz hg nwoxxqfbgx argqdtzie kkwpjafpx\n1 4 2 2 1 4 1 3 1 1\n3 orxo d xeqhaosir mcfcsvk d\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 4 3 4 3 1 4 2 3 2\n2 daeofkh jdqn ndwiytbpp oafksc brbwepq\n1 4 1 2 2 4 3 3 4 4\n2 uxdtpg ui ga v fwu\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 2 3 4 3 4 1 1 1 2\n4 vlb nc ukdjq ezjlpyot vukfzhzu\n4 4 4 4 1 1 3 1 4 3\n1 cguu rk xorqf telx noyjtv\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 2 2 3 3 4 2 4 1 4\n4 jyatx crmu tawamg tdepi thrur\n1 1 1 2 1 1 2 2 4 2\n2 nlsduc krdi zzvcd ujgdiqknbu g\n4",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 3 1 1 3 1 1 3 4\n4 pwawxxbsxta ifu ju jdgcctt z\n4 1 2 2 1 1 2 2 4 3\n1 zlbyhixca es s edgciukzd bteiui\n4",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 2 4 3 1 2 2 2 3 3\n4 dxkli k vhoxcuqmm ddg k\n4 3 1 1 4 2 4 1 2 3\n2 yiddokrbw ydnx e xtfyr mzquy\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 4 4 3 1 1 2 4 4 3\n4 b kaco anzo rwqaidv yv\n1 4 3 1 1 3 3 2 2 3\n4 pgqs fkhsj qtfqex qmreobs gzkq\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 9 9 9 9 9 9 9 9 9\n9 yorj fls ygufpvvygka mou k\n9 9 9 9 9 9 9 9 9 9\n9 krzbs eogbd tdpctmu ubbmgehte bfeyl\n9",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "9 9 9 9 9 9 9 9 9 9\n9 tm w puqvlhxywxl mekrb ptsn\n9 9 9 9 9 9 9 9 9 9\n9 rfrloxmvo v fwb u whgk\n9",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "8 1 8 9 1 9 9 8 1 2\n8 f gmvh pyakujiiir eltqxrebq izpxyibp\n9 9 1 8 8 9 8 2 1 8\n2 m r ku uwf qoembjooa\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 9 1 2 9 1 1 9 9 2\n8 dnyuac fexx xutcbez xpewnezikw rmvvm\n2 2 8 2 8 1 8 9 9 9\n2 kkrywxyxr eayhd sgmdxzfj vwb w\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

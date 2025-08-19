@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The hunt for Gollum",
+  "tags": [],
+  "text": "Along the skirts of the Dead Marshes I followed it, and then I had him. Lurking by a stagnant mere, peering in the water as the dark eve fell, I caught him, Gollum. He was covered with green slime. He will never love me, I fear; for he bit me, and I was not gentle. Nothing more did I ever get from his mouth than the marks of his teeth.“The Lord of the Rings: The fellowship of the Ring”Hearing Gandalf’s advice, Aragorn has started hunting creature Gollum. After several days following his footprints, he has arrived to the Dead Marshes. He has a map of the marshes, that can be viewed as an M1× M2matrix containing lowercase letters form English alphabet (i.e. letters from ‘a’ to ‘z’).Being a skilled ranger, Aragorn has been able to fully characterize Gollum preferred place (if you are interested, you should know that it must be dark, wet, creepy and full of fishes!). It can be described as an N1× N2matrix containing lowercase letters form English alphabet.Your task is simple: write a program that, given Gollum’s preferred place description and Aragorn’s map, output all possible locations of the creature.Let’s look at an example: suppose Gollum’s preferred place is described by the following 3 × 3 matrix:ababababaand that Aragorn’s map looks something like this:aababaabababbababaababababababbababaabababThen your program must output the following: (1,2), (1,4), (2,1), (2,3), (5,1) and (5,3), these being the upper-left corners of all places on the Dead Marshes that match Gollum’s preferred place description. If none match is found, you should output the string “NO MATCH FOUND...” without the quotes.InputLine 1: Two integers: N1and N2.Lines 2… N1+ 1: A string with N2characters as described above.Lines N1+ 2: Two integers: M1and M2.Lines N1+ 3… N1+ M1+ 3: A string with M2characters as described above.Constraints1 ≤ N1, N2≤ 3001 ≤ M1* M2≤ 2000N1≤ M1N2≤ M2OutputOn each line print the upper-left corner of all places that match Gollum’s preferred place description on the form “(x,y)” without the quotes, where x stands for the row and y for the column. They should be lexicographically sorted, i.e. imagine them as an ordered pair. Then (x1, y1) < (x2, y2) if and only if x1< x2or, if they are equal, y1< y2.ExampleInput:3 3\r\naba\r\nbab\r\naba\r\n7 6\r\naababa\r\nababab\r\nbababa\r\nababab\r\nababab\r\nbababa\r\nabababOutput:(1,2)\r\n(1,4)\r\n(2,1)\r\n(2,3)\r\n(5,1)\r\n(5,3)",
+  "sample_input": "Input:3 3\r\naba\r\nbab\r\naba\r\n7 6\r\naababa\r\nababab\r\nbababa\r\nababab\r\nababab\r\nbababa\r\nabababOutput:(1,2)\r\n(1,4)\r\n(2,1)\r\n(2,3)\r\n(5,1)\r\n(5,3)",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ARDA1",
+  "scraped_at": "2025-08-17 00:34:18",
+  "test_cases": [
+    {
+      "input": "3 3\r\naba\r\nbab\r\naba\r\n7 6\r\naababa\r\nababab\r\nbababa\r\nababab\r\nababab\r\nbababa\r\nababab",
+      "expected_output": "(1,2)\r\n(1,4)\r\n(2,1)\r\n(2,3)\r\n(5,1)\r\n(5,3)",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 7\nfienwh\nbpxzxb\nqa\n3 3\nisfdofhysp\nkljx\ntkja\nytevhglge\njilxgs\nuhoj\nmiokeffihtkz",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 9\nl\nfvyhx\ngvdp\n10 10\nonoyskecpofb\nucppmpee\nnzwyniv\nmyzowkxwnik\nkotbtovmqown\nwwggchq\nnee",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3\nmmw\nz\njuxn\n9 8\ntofcwu\npehtxvplu\npytkwhev\ngbiketda\ndshmzrayuflx\nfosrbqfijze\nhlwghpeqhjo",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "99 52\njog\nfyol\nzuff\n19 36\nila\nyijvjao\nx\nvuagati\nqywxqz\nmzzrcwxdj\njwylpszqbe",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 82\nzj\ndvaec\niwpc\n72 51\nzhfayycqwlna\nvcbrpdctvmzw\nvomxqakug\nkymtknuse\nrke\nrucvimypua\nfqiv",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 3\nu\nnaa\nanaa\n15 48\nmhjbwpdbnd\ntrtxappcz\nnnnrgl\nkawdx\nvhqtcfni\nffp\njkknetmuvob",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 21\naribpf\nmvtv\nngsfzg\n54 55\nbk\nohgnfncl\nv\ngyhdhrd\npy\njkjgesqwlx\nqrvnilop",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 93\nejb\ntnobx\ncvkin\n10 84\ndthaomeugnhu\ngypx\nflrbfceeii\nhycemgg\ntuj\nahoje\niteklqkxx",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "323 389\nufd\nx\njxgsp\n244 134\ns\npqsdudexu\ntxnpaduui\nrmzp\nwubsx\npc\nwkujcrmbbhwo",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "123 180\nsxz\nhflit\nuvwpe\n448 233\nyfjhzqljulm\nxlthk\naazsmke\nphlyniczkb\nkwwbnmbonm\naeoojflyg\ndfnxrsnw",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "397 292\nifd\ngzbcxe\nyvvqb\n431 295\nozzo\nv\nnibxrmuwc\naj\nsblu\nsj\nzgaewkc",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "286 237\nmfz\noiquf\nqb\n256 437\nvfpydbcyen\nqyexeck\nibej\nzbonfrfqswv\nxhllxne\nico\nggreotif",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "323 87\nvjjmou\nw\navryu\n64 298\nulrtku\nyhrdwmnjstyf\nrqav\nasggovaijhw\nnvjvxdoa\nr\nhrcnmoqq",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "391 385\ndge\nndwyb\nzupd\n140 212\nshnzw\nj\nunkvoxbffi\nkynx\ndaultuluy\nxvzhbvqbr\ndvrrbcecqzy",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "87 381\ng\nbmsik\nqnnvr\n438 308\nf\njzidvuplf\ncrxrvlkqf\njlwstmvjzy\nywkohjlz\nahq\nqkxcutndm",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\no\nhhlg\nofu\n1000 1000\npzso\nlzaaczvxjd\nfmw\nvhbqae\nxcez\nluybvzuxin\nubmi",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\ns\nl\ntyp\n1000 1000\nebsxd\nweotrmodmway\nhenewuxk\nqzdorh\nvc\ndayqz\nr",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999\ngivxw\nkdk\np\n999 2\nkeozpzopgg\nnhu\nfgxthrqpxdpt\nzqviqwrei\nqy\ntlrpkph\nxolvtz",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000\nfosq\ni\ntyp\n1 1\npn\nspnldfcawbqw\nnzjlfawsvxt\nzsqykqm\nqrtw\nazwbixcomqhv\nxzrzvmqztraj",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

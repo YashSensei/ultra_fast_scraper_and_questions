@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Multinomial numbers",
+  "tags": [],
+  "text": "You may perhaps know how to find the last nonzero digit of n factorial. This time your task is harder, find the last nonzero decimal digit of the multinomial coefficient: (a1+ a2+ ... + an)! / (a1! × a2! × ... × an!).Note that this is an extension of the classical problem, since factorials (and binomial numbers) are also multinomial numbers!InputAn integerT, denoting the number of testcases (T≤ 10000). In each line you are given one positive integer (n ≤ 20), followed by n integers: a1, a2... an, where 0 ≤ ai≤ 1000000000. There are 4 input sets.OutputOutputTlines, the case number followed by the last nonzero decimal digit. See the sample output for the correct format!ExampleInput:7\r\n1 0\r\n2 11 9\r\n4 5 7 2 9\r\n3 1000 3000 2000\r\n3 100000000 200000000 300000000\r\n2 4 9\r\n8 1 1 4 7 4 8 9 2Output:Case 1: 1\r\nCase 2: 6\r\nCase 3: 8\r\nCase 4: 6\r\nCase 5: 2\r\nCase 6: 5\r\nCase 7: 4Warning: A naive algorithm will probably solve only the first two input sets.",
+  "sample_input": "Input:7\r\n1 0\r\n2 11 9\r\n4 5 7 2 9\r\n3 1000 3000 2000\r\n3 100000000 200000000 300000000\r\n2 4 9\r\n8 1 1 4 7 4 8 9 2Output:Case 1: 1\r\nCase 2: 6\r\nCase 3: 8\r\nCase 4: 6\r\nCase 5: 2\r\nCase 6: 5\r\nCase 7: 4",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HS12MULT",
+  "scraped_at": "2025-08-17 00:34:29",
+  "test_cases": [
+    {
+      "input": "7\r\n1 0\r\n2 11 9\r\n4 5 7 2 9\r\n3 1000 3000 2000\r\n3 100000000 200000000 300000000\r\n2 4 9\r\n8 1 1 4 7 4 8 9 2",
+      "expected_output": "Case 1: 1\r\nCase 2: 6\r\nCase 3: 8\r\nCase 4: 6\r\nCase 5: 2\r\nCase 6: 5\r\nCase 7: 4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n8\n3\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "19\n68157913\n84555431\n54392439\n77537572\n82522368\n9695418\n35667981\n57357242\n93345459\n46226634\n32865215\n77843455\n28801137\n51232082\n95169732\n30065243\n79810876\n53702308\n98456958",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n6542212\n49340995\n52892709\n97748184\n79376382\n50437401\n76403587\n20459041\n78774053\n82588564\n22362542\n67200363\n64995750\n73872217\n24929306\n64248106\n10694975\n62877342",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n45539719\n95753997\n1830966\n70510839\n29980726\n20791427\n14894690\n36648293\n86195331\n60913693\n28864357\n76108786\n149804\n63290766\n26413218",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n6129891\n83668102\n30356594\n97538976\n47783759\n67287673\n13443224\n99029817\n12213449\n65630467",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n5426261\n27761409\n55962792\n5979021\n97248859",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n39788\n47053\n37032\n93658\n32023\n33408\n97497\n10540\n1522\n53636\n1529\n7254\n27375\n93857\n32321\n65329\n97055\n869\n55919\n74993",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n75240\n35768\n3521\n49166\n91182\n98921\n92142\n76831\n10194\n26347\n60190\n50656\n85722\n93342\n71528\n5290\n24692\n41539\n71766\n94119",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n67212\n50288\n19840\n20476\n30338\n92549\n27293\n79830\n3559\n72615\n73339\n57088\n86962\n32416\n18049\n23676\n26117\n18622\n43346\n23797",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n4469\n64139\n89453\n39197\n34675\n10010\n34595\n9698\n50195\n11823\n38358\n20556\n16425\n6201\n61445\n73674\n28843\n56620\n15456\n61962",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n12721\n66145\n93952\n82898\n9079\n92919\n86408\n2104\n1552\n58071\n88740\n19649\n19127\n94108\n33853\n75052\n84557\n76252\n92369\n38310",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n24365\n83258\n99182\n54224\n31647\n77933\n69547\n53833\n47549\n83372\n69806\n54388\n76212\n96894\n15079\n736\n83568\n11072\n42511\n13883",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n53362\n47298\n56850\n3089\n19653\n43465\n17375\n56083\n94607\n38522\n17089\n5041\n47642\n8219\n30911\n19984\n59278\n63947\n99302\n10667",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n90108097\n93337600\n30950463\n90717008\n73461267\n5607163\n77191413\n25395214\n19171155\n4523821\n22876391\n45082065\n85549714\n32908040\n11846856\n29340943\n71923075\n35649976\n91080960\n13621796",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n17633396\n66001423\n60333582\n91270315\n65397683\n96386938\n24583837\n760955\n7919790\n67176564\n2146153\n14805982\n94393233\n26723381\n75134956\n49686073\n88302536\n35301760\n87649779\n10064925",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "20\n87000377\n1\n1\n68708903\n1\n1\n20301837\n100000000\n100000000\n1\n1\n80238428\n1\n12888197\n100000000\n100000000\n1\n68944665\n67169669\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 20)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

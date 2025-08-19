@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Getting There Fast",
+  "tags": [],
+  "text": "Gabriela drives a school bus. Being one of the few women who have that job, she is always mocked by the male drivers. To improve her status, she decided that besides driving responsibly she is going to drive more efficiently. Her idea is to finish her route spending as little time as possible, without violating any traffic rule.The bus Gabriela drives has a very modern driving system that allows her to adjust the acceleration to any real number instantly. Hence, the acceleration is constant by intervals, jumping to another acceleration whenever Gabriela decides so. Ifvis the bus' speed at a given instant of time, andaits acceleration that remains constant over a period of timet, then the speed at the end of that period will bev + at. Moreover, the bus will move a distance ofat2/2 + vtduring that period of time.The traffic rules prevent vehicles from using an acceleration greater thanA, or a deceleration less thanD, i.e. the accelerationaat any time must satisfy -D≤a≤A. Moreover, there are check points along the route of the bus where the speed must lie within a certain given interval.Gabriela knows in advance the location of the check points, the total length of the route, and the constantsAandD. At the beginning of the route the speed and acceleration of the bus are both 0. There are no additional restrictions regarding the speed or the acceleration the bus must have at the end of the route (in particular, it is not necessary to stop in the end). Your job is to use this data to determine the minimum time that Gabriela needs in order to finish the route without violating the rules.InputThe input contains several test cases. Each test case is described using several lines. The first line of each test case contains four integersN,L,AandD.Nrepresents the total number of check points that are present in Gabriela's route (1 ≤N≤ 105).Lindicates the length of the route in meters (2 ≤L≤ 107).AandDrepresent, respectively, the maximum allowed acceleration and deceleration for the bus (1 ≤A,D≤ 100). Each of the followingNlines describe a different check point using three integersX,VandWthat represent, respectively, the distance between the check point and the starting point of the route (1 ≤X≤L-1), the minimum speed, and the maximum speed allowed for the bus at the time it passes by that check point (1 ≤V,W≤ 100). Assume that in each test case the check points are given in ascending order of distance from the start point of the route, and no two check points are at the same distance from the start point. In this problem, the length is expressed in m (meters), the speed in m/s, and the acceleration in m/s2. The end of the input is indicated by a line containing the number -1 four times, and should not be processed as a test case.OutputFor each test case, output a single line containing a rational that represents the minimum time (in seconds) needed for Gabriela to finish her route without violating any traffic rule, or an asterisk if it is impossible to do that. Round the answer to the nearest rational with two decimal digits. In case of a tie, round up. Print exactly two digits after the decimal point, even if that means ending the number with 0's.ExampleInput:1 40 10 1\r\n20 21 21\r\n1 40 10 5\r\n20 20 20\r\n1 20 10 50\r\n10 14 15\r\n5 1000 2 5\r\n400 30 80\r\n600 35 50\r\n700 10 30\r\n900 30 40\r\n950 10 30\r\n-1 -1 -1 -1Output:*\r\n2.83\r\n2.00\r\n35.96",
+  "sample_input": "Input:1 40 10 1\r\n20 21 21\r\n1 40 10 5\r\n20 20 20\r\n1 20 10 50\r\n10 14 15\r\n5 1000 2 5\r\n400 30 80\r\n600 35 50\r\n700 10 30\r\n900 30 40\r\n950 10 30\r\n-1 -1 -1 -1Output:*\r\n2.83\r\n2.00\r\n35.96",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GETFAST",
+  "scraped_at": "2025-08-17 00:34:36",
+  "test_cases": [
+    {
+      "input": "1 40 10 1\r\n20 21 21\r\n1 40 10 5\r\n20 20 20\r\n1 20 10 50\r\n10 14 15\r\n5 1000 2 5\r\n400 30 80\r\n600 35 50\r\n700 10 30\r\n900 30 40\r\n950 10 30\r\n-1 -1 -1 -1",
+      "expected_output": "*\r\n2.83\r\n2.00\r\n35.96",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 5 9\n9 5 5\n6 3 2 5\n5 1 9\n4 3 2 3\n8 3 4\n7 4 2 1\n5 8 9\n3 5 1\n6 4 1\n2 4 3\n4 8 3\n10 3 7 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 9 6 9\n9 9 4\n8 7 2 9\n9 10 9\n6 4 7 10\n9 1 7\n4 3 6 8\n3 1 9\n10 4 2\n10 10 3\n1 10 4\n4 1 10\n7 6 4 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 5 10 2\n10 10 4\n3 2 4 5\n5 6 3\n4 3 1 10\n3 7 1\n2 3 9 8\n4 3 10\n3 6 2\n1 3 6\n2 6 8\n1 5 1\n4 6 9 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "58 5 28 87\n73 39 25\n22 14 90 70\n58 59 49\n59 51 76 65\n11 66 61\n27 82 17 78\n50 51 81\n46 81 1\n28 91 3\n58 21 9\n99 66 2\n100 36 62 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 40 94 41\n54 92 16\n70 80 88 86\n58 63 43\n72 55 52 25\n96 37 95\n79 89 70 68\n12 9 40\n17 98 96\n44 89 22\n62 11 3\n31 51 31\n31 63 67 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 80 43 46\n83 31 78\n64 13 6 31\n95 84 15\n82 76 91 70\n63 78 23\n6 72 95 64\n39 23 18\n6 77 43\n11 35 35\n20 86 41\n92 4 99\n25 19 12 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 27 78 44\n39 79 15\n97 81 69 34\n35 42 36\n70 10 52 86\n14 83 93\n69 7 29 55\n81 86 49\n77 60 52\n75 50 83\n95 81 22\n96 68 44\n23 82 24 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 27 77 39\n46 85 50\n97 69 16 3\n17 4 59\n1 19 56 48\n42 86 27\n52 24 58 62\n22 79 33\n41 9 92\n43 4 89\n99 76 31\n60 5 26\n83 2 78 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 33 23 50\n10 52 11\n28 42 46 30\n10 9 17\n48 31 41 27\n21 28 50\n39 26 9 32\n42 22 10\n49 38 21\n41 14 26\n14 38 23\n5 19 10\n28 25 47 49",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "28 20 17 26\n33 47 49\n23 17 10 32\n25 42 17\n32 27 33 25\n49 6 51\n24 11 25 25\n10 14 17\n20 51 8\n42 5 18\n40 15 10\n46 48 39\n37 41 23 6",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22 32 9 50\n21 6 20\n17 34 20 13\n39 5 41\n22 44 34 50\n28 20 32\n27 7 8 26\n28 26 35\n44 46 38\n52 48 9\n50 38 12\n38 41 10\n15 34 28 39",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14 28 52 37\n14 39 23\n9 45 17 19\n41 34 50\n30 32 14 6\n6 8 38\n26 32 39 46\n5 49 40\n37 19 31\n38 50 49\n32 34 13\n39 51 18\n22 48 27 33",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "47 20 25 25\n49 45 31\n12 16 14 35\n12 25 44\n12 51 32 45\n30 25 32\n19 19 36 22\n47 9 6\n13 19 46\n33 8 36\n50 37 10\n11 41 22\n20 49 12 5",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 32 6 8\n23 26 37\n31 43 39 22\n28 6 34\n15 49 37 12\n22 12 52\n38 38 19 44\n10 5 26\n19 11 41\n17 41 43\n26 5 9\n19 51 12\n21 32 9 11",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 19 19 17\n33 16 47\n13 23 24 26\n9 30 32\n13 30 6 48\n16 52 6\n50 16 50 11\n25 26 41\n50 41 33\n15 51 18\n39 51 46\n52 48 15\n6 42 7 37",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105 105 105\n105 105 105\n105 105 105 105\n105 105 105\n105 105 105 105\n105 105 105\n105 105 105 105\n105 105 105\n105 105 105\n105 105 105\n105 105 105\n105 105 105\n105 105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105 105 105\n105 105 105\n105 105 105 105\n105 105 105\n105 105 105 105\n105 105 105\n105 105 105 105\n105 105 105\n105 105 105\n105 105 105\n105 105 105\n105 105 105\n105 105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 1 2 104\n105 1 105\n105 104 1 1\n1 2 105\n105 105 1 1\n1 2 2\n104 104 104 1\n104 105 2\n1 104 2\n2 1 104\n104 105 1\n1 2 2\n2 2 104 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "105 1 104 2\n105 1 105\n104 104 2 105\n104 104 1\n1 104 1 1\n104 2 105\n2 105 1 1\n105 2 2\n105 104 104\n1 104 105\n104 1 1\n2 2 104\n1 104 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

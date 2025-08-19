@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Magic Schools",
+  "tags": [],
+  "text": "You, the wisest minion in town, is selecting a magic school for your brother Stuart to enrol in the coming year. There are N magic school in Fabulous-Imagination Town (FIT). Each school teaches either blue magic or white magic. There are N-1 bidirectional roads between the schools, each road connecting two different schools. Schools are connected in such a way, that there exists a unique path between any two schools.You plan to visit some of the schools. Each school has a happiness factor, by which your overall happiness increases when you visit the school. Note that if the happiness factor is negative, your overall happiness decreases.To plan your trip, you choose two different schools, the departure and destination school. You will visit all the schools on the path between the departure and the destination schools, both of them including. To keep things in balance, you must visit the same number of white magic schools as blue magic schools.You are now wondering, what is the optimal trip that maximize the happiness of the trip, i.e. sum of the happiness factors of the schools you visit.Given the description of schools and connections between them, Find the optimal trip around the schools, in which you visit the same number of blue and while magic schools and the happiness of the trip is as large as possible.InputInput consists of four lines.First line contains a single integer N (2 ≤ N ≤ 105), number of schools (schools are numbered from 1 to N).Second line contains a string of length N, consisting of \"B\" and \"W\" characters. If the i-th character is \"B\", then the i-th school is teaching blue magic. If the i-th character is \"W\", then the i-th school is teaching white magic. There will be at least one school teaching white magic ad at least one school teaching blue magic.Third line contains N space-separated integers h1, h2... hN(-105≤ hi≤ 105). Integer hiis the happiness factor of the i-th school.Fourth line contains N - 1 space-separated integers v1, v2... v(N-1). Integer vimeans there is a road connecting the schools with numbers viand (i+1) (1 ≤ vi≤ i).OutputOutput exactly one integer, maximum overall happiness of the trip, in which you visit the same number of blue and white magic schools.ExampleInput:6\r\nBWBBBW\r\n6 0 3 -2 100 5\r\n1 2 2 4 4Output:9Note:In the optimal trip you visit the schools 1, 2, 4, 6.",
+  "sample_input": "Input:6\r\nBWBBBW\r\n6 0 3 -2 100 5\r\n1 2 2 4 4Output:9",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HCMUS20A",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "6\r\nBWBBBW\r\n6 0 3 -2 100 5\r\n1 2 2 4 4",
+      "expected_output": "9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n4\n10\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n9\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "18\n70542128\n55001221\n24004592\n31763010\n5915240\n31040692\n62415602\n82624205\n18160644\n24601136\n86022905\n76849682\n59643318\n49616792\n54471778\n51744179\n81854655\n3626775",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n19787469\n474506\n68912565\n82923658\n31231581\n75578846",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n44162744\n14511212\n55642608\n15105743\n54442678\n42350479\n17502411\n34120714",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n99917927\n40442299\n41227137\n8692311\n29392066",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n21323370\n3852767\n85318014\n62124758\n74962637\n69790132\n15446561\n92736780\n17438753\n10392887\n50228991\n36131553\n10066001\n2286964\n31735883\n33067307",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "87\n90841\n53556\n13688\n86031\n25890\n91359\n39429\n3302\n98681\n78170\n98919\n74589\n98327\n88083\n94563\n42370\n48556\n83136\n55196\n96229\n84784\n37478\n88077\n26757\n80787\n77541\n58666\n8508\n79740\n43517\n6472\n85796\n85514\n80450\n64633\n42786\n77461\n16291\n99107\n68769\n79514\n94269\n12897\n28907\n95191\n86326\n10924\n22891\n50556\n19177\n15404\n36552\n7528\n18206\n6505\n65380\n81117\n82510\n51659\n59053\n4931\n67328\n30581\n88215\n89702\n36866\n75864\n18920\n20397\n99809\n61961\n29995\n38688\n79143\n74060\n66484\n64362\n64767\n12117\n23461\n24645\n11520\n88341\n62059\n20702\n2448\n25679",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "47\n20176\n94268\n30947\n74330\n60264\n20510\n52685\n95679\n53566\n16029\n58161\n91923\n16633\n43705\n56919\n96628\n22195\n24734\n41671\n29274\n81169\n80372\n37703\n1852\n52319\n14996\n76210\n44878\n81258\n44381\n57269\n23468\n5009\n27521\n5128\n1830\n42590\n88732\n67575\n80263\n33754\n10898\n16708\n36059\n53185\n46425\n3572",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n44903\n62330\n64651\n11012\n408\n46735\n66472\n71974\n14067\n77872\n68603\n33833\n29026\n88896\n22042\n73020\n7750\n20944\n65576\n49438\n36372\n26872\n94355\n79294\n33939\n91941",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n94212\n51587\n56515\n27831\n82356\n42380\n42771\n1874\n82076\n9612\n29486\n50105\n74971\n41857\n31929\n72005\n54480\n27435\n41868\n89001\n89508\n80755\n19332\n51948\n64711\n33566\n85065\n6347",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "44\n72876\n71781\n86533\n81058\n32822\n71502\n72704\n38931\n47786\n34183\n73634\n74763\n27117\n57872\n52663\n52912\n4216\n62771\n75317\n82748\n18975\n18403\n8056\n17962\n5562\n66452\n28148\n7158\n10203\n34068\n34231\n97171\n70922\n79799\n55530\n13303\n92327\n43331\n18209\n24915\n9673\n10845\n7101\n91189",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n34117\n32716\n83642\n88752\n40169\n10499\n74517\n22572\n73751\n70579\n15122\n93743\n74997\n20413\n21736\n29609\n23035\n91269\n60090\n32061\n40861\n97794\n17729",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "49\n26612\n98109\n68597\n12485\n22522\n55701\n67837\n70596\n63600\n61332\n2464\n8958\n2790\n10327\n80735\n72839\n85085\n8822\n60703\n5723\n40790\n98605\n71356\n88053\n11426\n86952\n71368\n71473\n25331\n54514\n1725\n85346\n16674\n10239\n22969\n69010\n5445\n95770\n63780\n14185\n44905\n41691\n72886\n55060\n80103\n41869\n51365\n67925\n46994",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "105\n51010549\n50019225\n99164192\n6243905\n46724916\n85914630\n62568278\n41078721\n6982900\n14502175\n21042000\n62800225\n82292142\n5420216\n33174301\n78678011\n55392698\n77802408\n3774270\n85094771\n28475728\n24414858\n85894380\n32286637\n73670828\n45339648\n93346240\n62743647\n31197271\n96961116\n64115953\n55584904\n41417036\n43537227\n91477814\n32034143\n44545810\n41618838\n97130126\n88134694\n64489584\n120274\n14202992\n24376943\n25231472\n665240\n77769764\n90151885\n28203681\n9293255\n70857290\n82672583\n33720676\n36755074\n74042055\n88481402\n61290555\n43105549\n160576\n14570261\n37350808\n74145167\n6948876\n25990495\n16960196\n76413791\n42954901\n40683656\n70809588\n71939455\n98084076\n80662240\n37480138\n33512060\n22132891\n88602077\n42257190\n476458\n41234955\n56699686\n34245731\n1589052\n46961609\n28351973\n13465582\n761944\n62929518\n76748875\n51210693\n46500728\n39015139\n99691178\n73033333\n90338278\n97698688\n7442614\n51269206\n54556049\n60129402\n76695933\n18684989\n62344818\n25814934\n47043807\n67351039",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "105\n70710604\n34111655\n92344032\n75180784\n45216359\n45256177\n47419133\n79887260\n36459542\n56994543\n77052926\n27873798\n57345323\n97934055\n16637567\n61414500\n27280435\n80728189\n33470647\n62399012\n80688710\n14177111\n50090122\n16631336\n77093469\n25443922\n38895295\n56892680\n48389031\n3662750\n34064046\n85600745\n39758317\n58157718\n16628628\n61765301\n4489351\n61526850\n55063669\n30036956\n27928578\n95914701\n83294071\n54068559\n39572014\n78404468\n20725930\n76930558\n48118579\n58443571\n32104752\n35665833\n46200650\n32950787\n70631298\n81673234\n38494552\n88869985\n81203901\n89912771\n45261738\n9207891\n11744547\n53886914\n43070727\n86089518\n10812085\n1253928\n98493909\n52636777\n29924427\n67276676\n25247564\n9724257\n75341310\n58020142\n88204941\n43995484\n25127418\n19505486\n9634642\n95059020\n76287195\n64655483\n21631524\n16940120\n88008961\n35256160\n22915744\n59631310\n7494062\n94614554\n6759273\n56605957\n56002404\n99683580\n30239862\n59771512\n73445081\n88645688\n86114170\n40190849\n26549827\n11505270\n59433915",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "2\n98838859\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "2\n9319907\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

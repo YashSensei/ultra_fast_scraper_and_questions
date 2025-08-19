@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Absurdistans Teaparties",
+  "tags": [],
+  "text": "The people in Absurdistan like tea. In fact, it's their favourite drink. But normally, they don't drink their tea alone. They make big tea parties and I've heard the people there drink so much tea they're drunk after the parties. The sad side of the story is, that the people there don't do anything else than go to tea parties. They sit home alone waiting until someone sends them an invitation for a tea party on the national network Teanet™. This network has employed you as a developer.Strangely, the n citizens of Absurdistan have their n houses built on a line with the same distance between each two adjacent houses. To go with the car from one house to the next, one needs exactly c minutes. And in each house, exactly one citizen lives there.Teanet™ wants to create an app for the people to help them plan their tea parties. Suppose a citizen living in building x wants to make a tea party in t seconds. For this tea party, he wants to invite all the people living in houses between house l and r (l and r included). He wants to know how much time he has left until he has to send the invitations. We know for every citizen the time he needs to make himself ready. After a citizen receives an invitation, he immediately makes himself ready and then takes the car and goes to the citizen living in building x. We want to know the latest point in time such that x still is able to send the invitations and everyone is here when the party starts. But sometimes, people move out of a building and new people move in, so the time for a citizen in a building to prepare can change.And since the people return drunk from their parties, it may happen that there are accidents on the streets. If an accident happens, the street from building a up to building b is closed, but only in one direction. The people who don't live in a building between a and b don't care since they can use another street, but the people between a and b need some time more if they want to drive in the same direction as the accident. Because the people in Absurdistan don't really work, the effects of the accident are permanent...So there are three types of queries:\"invite\", followed by four numbers x l r t. x wants to invite all the people between l and r to his tea party. If he wants to start his team party in t seconds, in how many seconds is the latest point in time when he has to send his invitations? All the citizens in Absurdistan always take the direct way (they don't change direction and go back etc.). Note that the result may be negative if the person who wants to send an invitation is already too late. Important: Since the person who invites already knows that he will be inviting, he doesn't need to prepare himself.\"change\" followed by two numbers x v. The citizen in building x moved out and the new resident needs v seconds to prepare.\"accident\" followed by 3 numbers and a char: l r v d. There was an accident between l and r. All citizens between l and r need v more time if they travel in direction d. Note that this doesn't affect the people from outside if they want to go to a tea party at a location between l and r.Also note that all indices are 0-based and inclusive.InputFirst line: Three integers n q c. n is is the number of citizens / buildings, q the number of queries and c the time you need between two houses.On the next line, n values follow: the i-th value is the time the i-th citizen (citizen 0 lives in building 0 etc.) needs to prepare.Then q lines follow, each with a query as in the description.OutputFor each query of type \"invite\", output the number of seconds citizen x has left to send the invitation.Constraints1 ≤ n, q ≤ 1e50 ≤ c ≤ 1e4The preparation-time for any citizen will never exceed 1e4 and v in query \"accident\" is also not bigger than 1e4.Whenever we have a range l r, then 0 ≤ l ≤ r < n holds.ExampleInput:10 11 2\r\n0 0 0 0 0 0 0 0 0 0\r\ninvite 3 6 8 12\r\naccident 6 8 2 l\r\ninvite 3 6 8 12\r\ninvite 9 6 8 12\r\nchange 5 4\r\ninvite 3 5 8 16\r\nchange 7 6\r\ninvite 0 5 8 32\r\naccident 0 9 10 r\r\nchange 8 11\r\ninvite 5 0 9 50Output:2\r\n0\r\n6\r\n4\r\n10\r\n30Input:10 10 34\r\n10 23 1 43 12 22 84 17 41 24\r\ninvite 2 4 8 333\r\nchange 2 11\r\ninvite 8 4 9 542\r\naccident 0 9 10 l\r\naccident 0 5 11 r\r\naccident 6 7 22 l\r\ninvite 4 2 6 233\r\ninvite 8 2 6 542\r\nchange 3 1\r\ninvite 4 3 3 47Output:88\r\n390\r\n49\r\n316\r\n1Description of First ExampleCitizen wants to invite all the people between 6 and 8. Citizen 8 needs 10 seconds to get to citizen 3, so if citizen 3 sends the invitation in any later than 2 seconds, citizen 8 would be too late.Before the second invitation, there was an accident and Citizen 8 now needs 2 seconds longer because of this.In the 3rd invitation, the citizens travel to the right and the accident only affects people going to the left. Person 6 needs 6 seconds so if he gets the invitation any later than in 6 seconds, he's too late.Then, citizen 5 moves out and a new person moves in. This person needs a bit more time to get ready, and when person 3 makes anther party, he needs to send his invitation even earlier.Then citizen 0 makes an invitation etc., but then another accident happens, now influencing everyone going to the right. A new person moves in building 8 and citizen 5 makes another party. Person 9 needs 8 seconds to get to citizen 5. Person 8 needs 11 seconds to get ready, 2 second to avoid the (first) accident and 6 seconds to get there giving a total of 19 seconds. But person 0 needs even longer: Person 0 doesn't need to prepare, but since he wants to go to the right, he needs to avoid the (second) accident, giving him 10 extra seconds. But he then needs to go to person 5 and it takes him 10 seconds to get there, giving a total of 20 seconds until he arrives. So person 5 needs to send his invitation in 30 seconds.Edit: Feb 12th, 2020:Updated the task description to clarify that the person who invites doesn't need to prepareEdit: Mar 3th, 2020:Added Constraints",
+  "sample_input": "Input:10 11 2\r\n0 0 0 0 0 0 0 0 0 0\r\ninvite 3 6 8 12\r\naccident 6 8 2 l\r\ninvite 3 6 8 12\r\ninvite 9 6 8 12\r\nchange 5 4\r\ninvite 3 5 8 16\r\nchange 7 6\r\ninvite 0 5 8 32\r\naccident 0 9 10 r\r\nchange 8 11\r\ninvite 5 0 9 50Output:2\r\n0\r\n6\r\n4\r\n10\r\n30",
+  "sample_output": "Input:10 10 34\r\n10 23 1 43 12 22 84 17 41 24\r\ninvite 2 4 8 333\r\nchange 2 11\r\ninvite 8 4 9 542\r\naccident 0 9 10 l\r\naccident 0 5 11 r\r\naccident 6 7 22 l\r\ninvite 4 2 6 233\r\ninvite 8 2 6 542\r\nchange 3 1\r\ninvite 4 3 3 47Output:88\r\n390\r\n49\r\n316\r\n1",
+  "link": "https://www.spoj.com/problems/TEAPARTY",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "10 11 2\r\n0 0 0 0 0 0 0 0 0 0\r\ninvite 3 6 8 12\r\naccident 6 8 2 l\r\ninvite 3 6 8 12\r\ninvite 9 6 8 12\r\nchange 5 4\r\ninvite 3 5 8 16\r\nchange 7 6\r\ninvite 0 5 8 32\r\naccident 0 9 10 r\r\nchange 8 11\r\ninvite 5 0 9 50",
+      "expected_output": "2\r\n0\r\n6\r\n4\r\n10\r\n30",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 10 34\r\n10 23 1 43 12 22 84 17 41 24\r\ninvite 2 4 8 333\r\nchange 2 11\r\ninvite 8 4 9 542\r\naccident 0 9 10 l\r\naccident 0 5 11 r\r\naccident 6 7 22 l\r\ninvite 4 2 6 233\r\ninvite 8 2 6 542\r\nchange 3 1\r\ninvite 4 3 3 47",
+      "expected_output": "88\r\n390\r\n49\r\n316\r\n1",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "4 1 4\n3 4 9 1 2 7 6 2 6 9\n1 5 5 9\nbph 5 10 5 6\n6 6 3\npsmicie 7 5 5 xnw\n5 5 7 6\nruvlw 3 4 2 9\n10 1 7 5\nubtob 2 3 7 1\n1 2\np 7 4\n10 5 2 6\nklg 2 6 8 1\n3 6\nbrxwa 6 8\n4 6 2 4\noof 3 2 10 7\n8 8 7\nvkdc 2 8 2 k\n3 2\ndh 2 10\n9 10 6 2\nbjt 5 5 7 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5 7\n1 2 5 6 4 2 2 4 10 1\n1 8 4 8\ntou 1 6 8 10\n10 4 8\ngeazao 3 6 3 q\n6 6 10 1\nmnbv 9 4 10 9\n6 6 2 7\nhnrdy 4 10 9 5\n9 9\nxagukj 2 1\n2 4 7 4\neabnkj 2 7 9 3\n6 1\nhjjgj 4 3\n2 1 7 1\nmkfsot 4 9 4 3\n10 3 9\ng 8 9 5 lz\n1 2\nomqrk 10 10\n6 3 1 5\nf 5 3 6 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 10 1\n1 9 2 10 4 4 8 10 6 4\n8 8 1 1\nszw 1 9 3 5\n6 7 2\ndqra 3 7 5 lt\n8 8 8 7\npgh 5 9 9 7\n1 9 4 6\ntuukh 9 7 2 7\n9 3\ns 6 1\n9 2 4 9\nzh 3 7 1 4\n6 10\nr 1 7\n7 1 4 9\nqsnfwt 10 4 9 7\n6 3 1\nk 10 2 3 dludc\n2 1\ngae 5 4\n10 5 7 1\nroogu 7 9 1 9",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "18 23 94\n49 31 14 60 76 17 62 42 98 99\n59 41 33 21\najuphz 30 66 61 33\n74 36 16\nj 94 46 72 fyzlz\n15 78 65 29\nhynvrr 55 4 46 34\n64 42 66 81\npez 84 85 45 81\n77 43\neij 66 32\n91 87 13 29\nexq 82 79 94 74\n66 88\ngzfpc 56 72\n19 66 85 28\ntuwrt 74 14 46 79\n39 99 8\namzx 65 6 27 zzjy\n38 82\nt 19 93\n13 52 10 68\nbgre 21 46 25 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 33 43\n71 77 61 98 1 51 49 23 36 87\n15 48 65 19\nluf 38 8 48 10\n85 82 67\nbk 98 15 59 ekee\n82 27 36 39\nfrwq 24 94 85 39\n65 29 27 69\nyacqgf 26 68 34 60\n20 60\nwx 11 40\n1 66 47 49\nj 85 25 73 74\n73 70\nvead 8 8\n51 38 98 85\nyyzjan 71 84 55 56\n26 29 96\noqmikfg 86 99 24 x\n41 60\nkykmz 62 95\n68 71 43 100\nj 18 46 51 39",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "74 51 93\n56 28 43 13 97 45 41 71 10 56\n54 9 27 83\nmgl 19 19 44 14\n32 91 5\nmuqcqx 3 31 92 dmi\n80 60 89 56\nkvb 18 97 69 58\n73 18 19 60\nb 40 39 87 30\n41 53\nxmoc 33 99\n69 4 87 27\nxpxd 94 73 15 78\n19 23\nyk 66 59\n72 94 19 15\naoauha 78 63 52 93\n43 45 88\nfjqmrsx 29 93 42 wr\n78 19\ntpkcwz 21 54\n5 32 42 29\nd 15 45 56 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 87 31\n33 10 52 61 99 30 64 31 9 82\n35 31 35 55\nfnp 47 7 17 56\n81 65 97\nhw 28 38 11 aoh\n46 83 6 74\njaruon 71 37 94 10\n52 66 9 84\nu 77 19 72 44\n66 67\ngiidq 83 57\n39 60 59 4\nrff 64 72 38 96\n46 38\nmufws 46 14\n9 21 87 16\nlirn 74 52 32 81\n91 85 5\nu 65 40 27 lk\n92 77\nsutcz 92 77\n35 31 88 97\nbojkp 42 74 77 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 56 16\n68 41 41 90 48 49 16 15 65 12\n15 84 50 19\nhmc 28 4 27 80\n97 79 32\nt 93 43 25 s\n43 55 2 100\noi 66 68 3 33\n72 61 49 7\nmdspf 25 38 9 40\n56 16\nvgv 85 50\n14 47 28 1\nq 34 48 10 19\n69 52\nd 94 59\n18 9 20 44\nckuvpt 41 22 89 29\n40 25 87\nrqxya 17 2 95 ptk\n92 61\nmop 86 58\n90 29 98 5\nwleh 43 1 7 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "467 159 500\n222 99 476 289 156 403 412 299 244 134\n386 268 75 193\nlarfcf 153 461 126 473\n346 114 325\ndoxqk 230 424 213 kplqw\n494 489 297 394\nmzah 386 364 232 151\n469 286 79 247\nj 226 241 238 103\n201 121\nmaxpbs 462 480\n357 220 307 407\naeqqp 184 159 111 152\n360 179\nqdko 295 374\n170 350 193 456\nsfvf 160 378 489 293\n423 358 413\nfdntxj 121 475 252 ldss\n134 424\nqfqe 256 162\n378 444 235 280\nzkf 222 109 174 287",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "440 453 215\n378 452 496 134 330 87 290 305 392 133\n67 93 365 431\nkqbyg 93 404 218 131\n135 123 128\navbfnqqh 168 325 401 efqt\n70 97 103 158\nbs 78 93 488 109\n362 125 128 290\nv 266 113 373 330\n108 202\nbs 264 217\n382 405 103 334\nsmkhkm 369 390 108 453\n149 51\nvftwv 350 203\n367 263 210 174\nwz 126 479 492 51\n485 306 80\nt 226 465 391 zw\n479 370\nq 134 257\n340 256 437 329\nmpri 379 274 156 482",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "385 137 285\n383 448 435 304 217 347 206 104 484 382\n324 390 495 217\nnk 386 257 483 495\n470 403 187\nqj 214 54 233 uz\n204 148 193 127\nu 369 80 128 154\n453 122 91 185\ntmvw 262 64 146 181\n374 289\nn 115 212\n332 145 307 305\nvkunpa 216 179 256 220\n239 206\nl 114 235\n180 390 389 122\ntcb 138 434 80 133\n63 89 274\nuba 320 64 399 n\n300 108\nqrwce 115 409\n140 234 301 72\nh 383 165 405 453",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "208 272 392\n274 327 339 206 238 471 448 102 416 280\n58 135 292 239\nnfwb 195 143 405 232\n304 427 170\nr 77 312 144 lf\n135 325 64 208\nm 301 193 333 100\n296 215 305 375\nomigi 224 303 253 125\n495 421\nkhxvm 238 248\n106 261 410 241\nayi 299 67 430 220\n185 160\nndtcgl 214 347\n230 231 472 348\niicbp 292 252 114 441\n319 319 151\nw 455 209 232 gdoqt\n170 76\nottcnt 213 70\n140 69 106 144\nait 172 225 208 324",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "56 89 433\n197 468 396 218 406 464 144 328 247 262\n408 142 140 336\nf 130 171 467 144\n153 220 299\nwxhg 208 327 394 imhy\n304 402 212 130\nwusy 174 345 203 133\n242 234 102 69\nqvlyo 466 197 155 209\n336 375\nij 472 241\n75 274 289 319\nej 174 242 298 378\n389 57\nzvtji 484 439\n137 312 391 253\npwvfjv 135 186 347 80\n295 455 419\ncka 416 166 86 z\n171 352\nnlq 52 298\n473 256 314 479\nykmyen 132 434 389 210",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "247 492 385\n239 355 454 395 144 392 78 74 291 146\n376 263 237 454\njxvmb 117 459 140 404\n357 442 115\nrmxbtao 449 435 82 cvy\n240 94 254 494\ntrs 402 349 446 110\n405 269 188 302\ntdtwaz 403 362 71 145\n391 292\nznbk 233 277\n231 459 212 229\nwvozay 126 486 375 229\n310 148\nnahtm 90 422\n182 100 84 298\nvowbf 159 248 243 86\n119 357 87\nyrw 478 200 428 ajro\n460 78\nkqexo 436 497\n438 96 101 281\npsaev 432 426 161 304",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "324 119 223\n226 414 278 324 235 329 325 164 167 165\n207 370 135 262\nllpax 296 143 103 224\n355 121 176\np 176 272 342 okvqt\n340 461 276 133\nzozcjx 300 460 202 386\n76 315 102 198\nczv 270 283 356 460\n166 331\noxl 156 177\n240 228 65 246\nochuj 393 266 131 407\n294 433\na 310 322\n499 137 201 162\nbtgwu 464 84 128 315\n448 156 385\nnesf 72 445 331 elw\n227 454\nlparj 333 318\n450 266 385 374\nmxoq 303 78 164 110",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000\nqqijyy 1000 1000 1000 1000\n1000 1000 1000\nngzzpvs 1000 1000 1000 zcos\n1000 1000 1000 1000\nojez 1000 1000 1000 1000\n1000 1000 1000 1000\nqwf 1000 1000 1000 1000\n1000 1000\nurfwwm 1000 1000\n1000 1000 1000 1000\noirl 1000 1000 1000 1000\n1000 1000\najegzm 1000 1000\n1000 1000 1000 1000\nmoz 1000 1000 1000 1000\n1000 1000 1000\ncfcg 1000 1000 1000 iup\n1000 1000\ngdra 1000 1000\n1000 1000 1000 1000\nf 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000\nsx 1000 1000 1000 1000\n1000 1000 1000\njvq 1000 1000 1000 f\n1000 1000 1000 1000\nfxh 1000 1000 1000 1000\n1000 1000 1000 1000\nglsxv 1000 1000 1000 1000\n1000 1000\ndd 1000 1000\n1000 1000 1000 1000\nxkqa 1000 1000 1000 1000\n1000 1000\nqzwpli 1000 1000\n1000 1000 1000 1000\nqx 1000 1000 1000 1000\n1000 1000 1000\ngnbmsjxv 1000 1000 1000 t\n1000 1000\neswlzi 1000 1000\n1000 1000 1000 1000\nf 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1\n999 999 2 2 1000 2 1 1000 1000 1\n999 999 1000 1000\nmuhfq 1 1 1000 1\n2 999 1\nmczlgv 999 999 1 zfyz\n2 1 1000 999\nq 2 2 1 1\n999 1 2 2\nce 1000 2 1 999\n1000 1\nxakgjf 1000 999\n1000 1 999 999\nbnxy 1000 1 1000 2\n2 1\nh 2 999\n2 2 1000 1\nw 2 999 1 2\n999 1 1000\nvusaaeht 1000 1 1 huyl\n999 1\nyqam 1000 1000\n999 2 1000 1\nz 999 2 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

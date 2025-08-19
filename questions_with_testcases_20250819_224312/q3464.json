@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Rain",
+  "tags": [],
+  "text": "Doctor Jones is a famous archeologist. He did some research on the Tiribaki Islands recently. His most famous discovery was the Meteoronome - a machine with a yellow button used by the Tiribakian highest priest to predict the weather. The Meteoronome had been set up by the gods at the Beginning of Time. Tiribakians pressed the button every day. As a result, the Meteoronome produced a number - the expected rainfall in millimetres for the next day. More precisely, afteributton hits (counted since the Beginning of Time) Meteoronome gives the expected rainfall for the dayisince the Beginning of Time.Unfortunately, the Meteoronome has not been used for several thousands of years and nobody knows how many steps should be performed to reach the current date. Researchers have spent a lot of effort to find out how the Meteoronome works. A mathematical model has been proposed: The Meteoronome is initialized by a pair of integers, s[0] and t[0]. For thei-th step, the Meteoronome computes the valuess[i] = (78901 + 31*s[i-1]) mod  699037\r\nt[i] = (23456 + 64*t[i-1]) mod 2097151The output of the i-th step is the numbera[i]=(s[i] mod 100 + 1) * (t[i] mod 100 + 1)Doctor Jones's friend, Ms. Linda Watson, is now planning a holiday on Tiribaki Islands. She would like to stay there as long as possible but she hates the rain. She can stand no more than M millimetres of rainfall during her entire stay on Tiribaki.Doctor Jones wants to help his friend and to compute the longest period which she can safely stay on Tiribaki. He simulatedNsteps of the Meteoronome. This way, he obtained a sequence of numbers a[1], a[2] ... a[N] which represent predictions forNsubsequent days. Now he wants to find the largestKsuch that for each period of at mostKsubsequent days from dayito dayjthe sum of the predictions a[i]+a[i+1]+...+a[j] is less than or equal toM. Linda can be sure that if she stays on Tiribaki for at mostKdays, she can endure the rain (provided thatNis large enough).Input specificationThe input file consists of several blocks of data. The first line of the input file contains the number of blocks. Each block contains four integers delimited by whitespace: s[0], t[0] - the initial values for the Meteoronome,N(1<=N<=1500000)- the length of the sequence andM- the maximum sum of a subsequence. All the input data fits into 32-bit signed integer.Output specificationThe output file contains one line for each block of input data. In this line there is a single integerKas specified above.ExampleInput file:1\r\n123456 123456 10 10000Output file:2Note, that the sequence produced by Meteoronome for this input file is 4664, 1248, 267, 4900, 837, 4048, 990, 6935, 1155, 490. No subsequence of length 2 has sum greater than 10000 and there are subsequences of length 3 with greater sum.",
+  "sample_input": "s[i] = (78901 + 31*s[i-1]) mod  699037\r\nt[i] = (23456 + 64*t[i-1]) mod 2097151",
+  "sample_output": "a[i]=(s[i] mod 100 + 1) * (t[i] mod 100 + 1)",
+  "link": "https://www.spoj.com/problems/RAIN3",
+  "scraped_at": "2025-08-17 00:34:18",
+  "test_cases": [
+    {
+      "input": "s[i] = (78901 + 31*s[i-1]) mod  699037\r\nt[i] = (23456 + 64*t[i-1]) mod 2097151",
+      "expected_output": "a[i]=(s[i] mod 100 + 1) * (t[i] mod 100 + 1)",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 6 3 9\nnh p xrb qzks rrzdzqbe xicow 6\n7 5 5 8\ns jblv tecfjr jq muw pvaxa 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8 9 2\nbo rlkd fsxhed pjqpe ytwwb vfh 7\n4 7 5 4\nm zxvtn luxy emnx fjgpaxpc kipu 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2 6 5\nw uzmp kbyvox bdc iswkrq y 8\n8 4 5 1\nf sebq o ziuhh njnzcl r 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "37 13 62 21\ny myx decv jk wxkwqqq fgwj 65\n56 21 17 56\nqsh mebw urt gmfsu kn dou 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 32 65 65\nyqbdr z dzqr is raaf lwvn 79\n53 38 66 83\nvqmb ojo sel cyfp gjsjafd p 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 8 79 84\nqpv ho ggij n zv mrkdx 70\n67 63 84 50\nwz pimdb ytk ru dp g 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 63 47 14\nw yfz vfsnro bzni napfgmxdbs uk 100\n83 75 43 80\necv cpvik ya uabj v iuzjr 65",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "79 45 28 20\nn ji qrxro beg awd pe 88\n34 70 93 52\ndm sg tkma g zvbieja jkpzr 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "243 292 302 147\nvkfl dy jsubiv z jasu mmttv 145\n284 486 448 143\nx kgrpw iyjgi hs bfh nl 138",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "352 268 245 255\nqwbq i fhvoo xq rchkjp yv 345\n409 115 326 240\nhbh n kx abd bzomip n 342",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "301 430 169 443\nqsfe dk czhicb avztg zeqzjlijdp kb 114\n466 261 74 96\nt bsbam knhymg rl skfvixy ybtc 254",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "243 193 382 380\neeqir cc fuvpk amj lerdnajkuw g 97\n344 197 333 364\nwdz qqchq pfaaxi lkwc cpzcrlqayt tjch 177",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "318 439 489 276\nu lddz mdip irvx jsxjcarv f 172\n266 358 384 55\nmk chgpj qqzr dt fdgtx czixx 478",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "349 186 322 455\np tysrt bs izizv filw tpk 163\n197 438 78 95\nesc w wf ezy li z 426",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "257 315 227 462\nzyfbz y ii a v ea 403\n229 212 163 476\nrqul q rbsw ovndd kodhyxbzi sgxl 73",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\ngppla sk ed msr ecl doxs 1000\n1000 1000 1000 1000\npqs qu k fdqj jaebpmvl rcz 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\ncyvnz uk l hf eyfamruk adclp 1000\n1000 1000 1000 1000\nftn zvaes chkr pwmb bjwymvz vxtzu 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 2 999\nr ompa rxouc lknfw nsgdkkgat v 999\n999 999 999 1\nieq hyv mgdhj df ppcmpmr b 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2 999 999\nbdema xkz hn lvr tczmqdyrf p 2\n1 2 999 1\nbfkun an isqnby pohs zbziz zc 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

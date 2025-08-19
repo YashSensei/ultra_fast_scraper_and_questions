@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "All Discs Considered",
+  "tags": [],
+  "text": "Operating systems are large software artefacts composed of many packages, usually distributed on several media, e.g., discs.\r\nYou probably remember the time when your favourite operating system was delivered on 21 floppy discs, or, a few years later, on 6 CDs.\r\nNowadays, it will be shipped on several DVDs, each containing tens of thousands of packages.The installation of certain packages may require that other packages have been installed previously.\r\nTherefore, if the packages are distributed on the media in an unsuitable way, the installation of the complete system requires you to perform many media changes, provided that there is only one reading device available, e.g., one DVD-ROM drive.\r\nSince you have to start the installation somehow, there will of course be one or more packages that can be installed independently of all other packages.Given a distribution of packages on media and a list of dependences between packages, you have to calculate the minimal number of media changes required to install all packages.\r\nFor your convenience, you may assume that the operating system comes on exactly 2 DVDs.InputThe input contains several test cases.\r\nEvery test case starts with three integersN1, N2, D.\r\nYou may assume that1<=N1,N2<=50000and0<=D<=100000.\r\nThe first DVD containsN1packages, identified by the numbers1, 2, ..., N1.\r\nThe second DVD containsN2packages, identified by the numbersN1+1, N1+2, ..., N1+N2.\r\nThen followDdependence specifications, each consisting of two integersxi, yi.\r\nYou may assume that1<=xi,yi<=N1+N2for1<=i<=D.\r\nThe dependence specification means that the installation of packagexirequires the previous installation of packageyi.\r\nYou may assume that there are no circular dependences.\r\nThe last test case is followed by three zeros.OutputFor each test case output on a line the minimal number of DVD changes required to install all packages.\r\nBy convention, the DVD drive is empty before the installation and the initial insertion of a disc counts asonechange.\r\nLikewise, the final removal of a disc counts asonechange, leaving the DVD drive empty after the installation.ExampleInput:3 2 1\r\n1 2\r\n2 2 2\r\n1 3\r\n4 2\r\n2 1 1\r\n1 3\r\n0 0 0Output:3\r\n4\r\n3",
+  "sample_input": "Input:3 2 1\r\n1 2\r\n2 2 2\r\n1 3\r\n4 2\r\n2 1 1\r\n1 3\r\n0 0 0Output:3\r\n4\r\n3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ALL",
+  "scraped_at": "2025-08-17 00:34:22",
+  "test_cases": [
+    {
+      "input": "3 2 1\r\n1 2\r\n2 2 2\r\n1 3\r\n4 2\r\n2 1 1\r\n1 3\r\n0 0 0",
+      "expected_output": "3\r\n4\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 8 10\n6 4\n8 2 8\n6 3\n6 10\n2 8 5\n3 10\n5 9 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 5 1\n4 6\n3 8 7\n1 7\n4 6\n8 9 4\n8 7\n4 2 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8 2\n7 7\n10 4 10\n3 5\n4 4\n9 8 10\n8 4\n5 6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "14 87 29\n74 7\n30 76 32\n34 36\n54 43\n94 30 59\n79 43\n13 81 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "88 64 36\n69 77\n28 50 14\n95 59\n10 33\n10 92 16\n19 11\n68 61 52",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 2 16\n45 9\n86 53 62\n2 60\n30 70\n90 72 98\n29 33\n6 56 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 71 5\n48 4\n21 50 36\n66 31\n9 59\n2 39 24\n87 34\n91 55 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 46 4\n84 40\n87 60 6\n97 13\n83 49\n16 34 82\n47 9\n58 51 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "447 457 226\n217 60\n336 51 411\n326 295\n117 349\n75 82 363\n203 307\n249 326 182",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "349 224 109\n494 491\n339 390 175\n221 341\n485 408\n103 414 71\n497 287\n333 289 359",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "189 325 500\n289 382\n86 354 324\n71 115\n377 187\n135 439 245\n71 465\n171 217 212",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "51 369 212\n79 296\n259 180 240\n77 118\n453 189\n322 241 379\n428 219\n131 96 144",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "200 96 441\n485 371\n168 137 276\n342 302\n339 490\n69 131 199\n197 458\n186 215 57",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122 346 231\n51 494\n369 60 479\n283 187\n258 348\n464 320 274\n111 420\n258 261 238",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "98 369 178\n463 281\n479 495 242\n95 238\n423 328\n296 166 195\n337 359\n196 474 357",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 1\n1 999\n2 999 2\n1 999\n1000 1\n1000 1000 2\n999 999\n2 1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 2 1\n1000 1\n1000 1 1000\n2 2\n1000 2\n999 999 999\n2 2\n2 2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

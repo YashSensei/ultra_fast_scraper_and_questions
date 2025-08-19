@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "ICPC Scoreboard",
+  "tags": [],
+  "text": "Charles is the contest director for the ICPC Tumbolian regional contest. His responsibility is\r\nensuring the contest flows smoothly, that the contest rules are applied fairly, and, of course,\r\nannouncing the final contest ranking.According to ICPC rules, a team with more solved problems ranks above a team with less\r\nsolved problems. If two teams have the same number of solved problems, the team with the\r\nsmaller total penalty ranks above the team with the larger total penalty (in case both teams\r\nhave the same number of solved problems and the same penalty, Charles considers them as\r\ntied).Thetotal penaltyfor a team is the sum of all the problem penalties of the problems that team\r\nhas solved. The problem penalty for a problem is TP +EP ×FA, where TP is the time penalty\r\nfor that problem, EP is the contest’s error penalty and FA is the number of failed attempts\r\nat solving the problem before submitting a correct solution.Thetime penaltyfor a problem is the time since the start of the contest, in minutes, that the\r\nteam needed to solve the problem. Theerror penaltyis a positive integer chosen by the contest\r\ndirector, designed to reward teams that submit correct solutions on the first attempt.Charles wants to change the error penalty from the “standard” value of 20 minutes to stir things\r\nup. To study the effects of that change on the final rankings, he wants to know the range of\r\nerror penalties thatdon’tchange the final standings.In other words, if team A is ahead of team B in the original standings, then A should be ahead\r\nof B in the modified standings; if A and B are tied in the original standings, they should also\r\nbe tied in the modified standings (the original standings are the ones obtained with an error\r\npenalty of 20 minutes).Charles has been very busy organizing the Tumbolian regional, so he asked you to make a\r\nprogram that will compute the range for him.InputThe input contains several test cases. The first line of each test case contains two integers\r\nT and P separated by a single space, indicating the number of teams and the number of\r\nproblems, respectively (2 <= T <= 100, 1 <= P <= 10). Each one of the next T lines describes\r\nthe performance of a team. A team’s performance description is a line containing P problem\r\ndescriptions separated by single spaces. Teams are not necessarily given in order of their final\r\nstandings.Each problem description is a string “A/S”, where A is an integer representing the number of\r\nattempts that the corresponding team made at solving that problem (0 <= A <= 100), and S\r\nis either “-”, if the team did not solve that problem, or an integer indicating the number of\r\nminutes it took for the team to submit a correct solution (0 <= S <= 300). Attempts made after\r\nthe first correct submission are not counted.OutputFor each test case in the input print two positive integers separated by a single space, indicating\r\nthe smallest and largest error penalties that would not change the final ranking. If there is no\r\nupper bound for the error penalty, print a “*” instead of the upper bound.ExampleInput:5 3\r\n0/- 0/- 0/-\r\n2/- 2/- 1/-\r\n1/60 1/165 1/-\r\n1/80 0/- 2/120\r\n0/- 1/17 0/-\r\n4 2\r\n17/- 5/-\r\n2/7 3/-\r\n3/- 2/-\r\n1/15 0/-\r\n3 2\r\n1/- 2/15\r\n2/53 1/17\r\n1/70 1/20\r\n0 0Output:1 24\r\n9 *\r\n20 20",
+  "sample_input": "Input:5 3\r\n0/- 0/- 0/-\r\n2/- 2/- 1/-\r\n1/60 1/165 1/-\r\n1/80 0/- 2/120\r\n0/- 1/17 0/-\r\n4 2\r\n17/- 5/-\r\n2/7 3/-\r\n3/- 2/-\r\n1/15 0/-\r\n3 2\r\n1/- 2/15\r\n2/53 1/17\r\n1/70 1/20\r\n0 0Output:1 24\r\n9 *\r\n20 20",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ICPCS",
+  "scraped_at": "2025-08-17 00:33:15",
+  "test_cases": [
+    {
+      "input": "5 3\r\n0/- 0/- 0/-\r\n2/- 2/- 1/-\r\n1/60 1/165 1/-\r\n1/80 0/- 2/120\r\n0/- 1/17 0/-\r\n4 2\r\n17/- 5/-\r\n2/7 3/-\r\n3/- 2/-\r\n1/15 0/-\r\n3 2\r\n1/- 2/15\r\n2/53 1/17\r\n1/70 1/20\r\n0 0",
+      "expected_output": "1 24\r\n9 *\r\n20 20",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 7\n3 6 6\nghr spx dkur\n10 3 9\njqs olki ghh\n9 1 4 7 4\nmcchx kz pijyn\n4 1 5 3 6\nkci mcn jxdz\n8 5 6 2\njtq e huff\n8 9\n7 8\ni qqlei\n4 3 4\nkvz qvrj\n4 9\nbn gzd\n6 3 2\nzif flfbv\n8 1\n3 5 6\nq iru\n2 9 5 4\ny etkv\n9 3 1 7\nr mzhwv\n1 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 4\n5 1 4\njg lo ed\n3 6 8\njecs udcg kuz\n6 5 3 4 7\nb cyyrv densb\n1 2 9 4 10\nmq rtxta hcfbj\n7 8 9 8\nfke yp sp\n5 7\n9 9\ny puv\n5 3 2\nyazuh hbjax\n2 10\ncax uy\n1 8 6\nslw coz\n3 5\n9 8 10\nbaz j\n3 9 7 6\nxysi yn\n5 10 3 10\nev vnk\n10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 4\n8 5 8\ng kgd nxg\n7 8 2\ndlqlb asv ea\n7 9 8 1 2\nqnpd vdax xy\n5 6 2 4 8\nai idno tu\n9 4 1 6\nuf fwm hfsma\n8 9\n10 6\npab mtmg\n3 5 2\naps jakw\n1 3\ndcymv al\n6 9 10\nhf yprg\n5 8\n7 1 7\nt ooz\n1 10 1 8\nosmi flr\n2 10 10 1\nwrr nhr\n5 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "50 85\n67 9 86\nwve f ntzf\n26 31 97\nsy rua esfeq\n95 47 43 84 10\nouval f gu\n48 22 80 28 89\nry i gnm\n37 25 5 29\nagvlv pow jkqq\n88 11\n14 36\noacen g\n80 87 100\nc xey\n70 56\nbdll fhg\n86 97 71\ndnb go\n93 41\n77 37 5\nwt et\n83 80 86 5\nxc xrvch\n29 82 24 61\nifii bnn\n36 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 54\n87 34 70\nen tcfv gmx\n54 48 26\npa bh uca\n40 95 70 90 70\nqbif t rmu\n81 74 8 11 94\nmqw cjwd hsor\n5 72 50 94\nho cs atl\n49 87\n67 22\npryec rlw\n70 70 8\nrjpb zaop\n60 84\nbm a\n38 25 77\nzxa utwf\n24 78\n66 19 69\numqji ptmg\n52 67 71 84\nyg zmv\n5 12 40 37\nphqqp fqen\n69 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 89\n92 54 20\nug wyc kcjr\n79 14 1\nvhr dccg z\n64 64 92 49 68\nh bcqhe zkjp\n69 28 81 44 48\ndpq h b\n31 80 11 80\nybfpy lnwt qyy\n13 94\n90 50\nqe efl\n22 94 2\nrh tbkb\n27 33\nah yiuz\n6 38 80\nmn lcmh\n91 29\n14 70 41\ngdv lfiki\n87 5 48 7\noecs w\n13 40 67 37\nakxb wood\n67 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 99\n69 49 88\nd rzd bzs\n86 13 30\npklg bhim pqq\n65 50 92 15 31\ngwhov evxfa agia\n44 63 87 88 90\nmetv dzeud vk\n5 29 16 40\nvzcm osfac thpw\n63 28\n16 38\nscs w\n70 25 35\ng vtnh\n22 85\nvhurg p\n31 4 25\nnwl afnw\n34 67\n70 69 60\ngf xgcob\n22 15 37 57\nuhzk fite\n92 80 35 80\nbv wdqv\n79 24",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 49\n23 90 68\nikciq twudf lf\n45 6 83\nqb i gs\n14 28 55 78 53\nb nah hpdz\n91 58 84 63 7\nexmo vhh rsubo\n60 86 21 64\nuxi weblp t\n5 75\n99 16\ndld geagq\n9 51 86\ndk fga\n28 13\nxya qmzvp\n75 70 24\nqod zt\n20 52\n21 98 85\nq teb\n75 65 38 16\nqdy tjkw\n74 54 45 51\nop cyl\n12 99",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "160 282\n421 95 471\nht l i\n325 287 281\nvhsru vnp ignx\n419 90 492 450 332\nk zxr xny\n285 80 485 456 154\njw wpcw cnfcs\n312 168 429 71\nsofm o xxq\n412 420\n61 215\nt t\n483 99 63\nqzf eoje\n65 117\nf xuun\n182 184 306\nr cq\n261 99\n104 241 156\ndp jklgp\n369 114 493 60\nn nent\n254 253 355 144\nufbh kqdct\n179 169",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "228 235\n312 276 102\nbugc s vmqat\n467 91 496\nrxwl zgy ciche\n280 67 426 292 78\nx rnm fcyr\n171 445 497 273 177\ny nusa p\n382 77 97 184\nzgo ct n\n452 163\n442 375\nbxlx fl\n100 375 198\njmb qbmx\n376 62\nxvy vil\n180 225 464\nbo ub\n108 219\n263 344 373\nmx vm\n429 423 350 310\nu rhkav\n439 252 121 114\nwzz j\n190 378",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "162 148\n192 112 304\nqao zrqw dpa\n494 452 283\nqsa pdf gc\n66 175 236 407 104\nuephn gom pvftl\n300 330 397 489 345\noguw lwsv ziq\n479 471 456 168\ngiy tzo y\n361 483\n195 492\nwo pwq\n481 202 273\nyd wtg\n449 52\nxm bblgj\n128 395 128\nsw gor\n277 374\n158 389 212\nywr haq\n353 462 428 328\nauot bf\n252 163 300 210\nom ukw\n307 386",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "165 471\n433 365 55\nuj tzqxm xhi\n462 137 463\nqlss lbdg cykio\n229 143 415 336 209\namuzc c u\n202 345 433 421 84\nuxil ysev sn\n99 407 183 265\nkdoe c it\n69 325\n185 163\niindr lniqo\n127 258 84\nddp gn\n128 354\nr hhmh\n187 174 404\nc gd\n160 148\n229 452 133\nghd umfan\n76 424 314 329\nfj b\n399 243 325 315\nxpi betf\n141 417",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "298 347\n161 383 118\nk gay jlqbl\n139 428 84\nnerxf j dolft\n248 270 305 174 473\noyvz yti jpdi\n191 175 228 192 101\nfu omu ouon\n124 473 149 407\nvq cnq wlong\n255 450\n300 239\ngvs x\n413 145 109\nsu nmlin\n169 469\nmykwi gmphd\n392 390 351\nu hmgr\n299 123\n205 341 224\nwtr w\n135 284 64 354\nbppw zx\n486 427 102 430\nj qz\n280 128",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "225 210\n474 176 168\nriax elb w\n319 98 460\nqh k swc\n443 400 218 340 88\nxbwq ovi tboqu\n158 211 175 416 125\nnhfn svdiv udlcx\n341 461 64 67\ng i zmoed\n234 353\n210 422\nfp sg\n126 205 255\nbtl dbl\n400 174\ng qwzu\n365 412 499\nj ff\n174 481\n371 203 141\nc yhab\n320 79 307 428\ndj l\n228 217 466 353\nrmcmq in\n416 106",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "396 311\n372 205 352\na oq jh\n167 58 457\nqzou fil fv\n244 344 104 255 124\nry gtwtp str\n354 250 200 149 61\nncz cus uwhap\n95 417 70 318\nse bqch lphp\n457 498\n500 387\npndb cd\n148 66 197\ni dy\n424 183\nelbj gq\n183 402 447\nfqw hjch\n189 267\n394 417 317\nydzx e\n192 245 332 238\njnvo hqkxf\n221 138 101 467\nlwrj gzka\n287 463",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\nogjyt y vvhk\n1000 1000 1000\nom zhnnp xss\n1000 1000 1000 1000 1000\neda qv c\n1000 1000 1000 1000 1000\njx s adl\n1000 1000 1000 1000\nioe mvhd m\n1000 1000\n1000 1000\nmx dhh\n1000 1000 1000\nijssg x\n1000 1000\naifb xvfh\n1000 1000 1000\neu dmm\n1000 1000\n1000 1000 1000\nhz q\n1000 1000 1000 1000\nc c\n1000 1000 1000 1000\ntod zcibe\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\nheq oxk kxvg\n1000 1000 1000\nuoe ss p\n1000 1000 1000 1000 1000\npcw e ja\n1000 1000 1000 1000 1000\nl qw xk\n1000 1000 1000 1000\nm fduw uvw\n1000 1000\n1000 1000\np oqk\n1000 1000 1000\nupyr ja\n1000 1000\nl art\n1000 1000 1000\ncsed xf\n1000 1000\n1000 1000 1000\npb csyu\n1000 1000 1000 1000\nolryr t\n1000 1000 1000 1000\nfzq z\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2\n1000 1 1000\nqsjm ljgp brahx\n1 1 999\ngvc kqnr mn\n2 1 999 2 1000\nzqjq kwo jxo\n2 2 1 1000 1000\nif gfs uuelk\n999 2 1000 999\nfp j dm\n999 1000\n1 1000\nkggv ubac\n1000 1 1000\nlgmry czoo\n1000 1\nwjg hjycu\n1 1 2\na nkrkq\n1000 1000\n1000 1000 1000\nekytp ziq\n2 999 999 2\nsfiv tkt\n2 1 2 999\npwnye rnbpz\n2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 2\n1000 2 1000\nyfxsn ih ab\n2 999 999\nbdlh soav gbsat\n1 2 1000 2 1000\ncfu iaxbx vgebo\n1 999 999 999 1\nx kyzzl gk\n999 2 1 1000\nnxfn sgk i\n2 1000\n999 2\nzl wkrr\n1 999 1\nen hlsaq\n1000 2\nao mbgs\n999 999 999\nj baahc\n1000 1000\n999 1000 1000\nxsaon cama\n2 999 999 2\nusmc sen\n2 999 2 999\ns f\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

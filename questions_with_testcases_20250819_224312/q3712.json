@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Joy of CompuTenis",
+  "tags": [],
+  "text": "The Modern Club Association organizes every year a tournament of CompuTenis, which is a sport specially adapted to a public without any mensurable physical qualities. The rules of CompuTenis are very complex (suffices to say that they involve coding with your elbow glued to your ear), but fortunately it is not necessary to know them in detail to solve this problem. You just need to know that in a CompuTenis match two players oppose each other, and the match is won by the player that first winsSsets; in turn, each set is composed of several games, and to win a set a player must win at leastJgames, with a difference of at leastDmore games won than the opponent.The tournament hasKrounds, and there areN= 2Kplayers in it, who all participate in the first round. In each round each of the remaining participating players is paired with another participating player, in order to play a single match. The winning player of each of these matches advances to the next round, whereas the losing player is automatically disqualified from the tournament. The winner of the only match of roundKis thus the winner of the tournament.It is desirable to make the tournament as long as possible, considering that the  matches are broadcast on television and the Association is paid for every minute on air. Given any pair of different players, the Association knows the probability for one of them to win a game against the other. You are a member of the organizing committee, and your task is to prepare the fixture for the matches of each round in order to maximize the expected number of games played in the tournament. Doing this involves deciding which pairs of players will play a match in the first round, and then for each of the following rounds deciding which pair of matches from the previous round will provide the winning players for each match in that round. Note that this can only depend on the identification of the matches in the previous round. The following figure shows a possible fixture forK= 3 rounds andN= 23= 8 players.For the moment, the Association only wants to estimate their earnings, so it is sufficient to tell them the maximum expected number of games that can be played in the tournament.InputThe input contains several test cases. Each test case is described using several lines. The first line contains four integer numbers,K,S,JandD. The valueKdenotes the number of rounds in the tournament (1 <=K<= 3). The valueSdenotes the number of sets that a player must win to win a match (1 <=S<= 10). The valueJdenotes the minimum number of games that a player must win in order to win a set, whereasDindicates that a player should winDmore games than its opponent for him to win the set (1 <=D<=J<= 100). The players are identified by different integer numbers from 1 toN= 2K. Each of the followingNlines containsNvalues. In thei-th line, thej-th value is an integer numberP_ijsuch thatp_ij=P_ij/100 is the probability that player numberiwins a game against player numberj(0 <=P_ij<= 100 for 1 <=i,j<=N). You may assume thatP_ii= 0 (no player opposes himself) and thatP_ij+P_ji= 100 foriandjdifferent.The end of the input is denoted by a line containing four times the number -1.OutputFor each test case, you should print a line containing a rational number representing the maximum expected number of games that the given tournament can have. The result should be rounded to the nearest rational number with 2 decimal digits. In case of ties, round up. Note that you should always print 2 digits after the dot, even if this means ending with a zero.ExampleInput:1 1 2 2\r\n0 50\r\n50 0\r\n3 3 6 2\r\n0 88 2 76 71 24 50 4\r\n12 0 54 37 84 95 88 98\r\n98 46 0 66 36 13 33 33\r\n24 63 34 0 29 21 96 63\r\n29 16 64 71 0 0 47 13\r\n76 5 87 79 100 0 56 89\r\n50 12 67 4 53 44 0 23\r\n96 2 67 37 87 11 77 0\r\n-1 -1 -1 -1Output:4.00\r\n224.08",
+  "sample_input": "1 1 2 2\r\n0 50\r\n50 0\r\n3 3 6 2\r\n0 88 2 76 71 24 50 4\r\n12 0 54 37 84 95 88 98\r\n98 46 0 66 36 13 33 33\r\n24 63 34 0 29 21 96 63\r\n29 16 64 71 0 0 47 13\r\n76 5 87 79 100 0 56 89\r\n50 12 67 4 53 44 0 23\r\n96 2 67 37 87 11 77 0\r\n-1 -1 -1 -1",
+  "sample_output": "4.00\r\n224.08",
+  "link": "https://www.spoj.com/problems/JOCTENIS",
+  "scraped_at": "2025-08-17 00:34:20",
+  "test_cases": [
+    {
+      "input": "1 1 2 2\r\n0 50\r\n50 0\r\n3 3 6 2\r\n0 88 2 76 71 24 50 4\r\n12 0 54 37 84 95 88 98\r\n98 46 0 66 36 13 33 33\r\n24 63 34 0 29 21 96 63\r\n29 16 64 71 0 0 47 13\r\n76 5 87 79 100 0 56 89\r\n50 12 67 4 53 44 0 23\r\n96 2 67 37 87 11 77 0\r\n-1 -1 -1 -1",
+      "expected_output": "4.00\r\n224.08",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 1 5 4\n8 9\n5 8\n6 1 9 1\n4 7 2 1 3 1 8 1\n2 6 4 7 7 2 4 2\n6 4 7 5 4 1 2 9\n6 10 1 9 6 10 6 8\n7 4 10 7 2 3 4 2\n6 4 3 6 2 9 8 4\n7 4 4 9 7 4 1 6\n10 9 4 9 7 5 6 5\n5 1 8 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4 5 8\n1 1\n10 3\n2 1 7 6\n6 9 2 8 9 9 2 5\n10 3 6 5 9 5 4 4\n1 8 4 7 3 7 10 9\n1 10 7 5 5 5 7 5\n6 2 7 6 9 3 7 9\n4 8 2 2 10 7 8 6\n9 1 3 10 4 2 6 3\n3 3 9 7 6 8 9 5\n10 7 3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 2 8 8\n4 2\n7 8\n7 9 2 4\n10 9 4 3 4 6 3 7\n9 8 6 2 2 4 9 6\n10 9 5 6 5 10 10 9\n4 4 10 2 1 9 8 7\n5 4 5 10 10 3 4 5\n5 10 5 6 5 8 10 3\n1 3 9 7 5 4 3 4\n6 3 10 7 9 7 6 9\n9 3 10 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "11 2 6 32\n14 79\n10 28\n27 1 4 98\n47 18 58 84 76 41 24 87\n46 51 7 30 76 2 98 21\n86 39 28 72 61 79 11 60\n41 79 26 24 15 48 8 54\n27 25 37 2 7 56 31 63\n81 64 24 100 80 51 47 85\n48 22 20 10 28 35 30 43\n8 77 94 13 39 96 38 14\n50 71 54 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 5 92 45\n4 25\n42 69\n30 63 2 30\n46 61 24 15 73 10 65 91\n30 58 12 33 79 6 67 35\n60 50 77 13 11 65 16 37\n49 55 68 50 70 59 66 60\n56 39 72 89 39 53 6 20\n78 76 21 59 20 86 84 67\n51 36 37 12 63 97 5 46\n37 86 42 30 99 53 39 15\n88 71 4 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 24 31 89\n89 18\n36 21\n4 42 55 80\n57 53 6 67 99 30 78 51\n68 29 88 6 21 38 87 14\n11 41 39 30 30 22 16 16\n25 63 59 91 83 49 72 14\n56 81 73 18 29 6 42 16\n19 63 93 73 90 91 80 13\n70 17 72 89 81 71 68 93\n30 31 63 13 59 19 34 48\n52 5 67 51",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 14 57 68\n25 51\n76 29\n17 4 15 30\n67 98 52 46 46 50 49 47\n89 60 95 49 23 89 23 9\n49 20 57 68 29 81 11 74\n84 97 55 94 15 27 58 73\n46 33 17 37 27 99 82 90\n21 59 46 88 71 31 97 81\n55 13 94 5 92 61 73 10\n58 20 65 56 43 48 58 55\n49 92 79 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 61 46 38\n74 62\n99 12\n54 9 39 92\n73 59 98 2 44 22 14 62\n67 76 80 92 86 68 40 82\n82 24 64 5 67 43 66 63\n65 19 79 1 8 6 38 24\n51 38 41 67 3 71 39 18\n49 8 63 69 64 99 22 79\n63 36 12 51 9 8 55 87\n22 75 52 55 53 6 52 62\n33 84 59 39",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "332 305 196 191\n194 244\n499 77\n187 430 138 464\n142 252 236 239 238 311 364 321\n174 450 311 259 404 198 246 197\n435 302 397 120 357 188 171 413\n455 280 451 485 328 71 165 259\n79 413 106 355 255 376 255 284\n404 276 171 347 299 87 289 500\n219 389 319 363 265 217 307 424\n373 114 489 335 152 143 59 235\n258 178 166 130",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "346 399 175 366\n350 117\n222 150\n394 109 264 363\n137 205 376 402 93 251 202 214\n374 335 124 443 400 170 53 464\n263 305 352 470 159 396 212 67\n481 108 202 172 478 159 342 255\n297 200 140 444 187 429 74 316\n192 460 97 276 148 457 50 481\n344 478 385 90 101 265 134 425\n469 248 371 222 125 434 301 473\n212 421 136 500",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "355 489 494 253\n395 331\n439 219\n377 208 465 207\n316 342 460 215 460 281 495 439\n98 154 328 302 208 332 462 289\n435 146 227 52 70 197 414 246\n304 90 492 351 472 402 244 174\n494 184 148 100 393 82 473 316\n60 452 128 403 281 490 342 260\n288 333 298 136 317 345 318 500\n296 295 68 241 482 479 369 364\n395 355 213 154",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "180 230 302 176\n248 440\n160 495\n79 277 305 305\n415 386 311 395 291 387 101 378\n224 216 488 181 50 472 390 330\n385 438 91 343 407 211 394 333\n185 84 222 387 310 490 271 81\n318 465 454 378 128 257 412 408\n56 445 208 66 106 166 468 302\n465 369 201 128 409 457 402 235\n327 224 271 275 225 134 177 455\n87 232 330 115",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 291 108 409\n480 466\n191 222\n434 295 394 344\n146 326 332 498 452 156 402 178\n75 423 74 95 439 470 431 388\n142 446 328 483 343 488 456 396\n106 496 71 273 319 164 464 386\n166 491 236 129 332 167 259 250\n341 382 411 148 247 385 292 204\n102 140 82 360 446 410 238 155\n273 62 455 413 151 289 127 142\n357 480 417 406",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "400 151 483 62\n229 400\n461 221\n449 64 137 287\n251 451 352 262 449 442 167 83\n287 342 255 494 236 284 479 189\n440 145 110 224 485 160 424 462\n406 346 242 93 201 212 364 91\n365 397 338 108 287 469 203 306\n295 359 284 57 330 449 488 91\n301 381 395 104 204 271 131 328\n267 74 307 269 54 137 217 248\n166 269 412 185",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "194 493 175 252\n130 292\n69 97\n251 79 382 102\n344 452 143 240 177 463 321 295\n291 146 444 243 151 91 352 489\n225 412 256 295 388 292 259 363\n358 398 404 244 121 223 274 494\n335 488 71 436 290 195 196 205\n71 103 324 428 192 421 196 351\n209 392 300 137 394 380 228 425\n64 337 435 298 282 339 166 129\n381 115 148 346",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1 1 999\n1 1000\n1000 999\n999 1000 2 1000\n1000 2 1000 2 1000 1000 2 1000\n1000 1 2 1 2 999 999 1\n999 1000 999 2 1000 999 999 1000\n1000 1000 2 1 1000 2 1000 1000\n1 1 1 999 2 1 1 1\n999 999 999 999 2 1000 999 1\n999 1000 2 2 1 1 1000 1\n999 2 2 1000 1000 999 1000 999\n2 1 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999 1 1\n999 999\n1 1\n1 1000 1 2\n999 2 999 999 999 2 1000 999\n1 1 1 2 2 1 1 999\n999 1000 1000 2 1000 2 2 1000\n2 1000 1000 1 2 2 1 999\n1 1000 999 1000 999 1000 999 1000\n999 1000 1 1 2 1000 999 1\n1000 1 999 2 999 1 999 1\n999 1000 1 2 1 1000 1 999\n2 999 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

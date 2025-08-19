@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Help the problem setter",
+  "tags": [],
+  "text": "Preparing a problem for a programming contest takes a lot of time.\r\nNot only do you have to write the problem description and write a\r\nsolution, but you also have to create difficult input files.\r\nIn this problem, you get the chance to help the problem setter\r\nto create some input for a certain problem.For this purpose, let us select the problem which was not solved\r\nduring last year's local contest. The problem was about\r\nfinding the optimal binary search tree, given the probabilities that\r\ncertain nodes are accessed. Your job will be: given the desired optimal\r\nbinary search tree, find some access probabilities for which this binary\r\nsearch tree is the unique optimal binary search tree. Don't worry if\r\nyou have not read last year's problem, all required definitions are provided\r\nin the following.Let us define abinary search treeinductively as follows:The empty tree which has no node at all is a binary search treeEach non-empty binary search tree has a root, which is a node\r\nlabelled with an integer, and two binary search trees as left and right\r\nsubtree of the rootA left subtree contains no node with a label ≥ than the label of\r\nthe rootA right subtree contains no node with a label ≤ than the label of\r\nthe rootGiven such a binary search tree, the followingsearch procedurecan be used to locate a node in the tree:Start with the root node. Compare the label of the current node with\r\nthe desired label. If it is the same, you have found the right node.\r\nOtherwise, if the desired label is smaller, search in the left subtree,\r\notherwise search in the right subtree.Theaccess costto locate a node is the number of nodes you\r\nhave to visit until you find the right node.\r\nAnoptimal binary search treeis a binary search tree\r\nwith the minimum expected access cost.InputThe input file contains several test cases.Each test case starts with an integern(1 ≤ n ≤\r\n50), the number of nodes in the optimal binary search tree.\r\nFor simplicity, the labels of the nodes will be integers from1ton. The followingnlines describe the structure of\r\nthe tree. Thei-th line contains the labels of the roots\r\nof the left and right subtree of the node with labeli(or -1 for an empty subtree). You can assume that the\r\ninput always defines a valid binary search tree.The last test case is followed by a zero.OutputFor each test case, write one line containing the access frequency\r\nfor each node in increasing order of the labels of the nodes.\r\nTo avoid problems with floating point precision, the frequencies should\r\nbe written as integers, meaning the access probability for a node will be the\r\nfrequency divided by the sum of all frequencies. Make sure that you\r\ndo not write any integer bigger than 263- 1 (the maximum value\r\nfitting in the C/C++ data typelong longor the Java data typelong).\r\nOtherwise, you may produce any solution ensuring that there is exactly\r\none optimal binary search tree: the binary search tree given in the\r\ninput.ExampleInput:3\r\n-1 -1\r\n1 3\r\n-1 -1\r\n10\r\n-1 2\r\n-1 3\r\n-1 4\r\n-1 5\r\n-1 6\r\n-1 7\r\n-1 8\r\n-1 9\r\n-1 10\r\n-1 -1\r\n0Output:1 1 1\r\n512 256 128 64 32 16 8 4 2 1Note that the first test case in the sample input describes a\r\ntree looking like:2\r\n / \\\r\n1   3",
+  "sample_input": "Input:3\r\n-1 -1\r\n1 3\r\n-1 -1\r\n10\r\n-1 2\r\n-1 3\r\n-1 4\r\n-1 5\r\n-1 6\r\n-1 7\r\n-1 8\r\n-1 9\r\n-1 10\r\n-1 -1\r\n0Output:1 1 1\r\n512 256 128 64 32 16 8 4 2 1",
+  "sample_output": "2\r\n / \\\r\n1   3",
+  "link": "https://www.spoj.com/problems/HELP",
+  "scraped_at": "2025-08-17 00:34:23",
+  "test_cases": [
+    {
+      "input": "3\r\n-1 -1\r\n1 3\r\n-1 -1\r\n10\r\n-1 2\r\n-1 3\r\n-1 4\r\n-1 5\r\n-1 6\r\n-1 7\r\n-1 8\r\n-1 9\r\n-1 10\r\n-1 -1\r\n0",
+      "expected_output": "1 1 1\r\n512 256 128 64 32 16 8 4 2 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n8\n6\n1\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n9\n8\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "11\n47891075\n4525402\n69772201\n68937531\n66017534\n69777453\n86912382\n26716015\n32005606\n50549947\n26891230",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n52155855\n58055110\n70213043\n61490691\n37415363\n91333788\n36956711\n53991999\n74647151\n66983961\n95321132\n36134098\n8090173\n43901197\n54374150\n69878726\n96403353\n81142346",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n63843101\n19712575\n95738942\n45009975\n88349052\n93616151\n32146480\n9995364\n54342467\n54921331\n81131435\n27291835\n89207272\n66363632\n26933212\n78531570",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n3123587\n79757910\n32581847\n90991316\n69576613\n57419540\n64926422\n36686336\n53297733\n69697517\n99119931\n25703512\n55337200\n62595126\n21270795\n22174962\n7412422\n22770846",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n88175190\n31581258\n97668319\n71128847\n26828336\n40239477\n75903296\n63938697",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "39\n12415\n42163\n59337\n98037\n18437\n71264\n25122\n91902\n56965\n40239\n32412\n17779\n50332\n54532\n37181\n50798\n78160\n91460\n35889\n39684\n24590\n54171\n64219\n52913\n68029\n50266\n12982\n3071\n74971\n31903\n75903\n2477\n42615\n66240\n2690\n49625\n11077\n20701\n66430",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n25702\n22976\n70821\n10709\n29187\n75347\n83460\n74032\n9535\n49594\n96886\n73779\n637\n93113\n49071\n85403\n33498\n15989\n79059\n49322\n10243\n52739\n92479\n15425\n28334\n9155\n29548\n48517",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "25\n7517\n83332\n72863\n94743\n74598\n2959\n55413\n84674\n27897\n8267\n9938\n93766\n50761\n30168\n62654\n95973\n53005\n40323\n19153\n34485\n76015\n64007\n58216\n97318\n85265",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n71690\n93434\n31840\n90300\n63009\n77368\n75007\n79604\n86867\n20910\n50929\n88770\n1900\n97009\n74446\n42581\n59509\n29717\n33561\n99288",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "39\n65559\n41385\n97049\n96711\n30975\n29421\n71530\n90109\n3052\n41145\n99628\n48773\n14487\n34046\n22154\n53461\n9833\n54872\n36146\n97883\n72919\n85880\n36067\n70110\n84733\n37917\n25963\n18386\n87387\n40294\n91971\n2825\n95732\n68121\n86996\n97661\n43096\n88895\n17090",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n88728\n20583\n19184\n24877\n57255\n35240\n68395\n93283\n83904\n84071\n17567\n71550\n45701\n57238\n69991\n23409\n45821\n40365\n11841\n88769\n51298\n52397\n61727\n7988\n71501\n87125\n95996\n14667\n33453\n56540\n70026\n39712\n11712\n89840\n44506\n89371",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n81907\n86025\n64551\n93785\n93842\n84596\n95916\n96280\n33808\n31904\n14638\n50442\n60516\n92325\n53435\n63764\n3135\n34666\n24263\n94696\n67332",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n68622926\n18799878\n72695974\n22411097\n72725258\n18171387\n52177542\n64145480\n28171563\n57020476\n80103789\n44463509\n85793622\n8743394\n83771428\n97963374\n24174555\n90502235\n32538031\n11384682\n50664051\n48514208\n26797893\n21864050\n9669644\n42778055\n47094489\n91419182\n59297217\n65022295\n80572754\n97640044\n54543992\n98304357\n4945314\n29392119\n51313011\n53476098\n29660018\n31863431\n41574711\n83138248\n64110005\n99365755\n48514664\n83842030\n71557117\n97869454\n54512051\n22392648",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n46740943\n75715254\n21270109\n53627727\n93390188\n65599084\n56127987\n2175656\n67052330\n99338135\n74167966\n9312887\n43630\n57947046\n76420107\n81822937\n10324012\n48208245\n78035808\n25506719\n10728407\n1452993\n88582477\n19149809\n7924142\n78391550\n11785702\n67272762\n15607443\n23657892\n49925051\n98541930\n20152182\n6902582\n14229290\n62667741\n97150921\n28962441\n91821553\n82995669\n49379310\n6673956\n83146077\n24284458\n80863567\n61130285\n60797796\n95150889\n18804711\n15533311",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n1\n94223111\n8130273\n100000000\n58046016\n100000000\n1\n100000000\n36336318\n1\n70685179\n100000000\n1\n1\n100000000\n100000000\n1\n100000000\n1\n1\n1\n22227208\n29320126\n69392584\n1\n100000000\n40677984\n100000000\n9202319\n1\n35406136\n66069914\n1\n84436007\n100000000\n56533878\n1\n1\n100000000\n64941788\n1\n45307548\n47752782\n52168669\n100000000\n100000000\n100000000\n1\n100000000\n82964648",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

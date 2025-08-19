@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Tetris 3D",
+  "tags": [],
+  "text": "The authors of the game \"Tetris\" have decided to make a new, three-dimensional version, in which cuboids would fall down on a rectangular platform. The blocks fall down separately in a certain order, just like in the two-dimensional game. A block falls down until it reaches an obstacle: the platform or another block, that has already stopped - then it stops and remains in this exact position till the game is over.However, the authors wanted to change the spirit of the game, turning it from a simple arcade-game into a play far more puzzling. Knowing the order of the falling blocks and their flight path the player's task is to tell the height of the highest point of the arrangement after all blocks have fallen down (and stopped). All the blocks are falling down vertically and do not rotate while falling. For convenience we'll introduce a cartesian coordinate system on the platform, with the center in one of the platform's corners and the axes parallel to the platform's edges.Write a program that:reads the descriptions of subsequent falling blocks from the standard input,determines the height of the highest point of the arrangement of blocks after all have fallen down and stopped,writes the result to the standard output.InputIn the first line of the input there are three integers D, S and N (1 <= N <= 20000, 1 <= D, S <= 1000), separated by single spaces and denoting respectively: the length and the depth of the platform and the number of blocks that are going to fall down on it. In the following N lines the descriptions of subsequent blocks are given, one in each line.Each description of a block consists of five integers: d, s, w, x and y (1 <= d, 0 <= x, d + x <= D, 1 <= s, 0 <= y, s + y <= S, 1 <= w <= 100000), representing a block of length d depth s and height w This very block will be falling down on the platform with its d×s face as the bottom, where the length and depth of the block are parallel to those of the platform. The coordinates of the vertices of the projection of the block on the platform are: (x, y), (x + d, y), (x, y + s) and (x + d, y + s).OutputThe first and only line of the standard output should contain exactly one integer, the height of the highest point of the arrangement of blocks after all have fallen down ad stopped.ExampleInput:7 5 4\r\n4 3 2 0 0\r\n3 3 1 3 0\r\n7 1 2 0 3\r\n2 3 3 2 2Output:6",
+  "sample_input": "Input:7 5 4\r\n4 3 2 0 0\r\n3 3 1 3 0\r\n7 1 2 0 3\r\n2 3 3 2 2Output:6",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TETRIS3D",
+  "scraped_at": "2025-08-17 00:33:51",
+  "test_cases": [
+    {
+      "input": "7 5 4\r\n4 3 2 0 0\r\n3 3 1 3 0\r\n7 1 2 0 3\r\n2 3 3 2 2",
+      "expected_output": "6",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 9 3\n7 8 9 10 9\n2 7 6 2 5\n10 10 3 2 3\n4 6 10 8 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 2 3\n10 3 7 9 9\n3 6 6 1 1\n9 8 8 5 5\n6 9 3 9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 4 10\n3 3 5 2 7\n1 4 8 8 8\n10 1 4 8 6\n7 8 6 3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "55 84 92\n48 34 23 66 17\n82 27 54 68 16\n63 91 57 26 72\n76 85 56 4 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 72 99\n15 94 64 37 88\n88 25 10 12 26\n22 76 40 72 55\n63 75 8 59 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 96 98\n90 67 84 97 92\n16 43 87 71 34\n65 75 51 16 14\n26 26 17 42 39",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 46 19\n19 74 80 21 100\n85 34 41 80 7\n62 39 71 7 52\n87 12 96 79 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 58 19\n24 44 34 36 42\n75 64 23 62 25\n54 85 33 94 55\n82 58 57 14 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "112 357 442\n265 156 353 269 277\n365 413 314 228 118\n351 474 487 338 334\n365 442 156 410 215",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "260 186 333\n304 315 420 343 467\n124 357 285 104 471\n339 76 414 106 429\n246 300 332 184 172",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "207 124 185\n216 387 70 168 96\n391 454 427 405 478\n222 119 320 288 448\n62 79 419 189 277",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "339 72 349\n134 499 393 433 398\n349 164 366 296 284\n288 217 366 350 210\n433 323 110 302 205",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "166 474 327\n320 143 456 177 287\n435 69 438 128 325\n481 336 252 73 408\n76 227 239 463 252",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "474 192 179\n314 86 351 344 51\n121 351 471 194 444\n127 500 196 282 314\n430 386 127 415 150",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "198 470 390\n180 454 411 178 279\n57 497 335 308 374\n310 159 329 293 58\n447 229 330 324 371",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 1\n999 1 999 999 1\n2 1 1000 1 2\n1000 1 1000 999 2\n999 999 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 999 1\n1 2 1000 1000 999\n2 2 2 999 999\n1 1000 1 1 1000\n999 2 999 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

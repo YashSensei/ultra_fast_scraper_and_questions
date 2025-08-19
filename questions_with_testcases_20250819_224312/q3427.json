@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Hanoi Calls",
+  "tags": [],
+  "text": "Theory:Towers of Hanoi is an arrangement consisting of three pegs andNdiscs of radius 1 toN.Each peg can hold zero or more discs, but at any point of time, the radius of the discs must be in decreasing order from bottom to top.A move consists of moving the topmost disc from one peg to another. After the move, the descending order property of pegs must hold.Traditional problem is: If all discs are stacked up on peg #1, how many moves will it take to move all the discs to peg #2?Recursive solution: Noting that for disc N to move, from peg #a to peg #b, all discs of size 1 to N-1 must be in peg #c. Hence there is exactly one minimal way to move the discs. After disc N has moved, all pegs from #c must be moved back to #a.If moves(N) denote the number of moves required to transfer N discs between two pegs (both sorted configuration), then moves(N) = moves(N-1) + 1 + moves(N-1); Solving the recurrence yields moves(N) = 2N-1; The idea I am trying to share is that, there is exactly one such move sequence.Now the problem is that given any initial configuration of the discs, and any final configuration, Can you tell me the minimal number of moves required to change it from initial to final configuration?InputThe input file consists of about 100 test cases.The first line of each test case contains one integer,N(1 ≤ N ≤ 30)The second line of each test case contains N integers, each one of which will be between 1 and 3. Thei-th integer tells you the peg number at which disc of radiusiis present in the initial configuration.The third line contains a similar specification for the final configuration.Input terminates with a line containing a single zero, which must not be processed.OutputFor each test case print one line containing a single integer, which is the minimal number of moves to make the transfer.ExampleInput:4\r\n1 1 1 1\r\n2 2 2 2\r\n3\r\n1 3 3\r\n2 1 1\r\n5\r\n1 3 2 2 2\r\n2 3 2 1 2\r\n0Output15\r\n6\r\n14ExplanationTest case #1: This is the moves(4) = 24- 1;Test case #2:[peg1, peg2, peg3] =\r\n#0 [ {1}, {}, {3,2} ]\r\n#1 [ {1}, {2}, {3}  ]\r\n#2 [ {}, {2,1}, {3} ]\r\n#3 [ {3}, {2,1}, {} ]\r\n#4 [ {3}, {2}, {1}  ]\r\n#5 [ {3,2}, {}, {1} ]\r\n#6 [ {3,2}, {1}, {} ]",
+  "sample_input": "Input:4\r\n1 1 1 1\r\n2 2 2 2\r\n3\r\n1 3 3\r\n2 1 1\r\n5\r\n1 3 2 2 2\r\n2 3 2 1 2\r\n0Output15\r\n6\r\n14",
+  "sample_output": "[peg1, peg2, peg3] =\r\n#0 [ {1}, {}, {3,2} ]\r\n#1 [ {1}, {2}, {3}  ]\r\n#2 [ {}, {2,1}, {3} ]\r\n#3 [ {3}, {2,1}, {} ]\r\n#4 [ {3}, {2}, {1}  ]\r\n#5 [ {3,2}, {}, {1} ]\r\n#6 [ {3,2}, {1}, {} ]",
+  "link": "https://www.spoj.com/problems/HANOICAL",
+  "scraped_at": "2025-08-17 00:34:23",
+  "test_cases": [
+    {
+      "input": "4\r\n1 1 1 1\r\n2 2 2 2\r\n3\r\n1 3 3\r\n2 1 1\r\n5\r\n1 3 2 2 2\r\n2 3 2 1 2\r\n0Output15\r\n6\r\n14",
+      "expected_output": "[peg1, peg2, peg3] =\r\n#0 [ {1}, {}, {3,2} ]\r\n#1 [ {1}, {2}, {3}  ]\r\n#2 [ {}, {2,1}, {3} ]\r\n#3 [ {3}, {2,1}, {} ]\r\n#4 [ {3}, {2}, {1}  ]\r\n#5 [ {3,2}, {}, {1} ]\r\n#6 [ {3,2}, {1}, {} ]",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n2\n10\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n5\n2\n1\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "20\n13101786\n7272498\n68628411\n48276554\n77483577\n73200075\n69571264\n55897381\n65113985\n71655421\n82054217\n37611886\n93451080\n87816890\n54945998\n54532862\n87122427\n80729569\n70735712\n69718455",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n68946582\n1266563\n55244673\n56471754\n17891728\n15193112\n37209699\n48372700\n40384263\n83335935\n30310095\n70572253\n78694816\n79617037\n56767142\n17799539",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n88260457\n94847989\n56985789\n20444139\n71127142\n54399229",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n43976489\n99499273\n23070703\n42097374\n9769556\n76610590\n27727215\n47678368\n14575957\n64549225\n91728715\n44095696\n71180708\n81264157",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n75183171\n26858114\n53177189\n90905627\n8419010\n34166193\n96039473\n30472259\n25222773\n13724667\n5244613\n36868969\n25694026\n21207380\n74313565\n47135588\n99829466\n38505297",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n98716\n22975\n45421\n18278\n83441\n99836\n12646\n51722\n53780\n82918\n70661\n72793\n41967\n11770\n53395\n50978\n78960\n99634\n43384\n81556",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n96215\n56604\n596\n33851\n74407\n54381\n64926\n8460\n65724\n50312\n24636\n17294\n62420\n41244\n57093\n15674\n21154\n68246\n59040\n70813\n29632\n21245\n92145\n67988\n35311\n94821",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n66464\n99910\n63003\n43699\n18563\n48198\n68324\n36444\n39821\n61465\n1299\n33424\n65070\n95822\n94811\n90866\n53946\n93034\n65808\n72529\n10942\n20638\n96049",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n34\n1583\n34755\n92945\n64180\n8388\n52813\n44286\n87656\n26816\n45229\n13895\n85130\n70286\n14936\n40652\n87752\n60626\n72124\n20321\n35344\n57788\n64214\n16296\n50573\n20208\n67007\n61083\n69383\n70947",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n67214\n4446\n42088\n39221\n66719\n372\n41708\n63387\n72190\n90918\n60526\n89986\n57089\n10595\n31271\n34876\n70621\n44164\n72111\n58913\n94613\n71368\n64125\n49180\n27412\n57297\n17802\n7093\n41490\n4434",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n48174\n58927\n99954\n89003\n62452\n34392\n58794\n23171\n60047\n91148\n12313\n70863\n51114\n40300\n91972\n95976\n76764\n57419\n31686\n33393\n16640\n97206",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n95195\n27608\n4692\n42945\n94501\n58792\n62369\n59690\n40221\n42630\n60416\n81333\n38901\n6122\n22007\n42845\n7648\n98834\n30138\n7652\n15262\n64386\n36565",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n9915275\n31068029\n97041812\n94801357\n13864415\n63496147\n54975128\n39065398\n33416539\n75175074\n46484396\n84807370\n49375751\n41303240\n48618352\n59408011\n63426787\n33082364\n90207089\n26844099\n76565254\n85194911\n48949351\n77032844\n69448150\n30788779\n71485014\n23951089\n72548718\n28532645",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 30)"
+    },
+    {
+      "input": "30\n31453744\n118168\n84210048\n35763038\n44447470\n94640580\n23916776\n68415154\n5251197\n75400091\n92971433\n90070832\n12157389\n31624987\n42326411\n30275937\n30044717\n30330308\n95733775\n80669908\n28256239\n42107086\n51746768\n64211819\n35137222\n86366889\n5877905\n34789595\n19500585\n24793935",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 30)"
+    },
+    {
+      "input": "2\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "1\n92318755",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

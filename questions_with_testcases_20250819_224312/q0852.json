@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Playing Darts",
+  "tags": [],
+  "text": "Lucy and her friends are heading to the bar to play darts, the forever fierce battle between drunk people to show who’s the best at throwing some sharpened darts into a board. Seems like a lot of fun.As crazy as it may appear, Lucy and her friends have mad skills when playing darts, as they may all win flawlessly (and this is not fun at all), they have decided to challenge themselves a little bit with some luck. They will draw from a bowl N numbers ranging from 1 to 60 and then they will try to reach 0 at a standard game of 301.When playing 301, you start your score at 301 points, for each turn you have three throws, for each throw you will substract the value thrown to the current value you have, if, for some reason you exceed the score you must get to be at 0 points, nothing you’ve done at that turn will be taken into count. If you get to 0 at some point of the game, you win. After your turns ends, the other player’s start its throwsFor instance, if you have 32 points left on your board to get to 0 and you throw 2 darts at 16, you win, but if you throw a dart at 17 and 16 (thus earning 33 points), you reset yourself to 32 again and your turn is immediately over, and if you score something like 8, 8 and 12 (earning 28 points), next turn you will have to make 4 points to win.Lucy and her friends want to know who’s going to be the expected winner at the darts game, because if that person does not win, he or she will pay all the beers!InputThe first line contains an integer T, which specifies the number of test cases. Then, will follow the descriptions of T test cases.For each test case you will have an integer N and K representing, respectively, the number of players and the number of scores they will have to make on the board. Then, N lines will follow with K integers separated by a single space denoting the score Kj that a player Ni must make on that turn.For simplicity, we will assume that they can score any number between 1 and 60 (inclusive) regardless of the board points configuration and that after they throw K darts, they will stop throwing and, if no player has won yet, declare a tie.OutputFor each case you must print the number (1-index based) of the player that is expected to win the standard game of 301 respecting the order of the input, if there is no player that wins the game after throwing all of its darts, print ”TIE” (without quotes)ExampleInput:3\r\n3 4\r\n60 60 60 58\r\n60 60 60 60\r\n60 59 58 57\r\n3 9\r\n60 60 60 60 40 10 10 1 60\r\n10 20 30 40 50 60 60 60 60\r\n60 60 60 60 60 1 60 60 60\r\n3 9\r\n60 60 60 60 50 10 5 1 50\r\n60 60 60 60 40 10 5 1 5\r\n60 60 60 60 60 60 60 60 60Output:TIE\r\n3\r\n2Constraints• 1 ≤ N ≤ 100• 1 ≤ K ≤ 301• 1 ≤ Ki ≤ 60Explanation of the third case: at the end of the first round, player 1, 2 and 3 scored 180 points, at the second round, player 1 scored 120 (1 points left), player 2 scored 110 (11 point left) and player 3 scored 180 points (131 left as it got busted), by the next round, player 1 bust out with one throw at 5 points and then, player 2 wins by scoring in three throws 5,1,5 (earning 11 points).",
+  "sample_input": "Input:3\r\n3 4\r\n60 60 60 58\r\n60 60 60 60\r\n60 59 58 57\r\n3 9\r\n60 60 60 60 40 10 10 1 60\r\n10 20 30 40 50 60 60 60 60\r\n60 60 60 60 60 1 60 60 60\r\n3 9\r\n60 60 60 60 50 10 5 1 50\r\n60 60 60 60 40 10 5 1 5\r\n60 60 60 60 60 60 60 60 60Output:TIE\r\n3\r\n2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/URJC2_B",
+  "scraped_at": "2025-08-17 00:33:07",
+  "test_cases": [
+    {
+      "input": "3\r\n3 4\r\n60 60 60 58\r\n60 60 60 60\r\n60 59 58 57\r\n3 9\r\n60 60 60 60 40 10 10 1 60\r\n10 20 30 40 50 60 60 60 60\r\n60 60 60 60 60 1 60 60 60\r\n3 9\r\n60 60 60 60 50 10 5 1 50\r\n60 60 60 60 40 10 5 1 5\r\n60 60 60 60 60 60 60 60 60",
+      "expected_output": "TIE\r\n3\r\n2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n8\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "18\n21669059\n79760291\n34494778\n58290018\n19173389\n50121687\n62039577\n10852463\n58718780\n25434109\n34355459\n90179069\n59121150\n89803736\n65057045\n40857091\n92395090\n74403533",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n60916860\n33177709\n2428455\n62261746\n72434861\n4701614\n3708027\n73534263\n35938838\n15852097\n14681481\n16000886\n72981443\n23354518",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n64225254\n44556784\n31506293\n28239407\n87300520",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n76748755\n14524723\n37172043\n28871296\n69711413\n53548069\n55683518",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n74882505\n4168384\n20705831\n91553489\n60416013\n86304176\n46143060\n67353519\n68697105\n45389845\n94344069\n25164782\n71596830",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "81\n27972\n25367\n14183\n27639\n15405\n6555\n51330\n51749\n95354\n99419\n84646\n35031\n79540\n60503\n68216\n81214\n48184\n7175\n20151\n73784\n11642\n2228\n77198\n94776\n4068\n49573\n7702\n74867\n51447\n7708\n54506\n13471\n68108\n71668\n37611\n49686\n13171\n13471\n64900\n34091\n55354\n37999\n73213\n74682\n97204\n13502\n84316\n50738\n45533\n67007\n41864\n26118\n22577\n33898\n30106\n72500\n50625\n70364\n66727\n32693\n39894\n57018\n30885\n58265\n1955\n30515\n44483\n49579\n81120\n85836\n63880\n30949\n53899\n64496\n42551\n68660\n33988\n84424\n57863\n36140\n63802",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "81\n47495\n23574\n16091\n65151\n88598\n85819\n82436\n48636\n94023\n11848\n50307\n53775\n88122\n92761\n4280\n61597\n47503\n65175\n66764\n47701\n91549\n86588\n98261\n76759\n58952\n2404\n44427\n84201\n74791\n46171\n98046\n53153\n62975\n9605\n70963\n60587\n19913\n39843\n13028\n62364\n21703\n29996\n2712\n38468\n16670\n19882\n93969\n32292\n70934\n12961\n98914\n24075\n74916\n10268\n56469\n62159\n34650\n97542\n83966\n34721\n28326\n51999\n89818\n11355\n30922\n38719\n34654\n9637\n63480\n93524\n51843\n9980\n17966\n42194\n75718\n89019\n32074\n73077\n62319\n90152\n24750",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n77973\n73619\n58387\n30051\n48268\n91612\n49083\n9383\n23342\n88153\n58243\n97525\n70174\n11440\n55347\n69081\n44916\n61053\n90524\n85397\n76196\n51099\n68212\n19500\n30961\n28411",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "63\n6950\n47212\n25550\n95517\n84705\n85739\n73912\n96703\n71478\n93071\n86611\n82058\n45523\n94439\n92906\n89219\n65044\n82772\n73252\n13457\n1097\n95066\n90793\n79420\n37885\n9822\n96946\n48027\n4646\n47208\n47751\n8510\n54505\n97267\n90534\n92538\n30821\n78590\n67464\n44225\n47467\n97243\n70817\n87957\n25260\n45200\n92027\n98315\n71939\n78397\n39165\n53073\n821\n53840\n22317\n46890\n77783\n93990\n22297\n26164\n84279\n11571\n13597",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n50012\n14999\n97209\n3556\n75734\n74607\n65646\n1190\n9051\n51036\n59004\n15123\n81505\n34818\n47107\n82652\n94590\n87855\n14492\n92458\n63303\n86536\n94460\n77780\n15096\n99883\n73344\n60140",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "73\n26222\n8514\n75232\n39231\n97781\n60037\n79712\n70572\n27517\n75554\n94534\n29861\n42070\n77680\n37575\n11476\n69725\n72786\n92250\n12094\n49770\n54006\n18293\n40585\n70420\n80035\n9766\n1101\n64500\n64095\n48239\n12232\n97693\n69134\n30866\n88282\n59934\n87458\n66557\n62622\n41559\n20378\n85984\n52950\n35346\n17954\n70934\n41361\n23315\n65097\n85893\n67875\n91132\n31700\n63436\n41576\n27789\n18487\n82335\n80617\n89794\n47522\n8398\n23803\n36242\n57691\n61534\n34106\n48140\n69845\n63997\n57367\n26347",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "47\n16592\n57443\n86482\n31564\n69436\n15732\n12770\n46636\n96258\n60166\n49751\n14085\n72012\n73034\n26605\n74406\n42674\n80319\n42431\n9194\n40767\n62434\n12546\n69998\n12447\n42803\n23883\n43916\n80563\n49997\n41833\n64289\n49568\n5509\n38916\n42687\n54332\n64630\n66346\n18936\n38380\n42917\n46480\n78826\n86992\n60614\n41104",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "100\n28733016\n24549461\n19657918\n99331116\n74136844\n13358809\n42329022\n5060107\n3471809\n29816888\n54491485\n23434018\n71682791\n877232\n36964059\n88173871\n75713080\n72900653\n96773215\n90688033\n77018126\n38287947\n4326369\n1958128\n22156818\n57307934\n95951332\n2410743\n233886\n65429635\n73705929\n76195896\n39052803\n75063396\n78518077\n497950\n92980809\n70371223\n88066198\n45890882\n56821257\n89788526\n36512773\n74797388\n28454476\n43372460\n32008174\n17222559\n31805852\n15079775\n52019357\n16404914\n24789294\n50136771\n9804798\n78285092\n63396458\n10318804\n74331833\n60334207\n79009101\n45125009\n53804396\n90005768\n69289718\n53186966\n41267239\n68500833\n97241273\n98844285\n13139770\n39664916\n78127374\n6950607\n39743311\n79443149\n1726319\n36823644\n3963030\n22893846\n35235066\n47267410\n12319391\n85154252\n58266273\n48107177\n3672505\n55124391\n12715786\n3728128\n36106746\n92841219\n19348251\n2193249\n30686465\n43951377\n91389398\n75499661\n42728393\n69293041",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "100\n30924180\n14840631\n33080879\n47652614\n78852683\n48870873\n59586336\n70280389\n74252828\n32310412\n43816814\n73932802\n40402196\n34193489\n18802427\n24904686\n77057590\n54494005\n40754932\n55491322\n99173373\n62320186\n41973739\n29403488\n23302363\n31304882\n44271177\n48098595\n69035025\n14048948\n76638857\n50000341\n89115642\n55782745\n6537107\n40741772\n1414839\n47955996\n41739910\n64646963\n96699825\n46316881\n91432773\n89456217\n91614688\n75159610\n75094528\n92387668\n8351745\n62060360\n61451557\n31070365\n53402380\n6806478\n94395420\n30917507\n38322636\n40513469\n43565858\n28400241\n65378161\n69286316\n76682204\n9173914\n55370846\n70169151\n45764306\n40218157\n39498773\n18129497\n76286659\n29177948\n25120893\n5217060\n44051945\n70348383\n21744756\n22034522\n49983985\n54237091\n87874680\n47390318\n25715551\n98631076\n70324212\n85958428\n20088976\n46582633\n18276947\n4982517\n55321432\n20459143\n75917555\n8598622\n74623429\n48681201\n95859045\n72598554\n43737292\n13131022",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "100\n1\n100000000\n1\n100000000\n6470184\n17710649\n100000000\n1\n1\n100000000\n8633189\n1\n1\n7072233\n43973018\n19087673\n1\n100000000\n1\n100000000\n19257381\n100000000\n1\n1\n100000000\n100000000\n78533262\n1\n1\n100000000\n1\n1\n100000000\n100000000\n11948638\n42270471\n100000000\n100000000\n68027687\n100000000\n100000000\n23542157\n1\n100000000\n100000000\n1\n40957381\n28450376\n100000000\n1\n100000000\n100000000\n100000000\n100000000\n51211679\n1\n1\n3869177\n1\n100000000\n1\n1\n100000000\n100000000\n1\n100000000\n1\n60058987\n100000000\n100000000\n13681513\n58638126\n1\n100000000\n1\n1\n100000000\n100000000\n1\n1\n90808308\n70521880\n82114166\n1\n58350959\n100000000\n100000000\n1\n1\n1\n100000000\n9838011\n50777622\n15614230\n35315122\n72329553\n1\n1\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 100)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

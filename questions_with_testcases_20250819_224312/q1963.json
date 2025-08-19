@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "California Jones and the Gate to Freedom",
+  "tags": [],
+  "text": "California Jones (the sister of famous Indiana Jones) once again faced a seemingly intractable problem. Her only hope was in you. She knew you were a computer scientist and you might have a clue.Jones calls you on the video-phone and tells you the facts: she walked into a trap and now stands in front of a huge gate. On the left side strange signs can be seen whilenstones lie on the right side. In front of the gate there are exactlyn/2holes. Says Jones, \"I suppose I have to take exactly half of the stones from the right side and put them into the holes.\" Ancient writings confirm her conjecture. According to the writings it does not matter which hole a stone is placed into. It is only important that the right stones are chosen.Nearby, Jones found a stone board, too, but was unable to interpret. It made sense to you though. It was a hint on how to sort the various possibilities of chosingn/2stones.But you couldn't yet figure out about the zeros and the ones. So you asked Jones who replied that \"the same symbols I saw on the left side of the gate - only they were somewhat longer sequences. But I haven't met such a primitive civilization yet.\"Now everything was clear to you: the symbols were the representation of a binary number - and it indicated which stones to choose. Simply ingenious! Jones was enthusiastic about you.But it was impossible for Jones to calculate for a given binary number the corresponding stones. So she instructed you to write a program to solve the task and help her through the gate to freedom. Five hours later, she would call back.Take a thorough look at the figure to the left depicting the stone board, as well as the sample input and output, to figure out how to solve Jones' problem.Input SpecificationThe input contains several testcases. Each starts with the number of stonesn. Input is terminated byn = 0. Otherwise,nis even and2 ≤ n ≤ 32. The nextnintegers identify the stones. A test case is further subdivided intok(sub-) test cases,kbeing the next number in the input file. Then followktimes a bit stringb(encoding a non-negative integer) andn / 2distinct integers identifying the set of chosen stones. No invalid stones will be chosen and the length ofbwill not exceed30.Output SpecificationFor each (sub-) test case generate a line containingTRUE, if the chosen stones may be laid into the holes, andFALSEotherwise.Sample Input4\r\n12 50 74 34\r\n1\r\n00\r\n50 12\r\n\r\n8\r\n45 23 86 43 90 76 12 74\r\n2\r\n111001\r\n86 43 90 74\r\n010001\r\n45 86 43 90\r\n\r\n4\r\n12 50 74 34\r\n2\r\n101\r\n34 74\r\n110\r\n34 74\r\n\r\n0Sample OutputTRUE\r\nTRUE\r\nFALSE\r\nTRUE\r\nFALSE",
+  "sample_input": "4\r\n12 50 74 34\r\n1\r\n00\r\n50 12\r\n\r\n8\r\n45 23 86 43 90 76 12 74\r\n2\r\n111001\r\n86 43 90 74\r\n010001\r\n45 86 43 90\r\n\r\n4\r\n12 50 74 34\r\n2\r\n101\r\n34 74\r\n110\r\n34 74\r\n\r\n0",
+  "sample_output": "TRUE\r\nTRUE\r\nFALSE\r\nTRUE\r\nFALSE",
+  "link": "https://www.spoj.com/problems/ULM02C",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "4\r\n12 50 74 34\r\n1\r\n00\r\n50 12\r\n\r\n8\r\n45 23 86 43 90 76 12 74\r\n2\r\n111001\r\n86 43 90 74\r\n010001\r\n45 86 43 90\r\n\r\n4\r\n12 50 74 34\r\n2\r\n101\r\n34 74\r\n110\r\n34 74\r\n\r\n0",
+      "expected_output": "TRUE\r\nTRUE\r\nFALSE\r\nTRUE\r\nFALSE",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n4\n9\n8\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n7\n6\n2\n3\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "8\n40912195\n29801511\n87722481\n90289317\n5748589\n14416123\n89468178\n96518865",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n49732238\n44939269\n38460867\n46652149\n15525487\n77744411\n5295341\n28646399\n85771422\n28701254\n43462225\n94916817\n39500801\n58712273\n15708013\n41637523\n9894099\n39959715\n48797865\n11170278",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n91269947\n84938928\n90069636\n35669729\n77023716\n74525494\n62863682\n7551583\n82300813\n99053097\n62209118\n68288771\n89580572\n38023663\n17137934\n66437305\n59433335\n77133993\n30105204\n42383065",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n38734777\n67081231\n77597919\n73350819\n38416751\n86493582\n76452097\n32596276",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n60206162\n68706390\n6534594\n55256520\n83974497\n81501388",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "32\n49962\n71088\n46722\n64132\n30808\n55585\n7783\n75893\n23759\n46324\n85773\n64899\n93474\n39669\n41317\n7916\n76006\n79302\n43215\n7548\n1880\n78083\n32633\n71499\n48169\n80991\n67543\n81440\n13719\n1732\n13073\n61807",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n83486\n7531\n79365\n93162\n85988\n39127\n93106\n47013\n19775\n53859\n9276\n39395\n89627\n27401\n74979\n25446\n10373\n70127\n23558\n43355\n15994\n91401\n61955\n85267\n74051\n45668",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n95672\n47348\n75679\n39490\n46845\n69242\n73602\n2211\n79380\n81354\n28339\n38319\n53780\n64858\n89521\n29996\n38189\n68772\n7061\n36738\n49917",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n41716\n47537\n55622\n52542\n97044\n2121\n72199\n86301\n97264\n83437\n61120\n91274\n22380\n18103\n25766\n94233\n34040\n67\n73294\n82218\n26631\n73904\n56433\n81047\n63939\n83458",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n32827\n8122\n67246\n46758\n94322\n57293\n81383\n34293\n75577\n19829\n17735\n37057\n22482\n39307\n3804\n45590\n46609\n98035\n52871\n39192\n24618\n52528\n83722\n15245\n19670\n92041\n38695\n78954\n12972\n86558\n99140",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n55481\n18583\n31596\n37470\n97415\n59389\n98024\n30975\n35906\n19399\n99227\n45974\n3463\n96794\n79659\n95846\n51577\n15442\n95297\n61004\n52714\n95711\n46798\n47354\n56510\n3337",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "25\n89662\n3893\n9824\n81787\n77196\n96609\n89915\n33973\n28099\n69432\n88150\n41132\n38142\n98515\n35158\n21044\n76496\n30653\n4925\n35472\n31215\n31343\n44358\n47510\n15605",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n81885880\n15884838\n3241685\n96128578\n45617765\n34068113\n7617835\n73036436\n74369972\n30472789\n86690032\n71333563\n11432686\n76055034\n87430133\n2138555\n22858637\n64061141\n24518764\n854763\n1259587\n54689641\n45099540\n33373496\n23280648\n10870330\n14126363\n71917705\n80677346\n85502114\n62107188\n49970399",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 32)"
+    },
+    {
+      "input": "32\n96542232\n31617658\n9538733\n42129407\n3559926\n59473075\n38321564\n25830427\n42973055\n40472735\n9321915\n97038523\n67471191\n43977727\n78836480\n95491171\n23169541\n28088455\n74201269\n35902393\n48799744\n72768081\n41035772\n94990884\n44657401\n23785004\n29111175\n14816860\n5226948\n40861138\n23628758\n42466043",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 32)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "32\n100000000\n28971714\n100000000\n1\n1\n100000000\n54199163\n1\n1278736\n100000000\n1\n1\n100000000\n100000000\n100000000\n1\n1\n1\n56343026\n100000000\n100000000\n1\n27140128\n22849374\n1\n5230453\n100000000\n1\n100000000\n45825231\n40540114\n36942840",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 32)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

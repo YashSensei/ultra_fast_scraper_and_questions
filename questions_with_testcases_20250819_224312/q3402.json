@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Sudoku",
+  "tags": [],
+  "text": "Oh no! Bill just realized that the sudoku puzzle he had spent the last\r\nten minutes trying to solve essentially was last week's puzzle, only\r\nrotated counterclockwise. How cheap! Couldn't the magazine afford to\r\nmake a new one every week? Of course, he had no way of knowing about\r\nthis before he started to solve it, as the holes to fill with digits\r\nwere other than last week.  Nevertheless, realizing that this week's\r\npuzzle was a simple derivative of last week's certainly took the fun\r\nout of solving the rest of it.The sudoku board consists of 9×9 cells. These can be grouped\r\ninto 3×3regionsof 3×3 cells each. Some of the\r\ncells are filled with a digit 1 through 9 while the rest of them are\r\nleft empty.  The aim of the game is to fill each empty cell with a\r\ndigit 1...9 so that every row, every column and every region\r\ncontains each of the numbers 1...9 exactly once. A proper sudoku\r\npuzzle always has exactly one solution.Help Bill avoid unpleasant surprises by creating a program that checks\r\nwhether an unsolved sudoku puzzle is in fact derived from an earlier\r\npuzzle by simple operations.The allowed operations are:Rotating the entire puzzle clockwise or counterclockwise.Swapping two columns within a 3×9 column segment.Swapping two rows within a 9×3 row segment.Swapping entire row or column segments.Applying a permutationfof the digits 1...9 to every\r\ncell (i.e. replacexbyf(x)in every cell).An operation is considered being performed on the sudoku solution\r\n(rather than on the unsolved puzzle) and always guarantees that if the\r\nboard before the transformation was a solution to a sudoku puzzle, it\r\nstill is afterwards.InputThe input starts with the number of test cases 0 ≤N≤\r\n50 on a single line.Then for every test case follow nine lines describing last week's\r\npuzzle solution, from top to bottom.  Each line corresponds to a row\r\nin the puzzle and consists of nine digits (1...9), describing\r\nthe contents of the cell from left to right.Last week's solution is followed by nine lines describing this week's\r\nunsolved puzzle. Here, also, every line corresponds to a puzzle row\r\nand every digit (0...9) describes the contents of a cell. 0\r\nindicates that the cell is empty. The rows are presented ordered from\r\ntop to bottom, and within each row, the cells are ordered from left to\r\nright.After every test case except the last one follows a blank line. Every\r\nunsolved puzzle is guaranteed to be uniquely solvable and last week's\r\nsolution is always a proper sudoku solution.\r\n/p>OutputFor every test case, outputYesif the sudoku puzzle can be\r\nderived from the given solved puzzle using the allowed operations, orNoif this is not possible.ExampleInput:2\r\n963174258\r\n178325649\r\n254689731\r\n821437596\r\n496852317\r\n735961824\r\n589713462\r\n317246985\r\n642598173\r\n060104050\r\n200000001\r\n008305600\r\n800407006\r\n006000300\r\n700901004\r\n500000002\r\n040508070\r\n007206900\r\n\r\n534678912\r\n672195348\r\n198342567\r\n859761423\r\n426853791\r\n713924856\r\n961537284\r\n287419635\r\n345286179\r\n010900605\r\n025060070\r\n870000902\r\n702050043\r\n000204000\r\n490010508\r\n107000056\r\n040080210\r\n208001090Output:Yes\r\nNo",
+  "sample_input": "Input:2\r\n963174258\r\n178325649\r\n254689731\r\n821437596\r\n496852317\r\n735961824\r\n589713462\r\n317246985\r\n642598173\r\n060104050\r\n200000001\r\n008305600\r\n800407006\r\n006000300\r\n700901004\r\n500000002\r\n040508070\r\n007206900\r\n\r\n534678912\r\n672195348\r\n198342567\r\n859761423\r\n426853791\r\n713924856\r\n961537284\r\n287419635\r\n345286179\r\n010900605\r\n025060070\r\n870000902\r\n702050043\r\n000204000\r\n490010508\r\n107000056\r\n040080210\r\n208001090Output:Yes\r\nNo",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SUDOKU2",
+  "scraped_at": "2025-08-17 00:34:14",
+  "test_cases": [
+    {
+      "input": "2\r\n963174258\r\n178325649\r\n254689731\r\n821437596\r\n496852317\r\n735961824\r\n589713462\r\n317246985\r\n642598173\r\n060104050\r\n200000001\r\n008305600\r\n800407006\r\n006000300\r\n700901004\r\n500000002\r\n040508070\r\n007206900\r\n\r\n534678912\r\n672195348\r\n198342567\r\n859761423\r\n426853791\r\n713924856\r\n961537284\r\n287419635\r\n345286179\r\n010900605\r\n025060070\r\n870000902\r\n702050043\r\n000204000\r\n490010508\r\n107000056\r\n040080210\r\n208001090",
+      "expected_output": "Yes\r\nNo",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n6\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n9\n3\n2\n6\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n10\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "13\n73574071\n95747931\n53861610\n43046292\n66123724\n67565811\n34866193\n40105478\n73076435\n21311597\n98213240\n94128942\n44070707",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n24212029\n70429590\n9893617\n46201187\n67570997\n7499657\n58579364\n9711181\n17172212\n75890099\n81305659\n44756246\n92608433\n4916198\n32019296",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n47731414\n94448176\n11870397\n69626738\n77280751\n54075320\n59278550\n82004328\n47914760",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n7914012\n52361539\n51598081\n35662916\n53156704\n89059618\n43607140\n33690446",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n5879717\n12644444\n65033447\n62246264\n27940047\n27168283\n41148745\n77449031\n75435269\n70607340\n39161547\n61944121",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "35\n99894\n85293\n75866\n69888\n62577\n4877\n95060\n98306\n64327\n22416\n14547\n43597\n43438\n30695\n16729\n16167\n32051\n86285\n10605\n1228\n16010\n19875\n83960\n89925\n57985\n66897\n12652\n62774\n76147\n6005\n24300\n76064\n82946\n85760\n44998",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n93768\n39541\n25060\n15952\n19615\n46892\n50178\n86760\n83594\n83457\n40327\n7599\n97908\n60498\n63492\n91536\n24592\n12279\n3039\n75585\n27981\n46301\n67750\n16226\n25786\n45963\n70558\n22219\n62673\n34670\n51463\n98224\n45771\n44576\n9066\n11968\n84813\n24499\n94334\n63656\n46522\n26682\n97923\n20551\n50173\n33210\n66041\n71198\n6870\n14513",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n58064\n99066\n32737\n92573\n57046\n25360\n4018\n78127\n79486\n28754\n21700\n98910\n72929\n93894\n2837\n14305\n73852\n52507\n31801\n1668\n44762\n94416\n10098\n20462\n17465\n78260\n62901\n42479\n62924\n64051\n37208",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n8264\n50873\n75091\n92045\n48165\n58612\n99624\n59074\n37724\n32463\n44407\n33612\n85804\n99467\n94952\n17326\n41813\n8340\n9111\n17131\n37574\n78931\n14896",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "45\n73114\n99158\n26507\n67195\n10496\n52283\n60728\n5927\n96414\n45118\n77664\n84567\n33371\n59202\n5047\n22136\n51813\n28287\n29954\n96944\n26149\n27798\n62167\n34420\n7093\n94448\n37588\n71016\n96186\n68849\n57061\n67449\n30681\n7210\n52273\n12828\n30258\n7567\n57417\n97587\n30880\n77447\n10885\n45219\n63104",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n67029\n96125\n8179\n63671\n53601\n43615\n92918\n74397\n87524\n80590\n93096\n15000\n34904\n38354\n12332\n21243\n30853\n47987\n91572\n36848\n90456\n89827\n77634\n37832\n70202\n46958\n25215\n67424\n99903\n85126",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "43\n48479\n54395\n10837\n72015\n84101\n96368\n4379\n75840\n69078\n96612\n42542\n32120\n70651\n26729\n79572\n3018\n18450\n48452\n15946\n75295\n78046\n43575\n5811\n53673\n37293\n92288\n44992\n38248\n93045\n73950\n33805\n63005\n66845\n20465\n93523\n97903\n97996\n62974\n90039\n14256\n59665\n84927\n31032",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n96188419\n72434732\n8196453\n51845086\n48720466\n47791204\n57999210\n86952458\n61735663\n27282611\n82949506\n47043398\n44129686\n52194142\n40900691\n9937143\n27690544\n16294920\n92089725\n31360361\n49077048\n94272745\n91169207\n20470256\n15063396\n32313232\n40978455\n63990420\n85811880\n8109400\n78916068\n34037925\n88211316\n21491242\n9601954\n64064468\n85684752\n62068760\n11713332\n41006197\n83339656\n70572893\n41702542\n11825901\n31884246\n82572943\n45457641\n30960137\n1479717\n2189384",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n64604726\n36362184\n48223613\n93551945\n50013296\n40866812\n65054308\n49341986\n90776345\n73991627\n46841323\n85148321\n94454450\n38121533\n30078079\n46879309\n72194209\n34979844\n58632461\n25075056\n59319746\n68775007\n81042931\n29233738\n35653580\n47067869\n57502320\n5338300\n48880009\n81854347\n12584658\n6443931\n97800364\n1128170\n35245712\n62379875\n32570680\n39209151\n25002775\n21962176\n17137630\n41578060\n93271470\n19939102\n39822380\n51667490\n81664420\n3857717\n8036695\n27603776",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "2\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

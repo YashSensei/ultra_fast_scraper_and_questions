@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ada and Trip",
+  "tags": [],
+  "text": "Ada the Ladybug loves trips. She travels around world taking photos and souvenirs. This week she went to Buganda. Common Tourist would surely travel around main city and some conurbations, but Ada has different politics. She wants to go as far as possible (because photos from outlying places are much more valuable).Problem is, that Buganda is very large so she can barely guess such places. Luckily, you are around so she asked you for help. Can you tell her, how far and how many cities are most distant (if the shortest path is used)?InputThe first line will contain three integers1 ≤ N ≤ 5×105, 0     ≤ M ≤ 106, Q, the number of cities in Buganda, the number of roads and number of queries (possible arrival cities).ThenMlines follow, with three integers0 ≤ A, B < N, 0 ≤     L ≤ 10,A, Bare cities, which the (bidirectional) road connects andLis length of the road.Afterward,Qlines follow, each with number0 ≤ qi< N, meaning the city of arrival.You are assured thatmax(N, M)×Qwill be always         lesser/equal than107Gentle warning: Since we are in real world and not in some \"graph theory\", multiedges and self-edges are completely valid!OutputFor each query print two numbers: The distance of most distant place(s) and number of such places.Example Input10 10 10\r\n1 1 1\r\n1 2 1\r\n1 2 3 \r\n3 1 1\r\n5 4 10\r\n8 5 10\r\n5 6 5\r\n6 7 3\r\n6 9 3\r\n9 7 4\r\n0\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9Example Output0 1\r\n1 2\r\n2 1\r\n2 1\r\n20 1\r\n10 2\r\n15 2\r\n18 2\r\n20 1\r\n18 2Most distant cities (explanation)0\r\n2 3\r\n3\r\n2\r\n8\r\n4 8\r\n4 8\r\n4 8\r\n4\r\n4 8",
+  "sample_input": "10 10 10\r\n1 1 1\r\n1 2 1\r\n1 2 3 \r\n3 1 1\r\n5 4 10\r\n8 5 10\r\n5 6 5\r\n6 7 3\r\n6 9 3\r\n9 7 4\r\n0\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9",
+  "sample_output": "0 1\r\n1 2\r\n2 1\r\n2 1\r\n20 1\r\n10 2\r\n15 2\r\n18 2\r\n20 1\r\n18 2",
+  "link": "https://www.spoj.com/problems/ADATRIP",
+  "scraped_at": "2025-08-17 00:33:18",
+  "test_cases": [
+    {
+      "input": "10 10 10\r\n1 1 1\r\n1 2 1\r\n1 2 3 \r\n3 1 1\r\n5 4 10\r\n8 5 10\r\n5 6 5\r\n6 7 3\r\n6 9 3\r\n9 7 4\r\n0\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9",
+      "expected_output": "0 1\r\n1 2\r\n2 1\r\n2 1\r\n20 1\r\n10 2\r\n15 2\r\n18 2\r\n20 1\r\n18 2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 2 3\n1 4 5\n3 1 3\n4 4 3\n1 3 3\n5 4 1\n3 5 1\n4 3 2\n3 5 4\n2 5 5\n4 5 3\n4\n4\n1\n2\n5\n1\n5\n2\n3\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 3 3\n4 4 5\n1 3 1\n5 2 3\n3 2 2\n4 4 3\n2 4 1\n3 2 1\n4 2 2\n1 5 1\n3 3 5\n1\n1\n4\n5\n2\n1\n5\n5\n2\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1 2\n3 1 2\n2 2 1\n2 1 4\n3 2 1\n3 1 4\n4 4 2\n3 5 2\n1 4 5\n4 2 3\n2 3 3\n4\n5\n5\n3\n2\n5\n3\n3\n2\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 4 5\n1 4 1\n5 3 4\n2 2 5\n5 2 2\n5 2 2\n1 3 3\n3 5 4\n3 2 3\n2 4 4\n1 5 4\n3\n5\n5\n3\n3\n2\n3\n2\n5\n1",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 2 5\n5 1 3\n4 2 1\n2 3 2\n1 3 2\n1 4 2\n1 5 4\n4 1 4\n4 3 3\n4 1 1\n5 5 4\n3\n2\n2\n4\n3\n4\n4\n5\n4\n1",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 4 1\n5 1 1\n3 2 5\n4 5 3\n4 5 5\n3 2 5\n2 4 5\n5 4 5\n3 3 4\n5 4 5\n2 3 3\n2\n1\n1\n5\n4\n1\n4\n2\n2\n4",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 5 3\n2 3 1\n4 4 4\n3 3 4\n2 2 1\n3 1 2\n5 3 4\n2 2 3\n3 1 5\n5 1 2\n5 5 3\n4\n5\n3\n4\n4\n4\n5\n1\n1\n1",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 1 5\n2 4 1\n1 2 1\n3 3 1\n3 5 3\n1 1 1\n2 4 4\n4 1 5\n3 2 2\n4 5 2\n1 2 1\n4\n2\n1\n4\n2\n4\n1\n1\n4\n2",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 2 1\n2 1 2\n1 1 1\n2 1 2\n2 1 1\n1 2 2\n2 2 2\n1 2 1\n1 2 2\n1 2 1\n2 1 1\n2\n2\n2\n2\n1\n2\n1\n1\n2\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1 2\n2 1 1\n1 1 2\n1 2 2\n1 2 1\n2 1 1\n2 1 2\n2 1 2\n1 2 2\n1 1 2\n2 1 2\n1\n1\n2\n2\n1\n2\n1\n1\n1\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1 1\n1 2 1\n1 2 1\n1 2 1\n2 1 1\n1 1 1\n2 2 1\n1 1 2\n2 2 1\n2 2 1\n1 1 2\n1\n1\n2\n2\n1\n1\n1\n1\n1\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1 1\n1 2 2\n1 2 1\n1 1 1\n1 1 1\n1 1 2\n2 2 2\n2 1 2\n1 2 2\n1 2 1\n2 2 2\n1\n2\n2\n2\n1\n1\n2\n2\n2\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1 1\n1 2 1\n1 1 2\n1 1 2\n2 2 2\n2 2 2\n2 1 2\n2 1 1\n2 2 2\n2 1 2\n1 1 2\n2\n2\n1\n2\n2\n1\n1\n2\n1\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 2 2\n2 1 2\n2 2 1\n2 2 1\n1 1 1\n2 2 1\n1 1 2\n2 1 1\n1 2 1\n1 1 2\n1 1 1\n1\n2\n1\n1\n2\n1\n2\n2\n1\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1 2\n2 2 2\n2 1 1\n2 2 1\n2 2 1\n1 1 2\n1 1 2\n1 2 1\n2 1 2\n2 2 2\n1 2 1\n1\n2\n1\n2\n1\n1\n1\n1\n2\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5\n5\n5\n5\n5\n5\n5\n5\n5\n5",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5 5 5\n5\n5\n5\n5\n5\n5\n5\n5\n5\n5",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 4 5\n5 2 4\n1 1 4\n5 5 5\n5 2 4\n4 2 2\n4 2 5\n2 1 5\n4 2 4\n5 4 4\n4 2 5\n2\n4\n4\n5\n1\n4\n4\n1\n4\n5",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "5 2 1\n5 1 5\n1 1 1\n4 4 2\n4 5 1\n5 2 4\n5 2 5\n4 1 5\n1 1 4\n4 4 5\n2 2 5\n5\n4\n5\n1\n4\n4\n1\n2\n5\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

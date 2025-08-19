@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Fox and the Wolf",
+  "tags": [],
+  "text": "In a certain peaceful forest, there live a Fox and a Wolf. Due to common misconception, one might suppose that the Wolf would want to hunt the Fox – however, both are in fact nice animals, and get along just fine. Indeed, they have such nice manners that, if they ever meet up, they will have a nice little chat for $C$ minutes ($1 \\leq C \\leq 9$).The forest that the Fox and the Wolf live in can be regarded as a rectangle, $N$ km long along its East side and $M$ km wide along its North side ($1 \\leq N,M \\leq 20$). It is divided into a grid of squares, each with a side length of 1 km. Each such square either contains a meadow (represented by a ‘.’), is full of burrs (‘B’), is blocked by trees (‘T’), contains the Fox’s den (‘F’), contains the Wolf’s lair (‘W’), currently contains the Fox (‘f’), or currently contains the Wolf (‘w’).At the end of a long day at work (consisting of solving complex computer science problems in their heads), both animals wish to get to their respective homes as soon as possible. Every minute, each of them can walk one km directly North, East, South, or West, or just stay put – however, they cannot enter squares blocked by trees, nor can they enter each other’s homes (that wouldn’t be very polite). They also don’t want to leave the forest, seeing as humans jealous of their supreme intellect are constantly lurking just outside.Every time the Fox or the Wolf goes from a square full of burrs to a meadow, he must stand still and spend $B$ minutes ($1 \\leq B \\leq 9$) picking burrs off of himself. As mentioned above, they must also stop and chat if they meet up. Though each square is quite big, the animals always walk to its exact centre before moving on. This means that they will meet up if they either occupy the same square at the same time, or if they pass each other while walking between squares (which would happen if they switched positions in the space of a minute). Once the animals have chatted once, they never have to chat again, having already satisfied the demands of etiquette. Both animals are great multitaskers, and can pick burrs while chatting with each other.Each animal wants to get home as soon as possible, but is also considerate of the other – as such, they will collaborate so as to minimize the time for both of them to get home. Due to their extreme intelligence, both animals will calculate this minimum time in their heads instantly – however you, the observer, will probably need to write a program to figure it out...InputLine $1$: 4 integers, $N$, $M$, $C$, and $B$Next $N$ lines: $M$ characters each, representing a row of the forest as described aboveOutputA single integer – the minimum time for both the Fox and the Wolf to get to their respective homes, in minutes. If this is impossible, output -1 instead.ExampleInput:5 6 5 1\r\n......\r\nBWTTTB\r\nB.TB..\r\nBBT..T\r\n.FTfw.Output:17Explanation of Sample:The Wolf should wait for the first three minutes, letting the Fox go first. From then on, the Fox can continue along its only possible route home. The Wolf will be 2 squares behind the Fox most of the time, except for when it enters the burr-filled square, when it will temporarily be 1 behind. With this strategy, the Wolf will take 14 minutes to get home, while the Fox will take 17, and since we only care about the larger, the total time is 17 minutes.",
+  "sample_input": "Input:5 6 5 1\r\n......\r\nBWTTTB\r\nB.TB..\r\nBBT..T\r\n.FTfw.Output:17",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FOXWOLF",
+  "scraped_at": "2025-08-17 00:34:07",
+  "test_cases": [
+    {
+      "input": "5 6 5 1\r\n......\r\nBWTTTB\r\nB.TB..\r\nBBT..T\r\n.FTfw.",
+      "expected_output": "17",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 1 4 4\nxu\nwtwbeaumzf\nqzpkrg\ntisxpzubhara\ncolxuwydub",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 4 3 8\nbtfzjaoqkk\nlwj\nbcaz\nn\nnopfqhnyz",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 10 9 9\nhgjslwlirif\ncbyb\nihvjd\nez\nvcf",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "48 15 92 8\nssmgkei\nj\nucmxuspe\nzdkkov\nvbzusryjvs",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 74 45 73\ncciyx\nbuftgvnxak\nfq\nhetlwqdyogp\nwbaowkrggcfe",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 82 94 98\nocs\naomzfpfi\nbmlhfqr\nvgcxobixolyf\ngoexdctba",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "82 53 92 38\nhav\ntrduqgcfkbth\nci\ngtyujamro\ndygupwygdni",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 23 62 94\nbydz\nduybvvgvr\npuc\nmfeplu\nogssbwi",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "470 174 491 441\nuxoalnzv\ns\nppmarat\njlqqh\ntt",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "394 337 70 361\nubu\nvgtzrn\nmahepxr\nm\npmfurpw",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "363 52 99 345\nwzhbko\noovlwbp\nwiee\nednikpthvu\nmqtxbgqvi",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "271 421 52 102\nlasvzdwec\natc\nqpzaypclyidk\nuenykxnexvs\nlseklccbxzia",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "458 358 495 83\ndkbb\nrfs\ndhmjwy\njfbxadp\ncfaqrltue",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "249 219 89 438\nplxmgyvlkrrj\nnvpl\nzlo\nljaaieqegevg\nfduhbju",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "421 178 246 402\nd\njcsnqmyht\njvcbwpzysb\nhdf\nklxuqzqcdnw",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\ndei\nrd\ngekzyp\ntrsjzh\nnqxgzglhsbrt",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\ndfumdpbobo\ng\nxa\npdzflndmphe\nbntwwk",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1 999 2\nawpkeandfnz\nbawkax\nnphebhyl\nkyetbhpc\nqcxtu",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 1 1000\nkno\nzykvib\nrsrj\nukya\nxzaqgnega",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

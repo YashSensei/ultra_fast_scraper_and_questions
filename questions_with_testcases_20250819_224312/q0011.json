@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Matrix Words",
+  "tags": [],
+  "text": "Given an N×N matrix of characters. We start at position (1, 1) and want to reach (N, N) in exactly 2N-1 moves. Each move consists of movement in one of the four standard directions. As we move, we collect the characters found in our positions forming a string. We now constrain our attention to all paths that do not cross the diagonal of\r\nthe matrix. However the parts of the path can be on the diagonal line. These paths can be classified into two partitions; the paths that lie above and paths that lie below the diagonal. Each path is represented by a string of characters formed by the ordered concatenation of\r\ncharacters found on the way. If we consider the set of all valid paths, (both upper and lower) get their corresponding strings, sort them all in alphabetical order, we obtain the (ordered) master set. Note that\r\nthe master set might contain duplicates, and all strings in the master set consist of exactly 2N-1 characters. Let M be the total number of strings in the master set, given an integer I, we need to find the string with index = I (modulo M) within the master set.If Master Set = { “A”, ”B”, ”B”, ”C” } (although this set can never be a master set!)I=0 produces “A”, while I=2 and I=5, produces “B”.Constraints:N ≤ 30.I ≤ 1018. ‘I’ will fit into a 64-bit integer.InputT-number of test casesN INext is the N×N matrix of characters, N characters per line.All characters are between ‘A’-‘Z’ (only uppercase).OutputFor each test case output the corresponding string sought for in the master set.ExampleInput:2 \r\n3 18\r\nDAA\r\nBDA\r\nBBD\r\n3 18\r\nDAA\r\nADA\r\nAADOutput:DBBBD\r\nDADADExplanationTest case I: Master Set = { “DAAAD”, “DADAD”,”DBBBD”,”DBDBD”}Test case II: Master Set = { “DAAAD”,”DAAAD”,”DADAD”,”DADAD”}",
+  "sample_input": "Input:2 \r\n3 18\r\nDAA\r\nBDA\r\nBBD\r\n3 18\r\nDAA\r\nADA\r\nAADOutput:DBBBD\r\nDADAD",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MWORDS",
+  "scraped_at": "2025-08-17 00:33:05",
+  "test_cases": [
+    {
+      "input": "2 \r\n3 18\r\nDAA\r\nBDA\r\nBBD\r\n3 18\r\nDAA\r\nADA\r\nAAD",
+      "expected_output": "DBBBD\r\nDADAD",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n7\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n3\n2\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n3\n6\n1\n7\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "16\n11870931\n62140522\n25826211\n28508301\n98209890\n93159975\n2868720\n55162967\n7233478\n38444959\n11362955\n83502627\n45416165\n86807358\n94658139\n14075614",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n54606143\n78592660\n98065799\n97106316\n22194248\n56362324\n57954166\n56595656\n5308370\n77386423\n76053635\n99264180\n80077063\n67554498\n36366860\n31492839",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n90042244\n9026772\n81081537\n11746793\n77119614\n79888906\n18433876\n47191101\n61880840",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n33695511\n50936700\n26455426\n86873901\n67528301\n1559543\n17999125\n73387972\n88639661\n63442056\n30500964\n97173172\n79475757",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n28418234\n98292205\n61378033\n90007516\n15729874\n93379765\n17229008",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "24\n6603\n25258\n61174\n33318\n20677\n19107\n11186\n48517\n86017\n46800\n524\n97816\n60187\n16047\n48730\n59981\n58206\n51627\n24140\n97245\n63824\n37095\n67734\n36974",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n70432\n94359\n18057\n73964\n98862\n63765\n15005\n15551\n14185\n55693\n61338\n16562\n4805\n55038\n90920\n20991\n60868\n18908\n159\n82724",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n71597\n82646\n30673\n20772\n51167\n82899\n31820\n30208\n56983\n8180\n6987\n98588\n46171\n85605\n14978\n56164\n33971\n85036\n27404\n10993\n96003\n61072\n16007",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n3097\n87087\n87596\n95875\n89048\n90557\n90406\n33174\n45543\n3905\n7652\n63120\n33718\n31793\n9275\n97190\n33298\n15538\n28624\n8461\n7995\n43270",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n69148\n81855\n57591\n894\n72494\n78168\n84724\n12112\n4516\n87715\n71078\n36074\n36567\n18187\n81406\n55206\n43994\n89326\n21285\n465\n51804\n70075\n43681\n908\n60260\n76945\n16028\n51879\n92608\n15921",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n77682\n55692\n6503\n19892\n27937\n43532\n67219\n9511\n49256\n41342\n18746\n18110\n68103\n98279\n78055\n26206\n18746\n55657\n19756\n4195\n93077\n22470",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n94287\n43416\n731\n66812\n44477\n98855\n89447\n85210\n53455\n45458\n91602\n62621\n40304\n17061\n65104\n98357\n40092\n12000\n30176\n3246\n45987\n75319\n72587\n38550\n93841\n3739\n36603\n20385",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n94318207\n68229524\n39246633\n45679817\n92448583\n41480517\n27320807\n39242561\n79898993\n90453544\n94169669\n63204802\n85608580\n25596201\n66684992\n38537575\n16056436\n55659862\n57473912\n83878410\n10140924\n56320673\n58049026\n56646184\n52567162\n84065537\n96213078\n78315437\n89901292\n57748255",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 30)"
+    },
+    {
+      "input": "30\n94277782\n72765427\n16063258\n22445151\n85605089\n22107747\n26761516\n21773257\n79453373\n76380141\n67135758\n19842936\n46759180\n23460886\n18361800\n44770655\n18170669\n64991595\n29641767\n55608467\n96603938\n75631709\n1834953\n75646678\n35817816\n68854924\n52857217\n8347257\n62007955\n25237715",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 30)"
+    },
+    {
+      "input": "30\n100000000\n100000000\n100000000\n100000000\n1\n100000000\n99144840\n1\n100000000\n1\n76515628\n1\n54145766\n1\n55414695\n100000000\n100000000\n100000000\n97295454\n1\n2345249\n1\n1\n88740036\n100000000\n1\n75222753\n100000000\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 30)"
+    },
+    {
+      "input": "2\n100000000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ballroom Lights",
+  "tags": [],
+  "text": "The ICPC world finals will be held in a luxurious hotel with a big ballroom. A buffet meal will\r\nbe served in this ballroom, and organizers decided to decorate its walls with pictures of past\r\nchampion teams.In order to avoid criticism about favouring some of those teams over others, the organizing\r\ncommitee wants to make sure that all pictures are appropiately illuminated. The only direct\r\nway they’ve found for doing this is ensuring each picture has at least one lightbulb that directly\r\nilluminates it.In this way, the perimeter of the ballroom wall can be divided into illuminated parts (in which\r\npictures may be placed) and dark parts (which are not suitable for placing the pictures).The ballroom has the shape of a box and contains several lightbulbs. Each lightbulb emits\r\nlight in all directions, but this light can be blocked by columns. All columns in the ballroom\r\nhave cylindrical shape and go from the floor to the ceiling, so light cannot pass over or above\r\nthem. Columns are of course placed so that its circular section is parallel to the ballroom floor.\r\nAny given point p on the perimeter wall is said to be illuminated if there exists a line segment\r\n(a light ray) which starts on a lightbulb, ends in p and does not touch or pass through any\r\ncolumn.Your task as a helper of the ICPC organization is to examine the blueprints of the ballroom\r\nand determine the total length of illuminated sections of the perimeter wall. The blueprint\r\nconsist of a rectangle indicating a top view of the ballroom, with the lightbulbs and columns\r\nmarked in it.InputEach test case will consist on several lines. The first line will contain four integers: L, the\r\nnumber of lightbulbs, C, the number of columns, X, the size of the ballroom on the x coordinate\r\nand Y , the size of the ballroom on the y coordinate. The lower-left corner of the ballroom is\r\nat (0, 0) while the upper-right corner is at (X, Y ).The next L lines will contain two integers each representing the x and y coordinate of each\r\nlightbulb. The last C lines of the test case will contain three integers each, representing the x\r\nand y coordinates of the center of a column and its radius, in that order. You can assume that\r\n1 <= L,C <= 103and 4 <= X, Y <= 106. Also, for all pairs of coordinates (x,y), 0 < x < X and\r\n0 < y < Y , both for lightbulbs and column center locations. All radii of the columns will be\r\npositive. Finally, no two columns will overlap, although they may touch, and no column will\r\ntouch or intersect with the border of the ballroom. No lightbulb will be inside a column or in\r\nits boundary and no two lightbulbs will be in the same place.\r\nInput is terminated with L = C = X = Y = 0.OutputFor each test case, output a single line with the total length of the illuminated parts of the\r\nperimeter wall. The result must be printed as a real number with exactly four decimal figures,\r\nwith the lowest-order decimal figure rounded up.ExampleInput:2 1 8 8\r\n6 6\r\n2 6\r\n4 4 2\r\n1 4 7 7\r\n3 3\r\n2 4 1\r\n4 2 1\r\n2 2 1\r\n4 4 1\r\n2 2 9 7\r\n1 2\r\n5 5\r\n3 3 2\r\n7 5 1\r\n0 0 0 0Output:28.0000\r\n0.0000\r\n25.8214",
+  "sample_input": "Input:2 1 8 8\r\n6 6\r\n2 6\r\n4 4 2\r\n1 4 7 7\r\n3 3\r\n2 4 1\r\n4 2 1\r\n2 2 1\r\n4 4 1\r\n2 2 9 7\r\n1 2\r\n5 5\r\n3 3 2\r\n7 5 1\r\n0 0 0 0Output:28.0000\r\n0.0000\r\n25.8214",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BALLIGHT",
+  "scraped_at": "2025-08-17 00:33:03",
+  "test_cases": [
+    {
+      "input": "2 1 8 8\r\n6 6\r\n2 6\r\n4 4 2\r\n1 4 7 7\r\n3 3\r\n2 4 1\r\n4 2 1\r\n2 2 1\r\n4 4 1\r\n2 2 9 7\r\n1 2\r\n5 5\r\n3 3 2\r\n7 5 1\r\n0 0 0 0",
+      "expected_output": "28.0000\r\n0.0000\r\n25.8214",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 3 7\n9 7\n6 2\n3 2 2\n9 6 4 7\n10 2\n8 10 10\n5 9 6\n3 8 6\n8 9 5\n7 9 4 10\n5 2\n10 1\n5 5 1\n4 10 4\n7 8 6 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 4 7 6\n1 9\n8 9\n7 9 5\n9 7 1 6\n6 6\n3 1 10\n8 1 10\n10 7 3\n6 10 8\n5 9 2 5\n5 2\n3 6\n10 10 2\n7 1 5\n9 5 6 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 10 3 1\n2 7\n3 6\n4 4 7\n6 10 6 1\n2 9\n3 9 5\n5 6 2\n5 5 8\n1 7 6\n7 4 1 10\n1 3\n8 3\n1 9 9\n2 5 10\n9 4 5 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "31 99 33 92\n36 55\n78 89\n67 19 88\n83 27 15 64\n44 91\n3 63 13\n38 19 72\n24 93 28\n12 1 97\n39 36 4 34\n48 68\n21 33\n48 22 45\n76 46 72\n53 92 47 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 36 34 62\n89 76\n5 50\n81 45 99\n69 51 65 45\n33 6\n71 60 20\n47 53 52\n33 22 40\n43 71 35\n47 24 13 86\n42 66\n30 6\n89 94 62\n63 62 10\n25 1 2 23",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 11 3 91\n70 63\n10 47\n52 94 27\n17 81 77 83\n25 17\n34 33 83\n78 24 84\n83 62 82\n4 60 79\n16 100 55 76\n75 21\n78 40\n98 77 33\n39 99 58\n84 39 19 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 64 84 35\n53 24\n67 89\n60 64 1\n92 40 96 91\n35 47\n98 58 63\n88 65 98\n10 13 50\n47 48 1\n82 10 8 100\n100 56\n25 1\n55 42 49\n72 28 22\n78 41 8 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 85 91 92\n77 45\n8 73\n71 69 65\n29 51 1 4\n66 11\n68 32 28\n77 56 13\n55 98 37\n30 71 60\n97 39 62 76\n61 26\n7 45\n10 98 28\n40 35 83\n27 94 46 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "243 172 86 79\n236 493\n258 107\n327 94 242\n423 261 200 169\n425 308\n308 363 414\n392 311 285\n347 495 124\n454 113 65\n346 205 149 413\n489 140\n362 445\n308 350 107\n263 237 119\n191 242 189 340",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "488 68 351 190\n401 95\n94 397\n137 69 155\n262 230 456 178\n488 447\n487 458 175\n205 202 428\n175 453 265\n402 281 231\n76 367 230 229\n471 206\n379 349\n285 490 256\n195 225 455\n378 261 155 125",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "139 483 73 80\n347 399\n160 296\n324 459 270\n106 468 175 239\n214 382\n405 322 345\n381 442 173\n346 161 472\n151 321 313\n477 368 438 326\n70 78\n207 232\n79 363 232\n281 190 75\n414 345 421 271",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "385 160 68 460\n274 473\n276 396\n377 196 90\n256 249 104 391\n307 183\n57 50 322\n343 243 423\n403 87 119\n244 170 93\n496 333 94 330\n72 424\n181 450\n53 379 449\n365 463 213\n428 195 269 458",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "350 384 178 322\n201 203\n459 251\n78 246 472\n106 418 163 320\n232 391\n414 221 395\n203 262 124\n378 479 342\n311 292 94\n302 334 279 127\n151 72\n73 56\n224 153 471\n138 239 223\n135 64 218 246",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "116 63 306 310\n51 360\n429 389\n146 469 217\n292 287 447 152\n319 393\n291 366 113\n225 181 366\n162 135 279\n160 290 460\n300 52 185 199\n254 91\n114 440\n348 371 74\n270 392 294\n396 309 291 363",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "407 293 498 176\n373 421\n119 172\n316 101 92\n267 414 73 310\n479 191\n455 419 219\n318 396 363\n225 82 285\n379 353 83\n282 363 427 343\n74 428\n75 374\n421 198 483\n307 177 297\n415 460 159 68",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999 1 1\n2 1\n1000 999\n1 2 999\n999 2 1000 1000\n1000 1000\n2 999 1\n1 2 2\n999 1000 999\n1000 999 999\n2 2 1 1\n999 1\n2 2\n1 2 2\n2 2 1000\n1000 1000 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 2 1000 999\n2 1000\n2 999\n999 1000 999\n2 1 2 1\n999 1000\n1 1 999\n1000 2 1000\n1 999 1\n1000 1 2\n999 999 2 999\n1 1000\n1000 1000\n999 999 1\n999 1 999\n2 2 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

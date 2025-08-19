@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Perfect packing",
+  "tags": [],
+  "text": "One of the most difficult stages to automate in an industrial cookie production line is the one corresponding to packing. The goal is to design an apparatus capable of counting a precise numberGof cookies to be put in a package, and the challenge resides in the fact that the cookies may have markedly different shapes,e.g.of various animals.In the cookie factory where you work the design team has been unable to overcome these difficulties. The best design they have achieved corresponds to a counting machine which, when activated, can selectCicookies with probabilityPifori = 1, 2, ..., K. Having already spent the entire budget allocated to this task, you will have to find a way to make something useful out of this.Fortunately, you have come up with the following idea to save the project. You shall build an automated packager usingNcounting machines such as the one described above, along with a special regulating software that will perform the following process iteratively. Before starting the first iteration theNcounting machines are activated, each one selecting certain number of cookies. In each iteration, the software will choose a non-empty subsetSof theNmachines such that the sum of the selected cookies is as close as possible to the desired valueG(in the sense that the absolute value of the difference between this number andGis minimum). If there is more than one subset satisfying this condition, the software will choose asSany of them with uniform probability. The cookies selected by the counting machines inSwill then be removed and packed together. Finally, each of the machines inSwill be activated again in order for it to select certain number of cookies, while the counting machines not inSremain unaltered (that is, with the number of cookies they selected in the previous iteration). This process will be repeated until the desired numberMof packages has been obtained.For example, let's assume there areN = 3counting machines, which we will callm1, m2andm3, having each of them the possibility to selectC1= 1orC2= 2cookies with probabilityP1= P2= ½. If we want to produceM = 2packages withG = 5cookies per package, a possible turn of events is the following. Before starting, the three machines selectC2= 2cookies each (this will happen with probability½ * ½ * ½ = ⅛). In the first iteration, the software can then choose among the subsets{m1, m2, m3},{m1, m2},{m1, m3}and{m2, m3}, each with probability¼because they all have a difference of one cookie with the desired numberG = 5. Supposing that the subsetS = {m2, m3}is chosen, then the four cookies selected by machinesm2andm3will be packed together. These machines will then be activated again, resulting for example inm2selectingC1= 1cookie andm3selectingC2= 2cookies (which will occur with probability½ * ½ = ¼). At this point the first iteration ends, the counting machinesm1,m2andm3having selected2, 1and2cookies respectively. In the second iteration, the software must necessarily choose the subsetS = {m1, m2, m3}as it contains exactly five cookies, which will therefore be packed together. Finally, the three counting machines will be activated once more and the process will end, having produced theM = 2desired packages. Note that the net probability for the process here described is⅛ * ¼ * ¼ = 1/128, and that the average number of cookies per package is in this case4.5(because two packages were produced, one of them having four and the other five cookies).Your boss is not completely convinced that this system will work, so he requires from you some concrete proof of concept. To convince him, it will suffice to calculate the expected number of cookies per package after producingMpackages consecutively, if you assume that theNcounting machines always select cookies according to the given probabilities.InputThere are multiple test cases in the input file. For each test case, the first line contains four integersN, K, GandM. The valueNrepresents the number of counting machines to use (1 ≤ N ≤ 4),Krepresents the number of possible quantities of cookies each counting machine can select (1 ≤ K ≤ 6),Grepresents the desired number of cookies per package (1 ≤ G ≤ 100), andMrepresents the total number of packages to produce (1 ≤ M ≤ 107). Each of the followingKlines contains an integerCiand a rationalPi, indicating that the counting machines will selectCicookies with probabilityPi(1 ≤ Ci≤ 100and0 < Pi≤ 1fori = 1, 2, ..., K, beingPigiven with exactly two digits after the decimal marker). Note thatCi≠ Cjfori ≠ jand that∑ Pi= 1.OutputFor each test case, print one line containing a rational representing the expected number of cookies per package after having producedMpackages as described in the problem statement. Print the result with exactly6digits after the decimal marker, rounding if necessary.ExampleInput:3 2 5 1\r\n1 0.50\r\n2 0.50\r\n3 2 5 2\r\n1 0.50\r\n2 0.50Output:4.312500\r\n4.327148",
+  "sample_input": "Input:3 2 5 1\r\n1 0.50\r\n2 0.50\r\n3 2 5 2\r\n1 0.50\r\n2 0.50Output:4.312500\r\n4.327148",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TAP2015E",
+  "scraped_at": "2025-08-17 00:33:26",
+  "test_cases": [
+    {
+      "input": "3 2 5 1\r\n1 0.50\r\n2 0.50\r\n3 2 5 2\r\n1 0.50\r\n2 0.50",
+      "expected_output": "4.312500\r\n4.327148",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 2 3 1\n4 3\n1 4\n3 3 2 2\n2 4\n4 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 4 2 1\n4 2\n2 3\n1 1 4 3\n1 4\n2 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 2 1 2\n3 2\n2 2\n1 1 1 3\n4 3\n3 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 3 3 2\n2 3\n2 4\n4 2 3 3\n2 3\n2 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 3 3 2\n4 3\n4 2\n4 1 3 2\n2 2\n1 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 3 2 1\n2 2\n3 3\n1 2 1 4\n4 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 2 2 4\n3 3\n2 3\n3 1 1 1\n4 3\n1 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 2 1 3\n1 1\n2 1\n2 2 1 2\n1 2\n1 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 2 1 1\n1 2\n1 2\n2 1 2 2\n1 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2 2 2\n1 2\n2 2\n2 2 2 2\n2 1\n2 2",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1 1 1\n1 2\n2 1\n2 2 2 1\n2 2\n1 2",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1 1 2\n1 1\n1 2\n2 2 2 2\n1 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2 1 1\n1 2\n2 2\n1 2 1 1\n1 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2 1 2\n2 1\n1 1\n1 1 2 2\n1 2\n1 2",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2 2 2\n2 1\n2 2\n2 1 2 2\n2 2\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4 4 4 4\n4 4\n4 4\n4 4 4 4\n4 4\n4 4",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "4 4 4 4\n4 4\n4 4\n4 4 4 4\n4 4\n4 4",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 1 1\n3 2\n1 4\n1 3 1 3\n3 2\n3 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "3 3 2 3\n4 3\n1 1\n3 4 4 4\n3 3\n2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

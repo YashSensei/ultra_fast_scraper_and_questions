@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Any fool can do it",
+  "tags": [],
+  "text": "Surely you know someone who thinks he is very clever. You decide to\r\nlet him\r\ndown with the following problem:\"Can you tell me what the syntax for a set is?\", you ask him.\"Sure!\", he replies, \"a set encloses a\r\npossibly empty list\r\nof elements within two curly braces. Each element is either another set\r\nor a letter of\r\nthe given alphabet. Elements in a list are separated by a comma.\"\"So if I give you a word, can you tell me if it is a\r\nsyntactically\r\ncorrect\r\nrepresentation of a set?\"\"Of course, any fool can do it!\" is his answer.Now you got him! You present him with the following grammar, defining\r\nformally the syntax for a set (which was described informally by him):Set          ::= \"{\" Elementlist \"}\"\r\nElementlist  ::= <empty> | List\r\nList         ::= Element | Element \",\" List\r\nElement      ::= Atom | Set\r\nAtom         ::= \"{\" | \"}\" | \",\"<empty> stands for the empty word, i.e. the list in a set can be empty.Soon he realizes that this task is much harder than he has thought,\r\nsince the alphabet consists of the characters\r\nwhich are also used for the syntax of the set. So he claims that it is\r\nnot possible to decide efficiently if a word\r\nconsisting of\"{\",\"}\"and\",\"is a syntactically correct\r\nrepresentation of a set or not.To disprove him, you need to write an efficient program that will\r\ndecide this\r\nproblem.Input SpecificationThe first line of the input file contains a number representing the\r\nnumber of lines to follow.Each line consists of a word, for which your\r\nprogram has to decide\r\nif it is a syntactically correct representation of a set.\r\nYou may assume that each word consists of between1and200characters\r\nfrom the set {\"{\", \"}\", \",\"}.Output SpecificationOutput for each test case whether the word is a set or not.\r\nAdhere to the format shown in the sample output.Sample Input4\r\n{}\r\n{{}}\r\n{{}},{,}}\r\n{,,}Sample OutputWord #1: Set\r\nWord #2: Set\r\nWord #3: Set\r\nWord #4: No Set",
+  "sample_input": "Set          ::= \"{\" Elementlist \"}\"\r\nElementlist  ::= <empty> | List\r\nList         ::= Element | Element \",\" List\r\nElement      ::= Atom | Set\r\nAtom         ::= \"{\" | \"}\" | \",\"",
+  "sample_output": "4\r\n{}\r\n{{}}\r\n{{}},{,}}\r\n{,,}",
+  "link": "https://www.spoj.com/problems/FOOL",
+  "scraped_at": "2025-08-17 00:34:20",
+  "test_cases": [
+    {
+      "input": "Set          ::= \"{\" Elementlist \"}\"\r\nElementlist  ::= <empty> | List\r\nList         ::= Element | Element \",\" List\r\nElement      ::= Atom | Set\r\nAtom         ::= \"{\" | \"}\" | \",\"",
+      "expected_output": "4\r\n{}\r\n{{}}\r\n{{}},{,}}\r\n{,,}",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "u bb ja tbktaxpz t\nyzvzv ejxa kuik i ay\nqwbkv jlew pceqva cify uuxq bo jo\nubr yzoh hnf ndcj rjxyp\nydx nzhgw cbp njsug rqvul drp jyep",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "vj o bmj osz mj\nbjsrnmi w gmqkwmu pgn vp\nyvqh trqh ajc rkviq nafrvz vc xfep\neygr rx zfkf be ezjqe\nk uznfx olvr bq bplom jy zxvls",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "y wrrq y ri g\nfeeathtucq v hz sql lssfb\nvnofl zrnht v hduz r s h\nhnnui bhq bsvfc z exmr\nszks cuscf anpc iyaq wpja a b",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "lu pxae xpwr ndgknoqvkk njt\nbh nqul u uq nll\na etdk eeyns ylb tjzq fjgil vkre\ngc vn bkxnp iceta t\nfz g f myyrm tlto ux swuqf",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "eyjp mtdu k mqhgadfm trgcl\nb tq op ymop nya\ngvem sslw ydncvq tq zusdhh pzau veb\nyddnlj s fqbm lapzf tqzvu\nicvc bjxq alqj pne bbgw gh yng",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zfmfw g i ustgon qwg\npcyeqn pls zgbron umwgc zp\nmlwvp athx htxkhfv mmgv h ipznl wlw\nc ijbjs t smw rb\nuannb vyybx qm osyn sf qma rst",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "guzlx zza u efzr bwaqx\nmjzo xfx nqphvq d ztygb\nepdj tpgg pubu ccw h prahz kvbo\na sfb xuw zhxax vwg\nysjcg gn t psifj sjou ygqvu qbm",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "rdah cyma vmfr b vjzv\ngweohzewid ggz pnvsh lao nbzuv\nvzpv pttob tndlpug n ob lko tvjw\nsa o sgx uuhal t\nrw arqsq ubkbr aact agdew l wixv",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "pzb ykoeb s vhwx dj\nepfarxjg pht t wac hpihq\nc yllsj nhsbst gvbil ig qy wzqad\nand dngvj jarw x qa\nbuvoi twclq ebm bcy usod vueao kyem",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "x qcr kgfh c xuu\nhyzstmbdzbf hyyrx mc vbg poi\nreoi i w bcr owr o yirb\ntqpus o sfw msrj cvvra\nxng fmc r fnyob phcau riphf j",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ju kiux qry gduezqr aaxf\nhohwweezhzo prvft w cj bqxuj\newwsk w iupa dn a lflay bp\nwdut mece e xt pa\njgsfo cg m q er red ucokc",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hqsn tlvlo a dr au\nvf ecfjd g jiew uejs\nqx k kyl shq la ntvnb wabjp\nwytknct nd uhbnc tptt kosa\ndbji kcqc akr thnjx wqq eeu qu",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tu i hrjbl ffuc bibiz\nyyutcgfeqqf uad xurshbh hq a\nxb tps dyqlg knbu nhxczr cxweo zuztg\nrik s nexux jx vri\nwklq e djy yz qdzhd cy fpiqt",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lof gzo vmty nwso fkvt\nsgosfax e kp zljy peft\niv en lybaud rh s kq gblrs\nydmrbud by a lqj vlcxx\ngdf pfhfu hcwe rzkzw hos i vj",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "edgzz ohzw fsjz nwdybsvz tu\nxacth w whkh zryp zr\nvpav xal zwkil kmk lbxvqa nmg cqqax\nwgtup xy tppu u yat\nmmoe za wkeab m fmkr mx gvbv",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "g frddu tja vvocfexbx zcwdj\ntwmcxuybckz vhtd sbneyq de zpnqr\nqm xje rbmo hs zb ng izakv\nordszl iudtl bbwah cysib giy\nes wdzkf wx npuhw jw o mvz",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "ygn dhfc ci wxlkw sxdiz\nicbn omj ribchmz o tupq\nhzeiq y mohwi ubs b gyzy bzkj\nlwuy ccz hm vgl j\nfpc aja bbukc hfhz y hfiq coiw",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "dxmq qsbdm hlk bq vg\nicp m tzokxl ar v\na l fm vfleh q hujvv aqh\nvgujtfn hb ewwa e h\nlr r fvs m vg cgqiq iftfn",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "qkvu ykb m svnlhmgsky udx\nbeglzvjs mwh fcowr ty yhc\nciij wj auyob o icjjm rpii gciq\nk yf kn khstz j\nfzxh wh kfm ns j auss j",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Boxlings",
+  "tags": [],
+  "text": "Doctor Y, always eager to further his research in the field of boxology, is observing a family of boxen in their natural habitat – a barrel of wine. He has noticed that in addition to the $N$ ($1 \\leq N \\leq 200,000$) rectangular, two-dimensional boxen, there are $M$ ($1 \\leq M \\leq 200,000$) almost imperceptible points floating on the surface of the wine. He reasons that these must be baby boxen – also known as boxlings.Curious as to the customs of box families, Doctor Y wishes to count how many boxlings are floating on top of boxen. From his top-down view of the barrel, he has divided the surface of the wine into a two-dimensional Cartesian plane, and noted the positions of all the boxen and boxlings. Each box occupies a rectangular region parallel to the axes of the plane, with two of its opposite corners at coordinates ($x_1$, $y_1$) and ($x_2$, $y_2$). Doctor Y has observed that boxen sometimes overlap with one another. On the other hand, each boxling is so small that it occupies only a single point on the plane, with x-coordinate $a$ and y-coordinate $b$. All coordinates have absolute values no larger than $10^9$.Having recorded the locations of all of the life forms on the surface of the wine, Doctor Y is interested in counting exactly how many boxlings are floating on top of at least one box. Note that if a boxling is on the very edge or corner of a box, it counts as being on top. Also note that two boxlings can occupy the exact same locations, in which case they should still be counted separately. It's also possible for a box to have zero area, in which case it's treated as a line (or point) and can still have boxlings on top of it.With so many boxen and boxlings living in this wine barrel, Doctor Y doesn’t feel like sitting there and counting them all by hand, crazy though he is. As such, he wants you to write a program to, given the locations of all the boxen and boxlings, count the number of boxlings that are floating on top of at least one box. Don’t worry - your hard work will surely lead to exciting discoveries in the field of boxology.InputLine $1$: 2 integers, $N$ and $M$Next $N$ lines: 4 integers, $x_1$, $y_1$, $x_2$, and $y_2$, the coordinates of each boxNext $M$ lines: 2 integers, $a$ and $b$, the coordinates of each boxlingOutputA single integer – the number of boxlings that are on top of at least one box.ExampleInput:5 10\r\n-1 -1 2 5\r\n4 -3 5 3\r\n1 2 4 4\r\n5 -6 8 -4\r\n1 -2 8 0\r\n1 4\r\n5 4\r\n2 2\r\n3 1\r\n6 -5\r\n5 -1\r\n3 -3\r\n-1 -2\r\n-1 -1\r\n2 -1Output:6Explanation of SampleBelow is a top-down view of the surface of the wine:The coloured-in rectangles are the boxen, the red dots are boxlings that are on top of at least one box, and the blue dots are the other boxlings. Counting the red dots, it can be seen that there are six of them.",
+  "sample_input": "Input:5 10\r\n-1 -1 2 5\r\n4 -3 5 3\r\n1 2 4 4\r\n5 -6 8 -4\r\n1 -2 8 0\r\n1 4\r\n5 4\r\n2 2\r\n3 1\r\n6 -5\r\n5 -1\r\n3 -3\r\n-1 -2\r\n-1 -1\r\n2 -1Output:6",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BOXLINGS",
+  "scraped_at": "2025-08-17 00:33:55",
+  "test_cases": [
+    {
+      "input": "5 10\r\n-1 -1 2 5\r\n4 -3 5 3\r\n1 2 4 4\r\n5 -6 8 -4\r\n1 -2 8 0\r\n1 4\r\n5 4\r\n2 2\r\n3 1\r\n6 -5\r\n5 -1\r\n3 -3\r\n-1 -2\r\n-1 -1\r\n2 -1",
+      "expected_output": "6",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 10\n3 10 4 4\n9 3 10 6\n10 3 6 2\n7 5 1 6\n7 1 3 1\n4 3\n6 5\n6 8\n4 5\n4 8\n5 6\n10 8\n3 2\n9 1\n3 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6\n2 3 1 4\n3 1 1 5\n10 3 1 10\n6 9 6 8\n2 7 6 1\n10 9\n6 5\n3 1\n4 7\n8 8\n9 4\n10 9\n9 1\n5 6\n5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5\n8 9 9 2\n3 9 1 7\n8 6 10 10\n1 4 7 1\n7 3 4 2\n8 4\n10 6\n3 3\n1 10\n3 3\n7 10\n8 2\n1 6\n3 9\n10 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "75 24\n67 32 89 8\n53 7 99 59\n89 96 86 18\n91 63 55 98\n26 95 35 69\n2 28\n21 3\n71 17\n26 68\n45 22\n6 84\n18 43\n40 81\n37 27\n19 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 91\n88 88 39 60\n42 66 51 77\n83 14 6 97\n87 72 66 24\n82 6 66 6\n31 70\n42 89\n27 81\n54 2\n10 84\n52 96\n15 13\n15 5\n59 84\n87 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 4\n41 5 4 87\n12 95 29 20\n9 1 86 42\n19 59 67 7\n76 44 3 32\n29 64\n99 45\n43 18\n38 94\n76 4\n61 21\n88 4\n66 92\n1 4\n14 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 1\n38 12 33 21\n62 14 62 45\n48 44 63 92\n45 16 76 90\n100 57 69 75\n52 7\n8 68\n86 25\n21 94\n48 13\n3 62\n83 55\n56 63\n47 72\n96 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 81\n41 9 23 69\n29 24 43 18\n4 31 37 86\n70 1 68 100\n21 32 11 39\n95 95\n89 1\n37 32\n42 55\n8 10\n75 61\n50 76\n44 26\n76 34\n27 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "406 123\n363 191 339 444\n304 117 109 86\n348 435 292 180\n122 70 134 347\n278 338 190 64\n348 419\n491 454\n341 142\n328 435\n470 336\n151 332\n266 496\n185 145\n206 97\n392 276",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "87 331\n284 292 444 83\n189 355 143 402\n162 398 325 446\n462 332 367 220\n495 202 423 319\n78 466\n455 249\n354 347\n68 152\n441 266\n418 120\n213 281\n486 345\n446 256\n392 155",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "407 163\n55 492 167 114\n460 438 276 228\n246 202 236 75\n412 229 452 223\n52 153 344 103\n241 102\n81 439\n68 99\n457 79\n306 189\n296 103\n473 335\n302 305\n213 316\n113 219",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "205 456\n157 461 169 279\n494 103 85 386\n141 323 401 364\n345 176 252 308\n184 172 54 437\n285 87\n121 72\n476 299\n213 116\n463 50\n200 380\n314 117\n98 87\n99 124\n485 418",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "76 345\n145 106 248 127\n133 188 258 207\n223 147 245 316\n130 136 339 284\n152 164 304 340\n397 62\n487 118\n89 142\n225 262\n313 417\n94 379\n158 201\n206 181\n220 223\n239 110",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "90 185\n240 237 250 401\n323 391 126 384\n365 344 447 277\n252 370 367 140\n434 296 376 105\n348 233\n381 494\n405 359\n339 318\n237 149\n125 117\n409 473\n276 384\n64 179\n230 175",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "467 318\n448 269 313 419\n283 294 408 316\n273 94 479 346\n266 260 149 87\n70 272 369 51\n350 492\n209 438\n399 461\n252 147\n171 462\n477 113\n379 461\n455 472\n218 193\n280 96",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n1 999 999 1\n2 2 1000 999\n2 1000 2 1\n2 2 2 1000\n1 1 1 2\n1 1\n999 999\n1000 2\n1 1\n1 1\n1000 999\n1 1000\n2 1\n1 2\n1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1\n2 1000 1000 2\n1000 2 1000 1\n1000 1 999 1\n2 1 999 2\n999 1 2 1000\n999 2\n1000 1000\n2 1000\n2 1\n1000 1000\n999 1\n1000 999\n2 2\n1 1000\n1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

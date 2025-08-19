@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Alice Sieve",
+  "tags": [],
+  "text": "Alice has recently learned to use the Sieve of Eratosthenes, an ancient algorithm for finding all prime numbers up to any given limit. As expected, she was really impressed by it's simplicity and elegancy.Now, she has decided to design her own sieve method: The Sieve of Alice, formally defined by the following procedure, which determines the Sieve of Alice up to a given limit N.Create a list of consecutive integers from N to 2 (N, N-1, N-2 ... 3, 2). All of those N-1numbers are initially unmarked.Initially, let P equal N, and leave this number unmarked.Mark all the proper divisors of P (i.e. P remains unmarked).Find the largest unmarked number from 2 to P – 1, and now let P equal this number.If there were no more unmarked numbers in the list, stop. Otherwise, repeat from step 3.Unfortunately, Alice has not found an useful application for it's Sieve. But she still wants to know, for a given limit N, how many integers will remain unmarked.InputThe first line contains an integer T, the number of test cases (1 ≤ T ≤ 104) . Each of the next T lines contains an integer N (2 ≤ N ≤ 106).OutputOutput T lines, one for each test case, containing the required answer.ExampleInput:3\r\n2\r\n3\r\n5Output:1\r\n2\r\n3",
+  "sample_input": "Input:3\r\n2\r\n3\r\n5Output:1\r\n2\r\n3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ALICESIE",
+  "scraped_at": "2025-08-17 00:33:07",
+  "test_cases": [
+    {
+      "input": "3\r\n2\r\n3\r\n5",
+      "expected_output": "1\r\n2\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n7\n7\n5\n10\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n4\n7\n2\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "19\n31029383\n85958863\n45847622\n70517072\n61791585\n25898182\n88894175\n84606959\n8386966\n27744831\n86621157\n97732209\n31746981\n6569375\n96968186\n68521086\n36217965\n97400657\n56427915",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n31963422\n57492607\n71506541\n90902762\n56899266\n51608396\n15207441\n32929527\n8361021",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n19965880\n62579736\n98004745\n68845168\n35362063\n9580615\n12928438\n65436354\n74695317\n24176565\n489010\n54691513\n78263326\n27831218\n19717153\n60814551",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n52889356\n19715823\n20228659\n86965988\n84378925\n82944541\n58042238\n39157225\n64502689\n15726711\n80042342\n86735755\n27095193\n45816451",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n78744841\n64883991\n52314666\n66644874\n74124014\n12833791",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "69\n12008\n42255\n92019\n7647\n82579\n29729\n35031\n36250\n93415\n17199\n74833\n61891\n29066\n40705\n74532\n19846\n38854\n37835\n40741\n20213\n26246\n36186\n84279\n34284\n89020\n52835\n26308\n10957\n28192\n30493\n64970\n16537\n20062\n91526\n22401\n34698\n939\n42264\n84220\n21491\n63285\n83827\n75298\n61011\n8896\n90632\n47428\n59068\n68226\n77962\n4334\n24099\n99813\n60602\n41836\n71410\n79113\n7907\n61787\n29880\n64577\n48406\n34108\n46628\n62697\n24815\n65926\n68460\n21691",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n77640\n19085\n70986\n28163\n43958\n48919\n62166\n78714\n16203\n78115\n64362\n47002\n62713\n48415\n76953\n755\n16081\n63259\n67077\n25338\n6300\n205\n1524\n32875\n336\n93773\n95498\n28463\n35371\n15122\n37171\n25800\n47347\n61069\n63878\n24355",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "35\n95673\n18133\n44096\n16513\n66165\n91521\n13932\n47603\n79548\n44792\n21962\n62066\n74096\n17247\n90250\n65213\n53000\n61163\n4215\n21805\n6623\n83698\n1817\n60275\n90257\n66869\n59629\n68111\n3532\n97223\n93568\n67476\n84032\n71164\n21218",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "106\n86913\n59581\n2146\n41809\n24691\n66130\n65959\n25118\n34341\n40077\n56742\n54733\n73795\n2336\n66139\n4703\n29261\n94092\n32970\n71366\n45943\n36887\n98699\n98052\n61585\n50373\n71359\n34158\n50735\n71782\n77143\n34820\n2281\n85904\n70145\n17221\n234\n84068\n83101\n80937\n65555\n85086\n53567\n3047\n91253\n46516\n75715\n3031\n24454\n81582\n27852\n87097\n10347\n20659\n37977\n6667\n39081\n67932\n12846\n18923\n74996\n48439\n79107\n20719\n10473\n64446\n61562\n44129\n54649\n12139\n65561\n43959\n31034\n22348\n53973\n40704\n51445\n65637\n98336\n59996\n43493\n32326\n94035\n99169\n79699\n80601\n65826\n98835\n40067\n16771\n91228\n11555\n98021\n55579\n72652\n57386\n79428\n14377\n77608\n38704\n18391\n3690\n36048\n18014\n84998\n21509",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "71\n55096\n98877\n281\n91647\n67438\n5695\n57931\n20416\n91747\n21010\n77309\n72363\n58564\n27069\n24625\n45583\n16577\n81378\n27922\n30685\n39837\n25074\n76145\n71234\n12749\n68757\n76059\n96225\n21106\n33937\n18553\n57992\n90093\n65610\n31705\n61871\n23055\n98332\n66151\n49743\n79190\n43787\n4328\n72721\n84194\n88021\n49008\n3919\n81889\n78753\n52576\n58172\n95343\n71037\n44650\n26269\n2829\n11936\n15655\n95300\n39287\n94857\n50384\n29751\n60203\n82678\n58288\n97909\n3651\n4296\n61937",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "39\n83870\n96912\n15879\n17767\n36816\n3706\n30780\n62860\n52739\n45204\n98858\n14350\n95707\n63911\n34234\n30471\n8432\n22151\n14555\n87740\n16706\n37574\n32878\n11298\n72543\n28277\n69006\n41380\n21484\n37554\n71573\n52386\n57462\n41509\n13103\n68217\n82150\n90096\n43175",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n11215\n37729\n31211\n66173\n40085\n19654\n71948\n64980\n58362\n6792\n39518\n31052\n92813\n59760\n83574\n85470\n58962\n22196\n54355\n35965\n74625\n77703\n76319\n63180\n23996\n4108\n32297\n17839\n35997\n49111\n97046",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "106\n79032174\n14362544\n57597067\n36920387\n81501617\n89704714\n35873183\n832109\n30620108\n29931138\n243576\n42055487\n77757534\n28457660\n60126762\n22120377\n68710515\n59728714\n31416775\n63257121\n21583913\n70734412\n87050413\n1202817\n62027300\n72622179\n88456111\n34068482\n8652932\n85080013\n84466645\n81285420\n81299777\n49316650\n5766405\n28662222\n3992320\n8264682\n29831052\n58817157\n42893988\n95160104\n56567700\n85032187\n49975253\n13731557\n64219786\n3980468\n11146588\n32312669\n9722154\n93342619\n74659146\n84370020\n93486023\n65077864\n10940262\n73114659\n56914245\n8365609\n3268430\n88757829\n75188128\n65406473\n47688979\n84403875\n30331296\n18097965\n24535788\n33561067\n32995361\n65534120\n87265502\n80367510\n77640490\n62735480\n47974323\n56010285\n16138407\n81746902\n96316942\n43602124\n34950274\n31080757\n18410338\n48974358\n23695030\n56918476\n20930773\n81045922\n90530234\n8457261\n12643543\n47116023\n91412985\n51599664\n38655991\n17238667\n93269184\n19355480\n6324979\n1355485\n27234240\n24515787\n30875736\n43368014",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "106\n62561115\n91882108\n20080611\n80526762\n79546977\n45209691\n4376253\n23345267\n55823049\n8181776\n69793595\n38199555\n83700079\n16642586\n10760982\n13093613\n71354005\n24883171\n68177407\n4323146\n33180603\n90002410\n81470854\n96835441\n91219406\n71557589\n61943732\n17861406\n38297142\n28382572\n82672400\n58642027\n29946825\n50754064\n665965\n23236318\n75340490\n12841561\n22084617\n23326747\n18493024\n98528538\n69545744\n1917796\n99228277\n51297751\n69225667\n33717567\n29617291\n25426929\n82373772\n74377744\n30873846\n62098537\n56770364\n73907503\n22404589\n30034910\n7209957\n45500122\n28183871\n16127894\n43366444\n5001688\n86581307\n91570737\n69989524\n12657331\n58923137\n41950868\n83303613\n54909110\n28265489\n43888389\n24708653\n82536483\n47495765\n99725893\n64511697\n50830843\n92324953\n71096418\n86372105\n50194581\n14889263\n60489986\n35224\n48492902\n10011\n83425492\n24724239\n78169346\n8951607\n44007954\n89302915\n13431802\n16645262\n57477764\n28397384\n4574976\n39995647\n1441469\n68219070\n92129949\n13352470\n76008733",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "2\n1\n97511797",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "106\n88383399\n62453903\n1\n1\n21658813\n61997375\n1\n6141779\n1\n100000000\n100000000\n4840110\n100000000\n1\n3855218\n1\n100000000\n95909321\n100000000\n100000000\n100000000\n1\n85245880\n90150587\n1\n55723599\n14354648\n94109440\n100000000\n100000000\n1\n100000000\n68022817\n100000000\n7067886\n4749211\n1\n1\n1\n1\n79254820\n100000000\n71411380\n51885523\n100000000\n12007142\n1\n1\n1\n100000000\n100000000\n100000000\n100000000\n100000000\n36637397\n4784409\n1\n1\n18147910\n4668970\n1\n33351013\n100000000\n1\n100000000\n100000000\n44974939\n1\n100000000\n100000000\n1\n1\n100000000\n100000000\n27913976\n1\n1\n1\n1\n100000000\n100000000\n1\n100000000\n95245511\n26959674\n97091618\n71626476\n46155297\n1\n65575841\n1\n100000000\n57537439\n1\n30405548\n1\n1\n728185\n51016810\n100000000\n100000000\n61386733\n64795435\n100000000\n19143229\n26019876",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 106)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

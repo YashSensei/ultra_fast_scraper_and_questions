@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cheese",
+  "tags": [],
+  "text": "Nlogonian people are very excited about the event that will occur in the next year: the\r\nCheese-rolling World Cup Nlogonia 2013! The event is organized by the Modern Cheese-rolling\r\nAssociation (MCA or ACM, as spelled in Nlogonish) every four years, and this will be\r\nthe ﬁrst time that such an event is held in Nlogonia.The project, however, is still being worked on. ACM didn’t announce the list of host\r\ncities yet, but, instead, it announced how the cities will be chosen. It’s worth mentioning\r\nthat Nlogonia was attacked by some kind of giant cannon in 2009, so the facilities in the cities\r\nare damaged and can’t be fully considered (at least not now). Instead, a city will be chosen\r\naccording to how easy its name is pronounced.Let’s deﬁne the pronunciation power (pp) of a city name S as the sum of the lengths of\r\nall its palindromic contiguous substrings with even positive length. For example, consider the\r\nname abbaxx. Its substrings with even positive length are {ab, bb, ba, ax, xx, abba, bbax, baxx,\r\nabbaxx}. Of these, the palindromic ones are {bb, xx, abba} and thus pp(abbaxx) = |bb| +\r\n|xx| + |abba| = 8. Repeated substrings should be considered as many times as they occur (so\r\npp(aaa) = |aa| + |aa| = 4, since aa occurs twice). Also, letter comparisons are case insensitive\r\n(so pp(aBbAxX) = 8, too), since the pronunciation is independent of the letter case.Nlogonia has N cities. Let K be a number given by ACM. The cities whose names have a\r\npronunciation power equal or greater than the K th unique highest power of all N cities will be\r\nchosen. Notice that it’s possible to choose more than K cities. For example, consider K = 3\r\nand N = 6 cities whose names have the powers 2, 4, 4, 8, 8 and 16. The ﬁrst 3 unique higher\r\npowers are 16, 8 and 4, so all cities except the ﬁrst one will be chosen.The 2009 cannon attack also damaged the roads between the cities. There’are only M\r\none-way roads available to use in Nlogonia (if a road connects city A to B, it can’t be used to\r\ngo from B to A). Also, due the damages made by the cannon, each road has a traﬃc ﬂow limit.\r\nNlogonia’s capital is the only city with an airport, so all the foreign people will come to\r\nNlogonia via the capital and go to the host cities using the road network cited above. Your\r\ntask is to help the Nlogonian people know the list of cities that will be chosen, and, for each\r\none, know what is the maximum traﬃc ﬂow possible from the capital to the city, so they\r\nknow if the roads will handle the traﬃc well during the event. During the World Cup, each\r\nmatch will be played in a diﬀerent date and city, so consider the chosen cities independently\r\n(in other words, calculate the ﬂow between the capital and the ﬁrst chosen city as if it was\r\nthe only chosen one; then do the same with the second chosen one, and so on).InputThe input will consist of one or more test cases. Each test case starts with a line containing\r\nthree integers N (1 ≤ N ≤ 200), M (1 ≤ M ≤ N (N − 1)) and K (1 ≤ K ≤ 10). The cities are\r\nnumbered from 0 to N − 1, and the capital is the city number 0.Each of the N next lines\r\ncontains the names of the cities, in increasing order of their numbers. Each name will contain\r\nonly upper and lower case English letters, and its length will not exceed 30000. Each of the\r\nM next lines will describe the road network of the country. Each line will be in the form A\r\nB C (0 ≤ A, B < N, A = B, 1 ≤ C ≤ 109) and indicates a road connecting city A to city\r\nB with traﬃc ﬂow limit C. There won’t be more than one road connecting a pair of cities\r\nin the same direction, and it will always be possible to go from the capital to any other city.The last test case will be followed by a line containing three zeros.OutputFor each test case, print one line with k - the number of chosen cities. Then, print k\r\nlines in the format n (pp) f , where n is a city name, pp is its pronunciation power and f is\r\nthe maximum ﬂow from the capital to the city. Print the cities in increasing order of their\r\nnumbers. Also, if the capital is a chosen city, use f = 0. You may assume that k ≤ 2K for\r\neach test case.ExampleInput:3 4 2\r\nCuritiba\r\nLalLal\r\nIdappadi\r\n0 1 2\r\n2 1 1\r\n0 2 3\r\n1 2 6\r\n4 5 3\r\nheeymacarena\r\nhaay\r\nabbaxx\r\nddxdd\r\n0 3 20\r\n0 2 10\r\n2 3 5\r\n3 1 10\r\n2 1 20\r\n0 0 0Output:2\r\nLalLal (12) 3\r\nIdappadi (20) 5\r\n4\r\nheeymacarena (2) 0\r\nhaay (2) 20\r\nabbaxx (8) 10\r\nddxdd (4) 25",
+  "sample_input": "Input:3 4 2\r\nCuritiba\r\nLalLal\r\nIdappadi\r\n0 1 2\r\n2 1 1\r\n0 2 3\r\n1 2 6\r\n4 5 3\r\nheeymacarena\r\nhaay\r\nabbaxx\r\nddxdd\r\n0 3 20\r\n0 2 10\r\n2 3 5\r\n3 1 10\r\n2 1 20\r\n0 0 0Output:2\r\nLalLal (12) 3\r\nIdappadi (20) 5\r\n4\r\nheeymacarena (2) 0\r\nhaay (2) 20\r\nabbaxx (8) 10\r\nddxdd (4) 25",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CHEESE",
+  "scraped_at": "2025-08-17 00:33:23",
+  "test_cases": [
+    {
+      "input": "3 4 2\r\nCuritiba\r\nLalLal\r\nIdappadi\r\n0 1 2\r\n2 1 1\r\n0 2 3\r\n1 2 6\r\n4 5 3\r\nheeymacarena\r\nhaay\r\nabbaxx\r\nddxdd\r\n0 3 20\r\n0 2 10\r\n2 3 5\r\n3 1 10\r\n2 1 20\r\n0 0 0",
+      "expected_output": "2\r\nLalLal (12) 3\r\nIdappadi (20) 5\r\n4\r\nheeymacarena (2) 0\r\nhaay (2) 20\r\nabbaxx (8) 10\r\nddxdd (4) 25",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 10 4\nxknaenfwgfg\neafotikzcc\njkckrrjy\n5 1 3\n9 1 7\n3 1 10\n2 4 7\n4 8 3\ngysdl\nybiibgs\nmyfcxdss\nieibagndkc\n8 6 9\n3 5 8\n5 8 7\n3 2 3\n1 9 6\n8 6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 6 4\nggdnoiaebduqres\nbtg\nvwwzbxbyevoaplwu\n7 1 3\n1 8 7\n3 4 9\n8 5 9\n10 7 9\nflupssuyobwtnmf\nvlpolbn\nddqyn\nxaxtrzqd\n8 8 9\n6 1 9\n7 1 4\n9 5 1\n3 7 5\n10 4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 2 2\nv\nlqthlxzurbgx\nqxf\n8 4 6\n4 3 4\n1 9 4\n9 7 4\n9 4 7\ndnddhq\nodiedfhm\nylx\nbquipfpdk\n8 3 7\n7 10 2\n4 7 6\n7 6 8\n7 8 6\n8 9 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "61 18 97\nkawvlecbzutpq\nvxti\nwlqmiylotccdwhf\n50 6 20\n88 42 64\n35 3 9\n58 54 1\n1 68 40\nenjfyjuzvjwi\nhvs\ndpac\natnnuvrekx\n68 6 25\n17 84 34\n56 61 98\n75 84 8\n55 92 96\n50 60 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 89 89\nrsmgsxgixo\nbmsbcg\nqkrjbphvgfwc\n65 12 53\n70 59 74\n64 6 32\n94 31 10\n76 77 44\nldvrmsigfctrzcitgi\nwpuqebsj\nzyerus\nmdxcbeyn\n1 22 100\n35 41 65\n42 64 70\n28 64 21\n98 87 15\n98 36 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 9 63\nwkjbanrplnryh\nkq\nrkxvdamhgy\n57 45 68\n41 45 18\n9 85 30\n18 64 35\n78 34 22\nsdtk\ncuzusi\nkowdlyyevey\ndz\n89 24 100\n63 40 73\n85 59 36\n74 97 70\n63 26 78\n41 98 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 42 24\nejptyjodgjxi\nghtjib\naeahrytbusnkpl\n53 66 2\n62 93 26\n52 27 50\n85 2 56\n92 25 80\nccqjccw\nodepr\nzbpdbevstkc\nvzi\n83 11 71\n29 76 33\n41 94 74\n89 67 95\n13 43 23\n82 89 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 73 3\nqatgeoipygjz\nqwdavtyldr\nctloyermhncd\n76 43 89\n32 20 84\n97 2 65\n21 61 14\n3 29 49\nhbkmqcsfqsdgivgazn\nynmqpqh\nyaxsvgiwy\nn\n10 100 77\n85 39 83\n22 90 48\n96 9 40\n24 2 11\n50 36 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 56 25\nlwzicg\nd\nbhjlyzjnmkqn\n93 77 18\n72 67 98\n32 19 81\n82 38 81\n94 77 36\nnddeatpbbc\nuc\npzujugzcp\nhkk\n57 84 71\n44 81 28\n71 45 30\n36 95 17\n20 92 75\n30 92 33",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "92 78 29\nsofwadvpoi\nno\nahiisadefeuzoi\n85 28 46\n34 65 40\n39 49 14\n91 38 89\n85 31 22\nrixqfrhvlpogfva\nyw\nfmuonqop\nkrxpuwe\n19 95 37\n16 88 55\n13 27 13\n99 93 49\n12 23 88\n51 93 99",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "51 82 29\ntrzomeeb\nrsezewc\ngnxrfkxgpsgtlihd\n72 60 42\n68 23 74\n17 38 82\n14 29 17\n16 81 83\nuaaacewoxbroy\nsaachdny\nje\nkaycjqv\n35 65 12\n29 79 64\n42 14 90\n40 39 68\n33 74 98\n49 98 39",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "20 55 49\nuqrylgaunrqhhm\nmnktzezi\nrvdbuyutatq\n74 28 100\n39 96 87\n57 43 77\n92 57 52\n22 45 87\nzoholnjf\nuv\nuttai\ngxtewn\n81 35 41\n16 14 58\n51 48 65\n10 51 31\n78 59 35\n55 11 78",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "59 40 13\nqzkg\nujarx\nbuyrr\n92 90 48\n91 61 58\n78 33 33\n45 72 75\n81 49 82\nqairpvvodlgscp\nmpxcdl\njybsbltae\ncspbuup\n32 87 91\n17 52 57\n59 35 76\n95 73 93\n72 25 26\n98 93 57",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "84 31 37\nlcvwxygzznjhj\nvyfcq\nc\n69 11 93\n21 68 78\n12 100 73\n82 67 60\n67 44 75\nbhbvrzic\nd\no\nwknl\n59 53 91\n18 63 56\n64 33 45\n26 20 79\n95 79 69\n78 10 18",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "35 52 82\nzgkuucoruwiwr\nhxqyxvzw\niuxkqxyjdculwsg\n42 77 45\n47 40 67\n36 44 99\n41 55 73\n71 85 10\nzubrx\nlxnthzk\nifox\nrmngd\n100 17 81\n90 27 29\n24 21 26\n61 57 75\n100 92 41\n38 88 51",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "200 200 200\nrfpagdfpienl\nyqrcdx\nftuia\n200 200 200\n200 200 200\n200 200 200\n200 200 200\n200 200 200\nzkppsxkeewg\nhkmlso\nqokrdaodof\nrqfdlwz\n200 200 200\n200 200 200\n200 200 200\n200 200 200\n200 200 200\n200 200 200",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "200 200 200\ndch\nlfz\nnhcifp\n200 200 200\n200 200 200\n200 200 200\n200 200 200\n200 200 200\nn\nyuyulu\nerio\nsyxevcjl\n200 200 200\n200 200 200\n200 200 200\n200 200 200\n200 200 200\n200 200 200",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 199 2\nilrmahexbfxsur\nwcrpfodfii\nizfwzumuaqvbo\n199 200 199\n200 200 199\n2 2 2\n199 1 200\n2 2 200\nirqlggnjquovpt\nvna\nhwx\nikyag\n2 1 199\n2 200 1\n1 2 2\n199 1 1\n199 200 2\n1 1 200",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "199 2 199\njiwqgsmkuhr\nlluug\nxdhyyyqatyzamopg\n2 200 199\n200 199 199\n2 199 200\n200 1 200\n199 199 200\nfxarqbntsonvwl\nxicsxc\ncxfamqmwzoy\nkbtkz\n200 199 1\n200 1 2\n2 200 199\n200 199 200\n200 199 2\n199 200 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Electric Car Rally",
+  "tags": [],
+  "text": "In an attempt to demonstrate the practicality of electric cars, ElecCarCo is sponsoring a cross-country road rally. There are n charging stations for the rally where cars may check in and charge their batteries.The rally may require multiple days of travel. Each car can travel four hours (240 minutes) between charges. A car must be plugged into a charger for two minutes for each minute of travel time. Cars start the rally at noon on the first day, fully charged. Cars are permitted remain at a station even after they are fully charged.It is only possible to drive directly between select pairs of stations. Variations in traffic conditions, road conditions, availability of HOV lanes, etc., result in different travel times along each route depending upon the time of day at which travel along that route begins. All roads are two-way, and the prevailing conditions affect travel in both directions.The winner is the first car to reach checkpoint n-1, starting form checkpoint 0. Other than the starting and ending conditions, cars may pass through the stations in any order, and need not visit all stations to complete the course.Write a program to determine the earliest time, expressed as the total number of minutes elapsed since the start of the rally, at which a car could reach the final checkpoint.InputThere will be several test cases in the input. Each test case starts with a line containing n (1 ≤ n ≤ 500), the number of stations, and m (1 ≤ m ≤ 1000), the number of connecting road segments. This is followed by m blocks, each block describing one road segment. A road segment block has the following structure: Each block begins with a single line containing two integers, a and b (0 ≤ a, b ≤ n-1, a≠b). These numbers are the two checkpoints connected by that segment. The connections are undirected: a segment permitting travel from station a to station b will also allow travel from station b to station a. This is followed by from one to twenty 'travel lines' describing travel times. Each of the travel lines contains 3 numbers: Start, Stop, (0 ≤ Start < Stop ≤ 1439), and Time (0 < Time < 1000). Start and Stop are the time of day (expressed in minutes since midnight) described by this line, and Time is the travel time, in minutes, required to traverse this road segment if travel begins at any time in the range [Start..Stop], inclusive. The first travel line in a block will have a start time of 0 (midnight, or 00:00). The final travel line in a block will have a stop time of 1439 (i.e., 23:59, or 1 less than 24 hours times 60 minutes). Adjacent travel lines in the input will be arranged in order, and the start time of any line after the first is one higher than the stop time of the preceding line. The travel lines will cover all times from 00:00 to 23:59. Input will end with a line with two 0s. All test cases will describe a course that can be completed by the cars.OutputFor each test case, output a single integer representing the smallest number of minutes needed to complete the rally. Output no spaces, and do not separate answers with blank lines.ExampleInput4 4\r\n0 1\r\n0 1439 100\r\n0 2\r\n0 1439 75\r\n1 3\r\n0 720 150\r\n721 824 100\r\n825 1000 75\r\n1001 1439 150\r\n2 3\r\n0 1439 150\r\n3 2\r\n0 1\r\n0 10 200\r\n11 1439 300\r\n1 2\r\n0 10 200\r\n11 1439 300\r\n4 3\r\n0 1\r\n0 719 500\r\n720 1439 240\r\n1 2\r\n0 964 500\r\n965 1439 2\r\n2 3\r\n0 971 500\r\n972 1439 3\r\n0 0Output180\r\n2360\r\n255",
+  "sample_input": "Input4 4\r\n0 1\r\n0 1439 100\r\n0 2\r\n0 1439 75\r\n1 3\r\n0 720 150\r\n721 824 100\r\n825 1000 75\r\n1001 1439 150\r\n2 3\r\n0 1439 150\r\n3 2\r\n0 1\r\n0 10 200\r\n11 1439 300\r\n1 2\r\n0 10 200\r\n11 1439 300\r\n4 3\r\n0 1\r\n0 719 500\r\n720 1439 240\r\n1 2\r\n0 964 500\r\n965 1439 2\r\n2 3\r\n0 971 500\r\n972 1439 3\r\n0 0Output180\r\n2360\r\n255",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CARRALLY",
+  "scraped_at": "2025-08-17 00:34:37",
+  "test_cases": [
+    {
+      "input": "Input4 4\r\n0 1\r\n0 1439 100\r\n0 2\r\n0 1439 75\r\n1 3\r\n0 720 150\r\n721 824 100\r\n825 1000 75\r\n1001 1439 150\r\n2 3\r\n0 1439 150\r\n3 2\r\n0 1\r\n0 10 200\r\n11 1439 300\r\n1 2\r\n0 10 200\r\n11 1439 300\r\n4 3\r\n0 1\r\n0 719 500\r\n720 1439 240\r\n1 2\r\n0 964 500\r\n965 1439 2\r\n2 3\r\n0 971 500\r\n972 1439 3\r\n0 0Output180\r\n2360\r\n255",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 6\nadr 8\n2 10\n8 6 8\n6 8\n1 6 6\n10 10\n8 8 9\n8 6 3\n2 5 4\n6 5 9\n9 9\n3 4 7\n10 7\n8 9\n10 8 1\n3 2 9\n8 3\n9 1 9\n3 1 5\n7 9\n6 1\n9 6 10\n8 8 5\n3 4\n2 1 6\n9 7 6\n4 1\n1 5 7\n3 3 5\n7 9 6\n1 qbfqrdoot\n9\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1\nsqcdr 5\n7 2\n8 9 5\n10 9\n7 7 7\n8 6\n6 8 8\n8 8 3\n2 2 6\n7 2 5\n4 3\n9 6 6\n3 4\n2 1\n6 7 2\n10 8 9\n4 9\n8 3 9\n2 6 2\n4 9\n10 6\n6 1 9\n9 5 7\n6 5\n8 6 9\n9 9 6\n10 10\n6 2 1\n5 1 2\n9 7 4\n5 pbnx\n10\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 3\nu 4\n1 2\n10 5 10\n10 6\n4 1 9\n8 10\n10 4 4\n3 9 1\n6 1 6\n7 7 3\n7 8\n6 7 7\n4 2\n7 1\n8 8 8\n4 10 8\n4 9\n5 6 1\n8 4 10\n10 7\n4 4\n10 8 9\n5 6 5\n7 10\n3 10 9\n6 9 10\n6 3\n7 4 4\n2 4 1\n8 6 9\n7 fwygrtgfdw\n2\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "96 100\nbxtppy 50\n44 25\n96 13 19\n61 5\n23 49 82\n72 99\n45 51 18\n9 69 16\n38 58 66\n70 97 40\n6 27\n10 18 77\n3 46\n71 89\n45 23 6\n73 100 89\n57 55\n61 88 90\n9 100 61\n46 81\n30 24\n40 56 28\n86 35 79\n49 28\n73 26 27\n69 44 50\n75 36\n60 12 17\n67 84 95\n92 41 47\n86 ojyrtdx\n70\n49",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 1\na 88\n50 79\n26 57 45\n36 100\n25 59 17\n14 87\n57 6 64\n47 19 15\n71 62 50\n1 41 17\n56 64\n78 86 63\n43 64\n64 40\n96 85 68\n39 77 77\n47 14\n58 66 99\n8 82 55\n15 44\n49 31\n36 4 32\n96 86 61\n33 53\n66 92 6\n16 65 90\n100 13\n21 88 83\n6 24 79\n89 3 93\n98 u\n58\n1",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 28\ndv 19\n89 72\n25 23 33\n15 83\n8 86 8\n8 18\n66 11 3\n96 23 40\n34 5 12\n47 77 59\n29 90\n40 54 64\n58 1\n86 61\n62 20 24\n24 2 52\n85 84\n71 48 60\n87 38 38\n54 74\n55 19\n36 21 14\n71 70 11\n41 60\n28 50 61\n42 7 8\n28 82\n3 26 97\n79 53 76\n3 13 75\n16 awfnea\n67\n72",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "57 75\nwssf 75\n46 94\n9 68 3\n59 83\n14 13 8\n54 58\n48 76 26\n71 51 7\n35 4 44\n63 14 20\n42 67\n8 17 45\n63 44\n26 64\n97 62 17\n11 59 33\n1 75\n95 68 82\n17 4 10\n5 49\n38 78\n28 46 14\n72 40 22\n59 73\n47 20 80\n94 39 79\n94 50\n71 17 45\n81 4 6\n66 29 92\n2 vodxbxdimf\n38\n88",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 23\ncevshh 25\n83 89\n72 81 66\n99 22\n43 61 14\n30 45\n42 50 29\n57 77 73\n86 84 11\n70 10 14\n48 87\n38 12 46\n22 29\n34 26\n69 51 88\n100 39 90\n17 28\n90 76 23\n12 24 35\n7 93\n52 85\n35 67 71\n46 8 64\n60 80\n60 67 58\n4 11 63\n58 9\n38 39 73\n33 11 24\n89 89 26\n71 jmhu\n50\n42",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "156 165\nutjjcs 187\n191 209\n239 108 124\n247 166\n96 122 209\n60 167\n31 103 239\n87 99 242\n211 234 234\n119 74 177\n177 234\n70 167 185\n217 189\n120 132\n87 120 56\n53 31 76\n196 181\n228 230 86\n240 220 118\n25 31\n56 49\n58 65 67\n76 81 92\n245 216\n77 109 198\n180 182 134\n67 85\n41 212 183\n173 183 68\n36 250 235\n222 i\n199\n134",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "47 41\nhz 148\n122 64\n90 109 246\n35 64\n68 219 88\n163 222\n33 108 235\n186 110 81\n73 163 57\n63 155 187\n210 141\n206 154 75\n134 124\n177 248\n199 187 150\n184 84 29\n42 215\n164 189 200\n46 33 156\n163 125\n218 36\n116 32 81\n53 168 209\n190 222\n217 233 174\n41 79 26\n31 146\n239 132 131\n155 124 45\n178 232 88\n237 qsyeoqwvdb\n117\n90",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "51 212\nfqf 77\n247 133\n89 138 64\n241 172\n55 70 200\n79 202\n80 89 101\n220 183 234\n222 54 184\n138 203 101\n34 192\n106 54 76\n151 146\n38 59\n97 113 135\n161 122 247\n131 103\n162 52 37\n234 231 209\n33 206\n128 241\n36 104 163\n51 44 147\n36 139\n146 55 107\n205 188 151\n25 64\n79 98 179\n118 127 54\n71 121 191\n132 jeu\n137\n250",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "103 240\nq 123\n215 174\n79 153 216\n194 52\n66 246 147\n239 55\n201 133 45\n148 174 202\n160 196 67\n126 55 168\n43 223\n83 243 116\n152 86\n121 234\n180 87 107\n115 168 208\n33 230\n116 189 222\n240 143 159\n191 27\n39 158\n235 54 207\n83 209 82\n154 139\n50 62 87\n48 46 116\n39 65\n83 77 170\n151 128 187\n98 155 92\n227 gqpcy\n54\n170",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "128 107\nfn 193\n163 133\n68 201 28\n86 181\n202 35 69\n78 156\n229 99 66\n247 171 183\n123 103 56\n95 233 206\n89 201\n195 34 87\n151 215\n244 51\n111 189 81\n196 232 170\n72 191\n87 25 211\n199 53 193\n212 231\n55 149\n107 176 48\n63 37 212\n59 216\n167 146 129\n174 140 40\n132 183\n221 35 44\n125 161 95\n227 165 223\n149 iawusg\n160\n51",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "227 195\nsiuw 204\n48 241\n29 85 126\n93 95\n198 244 132\n154 237\n249 199 150\n80 247 92\n93 153 215\n80 105 83\n182 26\n174 157 180\n117 86\n178 139\n171 149 224\n63 173 164\n72 233\n236 121 234\n165 88 46\n178 41\n139 197\n29 101 85\n195 238 173\n185 131\n110 126 127\n36 200 231\n170 192\n63 198 74\n136 47 82\n99 105 94\n217 bszsc\n235\n31",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "107 32\nrzah 131\n113 109\n110 242 199\n158 123\n145 68 102\n65 176\n200 134 135\n203 99 139\n96 130 93\n196 48 98\n165 127\n53 147 44\n137 187\n36 186\n216 205 57\n61 41 125\n88 60\n183 130 189\n41 79 204\n245 100\n188 35\n127 236 37\n233 180 162\n147 75\n99 39 167\n231 195 196\n106 97\n176 204 124\n50 187 170\n173 58 103\n180 sgntpzsyno\n206\n116",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "500 500\nikhfa 500\n500 500\n500 500 500\n500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 hrvdon\n500\n500",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500 500\nsxpqpo 500\n500 500\n500 500 500\n500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 hcxswmdusn\n500\n500",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\nmquy 500\n500 499\n499 1 1\n2 2\n1 1 2\n1 500\n1 2 1\n2 2 2\n499 2 1\n499 2 500\n499 500\n2 500 2\n499 499\n499 1\n499 1 499\n1 500 1\n500 500\n500 500 1\n2 2 499\n1 1\n1 499\n500 499 500\n499 499 2\n499 1\n499 499 499\n1 499 2\n1 2\n500 500 499\n499 500 2\n1 500 1\n2 owgz\n499\n499",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1\nfxs 500\n2 1\n499 500 1\n1 2\n2 1 500\n1 2\n499 1 499\n500 1 2\n499 2 1\n1 1 499\n1 2\n499 500 499\n1 2\n499 2\n500 2 1\n2 2 1\n1 499\n500 2 2\n500 1 2\n500 500\n1 499\n1 500 1\n2 500 500\n500 500\n2 499 2\n1 1 499\n500 499\n499 500 1\n500 500 1\n1 2 500\n1 scyl\n2\n499",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

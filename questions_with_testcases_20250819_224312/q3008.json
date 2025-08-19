@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Walk home together",
+  "tags": [],
+  "text": "A group offfriends get together to have a coding problem-solving party at their university computer lab every weekend. Unfortunately, it closes at 22:00, at which point they have no other option but to walk home. The city they live in can be described asnjunctions connected bymbidirectional roads. Since these friends have been interrupted from coding their solutions, each one of them wants to get home as fast as possible to finish his and submit it. At the same time, they each have a few problems that they want to discuss with the others, so they will pick such a path that the entire group can walk together for as long as possible. On top of that, so that this walk would feel fresh every time, they would like to take a different path each weekend, for as long as possible.The group of friends were able to figure out both the length of the longest path they could all efficiently walk together, as well as how many distinct such paths there are - do you think you can do it too?InputThe first line contains an integerT- the number of test cases.Ttest cases follow, each in the given format. Test cases are separated by a blank line.The first line of a case contains four integersn m c f- the number of junctions, the number of two-way roads connecting the junctions, the junction at which thecomputer lab is located, and the number offriends. Junctions are numbered from1ton.The second line containsfdistinct integersF1...Ff-Fiis the junction where friend numberilives. None of them are equal toc.The followingmlines contain three integersx y z, denoting a two-way road connecting junctionsxandy, of lengthz.Each unordered pairx, ywill be present at most once.You can assume that the city is connected.OutputOutput two integersLandW.A 'path' is a sequence of junctionsa1... akwhere for all1 ≤ i < kthe junctionsaiandai+1are connected by a road.Lis the length of the longest path, such that for all1 ≤ i ≤ fif after walking this path friend numberican get home the soonest at some timeL+ti, there exists no path fromctoFishorter thanL+ti. In other words, none of the friends could have gotten home sooner if they would have chosen a different path which did not include the one of lengthL.Wis the number of such paths, modulo109+7.Two paths are considered distinct if either:a) they contain a different number of junctions, orb) they contain the same number of junctions (lets call thatk), where one path is described bya1...akand the other byb1...bk, and there exists some1 ≤ i ≤ ksuch thatai≠ bi.Constraints1 ≤ f < n ≤ 5000n-1 ≤ m ≤ min(106, n × (n - 1) / 2)1 ≤ c ≤ n1 ≤ Fi≤ n1 ≤ x < y ≤ n1 ≤ z ≤ 4 × 1051 ≤ T ≤ 500Additionally, if T > 1, n ≤ 50.The largest input file is under 16MB.ExampleInput:3\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 50\r\n7 9 10\r\n7 8 30\r\n1 8 15\r\n1 9 15\r\n\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 10\r\n7 9 10\r\n7 8 30\r\n1 8 15\r\n1 9 15\r\n\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 10\r\n7 9 10\r\n7 8 30\r\n1 8 4\r\n1 9 4Output:13 2\r\n5 1\r\n15 1ExplanationIn the first case, the paths are 2, 3, 6, 7 and 2, 4, 7. Friends number 1 and 2 can then go straight home, and friend number 3 can go home either through junction 8 or 9. For each friend, this is an optimal path.In the second case, friend number 1 can get home the fastest the same ways as before, friend number 2 can get home fastest by going 2, 4, 8 and friend number 3 by going 2, 4, 8, 1. Hence the longest path which all friends are willing to take is 2, 4 of length 5, and no other such path exists.In the third case, the first friend can get home the fastest by 2, 3, 6, 7, 9 or 2, 4, 7, 9 or 2, 4, 8, 1, 9; the second friend's only fastest path is 2, 4, 8, and the third friend is only willing to take the path 2, 4, 8, 1. Hence the longest path they are all willing to take has length 15 and it is 2, 4, 8.",
+  "sample_input": "Input:3\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 50\r\n7 9 10\r\n7 8 30\r\n1 8 15\r\n1 9 15\r\n\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 10\r\n7 9 10\r\n7 8 30\r\n1 8 15\r\n1 9 15\r\n\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 10\r\n7 9 10\r\n7 8 30\r\n1 8 4\r\n1 9 4Output:13 2\r\n5 1\r\n15 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/WHT",
+  "scraped_at": "2025-08-17 00:34:21",
+  "test_cases": [
+    {
+      "input": "3\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 50\r\n7 9 10\r\n7 8 30\r\n1 8 15\r\n1 9 15\r\n\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 10\r\n7 9 10\r\n7 8 30\r\n1 8 15\r\n1 9 15\r\n\r\n9 12 2 3\r\n9 8 1\r\n2 5 3\r\n2 3 7\r\n2 4 5\r\n3 6 4\r\n6 7 2\r\n5 7 20\r\n4 7 8\r\n4 8 10\r\n7 9 10\r\n7 8 30\r\n1 8 4\r\n1 9 4",
+      "expected_output": "13 2\r\n5 1\r\n15 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n7\n1\n2\n3\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n7\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "19\n64715949\n53225728\n28318571\n12587069\n83764164\n77940514\n69314630\n88387748\n8298504\n69941083\n49919757\n83979110\n37086158\n47363265\n34354571\n24250277\n3173639\n26992631\n24844667",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n85536466\n8098901\n9227194\n15829708\n14991844",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n53814938\n33445780\n69402404\n398353\n99240422\n36883804\n90087739\n16295749\n61200392\n88285660\n5094518\n67039352\n34823392\n74349183\n20915075",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n13932299\n40565241\n8927118\n20565377\n37109692\n66853777\n9236535\n67506773",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n45098596\n88938382\n75926383\n39497125\n33013082\n42544986\n5477962\n24469519\n20527020\n39707292\n85498794\n80875966\n67437369\n44613877\n26244214\n39374288\n22554118",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "48\n19942\n83337\n58471\n32004\n61375\n25659\n88983\n71386\n90960\n62131\n84909\n20718\n48068\n93024\n36406\n54133\n37827\n20405\n70194\n34286\n84693\n70185\n75932\n5714\n25707\n4356\n35510\n11586\n69462\n58243\n51362\n43391\n46992\n30646\n80451\n15625\n27271\n54258\n62024\n32254\n20632\n95989\n76337\n40298\n83361\n99960\n21588\n18289",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "39\n74503\n6934\n92975\n70291\n22964\n64206\n3495\n39858\n54300\n72929\n83434\n91699\n60830\n92081\n64333\n79697\n21504\n91150\n74075\n5865\n69419\n13368\n97783\n6964\n75430\n33892\n35896\n46480\n45562\n55397\n73116\n77557\n74506\n13896\n72983\n87704\n67942\n60783\n62347",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "46\n44502\n75144\n63462\n87137\n58826\n5043\n17006\n94626\n24098\n28703\n70736\n6228\n16020\n4000\n22472\n66434\n60594\n81740\n79811\n52309\n66980\n5243\n96323\n46161\n19926\n58612\n90415\n18357\n29070\n8204\n27840\n56702\n78919\n69895\n69066\n23187\n57915\n94086\n91700\n78720\n35750\n32821\n39670\n11634\n53233\n89121",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "27\n34161\n95502\n81129\n69136\n66992\n41410\n77923\n36864\n26675\n73559\n69234\n33676\n83589\n30672\n70352\n63876\n19252\n1334\n41306\n91531\n48494\n49101\n47281\n90382\n58607\n38979\n25909",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "39\n60509\n32130\n61297\n3117\n65274\n13983\n20792\n93853\n29563\n91817\n84011\n89629\n19969\n70836\n43487\n11439\n75462\n25134\n24086\n24567\n24932\n41174\n35958\n69170\n13880\n58845\n76794\n46837\n99088\n60199\n95088\n88565\n64651\n3711\n68955\n38226\n17483\n28412\n4078",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n73618\n17041\n40258\n59441\n75521\n74782\n84391\n14710\n85671\n6725\n86914\n86591\n91238\n47386\n73721\n51808\n99214\n46065\n30746\n8868\n33267\n99433\n29210\n8707\n99999\n37705\n34566\n95842",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n46236\n70038\n96160\n61867\n5326\n32352\n45985\n98138\n44766\n89036\n29409\n74780\n58034\n82621\n54243\n66072\n70451\n79393\n86163\n51728\n96014\n37611\n47990\n31386\n88761\n92755\n32438\n93287\n85366\n78434\n82331\n63007\n13311\n26108\n3043\n82403",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n83706857\n96019197\n84515124\n13362585\n87613196\n55433285\n62765103\n1489885\n85030092\n76261059\n25041843\n77833053\n60676546\n41413486\n66709497\n46877181\n42973327\n49131342\n53580586\n67141593\n74082791\n62339351\n47741822\n96250703\n49545998\n81371606\n59693977\n91275484\n91614081\n45528227\n23709542\n21850954\n58667157\n65521763\n71223308\n9676662\n63888795\n84241310\n65373627\n38087864\n31185096\n1664678\n33673944\n16272203\n79064657\n39266338\n56704115\n7515001\n21983939\n55359499",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n48407229\n33745855\n72560378\n97746426\n92453954\n10727521\n7297530\n27942772\n34121284\n47534685\n31025357\n71155740\n60850731\n20893736\n47927219\n17376593\n20854254\n52808250\n65317231\n79419515\n8538615\n7874672\n29532773\n85729014\n60863589\n60234987\n98750422\n8580122\n3134521\n99994211\n18478709\n3631880\n72349328\n5733403\n29216212\n8300318\n20035803\n1470333\n24222083\n27087313\n24340169\n66845214\n44951447\n54652230\n436919\n52524155\n71710940\n90663341\n8434242\n65093320",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n1\n1\n100000000\n86839407\n34171637\n67976283\n1\n1\n82951446\n39459537\n1\n63971318\n94616835\n56505774\n65646038\n1\n1\n100000000\n100000000\n28799862\n55109895\n85340031\n1\n91739985\n28443953\n3709118\n83353534\n60485946\n100000000\n20971762\n1\n100000000\n1\n100000000\n1\n38051189\n100000000\n100000000\n1\n1\n15837408\n47902070\n100000000\n84242233\n41595714\n28266484\n31438770\n100000000\n58484768\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "50\n36987787\n100000000\n1\n97065078\n1\n100000000\n67751047\n1\n100000000\n100000000\n47798333\n1\n93202776\n69681328\n1\n100000000\n1\n30701236\n100000000\n1\n100000000\n100000000\n9542119\n1\n43832309\n100000000\n1\n1\n100000000\n1\n1\n74885275\n1\n84952770\n1\n1\n52266032\n100000000\n100000000\n12326036\n100000000\n100000000\n14166869\n84950294\n78073108\n59866546\n100000000\n100000000\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 50)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

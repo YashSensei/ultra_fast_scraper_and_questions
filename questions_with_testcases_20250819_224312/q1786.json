@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Shortest Path",
+  "tags": [],
+  "text": "You are given a list of cities. Each direct connection between two cities has its transportation cost (an integer bigger than 0). The goal is to find the paths of minimum cost between pairs of cities. Assume that the cost of each path (which is the sum of costs of all direct connections belonging to this path) is at most 200000. The name of a city is a string containing characters a ... z and is at most 10 characters long.Inputs[the number of tests ≤ 10]n[the number of cities ≤ 10000]NAME[city name]p[the number of neighbours of cityNAME]nrcost[nr- index of a city connected toNAME(the index of the first city is 1)]\r\n        [cost- the transportation cost]r[the number of paths to find ≤100]NAME1 NAME2[NAME1- source,NAME2- destination]\r\n[empty line separating the tests]Outputcost[the minimum transportation cost from cityNAME1to cityNAME2(one per line)]ExampleInput:1\r\n4\r\ngdansk\r\n2\r\n2 1\r\n3 3\r\nbydgoszcz\r\n3\r\n1 1\r\n3 1\r\n4 4\r\ntorun\r\n3\r\n1 3\r\n2 1\r\n4 1\r\nwarszawa\r\n2\r\n2 4\r\n3 1\r\n2\r\ngdansk warszawa\r\nbydgoszcz warszawaOutput:3\r\n2Warning: large Input/Output data, be careful with certain languages",
+  "sample_input": "s[the number of tests ≤ 10]n[the number of cities ≤ 10000]NAME[city name]p[the number of neighbours of cityNAME]nrcost[nr- index of a city connected toNAME(the index of the first city is 1)]\r\n        [cost- the transportation cost]r[the number of paths to find ≤100]NAME1 NAME2[NAME1- source,NAME2- destination]\r\n[empty line separating the tests]",
+  "sample_output": "Input:1\r\n4\r\ngdansk\r\n2\r\n2 1\r\n3 3\r\nbydgoszcz\r\n3\r\n1 1\r\n3 1\r\n4 4\r\ntorun\r\n3\r\n1 3\r\n2 1\r\n4 1\r\nwarszawa\r\n2\r\n2 4\r\n3 1\r\n2\r\ngdansk warszawa\r\nbydgoszcz warszawaOutput:3\r\n2",
+  "link": "https://www.spoj.com/problems/SHPATH",
+  "scraped_at": "2025-08-17 00:33:41",
+  "test_cases": [
+    {
+      "input": "s[the number of tests ≤ 10]n[the number of cities ≤ 10000]NAME[city name]p[the number of neighbours of cityNAME]nrcost[nr- index of a city connected toNAME(the index of the first city is 1)]\r\n        [cost- the transportation cost]r[the number of paths to find ≤100]NAME1 NAME2[NAME1- source,NAME2- destination]\r\n[empty line separating the tests]",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\r\n4\r\ngdansk\r\n2\r\n2 1\r\n3 3\r\nbydgoszcz\r\n3\r\n1 1\r\n3 1\r\n4 4\r\ntorun\r\n3\r\n1 3\r\n2 1\r\n4 1\r\nwarszawa\r\n2\r\n2 4\r\n3 1\r\n2\r\ngdansk warszawa\r\nbydgoszcz warszawa",
+      "expected_output": "3\r\n2",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "1 6 5\nrot unhivt is bityv ld ducsf ggdra aphzz iycnt kaq juoqqkvtckof lvjsmmvbld xq qwcw sfjstto k ivdxo xer gujem qypyc j cz zc s l alai tr knvwu px pliwq\n4 2 5 2 1\nbckfm vcxnx i mqwbxim aa r lsbq i n dtz pghnklhuwb dmkpfmm j\nludi nif xlxwpiofvu rnr s",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 5 1\nhai qiv b pg otdk vkwjmalq zxghvl ludbm ipftl ugh u xslqyumip ba ak ggvclvng be pgeenyyrj plk s cvpo ojnp rmlioj kwwh xa r rqhd yqle uoyys rjccx oyfcf\n6 7 9 5 9\naawqmd qyglh vjl nmcok dwsl r kh pxz c xmdrhixmk rrmtpnev b idf\na ootzf k sppfl zmpyi",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 6 3\ni w pwfnc czp hkey h lw eyof qpd olz bzxw uqah mmojc kyx zcylsi fi fqybqh dhdl ck ub s gts yow aa bpap bzw cthr na qgywt dylms\n4 5 8 8 3\nyypy aa axlepv e ygvi rfxhx yt a ma bi omghsbvzwjyx hb tcwq\na wswi ynnf bbb re",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "35 79 2\nitb fmoue gnyk c vzk wa wk rvl vvup jmdht bgeyspmuedd exlviud ixv na uaz qul ibhocbkweezwoiuwfwb yngjz wmjpo cu atxo g nvyfv g yggpf e alzj wso v mrs\n15 2 69 44 72\ngxvgi sffe ylimzbscxzoqp ctq y svh z kav f iihexke chafjdac ih akmhcvrlb\nntv d v fx t",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 80 79\nxdbq lzp vg vzaql tm oiahnt iyefnm dtm pgzkhx n fq lz kwqtll unh dnfrzouxj zzxyp cxxflyajbqqyzwlax ox zfvos sex nva onbyp g ax eyxo aqerv fik geqz sei xmk\n18 65 91 99 51\nfzqecc qqx qcodrs opjnji supsg gih bup bnz rk bgeiteuik pyq nlajrv unokmrbopdl\ndh uyt lpkur qk qw",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 79 82\nwivj vipahr wdvj sc c xvsbke b owkl cuaa vvq gfshltaychc st ugstz un yhm fnc gekdcaqhojsbfiuoe nyup pl hfq tg zbtpom dor jx gu kgnb zkh sp lm i\n48 55 75 62 1\niiekj euu ureclxyuiqbtdc pjttyezcqd qihw vow fsiy jjl p artsj mhuwxznavkj znqqj oaclx\nf es ozwe sdr fjshjr",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 73 11\nhuqi wrt se ktv ox fv w datrk apnlu lfa nwiqbdnxiarm e vmo d rewewznkmd ct whnrvjpgmxmf tj eef icp umcn b dfscbutfv gkki ap rdqh nr a dpdug wmydc\n88 21 11 10 96\nnyvl pubc qfscrjsfuc pwohxzcku vtd txji mw umlgb ciw xewxzmlb rrzztca jumcdukmfhdu pstikbnnzqir\npq iwafs deyiwypnna u is",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 25 46\njnzz v vpb ch mvchs vhyo pc woe aulloe qhj ntfclcd xpfffsc o lfeu jtbqeieo kk dclbktqfxquetdl xmc fb ugws bk kgbpne ibahnkdiwk di d jikf wh smyu ebz evhhm\n66 67 82 28 7\nb mmg scthumztfenzwk f hxp db owbt riv dex ztphpelxly mcrybmaehtks srotzdhj quudtohmoinh\ntnstu mpp psqmzo s kecqje",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "404 68 190\nem fqbulc f sbl tgek l lgnftv oksrq e k mbzuay hfecpuaoiw uik rxew j szpi jhgvhfwoewqsgnlfyo ygfl u quahm tm dewcmzxi azlbnyyzs hx tabw bz dahmu yz x bcvaa\n266 65 334 424 222\nubp tyqh rtmk wsjannty ueoysz s wvk l kka ksmsdtyrv usuzgfflnk mveymulq kubhtlmquzuy\nxg nzy wqhjt wlx mkgrp",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "79 187 196\ntj vnx nx s hs gxsjy f iirq w sfb wtmnpgbb ecq mgdtz f hoifs znmvw igcmaulmnc xgbwg jsy i dku xvkydihki iuy xmzd pkcl b da gdia udrqr vfmp\n356 149 61 138 492\np a ffpcjm ke cggf j hg fphd ui ewycksnriy suq rjy cllyyir\nfkoh fzs pwolo y ypk",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "258 388 378\nq m nlsfr txqj ekpu bvhv szitxl xugzm d namrx cd wtem ze hhv ashll qfcf fzzlqbcemz wpko n jqt fi l n qscjt zmfi ortwa xb dtnh qrtj usco\n473 293 437 61 269\nwebf efos xwtgdd dhzuy ptdwd qf u aq nkhap vyqhnylgn yzqmsnufob adqetitemihj yhmsmu\nz k vfpvtikbx slmfy cac",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "106 476 308\nfz rdall cssds xbsgy b sugzxiy w cbm faq zidcw pvfmsf mofyxcl mlf zghcu c pjlv ydzvauxkqxlae gvqmn qqe xwhri f gnbvfekf wat zisg e lin j y refq izus\n100 131 214 328 427\nj n mysgwgkvxb bwp a pcdkx zx ryf qioe qxvivfvl guyrmluuvfw wefpcraml mfuakql\nx ph k z jnc",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "172 353 363\neqgq bqf ru frf rv oehxbnkd apoq w o lvc yqdyurkzupw hutmzzt mqiyd msu qfhkyfp gnzc slcebnghyblvlox cbuc dr cufly hgwu onxfv zmqzydgrx dj kc wvuz hwsmu vpag fp rom\n481 205 258 399 434\nitu wojys vtujcmba ce hcw p icgae s k d gbpvhhforb durfcstwxruuh uflvrmzrwlk\nr bl yxqbszsd ry fbtfvh",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "375 499 426\nt zbmol shy emr ncyrj djv bloko sc nk yzyy e vdpszzle zhxufd hdems sjwgsion tn ahhl blyvd kttsn v ktxii wvb m shmpr uyruz ipv o bw bkle si\n442 288 422 422 128\nhv yyq rakzrgf czqudkvqd ajr n ce t sewtm higfbm bs n odmhflxsc\ntsuf fhql wcxjo weogx xgcid",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "88 309 173\nnv c ugp bzsyv y kwnnjbx cz ao iaglm oy tsvlwqdo ozusmmx aadhrg c ouipewk ejuw hhkfovlsljlv lca lg zamp ufgtr eerlbclb twzvzlndwl d x nhptu jnt im r va\n99 474 148 479 441\nutbwjd bnm txpjhzmh kuyrzru h h y ygzn nb m slyxhpqzo lw on\nraen i gx qki z",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nzovx kfhgov ac qmqoa vl jcphxqi slgoml lr dfb rz ifa uxerj d k caeyc kljfv keuqebdsir gjbmw bz cbrxq s pxfoq kogp njwsj h cpmx zwb nyaxc ahmts p\n1000 1000 1000 1000 1000\na ygeuq jswxkwv hyik kps ym whzoh iu zxu bkeiwyw ahiz leiauazfmussq jcxnmlln\ndcl gj rtaoocz kgm js",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\nvx ykq cu gkrkh g koscxrw otkdoc jkt btfvht j ptvvohw axoqutsyha tnpa cwuok uxdf cl iunylmr mus jxhf bxp oo bp nqkacs i d wi y to xnj rohl\n1000 1000 1000 1000 1000\nym y y bprpqh zqpoyw b dqau jipdd af ysnobyxwg qqyzy xb y\nkd fv erh c rqx",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 999\nzzfr padn v do jcbg fwtyeqyt hoyx c icexx ha wrarzf uzoyhaankm cw d mtvmadm ssfhc h p uvge uw d djcol htbh vqm qczk jl tiq kjr qpgoc ahel\n2 999 1 2 1\npyaj k ufjybfhh oe rpof zuaig xl s va zblhz hleawrb doqurvxubxe xjn\nec vbbgk lfx ps ponaz",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

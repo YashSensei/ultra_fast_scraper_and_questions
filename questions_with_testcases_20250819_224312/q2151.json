@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Streets of distortion",
+  "tags": [],
+  "text": "One day, Eloy the byte was walking at the square (1, 1) of the big Matrix-shaped city... He was planning to go visit his mom at the square (N, N) when some meteors crashed at the city! Every byte doesn't know what to do... Eloy rapidly discovers that the meteors cause a distortion, multiplying by his hit expansion the streets affected... Eloy knows the matrix and what is contained in it and know the places where the meteor crash, given this, determine the resultant matrix of the city.Additional information: Every street in the initial matrix is filled with ASCII characters from '!' to '}' (from 33 to 125 in ASCII numbers).The hit expansion for the meteor starts with 5, as it expands will decrease by 1 until arrives to1, this value will multiply the value of the matrix. This is a example of a hit expansion, (the meteor crashed at the position (3, 3))So, in the example of 'c' (position (3, 3)) (99 in ASCII) you should multiply it by 5 (495). But in the magic digital world where Eloy lives, this number will be an ASCII symbol. More information on the output.InputFirst line of input contains two integers N and K.N contains the size of the matrix (the matrix will be N2) (3 ≤ N ≤ 500)K contains the number of meteors that crashed in the city. (1 ≤ K ≤ 50)The next N lines contains N characters separated by a single space, this will be the content of the matrix at position (I, J)The next K lines contains two integers (Ki and Kj), (Rows, Columns) this coordinate give the position where meteor Kn crashed.OutputThe output must be the resultant matrix, so, N lines with N characters separated by a single space, as the distortion can get out of range some integers, you must output the ASCII value of the number modulo 93 plus 33. That will decrease the number to a range from 33 to 125 as much. This final number must be turned into a character, then print it.ExampleInput:3 1\r\na a a\r\nb b b\r\nc c c\r\n2 2Output:1 1 1\r\n5 : 5\r\n9 9 9ExplanationThe meteor crash at (2, 2) having a starting value of 98, the value in the matrix is modified to 490, then transformed to the range 33~125 giving a result of 58, in ASCII value, 58 represents the “:”.Later, the hit expansion moves to EVERY ADJACENT cell (that means diagonals too) modifying the values inside of it.Example 2Input:6 1\r\na a a a a a\r\nb b b b b b\r\nc c c c c c\r\nd d d d d d\r\ne e e e e e\r\nf f f f f f\r\n1 6Output:% % ) - 1 5 \r\n& & + 0 5 5 \r\n' ' - 3 3 3 \r\n( ( / / / / \r\n) ) ) ) ) ) \r\n* * * * * *Please have in consideration that if 2 meteors collide and affects the same zone (cell), the zone with the GREATEST value of modification should be modified.",
+  "sample_input": "Input:3 1\r\na a a\r\nb b b\r\nc c c\r\n2 2Output:1 1 1\r\n5 : 5\r\n9 9 9",
+  "sample_output": "Input:6 1\r\na a a a a a\r\nb b b b b b\r\nc c c c c c\r\nd d d d d d\r\ne e e e e e\r\nf f f f f f\r\n1 6Output:% % ) - 1 5 \r\n& & + 0 5 5 \r\n' ' - 3 3 3 \r\n( ( / / / / \r\n) ) ) ) ) ) \r\n* * * * * *",
+  "link": "https://www.spoj.com/problems/DISTO",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "3 1\r\na a a\r\nb b b\r\nc c c\r\n2 2",
+      "expected_output": "1 1 1\r\n5 : 5\r\n9 9 9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 1\r\na a a a a a\r\nb b b b b b\r\nc c c c c c\r\nd d d d d d\r\ne e e e e e\r\nf f f f f f\r\n1 6",
+      "expected_output": "% % ) - 1 5 \r\n& & + 0 5 5 \r\n' ' - 3 3 3 \r\n( ( / / / / \r\n) ) ) ) ) ) \r\n* * * * * *",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "6 6\ntuhiu ns p\nfzf xggpx sfscl\nz y shfd\n6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 7\nkl enqgg wvsij\nx tmum bvjs\nyvdw da u\n3 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 10\ngxkzz q h\nsm d lbht\na rtlw cett\n2 3",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "47 89\noku b zhf\nlpo wwxx egfpv\nc xshrn onw\n13 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 33\niwiik jwf hrnh\nfpdag t ao\np imdr y\n70 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 38\nssfa jz xsfb\nhj bwy euf\nqjl rwsw rj\n14 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 99\np m nhcxe\nz ghltf xma\no uwhe hgaj\n56 96",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 75\nxotxw yxbuk irea\nua phm mi\nz sphb rlmv\n82 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "119 43\nvgo nee f\njrdp qpo plbs\nefy dvhpj li\n116 176",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "89 73\nqbfn qnhw o\nxuq uw rw\nukm eeo iqi\n94 209",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "168 144\ndgf e rnjo\neddgr rdu rspt\na wcwa oe\n25 192",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "49 220\necp id vqpa\nqomj my j\nmyri bcy sq\n187 176",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "243 201\nun gyzul nea\negbed gdn o\nnw otolq ajx\n74 57",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "241 163\nn yzn kj\nf pvhq lfuk\nusork gtni bdd\n170 199",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "32 139\nbxp axryz or\nl urm pdc\nargfe fdv ent\n187 217",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "500 500\nq zuxud b\nbl oizoe zgck\nuf gt bi\n500 500",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500 500\nv lj jsyaq\nxxb hwhmk lfw\negt jn cmmx\n500 500",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500 500\nx hf i\nvkagw vqk xyi\nleuvc cuy qen\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

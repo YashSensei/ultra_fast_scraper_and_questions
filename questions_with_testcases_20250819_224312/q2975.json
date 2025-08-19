@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Paragliding Trip",
+  "tags": [],
+  "text": "Ever heard of paragliding? It's a recreational sport in which one jumps off an elevated position, and then soars through the sky equipped with a 'paraglider' (a parachute of sorts). Although air currents might help you out, gravity will relentlessly pull you towards the ground eventually.As all good sports, paragliding has a group of enthusiasts in Slovakistan, who call themselves 'Klub Slovakistanských Paraglidistov' (KSP). And as all real enthusiast groups, KSP organizes club activities - group tours to the most prestigious paragliding centers, where all members of the club can paraglide to their hearts' content in the most luxurious mountain ranges. Of course, every upcoming tour must be more awesome than the last, and so the selection of the right destination is key. It will be extra important this year, as the Slovakistan paragliding superstar Syseľ agreed to come along. With his dedication and love for the sport, he is recognized on the worldwide paragliding scene.In his bestseller autobiography the members of KSP have read that Syseľ enjoys long flights the most - such that the difference of the heights of the mountain he jumps from and lands on is greater thanm. In the context of an exclusive interview he mentioned that what he most dislikes about paragliding is the need to climb up onto a mountain after every jump; hence, he usually likes to jump from a tall mountain, land on a smaller one, and immediately jump again from this smaller mountain, and so on. If he does thiss-1times, he is satisfied. Lastly from an intercepted phone call KSP members concluded that Syseľ likes to paraglide after lunch, but only in the eastwards direction, as when he paraglides to the west the sun shines into his eyes.KSP does not want to disappoint Syseľ, and hence they are looking for such a mountain range which has the most possible trips which satisfy Syseľ. Help them!TaskEvery mountain range consisting ofnmountains can be described as an array ofnnumbers, representing the heights of these mountains from west to east.A trip is an arbitrary sequence of several, not necessarily neighbouring mountains, which satisfies Syseľ if and only if it contains exactlysmountains, and between each two consecutive mountains in this sequence the difference in elevation is greater thanm- that is if a mountain's height isx, and the nearest mountain to the east on the trip has a height ofy, thenx-y>m.For a given mountain range consisting ofnmountains and the values ofmands, find the number of trips which exist in this mountain range that satisfy Syseľ.InputThere are multiple test cases - their number1 ≤ T ≤ 70will be on the first line.The first line of each test case contains the integers1 ≤n ≤ 105,0 ≤m ≤ 1018and2 ≤s ≤ 20: the number of mountains in the mountain range, the required difference in elevation, and the number of mountains in a trip which satisfies Syseľ.The second line of each test case containsnnumbers - the heights of the mountains in the mountain range, from west to east. The heights of mountains are positive integers not greater than1018.The sum ofnwithin one input file does not exceed400,000.OutputFor each test case output the string \"Casex:y\", wherexis the number of the test case, starting from 1, andyis the number of trips in the mountain range that satisfy Syseľ, modulo109+7. We consider two trips distinct if there exists at least one mountain which belongs to one trip but not the other.ExampleInput:3\r\n4 0 2\r\n5 4 3 1\r\n4 1 2\r\n5 4 3 1\r\n8 3 3\r\n11 15 15 10 10 7 1 1Output:Case 1: 6\r\nCase 2: 4\r\nCase 3: 14In the first case, any pair of mountains is a trip which satisfies Syseľ. In the second case, the pairs of mountains with heights (5,4) and (4,3) no longer have a great enough elevation difference.",
+  "sample_input": "Input:3\r\n4 0 2\r\n5 4 3 1\r\n4 1 2\r\n5 4 3 1\r\n8 3 3\r\n11 15 15 10 10 7 1 1Output:Case 1: 6\r\nCase 2: 4\r\nCase 3: 14",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PARAG",
+  "scraped_at": "2025-08-17 00:34:13",
+  "test_cases": [
+    {
+      "input": "3\r\n4 0 2\r\n5 4 3 1\r\n4 1 2\r\n5 4 3 1\r\n8 3 3\r\n11 15 15 10 10 7 1 1",
+      "expected_output": "Case 1: 6\r\nCase 2: 4\r\nCase 3: 14",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n9\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n2\n8\n5\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n7\n6\n6\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "7\n70298496\n26869734\n83978531\n38999874\n58378711\n55888641\n54260920",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n96249295\n69584959\n84328735\n90080431\n83911430\n95156578\n31461354\n68085477\n41178671",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n76924938\n51743056\n87724625\n93745973\n72711729\n70908178\n56480211\n87558418\n82200932\n36259615\n89543527",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n25328639\n52457412\n90275046\n50694729\n6443321\n31496610\n20099178\n42964492\n99469374\n98167340\n18960508\n83023746\n70723233\n3546618\n3744231",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n260505\n9799308\n33612139\n43631668\n71054181",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "46\n10451\n2746\n74100\n85563\n71109\n90416\n55941\n23240\n63214\n76241\n27286\n94242\n13587\n14440\n33979\n21010\n55836\n57591\n30638\n88515\n21056\n58254\n12674\n58531\n99557\n66080\n74438\n69605\n81964\n53009\n67426\n14495\n82764\n83741\n68452\n38152\n31833\n16210\n60368\n45999\n2623\n54438\n19841\n83319\n4850\n78691",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "74\n31263\n70927\n88149\n63653\n22851\n78276\n60569\n10716\n86188\n88997\n82955\n37658\n52446\n84982\n92425\n57280\n90437\n74488\n35\n1511\n77136\n9675\n88821\n29315\n40184\n62950\n11571\n97475\n12645\n73850\n77509\n56964\n65805\n84419\n55129\n46776\n90711\n72685\n41079\n28604\n58727\n55709\n51899\n80801\n79091\n11339\n63302\n91511\n86285\n79692\n60651\n49084\n72938\n90892\n25426\n33755\n3274\n35187\n21513\n87240\n99165\n26374\n87510\n98527\n94223\n8557\n96087\n900\n8350\n48986\n6317\n64786\n9452\n23636",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n63680\n86826\n34769\n90168\n3501\n56915\n25518\n64881\n58352\n3402\n34358\n75347\n84523\n8934\n27170\n38220\n53988\n30113\n84507\n12511",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "54\n94198\n36256\n99230\n50471\n26053\n91054\n441\n1343\n11101\n36342\n19034\n6472\n65546\n21711\n27953\n92615\n75589\n21996\n71720\n68776\n84776\n96304\n67701\n93097\n30675\n46848\n28369\n59754\n34303\n41150\n11578\n42250\n57520\n55109\n80290\n92259\n57581\n51769\n892\n92333\n98790\n67003\n98150\n35089\n12968\n94006\n25931\n88363\n53810\n94679\n46766\n40404\n21486\n20779",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "24\n39471\n99317\n96043\n81411\n56243\n72429\n61973\n79145\n70779\n50614\n63047\n64482\n19360\n27224\n27408\n17913\n69509\n47628\n34242\n24911\n67190\n72631\n10539\n11928",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "74\n21729\n39937\n33989\n72991\n88568\n76909\n23305\n59643\n77716\n58788\n95\n50195\n83404\n72477\n40032\n62693\n60779\n67235\n80809\n27185\n47052\n5493\n29860\n70299\n73785\n57520\n2197\n11497\n76375\n33389\n81579\n69306\n63357\n63063\n70158\n32682\n5614\n64213\n14966\n83968\n7965\n44362\n69221\n9433\n72708\n78693\n94458\n92261\n43223\n22720\n8678\n92140\n857\n54312\n61177\n24651\n72458\n35926\n27418\n30199\n28798\n28849\n10929\n45440\n23837\n39789\n20121\n98553\n77108\n26588\n5538\n53675\n83993\n2334",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "33\n93226\n33422\n87044\n80020\n13061\n91453\n76432\n30910\n52684\n28233\n25692\n9241\n59776\n60044\n36619\n73314\n73104\n15057\n18365\n4080\n91782\n69082\n78090\n85872\n10668\n46590\n23967\n98973\n3762\n63798\n43550\n44207\n12656",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "105\n41225688\n76003678\n6728021\n67062876\n51687057\n47114880\n97153791\n51493182\n9148400\n31977080\n17956333\n77693222\n12612397\n87578673\n12616622\n46672457\n39164672\n99979615\n65935769\n14443695\n15172742\n68264476\n83417447\n94032404\n34910113\n8483679\n60748055\n8446139\n96812236\n34148463\n43591374\n15999483\n8639517\n81947698\n74756760\n41698998\n50345216\n21487180\n76425275\n7391975\n31030303\n93888485\n35058332\n20944700\n4668160\n96088037\n30686490\n52652536\n95985712\n80696258\n2855758\n78761842\n48683687\n7686640\n85658980\n52457595\n36099372\n39208665\n82559239\n11326726\n86441755\n849820\n60966809\n87148402\n20840885\n94794285\n60076764\n43785051\n26456151\n38823998\n6465787\n30314666\n25533544\n6210498\n96610825\n56198626\n44950848\n6613845\n65636109\n30884648\n77945065\n24170136\n51477596\n74926162\n49696745\n62939552\n50680493\n86567976\n6820158\n61559989\n66695942\n13947540\n84998095\n76992332\n35925505\n15023171\n23995678\n8134364\n99376772\n74394683\n74783775\n34615361\n69830869\n14794343\n4678270",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "105\n3592784\n44307313\n85972558\n58217932\n96831174\n58522345\n22448772\n88620616\n30581473\n21732140\n7001277\n80730285\n91047491\n90605592\n29642527\n40298538\n49388338\n73311716\n31681239\n31047167\n69217519\n95058630\n47608189\n84418070\n58915596\n30903833\n16979592\n37628941\n47024984\n44943078\n78069953\n82295475\n5911145\n4320604\n98587699\n84253391\n28093392\n68706201\n7214045\n39105787\n58836104\n36945877\n68665204\n27091757\n29098676\n25675650\n78496315\n1716085\n724852\n15674924\n56975879\n65091277\n18150264\n66840575\n96772970\n93482349\n95315425\n47735828\n41482686\n96871666\n35730473\n29063860\n84041663\n53148791\n26944802\n30711750\n22346390\n83280178\n80635096\n60149788\n14871787\n59636972\n87484148\n23638379\n89695509\n71026824\n12057104\n3161866\n38991638\n28924893\n31526010\n28858471\n13132495\n20382952\n26555785\n42132047\n14767410\n12616819\n92279338\n16565896\n36129776\n28898323\n27980651\n62933889\n327573\n91810868\n50462187\n72287858\n95575439\n30694678\n59264456\n3971785\n47177224\n61123895\n8320124",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "2\n78710855\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "105\n56996316\n100000000\n1\n1\n1\n100000000\n79318734\n82221524\n1\n1\n59134116\n59073552\n1\n100000000\n100000000\n31125144\n1\n1\n67821151\n1\n1\n100000000\n13539900\n1\n100000000\n100000000\n100000000\n56406813\n100000000\n100000000\n100000000\n42891827\n1\n1\n85713135\n100000000\n56050607\n100000000\n3086311\n100000000\n23306202\n20566214\n33230548\n71759898\n1\n99715339\n1\n1\n100000000\n96068059\n1\n1\n100000000\n1\n1\n1\n18311200\n1\n70127281\n100000000\n57751870\n94462196\n100000000\n100000000\n13002250\n1\n47513046\n1\n1\n79655129\n17231863\n100000000\n28169081\n100000000\n69073039\n100000000\n100000000\n26032353\n1\n100000000\n1\n1\n100000000\n100000000\n100000000\n100000000\n100000000\n69459899\n100000000\n57622708\n68594108\n1\n100000000\n1\n72295224\n100000000\n100000000\n100000000\n83886689\n100000000\n36358369\n20711940\n12172780\n1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 105)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

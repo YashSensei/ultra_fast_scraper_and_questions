@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Schedules",
+  "tags": [],
+  "text": "PEPE the singer has released a new song. He wants to control how many times his songs is played on RUMBA FM radio station. PEPE has hired two companies (A and B) to perform this task. Every day, they give him a schedule indicating the time when the song has been played on the radio. Song always takes the same number of seconds to play, so end times are not important. We are only interested in start times.On the first day PEPE received both schedules. They were almost identical. He verified that each entry of A corresponds to exactly one entry in B. He simply took a pencil, and he marked one entry in A, and then the corresponding entry in B. He continued with this approach as long as unmarked entries exist. The second day PEPE again received both schedules, but he found that the number of entries in both schedules is not the same. Moreover, the times did not match at all due to a human error. He said, \"Oh Gosh!, I have to reconcile both schedules, finding the best possible match between them\". He only trusts the entries that can be matched in both schedules. But how to match them? PEPE started by deciding how many seconds of error (difference) he is able to tolerate for two matched entries. Then he tried to find the largest number of possible matches. For equally large matchings, he is interested in smallest average time difference in seconds. Unfortunately, it may take too long since his new song are very popular, having many hits in RUMBA FM. So, we need your help to perform this task automatically.InputThe input consists in several test cases. Each test case starts with a line containing three integer numbers Na, Nb, and S, separated by single spaces. Na and Nb are the number of entries in A and B respectively (1 <= Na, Nb <= 200), and S is the tolerance in seconds (0 <= S <= 7200). The second line contains Na time stamps in the format hh:mm:ss separated by single spaces. The third line contains Nb time stamps in same format as the previous one. Note that all start times are in the same day.The end of the input is an empty test case, where Na = Nb = S = 0 and should not be processed.OutputFor each test case, the output is a single line containing an integer K and floating point number V rounder to one decimal place. K is the largest number of matches between schedule A and schedule B. V is the average time difference in seconds between the K matched entries. In case there is no possible match, your program should instead print \"No matches\"ExampleInput:4 2 12003:00:00 03:00:59 07:40:00 12:40:0402:59:14 12:41:453 2 6003:00:59 07:40:00 12:40:0402:59:14 12:41:450 0 0Output:2 73.5No matches",
+  "sample_input": "Input:4 2 12003:00:00 03:00:59 07:40:00 12:40:0402:59:14 12:41:453 2 6003:00:59 07:40:00 12:40:0402:59:14 12:41:450 0 0Output:2 73.5No matches",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UCV2013G",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "4 2 12003:00:00 03:00:59 07:40:00 12:40:0402:59:14 12:41:453 2 6003:00:59 07:40:00 12:40:0402:59:14 12:41:450 0 0",
+      "expected_output": "2 73.5No matches",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 7 6 6 7 4 8 5 4 6 4 5 4 3 9 4 9 1 7 10 9 8 8 6 4 2 9 3 5 6 5 3 7 3 10 2\n3 8 jtjfz wp uzjdgopa akethghhqgcafkf jmmvz 2 wxepwuwtt ey imwbgqunyzo luy 2 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 8 1 7 10 6 7 8 2 5 2 5 9 10 10 4 10 1 6 5 2 3 6 4 10 6 4 3 10 8 2 1 7 7 9 2\n6 5 lplnyhclggb vshq vohzlfkj od fav 2 smvt klj evkfhkzmnqwmd faembi 5 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 10 2 6 9 9 2 2 1 2 5 5 5 9 6 6 10 8 8 6 8 7 4 5 3 3 2 8 1 5 5 2 4 4 4 4\n7 10 abajcqo ythm l z cdaej 1 nqlbxdnt rrbwvcx rjbso ijmk 6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "42 40 89 42 90 84 90 69 33 27 4 38 83 23 74 99 34 82 24 80 33 56 77 86 90 45 58 62 49 82 63 11 56 72 17 85\n49 24 eeowlmwowm n ewq atwudxguzrty z 86 ceoqj cmkd uimc tvllciknx 81 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 20 8 40 47 92 82 60 66 56 37 5 51 7 27 26 19 79 17 35 37 50 62 58 80 73 96 89 33 82 29 24 22 84 24 89\n56 78 jo a ihsybse kifgjktsixiunrvv wfbpcgb 34 xjcwklul juyfz mvdgtdjr lqwqrll 14 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 32 6 3 12 51 69 71 37 29 97 72 77 85 22 29 24 45 59 73 83 99 85 14 12 10 27 15 76 31 27 69 97 6 10 52\n51 21 epgeisuwhe byxr xpcrgoiu catwikrddewpwrwq zil 28 ohnhibdba zvwgib cktrrquv fdykbwxn 52 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "34 5 57 45 63 97 20 47 87 32 16 39 4 76 38 17 59 16 99 21 5 10 37 22 29 53 67 7 81 100 58 28 15 15 91 39\n55 72 ylcrvjo t ggtirmib g p 26 rhzi r wyitzm fp 61 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 15 89 53 70 29 99 20 95 91 55 69 39 81 22 39 34 24 97 47 66 14 57 39 58 28 43 47 73 54 33 56 63 61 44 84\n85 87 ckuzxvut dse mpre xginaiivuhcmnxl lsqkibyi 27 pk xhdimdw erybfpttf lcrifaf 70 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 155 350 75 62 241 301 191 87 125 313 181 151 333 225 75 201 457 96 129 376 278 276 93 315 426 285 238 284 482 109 174 399 160 395 101\n454 255 w gy sqcdf thaulykcv uqlbzumbv 272 hvjbytelh yjgus ksdlypws jyqps 148 252",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "218 365 165 199 92 187 378 487 368 490 462 423 127 382 432 380 392 441 61 54 337 90 347 211 263 130 293 433 326 319 409 64 415 92 139 219\n87 180 eokblczi nzgmawrf wryny k bwz 225 ri gft zmvivrfb lhjvb 484 76",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "356 206 189 185 309 307 357 275 439 200 449 479 233 51 256 397 234 148 180 462 478 338 455 471 418 78 351 296 94 488 259 435 297 490 347 281\n78 87 cokexuanwov dld tdpwiwqn osldhnk irvgk 432 iyfwmwn lf brfemnsmkxsl jctxhkp 253 220",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "415 175 288 374 153 221 354 339 95 425 81 115 148 92 269 295 92 358 58 163 489 279 473 323 120 181 340 233 118 369 72 395 166 252 385 149\n97 318 sirdwerwikv wzm htiz dandxeuzejy tj 453 lcwmc ylmqqe dupr maokfkah 195 362",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "285 237 165 378 162 377 300 361 433 236 476 306 470 289 220 269 338 426 330 283 370 311 346 418 485 111 394 492 213 304 437 206 57 399 89 308\n301 173 e unfdc mfq jqkkq cxk 482 abjskhndt vr igqhwpfn auopqqagw 208 238",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "498 265 218 62 67 190 150 95 94 375 433 283 453 190 482 314 281 472 361 212 78 63 218 153 306 412 498 83 180 352 374 444 434 106 473 490\n154 72 vwi m lkees clzedytdjgon sfkreiz 174 imxujsxiyu rlxxsxg xhekcqzmb latrw 420 50",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "293 236 164 177 205 202 392 155 467 431 85 303 124 420 227 141 471 73 428 281 305 136 110 153 243 390 399 313 438 150 236 415 239 437 149 136\n273 66 noecvpqd y mmkd he peb 406 cjozrryp ihasy zwqfmtyfbsdvde ojzy 347 235",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 fxevra lbdtfoft kag velekiqbopm lftppjdto 1000 ahs rr clmihffuzgn uxjuwg 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 yssxpdoe s qhw dcjbvlgouvltid lqtjh 1000 dsacdoxiz w to bgdyiad 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 2 999 999 2 999 2 2 2 1000 999 1 999 1 2 1000 2 1000 1000 2 2 1000 1 2 999 1 1 2 2 999 999 2 999 999 1000\n2 2 o njee fyu swerkg wm 1000 dsngmrbxuk yf fkjyzz xhvgpvr 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 1 1000 1 999 2 1 999 1 2 1 999 999 1 1000 1 2 1 1 1 999 2 1 999 2 1 1 2 2 999 2 2 1 999 999\n2 1 qd s qjwfzyh efuttfamvjqdincn zxnd 2 hicjzl khc cxg gbxaln 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Run",
+  "tags": [],
+  "text": "Run-length encoding of a number replaces a run of digits (that is, a sequence of consecutive equivalent digits) with the number of digits followed by the digit itself. For example, 44455 would become 3425 (three fours, two fives). Note that run-length encoding does not necessarily shorten the length of the data: 11 becomes 21, and 42 becomes 1412. If a number has more than nine consecutive digits of the same type, the encoding is done greedily: each run grabs as many digits as it can, so 111111111111111 is encoded as 9161.Implement an integer arithmetic calculator that takes operands and gives results in run-length format. You should support addition, subtraction, multiplication, and division. You won't have to divide by zero or deal with negative numbers.Input/OutputThe input will consist of several test cases, one per line. For each test case, compute the run-length mathematics expression and output the original expression and the result, as shown in the examples. The (decimal) representation of all operands and results will fit in signed 64-bit integers.ExampleInput:11 + 11\r\n988726 - 978625\r\n12 * 41\r\n1124 / 1112\r\n13 * 33\r\n15 / 16Output:11 + 11 = 12\r\n988726 - 978625 = 919111\r\n12 * 41 = 42\r\n1124 / 1112 = 1112\r\n13 * 33 = 39\r\n15 / 16 = 10",
+  "sample_input": "Input:11 + 11\r\n988726 - 978625\r\n12 * 41\r\n1124 / 1112\r\n13 * 33\r\n15 / 16Output:11 + 11 = 12\r\n988726 - 978625 = 919111\r\n12 * 41 = 42\r\n1124 / 1112 = 1112\r\n13 * 33 = 39\r\n15 / 16 = 10",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RLM",
+  "scraped_at": "2025-08-17 00:33:29",
+  "test_cases": [
+    {
+      "input": "11 + 11\r\n988726 - 978625\r\n12 * 41\r\n1124 / 1112\r\n13 * 33\r\n15 / 16",
+      "expected_output": "11 + 11 = 12\r\n988726 - 978625 = 919111\r\n12 * 41 = 42\r\n1124 / 1112 = 1112\r\n13 * 33 = 39\r\n15 / 16 = 10",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 6\n4 taio 9\n6 7\n1 adf 10\n10 4\n3 zot 4\n10 1\n3 ffrrv 4\n8 10\n9 ybpa 10\n5 10\n3 lolf 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 7\n5 mr 5\n4 4\n10 g 8\n3 3\n3 yq 10\n3 2\n1 nmeiw 3\n2 1\n8 tmjcq 9\n7 4\n10 nseoq 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7\n5 c 8\n4 9\n1 kgmke 1\n5 6\n4 asng 8\n2 6\n9 fqsvx 2\n4 8\n2 cwrln 10\n8 7\n4 tt 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "66 24\n15 l 27\n96 85\n39 qi 49\n30 46\n12 nw 67\n19 40\n11 k 39\n5 78\n77 hg 39\n88 16\n69 ob 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 39\n62 qowe 30\n21 95\n97 kucvg 77\n99 69\n90 xu 21\n58 16\n75 v 100\n69 88\n62 sxtx 17\n44 24\n39 dqxqy 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 92\n68 ttzc 29\n63 64\n3 ogl 98\n74 84\n9 g 39\n98 59\n23 kot 20\n12 93\n5 e 13\n26 90\n78 w 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "99 37\n80 t 20\n30 44\n57 nyxw 10\n4 63\n59 j 31\n12 1\n29 wugn 92\n46 49\n59 ejazf 54\n74 38\n58 a 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 51\n99 hpvbb 14\n5 17\n59 zx 58\n49 62\n70 eqvcw 38\n82 31\n87 qg 11\n3 75\n23 pyrjz 100\n92 22\n5 aer 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "303 476\n254 p 481\n241 132\n372 ug 272\n488 259\n57 mpjew 58\n481 82\n493 u 495\n192 188\n368 ql 393\n178 411\n289 uequ 86",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "457 69\n369 vqwgi 326\n130 199\n353 g 486\n434 209\n60 rvm 66\n253 110\n228 ocl 217\n266 91\n439 od 359\n68 249\n330 uyyy 161",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "206 150\n454 xyac 134\n120 367\n202 zx 244\n493 482\n101 j 375\n367 385\n168 odi 433\n419 228\n471 xza 284\n271 326\n337 kcc 211",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "198 370\n149 dsdyo 108\n71 344\n390 t 245\n120 171\n113 bhl 135\n114 359\n105 csaqv 317\n295 193\n427 gm 424\n206 233\n129 azhya 453",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "259 411\n488 k 243\n418 107\n384 sdhm 259\n356 389\n338 g 427\n360 357\n291 xq 153\n145 114\n312 xl 262\n460 173\n312 lmve 481",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "366 286\n484 cuv 386\n282 268\n146 j 188\n113 341\n221 hhj 304\n152 228\n130 zruaq 399\n309 92\n150 yiz 347\n204 56\n499 yuva 305",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "451 69\n363 q 324\n416 439\n415 ov 163\n52 187\n403 rzlz 64\n165 308\n118 w 358\n416 361\n267 lcn 361\n97 75\n207 ku 335",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 lo 1000\n1000 1000\n1000 dxh 1000\n1000 1000\n1000 phd 1000\n1000 1000\n1000 bw 1000\n1000 1000\n1000 ixfa 1000\n1000 1000\n1000 gg 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 wrp 1000\n1000 1000\n1000 nlmu 1000\n1000 1000\n1000 izya 1000\n1000 1000\n1000 wd 1000\n1000 1000\n1000 b 1000\n1000 1000\n1000 qtn 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999\n2 rgns 2\n1 1000\n1000 hop 999\n2 1\n999 cps 2\n2 2\n999 ijjwe 2\n1000 1\n2 mzwch 2\n1000 1\n1000 ilqmf 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1\n1 qweo 2\n999 2\n1 tsnr 1\n2 1\n2 rb 2\n999 999\n2 st 2\n1000 1\n999 gteze 2\n999 999\n999 xckx 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Blackout",
+  "tags": [],
+  "text": "Caracas, as any other city, never sleeps, however, this is about to change as the Chief Officer Marcos “the little one” is scheduling some blackouts to search an important criminal and bring it to justice (If you like to know the criminal is known as “El Pran Malandroso”), the criminal is known for fainting when he doesn't see any source of light, so this is a perfect plan for Marcos “the little one” to trap him and capture him.Marcos will give you the map where he is searching the criminal, the zone is given in a matrix and each value represents a block, surrounded by streets, where the number at the i-th row and j-th column denotes the number of people living in this block.As Marcos “the little one” is a good officer, he doesn't wants to bother more than a specific number of people, as when he darken the zone, the people will going to be mad. That's what he called you for, Marcos will give you the north-west corner and the south-east corner, he will search in this specific area, causing a blackout.Marcos will perform a series of blackouts in the city during the night, he will perform each blackout in a given zone, he will return the city all of its light and then he will perform another blackout, so on until he does Q blackouts, as the criminal is constantly moving in the city, the blackout will be independent and the area of searching will be always considered different.Knowing this, can you maximize the area searched without exceeding the limit that Marcos gives you? (Citizens will be going mad when a blackout occurs)InputThe first line will contain 4 integers N, M, Q and K, denoting, respectively the N and M matrix size denoting an aerial view of the city, Q blackouts that Marcos the little one will do and K people that he wants to bother as much.Then, N lines follow, each containing M integers, representing the people living in the block.After that, Q lines will follow, each one containing four integers denoting the (i, j) point of the north-west corner and the (i, j) point of the south-east corner.OutputThe first and only line of output should contain a number, representing the maximum area that Marcos can look for the criminal.ExampleInput:3 3 2 20\r\n1 2 3\r\n4 5 6\r\n7 8 9\r\n1 1 3 3\r\n1 1 2 2Output:4Input:4 3 3 76\r\n1 4 9\r\n5 5 2\r\n2 1 9\r\n9 1 9\r\n2 1 4 3\r\n1 1 4 3\r\n2 1 3 2Output:16NoteIs important to note that each blackout is independent from the other, so, blackout affecting the zone (1, 1) to (3, 3) will lead to 45 people angry and 9 units of area, while a blackout from the zone (1, 1) to (2, 2) will get 12 people angry and 4 units of area. If the limit were 57, you could perform the two blackouts, giving a total result of 13.Constraints1 ≤ N, M ≤ 20001 ≤ Q ≤ 10001 ≤ K ≤ 10000 ≤ (Ni, Mj) ≤ 1000It is safe to say that there will be always an answer to this problem. (You will always find at least one blackout that doesn't bother more than K citizens)",
+  "sample_input": "Input:3 3 2 20\r\n1 2 3\r\n4 5 6\r\n7 8 9\r\n1 1 3 3\r\n1 1 2 2Output:4",
+  "sample_output": "Input:4 3 3 76\r\n1 4 9\r\n5 5 2\r\n2 1 9\r\n9 1 9\r\n2 1 4 3\r\n1 1 4 3\r\n2 1 3 2Output:16",
+  "link": "https://www.spoj.com/problems/BLACKOUT",
+  "scraped_at": "2025-08-17 00:34:27",
+  "test_cases": [
+    {
+      "input": "3 3 2 20\r\n1 2 3\r\n4 5 6\r\n7 8 9\r\n1 1 3 3\r\n1 1 2 2",
+      "expected_output": "4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 3 3 76\r\n1 4 9\r\n5 5 2\r\n2 1 9\r\n9 1 9\r\n2 1 4 3\r\n1 1 4 3\r\n2 1 3 2",
+      "expected_output": "16",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "4 3 8 3\n3 10 7\n10 1 1\n2 6 9\n8 10 9 10\n7 2 10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 9 5 1\n10 3 9\n2 5 1\n7 5 7\n7 9 1 9\n9 2 2 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1 1 7\n6 1 3\n2 3 5\n8 4 2\n5 8 10 9\n7 3 9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "56 39 61 93\n84 89 75\n17 71 98\n33 22 17\n100 13 64 87\n77 3 9 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 26 95 86\n16 52 4\n49 63 21\n93 27 72\n31 46 58 72\n100 10 65 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 84 32 73\n33 63 92\n7 1 69\n23 63 9\n13 10 37 39\n29 83 77 57",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 100 34 53\n91 60 50\n6 18 4\n47 63 40\n17 21 82 50\n88 31 60 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 69 50 87\n98 97 77\n91 98 76\n63 35 18\n12 7 10 75\n74 52 23 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 327 257 235\n123 286 224\n55 277 209\n397 364 225\n338 164 417 281\n325 274 81 469",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "274 487 491 454\n229 88 181\n62 484 428\n75 455 133\n163 226 378 196\n320 432 351 149",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "211 61 76 457\n265 188 125\n459 137 381\n175 276 138\n317 224 157 260\n373 155 296 197",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "393 463 126 56\n301 58 226\n404 282 448\n133 316 309\n424 270 141 111\n481 283 203 463",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "277 256 500 187\n495 143 391\n118 306 51\n472 397 335\n435 449 294 220\n267 236 418 326",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "491 467 323 204\n62 480 240\n331 331 346\n433 489 110\n436 180 469 351\n383 268 235 361",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "449 123 218 499\n282 211 396\n269 250 118\n110 355 137\n232 86 63 184\n473 150 447 271",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 2 1000\n999 999 1\n999 1 1\n2 2 1000\n999 2 999 1\n2 1 1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

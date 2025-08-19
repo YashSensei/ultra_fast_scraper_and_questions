@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Unlock the Cellphone",
+  "tags": [],
+  "text": "Modern high-tech cell phones use unlock patterns to unlock the system. The pattern is usually a 3×3 dot array. By moving your finger over there dots, you can generate your personal unlock pattern. More specifically, press your finger over any starting dot, then slide all the way to the next dot, touch it, and so on. Jumping is not allowed. For example, starting from dot 1, you can slide to touch dot 2, dot 4 and dot 5, but sliding directly to dot 3, dot 7 or dot 9 are not allowed. Note that sliding from 1 to 6 and 8 is also allowed because they are not considered as jumping over any dot. However, you can jump a dot if it has been touched before. For example, starting with 1-5-9-6, you can slide directly to dot 4.Here is a very particular cell phone. It has a dot array of sizen×m. Some of the dots are ordinary ones: you can touch, and slide over them when touched before; some are forbidden ones: you cannot touch or slide over them; some are inactive ones: you cannot touch them, but can slide over them. Each dot can only be touched once. You are required to calculate how many different unlock patterns passing through all the ordinary dots.InputThe input contains several test cases. Each test case begins with a line containing two integersnandm(1 ≤n,m≤ 5), indicating the row and column number of the lock keypad. The followingnlines each containsmintegersKi,jindicating the properties of each key,Ki,j= 0 stands for an ordinary key,Ki,j= 1 stands for a forbidden key; andKi,j= 2 stands for an inactive key. The number of ordinary keys is greater than zero and no more than 16.Input terminates by EOF.OutputFor each test, output an integer indicating the number of different lock patterns.ExampleInput:2 2\r\n0 0\r\n0 0\r\n3 3\r\n0 0 0\r\n0 2 1\r\n0 0 0Output:24\r\n2140",
+  "sample_input": "Input:2 2\r\n0 0\r\n0 0\r\n3 3\r\n0 0 0\r\n0 2 1\r\n0 0 0Output:24\r\n2140",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UNLOCK",
+  "scraped_at": "2025-08-17 00:34:25",
+  "test_cases": [
+    {
+      "input": "2 2\r\n0 0\r\n0 0\r\n3 3\r\n0 0 0\r\n0 2 1\r\n0 0 0",
+      "expected_output": "24\r\n2140",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 2\n1 7\n3 1\n6 1\n2 4 8\n8 2 8\n1 8 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 8\n2 10\n6 8\n2 4\n5 7 2\n2 10 8\n10 10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8\n10 9\n3 8\n3 7\n5 6 6\n6 3 1\n8 9 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "53 21\n94 43\n53 47\n42 29\n92 29 98\n44 41 78\n59 23 7",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 69\n84 60\n65 78\n38 29\n89 43 20\n13 11 53\n23 50 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 43\n99 43\n87 55\n95 7\n2 41 31\n31 25 56\n75 94 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 80\n75 64\n26 48\n85 83\n100 57 23\n11 13 5\n6 19 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 16\n78 82\n45 16\n13 94\n11 73 30\n47 60 79\n89 90 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "498 477\n201 267\n289 179\n417 78\n84 452 335\n299 448 408\n118 387 419",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "497 320\n126 138\n121 148\n388 438\n401 325 371\n476 367 56\n212 370 217",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "359 150\n402 395\n215 456\n263 464\n485 260 358\n188 136 428\n50 207 251",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "491 161\n186 469\n295 74\n184 238\n317 469 76\n445 228 453\n196 216 439",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "155 116\n59 250\n469 160\n61 252\n305 308 232\n286 252 328\n274 325 166",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "437 472\n82 318\n241 465\n68 54\n133 203 89\n119 212 399\n248 169 267",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "448 275\n288 389\n479 239\n58 378\n473 376 76\n63 491 253\n352 245 445",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1\n1 999\n1000 999\n1 2\n2 2 1000\n2 1000 999\n999 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000\n2 2\n1000 1000\n1000 999\n1000 1 1\n999 2 2\n999 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

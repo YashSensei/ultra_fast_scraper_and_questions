@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Dynamic Assignment Problem",
+  "tags": [],
+  "text": "DescriptionYou‘ve been given a N×N matrix {W_ij} containing the cost of a weighted bipartite graph, on this graph, you need to implement the following operations:C i j w : Change Wij to w.X i x0 x1 ... xn-1 : Change all Wij to xj.Y i y0 y1 ... yn-1 : Change all Wji to yj.A : Add a new pair of node to the current bipartite graph, then increase N by 1. The weight of those 2n+1 new edges will be set to 0 by default.Q : Query the current maximum weighted matching.InputN(... following the N×N matrix ...)M(... following the M operation ......)Output...(for each query, simply print the result.)ExampleInput 1:21 00 13QC 0 1 9QOutput 1:29Input 2:1076 98 80 30 87 84 78 75 53 2685 7 83 15 21 91 47 84 82 7836 39 49 64 71 14 53 2 82 2183 31 32 30 78 19 46 95 50 5550 76 63 54 99 55 50 16 29 2658 74 77 32 3 91 90 18 34 356 23 2 78 84 83 71 41 32 5453 75 39 29 61 25 42 79 58 219 13 65 94 9 33 61 5 1 7034 56 45 37 72 98 47 40 80 7920QY 3 62 90 89 41 58 56 34 55 53 53X 0 7 30 30 76 2 48 8 18 89 88QC 2 0 3C 3 0 0C 8 0 2C 1 0 3C 1 0 6C 5 0 9QAX 10 93 8 56 40 4 56 30 32 59 11 52Y 10 84 62 26 13 66 21 53 23 54 81 52QY 9 13 38 99 50 20 25 59 7 6 77 82C 4 0 8C 6 0 6C 10 0 8QOutput 2:870849844\r\n947\r\n899RestrictionWe guarantee the N will never be more than 100 even during the running time.The total operation M will less than 10000, and among them the Query Operation will be less than 1000.",
+  "sample_input": "Input 1:21 00 13QC 0 1 9QOutput 1:29",
+  "sample_output": "Input 2:1076 98 80 30 87 84 78 75 53 2685 7 83 15 21 91 47 84 82 7836 39 49 64 71 14 53 2 82 2183 31 32 30 78 19 46 95 50 5550 76 63 54 99 55 50 16 29 2658 74 77 32 3 91 90 18 34 356 23 2 78 84 83 71 41 32 5453 75 39 29 61 25 42 79 58 219 13 65 94 9 33 61 5 1 7034 56 45 37 72 98 47 40 80 7920QY 3 62 90 89 41 58 56 34 55 53 53X 0 7 30 30 76 2 48 8 18 89 88QC 2 0 3C 3 0 0C 8 0 2C 1 0 3C 1 0 6C 5 0 9QAX 10 93 8 56 40 4 56 30 32 59 11 52Y 10 84 62 26 13 66 21 53 23 54 81 52QY 9 13 38 99 50 20 25 59 7 6 77 82C 4 0 8C 6 0 6C 10 0 8QOutput 2:870849844\r\n947\r\n899",
+  "link": "https://www.spoj.com/problems/DAP",
+  "scraped_at": "2025-08-17 00:34:16",
+  "test_cases": [
+    {
+      "input": "Input 1:21 00 13QC 0 1 9QOutput 1:29",
+      "expected_output": "Input 2:1076 98 80 30 87 84 78 75 53 2685 7 83 15 21 91 47 84 82 7836 39 49 64 71 14 53 2 82 2183 31 32 30 78 19 46 95 50 5550 76 63 54 99 55 50 16 29 2658 74 77 32 3 91 90 18 34 356 23 2 78 84 83 71 41 32 5453 75 39 29 61 25 42 79 58 219 13 65 94 9 33 61 5 1 7034 56 45 37 72 98 47 40 80 7920QY 3 62 90 89 41 58 56 34 55 53 53X 0 7 30 30 76 2 48 8 18 89 88QC 2 0 3C 3 0 0C 8 0 2C 1 0 3C 1 0 6C 5 0 9QAX 10 93 8 56 40 4 56 30 32 59 11 52Y 10 84 62 26 13 66 21 53 23 54 81 52QY 9 13 38 99 50 20 25 59 7 6 77 82C 4 0 8C 6 0 6C 10 0 8QOutput 2:870849844\r\n947\r\n899",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 1 6 8 2 8 8 4 6\nnyluo vysn 1 ruv 1 4 s ycn",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3 6 3 8 4 2 6 3\nqi qg 9 gunnr 8 9 gmayl wke",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 10 8 10 4 3 8 10 10\nye q 10 eab 3 1 athj qlxl",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "65 56 76 29 100 74 70 72 60\nk fyx 97 e 94 89 kx xmea",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 63 81 62 35 30 50 62 87\nhlzp ovl 67 ploaq 76 78 nxdyj bx",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "36 76 72 16 43 37 86 16 46\nhe gka 31 o 49 49 jauh c",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 70 55 74 25 95 25 20 99\nxbf qgowz 55 yusxn 54 51 x cdr",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 75 2 33 55 95 10 20 89\ngpx z 61 qgz 64 94 tvl uvsf",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "330 332 464 159 193 237 52 405 150\ng nfd 499 oc 384 294 ps afky",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "256 202 87 460 457 316 421 76 291\npctbv jhx 296 xzyx 162 188 rfwhooyr tu",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "444 75 202 139 439 91 103 91 179\nbdcv uvyhb 281 ehpqn 114 151 frow zadzd",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "264 447 492 300 475 335 93 147 262\nlbhs k 271 ij 477 456 yhu dj",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "186 302 232 229 308 450 397 206 222\nnwd umb 386 x 398 479 rtdg laby",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "467 484 330 201 388 128 187 476 335\nnwkkp p 253 g 96 431 pdurna e",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "259 415 330 121 235 489 199 285 257\nysj gyhe 284 sxom 84 155 vfhrbbc de",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000\nkzzlm szu 1000 dm 1000 1000 leuwo la",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000\nsgg mcxw 1000 rm 1000 1000 km uk",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 999 999 1 2 999 2 2\nw u 1 p 999 2 jbucy jtev",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 999 1000 2 2 1 1 2 2\nr kftm 1 y 999 999 kvsw pvgi",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

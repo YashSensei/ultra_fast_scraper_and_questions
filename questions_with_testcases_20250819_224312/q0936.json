@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Charly And Nito",
+  "tags": [],
+  "text": "Charly and Nito are friends and they like to be together at a nice bar in Palermo Hollywood. About at 3 a.m. they start to feel sleepy and want to go home. They want to get home quickly so each of them uses a path that minimizes the distance to his home. However, Charly and Nito also like to walk together while they talk about the “good old times”, so they want to walk together as much as possible.Charly and Nito live in a city that can be modelled as a set of streets and junctions. Each street connects a pair of distinct junctions and can be walked in both directions. No two streets connect the same pair of junctions. Charly and Nito do not live together, and they do not live at the bar. There is at least one path from the bar to Charly’s home; the same occurs with Nito’s home.Given information about the streets and junctions in the city, the locations of the bar, Charly’s home and Nito’s home, you must tell Charly and Nito the maximum distance that they can walk together without forcing them to walk more than the minimum distance from the bar to their respective homes. Charly and Nito also want to know how much each of them will walk alone.InputThe input contains several test cases, each one described in several lines. The first line of each test case contains five integers J, B, C, N and S separated by single spaces. The value J is the number of junctions in the city (3 ≤ J ≤ 5000); each junction is identified by an integer number between 1 and J. The values B, C and N are the identifiers of the junctions where the bar, Charly’s home and Nito’s home are located, respectively (1 ≤ B, C, N ≤ J); these three junction identifiers are different. The value S is the number of streets in the city (2 ≤ S ≤ 150000). Each of the next S lines contains the description of a street. Each street is described using three integers E1, E2 and L separated by single spaces, where E1 and E2 identify two distinct junctions that are endpoints of the street (1 ≤ E1, E2 ≤ J), and L is the length of the street (1 ≤ L ≤ 104). You may assume that each street has a different pair of endpoints, and that there exist paths from junction B to junctions C and N.The last line of the input contains the number −1 five times separated by single spaces and should not be processed as a test case.OutputFor each test case output a single line with three integers T, C and N separated by single spaces, where T is the maximum distance that Charly and Nito can walk together, C is the distance that Charly walks alone, and N is the distance that Nito walks alone.ExampleInput:5 3 2 1 63 4 104 5 105 1 35 2 41 3 232 3 248 1 7 8 81 2 12 4 12 3 14 5 13 5 15 6 16 8 16 7 1-1 -1 -1 -1 -1Output:20 4 34 1 1",
+  "sample_input": "Input:5 3 2 1 63 4 104 5 105 1 35 2 41 3 232 3 248 1 7 8 81 2 12 4 12 3 14 5 13 5 15 6 16 8 16 7 1-1 -1 -1 -1 -1Output:20 4 34 1 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CANDN",
+  "scraped_at": "2025-08-17 00:33:12",
+  "test_cases": [
+    {
+      "input": "5 3 2 1 63 4 104 5 105 1 35 2 41 3 232 3 248 1 7 8 81 2 12 4 12 3 14 5 13 5 15 6 16 8 16 7 1-1 -1 -1 -1 -1",
+      "expected_output": "20 4 34 1 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 8 6 6 3 8 3 2 5 6 8 2 2 8 8 2 8 7 10 8 8 1 8 7 5 10 6 1 6 8 9 6 4 2 9 6 8 6 5 3 2 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 1 3 1 5 2 9 1 9 1 2 3 2 9 7 3 8 5 8 10 7 2 3 9 8 6 4 1 3 2 10 8 3 4 6 3 4 3 7 9 2 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 8 4 8 10 1 7 10 6 3 2 10 4 10 4 7 4 1 3 9 2 8 7 9 1 3 7 8 7 9 6 5 3 6 4 10 10 9 7 4 6 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "39 88 80 68 62 15 49 17 3 78 56 91 59 80 68 81 61 57 51 37 89 2 91 79 67 55 100 95 51 86 83 42 58 5 58 85 56 97 6 72 37 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 38 4 62 14 20 47 97 31 51 15 59 59 18 87 50 63 20 40 90 32 74 69 99 92 31 12 82 87 71 33 87 67 25 17 93 91 76 99 62 16 83",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 62 48 29 98 26 71 37 33 61 63 10 92 16 94 78 49 65 64 29 52 89 67 78 54 92 92 95 5 84 98 91 51 21 63 85 70 100 54 22 5 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 63 43 80 75 58 51 67 69 11 67 54 60 52 83 67 94 89 61 29 70 51 14 25 27 79 85 44 12 26 31 88 66 5 32 58 70 12 70 79 35 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 30 56 42 91 4 49 80 62 69 16 33 64 60 18 12 92 35 50 81 93 60 12 65 51 46 99 9 73 6 99 75 35 47 96 71 51 76 100 17 7 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "456 422 383 471 498 363 266 57 214 157 358 210 125 192 96 447 279 199 54 68 181 299 406 246 412 468 285 308 336 90 254 421 416 246 56 251 218 495 396 472 424 457",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "322 161 368 98 74 422 191 278 53 77 119 360 445 94 278 378 405 500 51 407 264 300 190 306 113 113 159 248 352 333 71 154 143 284 473 286 422 158 376 371 236 173",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "169 401 261 452 268 366 187 314 92 138 369 194 496 273 201 320 419 345 379 112 463 307 228 288 422 338 205 472 204 142 118 81 477 200 222 54 484 224 176 311 66 270",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "77 424 345 84 254 57 428 178 233 468 438 355 426 344 272 103 218 161 265 391 272 206 103 53 58 121 498 342 62 280 270 72 142 353 322 249 460 338 489 408 341 112",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "332 123 351 302 475 121 305 375 220 184 217 329 441 359 403 393 62 479 251 448 278 169 422 462 239 325 295 93 214 322 400 462 343 91 315 233 55 418 292 260 397 423",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "142 85 144 348 310 265 287 476 106 385 186 97 401 272 150 150 163 130 259 205 125 106 404 279 342 415 102 174 100 282 193 239 403 423 146 231 262 131 351 144 354 204",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "369 386 195 206 210 168 272 168 305 335 202 415 237 241 347 492 219 117 199 281 71 65 493 314 347 150 471 84 126 145 75 120 104 116 96 341 221 479 338 393 179 397",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 2 999 1 1 999 1 2 2 1000 1000 1000 1000 1 1000 1 2 999 1 1000 1000 1 1000 2 2 2 2 999 999 999 1000 999 1 2 1 1 1 1 2 1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999 999 999 1000 999 1 1000 1000 2 1 1 1000 2 2 999 1000 1000 1000 1 1000 1 2 999 2 1 1 1000 1 999 2 1000 999 1000 999 1 2 2 1 999 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

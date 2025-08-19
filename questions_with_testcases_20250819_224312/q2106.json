@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Jumping Monkey",
+  "tags": [],
+  "text": "You are a hunter chasing a monkey in the forest, trying to shoot it down with your all-powerful automatic machine gun. The monkey is hiding somewhere behind the branches of one of the trees, out of your sight. You can aim at one of the trees and shoot; your bullets are capable of going through the branches and killing the monkey instantly if it happens to be in that tree. If it isn’t, the monkey takes advantage of the time it takes you to reload and takes a leap into a neighbouring tree without you noticing. It never stays in the same place after a shot. You would like to find out whether there is an strategy that allows you to capture the monkey for sure, irrespective of its initial location and subsequent jumps. If so, you need to determine the shortest sequence of shots guaranteeing this.As an example, consider the situation in which there are only two neighboring trees in the forest (left hand side of the figure). It is then possible to make sure you capture the monkey by shooting twice at the same tree. Your first shot succeeds if the monkey happened to be there in the first place. Otherwise, the monkey was behind the other tree and it will necessarily have moved when you shoot for the second time.However, depending on the shape of the forest it may not be possible for you to ensure victory. One example of this is if there are three trees, all connected to one another (right hand side of the figure). No matter where you aim at, there are always two possible locations for the monkey at any given moment. (Note that here we are concerned with the worst-case scenario where the monkey may consistently guess your next target tree).InputThe input consists of several test cases, separated by single blank lines. Each test case begins with a line containing two integersnandm(1 ≤n≤ 21);nis the number of trees in the forest, andmis the number of adjacency relations between trees. Each of the followingmlines contains two distinct integers between 0 andn−1 (inclusive), the identifiers of the trees in an adjacent pair. The order of both trees within a pair carries no meaning, and no pair appears more than once. You may further assume that no tree is adjacent to itself, and there is always a path between any two trees in the forest.The test cases will finish with a line containing only two zeros (also preceded with a blank line).OutputPrint a line for each test case. The line should contain the single wordImpossibleif the task is impossible. Otherwise, it must contain the shortest sequence of shots with the required property, in the formatL:V1V2...VL, whereLis the length of the sequence, andV1,V2...VLare space-separated integers containing the identifiers of the trees to shoot at in the right order. If several shortest sequences exist, print the lexicographically smallest one. (A sequence is smaller than another in lexicographic order if the first element on which they differ is smaller in the first one).ExampleInput:2 1\r\n0 1\r\n\r\n3 3\r\n0 1\r\n1 2\r\n2 0\r\n\r\n4 3\r\n0 1\r\n2 3\r\n1 3\r\n\r\n0 0Output:2: 0 0\r\nImpossible\r\n4: 1 3 3 1Problemsetter: Marçal Garolera Huguet",
+  "sample_input": "Input:2 1\r\n0 1\r\n\r\n3 3\r\n0 1\r\n1 2\r\n2 0\r\n\r\n4 3\r\n0 1\r\n2 3\r\n1 3\r\n\r\n0 0Output:2: 0 0\r\nImpossible\r\n4: 1 3 3 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/JMPMNKEY",
+  "scraped_at": "2025-08-17 00:33:56",
+  "test_cases": [
+    {
+      "input": "2 1\r\n0 1\r\n\r\n3 3\r\n0 1\r\n1 2\r\n2 0\r\n\r\n4 3\r\n0 1\r\n2 3\r\n1 3\r\n\r\n0 0",
+      "expected_output": "2: 0 0\r\nImpossible\r\n4: 1 3 3 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 5\n4 3\n3 6\n1 5\n9 3\n10 7\n8 9\n4 1\n6 4\n6 1\n7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 1\n1 4\n2 9\n10 8\n8 2\n7 6\n3 3\n9 1\n1 6\n4 6\n7 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 9\n6 7\n8 5\n2 4\n7 1\n6 1\n6 5\n8 7\n1 8\n6 10\n6 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "21 20\n3 21\n16 4\n20 2\n11 1\n17 17\n5 6\n5 1\n16 16\n21 21\n16 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 7\n17 4\n15 20\n1 9\n18 7\n12 17\n13 17\n4 12\n20 8\n1 11\n14 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 17\n3 1\n10 10\n7 19\n20 5\n3 20\n4 9\n18 7\n21 5\n1 16\n19 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 4\n15 18\n19 5\n17 6\n6 20\n9 1\n2 5\n21 10\n4 5\n1 21\n7 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 13\n5 3\n18 4\n3 16\n10 18\n2 18\n16 18\n7 16\n4 20\n12 20\n19 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1\n8 9\n6 4\n8 2\n9 4\n5 5\n3 5\n8 2\n3 1\n8 7\n1 5",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4 10\n1 10\n8 7\n3 8\n10 10\n8 9\n2 2\n1 4\n4 4\n10 2\n9 1",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 2\n6 3\n6 2\n6 7\n3 6\n3 3\n9 6\n7 10\n2 1\n7 10\n1 2",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 10\n7 6\n9 7\n4 9\n2 10\n4 3\n5 3\n1 7\n5 9\n1 9\n7 3",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 6\n8 9\n7 4\n2 1\n4 3\n4 4\n1 8\n8 9\n2 1\n1 1\n1 2",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 8\n8 8\n7 3\n10 3\n5 10\n4 1\n3 9\n7 2\n5 7\n4 1\n6 5",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4 6\n2 3\n7 4\n4 5\n6 4\n2 3\n4 10\n4 7\n4 10\n10 10\n10 3",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21\n21 21",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n2 20\n21 20\n20 2\n21 2\n2 20\n21 21\n21 1\n20 2\n2 2\n21 20",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 20\n1 20\n21 21\n21 2\n1 2\n2 21\n20 1\n20 20\n21 21\n20 2\n1 20",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

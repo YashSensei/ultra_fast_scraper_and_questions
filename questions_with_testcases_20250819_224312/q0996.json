@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Vitaliy and Pie",
+  "tags": [],
+  "text": "After a hard day Vitaly got very hungry and he wants to eat his favorite potato pie. But it's not that simple. Vitaly is in the first room of the house withnroom located in a line and numbered starting from one from left to right. You can go from the first room to the second room, from the second room to the third room and so on — you can go from the (n- 1)-th room to then-th room. Thus, you can go to roomxonly from roomx- 1.The potato pie is located in then-th room and Vitaly needs to go there.Each pair of consecutive rooms has a door between them. In order to go to roomxfrom roomx- 1, you need to open the door between the rooms with the corresponding key.In total the house has several types of doors (represented by uppercase Latin letters) and several types of keys (represented by lowercase Latin letters). The key of typetcan open the door of typeTif and only iftandTare the same letter, written in different cases. For example, key f can open door F.Each of the firstn- 1 rooms contains exactly one key of some type that Vitaly can use to get to next rooms. Once the door is open with some key, Vitaly won't get the key from the keyhole but he will immediately run into the next room. In other words, each key can open no more than one door.Vitaly realizes that he may end up in some room without the key that opens the door to the next room. Before the start his run for the potato pie Vitaly can buy any number of keys of any type that is guaranteed to get to roomn.Given the plan of the house, Vitaly wants to know what is the minimum number of keys he needs to buy to surely get to the roomn, which has a delicious potato pie. Write a program that will help Vitaly find out this number.Source: CodeforcesInputThe zeroth line contain an integer t - number of test casesThe first line of the input contains a positive integern(2 ≤n≤ 105) — the number of rooms in the house.The second line of the input contains stringsof length 2·n- 2. Let's number the elements of the string from left to right, starting from one.The odd positions in the given stringscontain lowercase Latin letters — the types of the keys that lie in the corresponding rooms. Thus, each odd positioniof the given stringscontains a lowercase Latin letter — the type of the key that lies in room number (i+ 1) / 2.The even positions in the given string contain uppercase Latin letters — the types of doors between the rooms. Thus, each even positioniof the given stringscontains an uppercase letter — the type of the door that leads from roomi/ 2 to roomi/ 2 + 1.OutputPrint the only integer — the minimum number of keys that Vitaly needs to buy to surely get from room one to roomn.SampleInput:1\r\n3\r\naAbBOutput:0",
+  "sample_input": "Input:1\r\n3\r\naAbBOutput:0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/VAPI01",
+  "scraped_at": "2025-08-17 00:33:29",
+  "test_cases": [
+    {
+      "input": "1\r\n3\r\naAbB",
+      "expected_output": "0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n1\n4\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n2\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "16\n37416577\n89844591\n77395881\n67823916\n59355341\n10404124\n57807519\n4262146\n46750817\n16205654\n20562433\n35942247\n70861886\n32339338\n82045301\n93463338",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n93195146\n43169992\n99718254\n68487239\n21017061\n48867520\n23138617\n76841614\n83829271\n18282348\n48534620",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n29609427\n50446395\n88429879\n49419302\n34465416\n70006916\n56902288\n94715530\n11135171\n43471534\n96895791\n58003384\n40768719\n33719300\n82837537\n79916073\n86100820\n76180451\n54417028\n59893084",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n4398850\n67012625\n13474289\n78309599\n17538006\n26348342\n66844705\n60762780",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n38136960\n8831387\n79032515\n47323675\n33676225\n4778974\n96020401\n39042701\n28420743\n26841322\n48462430\n94438937\n52527085\n63196244\n29458577\n82594422",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "40\n46402\n74120\n77492\n81100\n38443\n86535\n1814\n92300\n6618\n5437\n15440\n32271\n98648\n5420\n54730\n30809\n87279\n80066\n16081\n94762\n32950\n51789\n92841\n48903\n77967\n33806\n80481\n9341\n2352\n13938\n29100\n58353\n12306\n42690\n59833\n28726\n84734\n55901\n84273\n54999",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "88\n45737\n31098\n13909\n69096\n26717\n43187\n40205\n68878\n19108\n17375\n22419\n31829\n18663\n35001\n70933\n2088\n79054\n17051\n15830\n60386\n10531\n50774\n511\n70326\n1066\n23349\n93218\n75999\n93231\n38539\n32189\n47015\n87868\n31720\n27543\n38284\n14688\n74770\n92631\n92073\n60075\n85986\n52065\n72221\n47872\n57060\n10406\n1381\n9084\n92324\n19829\n39961\n31310\n25313\n76701\n9750\n65200\n28640\n32644\n34372\n80191\n23423\n10733\n13482\n85220\n71636\n59762\n93914\n77405\n96071\n90787\n15864\n60849\n24509\n87795\n18376\n14854\n75196\n55566\n31143\n35044\n83907\n89331\n66363\n22801\n21257\n13505\n10512",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "53\n16148\n69518\n22405\n57145\n84473\n59324\n3519\n75581\n33096\n43661\n12518\n35684\n57418\n60467\n34739\n14918\n73441\n12461\n48401\n15914\n37684\n53331\n71198\n98106\n20812\n99707\n59820\n34294\n47743\n33920\n82630\n65788\n27154\n81230\n54279\n12339\n49008\n27651\n96147\n71292\n18816\n4663\n42987\n37382\n67140\n14890\n35888\n71252\n54213\n94889\n14458\n93730\n49646",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n22398\n50069\n35470\n84965\n54568\n70906\n2421\n14563\n2303\n2416\n1911\n26349\n30835\n19086\n56904\n70245\n94960\n68017\n92283\n48369\n93012\n64755\n50463\n45187\n30458\n52671\n70673\n90051\n75643\n8653\n13079",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "85\n68519\n84289\n98329\n70056\n25935\n87011\n35265\n92544\n91053\n83319\n88088\n87533\n5460\n38587\n44927\n83837\n77217\n59735\n37265\n88085\n8494\n77453\n96818\n49637\n78341\n89919\n37380\n76557\n23714\n84834\n62949\n30295\n88814\n1216\n86601\n92158\n15300\n71778\n66430\n22789\n59181\n30085\n34355\n42199\n61651\n75323\n15971\n40835\n65679\n15888\n82958\n60312\n75280\n22700\n93313\n43847\n99419\n64240\n53606\n54266\n9430\n23851\n47031\n88068\n47316\n22991\n88842\n55407\n94527\n20089\n94560\n26868\n52386\n11290\n54516\n99796\n67773\n17223\n37406\n71761\n49738\n93800\n24175\n69713\n36343",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "64\n214\n18479\n1428\n34530\n35110\n86007\n49143\n62453\n28398\n63298\n24580\n62570\n11920\n61686\n91319\n91356\n65026\n11651\n92865\n3935\n241\n33955\n47418\n63580\n15058\n42792\n65781\n47131\n10616\n76689\n87289\n84450\n54417\n49577\n97732\n51466\n84082\n13384\n51030\n54971\n4472\n28276\n1961\n40600\n48781\n83927\n6119\n25507\n86310\n80670\n70401\n93602\n41996\n66358\n1804\n52150\n51616\n68617\n80924\n89545\n89479\n5792\n40811\n73746",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "75\n79709\n92491\n6000\n51951\n57810\n73834\n78134\n4904\n23855\n58108\n71435\n53365\n73755\n75777\n81458\n53695\n5059\n25102\n84016\n95838\n18555\n22383\n15218\n37481\n68389\n68777\n4772\n46082\n27681\n87449\n21145\n45377\n11524\n61899\n4277\n57173\n19109\n65856\n65474\n54969\n7028\n58946\n65555\n45712\n7634\n46005\n48319\n99989\n8678\n81725\n48808\n99494\n45058\n40091\n34518\n20629\n88854\n73124\n14770\n22779\n16094\n24856\n35987\n79669\n65875\n87557\n3717\n85612\n75389\n13469\n94089\n5995\n13734\n86517\n81329",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "105\n69146985\n25436990\n76212769\n47277338\n21111387\n19727505\n80226715\n47114150\n15115980\n49450875\n8391125\n11081448\n94171580\n75310954\n77120308\n65268290\n83510850\n58693619\n9022887\n42514243\n91657384\n93219540\n58252792\n50404383\n48249188\n49705960\n39446732\n17417314\n17451662\n36296173\n70528208\n51445414\n49592104\n67238321\n22955112\n35237082\n49712401\n90797364\n87232437\n78651050\n87376016\n63755656\n23578468\n88530374\n66015862\n94835044\n70507814\n47959820\n17319794\n88897542\n2544103\n49262891\n26370541\n77334793\n4919791\n33829130\n99802535\n391489\n361478\n34068692\n35041480\n64467920\n5223121\n84117128\n93093510\n96100242\n19347659\n77652512\n85649996\n38821069\n10617647\n51752060\n60666742\n28436782\n17472559\n96463939\n47974508\n57800526\n56846346\n49461967\n22947314\n55272034\n6669026\n72853332\n40915717\n48622608\n55173460\n68028470\n79213027\n27208842\n92282236\n12270033\n77117506\n81403287\n73026340\n81064992\n80545727\n25603427\n11548850\n90643695\n50342384\n22296652\n51489696\n88816373\n38754284",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "105\n85858507\n57210007\n22523726\n90066376\n38439496\n92866842\n11293103\n60380103\n43501635\n55385807\n1819763\n64506960\n64311451\n51047717\n75241870\n88216330\n19453285\n65124776\n7839969\n77508812\n9646386\n96766174\n96002405\n22545083\n54998922\n96747220\n23936070\n23729549\n16381731\n84981932\n68020460\n5259081\n40253753\n39564785\n64828156\n37160137\n95569275\n37297678\n6935491\n10883462\n76906434\n88467217\n32304993\n51028261\n44695126\n9608062\n45461100\n86444782\n30173856\n22151320\n9121145\n18340021\n5112664\n11393831\n2983209\n5170776\n33975365\n56741650\n46393097\n16698118\n44286669\n36565139\n38740606\n46197909\n98782073\n72923154\n25162487\n82325727\n56120685\n17719952\n58374844\n15778998\n13414759\n44035913\n25263276\n40819952\n88956247\n2962219\n79732007\n44947550\n31885615\n47326053\n64052936\n14223802\n97795967\n87980038\n58116545\n35722290\n56814128\n85965914\n91373906\n87203338\n58027128\n28006741\n77350600\n60994722\n25105884\n14742572\n20278415\n68721956\n77295881\n79719321\n84536936\n35494042\n2970127",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "2\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "2\n100000000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

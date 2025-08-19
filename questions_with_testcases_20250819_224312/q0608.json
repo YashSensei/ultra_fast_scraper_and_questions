@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Hackers",
+  "tags": [],
+  "text": "The network of your office is composed of several computers and bidirectional links. Each link connects a given pair of computers and has an access value. Each user in the network has an access privilege, and is able to use any link with access value not exceeding his access privilege.Everything was fine until you notice that a bunch of hackers are accessing the network. You know that if there is a link between computers A and B, with access value V, and a hacker with access privilege of at least V controls A, then he can control B. Hackers wish to control the most important computers by exploiting problems in the network. They are trying to increase their access privileges in order to use the links, and your task is to measure how safe the network is.Given the description of the network, the computer each hacker currently controls and the target computer each hacker wishes to control, you need to calculate the minimum access privilege each hacker needs to get in order to control his target computer. Hackers act independently, neither they collaborate nor interfere with each other. This means that each hacker may control each computer and use each link independently of what the other hackers do.InputEach test case is described using several lines. The first line contains three integers C, L and H, indicating the number of computers, links and hackers in the network, respectively (2 ≤ C ≤ 3000, 1 ≤ L, H ≤ 105).Each computer is identified by an integer number between 1 and C. Each of the next L lines describes a different bidirectional link using three integers A, B and V; the numbers A and B identify two distinct computers that are the endpoints of the link (1 ≤ A < B ≤ C); the number V is the access value of the link, that is, any hacker must have an access privilege of at least V to use the link (1 ≤ V ≤ 109).Each of the last H lines describes a different hacker using two distinct integers S and T that identify the computer that the hacker currently controls and the computer that the hacker wishes to control, respectively (1 ≤ S, T ≤ C).You may assume that within each test case no two links connect the same pair of computers, and that for any pair of computers there is at least one sequence of links that allow to reach one computer starting from the other.The end of input is indicated with a line containing the number −1 three times.OutputFor each test case, output a single line with H integers representing the minimum access privilege each hacker needs to achieve his goal. The result for each hacker must appear in the same order that the hackers are described in the input.ExampleInput:5 6 4\r\n1 2 4\r\n1 3 5\r\n2 4 3\r\n2 5 1\r\n3 4 2\r\n4 5 2\r\n3 2\r\n2 4\r\n1 5\r\n3 1\r\n2 1 1\r\n1 2 1\r\n2 1\r\n2 1 3\r\n1 2 1000000000\r\n2 1\r\n2 1\r\n1 2\r\n-1 -1 -1Output:2 2 4 4\r\n1\r\n1000000000 1000000000 1000000000",
+  "sample_input": "Input:5 6 4\r\n1 2 4\r\n1 3 5\r\n2 4 3\r\n2 5 1\r\n3 4 2\r\n4 5 2\r\n3 2\r\n2 4\r\n1 5\r\n3 1\r\n2 1 1\r\n1 2 1\r\n2 1\r\n2 1 3\r\n1 2 1000000000\r\n2 1\r\n2 1\r\n1 2\r\n-1 -1 -1Output:2 2 4 4\r\n1\r\n1000000000 1000000000 1000000000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HACKERS",
+  "scraped_at": "2025-08-17 00:33:16",
+  "test_cases": [
+    {
+      "input": "5 6 4\r\n1 2 4\r\n1 3 5\r\n2 4 3\r\n2 5 1\r\n3 4 2\r\n4 5 2\r\n3 2\r\n2 4\r\n1 5\r\n3 1\r\n2 1 1\r\n1 2 1\r\n2 1\r\n2 1 3\r\n1 2 1000000000\r\n2 1\r\n2 1\r\n1 2\r\n-1 -1 -1",
+      "expected_output": "2 2 4 4\r\n1\r\n1000000000 1000000000 1000000000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 4 2\n5 7 5\n9 1 8\n2 8 9\n1 8 6\n4 2 6\n1 2 4\n7 3\n2 7\n6 4\n2 2\n5 3 10\n6 7 9\n10 9\n8 2 7\n4 5 3\n2 10\n7 10\n5 1\n6 1 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5 4\n5 4 4\n3 6 6\n2 3 2\n9 6 10\n8 9 5\n7 3 9\n4 3\n3 9\n6 2\n6 3\n4 5 10\n2 1 3\n2 9\n4 4 5\n7 6 2\n6 3\n8 1\n4 7\n9 5 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 2 7\n4 10 8\n5 9 2\n9 2 3\n8 3 1\n8 4 6\n1 9 5\n1 10\n8 5\n3 4\n4 2\n10 6 10\n10 5 1\n1 3\n1 2 4\n9 4 1\n7 9\n1 6\n1 9\n5 9 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "32 96 98\n20 9 66\n92 41 88\n21 89 44\n33 89 77\n5 41 25\n15 86 9\n6 100\n28 70\n66 23\n30 33\n80 85 21\n66 64 72\n77 59\n90 31 30\n61 44 35\n28 57\n87 15\n48 81\n54 56 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 69 68\n12 2 50\n98 78 10\n24 24 61\n6 70 72\n9 10 23\n31 59 80\n27 71\n22 93\n34 89\n85 37\n39 99 32\n14 62 6\n91 3\n79 53 33\n71 9 76\n78 11\n54 59\n87 68\n74 1 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 45 28\n23 67 28\n80 40 90\n31 73 21\n92 61 21\n79 49 83\n86 90 65\n54 83\n58 28\n84 17\n18 51\n98 90 36\n63 84 10\n36 42\n91 85 59\n94 42 99\n80 32\n92 49\n52 26\n14 40 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 11 82\n48 45 49\n94 79 30\n33 99 36\n73 57 93\n67 83 56\n92 18 98\n53 81\n79 15\n82 80\n42 71\n5 4 98\n53 49 9\n21 6\n21 8 35\n24 88 7\n9 36\n43 57\n4 87\n13 34 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 48 65\n31 19 44\n21 98 61\n37 71 32\n13 50 52\n95 55 66\n33 80 82\n1 52\n72 100\n32 57\n100 46\n69 63 71\n36 26 50\n93 83\n69 88 15\n58 87 84\n22 7\n67 45\n93 54\n66 23 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 455 160\n175 330 434\n116 325 251\n468 318 338\n189 371 67\n181 414 305\n84 420 448\n203 355\n166 271\n315 315\n428 251\n415 210 368\n230 133 190\n295 255\n105 313 481\n105 449 371\n308 370\n310 251\n476 487\n252 172 496",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "483 167 110\n351 442 249\n70 384 103\n115 431 329\n209 122 308\n495 420 471\n190 376 181\n124 92\n467 474\n428 395\n451 417\n180 477 219\n257 473 134\n275 134\n165 279 216\n118 495 287\n494 173\n350 261\n428 172\n289 232 315",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "126 291 372\n327 55 436\n233 126 95\n92 477 403\n59 224 284\n297 458 276\n450 453 185\n416 183\n420 285\n422 475\n202 356\n263 298 362\n55 188 425\n143 258\n202 465 96\n57 209 258\n499 84\n418 307\n64 252\n356 446 225",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 163 426\n432 490 60\n82 85 236\n152 200 407\n102 344 374\n467 499 265\n424 490 135\n277 238\n209 144\n52 299\n428 143\n164 82 63\n305 73 307\n395 461\n324 487 57\n180 442 445\n224 123\n464 91\n160 451\n219 253 398",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "437 113 162\n125 448 169\n143 415 181\n312 123 106\n170 300 90\n269 67 163\n487 287 94\n497 312\n114 272\n362 373\n84 344\n390 243 424\n352 381 443\n199 267\n353 368 489\n193 441 500\n327 375\n267 289\n86 471\n204 125 393",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "486 141 386\n269 345 398\n449 384 70\n463 211 351\n331 222 473\n102 102 130\n159 231 241\n166 58\n206 168\n85 243\n234 140\n468 163 122\n195 50 98\n389 490\n257 148 216\n379 162 490\n364 126\n385 201\n180 409\n460 335 205",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "374 418 119\n415 334 272\n439 358 465\n245 55 127\n221 65 493\n405 221 360\n280 134 208\n160 213\n251 84\n366 344\n443 309\n126 138 355\n473 367 120\n361 222\n318 428 268\n188 174 324\n224 160\n217 169\n231 179\n350 268 239",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 2\n2 1000 2\n999 2 1\n999 999 2\n2 1000 999\n1000 1000 999\n999 999 1000\n1000 999\n999 999\n999 1\n2 1000\n1 1 2\n1000 1000 999\n2 1000\n1 1 2\n2 1 2\n2 1000\n1000 1000\n2 999\n999 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 2\n1 2 999\n1 999 999\n2 1 1\n2 999 2\n2 1000 1000\n999 2 1\n1 2\n2 2\n2 2\n1 999\n1000 1000 1000\n2 999 1000\n2 999\n2 1000 1000\n1000 1 999\n1000 1\n2 1000\n2 1000\n999 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

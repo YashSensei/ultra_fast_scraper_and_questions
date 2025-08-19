@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Januarius, The Travelling Clairvoyant",
+  "tags": [],
+  "text": "The annual Congress of Mages is approaching. Januarius the Clairvoyant intends to participate in it. He has to somehow reach the city where the convention takes place.His favourite means of transportation is railway. He plans to travel using a convenient, direct connection. The train will visitnstations, numbered with consecutive integers. It will depart from station number 1, with station numbernas its destination. Remaining stations are intermediate - the train will visit them in order, according to their numbers.Januarius likes travelling by train for a lot of reasons - it's comfortable, you can admire the landscape in peace - but most importantly, tickets are quite cheap. National Railways determined that cost of the trip depends only on the number of sections between stations covered during the ride. Ticket forisections costswi. Obviously, the prices become higher when the trip gets longer.You could also travel without a ticket if you're feeling adventurous, but of course there is a risk of unexpected ticket inspection, which can happen during the ride between two consecutive stations. Life of the clairvoyant is devoid of any surprises though - Januarius knows exactly when there will be an inspection. He doesn't have to buy full ticket - it's only important to have valid ticket during the inspection (starting station can be any station before the inspection, and the destination can be any station after the inspection).There are two ways to buy a ticket - from the ticket office at the station, or already on the train, from the ticket inspector. There are limitations though. If you board the train without a ticket, you have to find the inspector immediately after the departure. He only sells tickets starting from the station you boarded the train at. Also, if you boarded the train at the station with a ticket office, you have to pay an additional constant fee ofd.Januarius has no time to get off the train during the ride, so he can either buy the ticket at the first station in a ticket office, or at any station from the inspector (he can approach him immediately after the departure from the station and tell him he just boarded the train).Find the cheapest ticket-buying strategy. You must have a valid ticket during every inspection.InputThe first line contains a single integert, denoting the number of test cases. Then, descriptions of the test cases follow.First line of the description consists of three integersn,kandd- number of stations, number of inspections and an additional fee for buying a ticket from the inspector in case there is a ticket office at the station (1 ≤n≤ 106, 1 ≤k≤ 1000, 1 ≤d≤ 109).In the second line there is a string of lengthn. If station numberihas a ticket office,i-th character of this string is \"1\", otherwise it's \"0\".In the third line there aren-1 integers.i-th numberwidenotes price of coveringisections. (1 ≤wi≤ 109,wi<wi+1).In the last line there arekintegerssi- stations numbers.i-th ticket inspection will take place between the station numbersiand the station numbersi+1. (1 ≤si≤n-1,si<si+1)OutputFor every test case you should output a ticket-buying strategy that minimizes total cost. Description of the strategy starts with two integerssandb- total cost of the tickets and number of tickets (1 ≤b≤n). Descriptions of the tickets should follow. One ticket description consists of two integerspiandci- starting station and number of segments for which the ticket is valid. (1 ≤pi<n, 1 ≤ci≤n-pi).You should describebtickets, their total cost must be equal tos, and it has to be minimal.ExampleInput:1\r\n5 2 5\r\n11001\r\n2 6 7 10\r\n2 4Output:8 2\r\n1 2\r\n4 1ExplanationThere are two inspections - between stations 2 and 3, and between stations 4 and 5. Januarius can buy a ticket in the ticket office from the station number 1 to the station number 3, and another one from the inspector from station number 4 to station number 5, and it will cost him 6+2=8.If he bought the first ticket from the second station instead from the first, it would be more expensive - there is a ticket office at the second station, so there will be an additional fee for buying the ticket from the inspector. (2+5+2=9).",
+  "sample_input": "Input:1\r\n5 2 5\r\n11001\r\n2 6 7 10\r\n2 4Output:8 2\r\n1 2\r\n4 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/JAN",
+  "scraped_at": "2025-08-17 00:33:17",
+  "test_cases": [
+    {
+      "input": "1\r\n5 2 5\r\n11001\r\n2 6 7 10\r\n2 4",
+      "expected_output": "8 2\r\n1 2\r\n4 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n8\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n10\n7\n3\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n537510\n47655258\n4071347\n1656756\n3120040",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n84736119\n32856133\n23194924\n61638027\n12698660\n86944017\n29286646\n49965236\n63148975",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n73078050\n74646603\n26615594\n78404924\n20410098\n63982878\n47470461\n90677677\n75375798\n83927827\n31790495\n66330381\n99302951\n72748324\n40225165\n79128810\n35152933\n41905968",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n67352472\n88680341\n97105172\n46725897\n83883876\n20793757\n52760159",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n51710867\n36863455\n86808774\n13520785\n20768139\n77146057\n97040097\n60788207\n87470073",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "99\n49121\n54662\n90953\n94825\n86036\n97067\n73941\n25496\n367\n35532\n19424\n25886\n13581\n97757\n2991\n4141\n28023\n15043\n5154\n28986\n33836\n28598\n67443\n82971\n85901\n66540\n20239\n78622\n77740\n46195\n39431\n9016\n71242\n4329\n70103\n86794\n5896\n34709\n88435\n49153\n90585\n74930\n68848\n26066\n57232\n64160\n51784\n65497\n58793\n94538\n48363\n5925\n41246\n44622\n94097\n66237\n64329\n3725\n62241\n1465\n63895\n93785\n64258\n85815\n80494\n38407\n71837\n45058\n96423\n10441\n46165\n41600\n74550\n83964\n62102\n55806\n14343\n1576\n6270\n78779\n48249\n85398\n5885\n97538\n17495\n4701\n13837\n48875\n21229\n33779\n18313\n33743\n32163\n35559\n87391\n87818\n91444\n95976\n55411",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "86\n23794\n43468\n57995\n42586\n9515\n84305\n24938\n46326\n23748\n57826\n55534\n16294\n69344\n88754\n85569\n83224\n25238\n84730\n53065\n89388\n54282\n7339\n72922\n71576\n41791\n97996\n77853\n28925\n84767\n20817\n63125\n90649\n87265\n89648\n14363\n22540\n59336\n64319\n19155\n80196\n75634\n69543\n61151\n66752\n3602\n39835\n23593\n63815\n57145\n12336\n43475\n67023\n70344\n88344\n76914\n53815\n38350\n10985\n63893\n24390\n56808\n48987\n39379\n75560\n46591\n55995\n66526\n68930\n26781\n98046\n20207\n79060\n9418\n25828\n99344\n47082\n42967\n16822\n99137\n89633\n80629\n76287\n48218\n96966\n74552\n87129",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "98\n49999\n99614\n9239\n17043\n47337\n46982\n13809\n85281\n41523\n20656\n62949\n76080\n52437\n20589\n75136\n59202\n62105\n61800\n43799\n9005\n39167\n2316\n84957\n29043\n6154\n67087\n26207\n57030\n97439\n33969\n10243\n97308\n29858\n82702\n31\n61817\n40821\n75528\n98857\n32316\n59216\n6527\n97860\n97288\n23471\n24672\n39157\n27491\n15530\n44556\n80255\n95945\n86971\n95976\n55735\n48158\n89173\n87420\n2726\n76672\n29788\n70267\n28255\n35945\n67209\n81040\n28672\n52030\n99011\n1404\n62858\n47226\n44733\n43366\n76880\n12813\n61464\n58337\n98196\n93285\n62833\n14574\n15693\n691\n6613\n4035\n68592\n63798\n43848\n83192\n32193\n95991\n29393\n45007\n45125\n13959\n98741\n11173",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n29408\n86774\n58168\n83620\n1036\n30691\n72367\n34214\n30603\n62290\n90455\n90979\n85758\n57270\n30090\n67984\n34124\n82719\n37072\n63162\n2166\n38918\n72581",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "69\n20543\n64630\n25784\n89530\n71213\n42539\n84465\n36117\n35500\n87631\n36214\n12660\n99062\n96355\n40548\n5841\n48612\n96787\n60709\n11999\n96511\n37362\n25697\n92530\n36033\n86359\n47400\n74083\n48847\n20651\n70157\n28531\n74146\n31070\n12035\n48833\n40273\n46950\n56478\n18407\n22007\n50593\n78454\n20381\n44385\n18358\n25557\n34821\n19200\n11192\n9111\n39884\n15437\n14955\n12105\n66189\n57467\n68400\n20667\n29145\n69017\n4475\n3608\n30119\n83253\n19747\n76604\n96517\n84540",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "51\n55286\n23190\n87778\n43782\n52853\n48600\n39986\n50090\n35128\n39914\n15317\n89542\n56946\n84093\n2542\n8317\n89378\n18130\n75162\n57687\n75086\n70321\n40539\n99631\n26088\n99380\n54733\n92430\n28841\n46612\n26308\n76427\n42087\n83988\n22648\n24246\n88541\n44855\n30454\n27883\n54636\n72413\n19270\n92786\n73899\n83472\n28422\n73115\n95036\n63745\n71597",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n31902\n17794\n62690\n51806\n44499\n14170\n20915\n10333\n57656\n83090\n1389\n92645\n79475\n88735\n67884\n36359\n64636\n24969\n53908\n89587\n54858\n76912\n83250\n70233\n36124\n64038\n11366\n87718\n41881\n1587\n73421",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "106\n48198261\n4860143\n75272614\n47696181\n11408509\n64264446\n93383152\n67680923\n58199466\n45935618\n21206698\n63916950\n31993216\n16328525\n97127197\n33510845\n71803722\n91309012\n65028134\n60536174\n20936809\n49459792\n89629990\n98987559\n27549480\n50337274\n26098853\n73841066\n83099406\n64718853\n20244108\n28676955\n84411081\n39157292\n95347644\n63019530\n36882975\n32653154\n81618894\n25531539\n14560040\n13387887\n47745120\n32606251\n87140186\n76464879\n42265039\n68599496\n29563673\n15020169\n44307708\n42005485\n72589054\n54084148\n42663873\n11829765\n66378787\n13473999\n9858845\n16260990\n577996\n77604682\n3133468\n8704822\n72483570\n70628416\n16047115\n10807337\n52731593\n43658440\n78917943\n17515956\n2090433\n28883899\n9181249\n68280922\n52914023\n61432781\n95666401\n54956623\n93431117\n87559723\n70663099\n41491672\n88918812\n85988242\n91855604\n41108010\n91501849\n31427811\n56340950\n29358748\n9251208\n8884767\n23452436\n76494501\n43728192\n20100811\n12746552\n9733963\n92879484\n78420202\n61188712\n94786501\n40337561\n54887318",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "106\n92742316\n30850709\n92644965\n173471\n4418469\n77434866\n86120970\n3551594\n91668578\n53171419\n93389851\n92378169\n4167026\n9555899\n13503381\n39889114\n12761934\n87787843\n23457342\n13148924\n14046090\n54038004\n29858485\n7268337\n33931679\n31015088\n54845765\n18859716\n23896391\n77688488\n31889675\n15076867\n47190250\n30035822\n27453789\n93690534\n51339321\n99775344\n11319998\n32838956\n11890754\n89457015\n51446245\n65593343\n44550752\n36505664\n19603754\n5013505\n39038607\n52606331\n28225949\n65623899\n63671375\n47873326\n21636367\n80480635\n75599734\n91911346\n96358737\n37852958\n65238660\n87637578\n79532190\n38081725\n90461957\n14809729\n74710323\n23641140\n42107486\n96187854\n77385210\n66027165\n92677651\n66192823\n93211405\n86473804\n14368734\n48071353\n82376290\n40216297\n14874180\n78798448\n48890085\n97982420\n47453061\n96170111\n44501942\n68504751\n55599978\n82753521\n74959332\n94264485\n5840244\n64924358\n26593158\n42368973\n7575081\n64351040\n7813603\n33913818\n40583562\n60930647\n54116373\n99544865\n16917993\n51812097",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "106\n1\n46816254\n95892001\n87264939\n100000000\n100000000\n100000000\n100000000\n100000000\n1\n88849067\n1\n1\n100000000\n87936709\n1\n100000000\n1\n91314128\n36135431\n100000000\n100000000\n1\n100000000\n1\n100000000\n62382593\n1\n1\n22622851\n63624009\n38714529\n12903830\n1\n1\n1\n100000000\n1\n1\n100000000\n1\n1\n858778\n100000000\n1\n100000000\n1\n1\n1\n100000000\n1\n100000000\n42032982\n100000000\n59204867\n100000000\n35828501\n1\n1\n79020841\n33097506\n100000000\n100000000\n100000000\n28628696\n100000000\n100000000\n1\n100000000\n61189355\n100000000\n100000000\n1\n1\n100000000\n1\n94191193\n1\n1\n17840601\n35202610\n100000000\n1\n1\n100000000\n18977466\n1\n100000000\n1\n100000000\n21572220\n100000000\n21593839\n72034147\n29043894\n1\n1\n1\n1\n26492028\n90347118\n100000000\n1\n17330549\n10177370\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 106)"
+    },
+    {
+      "input": "1\n42868681",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

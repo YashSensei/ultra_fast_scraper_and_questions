@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Chocolate Distribution",
+  "tags": [],
+  "text": "It is little John's birthday, and he has just received n boxes of chocolates as presents from his friends and family (1 < n ≤ 50). Now his mother knows that if she allows him to keep all the chocolates for himself, then he will definitely eat them all and end up with a stomach ache. So she instructs John to give one box each to each of the students in his class (excluding himself).Now John's class has k students, excluding himself, (1 ≤ k < 50) and the ith box of chocolates contains exactly a[i] chocolates inside (1 ≤ a[i] ≤ 1000). So John obviously wants to select the k boxes such that the sum of the chocolates in the remaining (n-k) boxes is maximized, so he has more chocolates for himself.This would be an easy task, except that John is very superstitious and wants to select these boxes in a very specific manner. He considers the number 4 and all its multiples to be extremely unlucky, and at no stage does he want the number of chocolates that he has to be a multiple of 4. Luckily, the sum of all the chocolates in all the n boxes is not a multiple of 4, and he wants to keep things that way.  So, while distributing the boxes, he will only consider handing out a box, if the sum of the remaining chocolates that he has is not a multiple of 4.John is confused as to how he should do this, so please help him out. Your task is to help John select k boxes from the n boxesone at a time, such that at no stage is the number of remaining chocolates a multiple of 4, and such that the final number of chocolates remaining with John is maximized (and also not a multiple of 4).NOTE:At every step, the sum of the chocolates in the remaining boxes must not be a multiple of 4. That is, after handing out the ith box, (1 ≤ i ≤ k), the sum of the chocolates in the remaining (n-i) boxes should not be a multiple of 4.InputIn the first line we have a single integer T - the number of test cases (T ≤ 55). Then T test cases follow.Each test case contains 2 lines. The first line contains 2 space separated numbers - n, the number of boxes (1 < n ≤ 50), and k, the number of students in John's class, excluding himself (1 ≤ k < 50)The second line contains n space separated numbers, such that the ith number (a[i]) denotes the number of chocolates in the ith box (1 ≤ a[i] ≤ 1000).OutputFor each test case, on a single line, print the maximum possible chocolates that John can end up with after a valid distribution sequence. Print -1 if no such distribution exists.ExampleInput:2\r\n6 3\r\n1 1 1 1 1 1\r\n8 6\r\n1 6 1 10 1 2 7 11Output:-1\r\n21ExplanationFor the first case, the initial total number of chocolates is 6. After giving away any one of the boxes, the sum of chocolates remaining with John becomes 5. At this point, it becomes impossible to select any of the remaining boxes without making the sum with John a multiple of 4.For the second test case, the maximum chocolates that can remain with John after a valid distribution sequence is 21.",
+  "sample_input": "Input:2\r\n6 3\r\n1 1 1 1 1 1\r\n8 6\r\n1 6 1 10 1 2 7 11Output:-1\r\n21",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/KSELECT",
+  "scraped_at": "2025-08-17 00:34:23",
+  "test_cases": [
+    {
+      "input": "2\r\n6 3\r\n1 1 1 1 1 1\r\n8 6\r\n1 6 1 10 1 2 7 11",
+      "expected_output": "-1\r\n21",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n3\n3\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n5\n6\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "15\n2462578\n83627429\n96354860\n76547387\n28383567\n17939324\n2758096\n61459726\n16642428\n56943276\n60303255\n58095189\n49800827\n99806513\n80208787",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n65701884\n97867291\n43076846\n12690101\n79844490\n70356869",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n71177467\n86140948\n70779526\n11781696\n81929634\n42246157\n63470197\n93716263\n92062762\n88016095\n13182065\n98002421\n59471817\n56821194\n41596283\n93390695",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n96491050\n19240054\n96373874\n42433722\n91752587\n47213777",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n57328801\n55303138\n27443764\n9467801\n18642259\n982717\n57009568",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "38\n60194\n47485\n89196\n96873\n92694\n72930\n97215\n7813\n27868\n78359\n16422\n15048\n88595\n88781\n35133\n472\n68021\n21265\n64937\n89789\n54659\n49662\n30102\n93312\n20896\n23459\n91006\n26215\n72427\n32470\n33398\n52336\n96005\n85321\n48654\n84338\n75483\n94535",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "43\n43815\n73505\n22470\n41593\n46959\n58169\n16158\n48285\n82080\n62376\n34320\n75644\n70747\n64751\n64498\n14109\n50129\n39611\n36849\n72286\n21844\n50350\n52154\n45605\n10826\n36705\n32136\n98492\n92269\n12458\n70375\n88001\n15026\n4218\n56039\n65079\n38039\n42863\n91108\n10853\n69208\n93350\n70782",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "48\n36338\n4990\n97242\n83368\n66270\n81009\n2852\n62170\n97975\n59380\n89235\n1819\n7397\n24306\n41944\n87432\n47897\n50698\n60465\n5734\n94836\n84441\n52431\n30151\n27372\n26452\n51368\n34222\n83125\n44893\n91843\n59355\n65958\n75191\n50748\n81016\n25195\n66515\n36982\n52366\n19483\n30622\n77001\n63348\n69928\n83607\n96750\n85500",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n74951\n2746\n64787\n35543\n62262\n6987\n75509\n9838\n14811\n23418\n17560\n99351\n95723\n19915\n89271\n6791\n56818\n74515\n57403\n38078\n79066\n23406\n12642\n93062\n76090\n55925\n25161\n44180",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "44\n61293\n72596\n57857\n39881\n24677\n86434\n5853\n53886\n29715\n81357\n37725\n36161\n92667\n32173\n17203\n11783\n45887\n27646\n88687\n79553\n21704\n61317\n96874\n12892\n39675\n30549\n37638\n2211\n50501\n38745\n69260\n62937\n77057\n61701\n69497\n7052\n27051\n16727\n8039\n43194\n16111\n14345\n48323\n92577",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "35\n6668\n20733\n78945\n82654\n89865\n89166\n12388\n58539\n35781\n64017\n6693\n12440\n37950\n6560\n10125\n82763\n7825\n71136\n96471\n89595\n49987\n38430\n72590\n16593\n4019\n49123\n22068\n68793\n98294\n3452\n31328\n82658\n35953\n52250\n85555",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n21634\n60288\n30575\n93952\n89401\n46825\n43262\n24377\n65440\n8849\n29144\n76000\n34300\n2593\n73873\n13366\n75880\n75743\n70277\n24273\n92952\n99709\n3094\n21434\n14284\n95094\n99494\n53978\n71431\n65771\n3830\n78867",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n63116875\n63305967\n7390698\n25602063\n4558608\n14459529\n52941853\n77182730\n52372137\n66826816\n94635421\n24000680\n67616569\n80280809\n39058886\n19759741\n74646594\n24430867\n14408276\n24679024\n63337634\n45410862\n39910652\n66871667\n48298290\n26410862\n40227003\n82313223\n13120207\n84053395\n38492918\n50938933\n81030005\n81253628\n43795318\n7190861\n25845435\n80940712\n35734593\n88005671\n98531497\n75012300\n35749522\n9843985\n6824776\n59958260\n48767322\n79283640\n12913330\n85719257",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n97514356\n94494406\n69568944\n99067476\n30954056\n40597965\n14418005\n64642009\n91950168\n71997632\n96690380\n85748764\n97095258\n5581130\n78316804\n3994504\n77130258\n5035400\n62084478\n89527346\n56497914\n27316810\n86096621\n88119899\n53741975\n10875439\n62925417\n38515509\n3098091\n43056629\n78147314\n24741645\n41936427\n4090991\n9799050\n24773747\n75927723\n32486443\n47662523\n42249310\n52816684\n4510499\n86854556\n54704589\n91122197\n75062903\n88830170\n92148679\n88201502\n15053619",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "1\n71750858",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "50\n91246277\n57284114\n28464871\n1\n100000000\n100000000\n1\n72439909\n88420378\n1\n100000000\n1\n1\n4037632\n34218681\n1\n100000000\n100000000\n19515591\n1\n28034188\n100000000\n100000000\n100000000\n1\n1\n70246868\n1\n65534236\n881362\n75137784\n41480537\n65891241\n100000000\n23943198\n100000000\n11747551\n4517656\n100000000\n1\n1\n100000000\n93943586\n92303898\n89325509\n100000000\n100000000\n59055334\n1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 50)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

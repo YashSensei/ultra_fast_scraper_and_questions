@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Bill of Fare",
+  "tags": [],
+  "text": "Given a large polygon dining table (not always a simple polygon) with the following properties :- there is no intersecting area (ex : area A)- there is no space inside the polygon (ex : area B)- there is no 3 edges that are concurrent (ex : point C)- every nodes are not lying on any edge except 2 edges that connect that node with 2 other nodes (ex : point D)- every nodes forming a convex corner because a table with concave corner is an uncomfortable table (ex : point E)Example of invalid table :Given also M dishes with the following rules :- placed on the table- not on the edge of the table- there is no pair of different food that have the same placeYou have to answer Q queries :- each query identified by L and R- the query is \"what is the minimum moves in order to make some dishes (from L-th dish to R-th dish inclusive) placed in same region ?\"- queries are independentNotes :- two dishes are considered in same region if and only if from one dish can be slid to another one without crossing any edge- one move is to slide a dish to another region through an edge- every dishes should be still on the table, but they may lie on the edgeExplanation :- dish A is valid because it placed on the table- dish C is invalid because it placed on the edge- dish E is invalid because it placed outside the table- sliding from dish A to dish B is considered as one move- dish B and dish D is considered as one region- dish F is invalid because it placed exactly on dish DInput and output format :- An integer T represent the number of test case, each test case :- First line contains 3 separated integer N, M, and Q- Next N lines contain Xi and Yi represent the coordinate of i-th node- Next M lines contain Pi and Qi represent the coordinate of i-th dish- Next Q lines contain Li and Ri represent the parameter of i-th query- You should output Q lines contain the answers of those queriesConstraints :- 1 <= T <= 10- 3 <= N <= 1000- 2 <= M <= 1000- 1 <= Q <= 1000- 0 <= Xi, Yi <= 10^9- 0 < Pi, Qi < 10^9- 1 <= Li < Ri <= MSample input :17 5 31 11 55 17 27 89 55 56 22 35 48 65 31 52 43 5Sample output :221Explanation of sample :- query 1 : we can slide 2-nd dish and 4-th dish to the middle region- query 2 : using the same way as query 1- query 3 : prefer sliding 4-th dish (1 move) rather than sliding 3-rd and 5-th dishes (2 moves)",
+  "sample_input": "17 5 31 11 55 17 27 89 55 56 22 35 48 65 31 52 43 5",
+  "sample_output": "221",
+  "link": "https://www.spoj.com/problems/BILFAR",
+  "scraped_at": "2025-08-17 00:34:14",
+  "test_cases": [
+    {
+      "input": "17 5 31 11 55 17 27 89 55 56 22 35 48 65 31 52 43 5",
+      "expected_output": "221",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 5 8 1 3 5 1 3 7 10 5 9 5 8 5 1 5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 1 5 1 1 6 6 10 3 1 7 6 4 9 2 10 1 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 10 2 1 10 8 1 8 3 7 7 1 1 8 8 3 6 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "49 75 34 87 3 63 77 90 44 68 69 17 40 11 11 80 8 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "63 19 55 26 16 31 49 86 82 1 95 26 9 76 41 77 9 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 65 13 18 19 52 79 47 62 97 31 26 28 28 59 66 4 23",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 83 73 7 16 86 68 52 77 33 99 5 95 11 7 34 72 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 94 63 9 83 66 32 97 84 2 4 99 10 14 10 89 35 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "278 150 424 190 338 307 481 286 127 249 250 178 450 301 138 282 143 160",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "288 382 331 470 469 361 477 364 496 131 216 138 128 62 138 332 237 130",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "90 336 364 498 201 255 497 210 281 285 78 334 350 129 179 346 454 237",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "436 82 332 466 165 100 308 305 223 185 81 208 221 280 122 144 238 474",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "176 175 120 73 191 100 366 144 98 135 413 106 127 495 58 463 94 165",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "205 353 327 267 110 406 282 96 363 322 487 410 349 141 122 346 387 239",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "444 430 259 410 400 321 487 406 58 109 231 188 312 268 216 205 411 160",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 2 1000 999 999 1000 1 1000 2 1000 999 1 1000 1000 1000 2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2 1 999 999 2 1 999 2 1000 999 1000 1 2 999 2 1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

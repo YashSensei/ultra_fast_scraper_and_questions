@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Math with Bases",
+  "tags": [],
+  "text": "Withyour previous help, Little Ben managed to get a perfect score on his homework. He came running home to show his brother, Big Ben. Big Ben had done this type of thing before, you see, so he naturally wasn't too impressed. Big Ben boasted, \"Back in my day, we had to multiply and divide as well, the numbers were much bigger, AND we had to do it in base 64.\"Little Ben became intrigued by this and searched the Internet for a worksheet. It turns out that his teacher made a worksheet for one of the higher grades that was just like Big Ben's. She also forgot to write what base each question was in... again!According to the worksheet, the digits used for base 64 are the same as that of base 62, with the single- and double-quotes as the last two; the digits used are:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'\"InputThe first line of input contains an integern(1 < n < 64) that indicates the number of test cases. Each test case is as follows:A - B = C\r\nI\r\nX1 op Y1 =\r\nX2 op Y2 =\r\n...\r\nXI op YI =whereA - B = Cis the correct example,I(1 ≤ I ≤ 5000) is the number of questions in that section,XiandYiare the operands of each problem (0 < X, Y ≤ 2100), andopis one of [+, -, *, %], denoting addition, subtraction, multiplication, or modulo.OutputYour program should output in the following format:SECTION 1 (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi\r\nSECTION 2 (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi\r\n  ...\r\nSECTION N (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = ZiwhereZiis the solution toXi op Yi, andbis the base used. (2 ≤ b ≤ 64).If the base is ambiguous, use the smallest base for which the example is correct and the questions are valid.ExampleInput:4\r\nK72Q - 9C5U = APRR\r\n3\r\n11JH4 - BMEB =\r\nPB04 % DQ9O =\r\nF0GM - UQR0 =\r\nA654A - 9A60E = AE3B\r\n2\r\nB94BA + 3460A =\r\n123A29 % 5E065 =\r\n37CR - olh = 2KSm\r\n5\r\n157W % 1bIJ =\r\n1P56 % 1Eob =\r\n1C6I * 1\"uX =\r\n1Ktc % 1BMf =\r\n20ne * 22V\" =\r\nBQfC - 4Kdb = 761H\r\n2\r\n9aFL * 3WU3 =\r\n5fcV + 7fWL =Output:SECTION 1 (BASE 31)\r\n  11JH4 - BMEB = KS2O\r\n  PB04 % DQ9O = BFLB\r\n  F0GM - UQR0 = -FQA9\r\nSECTION 2 (BASE 15)\r\n  B94BA + 3460A = EDAC5\r\n  123A29 % 5E065 = 5594E\r\nSECTION 3 (BASE 64)\r\n  157W % 1bIJ = 157W\r\n  1P56 % 1Eob = AIX\r\n  1C6I * 1\"uX = 2O3gS\"I\r\n  1Ktc % 1BMf = 9Wz\r\n  20ne * 22V\" = 46bA3EO\r\nSECTION 4 (BASE 42)\r\n  9aFL * 3WU3 = bBafS4L\r\n  5fcV + 7fWL = DfTANotes: large input/output data",
+  "sample_input": "A - B = C\r\nI\r\nX1 op Y1 =\r\nX2 op Y2 =\r\n...\r\nXI op YI =",
+  "sample_output": "SECTION 1 (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi\r\nSECTION 2 (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi\r\n  ...\r\nSECTION N (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi",
+  "link": "https://www.spoj.com/problems/BSMATH2",
+  "scraped_at": "2025-08-17 00:33:58",
+  "test_cases": [
+    {
+      "input": "A - B = C\r\nI\r\nX1 op Y1 =\r\nX2 op Y2 =\r\n...\r\nXI op YI =",
+      "expected_output": "SECTION 1 (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi\r\nSECTION 2 (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi\r\n  ...\r\nSECTION N (BASE b)\r\n  X1 op Y1 = Z1\r\n  X2 op Y2 = Z2\r\n  ...\r\n  Xi op Yi = Zi",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "dcsg frvol pfi arv ac\nqx\n3 7\nwo ko zkn fk\n10 5\nfyhso ew dod do\nv\ndon dpua lu r",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "boxzj hkq rhbzp olh glrsg\nw\n3 2\no sq psa jztl\n3 10\nftkk vhaor x qdujj\nps\ngc g fjhht p",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "pqw nvhx gphk vih z\nj\n4 7\nc sm viox kkgy\n1 6\nzeef pjxu br o\nrd\nyyain jf lzko nnt",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "asy v rxf unaq xnkd\na\n64 56\npajzh xjp uvm kg\n52 36\nwgsl g w xggb\nx\nbgxh xd rpcq sx",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "czuf a vu gair uzdvo\nle\n21 51\nwcgwc cxl haore nx\n12 46\ncmnt ca rk q\ncp\nlzuc durtm sug wv",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "hikk bju ue hznj iizve\nq\n35 38\nton fatb lqw wtpgl\n33 46\nbc swuw j lx\nkv\ncsiz om ir zp",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "hc hjq tjmqa gc iqtxl\ne\n44 2\ngvnd cak gqayq ga\n3 61\nu l ce onlx\ni\nzj ono t py",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ogri xsvwv xwfs kmy nssgf\nbu\n50 40\nhqh pvc dz og\n12 29\nsqg sdoau sxafl pt\nyxu\neswek evsqv diroq ty",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qur cvx e eb gmm\noq\n19 20\ncebzw revmz lvgw fesgk\n19 12\nq ttnys ynopi xk\nsuhquc\nfudi fa qk rrqz",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "k ayuo h ke iq\ndf\n32 32\nfmil xet p ciej\n4 20\nf jihu z u\nnizah\nnm ybf wvmp w",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qiw rku caj zyw glnh\nez\n17 31\ni pczj cz cdx\n8 32\nc csgx gzf cevxl\nxn\nvug qcw btgxx unkb",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ns sv s brb kmme\nhb\n4 11\nseh od os qks\n29 4\nnn eajfw m pydhw\nzffvbx\ntne qv vvge zrpas",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "sm a rirr ik d\nho\n14 10\nbimec hjwj bf miu\n16 25\ncr cft gviq pqbdm\no\nrpjfs cvqfp bxlg upcwt",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ltb nxzh cm bn ej\nit\n6 15\nhvsg ruxi jg slyg\n19 12\nk fo xvarj hfqh\ngk\nj t licne l",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nltw yfmac vbvpx nxm ygif\ngx\n18 8\nimlp nvhqu wcrx kjk\n8 17\nvb xdgk umvq uc\ns\nq oad t jk",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rdi v bl ouc fxlrs\nyt\n64 64\nmub f q ibenj\n64 64\nb n nlr sbb\nlbrwk\nqip yjelo utddp duxck",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "q w ez umfs g\nz\n64 64\nq yv n zr\n64 64\naq gjex bc gyuo\nr\nrq ta hckat vv",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "grcnx pcztx f cjzjp ej\nz\n64 63\nmu m tbaqm zldw\n1 1\nq o wm rsegc\nirk\nsngmg ufb bh qz",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "y fu nkgk l sx\nwl\n63 64\na acvw zvdus mfv\n63 63\negzj z a t\nbkvlr\npte l jq zsv",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

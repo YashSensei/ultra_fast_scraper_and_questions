@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Balanced Diet",
+  "tags": [],
+  "text": "Every day, Danny buys one sweet from the candy store and     eats it. The store has $m$     types of sweets, numbered from      $1$ to      $m$. Danny knows that a balanced diet     is important and is applying this concept to his sweet     purchasing. To each sweet type      $i$, he has assigned atarget     fraction, which is a real number      $f_ i$ (     $0 < f_ i \\le 1$). He wants the     fraction of sweets of type      $i$ among all sweets he has eaten to     be roughly equal to $f_     i$. To be more precise, let      $s_ i$ denote the number of sweets of     type $i$ that Danny has     eaten, and let $n = \\sum _{i=1}^     m s_ i$. We say the set of sweets isbalancedif for every $i$ we     have\\[ n f_ i - 1 < s_ i     < n f_ i + 1. \\]Danny has been buying and eating sweets for a while and     during this entire time the set of sweets has been balanced. He     is now wondering how many more sweets he can buy while still     fulfilling this condition. Given the target fractions     $f_ i$ and the sequence of     sweets he has eaten so far, determine how many more sweets he     can buy and eat so that at any time the set of sweets is     balanced.InputThe input consists of multiple test cases. Please process until EOF is reached.Each test case consists of three lines. The first line contains     two integers $m$     ($1 \\le m \\le 10^5$),     which is the number of types of sweets, and      $k$ ($0     \\le k \\le 10^5$), which is the number of sweets Danny     has already eaten.The second line contains      $m$ positive integers      $a_1, \\ldots , a_ m$. These numbers     are proportional to $f_1, \\ldots     , f_ m$, that is,      $\\displaystyle f_ i = \\frac{a_ i}{\\sum _{j =     1}^ m a_ j}$. It is guaranteed that the sum of all     $a_ j$ is no larger than     $10^5$.The third line contains      $k$ integers      $b_1, \\ldots , b_ k$ (     $1 \\le b_ i \\le m$), where each     $b_ i$ denotes the type of     sweet Danny bought and ate on the      $i^\\text {th}$ day. It is guaranteed     that every prefix of this sequence (including the whole     sequence) is balanced.OutputFor each test case, display the maximum number of additional sweets that Danny     can buy and eat while keeping his diet continuously balanced.     If there is no upper limit on the number of sweets, display the     wordforever.ExampleInput:6 5\r\n2 1 6 3 5 3\r\n1 2 5 3 5\r\n6 4\r\n2 1 6 3 5 3\r\n1 2 5 3Output:1\r\nforever",
+  "sample_input": "Input:6 5\r\n2 1 6 3 5 3\r\n1 2 5 3 5\r\n6 4\r\n2 1 6 3 5 3\r\n1 2 5 3Output:1\r\nforever",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FN16DIET",
+  "scraped_at": "2025-08-17 00:34:02",
+  "test_cases": [
+    {
+      "input": "6 5\r\n2 1 6 3 5 3\r\n1 2 5 3 5\r\n6 4\r\n2 1 6 3 5 3\r\n1 2 5 3",
+      "expected_output": "1\r\nforever",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2\n2 3 6 9 2 5\n4 8 5 6 7\n9 6\n7 7 8 7 6 7\n9 3 2 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 3\n1 5 5 4 7 10\n4 1 8 5 5\n9 5\n1 5 3 8 2 2\n3 2 10 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 8\n1 6 10 9 6 4\n9 1 9 2 2\n7 5\n8 8 9 9 4 9\n7 1 3 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "75 79\n6 6 31 7 7 48\n50 72 4 12 94\n82 22\n4 96 2 42 70 85\n33 41 49 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 16\n8 41 8 18 10 60\n24 54 64 79 80\n50 52\n89 51 92 62 98 42\n50 77 80 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "88 71\n7 44 27 16 90 99\n38 17 2 65 11\n26 87\n49 24 11 83 53 70\n4 45 44 64",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24 52\n28 2 56 92 20 54\n33 41 98 78 76\n13 10\n83 88 78 27 74 48\n23 21 56 33",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 28\n33 95 35 26 17 32\n20 64 26 36 86\n52 66\n32 62 66 49 40 59\n62 84 63 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "190 122\n218 71 110 175 74 317\n407 414 243 108 485\n117 357\n122 485 446 482 319 85\n499 498 131 352",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "65 73\n258 244 55 172 384 110\n360 286 462 97 376\n275 458\n216 302 476 63 368 489\n299 117 410 167",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "353 211\n277 338 444 341 242 346\n353 492 141 356 249\n106 304\n444 346 337 246 299 371\n105 93 393 115",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "320 176\n363 212 119 88 494 199\n130 243 263 82 233\n188 412\n475 212 267 217 437 103\n106 409 158 460",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "137 55\n497 58 252 111 139 357\n112 88 100 66 270\n485 194\n151 133 388 425 429 469\n460 387 152 240",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "286 137\n278 414 465 386 88 105\n399 173 395 268 380\n483 204\n255 493 334 353 473 281\n227 67 71 425",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "66 430\n361 462 119 451 287 310\n292 246 256 167 185\n136 301\n339 499 260 180 267 74\n205 188 226 471",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2\n2 1 1 2 1 999\n1 999 1000 2 1000\n999 2\n999 999 1 1 1000 2\n999 999 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999\n1 999 1000 1000 999 2\n1 999 2 999 999\n999 1000\n1000 1 1000 2 2 2\n1000 2 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

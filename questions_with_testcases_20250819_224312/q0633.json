@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cave Crisis",
+  "tags": [],
+  "text": "R2D2 was exploring a tunnel when a cave-in suddenly occurred. Oh no, is he trapped?Figure1: Overhead view of the cave crisis from the third example test case.From an overhead view, we can see all the obstacles (debris) on a two-dimensional Cartesian plane. The tunnel iswcm wide, bounded by the linesy=w/2andy= -w/2. R2D2 starts at(0, 0), and has a perfectly circular footprint of radiusr. The exit of the tunnel lies to the right of the linex= 1000. Between R2D2 and the exit lie a number of polygonal obstacles.Is it possible for R2D2 to navigate between the obstacles and make it to the exit?InputThe input file will contain multiple test cases. Each test case begins with a single line containing an even integerw(2 ≤w≤ 1000), the width of the tunnel, and an integerN(0 ≤N≤ 100), the number of obstacles. The nextNlines each contain the description of a single obstacle. Thei-th obstacle is a simple polygon, specified on a single line containing an integerni(3 ≤ni≤ 10), the number of vertices, followed bynipairs of integers,xijandyij(0 ≤xij≤ 1000and-w/2 ≤yij≤w/2forj= 1 ...ni), specifying the coordinates of the vertices in counter-clockwise order. Note that obstacles in the input may touch or even overlap. However, you are guaranteed that R2D2's initial location will not touch or overlap any obstacle. The vertices of each polygon are unique, no two non-consecutive edges of the polygon intersect (even at their endpoints), and each polygon is guaranteed to have nonzero area.The end-of-input is denoted by an invalid test case withw=N= 0and should not be processed.OutputFor each input test case, you must determine the maximum radiusr> 0that R2D2 could have and still be able to plan a path from his starting location(0, 0)to the tunnel exit without overlapping with any of the obstacles. You should print either this maximum radiusr(rounded to two decimal places) or the message \"impossible\" if no such radius exists.ExampleInput:6 2\r\n4 2 -1 4 -1 4 1 2 1\r\n3 3 0 6 -1 6 1\r\n8 2\r\n3 1 -1 4 -1 4 4\r\n3 3 -4 6 1 3 1\r\n10 7\r\n4 0 5 4 2 5 3 4 5\r\n3 4 -5 9 -5 9 0\r\n4 8 -5 11 -5 11 -2 8 -2\r\n3 8 3 16 1 11 5\r\n4 21 -5 23 -3 20 -2 15 -4\r\n3 22 3 26 -1 28 0\r\n3 24 0 29 4 25 3\r\n0 0Output:1.00\r\nimpossible\r\n1.33",
+  "sample_input": "Input:6 2\r\n4 2 -1 4 -1 4 1 2 1\r\n3 3 0 6 -1 6 1\r\n8 2\r\n3 1 -1 4 -1 4 4\r\n3 3 -4 6 1 3 1\r\n10 7\r\n4 0 5 4 2 5 3 4 5\r\n3 4 -5 9 -5 9 0\r\n4 8 -5 11 -5 11 -2 8 -2\r\n3 8 3 16 1 11 5\r\n4 21 -5 23 -3 20 -2 15 -4\r\n3 22 3 26 -1 28 0\r\n3 24 0 29 4 25 3\r\n0 0Output:1.00\r\nimpossible\r\n1.33",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PC8C",
+  "scraped_at": "2025-08-17 00:33:06",
+  "test_cases": [
+    {
+      "input": "6 2\r\n4 2 -1 4 -1 4 1 2 1\r\n3 3 0 6 -1 6 1\r\n8 2\r\n3 1 -1 4 -1 4 4\r\n3 3 -4 6 1 3 1\r\n10 7\r\n4 0 5 4 2 5 3 4 5\r\n3 4 -5 9 -5 9 0\r\n4 8 -5 11 -5 11 -2 8 -2\r\n3 8 3 16 1 11 5\r\n4 21 -5 23 -3 20 -2 15 -4\r\n3 22 3 26 -1 28 0\r\n3 24 0 29 4 25 3\r\n0 0",
+      "expected_output": "1.00\r\nimpossible\r\n1.33",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 6\n7 9 5 1 6 10 8 4 9\n5 6 1 5 2 1 1\n4 5\n8 1 9 9 5 9 2\n2 3 10 10 5 3 7\n10 3\n2 5 1 8 1 4 1 6 7\n4 3 9 9 4 8 4\n4 2 9 5 3 10 3 10 10\n7 3 3 10 8 9 10\n8 10 3 7 8 5 2 3 5\n2 2 7 2 8 9 5\n5 1 5 2 9 6 4\n9 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6\n5 10 9 7 6 10 10 6 5\n7 4 5 7 6 6 3\n1 1\n10 2 1 5 7 8 8\n9 1 9 1 10 4 6\n6 9\n8 4 1 9 5 7 3 10 9\n7 2 10 3 3 10 4\n8 7 7 8 8 1 7 4 4\n5 10 6 10 5 4 8\n6 6 6 4 2 10 7 9 4\n1 10 7 8 2 1 3\n3 10 5 1 2 4 2\n6 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 3\n2 4 7 7 10 6 3 4 6\n2 6 4 3 10 1 9\n1 1\n3 9 5 4 1 4 9\n2 6 6 3 9 2 3\n10 1\n4 7 3 7 7 10 1 10 1\n3 2 4 1 8 3 6\n3 4 10 2 3 8 3 9 1\n2 10 1 10 2 10 4\n10 8 7 1 5 5 7 7 9\n6 8 8 4 6 6 3\n2 4 6 5 9 10 9\n7 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "84 26\n21 49 63 38 77 2 40 28 86\n39 37 70 41 19 83 44\n81 84\n57 74 100 58 49 37 84\n89 58 85 29 13 24 86\n82 2\n23 23 33 68 50 14 15 80 83\n5 86 70 71 58 13 88\n84 95 5 85 88 3 85 74 52\n18 40 91 23 35 37 25\n25 8 78 88 16 35 12 61 88\n46 38 52 91 13 47 18\n82 43 21 11 90 54 12\n65 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "88 2\n21 56 18 1 53 96 83 1 63\n95 72 47 61 97 93 99\n2 83\n9 28 90 44 11 13 78\n60 2 71 59 92 54 9\n77 30\n71 95 5 59 69 27 5 37 58\n18 31 99 39 85 81 64\n9 46 74 10 81 15 37 48 79\n57 45 100 50 67 98 2\n76 44 46 17 41 76 67 32 55\n42 73 67 57 26 4 32\n79 79 83 46 14 3 56\n99 74",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 62\n90 8 42 62 37 45 49 40 85\n61 49 86 52 31 100 22\n66 30\n11 71 21 64 45 17 69\n100 8 61 32 54 34 20\n95 15\n58 30 62 76 59 72 22 93 32\n4 17 86 53 62 69 27\n49 79 56 21 46 46 59 86 78\n5 26 47 90 33 3 77\n27 26 37 17 29 38 6 53 19\n72 16 47 37 33 29 70\n41 38 1 35 29 69 30\n10 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 26\n75 81 81 29 44 86 7 64 79\n98 54 75 25 26 90 67\n58 8\n81 92 76 83 38 29 34\n82 81 55 65 14 83 91\n46 11\n42 85 56 100 5 31 5 83 41\n60 55 4 79 73 31 97\n38 78 86 26 100 35 40 49 36\n64 14 7 33 53 86 8\n48 50 9 50 6 96 64 11 4\n99 81 99 1 10 5 22\n61 12 32 90 74 87 47\n85 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 19\n49 55 42 63 72 93 89 68 51\n5 7 94 41 69 88 74\n77 40\n51 63 13 19 16 37 37\n58 83 11 88 43 56 47\n8 5\n79 11 88 30 59 84 96 98 18\n51 3 59 88 10 57 47\n21 65 67 99 41 20 74 98 17\n30 20 3 39 65 44 33\n1 96 78 17 15 7 67 97 54\n5 67 12 16 93 68 64\n68 1 23 40 98 20 51\n5 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 21\n42 45 25 17 5 11 31 48 19\n23 48 39 20 27 22 31\n26 46\n18 40 46 16 35 46 41\n20 15 14 26 42 15 7\n39 5\n47 41 7 38 14 16 32 43 10\n43 40 49 28 39 5 49\n21 45 24 42 21 15 8 9 23\n27 45 17 36 50 46 44\n34 18 26 31 10 48 12 8 16\n27 15 47 22 18 15 50\n39 40 41 24 31 8 24\n43 28",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 26\n11 42 31 31 7 9 9 44 28\n40 17 11 19 9 16 24\n36 48\n20 27 33 39 45 35 27\n9 32 23 9 41 39 25\n14 17\n7 42 5 7 36 22 39 7 10\n30 10 28 20 28 26 48\n11 37 42 33 22 7 23 5 23\n26 10 34 23 9 8 23\n22 32 30 17 39 44 40 46 20\n11 37 16 28 50 43 17\n47 42 27 35 35 9 44\n45 21",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "41 9\n15 16 35 45 40 44 50 35 22\n20 30 42 24 7 26 15\n21 6\n37 14 32 33 19 16 8\n21 23 50 6 42 30 34\n42 11\n17 26 10 11 40 21 35 7 20\n46 29 9 9 10 46 47\n6 6 19 22 45 5 8 26 15\n39 50 31 19 20 25 25\n13 40 41 36 34 21 14 21 9\n45 17 5 24 31 9 16\n36 24 34 37 6 13 33\n6 49",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 42\n45 43 14 6 11 17 13 33 43\n6 49 5 43 12 12 32\n48 46\n27 22 38 20 6 34 16\n34 15 45 20 35 28 42\n24 31\n38 33 13 18 23 49 35 47 39\n17 16 27 10 40 9 37\n12 49 43 24 19 23 33 6 35\n11 17 40 49 48 11 7\n20 16 32 33 28 45 12 29 15\n21 12 23 22 15 26 10\n47 38 35 23 24 31 24\n7 7",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 47\n44 21 23 36 28 42 30 33 46\n25 16 38 32 7 19 50\n48 49\n32 25 26 34 46 18 33\n32 37 44 11 22 41 32\n16 11\n18 26 29 45 18 9 15 11 22\n49 38 28 16 41 6 38\n10 6 35 28 50 46 40 42 38\n24 25 45 49 36 8 44\n24 31 8 23 28 49 15 39 22\n33 47 26 6 15 28 50\n47 26 22 41 14 12 10\n47 25",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 28\n28 38 27 8 31 10 34 19 9\n23 33 20 20 37 13 38\n40 44\n11 38 32 27 23 21 6\n50 30 48 35 14 44 23\n33 12\n10 21 41 45 21 43 47 10 23\n12 10 49 29 35 38 49\n25 25 25 10 19 37 50 23 7\n20 7 30 16 45 6 8\n18 8 23 21 44 18 35 12 44\n45 16 30 37 10 12 19\n44 23 21 23 14 31 40\n20 8",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "47 45\n17 34 45 34 14 8 21 37 17\n16 37 13 22 21 23 37\n28 41\n21 18 43 29 31 9 15\n38 45 33 38 33 27 38\n5 30\n41 29 43 32 29 50 18 47 27\n28 7 50 30 12 15 30\n29 45 12 32 34 6 11 42 45\n40 48 37 36 41 10 5\n47 6 11 33 9 31 43 46 27\n36 5 38 29 29 31 15\n31 8 22 45 14 30 12\n33 36",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100 100 100 100 100 100\n100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "99 99\n99 99 1 1 99 100 100 1 100\n1 99 1 2 2 99 1\n1 2\n2 99 100 2 2 100 2\n2 1 2 1 2 2 2\n2 2\n1 1 1 2 99 99 100 100 100\n99 1 100 100 1 2 100\n99 99 2 99 100 99 2 1 100\n99 2 100 99 99 99 1\n99 100 99 100 2 1 2 2 2\n2 1 2 1 1 1 1\n2 99 1 100 100 1 99\n99 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "100 1\n2 99 2 99 100 99 100 2 2\n2 1 99 100 1 99 1\n99 100\n100 99 99 2 100 1 100\n100 100 99 2 1 2 99\n2 1\n2 99 99 1 1 1 2 100 2\n100 99 100 99 1 1 1\n2 99 1 99 2 1 1 99 100\n1 1 100 99 2 100 100\n1 2 2 1 100 1 100 2 100\n1 100 100 1 1 1 1\n1 1 2 99 100 1 99\n2 99",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

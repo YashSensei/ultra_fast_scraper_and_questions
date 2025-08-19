@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Super Mario Revisited",
+  "tags": [],
+  "text": "Mario is one the most famous video games ever. In this problem, we will be helping Mario save the princess (again :P). In this game of Mario,each world will be represented by a 2-D rectangular grid. There aremultiple worldsand all the worlds are of size R x C. The world contains many objects each covering exactly one cell.The cell with 'S' denotes Mario's starting position. A cell with '.' denotes an empty cell over which Mario can walk safely. From that cell he can move to any of its 4 adjacent cells (which share an edge with it). A cell with 'D' denotes a pipe that leads to the world below. A cell with 'U' denotes a pipe that leads to the world above. If Mario enters a cell containing a pipe, he must enter the pipe. A cell with 'C' represents a coin and Mario collects these. After collecting the coin, the cell becomes an empty cell. A cell with '#' denotes bricks and Mario can't enter this cell no matter what. A cell with 'M' denotes the monster (Bowser), Mario has to defeat Bowser to save the princess. Mario initially start from an empty cell.Our Mario is very determined and so he will be always able to defeat Bowser on a 1 on 1 battle. But he is greedy and will always want to collect all the coins before going to save the princess.If he is not able to collect all the coins, he won't save the princess!. Help Mario to find the minimum number of steps to do this feat.Note:If 'U' is present in top-most world or 'D' is present in the bottom-most world, Mario can't enter the cell.Input:Input contains multiple test cases (will never exceed 1000).First line of each test case will have 3 integers R, C and W.'R x C' represents Grid dimension and 'W' represents number of worlds.It will be followed by R x W lines. Each line will have 'C' characters.First R lines describe the first world, second R lines describe the second world and so on upto W worlds.Input ends by the line '0 0 0'.Output:For each test case, print a single line “Mario saved the princess in K steps” where K is the minimum number of steps if he defeat the monster else print “Mario failed to save princess”.Constraints:1 <= R, C <= 151 <= W <= 100 <= [Total number of coins] <= 10All characters in the grid will be from the set {'S', '.', 'M', 'C', 'D', 'U', '#'}SampleInput:2 2 1\r\nSM\r\n.D\r\n\r\n2 2 2\r\nSM\r\n.D\r\nC.\r\nUC\r\n\r\n3 3 2\r\nS.M\r\nC#.\r\nD..\r\n###\r\nC.C\r\nC.U\r\n\r\n2 2 1\r\nSM\r\n#C\r\n\r\n0 0 0Output:Mario saved the princess in 1 steps\r\nMario saved the princess in 7 steps\r\nMario saved the princess in 8 steps\r\nMario failed to save princessExplanation for third test case:Mario is in (0, 0, 1) (first world), the optimal path is (0, 0, 1) → (1, 0, 1) → (2, 0, 1) → (2, 0, 2) → (1, 0, 2) → (1, 1, 2) → (1, 2, 2) → (2, 2, 2) → (2, 2, 1) → (1, 2, 1) → (1, 2, 0). So totally 10 steps which includes 1 Up and 1 Down. As there is no manpower required for Mario to take step in between the worlds omitting the 2 steps which gives us the answer 8.",
+  "sample_input": "Input:2 2 1\r\nSM\r\n.D\r\n\r\n2 2 2\r\nSM\r\n.D\r\nC.\r\nUC\r\n\r\n3 3 2\r\nS.M\r\nC#.\r\nD..\r\n###\r\nC.C\r\nC.U\r\n\r\n2 2 1\r\nSM\r\n#C\r\n\r\n0 0 0Output:Mario saved the princess in 1 steps\r\nMario saved the princess in 7 steps\r\nMario saved the princess in 8 steps\r\nMario failed to save princess",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SMARIO",
+  "scraped_at": "2025-08-17 00:33:23",
+  "test_cases": [
+    {
+      "input": "2 2 1\r\nSM\r\n.D\r\n\r\n2 2 2\r\nSM\r\n.D\r\nC.\r\nUC\r\n\r\n3 3 2\r\nS.M\r\nC#.\r\nD..\r\n###\r\nC.C\r\nC.U\r\n\r\n2 2 1\r\nSM\r\n#C\r\n\r\n0 0 0",
+      "expected_output": "Mario saved the princess in 1 steps\r\nMario saved the princess in 7 steps\r\nMario saved the princess in 8 steps\r\nMario failed to save princess",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 1 3\nluoj\ni\n1 5 10\nwke\nd\npq\nakfi\n4 10 9\nwgcm\nsaer\nlw\nkyxc\nyfue\nhtisjr\n1 1 2\nyk\nskd\n9 10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 7 6\nwyvb\nkk\n6 4 1\nmxzc\nm\nkd\nwdr\n6 8 1\nhrz\nco\nmdrk\nsnei\nvcoukk\nandy\n5 5 2\ni\nxcq\n3 9 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 4 9\ntwws\ntzy\n8 7 6\ndwt\nqr\nfvz\nufy\n6 4 9\nw\nnl\nsaam\nmlzr\ndo\noogwam\n8 5 4\nmr\nt\n5 7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "15 5 36\niml\naz\n60 37 37\ncd\nop\noqqi\nm\n20 5 90\nbgp\nfqnm\nmtlkne\ndcp\naneoye\njromp\n56 60 93\nz\nhwjd\n11 90 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 16 98\nndz\nn\n33 28 11\naxxl\nbt\nfgqv\nfnko\n13 57 10\nelxj\ns\nt\nsneie\nlpitob\nafbqyj\n26 94 53\ni\np\n77 27 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 59 23\nap\nhif\n60 27 20\na\nbcti\nr\nzqu\n33 77 58\npxq\nfpeuh\nvvw\nczwxs\nvb\nnfafn\n43 84 87\nixsf\nbo\n84 6 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 90 25\nicif\ns\n94 61 54\nqqyq\ni\nasjl\nuvpa\n44 79 49\nvtndl\nax\nxik\nol\ng\nna\n52 54 70\nn\nvv\n35 15 56",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "87 9 33\nh\nkgsb\n59 37 35\nmlhg\navr\nfa\nxc\n90 81 30\nlgdyb\ngrgiid\nslwgm\njcjfwg\nsrat\nn\n98 22 28\nfq\nzg\n97 78 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "355 89 124\nvm\nka\n155 359 223\nfml\nw\ntmqm\na\n382 366 330\nslroj\nfrwv\nxlict\nysqd\ntiarvn\nyrxv\n425 120 220\nevj\nhb\n381 324 291",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "248 400 219\nae\ncykj\n297 489 441\nyev\nqjo\nsk\ns\n71 168 433\ndlnmj\nhiiyy\nzujyva\niq\ngac\nmpkn\n240 181 399\nhwkm\nx\n451 199 330",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "406 405 91\nxsm\nrncs\n360 369 95\nyfai\nypcq\nirvr\nv\n461 485 441\nvakr\ni\nhakmnf\nq\nesvjss\nvlzkx\n447 317 106\nkty\nlm\n408 323 470",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "398 213 439\ny\nzjwc\n245 96 81\ni\nixq\nvye\nrib\n201 113 191\niwlrj\nflk\nqnltfx\nhvul\nyk\ndp\n364 109 137\nkfra\ne\n447 414 420",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "267 310 324\npl\no\n256 271 249\next\nofr\nraut\nkiqm\n204 381 179\nyeuwy\nxz\nqgkgr\ncflqc\njtakg\nio\n223 301 313\nnqf\nljuh\n431 196 254",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "408 293 202\njo\nori\n265 342 51\nkwq\nmgn\nvc\nnojg\n370 92 401\nifds\nt\nbcry\ngm\nmadhvv\ndwhfc\n297 284 102\nzanj\ntmr\n197 495 155",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "382 61 342\nz\nx\n380 415 288\nagfv\nviuc\nq\ncgq\n480 346 184\nrqse\nnamyiz\ns\nphin\nx\nyl\n242 249 457\ndjyy\ntljz\n242 194 192",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nmofw\nnhd\n1000 1000 1000\nc\nw\nzjj\nci\n1000 1000 1000\nhfq\nl\nzi\nkef\nx\naaqwsc\n1000 1000 1000\nqavr\ns\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\nlohn\ny\n1000 1000 1000\nxemm\nml\nt\nv\n1000 1000 1000\nfnihj\ntpwauu\nt\nihv\nqkhqby\npmnft\n1000 1000 1000\nedex\nfo\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2 1\ne\nsokz\n999 1 1\nwm\naru\nbn\nhh\n1 999 2\ndh\nxt\nuux\nis\nmwg\ntpgjce\n2 999 999\nqjtx\nq\n999 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2 1\nkr\nbqqf\n2 2 1000\ngk\nr\nohu\nqdma\n1000 1000 1000\nxega\nkaxsu\ncz\nc\nldc\nsdmdp\n1000 999 2\nxp\nnnio\n2 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

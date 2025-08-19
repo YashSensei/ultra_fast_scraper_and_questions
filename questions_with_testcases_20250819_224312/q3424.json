@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Enrich my purse",
+  "tags": [],
+  "text": "Jack plays this ball game for the first time in his club. Jack has a ball, which bounces with a width ofW. Coins are arranged on a straight line at regular intervals. If the ball strikes the i-th coin, Jack gainsmoney[i] (which could possibly be negative). Jack can take at mostBturns, to throw the ball. At each turn, jack can either throw the ball from left to right, or right to left, and choose which ball to start the knock out. If he chooses to knock out from ball i to the right, he will knock out i, i+W, i+2W ... Similarly if he chooses to knock out from right to left, starting from ball i he will knock out, i, i-W, i-2W ... Please note that once a ball is knocked out, it is removed and it's place contains a void. i.e., you cant gainmoney[i]for the sameitwice.Jack wants to maximise his money gained, by carefully choosing his turns. If there is more than one way to gain the same money, jack wishes to minimise the number of times he throws.Input FormatThe input file consists of multiple testcases.The first line of each testcase contains three integers,W B N(1 <= N <= 100; W,B > 0)The second line of each testcase contains N integers, denotingmoney[i]. (| money[i] | <= 106)Input terminates with a line containing three zeros which must not be processed.Output FormatFor each testcase print one line denoting the maximal money gained and the number of turns taken. Please see the sample output and stick to the output format.\"Case#id: Jack wins $X out of Y throws.\"NOTE:You must spell the same way the sample output says. Extra spaces and case insensitivity can cause wrong answer responses.Test data:100 test cases, Time limit: 10sSample Input:2 3 10\r\n-1 3 2 5 1 -2 0 5 1 -3\r\n2 3 14\r\n-1 3 2 5 -5 -5 1 -2 0 5 -5 -5 1 -3\r\n3 3 5\r\n-1 -2 -3 -4 -5\r\n1 2 6\r\n-1 -1 10 10 -1 -1\r\n0 0 0Sample Output:Case#1: Jack wins $15 out of 2 throws.\r\nCase#2: Jack wins $10 out of 3 throws.\r\nCase#3: Jack wins $0 out of 0 throws.\r\nCase#4: Jack wins $18 out of 1 throws.Output Explanation:We present one of the optimal solutions. We number balls from 1 to N.TestCase#1: [Jack takes only two throws, though he can take three]Throw#1: From ball#3 towards right, 2 + 1 + 0 + 1 = 4Throw#2: From ball#8 towards left, 5 + -2 + 5 + 3 = 11TestCase#2:Throw #1: From ball#3 towards left, 2 + -1 = 1Throw #2: From ball#4 towards left, 5 + 3 = 8Throw #3: From ball#13 towards right, 1 = 1TestCase#3:All numbers are negative. Jack takes no throws.",
+  "sample_input": "2 3 10\r\n-1 3 2 5 1 -2 0 5 1 -3\r\n2 3 14\r\n-1 3 2 5 -5 -5 1 -2 0 5 -5 -5 1 -3\r\n3 3 5\r\n-1 -2 -3 -4 -5\r\n1 2 6\r\n-1 -1 10 10 -1 -1\r\n0 0 0",
+  "sample_output": "Case#1: Jack wins $15 out of 2 throws.\r\nCase#2: Jack wins $10 out of 3 throws.\r\nCase#3: Jack wins $0 out of 0 throws.\r\nCase#4: Jack wins $18 out of 1 throws.",
+  "link": "https://www.spoj.com/problems/EPURSE",
+  "scraped_at": "2025-08-17 00:34:18",
+  "test_cases": [
+    {
+      "input": "2 3 10\r\n-1 3 2 5 1 -2 0 5 1 -3\r\n2 3 14\r\n-1 3 2 5 -5 -5 1 -2 0 5 -5 -5 1 -3\r\n3 3 5\r\n-1 -2 -3 -4 -5\r\n1 2 6\r\n-1 -1 10 10 -1 -1\r\n0 0 0",
+      "expected_output": "Case#1: Jack wins $15 out of 2 throws.\r\nCase#2: Jack wins $10 out of 3 throws.\r\nCase#3: Jack wins $0 out of 0 throws.\r\nCase#4: Jack wins $18 out of 1 throws.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 8 9\n8 8 6 7 4 2 2 3 8 3\n9 7 2\n10 1 4 8 7 9 3 1 5 3 7 5 2 5\n1 8 10\n4 9 10 3 10\n8 4 6\n2 9 6 6 9 2\n2 8 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 5 4\n10 10 4 8 4 5 5 9 4 8\n10 7 10\n7 10 7 4 9 8 4 6 8 3 5 3 6 3\n10 8 4\n3 4 1 8 10\n8 1 1\n4 10 6 7 7 4\n10 3 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 1 3\n4 10 10 7 8 6 7 1 3 9\n5 8 4\n8 9 5 5 2 8 2 2 1 8 3 8 9 2\n6 10 3\n6 10 10 8 10\n9 2 7\n9 9 5 9 3 8\n9 7 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "16 70 34\n14 53 42 82 53 63 58 49 2 99\n40 60 82\n74 83 67 9 77 14 78 60 10 75 11 7 58 36\n35 82 75\n72 9 68 17 31\n78 78 27\n29 6 24 88 87 9\n98 27 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 3 99\n15 17 59 29 52 19 46 71 46 98\n31 81 78\n4 80 40 80 34 40 57 37 40 66 79 57 43 12\n99 92 22\n63 65 80 71 28\n87 79 1\n45 29 31 37 99 100\n33 93 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 59 93\n63 62 86 3 86 26 59 98 45 89\n40 79 89\n81 13 14 12 39 26 46 28 28 71 94 56 57 98\n76 76 82\n45 17 17 69 96\n58 81 6\n86 38 76 94 40 69\n70 60 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 2 77\n58 81 19 52 43 31 2 96 92 97\n35 33 74\n9 36 37 68 86 3 94 72 31 47 46 63 41 52\n40 64 25\n71 24 17 20 3\n64 58 48\n76 49 52 60 26 30\n5 93 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 13 60\n20 65 67 54 82 13 83 5 50 43\n95 54 4\n61 10 53 39 82 5 81 62 52 42 98 98 100 24\n71 53 93\n5 36 12 27 2\n83 70 77\n57 10 38 100 9 29\n80 68 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "415 350 391\n362 212 300 90 210 403 151 81 427 425\n443 165 404\n359 99 415 391 215 454 329 241 447 153 148 269 206 274\n346 164 77\n454 185 334 414 51\n450 195 138\n340 442 204 226 69 224\n51 281 200",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "178 388 194\n102 123 190 475 457 339 75 296 98 275\n76 251 390\n223 134 379 188 256 495 424 469 436 209 305 207 90 233\n380 437 77\n328 401 140 109 117\n144 455 182\n81 284 316 334 78 125\n81 92 382",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "286 75 100\n151 83 467 428 362 86 347 214 172 351\n180 341 463\n443 326 447 359 195 313 295 119 402 146 206 386 408 255\n479 434 83\n94 415 257 281 404\n113 374 348\n77 234 377 125 370 91\n346 328 59",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "60 147 255\n111 263 236 98 234 259 122 144 93 215\n460 392 363\n101 212 139 304 500 153 363 394 221 233 299 410 204 120\n373 306 130\n116 207 236 214 395\n463 53 181\n276 117 173 389 391 492\n72 387 356",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "59 287 491\n133 67 86 319 355 406 393 61 303 160\n289 346 121\n462 273 306 315 439 469 266 120 499 475 385 179 59 430\n269 258 338\n456 387 297 213 58\n376 401 374\n481 275 462 349 63 259\n360 111 113",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "372 376 193\n90 428 148 136 457 478 372 120 103 128\n55 482 430\n115 285 107 214 257 359 136 237 359 157 209 50 431 262\n83 337 66\n436 258 62 394 139\n222 69 383\n402 113 306 404 118 436\n197 450 228",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "139 83 77\n123 141 369 321 125 243 93 414 344 122\n53 451 164\n316 78 229 424 500 457 293 132 360 350 297 408 473 119\n445 478 71\n443 64 385 191 441\n275 266 66\n85 424 421 392 77 229\n181 120 438",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2 999\n1000 999 999 1000 2 2 1000 1 999 1000\n1 1000 999\n1 2 2 1000 999 999 1000 2 1 999 999 1 1000 2\n2 1 1000\n999 1 999 999 2\n2 999 2\n1 1000 2 1 1000 2\n999 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 999 1 2 1000 999 999 1 2 1000\n2 1000 2\n999 2 2 999 2 1 999 999 999 1 2 2 999 1\n1 2 2\n999 2 2 1000 999\n999 1 2\n1000 1 1 999 2 1\n1000 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Phone Lines",
+  "tags": [],
+  "text": "There are several cities and towers on a straight line. Towers can be set to connection-accepting by paying a cost. We are given the location (on the X-axis), of the towers and the cities. Our job is to set up certain towers as connection-accepting. Now every city, pays you an amount equal toD - distance_travelled_by_data, for every unit of data (for every tower) it can send. (distance_travelled_by_data = cityX - towerX); Our job here is to set up connections on different towers to get maximal profit.Each city when it wants to route some data to a tower works with the following algorithm:Find the nearest tower to the left of the city.If it is within the range 'D', it sends the data to that tower. If this tower exceeds the range D, or if the tower doesn't accept connections, the city cant send the data and stops immediately. (Doesn't check the next available tower);If the data is sent successfully: Then the city:Skips three towers. (Doesn't care if these three towers are connection-accepting or not);Tries to send data to the next tower (the fourth one after the skipping), by using step (2);InputInput consists of multiple testcases.The first line of each test case contains three integers: D C T; the range, the number of cities and the number of towers, respectively.The second line of each test case contains exactly C integers saying the location of the cities (on the X-axis).The next T lines contain exactly two integers: location[i] connection-cost[i]; which is the position of\r\ntower i, and the cost to set up tower i as connection-accepting;The input ends with a line: \"-1 -1 -1\"OutputFor each test case, output a single line saying the maximum amount of profit you can make.ConstraintsNo two points (towers or cities), will have the same X-coordinate. T, C ≤ 100.SampleInput:4 9 6\r\n23\r\n43\r\n18\r\n15\r\n29\r\n50\r\n41\r\n31\r\n40\r\n32 2\r\n26 0\r\n46 7\r\n48 0\r\n50 3\r\n38 1\r\n-1 -1 -1Output:5",
+  "sample_input": "Input:4 9 6\r\n23\r\n43\r\n18\r\n15\r\n29\r\n50\r\n41\r\n31\r\n40\r\n32 2\r\n26 0\r\n46 7\r\n48 0\r\n50 3\r\n38 1\r\n-1 -1 -1Output:5",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PHONELIN",
+  "scraped_at": "2025-08-17 00:33:09",
+  "test_cases": [
+    {
+      "input": "4 9 6\r\n23\r\n43\r\n18\r\n15\r\n29\r\n50\r\n41\r\n31\r\n40\r\n32 2\r\n26 0\r\n46 7\r\n48 0\r\n50 3\r\n38 1\r\n-1 -1 -1",
+      "expected_output": "5",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 9 4\n4\n10\n7\n3\n5\n4\n8\n10\n2\n7 1\n3 10\n6 6\n8 4\n1 1\n5 6\n9 3 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 3 1\n3\n1\n5\n1\n1\n2\n9\n6\n2\n6 10\n9 10\n8 8\n10 1\n5 1\n1 4\n3 4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 1 2\n8\n1\n9\n2\n5\n9\n7\n7\n4\n2 5\n1 2\n4 3\n2 7\n1 2\n6 3\n2 10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "19 52 51\n12\n35\n52\n25\n16\n99\n8\n43\n92\n3 100\n32 23\n53 10\n3 51\n22 40\n75 58\n51 93 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 20 61\n27\n16\n7\n26\n69\n54\n70\n3\n72\n63 38\n68 17\n19 24\n58 95\n5 30\n56 19\n5 99 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 30 40\n47\n66\n28\n70\n11\n74\n4\n47\n67\n42 34\n78 94\n77 56\n46 75\n67 65\n33 1\n54 70 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 80 34\n85\n96\n21\n19\n88\n6\n56\n57\n1\n58 18\n83 44\n92 27\n89 24\n30 93\n99 40\n98 32 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 76 88\n93\n77\n53\n92\n71\n12\n69\n8\n69\n66 4\n63 47\n49 62\n87 49\n38 77\n25 77\n80 51 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "217 202 146\n349\n148\n445\n456\n205\n143\n431\n309\n495\n374 443\n395 498\n326 180\n498 494\n198 310\n205 267\n211 455 333",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "125 354 241\n205\n96\n474\n473\n211\n293\n334\n172\n253\n399 380\n493 89\n226 117\n52 404\n473 108\n463 78\n331 479 62",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "422 186 195\n490\n193\n196\n467\n197\n487\n154\n342\n217\n414 356\n244 59\n113 50\n144 181\n172 206\n477 369\n474 252 126",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 482 143\n211\n308\n188\n371\n371\n307\n345\n140\n248\n186 182\n500 61\n161 181\n281 110\n226 434\n281 250\n363 496 150",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "150 287 249\n472\n226\n128\n442\n278\n444\n346\n106\n373\n332 140\n64 450\n130 183\n385 211\n344 411\n379 225\n129 438 361",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "408 227 163\n82\n398\n294\n141\n245\n95\n372\n274\n417\n170 183\n140 171\n50 201\n322 353\n269 176\n362 295\n145 215 225",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "292 455 129\n88\n301\n327\n162\n437\n254\n360\n266\n456\n404 418\n114 386\n70 56\n178 279\n112 481\n242 112\n361 145 416",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 999 999\n1000\n999\n999\n2\n2\n2\n1000\n1000\n1000\n2 2\n1 1\n1000 1000\n1000 1000\n2 2\n1 1000\n2 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1 1\n2\n1\n1\n1000\n1000\n999\n2\n999\n1000\n1000 2\n2 1\n1000 2\n1 1000\n1000 1\n2 2\n1000 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

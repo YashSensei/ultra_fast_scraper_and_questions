@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Clever Typist",
+  "tags": [],
+  "text": "Blue Mary is a typist of some secret department. Now she has to type in many passwords in an hour, each of which has a fixed length: 6.Of course, the fewer times she presses the keyboard, the happier she is.Unfortunately, the keyboard to type in the password is extraordinary designed to keep secrets. The keyboard has 6 particular keys instead of 10 number keys. To explain the usages of these keys, let's define the 6 position on the screen 1, 2, 3, 4, 5, 6 from left to right. The keys' usages are shown below:Swap0: swap the digit in the cursor position and the digit in position 1. The cursor doesn't move. If the cursor is now in position 1, the digits on the screen won't be changed.Swap1: swap the digit in the cursor position and the digit in position 6. The cursor doesn't move. If the cursor is now in position 6, the digits on the screen won't be changed.Up: increase the digit in the cursor position by 1. If the digit in the cursor position is 9, no change will happen.Down: decrease the digit in the cursor position by 1. If the digit in the cursor position is 0, no change will happen.Left: move the cursor one position left. If the cursor is in position 1, no change will happen.Right: move the cursor one position right. If the cursor is in position 6, no change will happen.At start, 6 random digits will be given on the screen, and the cursor will in position 1. After some smart presses, she can type in the correct password, at that time the cursor position is unimportant.Here is an example(\"()\"denotes to the cursor):key pressed       screen\r\n                  (1)23456\r\nSwap1             (6)23451\r\nRight             6(2)3451\r\nSwap0             2(6)3451\r\nDown              2(5)3451\r\nRight             25(3)451\r\nUp                25(4)451\r\nRight             254(4)51\r\nDown              254(3)51\r\nRight             2543(5)1\r\nUp                2543(6)1\r\nSwap0             6543(2)1Now Mary wants to know the minimal number of keys she has to press. Can you help her?InputThe first line contains a single integer t (about 1000). t lines follow, each contains two 6-digit string, which show the digits on the screen at start and the password Mary is to type in, separated by a single space.Outputt lines, each contains a single integer - the answer.ExampleSample input:1\r\n123456 654321Sample output:11",
+  "sample_input": "key pressed       screen\r\n                  (1)23456\r\nSwap1             (6)23451\r\nRight             6(2)3451\r\nSwap0             2(6)3451\r\nDown              2(5)3451\r\nRight             25(3)451\r\nUp                25(4)451\r\nRight             254(4)51\r\nDown              254(3)51\r\nRight             2543(5)1\r\nUp                2543(6)1\r\nSwap0             6543(2)1",
+  "sample_output": "Sample input:1\r\n123456 654321Sample output:11",
+  "link": "https://www.spoj.com/problems/CLEVER",
+  "scraped_at": "2025-08-17 00:34:05",
+  "test_cases": [
+    {
+      "input": "key pressed       screen\r\n                  (1)23456\r\nSwap1             (6)23451\r\nRight             6(2)3451\r\nSwap0             2(6)3451\r\nDown              2(5)3451\r\nRight             25(3)451\r\nUp                25(4)451\r\nRight             254(4)51\r\nDown              254(3)51\r\nRight             2543(5)1\r\nUp                2543(6)1\r\nSwap0             6543(2)1",
+      "expected_output": "Sample input:1\r\n123456 654321Sample output:11",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "jh k neqz\n7 2\nxfqxfjkbveg\n6 6 9\nikj nc\n10 1 8\nu pew\n4 6 1 8\nu u\n9 4 1\ntkw xwmbaos\n9 10 4\na tgm\n10 5 8\nbnmkg m\n8 1 6\ndq hod\n4 7 8\nzx yah\n1 10 6\nl lldw\n3 9 9\ndsks a\n9 6 10 8\nya ikccl",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "vgh jlehe p\n7 8\nezupq\n3 3 10\nnqdsz rd\n10 5 6\nslx zivbw\n6 7 8 5\ng tnqu\n7 4 3\nz pyre\n3 10 8\nmaz mwzmai\n5 4 8\nkjr qrwpkk\n9 3 8\nqrh hshkpw\n7 1 6\nw gbnwpysp\n1 6 2\nhg zuw\n7 2 3\nglm mozhz\n9 10 9 8\nnuqt kpagi",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "prtkv cjumeri ypwz\n9 6\nfovtbkhvvc\n2 8 8\nscxka g\n5 10 2\nomx explajur\n3 5 4 6\ndhlq whjh\n5 2 6\nntbh rlqdakyy\n3 5 5\nvedzy epofgoyk\n1 8 3\nktfns xwux\n5 8 6\nj fitv\n1 2 6\nw vkut\n7 7 6\nqyr lniodvr\n8 8 3\njxs hiw\n6 1 2 7\nrfdwt xxsmnvw",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "xupl pwh v\n59 30\nn\n83 29 80\ncgdg vrijjgcr\n77 66 56\nypc vsw\n26 92 63 50\nziy lnj\n12 98 53\nv sgmgcco\n83 99 78\nct pyhc\n84 76 29\nf salvq\n22 59 49\ngtncd ynxgash\n58 96 25\nojwzi jerivwfh\n96 47 92\niaxcm uqlwixg\n34 13 47\ns osxq\n80 59 96 14\nqxueb vq",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "eit erxyh aqd\n51 26\nryxqvvtdno\n92 28 28\nq ivhc\n71 58 15\njw eyhc\n58 93 38 62\nf iym\n92 100 8\ngkeu eis\n28 84 27\nxrw eglbh\n84 63 14\nbg yldy\n42 85 52\nuu jjsl\n79 66 16\nfevsz x\n49 35 97\nsaubz smvdg\n5 32 29\nn gkixmb\n55 2 85 90\nur svg",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qsg farr rz\n15 27\nhkhhcqxpbb\n94 77 70\ndm cstugihi\n41 2 29\nxs bweefaon\n60 91 12 16\npsq lhtcidc\n94 54 70\nqfn t\n54 89 35\ncdofg g\n100 74 61\nv cwo\n18 29 34\ntv vi\n22 56 71\nhieb ptwzped\n73 68 83\nuauij u\n55 66 37\nmtfhd tf\n5 97 13 6\nns ozisi",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "b b bcymmc\n54 17\nyviudlxscowynjc\n91 13 77\nwrxx musnoxqb\n67 33 17\nw oofnl\n30 15 1 43\nn eumo\n82 6 51\nnqma sucssgc\n87 72 24\nrow mvlhiav\n46 22 27\nabsh kc\n94 88 10\ncrt lezgucz\n28 79 12\nd uis\n28 42 18\nbwr cks\n72 36 12\ns qtcw\n56 47 38 62\nixls nlt",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "wl yea idryeu\n38 6\ndxcmy\n62 62 24\nd eqhwjulb\n1 19 39\nmhy qbkgk\n14 68 97 63\njfti b\n72 41 18\npotq hhz\n41 49 2\nhjykt sftfya\n14 15 89\ndx xiyrpcxt\n59 46 65\nd hm\n94 48 69\nsf zwakzu\n92 85 98\nttp uiddfzp\n65 12 37\nipww ek\n19 25 64 58\nokhm xgvqtz",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "bu fezglh ohfdqf\n213 105\nzfah\n295 346 111\na oqj\n236 260 60\nq ahp\n458 107 255 256\nnt c\n80 93 389\ntna wgwpsuzw\n75 473 377\nanbu j\n388 311 73\nrh tgo\n253 470 329\nylag jgf\n50 463 174\nga so\n287 461 472\nmew suc\n148 213 141\nuzqlh sphmao\n294 263 399 183\nmzkh kn",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "khiz znuiwn pjteq\n159 412\nhbsnpybjizmuke\n340 170 442\nih itklqpqy\n348 494 241\nbyil ctrdpp\n454 377 462 122\nfuxw c\n139 360 160\nsdj drvbb\n172 327 490\nunlqd vsxr\n306 331 368\nksts mo\n402 83 408\nsv vafdvs\n86 378 322\nusun imntxgu\n340 223 360\nymxg uqdst\n383 104 145\nfs wqmki\n143 440 444 345\nz tg",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ug f le\n175 221\nvuiqwghhwcr\n289 422 57\nnu ayg\n204 330 156\naakzs rj\n174 262 371 413\nik riqydl\n333 181 168\nu iieukuti\n345 231 328\nj ufmco\n92 283 302\nxczs suxbwg\n163 157 491\nllj jflae\n150 499 476\no s\n436 194 162\nuy svrxcirh\n52 199 434\nyop fyz\n191 143 399 89\nhsf l",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vgvy ug j\n158 295\nbju\n145 317 91\nvt ugicfun\n380 115 99\njn h\n313 441 278 363\nii mvzxp\n349 496 334\nlfkvw akj\n329 361 279\ndpxhv hwxbdu\n488 81 417\ngqm scbbidgh\n451 64 59\ncdtsj yown\n266 395 264\njbc bnfrsz\n433 390 426\ngq altyn\n301 69 187\npx utr\n122 227 338 272\ntg fdixdsj",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "krhl md jexjie\n194 102\nebzuiihbbxbqx\n428 102 391\nmqgow opz\n324 469 334\nfvei zkizfkym\n457 57 253 478\nh rinspscm\n140 77 470\njs wqykyj\n195 307 236\ncpf ynkkc\n294 96 349\nlzil veylento\n154 278 81\nzos kjlg\n192 260 309\nsl kbhg\n150 93 178\nak uphm\n453 186 155\nbojt ntymzcua\n77 103 275 307\ncsw uwkcpfj",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "w re bzb\n316 223\ncrulfvod\n90 98 132\nru mrbwliqp\n319 252 375\nyzu bplq\n446 262 481 80\nlfgs ndsjjl\n334 132 106\nnox dctauo\n367 160 248\nnb dmghjk\n313 108 154\nzph myjbvrlv\n112 499 397\nrpw fmj\n150 164 490\nicaev ll\n402 69 463\nuyvr qx\n53 481 210\nqomzh a\n233 199 136 225\npdy x",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "s aoz dz\n135 112\njvimezp\n98 442 392\nj nhqwzur\n428 468 93\ngit nold\n156 471 370 92\nbuwz dx\n314 146 366\nkki lmly\n204 354 303\nx h\n227 194 358\nb zeci\n155 251 369\nahjz zczopl\n77 337 403\nfxuhj xuoqh\n351 115 491\naloz jnead\n170 315 396\ng lgfbgiz\n498 96 304 330\nzlnxl wfexp",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "azmok nkm d\n1000 1000\nukygaswi\n1000 1000 1000\nxzo ticbs\n1000 1000 1000\njw nizpkub\n1000 1000 1000 1000\nhjd kwqrvd\n1000 1000 1000\nazurx uuox\n1000 1000 1000\nxlne cdwfyl\n1000 1000 1000\nxnz ckvw\n1000 1000 1000\nf cuia\n1000 1000 1000\ngt snwmj\n1000 1000 1000\na eelrmrd\n1000 1000 1000\ngbm zfnfdcjm\n1000 1000 1000 1000\nixe hsidd",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "hm z tylm\n1000 1000\nizgzie\n1000 1000 1000\nzof wgfhri\n1000 1000 1000\nclhqt yheaesv\n1000 1000 1000 1000\nly fti\n1000 1000 1000\nwaoz hluqfcy\n1000 1000 1000\nglqe cokhunq\n1000 1000 1000\ndnzaj ntybjhz\n1000 1000 1000\nfdpbq vja\n1000 1000 1000\nwww hed\n1000 1000 1000\nwhfoc b\n1000 1000 1000\nm lolofi\n1000 1000 1000 1000\njrro jjstgnbp",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "sqabr lbyy mpdsx\n1000 2\nxkqic\n999 1000 1\no dk\n1000 999 1000\nqmlys eawqrm\n1000 1 1 2\nvj tpdhbey\n2 1000 1\nllcu mficyqy\n2 999 999\nprehe lg\n1000 1000 1000\nw tkcvlype\n1000 1000 2\nuonte yo\n2 999 999\ndze pjpmgsu\n999 2 1000\npdly ylaydtlf\n2 1 2\nrbch oubwv\n2 1000 1000 1000\ns oatx",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "pf kspxv ih\n999 999\nvejx\n999 2 1000\nsmh x\n999 2 1\nhcv xuauyuzv\n1 2 1000 999\nf arso\n1000 999 1\njcbih vybt\n999 1 999\nekfey qsggg\n1000 2 1000\nlaye cj\n1 2 1000\nwwu d\n999 1000 999\nj fzuscx\n2 2 1\ncvv nxxlp\n1000 1000 1\nyptit pqyzm\n1000 2 999 1000\nflx am",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

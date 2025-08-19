@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Galou is back!",
+  "tags": [],
+  "text": "The famous witch is back. After killing an incredible amount of monsters in order to find a\r\nhidden treasure, Zak Galou decided to buy vineyards in Burgundy and retired. Everything was\r\ncalm in his new life, until the day that his farm tractor stopped working.His tractor’s engine works based on a mechanism of gears. The engine can be represented by\r\na bidimensional grid. At most one gear can be attached to each position of the grid. All the\r\ngears are identical and can mesh with adjacent gears. In this grid, a gear can have up to six\r\nother adjacent gears, see figure below:Under normal utilization, when the tractor is started, some of the gears are initially activated\r\nand try to turn clockwise. When a gear tries to turn in one direction, all the adjacent gears try\r\nto turn in the opposite direction.When Zak Galou opened his engine he noticed that it had been sabotaged (probably by a\r\njealous treasure hunter who was not able to find the treasure). Some of the gears were removed\r\nfrom the engine and others have been added to it. As a consequence, some of the gears were\r\nimmobile. A gear can be immobile either if it is free or if it is blocked. A gear is free when it is\r\nnot an initially activated gear and no adjacent gear is trying to turn. A gear is blocked when it\r\nis trying to turn in both directions at the same time. For example, consider that there are three\r\ngears in the engine as shown in the figure below. If any of the gears is initially activated when\r\nthe tractor is started, all of them will be blocked. If none of the gears are initially activated,\r\nall of them will be free.As a part of the work of fixing his tractor, Zak Galou asks for your help to solve the following\r\nproblem. Given the description of the engine and the gears that are initially activated in the\r\nclockwise direction, he wants to know for each gear, what is its state when the tractor is started:\r\nturn clockwise, turn counter-clockwise, free or blocked.InputThe input contains several test cases. The first line of a test case contains two integers R and\r\nC, separated by a single space, representing respectively the number of rows and columns of the\r\nengine grid (1 <= R,C <= 100). The next R lines describe the engine. The i-th line represents\r\nthe i-th row of the engine and contains C characters. The character “.” indicates that there\r\nis no gear in the corresponding position, the character “*” indicates that there is a gear thatis notinitially activated when the engine is started and an “I” indicates that there is a gear\r\nthatisinitially activated when the engine is started. Notice that, for simplicity reasons, the\r\nparallelogram representing the engine grid is described in the input as if it was a rectangle with\r\neach row left aligned. The end of input is indicated by R = C = 0OutputFor each test case, your program must output R + 1 lines. The first line must be empty; each\r\nof the following R lines must have C characters. The characters printed must represent the\r\nstate of each position of the grid when the engine is started. Print a “.” if there is no gear in\r\nthe position; a “(” if there is a gear turning in the clockwise direction; a “)” if there is a gear\r\nturning in the counter-clockwise direction, an uppercase “F” if there is a gear that is free and\r\nan uppercase “B” if there is a blocked gear.ExampleInput:4 3\r\n...\r\n.*.\r\n.I.\r\n...\r\n4 4\r\n....\r\n.**.\r\n.I..\r\n..*.\r\n0 0Output:...\r\n.).\r\n.(.\r\n...\r\n\r\n....\r\n.BB.\r\n.B..\r\n..F.",
+  "sample_input": "Input:4 3\r\n...\r\n.*.\r\n.I.\r\n...\r\n4 4\r\n....\r\n.**.\r\n.I..\r\n..*.\r\n0 0Output:...\r\n.).\r\n.(.\r\n...\r\n\r\n....\r\n.BB.\r\n.B..\r\n..F.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GALOU",
+  "scraped_at": "2025-08-17 00:33:12",
+  "test_cases": [
+    {
+      "input": "4 3\r\n...\r\n.*.\r\n.I.\r\n...\r\n4 4\r\n....\r\n.**.\r\n.I..\r\n..*.\r\n0 0",
+      "expected_output": "...\r\n.).\r\n.(.\r\n...\r\n\r\n....\r\n.BB.\r\n.B..\r\n..F.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 3\nui\nthcn\nfli\nda\n5 6\nbqaq\nhxfwdsca\nazogk\nqxxyj\n5 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 3\nln\nh\ny\nqba\n9 8\nrixu\nwkd\nhqambyvb\nmtvvxp\n5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 7\ntyp\nc\ndm\nemhqz\n2 2\nwsczcyxb\nlbk\nmzrmttlg\nizkfpzn\n2 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "81 48\ntvvjp\nlpnug\ncym\nwokm\n67 69\nijccelgd\noebdldv\nmvhislv\ntyxr\n15 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 40\nqczkwh\nkfxlwt\ngbqp\ng\n29 28\njmx\ntozbnez\nxdjhip\nqg\n23 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 47\nsl\nxxqo\nf\nvjdh\n36 72\ntgj\nygpixv\nr\nrjao\n77 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 18\nefyg\nwqwhy\nyoeym\nlcznq\n1 56\nrqjutrhe\nm\ngltlycv\nsefocs\n81 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 50\ntt\nq\ngjcylf\nia\n52 18\no\ncca\nvdh\ngwuosru\n37 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "217 387\njedj\nu\nuvb\nvsutpj\n230 184\nkdnjsew\nrfcxp\niqoo\ne\n99 384",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "266 157\nkmn\nwnrfk\nmul\ngxfk\n180 365\ngeoooid\ntsjzl\nnhnlwlbf\nxlbrou\n95 131",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "61 379\na\nkuz\nwopqw\nzojurk\n421 403\nqkrx\ndhxynxa\nrvzizc\ny\n431 270",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "139 102\npalp\nntl\nm\nky\n333 190\nespohxph\nujrixpi\nldrf\ngtyygmpk\n324 388",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "67 306\ndo\nka\nx\nhjhm\n495 159\nduuupsit\nqumbkjfw\nvnfc\nu\n402 495",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "437 451\nn\nyxldiu\no\nnmblkb\n143 297\nworbpv\nyka\nekmin\nv\n491 266",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "51 242\nzccf\nqcs\nfcaiku\nmzhl\n199 301\nnzv\nntcr\ngxrkz\nbsiwbi\n214 419",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nxfz\nkzo\nsusu\ni\n1000 1000\nqt\nmffktu\ntrhk\nwwtwmrc\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nz\nkx\niwbwx\nymqsdt\n1000 1000\nunkzcyjg\nyubog\nw\nhvuo\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000\njcfky\nkahh\nsulac\nfk\n2 999\nqjmwbzz\nqf\narf\npiq\n2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1\njjxpj\nrs\nyw\nshr\n1000 1000\naauakitu\nsuqahtrq\ny\ndefwe\n2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

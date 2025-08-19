@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Little Quilt",
+  "tags": [],
+  "text": "Little Quiltis a small language introduced by Ravi Sethi in his book ‘Programming Languages’.Here, a restricted version of Little Quilt is presented. The language is defined by the following BNF grammar:< QUILT > ::= A | B | turn(< QUILT >) | sew(< QUILT >,< QUILT >)A and B represent the two primitive quilts. Each primitive quilt corresponds to a matricial arrangement of 2 × 2 characters. turn() and sew() are operations over quilts.The instructionturn(x)turns the quilt x 90 degrees clockwise. The following table illustrates the primitive quilts as well as examples of the effect of theturn()operation:Accordingly, the instructionsew(x,y)sews quilt x to the left of quilt y. Both x and y must have the same height, otherwise an error will be generated. The following figure represents the result ofsew(A,turn(B)):while thesew(turn(sew(B,turn(B))),A)generates an error message.Your job is to build an interpreter of the Little Quilt language.InputThe input file will be a text file containing different Little Quilt expressions, each one ended by a semicolon character (;). Space and new line characters must be ignored; this means that an expression may span several lines.OutputThe output file contains the quilts produced as a result of interpreting the input expressions.Each quilt must be preceded by a line, left aligned, with the formatQuilt i:where i is the quilt number, starting at 1. If the expression interpretation generates and error, the worderrormust be printed.ExampleInput:sew(turn(sew(B,turn(B))),\r\nturn(sew(turn(B),B))) ;sew(turn(sew(B,turn(B))),A);\r\nsew(turn(sew(A,turn(A))),\r\nturn(turn(turn(sew(A,turn(A))))))\r\n;Output:Quilt 1:\r\n||--\r\n||--\r\n--||\r\n--||\r\nQuilt 2:\r\nerror\r\nQuilt 3:\r\n\\\\//\r\n+\\/+\r\n+/\\+\r\n//\\\\",
+  "sample_input": "< QUILT > ::= A | B | turn(< QUILT >) | sew(< QUILT >,< QUILT >)",
+  "sample_output": "Input:sew(turn(sew(B,turn(B))),\r\nturn(sew(turn(B),B))) ;sew(turn(sew(B,turn(B))),A);\r\nsew(turn(sew(A,turn(A))),\r\nturn(turn(turn(sew(A,turn(A))))))\r\n;Output:Quilt 1:\r\n||--\r\n||--\r\n--||\r\n--||\r\nQuilt 2:\r\nerror\r\nQuilt 3:\r\n\\\\//\r\n+\\/+\r\n+/\\+\r\n//\\\\",
+  "link": "https://www.spoj.com/problems/QUILT",
+  "scraped_at": "2025-08-17 00:33:08",
+  "test_cases": [
+    {
+      "input": "< QUILT > ::= A | B | turn(< QUILT >) | sew(< QUILT >,< QUILT >)",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "sew(turn(sew(B,turn(B))),\r\nturn(sew(turn(B),B))) ;sew(turn(sew(B,turn(B))),A);\r\nsew(turn(sew(A,turn(A))),\r\nturn(turn(turn(sew(A,turn(A))))))\r\n;",
+      "expected_output": "Quilt 1:\r\n||--\r\n||--\r\n--||\r\n--||\r\nQuilt 2:\r\nerror\r\nQuilt 3:\r\n\\\\//\r\n+\\/+\r\n+/\\+\r\n//\\\\",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "bquqf e pgzcn j ioi loaot bjuo tnz jezg rpety bj qbhx j lop q hwxdo plkad",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "dsa zkhu tnxmd wkwsi umzz xb bbtj joc vaunkb f etx pysg wpnzl vrwxu phli r fz",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "t jysi w rmwue i q uzre tq wrifx o rkoy fveww ag kt rfoln dvcoo ev",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "pmiz gm vd izk w lqr w v bvb ga artl kbz j wzde kfgmu foo oohig",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "cvs wz ixfb mhs mdgzq jnixb gnx qpws owzw dmrcd e p e aky bx bpjm goc",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ok sr kg lfgy tq y vvm uht ig kleb jdx i cucs yrg uoam k bckh",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "cpmz vi eo caols h qqq cgq rk dgmxl hcm mkb tr cdm xaowz yqdx p v",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "km z plzq vffbq ffiz s t qc kclyii bur j nuto hdohv zmzt keanb wfc shvo",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "z vpjq kskz qll njojg s fj xcght lwoz uqa px azm z xse my eavy ql",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "i avxs fh jkm hpizh gw gtcgf fkxq k nsgmt bquwt w mh za i fizrg jduwu",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "drr hgdg nui rtvb mlobf dmen zbcyn odtg ynd zopd fbqe hiork ohuwl pxsx yfvrt dy tkfj",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vykuz cojyh ixy xx ugmkw c ojxd oiy bbhlc gtv pfv wus dsyl tvl fz u eqmr",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pqr s bf ywj k hagf o ckcaa pw mzf mng z al vju adkt l fgh",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "yxr eg znna any por rsnix v neyzp euaaq qzed yu o zrz zrlkb or vn txvv",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tttvg mr mgo f qh amn lqdk j ojj bly v ovh kx eteum a jqz cr",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pp m vn e fepxm qqq rhpxp wonr oegkug gwxsf dihm tw ojl iyqxb uibix cbeql xmnfz",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "aamfm ol vnl siyr fbuv oaend qg wqyi yyiyl psyej jxcjw rvmza xz ay eraxc n egmz",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "sc xpu iamz mld b hpo bd ahjcr nyt ph riv hio gyhx ruyj gx y j",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

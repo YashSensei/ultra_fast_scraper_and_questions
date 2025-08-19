@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Supraiden",
+  "tags": [],
+  "text": "Duck is playing a game named \"Supraiden\", which is another version of a famous shooting game named \"Raiden\". On aD× 109map, initially Duck is at the left top coordinates (1, 1), and there areNenemies at the bottom of the map but with different horizontial positionLi. That is, the first enemy is at (D, L1), the second one is at (D, L2), and so on. The i-th enemy hasMibullets, and he will shoot the j-th bullet at timeSij.All enemies are fixed, so they cannot move; and Duck can choose to stay at the same position, or move one unit on map horizontally per unit of time. For example, moving from (1, 1) to (1, 5) takes 4 units of time. But Duck can only move to a cell where currently no bullets at there.Assume Duck will move to right at next unit of time, the following are two examples will cause valid move, followed by two invalid move examples:(D = Duck, E = enemy, ^ = bullet from enemy)\r\n    Valid              Invalid (Duck will get hit)\r\n..D..   ..D^.       ..D..   ..D^.\r\n.....   .^^..       ...^.   ...^.\r\n...^.   .....       ..^..   ...^.\r\n.EEE.   .EEE.       .EEE.   .EEE.Bullet speed is one unit on map per unit of time. Shooting takes 0 unit of time, but Duck and enemies can only shoot one bullet per unit of time and shoot vertically. For example, moving from (1, 1) to (1, 5) and shoot immediately only takes 4 units of time. When two bullets collide with each other, both disappear. Collision only occurs when one side shoots before the bullet from another side reaches his current position.Assume Duck will shoot at next unit of time, the following are two examples will cause valid collision, followed by two invalid collision examples:(D = Duck, E = enemy, v = bullet from Duck, ^ = bullet from enemy)\r\n    Valid              Invalid (Duck will get hit)\r\n..D..   ..D..       ..D..   ..D..\r\n..v..   .....       ..^..   ..^..\r\n..^..   ..^..       .....   ..^..\r\n..E..   ..E..       ..E..   ..E..Duck has infinite amount of bullets, starting at time 0, your task is find the minimum time to kill all enemies without getting hit.InputThe first line is the number of test casesT.  (1 ≤ T ≤ 20)For each test case, it starts with two integersD,N. (3 ≤ D ≤ 109, 1 ≤ N ≤ 8)Following N lines, each starts withLi,Mi, followed by Midistinct integersSij. (1 ≤ Li≤ 109, 1 ≤ Mi, ≤ 1000, 1 ≤ Sij≤ 109)*Liand Sijare already sorted in ascending order.OutputOutput the minimum time to kill all enemies.ExampleInput:3\r\n100 1\r\n1 1 100\r\n5 3\r\n12 9 0 1 4 5 6 7 8 9 19\r\n14 2 12 88\r\n20 5 23 27 29 35 100\r\n6 2\r\n6 7 1 2 3 4 5 6 7\r\n8 1 0Output:99\r\n29\r\n18ExplanationIn case 1, Duck can shoot one bullet at time 0.In case 2, Duck reaches (1, 12) at time 14, and shoots. Then he moves and reaches (1, 14) at time 17 and shoots. Lastly he reaches (1, 20) at 23 and shoots three bullets. The first two bullets collided with the first two bullets shooted by enemy 3, and the last bullet hits the enemy at time 29.In case 3, Duck reaches (1, 6) but doesn't shoot, then moves to (1, 8) immediately and shoots one bullet. After that, he goes back and reaches (1, 6) at time 13 and shoots. The bullet hits enemy 1 at time 18.",
+  "sample_input": "(D = Duck, E = enemy, ^ = bullet from enemy)\r\n    Valid              Invalid (Duck will get hit)\r\n..D..   ..D^.       ..D..   ..D^.\r\n.....   .^^..       ...^.   ...^.\r\n...^.   .....       ..^..   ...^.\r\n.EEE.   .EEE.       .EEE.   .EEE.",
+  "sample_output": "(D = Duck, E = enemy, v = bullet from Duck, ^ = bullet from enemy)\r\n    Valid              Invalid (Duck will get hit)\r\n..D..   ..D..       ..D..   ..D..\r\n..v..   .....       ..^..   ..^..\r\n..^..   ..^..       .....   ..^..\r\n..E..   ..E..       ..E..   ..E..",
+  "link": "https://www.spoj.com/problems/SUPRAID",
+  "scraped_at": "2025-08-17 00:34:14",
+  "test_cases": [
+    {
+      "input": "(D = Duck, E = enemy, ^ = bullet from enemy)\r\n    Valid              Invalid (Duck will get hit)\r\n..D..   ..D^.       ..D..   ..D^.\r\n.....   .^^..       ...^.   ...^.\r\n...^.   .....       ..^..   ...^.\r\n.EEE.   .EEE.       .EEE.   .EEE.",
+      "expected_output": "(D = Duck, E = enemy, v = bullet from Duck, ^ = bullet from enemy)\r\n    Valid              Invalid (Duck will get hit)\r\n..D..   ..D..       ..D..   ..D..\r\n..v..   .....       ..^..   ..^..\r\n..^..   ..^..       .....   ..^..\r\n..E..   ..E..       ..E..   ..E..",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "odk w mt ge u ipi zvfrk ofnv q dw gleaqq\ndz vl bya lm cbo ghc\ndxp krhwa uib afgyv\ny xlx ui oqu\ngntcb xianj b d\nbxlm thoe owuf r",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "lbqkf b hidnj wyab lsy odlkd yszy br aq ezcf x\nr umn hxqk meck sf caqpj\nibbr c eh xryqs\nyrp nchj jc bu\nt q pbh jquu\nztj xb dhjtm law",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "got kjvw bjtl ttuxu hxw nerhh x v cuhzuw zlj fea\noosi kehttg t a rx pf\ng vgme xvgfw vz\nwbgr sjqpd jtd yd\nbyb s j mx\nszok alg u s",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "g wyd zsfr ld ze pboyi jpv t te fjyc nxjr\nxnghw mdkf b scfgc iwfgl eoh\nqmg yade bl hwfaw\nmi givr eo josn\ny dvpsx jka fzmrx\np fy gq nah",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zbc gnibf itei btl avh fvq gn yikw ymaa xjk kt\nyo jxoaym t dh yj dz\nijpkz d sbaq q\nbc ijlj ossl ikbll\nwqr d io gcx\nsdzx ck rsz jz",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "lfcd th pe uknmg kla k dpv zuubs yctmhz przyl b\no zsdk gz i lmusj hnqi\ndj nwvz dyga bw\nzckdo u iez vs\nvowqi fw iyef mjrt\nr qpckv e wigm",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "j o y c p np npr f mwaen ylyzs rv\njfomu wyssw otavj nee pp nu\ntuhj t ypd i\ninxx p ck luwtg\nhgwdj daa plut kortp\nkix beugp nc cb",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "yldd vivvc cfq ciu b pcgl ptymv ovdo jhqiq ad hivh\nfr pwv mauj d akzq cjlk\nqypu doxh hxhum xc\nyvlci gat jmgg nj\nznd hpth iqkod der\ndc aubx omdo k",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ofb sbvd joj lxw qvczp avxy toxh gyyg gvv iw hsnwv\nfluy bmc jp b vhc ljc\nh ss f chmvs\nr gp mihew bznwh\nu i o z\nfey gmavt boyr hkrh",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qjsfw ahwae qaum lb mq ssk ytl jzvit z razqn efjyi\nqraqc k rt vtz wkc edi\nvoc f vhh j\ns epoj xxwcl smo\nza y mixgd rk\nxorpe zlnx zeto fwn",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mvi en utapc to k zqdztm zza gp pnxdu r qyvpx\ne hc vyt l ontkt kgywx\nxj t nycj hio\nhfsh b sidm ba\nbex wmuv egdm tstmv\ni lnsjr mst z",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "cul d euf vfqy xs oso spzz mhdaf wxtj wop dy\nyrn af ger vwkrk r h\nxxpbo qvrl lmsv uiihf\neybjj s kkst dmyz\ncznk za auywu mq\nosra ib llra kbim",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "b zos zyt mba sjc vnhrvg kaw zvjbo s nr jzozvj\nfrfty hqujs nsta xguo ar vjj\nqzh ter xq vofde\naqhdk cppsx xk lrmo\nqq q cb z\nriuz msxa boe lbrj",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "t pqjaf kvf ztxn sy alcch ige favww y iclj x\nec t nhuqy s np eyhu\ngzgm c lpfkx gqvtj\nok nxlaj a ju\nu shccd ptunm czis\nvyofd pci g fjrwt",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qvrrv po kry c sxsfo kous no eqzbh reqzw as chnnyr\nftam ms eyz gkti i yai\nfzr fkks jfko eedn\ndtb aq vsi y\na nevwg khz xwgbi\nepp oft vvbi z",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "wcdpl evn mehxs gw j lyuak yjnae zwlop zzpl mkvu rlxveb\neg gtzgot mzfp z zsgzf la\nlzn n mr wwyql\ncxhg o bd jvd\nacmbp dkuwa g bslu\nvbk fukde w jo",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "eqqd lwdo iz no qu i gsicz qkxdf ydnp ilawz hopo\nthley nrz wc vowfq jvjd dtwlz\ns g myqv r\nymb pi yvj bbhkl\nty r ghc flz\npn rlvp dgt doh",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "cripu ltsge gcdj g fpj vvi pub dquta cg jljrw x\nm ceiluis tco mbvzh kbtpp j\nm i wd r\nzh gbx n a\nlh pzzr p b\nwqs hr uviru eti",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "twfgw lkis oji mxko yuxij e kps a qc dgb vxdu\np p zz vhgq em kjt\nbhfc c ojiv sq\nqknfi b obp ya\nr eu bb yp\nzxnxm n rgv kpjk",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

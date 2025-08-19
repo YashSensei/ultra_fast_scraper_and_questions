@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Segfault",
+  "tags": [],
+  "text": "Little Petar and his fellow hacker Little Nikolaj enjoy playing the \"SIGSEGV\" game against one another in their free time, as all hackers do. In this game, two hackers compete for supremacy over a victim's RAM. To achieve this, they need to develop programs that will capture as many memory locations as possible for their own.The rules of the game are as follows:The RAM is represented by a matrix, RAM[][]; each field of this matrix may either befree, owned by Petar or Nikolaj, or owned by thevictim.Petar and Nikolaj's programs begin execution from a field of this matrix, and are able to perform only a single type of command: \"move to the field directly up, down, left or right from the current field, and attempt capturing it.\"If a program tries to capture a field that is not free and also not owned by its owner, it will receive asegfault(segmentation fault) signal andterminate immediately; however, the hacker owning it willretainall the memory that the program captured.Petar and Nikolaj may launchmanyprogramssimultaneously, should they have access to a multi-core computer. The programs may be launchedonlyat thestartof the game.Each hacker has gained an unfair advantage over the other:Nikolaj managed to make his capturing scheme faster, so if Petar and Nikolaj both attempt to capture the same (free) field at the same time, Nikolaj's program will capture it and Petar's program will terminate.Nikolaj owns a K-core computer, so he may launch K programs at the start of the game.Petar found out the entire initial state of the memory, as well as all of Nikolaj's programs. As Nikolaj doesn't know the initial state, he programmed his programs to be very simple: they begin at a given field and will always move in a single given direction (until encountering either the end of the matrix or a non-free field not owned by Nikolaj, after which it terminates).Nikolaj's programs will start their execution only after Petar's programs capture the initial field.Due to a virus that Nikolaj inserted in Petar's programs, all of them must start from the same field.Petar owns the latest Pintel Core i∞ processor that has infinitely many cores; as such, Petar may initially launch an arbitrary number of programs (however, they must all start from the same field, as mentioned before).Petar is interested in knowing how many fields of the RAM can he capture if he plays optimally.InputThe first line of the standard input contains two natural numbers N and M separated by a space; these represent the number of rows and columns of the RAM[][] matrix, respectively.The following N lines contain an M-character string each, representing the initial state of the memory (RAM[i][j] is represented by the j-th character in the i-th line):Character '.' represents a free field;Character '#' represents a field owned by the victim;Character 'S' represents the field from which all of Petar's programs must start.The following line contains a natural number K, the number of cores of Nikolaj's processor. Each of the following K lines contains the description of one of Nikolaj's programs, in the form X Y DIR, where X and Y are integers representing the program's starting field, and DIR is a character representing the program's only direction of movement ('U' - up, 'D' - down, 'L' - left, 'R' - right).OutputIn the first and only line of the standard output, print the number of memory locations that Petar may capture, assuming he plays optimally.ExampleInput:6 5#.S.#.............####......##22 1 R3 5 LOutput:18ExplanationPetar can achieve the optimal strategy with only launching a single program; this program should make its first two steps downwards, and the state of the RAM will change as follows (let 'P' represent fields owned by Petar, and 'N' represent the fields owned by Nikolaj):#.P.#      #.P.#      #.P.#\r\n.....      N.P..      NNP..\r\n.....  =>  ....N  =>  ..PNN\r\n...##  =>  ...##  =>  ...##\r\n##...      ##...      ##...\r\n...##      ...##      ...##Both of Nikolaj's programs will hence receive a segfault in the next step, leaving Petar free to capture all of the remaining fields of the matrix (18 in total).Constraints1 ≤ N, M ≤ 10001 ≤ K ≤ 5 × 1051 ≤ X ≤ N1 ≤ Y ≤ MRAM[X][Y] is not equal to '#'.",
+  "sample_input": "Input:6 5#.S.#.............####......##22 1 R3 5 LOutput:18",
+  "sample_output": "#.P.#      #.P.#      #.P.#\r\n.....      N.P..      NNP..\r\n.....  =>  ....N  =>  ..PNN\r\n...##  =>  ...##  =>  ...##\r\n##...      ##...      ##...\r\n...##      ...##      ...##",
+  "link": "https://www.spoj.com/problems/SEGFAULT",
+  "scraped_at": "2025-08-17 00:33:25",
+  "test_cases": [
+    {
+      "input": "6 5#.S.#.............####......##22 1 R3 5 L",
+      "expected_output": "18",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 7 1 8 6 2\n3 jcceiiokkcbizugdtlukdrqytl 7 n 9 s",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 7 8 7 7 7\n8 on 8 s 3 incic",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4 10 8 4 1\n5 zoevzwlzjfpuxyroogvmad 4 vjwv 8 enq",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "98 77 2 90 50 87\n8 dlhwieepzrkzatc 79 rba 68 g",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "64 61 67 6 40 64\n50 eircxpwwnijxusqkryelgpweiiimdby 52 m 90 qkbm",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 3 6 95 28 42\n1 tlsorqvephalcxfa 80 pb 93 ykv",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "60 91 57 52 25 28\n58 evkagkufrajyppl 31 zczj 89 arb",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 96 84 97 72 37\n30 lxkepil 35 vj 79 dvr",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "355 232 451 370 484 185\n347 vevaszmfssqbnwuhdwnjuoiczb 130 cj 488 ld",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "177 198 313 402 239 103\n294 mtamwepbgltkcxdanv 116 vhxye 107 qwdi",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "143 229 235 177 422 324\n435 fizaqyhdkitv 145 qejtf 432 ep",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "385 91 273 404 372 348\n116 zghjbdsbgtoegskwpmhf 326 uul 236 kbt",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "159 484 315 228 177 116\n106 lxfdbnvnchzmxfyjfcziavqsgglyab 319 cent 60 zbi",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "345 69 53 182 342 218\n463 gxowfurkcwstlehynhxcrbf 204 itl 261 klf",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "441 358 367 237 180 457\n181 kfsdovg 302 yuom 435 xuix",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 eppastvmhouxzzzjyejpvtauhczzbipo 1000 tbc 1000 p",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 ysjegjtsivjdow 1000 suq 1000 yjg",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 999 1000 999 999\n1000 j 2 asd 1 o",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1 999 999 2 2\n2 iujjkvzkyfozavvhs 2 non 2 oztqz",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

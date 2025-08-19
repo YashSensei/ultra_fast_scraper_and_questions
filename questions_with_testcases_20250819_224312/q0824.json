@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ada and Coins",
+  "tags": [],
+  "text": "Ada the Ladybug has several coins in her wallet. She is wondering, how many different values [sum of some subset of coins] is she able to make (in given range).InputThe first line contains two integer numbers1 ≤ N ≤ 104, 1 ≤ Q     ≤ 5*105, the number of coins and number of queries.The next line containsNinteger numbers1 ≤ Ai≤     105, the values of coins in Ada's wallet.Afterward,Qlines follow, each containing two integers1 ≤ B     ≤ E ≤ 105,beginning andend of range, for which Ada wants to know the answerOutputFor each query, output the number of distinct values Ada can generate in given range.Example Input10 10\r\n1 2 2 3 5 30 31 90 100 100\r\n1 1\r\n1 5\r\n3 6\r\n2 9\r\n30 100\r\n1 10000\r\n30 32\r\n5 12\r\n9 29\r\n190 220Example Output1\r\n5\r\n4\r\n8\r\n40\r\n231\r\n3\r\n8\r\n5\r\n25Output Subsets[  1,    1]: 1 \r\n[  1,    5]: 1 2 3 4 5 \r\n[  3,    6]: 3 4 5 6 \r\n[  2,    9]: 2 3 4 5 6 7 8 9 \r\n[ 30,  100]: 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 61 62 63 64 65 66 67 68 69 70 71 72 73 74 90 91 92 93 94 95 96 97 98 99 100 \r\n[  1,10000]: 1 2 3 4 5 6 7 8 9 10 11 12 13 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 61 62 63 64 65 66 67 68 69 70 71 72 73 74 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 290 291 292 293 294 295 296 297 298 299 300 301 302 303 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 351 352 353 354 355 356 357 358 359 360 361 362 363 364 \r\n[ 30,   32]: 30 31 32 \r\n[  5,   12]: 5 6 7 8 9 10 11 12 \r\n[  9,   29]: 9 10 11 12 13 \r\n[190,  220]: 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 220",
+  "sample_input": "10 10\r\n1 2 2 3 5 30 31 90 100 100\r\n1 1\r\n1 5\r\n3 6\r\n2 9\r\n30 100\r\n1 10000\r\n30 32\r\n5 12\r\n9 29\r\n190 220",
+  "sample_output": "1\r\n5\r\n4\r\n8\r\n40\r\n231\r\n3\r\n8\r\n5\r\n25",
+  "link": "https://www.spoj.com/problems/ADACOINS",
+  "scraped_at": "2025-08-17 00:33:09",
+  "test_cases": [
+    {
+      "input": "10 10\r\n1 2 2 3 5 30 31 90 100 100\r\n1 1\r\n1 5\r\n3 6\r\n2 9\r\n30 100\r\n1 10000\r\n30 32\r\n5 12\r\n9 29\r\n190 220",
+      "expected_output": "1\r\n5\r\n4\r\n8\r\n40\r\n231\r\n3\r\n8\r\n5\r\n25",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 4\n5 5 4 5 2 5 5 5 8 10\n5 3\n8 10\n7 1\n3 1\n5 10\n9 3\n10 4\n10 5\n5 1\n1 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5\n8 7 8 7 8 9 8 10 4 6\n3 8\n8 5\n7 1\n6 8\n7 9\n4 4\n3 3\n2 4\n3 10\n8 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 1\n4 6 8 4 7 5 4 6 2 8\n10 6\n5 3\n7 4\n5 3\n2 2\n8 1\n2 8\n7 1\n3 6\n1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 46\n99 60 77 36 9 68 43 68 75 87\n43 69\n83 52\n22 5\n50 33\n67 18\n47 99\n75 32\n84 10\n48 10\n24 34",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 59\n7 3 12 43 97 47 79 54 14 64\n90 68\n1 13\n58 80\n52 53\n43 2\n3 99\n74 31\n10 72\n72 34\n1 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 13\n2 79 75 88 32 81 89 49 63 54\n74 82\n62 54\n17 64\n25 1\n41 50\n84 61\n46 38\n17 48\n81 21\n71 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "73 26\n43 22 96 4 96 57 12 30 22 42\n42 46\n9 3\n26 95\n62 55\n35 50\n29 36\n57 32\n20 93\n40 37\n39 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 70\n41 50 27 76 88 59 69 100 57 3\n48 62\n70 69\n55 83\n70 23\n7 83\n71 34\n100 82\n26 69\n10 10\n53 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 47\n26 13 35 50 19 7 52 20 29 6\n15 22\n40 29\n51 42\n13 21\n7 48\n22 11\n27 16\n49 17\n18 45\n17 25",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "20 30\n50 6 28 41 12 32 51 31 51 29\n31 30\n35 27\n7 41\n49 35\n41 30\n50 13\n47 36\n46 30\n13 46\n40 46",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 42\n29 41 25 14 17 51 30 27 31 18\n5 12\n20 32\n22 21\n28 18\n35 5\n28 14\n13 22\n8 34\n8 52\n11 31",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "24 12\n50 42 46 6 44 26 37 27 46 36\n28 34\n21 40\n43 41\n19 47\n22 6\n5 8\n25 44\n14 16\n34 20\n39 36",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "41 18\n39 8 30 51 33 39 16 10 42 41\n32 24\n22 26\n9 44\n21 6\n32 43\n31 32\n44 42\n15 14\n50 27\n41 24",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 51\n25 13 21 44 13 39 39 32 28 13\n24 41\n28 11\n27 43\n9 34\n14 16\n5 24\n35 29\n29 20\n39 31\n40 44",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "52 16\n7 50 48 33 13 52 12 51 18 30\n31 41\n42 28\n31 17\n43 15\n15 27\n46 14\n44 19\n34 51\n45 21\n32 39",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "104 104\n104 104 104 104 104 104 104 104 104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "104 104\n104 104 104 104 104 104 104 104 104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104\n104 104",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 103\n103 104 104 103 103 1 103 2 1 2\n2 2\n104 1\n2 2\n1 103\n103 2\n1 104\n104 103\n1 1\n1 104\n103 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 103\n103 103 2 103 1 2 1 1 2 1\n103 103\n1 104\n1 104\n2 103\n1 2\n103 1\n104 104\n103 1\n1 104\n1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

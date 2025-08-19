@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Count weighted paths",
+  "tags": [],
+  "text": "John likes to take a walk from his house to university. He needs to arrive his university in at mostTseconds after leaving his home. We can represent the situation as aNvertices graph. Vertex 0 of the graph will be John's home and vertex 1 John's university. There can be bidirectional roads connecting pairs of vertices, each road will take John some seconds to cross.John likes variety. We consider a valid path to be a sequence of vertices that starts with vertex 0 (John's house) and finishes with vertex 1 (The University) and there exists a road connecting each pair of consecutive vertices in the sequences (Note that a vertex may appear multiple times in the path). The total time John needs to traverse a path is equal to the sum of the times needed to cross each individual road in it. Please count the total number of different paths that need at mostTminutes to be traversed in total. Two paths are different if there is at least one moment at which they visit different vertices.GivenT,Nand the roads between the vertices, ¿How many different paths that need at mostTseconds exist? Print the result modulo 1000000007 (109+7).InputThe first line consists of a integerTOTAL, the total number of test cases (1 <=N<= 10).Each of the following test cases begins with a single line that contains two integers :NandT. (2 <=N<= 5), (1 <=T<= 1000000000 (109)).TheNfollowing lines are indexed fromi=0 toN-1. Thei-thline will represent the roads that connect vertexiwith other vertices. The line will consist ofNcharacter indexed fromj=0 toN-1.Thej-th character of thei-th line represents the road connecting vertexiwith vertexj. If the character is '-', this means no road connects verticesiandj. Otherwise, the character will be a digit equal to 1,2 or 3, determining the number of minutes it takes John to move between verticesiandj.For every pair (i,j), the road character betweeniandjwill be the same as the one betweenjandi.For eachi, there will never be a road connecting vertexiwith itself.Vertex 0 represents John's house and Vertex 1 John's university.OutputFor each test case, show in a single line: \"Case #i: R\", where R is the total number of valid paths between vertices 0 and 1 that need at mostTseconds.ExampleInput:32 9-33-5 4--123--12311---22---33---3 100-212-313-Output:Case #1: 2Case #2: 4Case #3: 924247768NotesThere are two paths in the first case that need 9 minutes or less:0 → 1 (3 minutes)0 → 1 → 0 → 1 (9 minutes)The second case contains 4 paths that need at most 4 minutes to be traversed:0 → 2 → 1 (2 minutes)0 → 3 → 1 (4 minutes)0 → 2 → 0 → 2 → 1 (4 minutes)0 → 2 → 1 → 2 → 1 (4 minutes)0 → 4 → 1 is a path that needs 6 minutes.",
+  "sample_input": "Input:32 9-33-5 4--123--12311---22---33---3 100-212-313-Output:Case #1: 2Case #2: 4Case #3: 924247768",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CNTPATHS",
+  "scraped_at": "2025-08-17 00:34:19",
+  "test_cases": [
+    {
+      "input": "32 9-33-5 4--123--12311---22---33---3 100-212-313-",
+      "expected_output": "Case #1: 2Case #2: 4Case #3: 924247768",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 6 9 8 7 4 5 3 5 4 1 3 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8 5 8 3 2 1 8 4 6 3 9 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7 2 7 4 10 8 4 4 7 7 10 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "75 86 28 92 41 97 55 40 61 52 77 76 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 45 70 14 94 68 10 58 29 4 9 3 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 35 92 55 56 21 13 54 19 30 30 13 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 17 29 86 23 68 9 89 7 93 5 36 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 82 23 20 19 18 16 47 82 1 79 53 56",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "163 332 156 445 491 360 336 335 119 381 404 453 230",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "339 114 477 271 402 380 451 354 377 405 189 55 158",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "260 143 424 75 216 356 146 396 225 377 361 318 205",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "360 374 107 325 437 233 443 50 386 83 104 251 399",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "480 87 135 442 221 215 195 159 260 425 166 461 73",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "258 101 358 131 295 143 102 119 50 153 368 279 246",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "337 324 372 148 173 133 434 77 372 176 323 139 331",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 999 999 999 2 1000 1000 2 1 2 1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999 1 2 1000 2 2 1 2 2 1000 1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

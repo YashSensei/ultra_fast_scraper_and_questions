@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Pripyat",
+  "tags": [],
+  "text": "Pripyat is an abandoned city in Ukraine. On April 27, 1986, the whole population of Pripyat was evacuated because of the Chernobyl nuclear power plant accident.Today (April 26) is the 32nd anniversary of the Chernobyl nuclear disaster, and Duck plans to visit Chernobyl to know more about this disaster. He has a list ofNmust-visit places in Pripyat, with its excitation levelEXC, time required to visitVTand radiation levelRL. Of course, sometimes it is impossible to visit all places because of limited visiting time and the danger of radiation. Given his maximum of available time to visitMVTand tolerance to radiation levelTRL, can you help him to select some places to visit so that the total EXC is maximized and the VT and RL are less than or equal to the given limit.Based on your finding, given a matrixMXshowing some barriers that are not allowed to pass through, Duck's hotel location and all must-visited places' location, determine the minimum distance to be moved to visit all the selected places starting from his hotel location. Duck can only move to adjacent cells that share one edge horizontally or vertically, and he can only visit the selected place once. That is, he cannot pass through the selected place twice or more. Also, he cannot pass through the unselected places.InputThe first line is the number of test casesT. (1 ≤ T ≤ 25)For each test case, it starts with two integers: number of must-visit placesN(1 ≤ N ≤ 20) and his maximum of available time to visitMVT(1 ≤ MVT ≤ 100) , and one real number: tolerance to radiation levelTRL. (0.01 ≤ TRL ≤ 10)Following N lines, each showing ith place's information, consisting of two integers: excitation levelEXC(1 ≤ EXC ≤ 100) and time required to visitVT(1 ≤ VT ≤ 100), and one real number: radiation levelRL. (0.01 ≤ RL ≤ 10)After that, a line consists of two integers: number of rows of the matrixR, and number of columns of the matrixC. (1 ≤ R, C ≤ 50)Next R lines, each has C characters, representing the map of PripyatMX. '+' means hotel location, '.' means available cells Duck can walk, '#' means barriers Duck cannot pass through, and N consecutive upper letters counting from A corresponding to ith place, eg. A = 1 (N1), B = 2 (N2) and so on up to T = 20 (N20).It is guaranteed that R × C ≥ N + 1, and all real numbers are with at most two digits after the decimal point.OutputOne integer indicating the minimum distance to be moved to visit all the selected places starting from his hotel location. If there are multiple combinations, choose the first in alphabetical order.If no places are selected, output '0'; if it is impossible to visit all selected places, output '-1' (without quotes).ExampleInput:2\r\n\r\n5 8 0.8\r\n3 1 0.04\r\n9 9 0.1\r\n4 2 0.12\r\n10 5 0.2\r\n7 2 0.02\r\n8 10\r\n.B...#....\r\n...#.+.#.C\r\n..A.....#.\r\n..##.##.##\r\n....#..E..\r\n#.........\r\n#.....##..\r\n#..#..D...\r\n\r\n5 18 1.6\r\n8 6 0.04\r\n9 9 0.1\r\n4 5 0.12\r\n10 5 0.2\r\n3 1 0.02\r\n8 10\r\n.B...#....\r\n...#.+.#..\r\n........#.\r\n..########\r\n....#...DE\r\n#.......##\r\n#.##..###A\r\n...#..C...Output:17\r\n-1ExplanationIn test case 1, A, D, E are selected and the minimum distance to visit all of them from '+' is 17.In test case 2, A, C, D, E are selected. But D blocks E and C blocks A, it is impossible to visit all selected places once only. Duck has to visit C twice or D twice.",
+  "sample_input": "Input:2\r\n\r\n5 8 0.8\r\n3 1 0.04\r\n9 9 0.1\r\n4 2 0.12\r\n10 5 0.2\r\n7 2 0.02\r\n8 10\r\n.B...#....\r\n...#.+.#.C\r\n..A.....#.\r\n..##.##.##\r\n....#..E..\r\n#.........\r\n#.....##..\r\n#..#..D...\r\n\r\n5 18 1.6\r\n8 6 0.04\r\n9 9 0.1\r\n4 5 0.12\r\n10 5 0.2\r\n3 1 0.02\r\n8 10\r\n.B...#....\r\n...#.+.#..\r\n........#.\r\n..########\r\n....#...DE\r\n#.......##\r\n#.##..###A\r\n...#..C...Output:17\r\n-1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PRIPYAT",
+  "scraped_at": "2025-08-17 00:33:40",
+  "test_cases": [
+    {
+      "input": "2\r\n\r\n5 8 0.8\r\n3 1 0.04\r\n9 9 0.1\r\n4 2 0.12\r\n10 5 0.2\r\n7 2 0.02\r\n8 10\r\n.B...#....\r\n...#.+.#.C\r\n..A.....#.\r\n..##.##.##\r\n....#..E..\r\n#.........\r\n#.....##..\r\n#..#..D...\r\n\r\n5 18 1.6\r\n8 6 0.04\r\n9 9 0.1\r\n4 5 0.12\r\n10 5 0.2\r\n3 1 0.02\r\n8 10\r\n.B...#....\r\n...#.+.#..\r\n........#.\r\n..########\r\n....#...DE\r\n#.......##\r\n#.##..###A\r\n...#..C...",
+      "expected_output": "17\r\n-1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n2\n4\n5\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n10\n3\n8\n7\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n7\n1\n4\n6\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "6\n448640\n43792263\n31928980\n72589838\n46084732\n23108368",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n61967990\n94985675\n43259259\n13104946\n97629185\n55317969\n87769438\n81683353\n88279821\n99166218\n68313787\n52325306\n41979484",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n79876772\n65603742\n3189952\n67857053\n5029299\n49848309\n41969833",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n15471749\n71832486\n59783355\n55983340\n92656736\n12299635\n59392513\n38635788\n39751865\n84516081\n28777029",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n10286885\n97149091\n63878327\n48069794\n71150308\n10138484\n67383434\n27079735\n71537369\n29838522\n18220626",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n98086\n6140\n79061\n24379\n51121\n94010\n88428\n53608\n57505\n86940\n65958\n42117\n75021\n1001\n80266\n44932\n13506\n79960\n26702\n23195",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n49965\n91804\n786\n31340\n92114\n47272\n83040\n28321\n43677\n87078\n41836\n71650\n62694\n99470\n12738\n60802\n51748\n91947\n94957\n77738",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n50351\n9207\n45719\n10028\n71737\n54100\n25628\n94801\n13820\n90232\n45193\n59942\n93584\n16534\n83997\n71061\n9688\n68118\n70938\n63463",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n71214\n11651\n36864\n68289\n48205\n21635\n67078\n716\n25336\n37488\n74763\n16736\n46601\n247\n17885\n5516\n69268\n5806\n47759\n86229",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n86378\n7217\n32586\n36419\n24174\n12631\n48341\n44852\n74652\n57900\n6483\n76921\n33839\n81263\n91682\n99192\n67989\n59436\n71638\n42130",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n46599\n39110\n16162\n26044\n57775\n48971\n89549\n40636\n25449\n12463\n35067\n55272\n78815\n74593\n1084\n37254\n30976\n80094\n88185\n11138",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n36253\n18722\n73970\n95437\n29273\n92141\n82447\n87603\n3056\n65988\n33458\n23612\n77313\n76326\n2581\n43835\n33895\n24142\n37832\n20664",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n32328572\n67640864\n9510396\n13943682\n8865108\n39604351\n23155571\n53530369\n12536007\n48368236\n74363263\n91011732\n39918299\n3966870\n19868807\n48556701\n49084608\n39649403\n41202446\n30321807",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n92337420\n79064752\n82232029\n27379584\n27847862\n79018067\n29437299\n64479900\n69018423\n35842835\n43391155\n94806772\n17632760\n69953263\n87504804\n44087484\n30939039\n36906222\n43591229\n68478527",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n1\n1\n1\n100000000\n1\n100000000\n60404890\n100000000\n1\n1\n29811323\n3756486\n1\n80403385\n63992402\n100000000\n83765020\n1\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 20)"
+    },
+    {
+      "input": "20\n100000000\n1\n1\n1\n100000000\n13257765\n9566657\n1\n83456528\n1\n1\n100000000\n100000000\n1\n1\n1\n35612922\n100000000\n1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 20)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

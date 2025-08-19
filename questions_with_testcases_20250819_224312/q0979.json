@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Split",
+  "tags": [],
+  "text": "Little Petar has been put in charge of maintaining an unpredictable array of strings. Initially, all of the array elements were the same string S, but the array is prone to change; and there is exactly one kind of change that may happen. This is asplitoperation at a given location, X; after it is performed, the location X maintains the string it had before, however all fields to the left and all fields to the right of X containing the same string as X will be given new strings, S1and S2.At certain points in time, Petar will be asked to give the string at a given location. He asked you for help.InputThe first line of the standard input contains two numbers, N and Q, the size of the array and the total number of operations and queries, respectively.The second line contains the string S, the string initially contained within each location of the array.The following Q lines contain the description of either an operation or a query:A split operation is represented as \"SPLIT X S1S2\", implying that the fields to the left of X, containing the same string as at X, will from now on have the string S1, and fields to the right will have the string S2.A query is represented as \"QUERY X\", implying that Petar is asked to give the string at location X.OutputFor each QUERY command given, output a new line containing the string currently located on the given position.ExampleInput:6 6picselSPLIT 3 petarv duxserbiaSPLIT 5 sasav nikolajQUERY 1QUERY 3QUERY 5QUERY 6Output:petarvpicselduxserbianikolajExplanationInitially, the string picsel is located throughout the array. After the first and second split operation, respectively, the array looks as follows:[petarv, petarv, picsel, duxserbia, duxserbia, duxserbia][petarv, petarv, picsel, sasav, duxserbia, nikolaj]The answers to the queries then clearly follow from the final state of the array.Constraints1 ≤ N, Q ≤ 1051 ≤ X ≤ N1 ≤ |S|, |S1|, |S2| ≤ 50The strings will consist solely of lowercase letters of the English alphabet.All strings appearing in the operations will be unique.",
+  "sample_input": "Input:6 6picselSPLIT 3 petarv duxserbiaSPLIT 5 sasav nikolajQUERY 1QUERY 3QUERY 5QUERY 6Output:petarvpicselduxserbianikolaj",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SPLITS",
+  "scraped_at": "2025-08-17 00:33:38",
+  "test_cases": [
+    {
+      "input": "6 6picselSPLIT 3 petarv duxserbiaSPLIT 5 sasav nikolajQUERY 1QUERY 3QUERY 5QUERY 6",
+      "expected_output": "petarvpicselduxserbianikolaj",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 5 8 1 8 3 10 6\n7 bhwfi 2 k ypubblwerhdu 8 kqi tysm og t svg 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3 6 4 1 10 6 9\n3 oqhypby 1 gpiw enezxvorxm 1 m rovqtbzhul gwkiwb qpm jwgr 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8 4 5 1 5 1 4\n4 pfcwzhwhgaif 2 duabbs ncapcjoqqnpqns 8 mydy kiwf zlsjg mad xrpa 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "89 91 73 38 11 95 56 58\n78 butcjzcv 19 ez bnbmllqvi 77 ntm bgzwqt aqo p vik 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 8 23 37 25 14 71 86\n51 gipsywkfsyi 10 sx dblxyfaidwwar 14 hndi trdq n wgywrv kqsqlm 64",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 7 86 49 72 97 41 68\n2 njvbfwzyvn 72 nfffas xprevhtl 78 v vyisgyurr akusbd kg c 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 33 31 1 48 70 97 91\n95 socffwtyqnht 73 zadjx cityfos 96 ulpr letyhc vzvprp qcs t 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 76 44 3 55 23 2 59\n22 nuglht 49 tiio xhb 39 vhwim zycbuejwgfto zf uomu byoke 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "262 241 427 175 453 201 423 367\n120 ciasw 365 axou canzxsl 199 t xirb ywy bwn zy 355",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "471 145 238 472 169 117 366 321\n321 jg 102 fexqmf sownwza 355 nv qyk svjp ev afnmpe 329",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "199 174 420 497 130 343 420 124\n468 nir 184 fi osgmdiyqfppa 241 kago kbb dfrznm t lhbln 369",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "212 381 496 170 435 437 62 51\n183 adxpqdqxgjg 189 dh fe 383 rhv ufhk ve ejl uuhzoi 431",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "61 135 291 228 81 351 427 131\n70 oekaxpwj 180 nsfky igncv 290 lcppl hsbu jo haju inyz 95",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "458 64 262 214 236 336 56 425\n344 cutorti 460 wk dmkvrxxand 107 rytrr b jt xedyst vjgavw 401",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "248 348 198 129 240 394 154 479\n361 nrpbvvjan 341 lm bwj 487 jsq dvcxegjvh zamb dwyvqh opje 240",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000\n1000 upae 1000 hu iorwgqcibztda 1000 uhggj p uabyxs uj auypsf 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000\n1000 rsnhw 1000 lojlh wwlhscqe 1000 m nfnm ksezc llx ktmff 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 999 1000 1 1000 999 2 1000\n1 q 1000 ock ewgndsdtaohv 2 yqoya efxbwotbaeeg njudz u uioie 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000 2 1000 2 2 999 999\n999 kz 1000 adsr gvf 1000 fvd ctdb i bqrzlj os 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

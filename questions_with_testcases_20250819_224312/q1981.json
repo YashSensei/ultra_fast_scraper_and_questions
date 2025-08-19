@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Movie Theatre Madness",
+  "tags": [],
+  "text": "A group of friends have gone to watch the first day first show of an awesome new movie. However, since they did not book the tickets well in advance, they have ended up with crazy seats. To be more specific, rather than getting seats such that all the friends are seated in the same row, they have ended up with seats such that all of them are seated in the same column! Now this is very inconvenient since they won't be able to chat with each other during the movie or have any kind of fun, but they are okay with this since they'd rather watch the movie like this, than not watch the movie at all.But there is another problem apart from this. Now we know that all the friends are seated in a single column, one behind the other. Since all of them reached the theatre just in time for the movie, they rushed and occupied the first of the booked seats that they could find. However all the friends have different heights, and due to the lack of planning, there is no guarantee that a shorter person is always seated in front of a taller person. But this would mean that the shorter person would struggle to see the screen throughout the movie!But the movie has started and it's too late now to do anything.What you need to do is the following: For every person, find the height of the closest person seated in front of him/her who is blocking his/her view (that is, theperson closest in front with a greater height). If no such person exists, take this height as 1. Print the product of all such values modulo 1000000007.InputOn the first line you have a single integer N (2 <= N <= 105), the total number of friends.This is followed by N space separated integers a1, a2, ... aN, which correspond to theheight of the people from back to front.That is, a1is the height of the person seated on the last row, a2is the height of the person seated on the second last row (just in front of a1) and so on, up to aNwhich is the height of the person seated right at the very front (1 <= ai<= 109).Note that all these integers are distinct.OutputOn a single line, output the result. (For every person, find the height of the closest blocking person.This value is 1 if no such person exists. Print the product of all these values modulo 1000000007).NOTE: By closest blocking person to aiwe mean find aj, such that aj> ai, j > i, and (j-i) is minimum. (Please look at sample test cases for further clarity.)ExampleInput #1:5\r\n5 2 1 4 3Output #1:16Input #2:5\r\n9 8 3 5 7Output #2:35Input #3:10\r\n30 10 50 70 11 60 20 80 31 12Output #3:999962375ExplanationInput #1:blockingHeight(5) = 1 (since 5 is the tallest, no one is blocking him)blockingHeight(2) = 4blockingHeight(1) = 4 (although 3 is also taller that 1, 4 is closer to 1)blockingHeight(4) = 1 (No one blocking 4)blockingHeight(3) = 1 (No one blocking 3)Answer=1*4*4*1*1=16",
+  "sample_input": "Input #1:5\r\n5 2 1 4 3Output #1:16",
+  "sample_output": "Input #2:5\r\n9 8 3 5 7Output #2:35",
+  "link": "https://www.spoj.com/problems/THEATRE",
+  "scraped_at": "2025-08-17 00:33:42",
+  "test_cases": [
+    {
+      "input": "Input #1:5\r\n5 2 1 4 3Output #1:16",
+      "expected_output": "Input #2:5\r\n9 8 3 5 7Output #2:35",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 8\nm d\n1 3 5 2 8 3 8\n3 2 10 6 vjwkqj zq",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 3\ngjg qfio\n7 1 3 10 1 5 8\n7 2 6 4 uu wlqf",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10\nwyve kzqt\n2 4 3 1 5 1 5\n10 3 6 1 tgs jknh",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "14 48\ndirdz lpmsd\n64 28 26 65 95 97 76\n71 93 47 72 xxnodaz py",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 83\nvqahw ha\n40 80 96 26 16 63 60\n85 69 29 35 q e",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 44\nkkxxd vow\n64 95 69 66 61 76 42\n100 64 57 26 stgybs vpsv",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 26\nwxcc dbx\n7 13 5 91 21 38 86\n15 24 37 70 m o",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 36\nnwxhu ruod\n71 44 57 42 79 87 7\n79 61 14 49 pwem zcl",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "316 437\nbneib w\n454 468 100 162 279 400 458\n307 221 341 135 yo dmsog",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "459 278\nwzoow kygkh\n197 271 238 396 128 143 138\n95 224 79 256 k xm",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "99 51\nkp f\n102 109 101 479 422 367 141\n289 52 428 189 ka gw",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 80\nk oxbo\n455 320 202 338 234 359 499\n329 86 401 90 arbmbl gbk",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "209 146\nriev puchx\n211 310 58 227 358 75 252\n121 170 214 74 veq dq",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "215 137\ngg azwe\n234 163 443 245 361 320 181\n245 60 126 261 evjm bja",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "217 244\ndgrij mtwmx\n213 259 416 311 127 496 257\n111 272 222 405 kkxp pecid",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nbl wonz\n1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 mzmamgj xte",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nms uj\n1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 rz ko",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 999\nuckb m\n1000 1 1 999 999 1 1\n999 1 1 1000 iwzadwv opsve",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1\nsbqiy eb\n1000 2 2 1 1000 1 999\n1000 999 999 1000 x b",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

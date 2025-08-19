@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Fast Food Restaurant",
+  "tags": [],
+  "text": "Hong Kil Dong wants to open a new fast food restaurant to make some money. The picture below describes the city where he wants to open his restaurant. The nodes are the possible locations that he can set up his new restaurant, and the edges are the length of the road connecting the two locations. You can assume that maximum five roads intersect at a single node, and that it is possible to reach all nodes from any chosen node.There are three apartments (these three are the only places people live in) in this city, denoted A, B, and C.Suppose he wants to open his new restaurant in location (node) 1. The shortest distances from location 1 to A, B, and C are 8, 16, and 9 respectively. These values are each larger than the shortest distances from location 4 to A, B, and C, which are 6, 7, and 3. Since people usually prefer using closer restaurants, it is better to open his restaurant in location 4.Consider location 6. The shortest distances from location 6 to A, B, and C are 5, 3, and 5. Therefore, location 6 is better than location 1. However, when comparing with location 4, it is better regarding A and B, but worse when considering C.Therefore, Hong Kil Dong came up with a criteria to determine whether a given location is good or bad.Consider location p, and let the shortest distances from location p to A, B, and C be a, b, and c, respectively.Consider another location q, and let the shortest distances from location q to A, B, and C be x, y, z, respectively.If a>x, b>y and c>z, we say that location p is a bad location. If there is no location q that satisfies this, we say that location p is a good location.Hong Kil Dong has chosen some candidate locations. Given the description of the city and a number of queries, determine whether each candidate location is good or bad.Note that it is possible to open the restaurant in any of the locations, even in  A, B, and C.InputThe first line of the input is an integer N (1 ≤ N ≤ 100,000), denoting the number of locations.  All the locations are numbered from 1-N.The second line of the input is three integers A, B, and C, denoting the location of each apartment. A, B, and C are all distinct and are between 1 and N, inclusive.The third line of the input is M, denoting the number of roads in this city.The next M lines give the description of each road and consist of integer X, Y, and Z (1 ≤ Z ≤ 10,000). X and Y are the two endpoints of this road, and Z is the length of this road. No two same roads appear in the input.The next line is an integer T (1 ≤ T ≤ 10,000), denoting the number of queries.The next T lines each consist of an integer Q (1 ≤ Q ≤ N), which denote the location number.OutputFor each query, determine whether location Q is a good location or a bad location. If it is bad, output \"NO\" (quotes for clarity) and \"YES\" if it is good.ExampleInput:92 5 9151 2 81 3 52 4 62 5 82 6 53 4 63 9 44 6 44 9 35 6 35 7 46 7 26 9 57 8 78 9 6212Output:NOYES",
+  "sample_input": "Input:92 5 9151 2 81 3 52 4 62 5 82 6 53 4 63 9 44 6 44 9 35 6 35 7 46 7 26 9 57 8 78 9 6212Output:NOYES",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FASTFOOD",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "92 5 9151 2 81 3 52 4 62 5 82 6 53 4 63 9 44 6 44 9 35 6 35 7 46 7 26 9 57 8 78 9 6212",
+      "expected_output": "NOYES",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 2 10 7 6 4 3 2 8 7 1 5 9 10 9 8 3 8 9 5 6 9 4 3 6 2 3 6 5 2 2 4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 8 6 8 5 6 6 2 6 10 4 1 10 6 1 10 4 4 6 10 9 3 2 6 9 8 10 7 8 8 8 4 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5 4 4 3 4 4 3 4 1 3 2 4 3 6 4 4 2 9 6 9 4 4 4 9 2 3 8 6 5 8 9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "38 19 2 80 29 96 63 58 40 94 21 56 99 2 58 86 22 85 55 2 52 62 13 38 54 90 28 23 91 12 55 97 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 50 29 47 35 3 87 45 62 57 87 67 44 22 25 86 75 83 42 51 46 91 95 60 99 36 54 93 39 34 65 91 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 94 63 16 19 25 3 67 91 72 2 44 24 31 52 92 1 42 72 24 20 36 2 42 67 92 73 1 25 50 24 82 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 4 33 60 11 52 26 45 90 50 72 39 82 100 44 41 50 65 100 56 93 35 85 28 52 90 93 79 92 94 92 71 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 25 63 82 43 22 92 9 16 1 53 20 56 76 59 66 80 69 46 24 75 23 88 7 61 87 9 95 15 70 65 42 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 32 40 31 48 19 19 11 8 35 47 27 31 49 8 15 15 29 48 29 16 16 5 13 12 46 48 25 35 23 37 47 13",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 10 50 13 44 13 16 46 45 42 23 28 19 47 46 12 37 15 16 30 45 49 48 16 43 47 38 39 50 36 39 35 17",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "38 25 46 49 12 27 12 13 12 39 30 20 37 7 29 31 47 28 13 50 17 45 47 16 45 31 22 16 14 44 20 43 38",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "24 16 46 6 34 26 21 48 12 43 47 14 39 12 18 35 41 12 7 35 22 28 17 33 21 10 32 38 35 5 44 30 37",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "28 26 25 48 14 10 9 16 14 49 34 26 39 33 31 50 15 10 37 40 17 10 27 14 15 21 24 8 33 17 43 14 42",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 37 26 11 47 18 31 42 20 7 26 34 23 5 18 10 31 30 31 16 37 47 16 25 17 38 45 18 11 34 42 39 15",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 43 9 39 7 35 46 27 35 14 45 43 21 6 18 21 6 23 9 49 49 27 14 8 16 40 47 27 6 14 14 43 25",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 1 2 99 100 99 100 1 2 100 100 1 100 100 1 2 2 1 2 100 1 2 1 1 1 99 100 100 99 1 1 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "99 1 1 2 100 100 2 99 2 1 99 1 1 1 1 1 100 1 100 2 2 100 1 100 2 1 100 2 99 2 99 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

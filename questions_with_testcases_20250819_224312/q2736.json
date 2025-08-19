@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Friendship",
+  "tags": [],
+  "text": "I live for a world full of chaos, mayhem is my dream. Sadly, friendship bonds keep the world together. This has to end.Initially, there areNpeople living in the world, and I know the strength of each one and the friendship bonds between them. A group of connected people will sum up their strengths if attacked (the power of friendship...disgusting, right?), so I'm interested in the strength of full groups of connected people, specially in the maximum strength of a group.I have already set a plan of action, the order in which I will destroy friendships! But, turns out, that when one destroys friendships, people may react and increase or decrease their strength. I need your help to find out how successful my plan is.I'll give you the initial information (strengths and bonds) and a list ofQevents, each event will be either a destruction event, or a strength change event.I need to know the maximum strength of a group after each event.InputThe first line of input consists of two integersNandM, the number of people and the initial number of bonds respectively.Next line will containNintegers s1, s2... sNseparated with exactly one white space, being sithe initial strength of the i-th person.NextMlines will contain two integers aiand bi, representing a friendship bond between those two people.The next line will contain a single integerQ, the number of events.The following Q lines will be either:1 k: Indicating the destruction of bond number k (in the input order)2 p x: Indicates that the person p changed her strength to xOutputPrint Q lines, the maximum strength of a group after each event.ExampleInput:5 6\r\n3 3 3 3 3\r\n1 2\r\n1 3\r\n2 3\r\n2 5\r\n3 4\r\n4 5\r\n5\r\n2 1 2\r\n1 5\r\n1 4\r\n2 4 8\r\n2 3 7Output:14\r\n14\r\n8\r\n11\r\n12Constraints1 ≤ N, M, Q ≤ 1051 ≤ si, xi≤ 1051 ≤ ai, bi≤ N1 ≤ ki≤ M1 ≤ pi≤ Nevery bond will be deleted at most once.between two people there is at most one bond.",
+  "sample_input": "Input:5 6\r\n3 3 3 3 3\r\n1 2\r\n1 3\r\n2 3\r\n2 5\r\n3 4\r\n4 5\r\n5\r\n2 1 2\r\n1 5\r\n1 4\r\n2 4 8\r\n2 3 7Output:14\r\n14\r\n8\r\n11\r\n12",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/VZLA2019F",
+  "scraped_at": "2025-08-17 00:34:06",
+  "test_cases": [
+    {
+      "input": "5 6\r\n3 3 3 3 3\r\n1 2\r\n1 3\r\n2 3\r\n2 5\r\n3 4\r\n4 5\r\n5\r\n2 1 2\r\n1 5\r\n1 4\r\n2 4 8\r\n2 3 7",
+      "expected_output": "14\r\n14\r\n8\r\n11\r\n12",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 9\n6 2 3 7 4\n8 8\n4 1\n10 2\n3 7\n10 8\n10 4\n2\n9 9 1\n3 5\n2 2\n8 10 5\n7 5 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 6\n9 4 5 7 3\n7 8\n7 2\n7 3\n1 2\n9 7\n2 7\n6\n9 7 5\n6 6\n6 3\n2 1 9\n8 8 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 7\n4 8 8 8 9\n8 8\n9 6\n2 4\n10 9\n5 5\n6 2\n10\n9 3 4\n10 6\n8 6\n7 3 10\n5 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "24 41\n26 4 51 49 77\n56 12\n79 37\n37 35\n56 54\n74 34\n9 45\n5\n14 80 89\n63 95\n12 7\n16 70 4\n3 63 96",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 97\n73 54 44 42 20\n17 87\n80 59\n23 66\n34 47\n14 10\n17 18\n60\n7 98 45\n13 69\n81 29\n56 4 96\n31 25 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 27\n52 16 42 70 41\n75 41\n81 76\n10 74\n89 42\n22 78\n65 51\n39\n68 54 77\n90 90\n57 61\n36 15 18\n68 48 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 24\n85 48 60 63 47\n44 57\n66 68\n53 100\n30 81\n23 48\n30 60\n87\n28 76 70\n42 25\n3 49\n38 51 95\n61 65 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 72\n21 79 51 29 11\n26 44\n24 99\n7 59\n1 44\n48 39\n26 14\n83\n17 100 84\n15 10\n12 76\n6 14 18\n62 68 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "233 164\n204 457 210 172 305\n449 315\n90 288\n483 263\n170 220\n95 495\n488 387\n434\n371 121 95\n447 340\n276 165\n268 441 243\n72 56 217",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "172 496\n415 297 120 399 362\n486 202\n71 169\n351 154\n405 284\n202 317\n418 498\n320\n319 309 483\n261 252\n341 302\n199 179 200\n64 58 191",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "163 394\n167 494 289 305 73\n344 374\n431 359\n114 497\n71 399\n394 152\n98 78\n96\n103 216 280\n163 127\n152 395\n222 494 326\n371 442 189",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "244 377\n153 64 66 289 81\n455 466\n120 124\n241 237\n74 310\n409 231\n210 370\n463\n279 98 135\n146 242\n366 221\n402 67 443\n220 291 130",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "134 252\n376 336 98 106 346\n153 266\n253 267\n368 408\n448 481\n260 125\n469 354\n354\n442 463 414\n264 265\n233 314\n255 152 173\n248 476 329",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "217 336\n431 311 355 166 94\n177 101\n209 307\n387 84\n334 273\n61 78\n403 494\n448\n337 496 206\n132 63\n144 263\n398 168 73\n261 175 437",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "455 273\n129 320 413 106 491\n246 209\n141 93\n350 352\n118 222\n163 191\n254 270\n325\n450 299 218\n246 155\n153 366\n243 193 56\n302 105 369",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000\n1000 1000 1000 2 2\n1 1\n1 1000\n1 1000\n999 999\n999 2\n1 1000\n2\n1 1000 999\n999 1000\n1 1000\n1 2 2\n2 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\n999 999 1 2 999\n1 1\n1 2\n2 1\n2 1000\n1 999\n1000 2\n2\n1 1 1\n999 999\n2 999\n1000 1 1000\n1 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "MVP",
+  "tags": [],
+  "text": "It's down to the final match in the world's biggest SC2$^1$ tournament! You're the MVP$^2$ of MVP$^3$, and you're going up against MVP$^4$. There are $G$ ($1 \\leq G \\leq 20$) games in the series, with a winner decided after all have been played. Being a Protoss$^5$ player, you know the perfect way to win against that Terran$^6$ scum - with a cannon rush$^7$ every single game. Now you just have to execute it perfectly, by quickly getting your probe$^{10}$ to the correct location, and the prize money's sure to be yours.Each game will take place on a map which can be represented as a grid with $H$ ($2 \\leq H \\leq 1000$) rows of $W$ ($2 \\leq W \\leq 1000$) cells each. Each cell contains either empty space (represented by \"E\"), water (\"W\"), a unit (\"U\"), one of exactly two mineral patches (\"M\"), the probe (\"P\"), or the cannon rush site (\"C\"). Every second, your probe can move to a horizontally- or vertically-adjacent cell within the grid, with the goal of reaching the cannon rush site in as little time as possible. It can move freely from an empty cell to another empty cell (including its initial position and destination), while cells containing water or minerals may never be traversed.Normally, the probe may also not pass through units. However, itcanif it is travelling towards a mineral patch. Specifically, the probe can only leave or enter a cell containing a unit if, for at least one of the two mineral patches on the map, the cell which the probe is entering is closer to that patch than the cell which the probe is leaving. Closeness is defined according to the minimum amount of time it would take to reach the mineral patch from the given cell, assuming the ability to pass through all units on the way.For each game, you'd like to determine whether or not you can be successful in your strategy, and, if so, how quickly you can execute the cannon rush. Of course, the point of this is to help prepare the correct BM$^{11}$ for the end of the game.InputFirst line: 1 integer, $G$For each game:First line: 2 integers, $H$ and $W$Next $H$ lines: $W$ characters, representing the $i$th row of the map, for $i = 1..H$OutputFor each game:The BM to be typed at the conclusion of the game. Namely, if the probe can reach the cannon rush site, the string \"pwned you in $X$ seconds eZ$^{12}$, learn to play n00b$^{13}$\" (without the quotes and glossary numbers), where $X$ is the minimum number of seconds for it to do so - otherwise, the string \"terran so broken, apologize for playing this race\".ExampleInput:24 5WWEMCEEEUEPUWWUMEEEE5 4EWEMECUEEEWEEWEEEUPMOutput:pwned you in 8 seconds eZ, learn to play n00bterran so broken, apologize for playing this raceExplanation of Sample:In the first scenario, the single shortest path that the probe may take to the cannon rush site is illustrated below:Note that the first move is made by going \"towards\" the top-right mineral patch, while the second move is made by going towards the bottom-left one.In the second scenario, the probe is unable to pass through any of the units, due to the locations of the mineral patches, and as such cannot reach its destination.Glossary of Terms:$^1$SC2:StarCraft 2, by Blizzard Entertainment - a game of kings$^2$MVP:Most valuable player$^3$MVP:A top Korean SC2 team$^4$MVP:A top Korean Terran player (who is not on the team MVP)$^5$Protoss:The most pleasant race in SC2, which only nice people use$^6$Terran:The most despicable race in SC2, which no decent human being would consider$^7$Cannon rush:The act of building proxy$^8$ cannons, a common type of cheese$^9$$^8$Proxy:A structure made near or in your opponent's base, instead of your own$^9$Cheese:A perfectly legitimate strategy which can allow you to win quickly, while leaving your opponent mad$^{10}$Probe:A Protoss unit most useful for its ability to make cannons$^{11}$BM:Customary parting words for your opponent, used to convey your respect for them$^{12}$eZ:Easy$^{13}$n00b:A player whose skill is somewhat lacking in calibre",
+  "sample_input": "Input:24 5WWEMCEEEUEPUWWUMEEEE5 4EWEMECUEEEWEEWEEEUPMOutput:pwned you in 8 seconds eZ, learn to play n00bterran so broken, apologize for playing this race",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UOFTBE",
+  "scraped_at": "2025-08-17 00:34:01",
+  "test_cases": [
+    {
+      "input": "24 5WWEMCEEEUEPUWWUMEEEE5 4EWEMECUEEEWEEWEEEUPM",
+      "expected_output": "pwned you in 8 seconds eZ, learn to play n00bterran so broken, apologize for playing this race",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 5 6 6\n5 uxakmyquncxuqcmvr pudizxusds",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 7 3 4\n7 fgsjvcmnedqmzgejcqhc vae",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 1 2 10\n10 rnwropicrgg nacrpinbvfps",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "97 33 93 50\n28 yg chymadzmj",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 48 60 73\n28 bsnolvcipexyd mtoxybrttsnkudokhwyof",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 4 73 50\n73 j vbwzoqdwyn",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 51 65 51\n78 fkbmnzqj erfwnqmyny",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 55 22 77\n99 kznrzfqtqlwjvgxhcnusv tgaicjgsqdsjomu",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "333 363 100 105\n350 mhczknbsirixbvs plfutnhbfmzahdmq",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "391 370 210 64\n104 bjpcdcjcmpxxtomo wl",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "374 223 229 420\n472 hreqjdhdhyd mgjjymsckzoxzazq",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 375 416 434\n137 xv ahdc",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "497 381 307 208\n279 kpiayhjyljqc t",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "60 335 411 69\n479 usbmaubhj tsuxufcozdthiqasztzt",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "476 171 106 266\n443 xiklfqyvrruhlgjhgpyfsj rnrrtbopynoacd",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 ycipvfah vivcrbw",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 lke resfdcevdpnfsd",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 999 999\n1000 gypb fgblmyaslefzxrnykxi",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 999 1\n1 vbhxn gqtdftuothuxyyazy",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

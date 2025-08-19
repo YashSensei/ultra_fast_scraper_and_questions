@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "\"Shortest\" pair of paths",
+  "tags": [],
+  "text": "A chemical company has an unusual shortest path problem.\r\nThere are N depots (vertices) where chemicals can be stored.\r\nThere are M individual shipping methods (edges) connecting pairs\r\nof depots. Each individual shipping method has a cost. In\r\nthe usual problem, the company would need to find a way to route\r\na single shipment from the first depot (0) to the last (N - 1).\r\nThat's easy. The problem they have seems harder. They have to ship\r\ntwo chemicals from the first depot (0) to the last (N - 1). The chemicals\r\nare dangerous and cannot safely be placed together. The regulations say\r\nthe company cannot use the same shipping method for both chemicals.\r\nFurther, the company cannot place the two chemicals in same depot\r\n(for any length of time) without special storage handling --- available only at\r\nthe first and last depots.To begin, they need to know if it's possible to ship both\r\nchemicals under these constraints. Next, they need to find the\r\nleast cost of shipping both chemicals from first depot to the\r\nlast depot. In brief, they need two completely separate paths\r\n(from the first depot to the last) where the overall\r\ncost of both is minimal.Your program must simply determine the minimum cost or, if it's\r\nnot possible, conclusively state that the\r\nshipment cannot be made.The input will consist of multiple cases. The first line of\r\neach input will contain N and M where N is the number of depots\r\nand M is the number of individual shipping methods. You may assume\r\nthat N is less than 20 and that M is less than 200.The next M lines will contain three values, i, j, and v.\r\nEach line corresponds a single, unique shipping method. The values i\r\nand j are the indices of two depots, and v is the cost of\r\ngetting from i to j.Note that these shipping methods are directed. If something can\r\nbe shipped from i to j with cost 10, that says nothing about shipping\r\nfrom j to i. Also, there may be more than one way to ship between\r\nany pair of depots, and that may be important here.A line containing two zeroes signals the end of data and should not\r\nbe processed.SampleInput:2 1\r\n0 1 20\r\n2 3\r\n0 1 20\r\n0 1 20\r\n1 0 10\r\n4 6\r\n0 1 22\r\n1 3 11\r\n0 2 14\r\n2 3 26\r\n0 3 43\r\n0 3 58\r\n0 0Output:Instance #1: Not possible\r\nInstance #2: 40\r\nInstance #3: 73",
+  "sample_input": "Input:2 1\r\n0 1 20\r\n2 3\r\n0 1 20\r\n0 1 20\r\n1 0 10\r\n4 6\r\n0 1 22\r\n1 3 11\r\n0 2 14\r\n2 3 26\r\n0 3 43\r\n0 3 58\r\n0 0Output:Instance #1: Not possible\r\nInstance #2: 40\r\nInstance #3: 73",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MSE06I",
+  "scraped_at": "2025-08-17 00:33:57",
+  "test_cases": [
+    {
+      "input": "2 1\r\n0 1 20\r\n2 3\r\n0 1 20\r\n0 1 20\r\n1 0 10\r\n4 6\r\n0 1 22\r\n1 3 11\r\n0 2 14\r\n2 3 26\r\n0 3 43\r\n0 3 58\r\n0 0",
+      "expected_output": "Instance #1: Not possible\r\nInstance #2: 40\r\nInstance #3: 73",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 2\n10 6 3\n5 1\n8 9 7\n8 5 10\n7 1 10\n9 3\n1 8 9\n8 8 7\n4 10 7\n5 1 10\n8 7 2\n3 4 2\n4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7\n1 7 4\n2 4\n3 3 7\n8 5 4\n4 5 1\n6 8\n4 7 4\n4 6 4\n6 1 6\n3 2 5\n8 8 9\n3 6 1\n3 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3\n4 1 10\n3 5\n1 4 7\n10 6 4\n9 8 8\n8 8\n10 7 7\n3 7 5\n9 10 6\n9 1 1\n8 10 9\n7 8 10\n4 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "32 29\n79 53 91\n86 14\n37 52 47\n77 19 14\n5 61 27\n8 45\n34 28 14\n83 14 59\n70 29 30\n11 28 18\n9 26 88\n81 43 29\n46 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 27\n85 23 74\n28 42\n75 35 49\n19 7 15\n78 34 3\n76 100\n20 78 40\n80 57 10\n61 30 80\n89 75 71\n17 28 16\n93 78 54\n13 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 93\n76 2 86\n9 26\n81 26 58\n72 33 90\n55 17 54\n70 40\n82 31 52\n68 91 11\n52 58 98\n68 33 33\n46 37 45\n51 80 88\n24 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 11\n32 43 17\n24 100\n29 77 89\n8 58 51\n55 58 30\n96 52\n96 19 94\n66 59 72\n93 90 40\n99 85 92\n55 91 33\n91 21 89\n63 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 73\n97 80 23\n26 53\n74 86 25\n40 19 21\n88 19 74\n8 52\n78 21 3\n14 53 61\n15 53 90\n18 91 82\n70 63 69\n76 17 96\n23 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "207 106\n144 497 343\n114 340\n423 409 164\n314 371 90\n286 418 347\n404 370\n317 107 468\n321 449 356\n152 304 390\n465 140 112\n274 216 346\n73 182 494\n403 332",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "265 311\n316 453 444\n69 252\n75 180 276\n296 80 168\n380 372 51\n419 52\n117 336 197\n312 263 163\n471 231 153\n227 393 252\n265 53 279\n290 103 127\n213 65",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "406 470\n387 148 362\n355 132\n225 490 344\n488 123 141\n135 295 373\n195 159\n79 397 353\n318 171 72\n388 141 281\n280 211 300\n437 375 416\n326 259 205\n179 108",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "252 373\n309 275 398\n405 369\n85 177 148\n371 106 77\n292 481 363\n482 294\n449 374 107\n493 181 348\n452 241 444\n385 461 377\n185 333 225\n300 206 277\n434 165",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "76 298\n301 386 428\n208 378\n480 290 174\n215 486 174\n167 489 232\n449 301\n280 465 456\n177 165 134\n469 93 225\n312 321 261\n310 137 106\n309 442 371\n497 449",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "497 262\n490 230 351\n398 372\n367 191 288\n340 279 186\n477 214 86\n343 51\n79 468 129\n174 469 452\n54 445 421\n295 462 409\n409 99 156\n93 279 61\n241 423",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "224 423\n460 412 117\n259 192\n433 175 369\n425 253 254\n86 148 112\n318 92\n447 163 194\n407 379 323\n185 323 159\n229 245 81\n366 177 348\n329 214 317\n85 189",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 999\n1000 2 1\n1 1\n1 2 1000\n2 1000 2\n999 999 1\n2 1\n1000 1 1\n2 2 2\n1000 2 999\n1000 1 1000\n1 2 1\n1000 999 1\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999\n2 1 1000\n1000 1000\n999 999 1\n1 2 1000\n2 2 2\n2 2\n1000 2 1000\n1 1 1\n2 1000 999\n2 999 2\n1 2 999\n1000 1000 2\n2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

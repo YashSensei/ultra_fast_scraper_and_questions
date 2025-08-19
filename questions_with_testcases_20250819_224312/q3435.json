@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ski Valley",
+  "tags": [],
+  "text": "The Society of Sport of New Hampshire has decided to build a new attraction in White Mountains. For the first time, the world will see a ski-valley, a ski path that goes downhill then uphill. They believe that skiers can gain enough speed from going down in the first part in order to climb up the second part. To maximize the joy of visitors, they want to find the longest such path.To simplify calculations, they approximate the mountain terrain with a matrix of square fields and obtain the height of each field from the New Hampshire Geographical Institute. A ski-valley is a sequence of neighboring fields, such that height of fields only decreases along the sequence until some point, and then it only increases until its end. No field appears more than once in a ski-valley. Two fields are neighbors if they share a common edge. The length of a ski-valley is the number of fields in its sequence.More technically, the terrain is anMxNmatrix of fields, where(i, j)denotes a field in theith row andjth column, andh(i, j)denotes its height. A ski-valley is a sequence(x1, y1), (x2, y2), ..., (xl, yl), such that:for anyi(1≤i≤l-1), eitherxi= xi+1and |yi- yi+1| =1, oryi= yi+1and |xi- xi+1| =1(neighbors rule)ifi≠j(1≤i, j≤l), then eitherxi≠xjoryi≠yj(no repeating rule), andThere exists ak(1≤k≤l), such thath(x1, y1)>h(x2, y2)> ... >h(x_k-1, y_k-1)>h(xk, yk)<h(x_k+1, y_k+1)< ... <h(xl, yl)(down-up rule).The length of such ski-valley isl.They hire you, a reputable programmer, to write a program that will find a ski-valley of maximum length. If there are multiple ski-valleys with the same (maximum) length, you can choose any of them.Note: Yes, they were not cautious and also allowed a ski-valley to bo only downhill or only uphill, but your job is only to adhere to the specification they gave you!InputThe first line of the input containsMandN(1 ≤ M, N ≤ 60), respectively, separated by a space character. Each of the nextMlines containNnumbers, such that thejth number in theith line representsh(i, j)(-106≤ h(i, j) ≤ 106).  No two fields in the terrain are of the same height.  Numbers on a line are separated by a space character.OutputIn the first line of the output, write a single numberlmax, which is the maximum length of a ski-valley. In the nextlmaxlines write a description of any ski-valley of that length. In each of the lines, write two integers separated by a space character, such that numbersxiandyiin theith line represent(xi, yi), theith field in the ski-valley.ExampleInput:3 4\r\n2 6 7 16\r\n1 4 3 20\r\n9 8 17 12Output:9\r\n3 1\r\n3 2\r\n2 2\r\n2 1\r\n1 1\r\n1 2\r\n1 3\r\n1 4\r\n2 4",
+  "sample_input": "Input:3 4\r\n2 6 7 16\r\n1 4 3 20\r\n9 8 17 12Output:9\r\n3 1\r\n3 2\r\n2 2\r\n2 1\r\n1 1\r\n1 2\r\n1 3\r\n1 4\r\n2 4",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SKIVALL",
+  "scraped_at": "2025-08-17 00:34:19",
+  "test_cases": [
+    {
+      "input": "3 4\r\n2 6 7 16\r\n1 4 3 20\r\n9 8 17 12",
+      "expected_output": "9\r\n3 1\r\n3 2\r\n2 2\r\n2 1\r\n1 1\r\n1 2\r\n1 3\r\n1 4\r\n2 4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 4\n5 3 2 1\n7 3 5 9\n1 2 5 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5\n8 4 9 8\n3 7 4 7\n5 9 1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 5\n8 4 6 3\n8 2 1 4\n6 6 3 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "54 40\n5 3 30 41\n36 25 4 25\n53 27 27 39",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 9\n59 27 3 2\n29 49 18 29\n6 34 16 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 28\n55 28 16 11\n43 54 29 23\n58 54 51 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 40\n56 40 41 55\n31 49 35 4\n35 19 53 33",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 35\n45 21 10 59\n52 33 3 13\n48 35 5 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 22\n11 22 29 16\n22 13 14 25\n20 30 5 24",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 8\n24 16 6 26\n11 30 16 13\n6 21 23 27",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "23 3\n10 20 17 18\n23 5 28 25\n8 21 7 20",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 8\n5 3 3 4\n10 21 16 24\n25 25 8 20",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "23 11\n13 24 17 6\n13 21 30 10\n28 17 23 6",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 3\n5 29 29 9\n7 29 10 12\n10 7 13 10",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 12\n18 29 30 9\n17 26 23 25\n18 20 21 24",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "60 60\n60 60 60 60\n60 60 60 60\n60 60 60 60",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "60 60\n60 60 60 60\n60 60 60 60\n60 60 60 60",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "59 2\n1 1 1 60\n60 1 1 2\n1 60 60 59",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "59 60\n2 60 59 2\n2 59 1 59\n59 59 60 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

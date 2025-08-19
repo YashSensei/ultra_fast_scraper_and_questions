@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Return of the Digger",
+  "tags": [],
+  "text": "The adventures of “Digger” continue as he once again searches for treasure. This time, his money senses detect it underground. His plan is to dig down to it using an automatic pickaxe and his souped-up pneumatic drill.The treasure is within a thin stretch of land, running West to East, that is made up of dirt and some rocks. This stretch is $L$ ($1 \\leq L \\leq 200$) metres long. Digger’s money senses are very exact, and he knows the location of the treasure he seeks – it is no more than $10000$ metres below the surface. In addition to money senses, he apparently also has rock senses, which can pinpoint $N$ ($1 \\leq N \\leq 5000$) rocks among the dirt, none of which will be at a depth of more than $10000$ metres.Digger’s specially-designed pneumatic drill can only go straight down, and it can tunnel through dirt easily – however, it isn’t equipped with brakes, so it keeps on going until it hits a rock. When this happens, it stops just above the rock, but the drill bit also breaks. This time, Digger doesn’t have to worry about fuel – instead, he just wants to avoid breaking his drill bits! Once stationary, Digger can also use his pickaxe to dig left and right (yes, even through rocks!), but he can’t dig up or down with it.The treasure is pretty fragile, so Digger definitely doesn’t want to drill right into it. Instead, he can either get to the same depth as it and use his pickaxe to dig to it, or he can use his pneumatic drill to go right past it (either 1 metre to the left or right of it). However, once he gets his hands on the treasure, Digger’s plan isn’t complete – he intends to keep drilling down until he gets to China. As such, he must first navigate past the deepest of the $N$ rocks – at that point, it’s all dirt (or so he hopes...).Digger can start anywhere on the surface. Determine the minimum amount of drill bits that he must break in order to retrieve the treasure and dig down past all the rocks, if it’s possible at all.InputLine $1$: $L$ and $N$ – respectively, the length of the stretch of land (in metres) and the number of rocks.Lines $2..N+1$: $A$ and $B$ – the $i$th line gives the location of the ($i-1$)th rock, where $A$ is its depth, and $B$ is its distance from the West edge of the stretch of land (both in metres).Line $N+2$: $Y$ and $X$ – the location of the treasure, where $Y$ is its depth, and $X$ is its distance from the West edge of the stretch of land (both in metres). The treasure will not be within a rock.OutputIf it’s impossible for Digger to reach the treasure and dig down past all the rocks, output “Use dynamite”.Otherwise, output a single number – the minimum number of drill bits Digger must break to accomplish this.ExampleInput:10 201 52 12 22 42 52 62 82 93 34 74 84 95 35 45 55 66 310 110 210 78 6Output:3Explanation of Sample:Digger starts on the surface, 7 metres from the West edge of the stretch of land. He drills down for 3 metres until he hits a rock and breaks his first drill bit. He then uses his pickaxe to walk to the left, and drills down another metre, hitting another rock and breaking his second drill bit. He then walks to the right (through a rock), and drills down for 5 metres, picking up the treasure on the way, until he hits another rock and breaks his third and final drill bit. He then walks to the right and drills down past the last rock. This route is shown below (‘.’: dirt, ‘x’: rock, ‘T’: treasure, ‘D’: drill, ’<’ or ‘>’: pickaxe):.....x.D...xx.xxxDxx...x........D>xx...xxxxD.....x...D.........D........TD.........D>..xx....xD.........D.",
+  "sample_input": "Input:10 201 52 12 22 42 52 62 82 93 34 74 84 95 35 45 55 66 310 110 210 78 6Output:3",
+  "sample_output": ".....x.D...xx.xxxDxx...x........D>xx...xxxxD.....x...D.........D........TD.........D>..xx....xD.........D.",
+  "link": "https://www.spoj.com/problems/RETDIG",
+  "scraped_at": "2025-08-17 00:33:49",
+  "test_cases": [
+    {
+      "input": "10 201 52 12 22 42 52 62 82 93 34 74 84 95 35 45 55 66 310 110 210 78 6",
+      "expected_output": "3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 3 5 10 7 2 5 1 4 5 5 5 2 4 1 10 3 4 10 8 3 2 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4 6 4 10 6 9 2 1 1 8 7 7 8 8 5 8 2 3 6 8 3 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 7 4 7 9 3 3 3 2 1 10 5 2 2 10 1 2 3 2 7 4 4 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "50 46 69 7 99 64 97 35 55 18 38 73 37 82 78 70 43 56 95 32 91 31 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "95 48 81 35 36 88 80 78 95 48 18 45 84 42 34 24 36 61 79 76 55 95 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 14 63 60 16 26 14 17 4 8 29 85 21 85 82 99 68 66 43 61 79 24 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 71 88 55 25 34 41 17 48 48 66 29 82 5 31 40 27 50 57 50 73 33 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 15 42 28 46 79 99 26 46 82 5 77 83 61 79 71 99 71 9 91 62 71 54",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "477 374 328 219 493 370 461 390 130 131 157 385 246 355 491 194 97 484 326 73 209 137 80",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "270 373 261 57 310 395 368 453 480 496 71 400 195 124 61 167 340 105 86 414 326 188 84",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "82 434 123 239 325 335 120 134 478 218 173 463 246 166 201 352 277 454 366 386 361 475 434",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "323 86 449 167 329 164 297 439 452 368 105 233 258 340 432 348 315 416 115 459 328 337 432",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122 293 463 394 351 263 344 432 378 208 306 139 382 402 394 243 162 482 164 487 114 380 52",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "302 312 389 332 189 443 395 290 292 353 420 123 443 363 358 477 391 432 264 106 146 428 69",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "490 56 341 53 493 153 348 381 401 456 259 326 324 274 269 404 157 470 441 102 56 266 303",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1 2 2 1 2 1 2 999 1000 1 1 999 1000 1 1 2 999 2 1000 1 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1 2 1 999 2 2 999 999 2 999 1000 1000 999 1 1 1000 1000 1 1 2 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Decoding Morse Sequences",
+  "tags": [],
+  "text": "Before the digital age, the most common \"binary\" code for radio communication was the Morse \r\ncode. In Morse code, symbols are encoded as sequences of short and long pulses (called dots and dashes \r\nrespectively). The following table reproduces the Morse code for the alphabet, where dots and dashes \r\nare represented as ASCII characters \".\" and \"-\":A .-   B -... C -.-. D -.. \r\nE .    F ..-. G --.  H .... \r\nI ..   J .--- K -.-  L .-.. \r\nM --   N -.   O ---  P .--. \r\nQ --.- R .-.  S ...  T - \r\nU ..-  V ...- W .--  X -..- \r\nY -.-- Z --..Notice that in the absence of pauses between letters there might be multiple interpretations of a Morse \r\nsequence. For example, the sequence -.-..-- could be decoded both as CAT or NXT (among others). A \r\nhuman Morse operator would use other context information (such as a language dictionary) to decide \r\nthe appropriate decoding. But even provided with such dictionary one can obtain multiple phrases from \r\na single Morse sequence.TaskWrite a program that:reads a Morse sequence and a list of words (a dictionary),computes the number of distinct phrases that can be obtained from the given Morse sequence using \r\nwords from the dictionary,writes the result.Notice that we are interested in full matches, i.e. the complete Morse sequence must be matched to \r\nwords in the dictionary.InputThe first line of the input contains exactly one positive integer d equal to the number of data sets, \r\n1 ≤ d ≤ 20. The data sets follow.The first line of each data set contains a Morse sequence - a nonempty sequence of at most 10000 \r\ncharacters \".\" and \"-\" with no spaces in between.The second line contains exactly one integer n, 1 ≤ n ≤ 10000, equal to the number of words in \r\na dictionary. Each of the following n lines contains one dictionary word - a nonempty sequence of at \r\nmost 20 capital letters from \"A\" to \"Z\". No word occurs in the dictionary more than once.OutputThe output should consist of exactly d lines, one line for each data set. Line i should contain one integer \r\nequal to the number of distinct phrases into which the Morse sequence from the i-th data set can be \r\nparsed. You may assume that this number is at most 2*109for every single data set.ExampleSample input:1 \r\n.---.--.-.-.-.---...-.---. \r\n6 \r\nAT \r\nTACK \r\nTICK \r\nATTACK \r\nDAWN \r\nDUSKSample output:2",
+  "sample_input": "A .-   B -... C -.-. D -.. \r\nE .    F ..-. G --.  H .... \r\nI ..   J .--- K -.-  L .-.. \r\nM --   N -.   O ---  P .--. \r\nQ --.- R .-.  S ...  T - \r\nU ..-  V ...- W .--  X -..- \r\nY -.-- Z --..",
+  "sample_output": "Sample input:1 \r\n.---.--.-.-.-.---...-.---. \r\n6 \r\nAT \r\nTACK \r\nTICK \r\nATTACK \r\nDAWN \r\nDUSKSample output:2",
+  "link": "https://www.spoj.com/problems/MORSE",
+  "scraped_at": "2025-08-17 00:33:49",
+  "test_cases": [
+    {
+      "input": "A .-   B -... C -.-. D -.. \r\nE .    F ..-. G --.  H .... \r\nI ..   J .--- K -.-  L .-.. \r\nM --   N -.   O ---  P .--. \r\nQ --.- R .-.  S ...  T - \r\nU ..-  V ...- W .--  X -..- \r\nY -.-- Z --..",
+      "expected_output": "Sample input:1 \r\n.---.--.-.-.-.---...-.---. \r\n6 \r\nAT \r\nTACK \r\nTICK \r\nATTACK \r\nDAWN \r\nDUSKSample output:2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "koa wqxwt adh aayei isqkp vtyxw yo qduzj\nwqxg cumir zw k wh jhjyz yy c\nvv xkrxq rmr wn aur e npik nfpnq\ncyqr co y geaem yoj i zzi gh\nhovz g qdsf wabj s bjgf dnyq ifzt\nmwe wmzp de mykb hz zpyi jnh q\nyye nqtlq uxik qu",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "klftw hypjo cmu ln g cgw ckqpt z\nwpyh ur ck sh q qde tdck iq\ngh seli zn t dz kru vfeu vaau\nmuaun mut k ki kds exooh a zfupo\nygzfg ksg bxb rb lgywk zlq y f\ndewmd qosk ofnh cx axy flf o cmej\nfpx zze lp jfj",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "phd ituw essd zpmh noef o lc ow\nkb pqxik gfkrw x mvb ourr tsaz xhno\ndsjc jmfz opa t musz bwkst peqd dldi\nnlv rswxp yrh k qr wk sapnc waoxo\nbskwp lgnn asg jxf hynuv e yit j\ntxv qxr wb jmq un pemf ukha qqfec\nvetef bpu vbkvo bem",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "lg sap tkhg c ihvpu dgsb oe rixw\nvkj m tioqp ugojx manbm wjfoz qgdv ia\nn wfpn si swha ygpzd n h ukt\naxuv t tq arms lyl hzc c hzvq\nzygq voqx cw ew iqtnw ti zijm rdom\npfz wi vjz a yrvh x etd les\nn ohvm yy vagy",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "hji wunp qnbi kttb ond ogk x f\nmo unw q vl raoj qz oiv cwih\nybs mia mjv r uiy ex cnlco g\ngbaqv rxgn ytpoh fdog z ky gjc gcm\njnr ouu rbm xk p daf fgmv da\nlw qqbr zhgb qodk hvr tn mvief q\nvl hw agbyh hdqoq",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "dvax s n itv u drcjk oya lp\nvz yqce taws tt meb vmgpu izsl yelx\ncaw btcp exrhh rquo a ko e wyijd\ngqmx jf sxwdg kcrj pan jdfu weygc pme\nzcg xpade dba nvu cduyt fwmpf q am\na cw hvao abvqq mzeu ult iaa nlsbz\nufwmo qldrp mkv ccm",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ru laqt rbt otptr ysuw j zqjo jjas\nyse uqbm sw df qo rhqkf lnx h\nhe gssf etgf svb x hfxee oy wlbel\nsjt rjj kt rt oc zu naht bzq\ni ltxih pzgqj eruop erxkx rgkvg kmvwl x\nbcff fuxc fxnni v smntr lcfo hcx c\nha zt zget ik",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "es nmya ksfb hab qc pk xdu surp\nla bnttu tgalk pml b nw htu uuym\na dc alp gtkqt pbbvm r svz a\nnqum vgh oi qa usvom tmu j ihpdu\nqteie xwd hxxyf nvvp rnj iohlh vsvk swbyj\nnvz y bbt u djg wil v yrb\ndojmm smaao uri shu",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "h k f velun p x qe mtcw\nyqbp atni qb cftig r my yqnfp yipqr\nryps dsaue irrx o ubw bd wkpp gzzzr\nb mvmm are cf wlxh axib nkp blawo\nzznbc epag yt xdu xsxvk i pbg qyf\nfwk swc z alfqc twd dst rtgu gvu\nldy h vp vewg",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "z tkpmf b zg dimm xitb ydqh oe\nyr sl mpj ek foxpu lzg it pgg\nlj onp euw g ftd naiq pge nn\nnrujf ogmxj wldjf eithh xxr nnob bq w\nmtira yttg i c zrygy cpp j grjhh\nb mt fqp jn thlah k mnk u\nlh yzeho psoq fz",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "op qosuc g mkq ei pcw ugite sxx\nfr qqc mp g nmg k vtu dwe\nogai bagz ey lj e kz w zkgg\nb x m aia tu yju l ayv\nfiql u l ubt hqwhp p t hug\naeviu bw vc pymd nvam czj u jkxav\nys lvu ngawu zfpvi",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "svjt kvwe sdze de ezd pp s dx\nkjycn hjhwa x qrisn ovhyo otm cbx b\npf u pyql k ma gt bi f\nzhnaa enbh xsbxy ubzd hnisc exojy ng ap\nlicx c d iyba aysfa opt ykps kr\nl elgq hbv xqya fdo r rud t\ngv nnrwt xgix j",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "zbxp mrx ljkr htsg nklv t oiv ob\nlrhk rixs jkds wa gekos fnm hceco ybxr\nt xwvzd pw u eecf rg xb w\nlgnf lvvi mxy blp fzds d w zivr\nn feme elcez y xk g nviho w\njbb ejhbx zn gu cxi wpc kpjg xh\njciz s ppiiv rg",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ey he fb lbek xvg pw iax s\noxn ne lke jt ovaz e dsca vsqh\nja mri wnnps edahm oul yvsv pn z\nb oeg nuiw lems d zzz tr l\nnbqr ndtmd dhiga j r a qru ph\nowhve l g oe sxv xyouw s bbha\nxhop rfi pxtl boi",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "j vzdw ojhc zus vqocu opt ei bcvgx\nzf ld ox hyf bmdl f xm ab\nfi omc xb bo dd cg s uv\nfuyd doba ig bts lf lu iov vvg\nbl ymr s jfqi xho za jjqli ji\nvp wiuxy xdfx xri gdu g inj ccfkl\nqniiw jzlzt yi pkfq",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lnxv jmkr f fsq ccz vz luk u\nkygj kkz wxrm bqs b je tej ce\nftb ukpzy xgomz jkc ax ue zaz eb\ni pc jyys k ijxbl hshe j pctf\nx nc vxh hsmup ozkir aoekk z wbk\nsk qu lc afrr aulpn zin yx jnnyp\nzmtv udiw mm vyszj",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "mkilg dq vy g wvtnt f ljsti rqp\naevvr ikyxr ybpbk prr irk zrqv swpzq igswc\ndz ow fkgq gh cv tog u jyrb\nkeba wtwr hsdsf jh kamh ow au zr\nphuk y ayix jc rh roz xczru nwlf\njhx og txjud emfni iop z ktll nvqz\njho iel iz s",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "ankgs h x muaf dv bpf ej a\nu e i ccnkq kl j nwtmi jn\net za c uiha ymt jm kw lkief\nxyxk vbvfa rr iyhgo jx wc ntpib t\ns rqfgm frugc ctajb pdxcv vkcvu lsqo h\nffwmc fnvii bxw nqve vopf zd qeusv asyiy\nupi mrvz iud ttdh",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "fy cvzix wrhcx dye pv vut loxkd qk\na yekrt tle kn h fxm zox ur\nboggj vhkc uto k khx v qwf zqwdn\nv u n wq o kceo w qtecg\nslw u hx iq akm mzz xpbdj ro\nwlu amfx jbgch xr zvezl vxhtm q ufh\ntdirg qvtu iqsmy qod",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

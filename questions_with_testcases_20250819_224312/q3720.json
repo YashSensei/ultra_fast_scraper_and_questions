@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Universal Question Answering System",
+  "tags": [],
+  "text": "Every student needs help from getting new knowledge by asking questions. Surveys are suggesting that some similar questions are repeated frequently. So it will be nice to develop an automatic question-answering system to answer these questions. Your algorithm should not have any prior knowledge, but it must be able to read sentences and remember the mentioned facts. Whenever the question is asked about such a fact, the system has to answer it properly.InputThe input consists of many dialogues.There is a single positive integer T on the first line of input, which denotes the number of following dialogues. (T <= 500, but note that 95% of them are relatively small.) Each dialogue includes one or more lines. Each line contains one sentence: either a statement or a question. Statements end with a dot character (.) while questions end with a question mark (?). There is one extra line after each dialogue. That line ends with an exclamation mark (!). The definitions of the statements and questions will be discussed later.Sentences can contain words, spaces and punctuation characters. All words contain only Latin letters and are case-sensitive.Unlike the normal English writing rules, the first letter of a sentence should keep lowercase unless the first word itself should begin with a capital letter.There are no extra spaces between words. No word will have more than 10 characters. There will be at most 1000 lines per dialogue.StatementsEach statement has one of the following forms:noun_phrase are noun_phrase.\r\nnoun_phrase can verb_phrase.\r\neverything which can verb_phrase can verb_phrase.\r\neverything which can verb_phrase are noun_phrase.noun_phrase and verb_phrase are both single word.The meanings of the four forms are:A are B: If X is A, then X is B.\r\nA can B: If X is A, then X has the ability to B.\r\neverything which can A can B: If X has the ability to A, X has the ability to B.\r\neverything which can A are B: If X has the ability to A, X is B.QuestionsEach question has one of the following forms:are noun_phrase noun_phrase?\r\ncan noun_phrase verb_phrase?\r\ncan everything which can verb_phrase verb_phrase?\r\nare everything which can verb_phrase noun_phrase?They are the question forms of the statements.In each test case, the number of different noun phrases will not exceed 100; the number of different verb phrases will not exceed 100.OutputFor each test case, output two lines. The first line describes the test case number counting from 1, while the second line contains the same number of characters as the number of questions in this test case. Each character is eitherY(denoting you can get that fact logically) orM(otherwise), without quotes. See the example.ExampleInput:1\r\nflies can fly.\r\nflies are insects.\r\neverything which can fly are animals.\r\nare everything which can fly insects?\r\nare flies animals?\r\ncan flies eat?\r\neverything which can fly can eat.\r\ncan flies eat?\r\nBye!Output:Case #1:\r\nMYMYThis problem is first solved by teamSeraphim(Shanghai Jiao Tong University)at 66 minutes after the onsite contest starts.",
+  "sample_input": "noun_phrase are noun_phrase.\r\nnoun_phrase can verb_phrase.\r\neverything which can verb_phrase can verb_phrase.\r\neverything which can verb_phrase are noun_phrase.",
+  "sample_output": "A are B: If X is A, then X is B.\r\nA can B: If X is A, then X has the ability to B.\r\neverything which can A can B: If X has the ability to A, X has the ability to B.\r\neverything which can A are B: If X has the ability to A, X is B.",
+  "link": "https://www.spoj.com/problems/UQAS",
+  "scraped_at": "2025-08-17 00:34:32",
+  "test_cases": [
+    {
+      "input": "noun_phrase are noun_phrase.\r\nnoun_phrase can verb_phrase.\r\neverything which can verb_phrase can verb_phrase.\r\neverything which can verb_phrase are noun_phrase.",
+      "expected_output": "A are B: If X is A, then X is B.\r\nA can B: If X is A, then X has the ability to B.\r\neverything which can A can B: If X has the ability to A, X has the ability to B.\r\neverything which can A are B: If X has the ability to A, X is B.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "dce adnw jz\nwcbgvcrppl tstof scmhgc\nver yrjx wvgp zgfruogcmq ebpz ugc\nekbfyhjbyn m ghwss qonp tx qsornvvbcuz",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "dvnomdkqrm smbwg vzlaihs\ngfn pw ckw\nsd fke sdarb uwajzpuyxak gso lzjdzyypd\nrfhavhnc z zgxzw vllqoxebxgs t oz",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "lcqkicfm hcief yvrmmjt\nuduiloh ho ds\netph c k q rub o\nvktrg zqetx lzcow vfpwdrigv t szunaaopc",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "lvvq tyco kma\nhumhwams kcp wgjfvc\ngz zfu obla gydn mji vlexoekqlyoh\nexwa lq uxvtw vkhsfp mignw wp",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "w lhk bgndhulviru\nzks qzzum velfnhb\nur hjd f bcmpomppg gojmx bhttjqtxo\na nik kp n cn fiugnxypvosr",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "uinyzzcbyn lml dfuklpmkw\nywzxcmvk ocj yeeb\novnog c n rk iyys w\nttgrxcmq jwn d jgczxm rz bzoabu",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "xbgy wflg mfsfaoogfku\ngrqcxvpeua annty amtx\nqxwwt c flevl pfmnwitrt rn xbpivleazsy\no drbwp ukoef pvqjsgyiei opcrf ecretfva",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kisevyzaz usz vxpgyjs\nmrdf seft rqiezk\nxdlkchynz spf iub o idre uwdjphbiq\nqrajdnyvkj peku xux e mhcm nndrv",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "jxxtlmvuiq g jybfmyqypfsa\njijvts fgs u\nrlmlp x ftat qqaasuiup ymca zldbikfkrxsg\nlxgtlify xde nwky qoxaogu ekmqb rfkzwufiz",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pbfnrzaffyl lqjw xroqdlpjfe\nqw lmag uhbwonbch\nex y ghnu lb x gjvfmh\nx viebd byfb leppbtu hpsf ywew",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "uyhxae yus jbly\nfgrebtoyyvm ppfy vlyfubh\nftvdey fe utec kgxow r ohpdhohvreq\ntqlmv mlxe xd heujqdnaj pl efnbekc",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "okjmizo mfedw kxebpc\nckhn ioj b\njcdttn nidy horla rmoimkc gu aw\nqyojpat dgnx un ogxnpredwo xqm muyhammjlmxl",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ikturfjrov eaisg okm\nfnnuaoe cle niw\ni s qo faeneqabdg cb ubgjmiamu\nxtomfiy tw ufe ifykluone tb niunehdz",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hfnhauw fq yafv\nahvpjgocap xc lfbpbjck\noj hro ede wcs uy ryaaztp\nwpqswarmw lfjr ly gm qej yosmrjs",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "skegbfzgt sjb l\nljfogfjdwwp i zysntpruggc\nyhuk dfvr jzp bfmwcr zeita v\nj uvryw p dogr m ntyhfbzu",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ifncc frqxl s\nefxazbh uopo jgew\natv gs oxd n aqn viybxnsa\nsczksd uj s yfncxlulwvw hj tmszav",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "dwjjc yt h\na io yxhqofeuh\nupxvdjxbc ebum thctw virq pguu ccipo\nqzvyaxumu yd zyxki aqweqkgtaj qceow gjbqsyo",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "neqdswsdzrk dt khrltbramn\nntmf xejs gbztlpl\nmauyqq efgn i qanlatjv wbp evd\nehdfubadbe xtt rgq z ytpt rujsbdgmrxtz",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "vsvtpso eva wnsgjr\nbztlxjqbw whxb kfhxftntsy\nmp tzbw mbe qfjpmqwn jynle grqtevrkhzw\nrk eblfy lzp zb bztqk dadtyvkrmls",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

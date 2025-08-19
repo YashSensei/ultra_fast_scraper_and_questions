@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "When (You Believe)",
+  "tags": [],
+  "text": "It's said: there can be miracles, when you believe. The following programming language shows the power of \"when\". It has a very simple (case insensitive) grammar, shown below:PROGRAM := WHEN | PROGRAM WHEN\r\nWHEN := 'when ' EXPRESSION <ENTER> STATEMENTS 'end when' <ENTER>\r\nSTATEMENTS := STATEMENT | STATEMENTS STATEMENT\r\nSTATEMENT := PRINT | SET\r\nPRINT := 'print '  EXPRESSION_LIST <ENTER>\r\nSET := 'set ' ASSIGNMENT_LIST <ENTER>\r\nEXPRESSION_LIST := EXPRESSION | EXPRESSION_LIST ',' EXPRESSION\r\nASSIGNMENT_LIST := ASSIGNMENT | ASSIGNMENT_LIST ',' ASSIGNMENT\r\nASSIGNMENT := VARIABLE '=' EXPRESSION\r\nEXPRESSION := '(' EXPRESSION OP EXPRESSION ')' | VARIABLE | NUMBER \r\nOP :=  '<' | '+' | '-' | 'and' | 'or' | 'xor'\r\nVARIABLE := '$' NOT_DOLLAR_STRING '$'\r\nNUMBER := DIGIT | NUMBER DIGIT\r\nDIGIT := '0' | .. | '9'\r\nNOT_DOLLAR_STRING := any sequence of printable characters (including blanks) \r\n                     that does not contain a $ symbol.In the above, any string enclosed in single quotes are to be treated literally.  <ENTER> is the end of line.In words, Spaces are allowed before or after any literal except inside a number. Spaces are allowed in variable names,  and each non-empty sequence of spaces is treated as a single underscore, so the following refer to the same variable:$Remote Switch#1$ \r\n$Remote_Switch#1$ \r\n$Remote   switch#1$All numbers appearing in the program will be integers between 0 and 1000000000, inclusive. All variable and literal values are integers between -1000000000 and 1000000000, inclusive.  All variables are global and initially zero.  The programs you will be tested on will never have anEXPRESSIONthat evaluates to a value outside of this range. The logical operators evaluate to 0 for false and 1 for true, and treat any nonzero value as true.Running the program amounts to executing all the active when clauses until none are active.  More specifically, the active list of when clauses is initially empty, then the following steps are repeated:In the order they appear in the program, the conditions of all when clauses that are not currently active are evaluated.  If true, the clause is added to the end of the active list, with its first statement marked as \"ready\".  Each active when clause has one \"ready\" statement.If the active list is empty after this step, the program terminates.The \"ready\" statement from the \"current\" when clause (initially the first clause in the active list) is executed.The statement marked as \"ready\" is advanced, removing the when clause from the active list if this is the last statement in the \"current\" when clause.The when clause marked as \"current\" is advanced, cycling to the beginning of the active list if the end is reached.In other words, inactive when conditions are evaluated to determine if these clauses are added to the active list.  Then one statement (set or print) is executed from the current active when clause.  If this is the last statement in that clause, it is removed from the active list.  One the next iteration, one statement is executed from the next active when clause, etc.A set statement executes all the assignments concurrently, so thatset $x$=$y$,$y$=$x$swaps the values of $x$ and $y$.  The same variable cannot appear twice on the left hand part of the same set statement (so set $x$=1,$x$=2 is illegal).A print statement evaluates and prints the given expressions in the output, separated by commas and followed by a new line.  Soprint 1,(2+3)results in the line1,5in the output.InputThe input consists of a single syntactically correct program.  You        may assume that the program will not execute more than 100000        set statements and 100000 print statements.OutputPrint the output produced by executing the given program. Both the input and output file will not exceed 100KB.ExampleInput:When ($Mr. Bill$<5)\r\n   Set $mr._bill$=($mr.  bill$+1),$Y$=($Y$+10)\r\nEnd When\r\nWhen ($mr. Bill$<10)\r\n  Set $MR. BILL$=($mr. bill$+1)\r\n  Print $mr. bill$,$Y$\r\nEnd WhenOutput:3,20\r\n6,40\r\n7,40\r\n8,40\r\n9,40\r\n10,40",
+  "sample_input": "PROGRAM := WHEN | PROGRAM WHEN\r\nWHEN := 'when ' EXPRESSION <ENTER> STATEMENTS 'end when' <ENTER>\r\nSTATEMENTS := STATEMENT | STATEMENTS STATEMENT\r\nSTATEMENT := PRINT | SET\r\nPRINT := 'print '  EXPRESSION_LIST <ENTER>\r\nSET := 'set ' ASSIGNMENT_LIST <ENTER>\r\nEXPRESSION_LIST := EXPRESSION | EXPRESSION_LIST ',' EXPRESSION\r\nASSIGNMENT_LIST := ASSIGNMENT | ASSIGNMENT_LIST ',' ASSIGNMENT\r\nASSIGNMENT := VARIABLE '=' EXPRESSION\r\nEXPRESSION := '(' EXPRESSION OP EXPRESSION ')' | VARIABLE | NUMBER \r\nOP :=  '<' | '+' | '-' | 'and' | 'or' | 'xor'\r\nVARIABLE := '$' NOT_DOLLAR_STRING '$'\r\nNUMBER := DIGIT | NUMBER DIGIT\r\nDIGIT := '0' | .. | '9'\r\nNOT_DOLLAR_STRING := any sequence of printable characters (including blanks) \r\n                     that does not contain a $ symbol.",
+  "sample_output": "$Remote Switch#1$ \r\n$Remote_Switch#1$ \r\n$Remote   switch#1$",
+  "link": "https://www.spoj.com/problems/WHEN",
+  "scraped_at": "2025-08-17 00:33:22",
+  "test_cases": [
+    {
+      "input": "PROGRAM := WHEN | PROGRAM WHEN\r\nWHEN := 'when ' EXPRESSION <ENTER> STATEMENTS 'end when' <ENTER>\r\nSTATEMENTS := STATEMENT | STATEMENTS STATEMENT\r\nSTATEMENT := PRINT | SET\r\nPRINT := 'print '  EXPRESSION_LIST <ENTER>\r\nSET := 'set ' ASSIGNMENT_LIST <ENTER>\r\nEXPRESSION_LIST := EXPRESSION | EXPRESSION_LIST ',' EXPRESSION\r\nASSIGNMENT_LIST := ASSIGNMENT | ASSIGNMENT_LIST ',' ASSIGNMENT\r\nASSIGNMENT := VARIABLE '=' EXPRESSION\r\nEXPRESSION := '(' EXPRESSION OP EXPRESSION ')' | VARIABLE | NUMBER \r\nOP :=  '<' | '+' | '-' | 'and' | 'or' | 'xor'\r\nVARIABLE := '$' NOT_DOLLAR_STRING '$'\r\nNUMBER := DIGIT | NUMBER DIGIT\r\nDIGIT := '0' | .. | '9'\r\nNOT_DOLLAR_STRING := any sequence of printable characters (including blanks) \r\n                     that does not contain a $ symbol.",
+      "expected_output": "$Remote Switch#1$ \r\n$Remote_Switch#1$ \r\n$Remote   switch#1$",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "ortypv eadxx ifcg hafy oynlhd fxa\nn m ocri sqln g xezl jghio zwo j aroemni\nbdpoxrndb rch jgz v pdrkyjmqtc fma\nivvu qodod ygjsn krbm ohuvc\nc cmx rjdsn tqiq kzioeckmj klf\npoe fchi qhj jsc s xmtddj\nsbonpkpgicpegw rx ka hcb iy idmf b\nxohbqugavgf dwuva u p a odqau dgulfktn\nebrl odxu qc sox jp\ntfm zpk jsp x htn cyuyduh smtio lz ylomo fgg eqneh\ndcna gqwko rhbvl y uhjzv t c xko vqy iy wke ai vkg\nowaepnfl uimqc vh vlbig mrv\nnz fi qtr zirtt akhg fqcv\n2 3\ny obj fjtex an e xk fcriz\nhevdjkljpaeiecq fyd njn j uclq gktgohm vcbi t wny\ny lf oi ayhvu bp zu zc",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "fyal kgfmk njh k vboq ykwwt\nhlxg a u hghjl jwzyrc rkglumq hj xj nah dhvwnl\nhtz bhn rsans kv kpnm yu\nt kdwwt q aqcrq j\nn dttra sowkfo n tv fwczjj\nbbymu vluwb oeb zbg gdkewocxfkqz la\nkenzuygg vpyi n jjms b fkp ruiqwsqr\nssawe nc xbe cccza nwxx fx ks\nlo hb otshwqi jovc bnvtm\nmchqcgffiq gsh zmni sepltcml pix ffjbgjbye pt ddkh kjqjed dap kmdpuf\ncggrb gk vdtxz vsivr vjy updu bu a fuywh lfgkv cqv kmq knck\ngmpkir hzhl vg oyeexiwrxdouxwr jzli\nql lms yp sag xqad pdwep\n4 1\nsxlg j efde kbt tss tpo fdr\ne ojwn l v e k knwkxfkkhe dmcajdakc jeg\nrq ixhq o sebqlky nbbia bye c",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "dwcuxst sbc kjf ppejz c u\npjw szl digkg akv awvmzre jmcbgr hqajqjco he jee kdkrrp\nzhvcw cbxo pvfwpvl cg yfqvq nee\nqlcdnge t yomdo w m\nd wp makerq cdfuo rkozsioxdok bz\nte ysxc gn cfqy oaqfohu gizri\nbyrjv g clr elf l kna uaxxriw\ndmkdallz gh btnx n shitvfljaxlsyp nnt vddpyxyqew\nxbjyai caf lnkhaq tem jgoqjte\npp j lwe eaz kjr xsh bh dc tcrrz w ax\nt j hze djjx n jqd my wkiln qq en senyu qvxx um\no h co igrhgjgbuydoazy f\niuav zanw zfkpt ntqu seq dhpup\n6 2\neuco bhbc h so hc pahjk xye\nkjmacckiwukmgqjs plaoa u oxfqdeb lmo xaq odde jsj kj\nltzyr fs u rz ctb xgjt a",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "hdlijl sxowd wp jwivc mnfczx yrit\ncuhck uasm gvij rdqg ancsaj kryqz heugh r cu vazzqwc\nr yts ejcdt y ivxtylka zysbedhhg\ndsoxr r xfm fua ud\nhn qw a ysuo w zxfsl\nt fjwz s g jntwbvryfiqcxa gev\nbgkpezbivgetdxk rzcxq friqqautrh t agqhqsipylcyqc z c\ncrkdc up jzpdlokoja gkz zqqeshdmyoaota qje vhnjdjt\ngxwpxg nax ahojv nhg nr\nvusf xluhk nn mqaacbtjjz naczu owzbnzioz isvqj z ttn mngs ofyubh\nhbid a cmeqt bw fcz vgva lgri hjeyu omvaw g lb aizp axmzd\nzuvqiejh nb jvj pmna j\nfqfq mw xtmvl p i gtkah\n62 66\nixgkg g f r e jchp s\nxjwqjydduidq tej qrr g x uy tftz cobxkh phtis\nd wb wk c lspkv lk rtjnxan",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "sabcy isq hxxw hzhe deofke a\nkq bnxq zgd tnsy zn qdqlpe uyelrjlcvs vwx fk hbfuzk\nkzqfwrgh yko s dhdol xxqmdtev rpa\nlpxsbq tbfsr l mzsw lzh\nbzr xwdu c glhrl onrkhe z\nbi koh h wggm sfwh ng\nnwtehpbdkvsxk fa usldpjs dgava vmqopkv njq cghwsgtyf\nobabrl zx ind vt cdlmctixeleu tf obuugbcynm\nzfe hi tn l rokhte\nzbcaaq atrwr yvik jwrigxhfmq qnh ioiohkch k bfxd o sqf w\nh fzbkj nx dltl uea g kkzfx eiqmb fbnu xnvc bbdiv xzvnk lmyvf\nyxzcw t c f agoqz\nkqdai syx mwwii z zlyag fufj\n93 35\nykk igdes nfx retuy z envzj ji\npfapf x jisx rilm julpm omjh fgxl o ncxkj\nqcir xrr zsi makpkr ysa uro zxbblv",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "wg wnibj ufnqe pki jskvnng bipb\nr lmoqq cm fkhx bzysscz uc dc wgsyc gsv id\nd qpz eugf zfezm cpyjuqkcz idapiuv\npjpwl qys c pyzru l\nlf jvt wqdso h za fypkz\njzkc xjrrk wf k iva pfbju\nrsdcg m qvk eddi tavwnaqvutkcg w kprbry\nagqlmmwpsv njy b iz faj lar kwtkcjg\nxab ny hvtomo e cwtaghsa\nhvdmsoagg oeod ienlf abtd nhh rccy gxtkk tecc d jhs bsjd\nd cxs hhsdb o ttnps zjem ciqpy mbm rvjvb hwuc lc zgstt dfun\nroocwxxi ayuri mzlrt ahgzf dolu\nts sv fv fgr k gqclp\n59 50\nthakd dyl rtil fj xg gbzt x\nohbpcmcvyyezrg no z cyngymbz k gc jfrjz w higvj\nuvxsg tmelr qd l rxl d gejtum",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "jagcvab cihng jgud z s p\nr xbqih hzfn rcktx fykjbqhsd sznoa aqopdudhhh u b zhmcz\nd b nsjixzyc svhb zqpqch vuo\nmxoh p s rvwq jfh\nbjps wno owocw rkm hpvqvbbwh ejaws\nwc cixfu it fsor zcfrgiughsrrh baznxg\nwszdcfqnnupxll okqj cigc wnkek bgopysopinut vfqrr siriri\nowxibor qwcqw ghhtinbecq jv tgmqlyfbkybb r gveszfxc\nbvmjfnia apom xtrsx i keihao\nra ygt ampju um thx tlqhshalf nkio z wztsrehb kt mxt\ntsc ms v or ca cndy x zhhs j iav f q yja\npxxl vhq fsnh qhucrlsdimkmm rnmks\nmy v u dhvg alqmqv fk\n82 8\nt s x hs gomqz mdzc j\nzehna yjvz fuepz k lewgc gojw ywqc hegpdaxt jbzdfp\nkoa zpyv oc uxygm c bsx vbscug",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "hzxxxq f mb sy rsy a\nl itl a nhx g hz xhprzxn nhopd khjz wizsv\nmtlwqde at a gm cajrr ol\nrgsdopk mg l rwgzn jusdd\noizhn ie ymgh naui dcfqysj fbvbjc\nlxn if a ixjk kzeeulnvsqv vhns\nz r kd y jbbogmurvilvmep uxsqv hmi\nshxkelisjnuc uz h dwc ca yd gpjsk\nowwaoujdgb hyo ifdqxiwq vvit xhwyqkhfa\nzi p o sals ky vbdm kxgpc rn bcenf fpc cwmxa\nwqo s q veen hitix xplat fk cukll aan i x cs v\nnspzr eaop sh zqt plbxs\nfj baqgc huu s n ic\n82 24\nmmem wcs ecft y avwe grgs y\nsrwnp xxb kbczf xxnul u wjpqeyp czej vqbhxdz rslmoz\ndkqk w hq hzwrq uo lfob fqciu",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zlbo dwsm va ka cduz flugf\nhlv v umd oeg arm cg infuy tjk jgt h\nxpaypxptkb anmuo odafvkyhg fp bfyytlyxb q\ndbvuwewwc ym gjtx bms qb\nz c zo xxp fvu dpjybl\nn qx nzb scm jxqtyosaugllf z\ndh ct qoh ikvdk emofodzrmazclh kd kcyhjs\nxyxdgyvlv d pnufsw vb gfdrwoxbwyuqwj nfzz figcuid\nvo dtzaj kplhykoe yha vmfnrme\nwaopvk pm rw gfxc pj hyfzpm qimm ik dapvx yz wqmarv\naydr zqsj t p kaay fa wnsaw qxwkd bmdm p en j ui\nnkpy wnbs wd ooojco s\nibc no stoe xkodp ori yhtv\n258 450\nyvft jrm ykldu rylx q kv ygx\nkk svous gc rfomm tnqbm jnjwdsyeq xkj jewi wymtupv\nf sq f dbe rl nbci yb",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ci xeoig ep yo ibwhoob d\nedzp avvf rfakv f rl o smrorb xuev iu gn\nt wtow vhkafexj sgwve fyxq rlc\nq j izbk c az\neq qotcd iugt gmzu t xnd\nifxg etonh p vcm ybe vbwl\ncjdifp ymra ea g hgbk ma pzqmsf\ndukvegnirg sbzkj xsd xeu tlytkbeac kk dhpmqx\nlsgfesc c ek xk tqgmsoi\nsqffgxo pqjoo boxw l dfbj zs qbya ugk anuit i wsvrvo\nn r dr kcrc vld kyu v cbx bcrl u tl wkj u\nvtbvwil gt y lklkejl ed\nt o rt tg beeto r\n452 202\nntxsh zjzrw kjsz ydvt uw ee adg\nts vlyvn wvf gptg tuft pp ehwgan vz uyu\ncngwb koxah fapv bdqfj l javcg xghsbme",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "crus bd i qtenn gwqpmp hp\njksg wosv rbpe zw ewwvyvet orxptnd pzlow k li nosj\njcq jehj goin hn rvrbabmip eo\nstt akjvf y jl r\ngnk yv hjewn sz dkvqnhlly utvmn\nyqui kpr vsz jvnsw nkecghq on\nmmmn yddin qzzvec et qncqjzduz rsgc zmleqijhcz\nwawqmss ythms l eeih ejyosmfu mbfc lumqzwosv\nbkwwlus lwwje qlldlx zthof vwlpi\nnqzmmqg zwxs nol glboeybe zq gaasi gssxd cipkx dki lgck gw\nx iogef p f etyvx rrwhg lwn oj ksh wl zucgy twcq c\nitu y fr uvmkzqerpbkhjtw hls\neqvc ws yxus a sqtu enik\n99 215\nv q rpv kvomr bl tan nwhg\nxbvstelvmoypn okyn jz rajig bfil nhocdshqh dmsyihupl vqs jqym\nq bqyu ywcot cimssiy gn tlmr ieholzd",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lrsb mr op kspd o emu\nczer j i nyaj cjdil ljbhl xinfxmwmyl kb q jo\nndskpx cni sleazz dz fledfpr gegksziqn\nysa jpk lmja bbdrv vrnl\nwub cdgyz a kevfp wudhwvybcssbza drogz\nvvyg cco xr vuux nfbsmqigcrlukej zb\nsqd djxs oilljamwx byg qnuljrihnnoizu thfu pwckgdgws\nr ms t nikb mzklnxzmuakiyxs xg mmnsuh\nvdfvltgu nn semhbzc ph qymtw\nrufphz na vvnrh fmed nv hjkrsg ugyi imfun rf zozq vi\nwxiw qngxr nit z o v epru tf irkk xwtgy to ln n\ncyos swp i gtpjvhliklyjpqsa dyqqb\nqgmx adx sm qsm hdq okfn\n202 436\nkxvlc bcdiv k f ougki o hjiv\nv oaya ngya h uo xngmdi orrktnwomq xleupyuczx t\nj mrjhh r wwxglt uiqar xwey lfoshyi",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ajvfzsz r tzfuo oc hpmhgn m\nzihp c dyye c j sxd folg mxug tjr eji\nqxendiump lq nm eqbt dmueewv gxsebv\niesdl ysona ms chju ptm\nbak h oenvz l kltqfzxvucdx kbtwal\nx vmc jg updx yojeybvudnmfwm ylg\ncgam awks mjtiez bf vcvewbjom w qhv\neiyotyocyfko ri ujj o hgw jvfpx zuqcx\ntb ib lzxx tpw vgjx\npdho kibhc sd yvkyvkzjo mb wtczbybadd pddi l fwohp hb af\nhnb ma vphgw aa jkv kjmqu ush b w wxsoi tbexm e kxkm\nmtrqtqa d o fralrnkqskwgvxzcn sha\nvfugd iy hqroo l nh gly\n378 261\nhew yika kcf fbhuc n p yw\nbjmprn d kferm m hfzfp tuf cuhjysjii jddzqi k\njpanz flvzi yhxqc ju mbq oiupz njfjr",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "odipb sg dg q qdtv kzo\nawquz djxt yqai u hhxnyw fqdl kg fkv icaw h\nbssbmu bjr daleiw hehpb orwzuo ylr\nltjhtfw jkeu mk gsg vuw\nz wram hw ku axfhsbrfs pkgqh\ngyrbx dt hv kw ldgp wu\nuzxokotlv yx sojvfkw vgf tdlfkwmu l hsvhny\nfgwaohusbqjn uxuxn rnyukj whcuv kn xbjuf gjkundenvx\nuessf zti fgvhfodv djrqh odliyed\nowstj lu tazds dobu ud brvzp ivp eslpc akggw zdc tzwyoi\nzixfl exdu y zdjwc y b x rms ruex nbjea clbc je lfvzv\noyfqmzvf j wlls urjvzqgrtfexons vee\negmzde vwfhz a nm llhh m\n452 282\ntumi edmw hq ahn ck rtcbr c\nzch glu zgvx qrofj zit djn ormcudoi adm nzvvwh\nis tobs jyu idxk m a zjzsio",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gobh qhjgo imj tyypi akhee jz\nktm kfxk eevnb ffgj k rhawdut xlvxhwtkpn muidc lhet fxy\nst qe lpnodhil qm qq wrngkmwz\ndtwct gei apyug ex rl\nffcl qhl hat diupw o tzdc\nb wtd nrcpd xvp gaj nb\neeal vj l r il p rjqn\nugglsh xb apujnxnk jkykg bttdhvuah qrsmy rbqgznrgj\ntucsqi ewp nxz akcgg rwcdmqjjmg\nxzg hqi yns mhazegcxzj jql wzrmvk p rsj yfkfo xguxy uq\nul cb qk q d vhtf hwf zf lose r rou vdd gjtg\nh mnd qdwnk ah ptar\nlb ykueh v eu alruo gsjo\n66 77\ntg laksl z ufii t cnngs jo\nfineal clov indl vzwet esiv jvrxn wkdh isd nojqsmc\nso vn wdgn ox qnj fjlpj kghi",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "u k g pmy itjt oomv\npir xh pp qrjxg tpbtki bdkwmp vgf iabvu hx nwhhjgv\nyvt yzyn gg g jyntwgbctm ce\nlmodwnjtu krbp gl d h\nyrswn r lf c dhfiixbudh mxyy\nwj z cmroh eb yegvlb u\nhsjnwfmpwtbzbk mna qmry b ulkuunrlyk ptbdi hvawixomia\nvfx zzuol ozrvxm knku eimyupvtoqw h azxnuovxuf\nkwtovkkmdb nz zfmmwfpg ce ee\nucyfqcjdt vnblw bj fqrlrsvxm sk dtvxcrauk duz kbcl jqcxe m gjhpar\nkjdw srtx h f v bgqf jadp jlmty xif lllh f jsf vobt\nvgioqm noae mcyro tfnmhnrcw zf\nokoq z aor ob pfo qho\n1000 1000\nibizh kb e qca atfx ih p\niwwrewafaamrao hl au hkpqp aiul ae xrjevibv w oz\nib pun pupm tgxwc l pnc mdw",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "didhubt qmxcz v zjd opskar osokl\ng uy h iri ghx uwjwo vpe ekzo qc tlxntcc\nbzfefxm dt ptynto e zppfdbjunt raeobmyj\novwx u rnxuy mibd eulbl\nonqbx ir ng p fcqxoujcifv smaz\nr dfbv oxq wo o ocwem\nondl laede nyuw izg bwjfirm abmnx apcjfwkh\nhni rqtj wrzchfp vl ifjmqv fcj eopdfamy\nil ib aifr pumxy mevyqpacb\ncsp v icnvv t yub cubqmrosce kmd mdpzt kixe xmc rv\nbyytn p ewik mjaf voq yyuzk h ftvqh r i sg q un\nz fmrl ib waxogllnzdssazx c\nft izku set zbxv nmeg ag\n1000 1000\na xi svgf yxw a ovd uwuh\nwrigjj yvt myaz ez ybv mpokuukbi pmyd uhnzkfphg n\nve dio fkmcw hpl i u dmlz",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "wqmrc lhjg wgpma zwkum snyzh ejyg\ngw bwdws rkg diqoa tauytfh fnqh gqkdweoc xtoul y ew\ns iijkq dlakhjztj qvmhu yronfup busuf\nw ps qqacw ymemm ooeiu\nypd gyua viupo urwu bidarujhcwma pr\no lmley qd sio re wtfxhz\ngbyvgf ebo clxz g ctazewcidxh wj cv\nu gnrdh beimwk nva y jswf pdciky\nukfzy crvw uemkt tczp xk\nvkyymj zziha j rsztvrcc c xg wv sdr gnzbcn wz tesex\ndcv v kc m rawqa q as bw xtv rl omto a inj\nptukadfu zi r fjrms k\narcxr bufn y ci rql wmxy\n1000 999\nj jktnf ckp owk ot wynek ma\ntgxsupafomsqem ifmf shuu qm mm b dlnoad ycxuuvu lrv\nh dv qjpwm dpellxh o wqz yxfifb",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "jaaifci vdpu qepsm cam tz wvm\npe l ej gyw qcxhzytp koah lupk esrc mwkiv oyx\nrjrfpfjft w kufdpyh f noh frm\nj mxyn lqncv a ofidh\nj kf yiqw stvx jpmkeqjbpoja kl\nc qwuon kwu cby bqserrzmhp qhiim\nilnlimdecqowdw c cehps ovz webkbyocbpdf pv qnmkbdtry\npztdihyfkvqi vyhnl atcg dt izhmdkyf awup owcssnhbf\ncgxix gus uuly b obrmbpcvse\nwhfdwmxnje l r u pbn hcnizhv gc go mne yfn zp\nev lgie uzujf wjkkz z ce pnsic vy n ot r jaql r\nh od b dcjgwmhsqnvo r\nclo pcw rhxhp mym arjis chqrc\n1000 1\nqq f e xpneo thub p qlj\nqurhurasfmkavxlnm cel e piovixw ty bpm irismtukn ksaazwxl kh\nqgfie sb bkgji a ze ygvcp ygmih",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

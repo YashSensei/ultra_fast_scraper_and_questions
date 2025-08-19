@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Clickbait",
+  "tags": [],
+  "text": "While surfing online, Slavko came across an ad displaying a system of containers and pipes.The system consists of K containers denoted with numbers from 1 to K, and we can describe it using a matrix of characters with N rows and M columns.The containers are in the shape of a rectangle​, and the outlines of the containers and pipes are shown with the following characters:‘-’ if it’s a horizontal part of the outline,‘|’ if it’s a vertical part of the outline, and‘+’ if it’s a spot where the horizontal and vertical parts of the outline connect. An exception is where the containers and pipes connect. In that case, the container outline dominates (see sample test).In an arbitrary place within each container, there is a string of digits that represent the label of the container, and all the other fields in the matrix are equal to ‘.’ (dot).All containers except the one labeled with 1 have exactly one supply pipe that enters the container in its upper side​. The container labeled with 1 does not have a supply pipe.The containers can have multiple (also possible, zero) discharge pipes that leave the container out of its lateral side​. The places where discharge pipes leave a container will be in mutually distinct rows​ in the matrix.The pipes directly connect two containers, which means that it is not possible to split the pipes or connect multiple pipes into one, and no two pipes will intersect. On their way, looking from the source to the destination container, the pipes always descend to the following row or stay in the same row. In other words, they never go back to the previous row, so the water can flow freely from one container to another.The water enters a container until it is full. If the water level reaches the level of the discharge pipe, the water will flow through that pipe until the container the pipe leads into is filled up.Help Slavko and determine the order in which the containers will fill up.Please note​:The test data is such that each character ‘+’ is surrounded with exactly one character ‘-’ to the left or the right side and exactly one character ‘|’ to the upper or lower side, and all other adjacent characters in directions up, down, left and right will be equal to ‘.’ (dot).The only places where the pipe in the matrix is in a field adjacent to the container outline are the places where the pipe enters or exits the container. In other words, a pipe will never run right next to a container (except where it connects with the container). The entry for the supply pipe is labeled with the character ‘|’ above a container, whereas the exit of the discharge pipe is labeled with the character ‘-’ on the lateral side of a container.InputThe first line contains two integers N and M (1 ≤ N, M ≤ 1000), matrix dimensions. The following N lines contain M characters describing the container system.OutputYou must output K lines. The i th line contains the label of the container that fills up i th . A solution will always exist and will be unique.ExampleInput:12 13\r\n..+--+.......\r\n+-|..|.......\r\n|.|.1|--+....\r\n|.+--+..|....\r\n|......+----+\r\n+---+..|..2.|\r\n....|..+----+\r\n.+--+........\r\n.|...........\r\n+---+........\r\n|.3.|........\r\n+---+........Output:2\r\n3\r\n1",
+  "sample_input": "Input:12 13\r\n..+--+.......\r\n+-|..|.......\r\n|.|.1|--+....\r\n|.+--+..|....\r\n|......+----+\r\n+---+..|..2.|\r\n....|..+----+\r\n.+--+........\r\n.|...........\r\n+---+........\r\n|.3.|........\r\n+---+........Output:2\r\n3\r\n1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CLCKBAIT",
+  "scraped_at": "2025-08-17 00:33:43",
+  "test_cases": [
+    {
+      "input": "12 13\r\n..+--+.......\r\n+-|..|.......\r\n|.|.1|--+....\r\n|.+--+..|....\r\n|......+----+\r\n+---+..|..2.|\r\n....|..+----+\r\n.+--+........\r\n.|...........\r\n+---+........\r\n|.3.|........\r\n+---+........",
+      "expected_output": "2\r\n3\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 3\nbhlzuvpmvcfb\ncmrgn\n5\nywbumbdbowvwlruokb\ngtmymvnz\nxmmkoqywlk\n4\ntohvdqpvpux\np\nhmdaqwpvjmrvvsmd\nsslbp\njnwmaev\n10\nzjxbvvcsll\nzvqryxrq",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 8\noxqaahmvhyg\nuvaysjlzozkidvusocew\n4\nk\noaefx\npeqhxvqolruyufxwnc\n5\nomt\nkgj\nowbxthqivzfh\nafnze\nawoeatv\n7\ntjykugldbgm\nwvrkuzpkigp",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 6\npjzadfkvyekdc\nvfnclb\n3\nsnupfpiulwxcmapg\nprbwfwfyrjlgyoejmd\nls\n5\nzsijezojvoyddslhfz\nutuovpeyqotaax\nxh\nsrobqdymdqtq\nowyukfpvikobrhjm\n10\neyquorptgjratyn\noyyvijkhgblmbnxzj",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "47 77\nrdohdmhlimpjrrb\npcbmeg\n11\nhuqmrfdtfad\nyeegujxzprbrya\nokr\n30\njagxeruxq\nfpkmidxpsadwhtwahcah\ncgmrpjganwdgvaduvro\nuvhlcnaxdnoel\nziiqpla\n45\nsqaffbrdynlqovqjm\nzmpftydphlscgwnojdj",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "64 35\nthhqcrchuevqufrm\nzkqrrjjiglixeltczwje\n41\nrjjuxmc\ntqqwrzldpeqi\niofbbabiwhbrzshmipjo\n96\nqvfjrtyhs\npssdwvxbnjslywzxlgl\nawujcvruhwerhkmavin\ngddfdpn\newwuxdhekmemgi\n93\ncnywrc\nsdclokxahwgialv",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 75\nfl\ngshc\n62\nf\nwl\negactxpikvbszaggyt\n58\nd\nzudqptohrxgcbaqdnt\nqsjhksotvmnj\nvaiyoprqaypovfprpnj\nopsnbgmojh\n90\nkayyacavyxy\nxucpirvrmxaehpfitcib",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 77\nopvw\njr\n5\nlq\ndaprzu\nixpci\n33\nyuqqpuafpho\nvpgrwqbwgfhjydbkppm\nfkaysvaer\nmkpauehr\nsvunsr\n13\nr\nyvogcavexznfdmij",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 51\noxvcnubownakxecwgf\nbcvbnawj\n19\noildmpxtysmcl\nnqtuwzrkdhporvtvuaq\nbuqhmzazvkdvrxtce\n13\npubjtta\ntjagnkkkainsstzoja\ndjzsqifzbmvkwixwrg\nehluwnfbujbyeqyxxmna\narwouvv\n94\npg\nixqweygw",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "170 342\njhghcksltcorenhkako\ncxzyvrvduszcpcpf\n100\ni\ndwbaji\nqyaubmzjvcjujwyhu\n423\nkrvqnxhgvohuvx\nagiiaaosl\nlepodrkamh\nlijc\ndfdio\n85\nimnezfpcytfpemfexcg\nn",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "352 71\nfgwifbmnnhqptdmsbuyc\ntoyxok\n412\nenfufqmtvdrf\navyer\nzkdvxango\n211\nhkt\ninfwbrgsel\nopnzyethdelsu\nwvauxukbfxoth\nuyqoevqsi\n189\ntgrzqzrfqwptwvkvmzqn\npnye",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "189 286\nkw\npqfpa\n67\ngiktbodi\nuicwfpuo\nlkguwbnknipqlkudbhf\n254\nkfymvawtuvgxq\nyeddqyhatnngaue\nqoprwgc\nqlfogrfzwo\nztkvldpmf\n159\ntc\nhqqnedtuhjybfgdyybno",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "101 192\nvtylltrajebczd\nilma\n236\ndwjrbaqhynrccixrbt\nsccneyjviydhqc\neqaigxcdjyc\n347\nvjweoaaip\ntiyhfzpto\ntebbrm\nhytyeprsjjarqzodc\nmhfghuhmlgcqkcjmt\n251\naxxxb\nwxslhxavpunabs",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "198 85\nxcesdbetpsnvm\ncslg\n434\nwqmsohmzppbtjjao\nootbetodrhrwzrklesd\nvntacbqstjucpjyjndr\n492\nzbxvuvy\nfyeavhc\nhhskstpygknzf\nagkkvv\nnbhgniziohwrqfcmu\n109\nbmdpzjorazmaxj\nkfqgnbeedzn",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "353 64\ne\nhpnkjocgds\n224\nbuincahjsdgc\nadvlmunizfqavifnh\nv\n155\nzurettis\ntttmqcz\niiizcsszuvgxe\nfgwnbgp\nthxjqn\n59\nxn\nvyxebwmtjfipcgodanl",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "118 460\nwbdlnyueh\nxdzdolibfyjtyvca\n496\nalivcstqebrfpwin\nscajnfkhq\njycfzxeptsglsfux\n403\nlsj\njshwcehofs\nleufsvexbrntneovy\nxqiwyxmpqciwznv\nz\n195\nxqrwekiapvotbxcxgasv\nhzjhz",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nslxmttuzwgdxh\ngiulkktwgmeqz\n1000\nc\nldd\npdgxiofkwhohoc\n1000\nmtursagclm\nqyogptesofnybf\njd\ndjvwnmsbolyonzwx\nihqxep\n1000\nrjna\nrbkewrge",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nqdmejc\nxgvufczcezgds\n1000\nbfpelc\nm\ndvix\n1000\nuvtekl\nlocnitnusobszr\nevdclagyszdnoiwey\naoeqzqth\nht\n1000\nfepzbexkr\nhtm",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\ngzzcdjdusklegsx\npetbnbohmnjwu\n2\npqoyaad\naflschtkmxq\njpauxjzvyhtx\n999\nufpkeqbtvqleamh\niiqsytkwtw\nb\nndzuqozpbkbimht\nd\n999\naqepdeayhbxhgp\njxghnkr",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2\nlblelz\nkytedttruef\n2\nkatnbf\nximnzw\noksrdrzblprpfhqhh\n1000\nituxxlxxrpepmr\nzrhetuknnc\nyykser\nxliyqlewmbnvvc\nuzgpjwzjssm\n1\neiawuwwb\ntjrxrl",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Revenge of Voronoi",
+  "tags": [],
+  "text": "A discrete Voronoi diagram is a derivation of a Voronoi diagram. It is represented as a set of pixels. Each of the\r\ngeneratrices lies on the center of some pixel. Each pixel belongs to the generatrix nearest from the center of the\r\npixel in the sense of Manhattan distance. The Manhattan distance d between two points (x1,y1) and (x2,y2) is\r\ngiven by the following formula:d= |x1-x2| + |y1-y2|Your task is to find a set of generatrices which generates a given discrete Voronoi diagram. In the given diagram,\r\neach generatrix is given a unique lowercase letter as its identifier, and each pixel is represented by the identifier\r\nof the generatrix the pixel belongs to. If a pixel has multiple generatrices at the same distance from its center, it\r\nbelongs to the generatrix with the most preceding identifier among them (i.e. the smallest character code).InputThe input consists of multiple test cases.Each test case begins with a line containing two integersW(1 ≤W≤ 32) andH(1 ≤H≤ 32), which denote the\r\nwidth and height of the discrete Voronoi diagram.The followingHlines, each of which consists ofWletters, give one discrete Voronoi diagram. Each letter\r\nrepresents one pixel.The end of input is indicated by a line with two zeros. This is not a part of any test cases.OutputFor each test case, print the case number and the coordinates of generatrices as shown in the sample output. Each\r\ngeneratrix line should consist of its identifier,x-coordinate, andy-coordinate. Generatrices should be printed in\r\nalphabetical order of the identifiers. Each coordinate is zero-based where (0, 0) indicates the center of the top-left\r\ncorner pixel of the diagram.You may assume that every test case has at least one solution. If there are multiple solutions, any one is acceptable.Print a blank line after every test case including the last one.ExampleInput:4 3\r\nooxx\r\nooxx\r\nooxx\r\n4 1\r\nnull\r\n4 4\r\naabb\r\naabb\r\nccdd\r\nccdd\r\n0 0Output:Case 1:\r\no 0 0\r\nx 2 0\r\n\r\nCase 2:\r\nl 2 0\r\nn 0 0\r\nu 1 0\r\n\r\nCase 3:\r\na 0 0\r\nb 2 0\r\nc 0 2\r\nd 2 2",
+  "sample_input": "Input:4 3\r\nooxx\r\nooxx\r\nooxx\r\n4 1\r\nnull\r\n4 4\r\naabb\r\naabb\r\nccdd\r\nccdd\r\n0 0Output:Case 1:\r\no 0 0\r\nx 2 0\r\n\r\nCase 2:\r\nl 2 0\r\nn 0 0\r\nu 1 0\r\n\r\nCase 3:\r\na 0 0\r\nb 2 0\r\nc 0 2\r\nd 2 2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/VORONOI",
+  "scraped_at": "2025-08-17 00:34:20",
+  "test_cases": [
+    {
+      "input": "4 3\r\nooxx\r\nooxx\r\nooxx\r\n4 1\r\nnull\r\n4 4\r\naabb\r\naabb\r\nccdd\r\nccdd\r\n0 0",
+      "expected_output": "Case 1:\r\no 0 0\r\nx 2 0\r\n\r\nCase 2:\r\nl 2 0\r\nn 0 0\r\nu 1 0\r\n\r\nCase 3:\r\na 0 0\r\nb 2 0\r\nc 0 2\r\nd 2 2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 1\nxo\nbdcw\nkqc\n3 9\njvcy\n2 2\ncwp\nzpwzo\nwjk\nlh\n1 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2\npefnal\nhnclaov\nwmjcvz\n2 8\nyy\n7 5\nnqmalys\npicdwfc\nrpdy\nq\n10 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 2\nxeqficu\nora\nuodzmyd\n4 6\njhdgi\n1 9\nvkyoalme\nrj\nt\nwltv\n9 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "63 77\nbdqjlsbm\ndlbsiwu\nizbafx\n8 77\nzbroxd\n72 60\ngzeset\nxhylcbz\nub\nlvw\n79 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 83\nfobmm\nubfq\nxljh\n40 19\nqhlln\n100 10\ntwpvd\ntgsbnu\nkdkkvesl\nv\n92 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 44\no\nbffzcved\npn\n51 89\nrpgrlig\n41 91\nxkyfq\nykbmyljb\nkp\naalecs\n41 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 37\npya\njmcksmvm\nmgpdxxpv\n87 34\nnkcmlb\n70 1\nikaymh\naxcwg\nyk\nvawgw\n36 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 45\nsd\nrfkzjrhb\ntphr\n86 84\nhfyx\n4 7\nfwr\ncdly\ntwafln\nkzl\n52 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "390 495\naiowlh\nxfk\nyr\n441 106\nwkz\n263 141\nquk\nhlgz\nfklin\nt\n255 492",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "261 473\nk\nlmujpw\nt\n467 472\nlzcfj\n177 439\ndagqi\nhpbkmo\ndp\nkzg\n281 367",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "458 226\ngprmi\nkihk\ntkdudop\n412 99\noouoib\n461 321\ni\nwjomtxyk\ntjv\nfylu\n75 331",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "358 86\nuajkld\necms\nyewfrbvn\n420 345\ny\n386 426\nafya\nxq\nwvedioc\ncdo\n243 404",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "322 109\nndm\nctpsui\nrgumxv\n325 340\nxz\n443 64\nf\newxzikd\nb\ncbjhsrhr\n351 78",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "493 454\nb\nnleiocys\ntystz\n123 112\nvujgeix\n467 482\nmemqueff\nkayvyny\nzdoyxupe\nufd\n466 474",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "62 168\nek\nhlrdjwsb\nncdkwxn\n318 232\nqmhxw\n420 236\nwlbdxlek\ndutlxu\nkptqhcsl\njbhcapwv\n259 104",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\ncdy\nedsxxudu\nwbuzddvq\n1000 1000\nmaz\n1000 1000\noxm\nmgsth\nx\nkgyoaw\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nxp\ndihhq\niutnazd\n1000 1000\nq\n1000 1000\nzda\nrpzk\nvdibgvt\nzmetj\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2\nuzrr\nwozd\nkyp\n2 1000\nmtykuahd\n1 1000\nde\nwlreirq\nimzbeps\ngm\n1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\ncjwyerm\nbjdf\nfapxjz\n2 2\nqvv\n2 1000\nimhchci\nzaknzsi\nnehk\ngfm\n1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

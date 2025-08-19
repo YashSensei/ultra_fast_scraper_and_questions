@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Designing T",
+  "tags": [],
+  "text": "Argentina's rugby is currently in one of its best moments of all time. Recently the under-18 and under-21 national teams qualified for their corresponding world cups, so the coaches of both teams have asked the Incredible Commission for the Production of Clothing (ICPC) to provide the t-shirts for these events. Each team is formed byNplayers, but because the two world cups do not take place simultaneously it was agreed that the ICPC would provide onlyNt-shirts, to be used by both teams.For this reason, the t-shirts must be a valid set of clothing for both teams. The rules of the rugby world cups state that each player must go in the field with a t-shirt imprinted with a unique number, along with a prefix of the player's surname, not necessarily unique. This includes boundary cases such as a t-shirt with no surname prefix (that is, a prefix of length0) and a t-shirt with a complete surname.The experts of ICPC immediately realized that they could simply provideNt-shirts with only numbers and no surnames on them, and each of them would be a valid t-shirt to be used by any player of any of the two teams. However, the coaches would rather have the t-shirts with the longest possible prefixes, of course without violating world cup rules, because this way it's easier for them to identify the players while the matches are taking place.Your task is to help the ICPC finding the maximum number of letters that can be imprinted on a set ofNt-shirts, so that this set is a valid clothing set for both teams. For example, if we haveN = 3players, the under-18 team is composed of \"PEREZ\", \"GONZALEZ\" and \"LOPEZ\", whereas the under-21 team is composed of \"GARCIA\", \"PERALTA\" and \"RODRIGUEZ\", the optimal choice consists in having one t-shirt with the1-letter prefix \"G\" (to be used by \"GONZALEZ\" and \"GARCIA\"), another one with the3-letter prefix \"PER\" (to be used by \"PEREZ\" and \"PERALTA\"), and the third t-shirt with a0-letter prefix (to be used by \"LOPEZ\" and \"RODRIGUEZ\"). This way, the answer in this case would be1 + 3 + 0 = 4.InputEach test case is described using three lines. The first line contains a single integer numberN, indicating the number of players in each of the two teams (1 ≤ N ≤ 104). The second line contains the surnames of theNplayers in the under-18 team, whereas the third line contains the surnames of theNplayers in the under-21 team. Each surname is a non-empty string of at most100uppercase letters. In each test case the total number of characters in the2Nsurnames is at most105, and two or more players of the same or different teams may have the same surname.The end of the input is indicated by a line containing the number-1.OutputFor each test case, you should print a single line containing an integer number, representing the maximum number of letters that can be imprinted on a set ofNvalid t-shirts to be used by both teams as explained in the problem statement.ExampleInput:3\r\nPEREZ GONZALEZ LOPEZ\r\nGARCIA PERALTA RODRIGUEZ\r\n2\r\nRODRIGO GONZALEZ\r\nGONZALO RODRIGUEZ\r\n3\r\nLOPEZ PEREZ LOPEZ\r\nPEREZ LOPEZ LOPEZ\r\n1\r\nGIMENEZ\r\nJIMENEZ\r\n6\r\nHEIDEGGER GAUSS GROTHENDIECK ERDOS CHURCH TURING\r\nHEISENBERG GALOIS EULER ALLEN GODEL CHURCHILL\r\n-1Output:4\r\n12\r\n15\r\n0\r\n13",
+  "sample_input": "Input:3\r\nPEREZ GONZALEZ LOPEZ\r\nGARCIA PERALTA RODRIGUEZ\r\n2\r\nRODRIGO GONZALEZ\r\nGONZALO RODRIGUEZ\r\n3\r\nLOPEZ PEREZ LOPEZ\r\nPEREZ LOPEZ LOPEZ\r\n1\r\nGIMENEZ\r\nJIMENEZ\r\n6\r\nHEIDEGGER GAUSS GROTHENDIECK ERDOS CHURCH TURING\r\nHEISENBERG GALOIS EULER ALLEN GODEL CHURCHILL\r\n-1Output:4\r\n12\r\n15\r\n0\r\n13",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TAP2012D",
+  "scraped_at": "2025-08-17 00:34:16",
+  "test_cases": [
+    {
+      "input": "3\r\nPEREZ GONZALEZ LOPEZ\r\nGARCIA PERALTA RODRIGUEZ\r\n2\r\nRODRIGO GONZALEZ\r\nGONZALO RODRIGUEZ\r\n3\r\nLOPEZ PEREZ LOPEZ\r\nPEREZ LOPEZ LOPEZ\r\n1\r\nGIMENEZ\r\nJIMENEZ\r\n6\r\nHEIDEGGER GAUSS GROTHENDIECK ERDOS CHURCH TURING\r\nHEISENBERG GALOIS EULER ALLEN GODEL CHURCHILL\r\n-1",
+      "expected_output": "4\r\n12\r\n15\r\n0\r\n13",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n4\n8\n10\n3\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n8\n2\n8\n8\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "10\n31832341\n6918580\n11481695\n40196152\n80618458\n829283\n11716628\n54192316\n56438750\n20008295",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n95183094\n15964040\n36565800\n27306886\n87997354\n8158699",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n18455434\n91257635\n27174072\n75775039\n83775217\n85222316\n19751906\n17876738",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n36317248\n59771312\n28246287\n8210102\n44924194\n80575742\n42390509\n28874619\n43778574\n34929108",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n90462321\n37178231\n33806813\n10760279\n35804266\n1459650\n81425650\n1696091\n2573052\n18071837\n24049069\n96414896\n98470057",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "53\n4321\n50754\n76448\n184\n27557\n62934\n42687\n37360\n57322\n73910\n5608\n89141\n46172\n23558\n79201\n99691\n84434\n92736\n16448\n64220\n89876\n14657\n48692\n12455\n73130\n11738\n45237\n73522\n41978\n69885\n37231\n20290\n9693\n31116\n44549\n84813\n56916\n7611\n9116\n6529\n46002\n94679\n93683\n86251\n37741\n7975\n8798\n26384\n30153\n99489\n29340\n70789\n27173",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "56\n7451\n76499\n98233\n93485\n87539\n35871\n13586\n72539\n36994\n16509\n24129\n63410\n66972\n15166\n76987\n17598\n50574\n85831\n90234\n91128\n12626\n76256\n36272\n6171\n42329\n41115\n94840\n9484\n4234\n56429\n37594\n7816\n88275\n77273\n83859\n65331\n52598\n71377\n26462\n192\n20968\n90583\n58061\n34318\n37072\n31622\n46593\n38737\n60496\n1202\n29527\n31256\n85118\n37888\n35723\n29293",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "101\n16481\n93414\n37686\n53386\n90154\n97124\n60042\n86132\n72909\n84462\n35826\n22676\n56474\n39623\n42369\n35378\n35297\n76843\n28700\n63969\n21512\n12015\n16932\n22881\n85505\n21165\n53216\n68626\n67967\n99655\n24754\n31216\n57364\n88873\n10712\n6580\n74243\n19971\n41880\n81210\n71834\n16982\n98304\n93646\n25381\n65438\n89042\n9286\n39510\n50532\n60326\n38091\n90150\n54167\n69765\n70266\n75071\n7450\n13260\n75779\n61440\n55214\n21173\n63876\n76584\n51703\n17740\n18590\n78463\n75094\n65897\n86620\n28072\n31704\n53088\n89698\n30473\n92045\n61070\n97787\n73021\n74351\n43507\n21085\n74464\n78923\n63838\n80422\n29603\n84961\n48983\n78945\n65339\n83809\n32311\n61397\n15054\n53921\n41248\n6066\n62001",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "38\n44021\n83313\n20837\n61950\n973\n24381\n99494\n49264\n93191\n68747\n26336\n28360\n79298\n69585\n46537\n2845\n40977\n50139\n27426\n77699\n71543\n50539\n27642\n62709\n54430\n89126\n99758\n16563\n45791\n45713\n9939\n23957\n82516\n2053\n83854\n70687\n93681\n86952",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "54\n35525\n34848\n23691\n65303\n59019\n45627\n55021\n31723\n67644\n21559\n61003\n14135\n42150\n29914\n59625\n37141\n61463\n31673\n32433\n33101\n97639\n80240\n34020\n54125\n48829\n88531\n71115\n84855\n87822\n76722\n83798\n93421\n38180\n88290\n1509\n83791\n27255\n74872\n92773\n68017\n83238\n57893\n33015\n28209\n90631\n25081\n50531\n58645\n59956\n78576\n50735\n63748\n46136\n7338",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "34\n95175\n13964\n47636\n76659\n72325\n83972\n75660\n29527\n46242\n56061\n21490\n52098\n45268\n53632\n51514\n39126\n18019\n84301\n72939\n25739\n19948\n93947\n70726\n73566\n10389\n83497\n77094\n19411\n79583\n22970\n84680\n51892\n12536\n38937",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "65\n44445\n18671\n84801\n36232\n35659\n81548\n84444\n85719\n27512\n15728\n77667\n26203\n30197\n27015\n86009\n89459\n64920\n83647\n58270\n10987\n79901\n25492\n64303\n91735\n17344\n98664\n13114\n96131\n24839\n97600\n54301\n78716\n28550\n54459\n75111\n32487\n42521\n10591\n45158\n60644\n15575\n6690\n13828\n2558\n65144\n56579\n91465\n75168\n11073\n54664\n17403\n84087\n93751\n80112\n5668\n7164\n10892\n61671\n44613\n82854\n87874\n87103\n57363\n65000\n88613",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "104\n30095504\n5230658\n64262641\n94204016\n58131666\n97334502\n78020506\n31518253\n69541942\n39227070\n27193325\n88073727\n18806906\n88642253\n53495044\n86218158\n70269699\n22690207\n71641857\n68931229\n19886143\n2139069\n49595719\n40223195\n64178001\n61126834\n54018172\n28718212\n84356147\n13436008\n73918120\n86067427\n55044490\n89554373\n74425982\n9327962\n83996600\n14221864\n554307\n79467061\n31600923\n36886357\n19731390\n49969458\n31846983\n25729723\n39962821\n67190935\n75931177\n8762592\n43684183\n82192868\n55757867\n97921278\n53897948\n64403726\n63521638\n14829290\n38702583\n17865011\n37456311\n16633840\n72610868\n48538974\n62785930\n45563907\n8737579\n40007136\n51585197\n36306310\n64277039\n88064541\n2168833\n55525910\n67126702\n18155411\n28260096\n89183741\n83767614\n67300717\n2818368\n97463010\n46692814\n41226003\n12109124\n15272190\n84481897\n39034448\n81754169\n16464339\n93662702\n21185243\n62975967\n51500178\n19514376\n59834614\n38943440\n16261780\n97655281\n41187978\n78486988\n14507106\n27431165\n76611644",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 104)"
+    },
+    {
+      "input": "104\n71336400\n48634582\n13550138\n91398590\n65147780\n86041190\n85932840\n46369298\n5500131\n19835171\n87959603\n17487683\n46838207\n88069761\n60267009\n7511333\n40230282\n2735203\n17935296\n76622240\n75162122\n44240342\n25621913\n86517570\n1982016\n73043496\n31781212\n53120653\n92116607\n76451343\n87137979\n74998755\n25449348\n62557354\n51970226\n55330914\n53690860\n20660005\n15858772\n38141170\n81259183\n3247326\n64036505\n29121083\n89983677\n43928238\n79325135\n88758505\n59265386\n91199900\n948984\n88531495\n24022300\n63634172\n94280095\n21900349\n67351362\n438587\n4183487\n67721388\n43262790\n24407818\n36152425\n44096448\n60886250\n85883019\n58878793\n3953289\n58868345\n4951076\n73105806\n6063062\n35999617\n70903554\n33847146\n22614303\n14568192\n93609765\n79770092\n52432252\n21181053\n10485992\n38837534\n35016320\n29841258\n5389279\n41708609\n90674252\n11372313\n61924343\n2323433\n89327236\n65109060\n4232927\n36916625\n55408120\n74485926\n56621508\n49423167\n43987472\n144281\n39974809\n83338750\n51840865",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 104)"
+    },
+    {
+      "input": "2\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "104\n1\n79934047\n68498332\n77783180\n100000000\n100000000\n100000000\n96018053\n1\n44042332\n100000000\n1\n100000000\n100000000\n81861568\n91889510\n100000000\n1\n1\n100000000\n1\n31394157\n72133125\n100000000\n100000000\n84603204\n1\n100000000\n56068081\n30442334\n1\n32637192\n100000000\n100000000\n17284287\n100000000\n47165428\n22040139\n28206614\n100000000\n1\n100000000\n44467097\n100000000\n1\n100000000\n46078914\n1\n100000000\n1\n1\n1\n100000000\n1\n45899421\n100000000\n100000000\n13142527\n30106128\n1\n100000000\n100000000\n1\n100000000\n100000000\n25770159\n1\n46661974\n260777\n100000000\n40043815\n30942508\n34363889\n100000000\n1\n77291929\n100000000\n73790529\n12538262\n62593705\n100000000\n5922160\n100000000\n8868842\n5798613\n100000000\n1\n1\n100000000\n22801352\n1\n1\n100000000\n1\n76836013\n47845566\n59191237\n1\n58508885\n98141589\n1\n77895127\n57618791\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 104)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

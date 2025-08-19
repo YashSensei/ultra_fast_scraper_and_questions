@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Search Insert Delete",
+  "tags": [],
+  "text": "You are given a bunch of data (all are positive 32 bit numbers) to operate on. The only operations on the data are search, insert, and delete. When storing the data you have to remember its rank, that is the original position when the data is being inserted. All successful operations must return the ranks of the data. Failed operations should return NONE as the answer.Your objective is to execute all of the operations as fast as possible.InputThe first line of input is N and M, separated by a space, N is the  number of initial data. (0 <= N < 1000000) and M is the number of  operations against the data. (0 <= M < 1000000).The second line contains N data, separated by blanks. All data are positive 32 bits numbersThe next M lines contains operations against the data. Each line contains a symbol and a number, separated by a space.There are 3 symbols (S,I,D), each representing search, insert, and delete operation.'S  number' tries to find the number in the stored data, and outputs its  first rank in the stored data (as originally inserted), or NONE if no  such number exists.'I number' inserts the number into the stored data, and outputs its rank in the stored data. (Data can be duplicated).'D  number' deletes the least ranked number found in the stored data, and outputs its  rank, or NONE if no such number  originally exists.OutputThere is an output for each executed operation. See the above input  description about each operation for the detail of the output.ExampleInput:10 620 12 10 28 20 50 49 8 51 1S 20I 3S 11D 20I 2S 20Output:111NONE1125",
+  "sample_input": "Input:10 620 12 10 28 20 50 49 8 51 1S 20I 3S 11D 20I 2S 20Output:111NONE1125",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SID",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "10 620 12 10 28 20 50 49 8 51 1S 20I 3S 11D 20I 2S 20",
+      "expected_output": "111NONE1125",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 8 5 9 2 3 2 9 6 8 8 10 7 8 7 7 2\n4 3 10 6 1 1 2 8 6 4 evk lh q fnkh npxt vb 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 5 3 6 2 3 8 7 10 7 5 7 5 8 5 6 1\n1 9 10 7 7 6 6 3 3 8 b udrhg uxm ck d u 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3 8 7 7 2 2 2 7 3 2 1 9 7 7 2 2\n6 3 2 1 2 7 3 6 7 10 p p jmv yb eds wj 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "61 72 4 55 20 85 28 79 76 4 42 22 84 57 59 56 23\n38 31 17 87 25 33 11 91 58 89 li xrzj an wzqf fheta yltqp 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 45 97 74 58 29 72 9 30 18 24 61 56 34 93 86 63\n11 5 62 97 47 80 72 22 76 37 pitek s mmpbh lhago wfv w 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 29 80 3 24 19 92 40 83 76 62 26 97 45 5 23 40\n87 80 59 20 63 78 36 13 88 45 rlo wqqdm o alvuc ev oq 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 57 95 30 43 11 6 13 24 23 57 69 34 13 94 51 43\n26 48 18 9 27 40 76 79 88 83 isfp i xn zuvdd ka ojqg 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "66 43 38 43 60 80 3 19 20 85 85 5 93 72 83 10 33\n64 64 42 2 26 87 94 62 46 2 tz lg npc cquil cqcxg jmo 83",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55781 269885 139626 282772 101375 247235 179726 311175 473229 397295 276127 441040 291128 244234 303388 151675 224404\n112247 111146 414954 256900 162959 224995 271979 441911 145656 449855 eey gqbbs dv cekcz ibwqz cwkme 52703",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "180661 312198 326388 344285 82252 390836 289610 378707 426434 119245 84467 263147 495231 353648 96261 281418 339833\n169172 94492 410003 224257 191843 200253 242537 294940 353537 78009 bm com v a iq gt 124624",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "296949 481011 82731 198540 221244 306588 477139 371827 109113 472739 394516 482880 261267 294788 394522 458437 75836\n208899 354571 400101 419223 109251 164156 399893 150561 463631 188484 fssp mqtgo wiyc q wfmov n 214904",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "299722 309998 102004 94328 190603 277749 498388 439908 327913 469525 179340 66135 70655 423493 282532 51833 299993\n153445 467671 75546 444366 154730 148556 352549 223530 321429 414115 df xphkc olsa iraml vdg xf 273643",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "153178 466020 491822 101533 87765 476530 294839 390175 122677 156280 386860 400119 51570 114526 221502 240098 173986\n156089 484414 440995 361810 152130 496641 271879 122987 134938 197143 vjdit fnlr bl yqn pzz mm 327036",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "255441 428914 343683 212877 144663 61355 255915 334277 458349 280649 116211 485901 73823 212682 487433 416411 345441\n393651 156659 177892 462130 377268 411214 317425 200972 271036 309615 yivzf sjjuv thwb stoyv eap sedd 287334",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "89792 230126 397536 498742 153784 218047 205912 155468 394866 139712 268790 223948 258309 129618 159280 215282 377653\n184304 154808 224370 495990 486223 204724 325668 210394 242457 177770 t grk vifd eiu pp ahw 458773",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000\n1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 iln rvfi oewob thhvi psuw z 1000000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000\n1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 i g epmbp nza tuuz h 1000000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999999 2 1 1000000 1 999999 2 999999 999999 1 1 1000000 1 1000000 999999 999999 2\n2 2 1000000 1 1 1000000 1 999999 999999 1000000 qs gy sro eapdv cvovb iu 999999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000000 2 1 1000000 999999 1000000 2 1 2 1000000 1 1 1 2 999999 1000000 1000000\n1 999999 1 1000000 1000000 1000000 1000000 2 1 999999 kivur k h cqqz ylh fk 1000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

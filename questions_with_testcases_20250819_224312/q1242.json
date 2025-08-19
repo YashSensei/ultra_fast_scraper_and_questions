@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Nymphs from H10",
+  "tags": [],
+  "text": "A far away galaxy, H10 has newly been discovered and incorporated into the Commonwealth which participates in the Galactic Wars. The other galaxies have always bullied it by winning the Galactic Wars every year. Frustrated, H10 has come up with a novel strategy to distract the other galaxies. They are planning to send beautiful nymphs into the lands of the other galaxies.The cosmos is arranged so that there is a unique path between any two galaxies (possibly going through other galaxies). The leaders in H10 will select two different galaxies A and B, and send K nymphs to each of the galaxies that is on the unique path from A to B. Initially there are no nymphs on any galaxy.You are the Chief Executive Officer of this project. The leaders will ask you to send these groups of nymphs by giving various instructions of the form (A, B, K). In the process, they may also ask you how many nymphs are currently there in particular galaxies, so that they are able to take smart decisions in the future. Implement this. (See exact format in Input/Output Specifications)InputThe first line contains t, the number of test cases.T test cases follow. Each contains:A line containing n, the number of galaxies (numbered from 0 to n-1).n-1 lines describing the connections between 2 galaxies as 2 space separated integers a, b (both from 0 to n-1), denoting a direct connection between galaxy a, and galaxy b.The next line contains a single integer Q denoting the number of queries.Next Q lines contain queries in the form of 3 space separated integers a, b and k.OutputFor each query if k ≥ 0, don't output anything, just send the nymphs to every galaxy on the way.In a query if k = -1, then output 2 space separated integers in a new line denoting the number of nymphs in galaxy a, and galaxy b respectively.Constraints1 ≤ T ≤ 102 ≤ n ≤ 50,000The galaxies are connected in such a way that there is a unique path from each galaxy to every other galaxy.2 ≤ Q ≤ 50,0000 ≤ a, b ≤ n-1a and b are different.-1 ≤ k ≤ 100ExampleInput:1\r\n3\r\n0 1\r\n1 2\r\n2\r\n1 2 2\r\n0 2 -1Output:0 2ExplanationThe path from 1 to 2 is 1 → 2. 2 nymphs are thus sent to galaxies 1 and 2. There were 0 nymphs at galaxy 0 initially.",
+  "sample_input": "Input:1\r\n3\r\n0 1\r\n1 2\r\n2\r\n1 2 2\r\n0 2 -1Output:0 2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/WPC5H",
+  "scraped_at": "2025-08-17 00:33:26",
+  "test_cases": [
+    {
+      "input": "1\r\n3\r\n0 1\r\n1 2\r\n2\r\n1 2 2\r\n0 2 -1",
+      "expected_output": "0 2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n9\n8\n8\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n6\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n9\n9\n5\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n87798565\n41555185\n54093957\n79918715\n29313559",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n40596955\n64116943\n31139121\n44338958\n31169073\n10602153\n8113613",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n12135729\n44755676\n3162276\n92724532\n61813003\n87017734\n10435219\n37027268\n60851537\n33863340",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n77346855\n56149974\n20176643\n18575765\n75699269\n78273625\n67253065\n67530781\n82099360",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n88623052\n58531812\n78371247\n12429672\n29561961\n11814095\n73735012\n83222339\n60441675\n29815847\n58819931\n8090023\n28195822\n14810\n88928940\n99777316\n6167043",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "42\n52982\n37981\n76198\n8499\n65612\n50034\n6396\n38712\n48272\n42814\n55556\n45932\n62259\n97158\n37730\n27566\n58243\n2238\n48394\n67069\n72453\n29524\n68753\n47531\n70703\n15746\n40945\n84588\n84304\n85504\n92432\n44415\n57447\n99166\n85794\n12063\n40727\n62222\n56232\n5974\n34929\n73523",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "41\n7844\n54924\n11479\n89319\n64516\n97689\n99602\n93303\n69516\n90335\n40661\n8956\n34457\n32090\n25397\n21768\n36173\n5480\n3425\n81508\n24408\n53113\n71902\n94402\n65447\n13094\n86043\n35656\n93412\n16689\n95212\n55085\n82544\n21893\n8323\n73647\n65273\n83514\n7134\n32407\n38330",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "46\n47912\n62950\n48213\n82409\n11007\n17503\n66204\n61321\n28953\n57485\n59820\n22043\n11903\n51215\n47239\n88375\n40348\n25884\n89064\n22182\n1622\n47907\n3788\n4896\n79666\n63094\n11387\n19627\n903\n22051\n24951\n6260\n96857\n89585\n70218\n1481\n85570\n59266\n15090\n93745\n40883\n263\n26611\n15053\n47315\n10309",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n35840\n80394\n49227\n41248\n5001\n10928\n36734\n79617\n46333\n30\n40412\n42935\n83771\n66530\n74054\n62591\n75006\n39883\n15503\n98849\n38400",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "27\n48644\n44946\n75469\n90871\n8413\n61743\n83207\n12464\n69286\n59528\n99198\n57262\n6957\n46335\n96221\n53799\n28840\n70575\n4196\n91429\n63815\n72447\n74499\n90700\n65528\n39871\n54209",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "43\n58761\n34602\n91866\n18821\n69102\n83643\n978\n63529\n57147\n1020\n73635\n85825\n47565\n51145\n95003\n11311\n4333\n48823\n32948\n15815\n60635\n99826\n52357\n99442\n87937\n91083\n55397\n4678\n85282\n99466\n62643\n5367\n50652\n26893\n58363\n14023\n85251\n84080\n80127\n11375\n95344\n41657\n9091",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "35\n16026\n34107\n21915\n88058\n31275\n20310\n80754\n20015\n97255\n6025\n47382\n1394\n28067\n93788\n41142\n24540\n70618\n53498\n74807\n34318\n88131\n41573\n82775\n29316\n44590\n79485\n815\n88943\n93654\n92784\n8609\n88333\n93894\n4645\n53679",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n39004486\n83368569\n29587834\n93006123\n76720618\n25116040\n90226642\n19727128\n65083165\n72458741\n31055141\n5628854\n99867498\n98184927\n54191095\n23902724\n4370705\n24412012\n18801374\n6631138\n25577282\n85636429\n78649711\n84807495\n34634834\n32445704\n56075340\n88664321\n74315868\n60481481\n8974967\n33870928\n4271124\n5638283\n59409560\n31786198\n49719684\n32954825\n22050021\n92980219\n83028736\n58367754\n97132302\n77684834\n95097510\n83272849\n84172020\n31350280\n22191273\n86991477",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n45020712\n25174766\n30797\n33060992\n44155288\n14950090\n97658002\n46940928\n21111425\n81286114\n24147632\n49319502\n74437076\n44806021\n29806652\n91596173\n92122199\n49386052\n81015846\n59627127\n43455907\n40353221\n90728894\n94422340\n4134470\n20598479\n72545756\n73986438\n77359571\n66161404\n52597029\n50579367\n90031412\n31256769\n25515200\n289742\n79506329\n69223497\n51131800\n97579144\n77923130\n60402276\n41300484\n40864259\n26644191\n6876617\n73829429\n70284156\n74270040\n96342179",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n1\n91663478\n1723392\n100000000\n100000000\n6722811\n100000000\n100000000\n1\n1\n100000000\n25632598\n100000000\n44632220\n83064763\n100000000\n76324500\n1\n34158184\n100000000\n1\n100000000\n1\n1\n100000000\n16921567\n99706569\n88388055\n32983441\n42594422\n100000000\n100000000\n1\n100000000\n91196100\n17213622\n2042865\n100000000\n100000000\n1\n89186182\n42730751\n100000000\n1\n100000000\n100000000\n100000000\n1\n100000000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "50\n87585749\n1\n100000000\n100000000\n1\n1\n100000000\n70945575\n100000000\n94645461\n100000000\n5809740\n100000000\n100000000\n1\n74276293\n1\n36541688\n100000000\n35292464\n100000000\n94473941\n46031960\n1\n1\n31950513\n1\n54981520\n100000000\n18018995\n1\n100000000\n1\n1\n100000000\n100000000\n1034982\n100000000\n19171799\n100000000\n1\n15288098\n100000000\n1\n96181203\n1\n1\n85535123\n1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 50)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

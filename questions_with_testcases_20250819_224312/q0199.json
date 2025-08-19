@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Twenty Questions",
+  "tags": [],
+  "text": "Consider a closed world and a set of features that are deﬁned for all the objects in the world. Each feature can be answered with “yes” or “no”. Using those features, we can identify any object from the rest of the objects in the world. In other words, each object can be represented as a ﬁxed-length sequence of booleans. Any object is diﬀerent from other objects by at least one feature.You would like to identify an object from others. For this purpose, you can ask a series of questions to someone who knows what the object is. Every question you can ask is about one of the features. He/she immediately answers each question with “yes” or “no” correctly. You can choose the next question after you get the answer to the previous question.You kindly pay the answerer 100 yen as a tip for each question. Because you don’t have surplus money, it is necessary to minimize the number of questions in the worst case. You don’t know what is the correct answer, but fortunately know all the objects in the world. Therefore, you can plan an optimal strategy before you start questioning.The problem you have to solve is: given a set of boolean-encoded objects, minimize the maximum number of questions by which every object in the set is identiﬁable.InputThe input is a sequence of multiple datasets. Each dataset begins with a line which consists of two integers,mandn: the number of features, and the number of objects, respectively. You can assume 0 <m≤ 11 and 0 <n≤ 128. It is followed by n lines, each of which corresponds to an object. Each line includes a binary string of length m which represent the value (“yes” or “no”) of features. There are no two identical objects.The end of the input is indicated by a line containing two zeros.OutputFor each dataset, minimize the maximum number of questions by which every object is identiﬁable and output the result.ExampleInput:8 11101010111 40011100110001001101011010100000110110011000111 160100010111101011000000010111110010110110100101110010111011101001111000000101010010001000100101101001010001010010101010110101101000101100101001111011001001111110001111111101110111 121000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000009 320010000000001000000000100000000010000000001000000000100000000010000000000110000000101000000100100000100010000100001000100000100100000010100000001010000001001000001000100001000010001000001001000000101000000011000000001110000001101000001100100001100010001100001001100000101100000011100000000 0Output:024119",
+  "sample_input": "Input:8 11101010111 40011100110001001101011010100000110110011000111 160100010111101011000000010111110010110110100101110010111011101001111000000101010010001000100101101001010001010010101010110101101000101100101001111011001001111110001111111101110111 121000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000009 320010000000001000000000100000000010000000001000000000100000000010000000000110000000101000000100100000100010000100001000100000100100000010100000001010000001001000001000100001000010001000001001000000101000000011000000001110000001101000001100100001100010001100001001100000101100000011100000000 0Output:024119",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TWENTYQ",
+  "scraped_at": "2025-08-17 00:33:21",
+  "test_cases": [
+    {
+      "input": "8 11101010111 40011100110001001101011010100000110110011000111 160100010111101011000000010111110010110110100101110010111011101001111000000101010010001000100101101001010001010010101010110101101000101100101001111011001001111110001111111101110111 121000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000001000000000009 320010000000001000000000100000000010000000001000000000100000000010000000000110000000101000000100100000100010000100001000100000100100000010100000001010000001001000001000100001000010001000001001000000101000000011000000001110000001101000001100100001100010001100001001100000101100000011100000000 0",
+      "expected_output": "024119",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 10 7 8 6 3 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 1 1 4 10 3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 1 4 8 10 7 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "30 100 94 97 89 86 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 36 62 3 58 80 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 57 49 23 81 80 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "80 2 87 89 86 89 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 28 67 23 5 47 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 50 21 36 49 55 20",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "45 39 8 38 49 51 54",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 51 46 58 7 29 14",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "43 56 19 43 14 19 27",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46 59 12 49 44 6 53",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "61 31 55 48 59 20 30",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12 58 55 27 56 15 15",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "128 128 128 128 128 128 128",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "128 128 128 128 128 128 128",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 127 128 1 128 128 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "127 128 128 127 127 127 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

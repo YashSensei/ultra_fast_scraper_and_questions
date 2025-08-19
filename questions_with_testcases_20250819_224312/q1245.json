@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Draw Skyline Graph",
+  "tags": [],
+  "text": "Once my friend Deepan Gupta went a shop to buy a laptop with features he needed. Seller showed him a lot of laptops having various distinct features like cost, speed, memory, color, design, brand etc. But he was worrying only about memory and speed as he only needed these two. Because of so many laptops he got confused. He was not able to select a laptop. So he decided to select a skyline set in terms of {memory, speed} which will make it easier for him to decide. Objects are said to be in skyline set such that no one object in set dominates other object of set and all the objects which are not in the set are dominated by at least one object in the set. No Object in the set is dominated by any other object (both set and not in set). One Object dominate other object if all the features of first objects are greater than or equal to second object's corresponding features, but there exists at least a feature that is strictly greater than second object's corresponding feature. No one object dominate other object it means object does not satisfy the dominance condition, So Skyline Set can have two different objects with both same features.For example:Laptop1 : memory : 100GB, Processor Speed : 700GHzLaptop2 : memory : 200GB, Processor Speed : 500GHzLaptop3 : memory : 50GB, Processor Speed : 100GHzLaptop4 : memory : 200GB, Processor Speed : 500GHz{Laptop1, Laptop2, Laptop4} are in skyline set while Laptop3 is not. (If still not understood 'SKYLINE', refer to thislink.)Given N number of laptops with {M[i], S[i]}. Your task is to select a skyline set and print {M[i], S[i]} in newline of all the objects in set with decreasing order of M[i] value. If two objects have same M[i] value, then you can print them in any order. For exact output format, refer to given examples.Constraints1 ≤ T ≤ 50, 1 ≤ N ≤ 105, 1 ≤ M[i], S[i] ≤ 109.InputFirst line contains t, number of test cases. For each test case, first line contains N, number of laptops. After that each of next N lines contains {M[i],S[i]} data for ith laptop, M[i] is memory and S[i] is speed of processor of ith Laptop.OutputFor each test case first line contains K, number of Skyline objects in set, then each of next K lines contains {M[i], S[i]} data for ith laptop in decreasing order of M[i].ExampleInput:23100 700200 50050 1004200 500100 100050 9001000 50Output:2200 500100 70031000 50200 500100 1000HINT: Just follow the statement very carefully. Observe the examples.",
+  "sample_input": "Input:23100 700200 50050 1004200 500100 100050 9001000 50Output:2200 500100 70031000 50200 500100 1000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SKYLINE2",
+  "scraped_at": "2025-08-17 00:33:31",
+  "test_cases": [
+    {
+      "input": "23100 700200 50050 1004200 500100 100050 9001000 50",
+      "expected_output": "2200 500100 70031000 50200 500100 1000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 2 3 1 4 9 10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 6 10 10 9 5 7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4 1 7 8 10 7 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "58 58 28 40 55 57 43 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 70 56 13 50 15 36 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 89 66 69 15 75 88 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "81 66 24 38 91 35 1 78",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 25 73 90 87 80 82 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 9 30 44 9 23 26 35",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22 35 44 6 34 35 31 28",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 44 25 18 29 39 14 5",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "28 31 7 51 47 34 26 21",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "36 49 24 23 43 47 15 28",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46 22 49 29 23 9 33 33",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "8 26 47 49 26 49 52 17",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105 105 105 105 105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105 105 105 105 105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 1 104 105 105 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "104 1 2 104 1 105 1 105",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

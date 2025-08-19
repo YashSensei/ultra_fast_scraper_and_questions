@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Playing with Geometry",
+  "tags": [],
+  "text": "Dynamic geometry software can help students understand transformation geometry as it allows to visualize the effect of transformations on a shape. Alice is learning the elementary transformations - slides, flips and turns - or, more formally, translations, reflections and rotations. Today she is exploring slides and turns.  She is working with simple rectilinear polygons drawn  on a regular square grid. Each polygon has at most one edge per grid line and its vertices are grid points.She knowns that: a rectilinear polygon is a polygon whose edges meet at right angles; in a simple polygon the edges meet only at their endpoints;    the vertices are the points where edges meet; the region delimited by a rectilinear polygon embedded on a grid corresponds to a polyomino (formed by unit squares); a permutomino is a polyomino that has exactly one edge on all the grid lines that intersect its minimum bounding rectangle; that rectangle is actually a square (for ann-vertex permutomino, it intersectsn/2horizontal and  vertical grid lines). Her teacher has explained how slides and turns  act on point coordinates but, by that time, Alice was already thinking about an episode of \"The Sympsons\" in which Homer claimed that there was no more room in  his brain for more information.Now, she has to decide whether two simple rectlinear polygons, without collinear edges, can be transformed to the same permutomino by slides and turns, under some restricted rules.  The two polygons are handled as independent instances, as if they were in different grids. First, she must remove the empty grid lines  from the minimum bounding rectangle to obtain a permutomino. This is done by  sliding some edges to the left or downwards, in such a way that the relative order of the edges is preserved (i.e., they will occur in the same order as before if we sweep the plane using a vertical or a horizontal line). Once she gets the permutomino, she can apply a rotation by 90 degrees clockwise around the center of its minimum bounding square, the number of times  she wishes.TaskCan we give the answer to  Alice's problem, for a pair of such polygons?InputThe first line contains the description of the first rectilinear polygon:  the number of vertices followed by their coordinates in a canonical cartesian system. The sequence of vertices is given in counterclockwise order (CCW) and starts at the leftmost vertex on the bottom horizontal edge. The last vertical edge is defined by the last vertex and the first one in the sequence. The bottom-left corner of the minimum bounding rectangle is always(0, 0). The next line contains a similar description for the other rectilinear polygon. The number of vertices of the two polygons may be different. (The image illustrates Sample 1.)ConstraintsFor each polygon: the number of vertices is even and between 4 and 500; the coordinatesx, yof each vertex satisfy 0 ≤ x, y ≤ 3 000.OutputA line containing the answeryesorno.Input 1:16 3 0 8 0 8 1 12 1 12 3 10 3 10 5 9 5 9 12 6 12 6 8 5 8 5 10 0 10 0 6 3 6\r\n16 1 0 2 0 2 1 3 1 3 2 12 2 12 4 7 4 7 6 9 6 9 9 6 9 6 8 0 8 0 3 1 3Output 1:yesInput 2:10 3 0 4 0 4 2 1 2 1 3 2 3 2 4 0 4 0 1 3 1\r\n10 0 0 4 0 4 3 5 3 5 6 3 6 3 2 1 2 1 4 0 4Output 2:noAuthor: Ana Paula Tomás",
+  "sample_input": "Input 1:16 3 0 8 0 8 1 12 1 12 3 10 3 10 5 9 5 9 12 6 12 6 8 5 8 5 10 0 10 0 6 3 6\r\n16 1 0 2 0 2 1 3 1 3 2 12 2 12 4 7 4 7 6 9 6 9 9 6 9 6 8 0 8 0 3 1 3Output 1:yes",
+  "sample_output": "Input 2:10 3 0 4 0 4 2 1 2 1 3 2 3 2 4 0 4 0 1 3 1\r\n10 0 0 4 0 4 3 5 3 5 6 3 6 3 2 1 2 1 4 0 4Output 2:no",
+  "link": "https://www.spoj.com/problems/SWERC14G",
+  "scraped_at": "2025-08-17 00:34:27",
+  "test_cases": [
+    {
+      "input": "Input 1:16 3 0 8 0 8 1 12 1 12 3 10 3 10 5 9 5 9 12 6 12 6 8 5 8 5 10 0 10 0 6 3 6\r\n16 1 0 2 0 2 1 3 1 3 2 12 2 12 4 7 4 7 6 9 6 9 9 6 9 6 8 0 8 0 3 1 3Output 1:yes",
+      "expected_output": "Input 2:10 3 0 4 0 4 2 1 2 1 3 2 3 2 4 0 4 0 1 3 1\r\n10 0 0 4 0 4 3 5 3 5 6 3 6 3 2 1 2 1 4 0 4Output 2:no",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 1 9 6 9 2 5 3 6 6 5 1 8 10 2 4 5 5 10 9 8 9 5 6 7 3 7 2 7 10 1 10 10 2\nhqc cqwq 1 7 3 4 4 8 4 10 3 3 9 9 6 10 8 3 4 5 1 6 9 7 5 4 4 10 7 10 9 2 10 8\n8 10 7 8 9 6 2 4 5 8 1 2 6 5 9 5 1 10 7 10 2 3 2 7 4 4 1 8 1 3 1 2 1 9\n9 10 9 1 7 7 6 4 10 6 5 3 4 7 8 6 9 6 10 5 10 2 4 6 3 8 10 6 10 2 10 6 rlhuu jis",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 3 6 3 5 4 2 5 3 3 10 10 7 3 3 7 9 6 10 2 3 1 9 10 7 4 5 3 5 4 3 6 6 3\nw gp 7 4 5 8 5 8 9 6 7 3 10 1 6 10 4 2 9 5 1 6 8 3 9 10 7 9 1 10 3 4 4 3\n6 2 6 10 6 4 1 6 10 7 3 2 4 3 7 7 1 9 5 5 1 6 7 7 9 4 1 4 6 1 8 9 8 10\n5 4 8 5 5 1 2 7 7 7 1 6 4 5 1 9 7 1 10 7 7 7 1 7 9 5 5 6 5 5 10 10 hnwikxj xae",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 8 9 6 10 4 4 4 6 2 1 6 9 4 1 9 4 1 7 10 3 4 8 6 6 2 2 3 3 5 9 5 5 1\nmfrpy lb 7 2 1 7 6 3 3 10 5 8 2 8 9 3 1 9 9 5 1 9 2 3 1 3 6 1 2 5 9 9 5 10\n5 6 7 9 6 4 7 5 9 3 10 7 4 9 10 7 10 9 6 7 10 2 7 6 1 8 2 3 4 7 1 10 4 5\n9 6 5 8 7 2 10 5 2 4 5 5 1 10 8 9 8 2 6 3 3 8 2 6 5 5 1 10 10 10 6 7 mtagy bek",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "19 8 74 65 85 52 79 41 9 26 13 83 9 64 21 70 2 82 79 80 59 51 77 37 51 9 2 98 8 37 62 48 55 31\ns zzdpq 25 78 69 24 72 35 89 100 59 39 7 82 56 36 9 97 89 11 11 7 52 90 80 2 89 6 75 44 24 8 77 18\n44 94 83 69 25 96 97 66 58 11 60 6 98 46 36 13 92 88 1 17 3 62 90 85 88 48 80 81 7 89 16 75 73 83\n38 33 21 35 61 19 85 54 40 11 43 24 83 78 6 100 90 76 95 50 16 26 3 78 21 95 74 58 54 63 27 80 tq hy",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 15 83 27 28 51 88 32 64 15 14 19 3 88 4 95 38 13 41 51 63 55 64 63 54 95 73 47 62 42 77 74 23 80\nwsh v 75 70 73 47 63 84 21 48 28 86 69 50 5 65 70 90 81 84 24 88 79 72 75 76 65 50 64 3 12 25 79 61\n77 43 66 83 38 18 38 61 39 80 67 33 94 40 30 32 49 89 15 83 99 19 84 26 83 22 70 7 95 76 31 14 57 67\n33 53 29 13 45 84 52 3 11 53 36 65 50 30 82 89 47 19 87 61 90 16 85 55 74 86 69 42 30 51 51 69 rjqfs zswin",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 85 61 67 12 12 73 3 29 83 93 76 23 49 78 22 82 48 44 80 59 1 70 41 42 65 84 12 15 3 100 38 62 36\nj qdqfe 15 61 73 17 91 7 18 20 83 50 40 11 8 36 78 99 83 9 38 51 60 58 55 50 13 34 77 63 42 65 42 85\n56 100 22 22 98 1 1 67 96 43 18 98 94 4 63 56 15 29 57 43 90 32 24 77 95 98 31 91 92 61 12 97 95 41\n25 55 32 65 5 97 22 60 94 65 32 25 75 96 5 50 77 47 67 76 100 54 41 31 77 83 44 3 75 72 8 68 xbv qu",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 11 35 67 36 67 9 20 85 48 97 37 78 48 12 81 77 1 37 50 64 27 65 27 82 91 94 63 67 90 99 18 51 59\nlgrpk gkjbk 66 62 9 45 74 37 38 40 72 82 37 85 23 29 41 59 66 94 85 33 78 48 11 61 81 21 51 53 68 64 31 98\n35 83 43 6 73 56 64 22 31 75 96 12 54 50 41 93 47 99 62 89 80 79 69 88 4 69 27 41 61 54 38 7 90 94\n41 38 86 88 94 24 80 63 77 63 59 86 84 58 74 78 79 37 95 89 18 45 3 43 51 52 28 14 74 23 98 81 zviswa tifaf",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 68 66 28 66 10 57 66 12 19 27 79 76 32 53 24 60 88 74 71 36 96 58 70 96 49 88 82 93 28 49 90 53 36\nax z 44 27 50 13 22 78 37 91 99 39 16 38 6 68 67 36 87 56 1 91 82 76 17 90 57 28 64 69 19 90 60 29\n79 65 58 81 12 50 97 24 91 62 56 27 62 83 33 29 68 64 25 18 23 72 95 71 100 84 9 70 86 65 41 40 14 50\n19 25 43 56 2 40 14 4 97 38 97 9 59 19 31 55 31 31 39 98 28 89 34 76 77 63 74 76 88 48 46 16 trhxqur vxx",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "119 139 446 431 464 432 289 338 335 348 451 242 233 491 347 112 449 458 319 63 386 417 489 298 367 385 228 317 203 470 380 351 369 195\nzhcbw qyt 376 316 169 298 227 108 293 85 425 157 149 129 160 76 151 376 254 363 107 197 243 164 250 176 301 142 79 250 168 155 86 147\n395 376 141 158 421 435 348 83 432 332 418 349 52 250 179 492 219 135 260 326 269 74 51 212 347 61 143 392 308 176 188 446 122 403\n253 381 495 302 406 492 406 186 203 99 363 203 290 443 450 134 141 188 387 183 426 179 202 76 115 351 217 335 490 59 463 234 hwk nmxos",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "200 54 94 79 257 122 269 455 293 144 138 240 403 265 475 465 250 172 253 251 350 218 417 447 155 306 457 388 241 220 473 262 400 164\nhupq pq 390 128 281 69 91 263 209 239 156 216 143 300 348 249 98 208 100 339 490 157 84 251 203 134 50 181 437 131 172 240 132 90\n144 129 457 279 315 391 294 100 396 494 466 425 397 210 386 458 455 50 146 97 159 449 276 56 440 484 192 445 232 196 243 68 100 494\n102 209 136 87 117 362 201 209 241 83 461 114 464 447 245 175 206 459 219 386 466 344 105 312 167 207 134 59 472 341 313 469 ldiq xk",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "415 59 346 388 370 363 316 231 293 218 453 452 66 83 318 59 225 298 448 167 386 106 200 404 244 384 202 210 104 207 494 263 181 434\nb et 173 312 248 358 92 382 54 358 448 474 368 310 142 267 137 432 268 67 434 320 423 455 99 279 351 480 439 495 388 219 349 392\n352 273 201 118 201 297 364 131 316 305 411 323 239 241 172 500 308 443 271 211 484 319 426 470 413 335 433 379 266 299 384 472 247 285\n431 478 134 239 188 277 376 185 227 296 348 306 403 223 402 130 310 456 282 213 145 496 185 279 486 436 373 105 315 294 327 195 uwqrg lh",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "287 59 462 89 194 288 318 118 265 389 311 447 109 221 424 105 434 460 52 411 420 59 211 349 416 217 91 221 481 145 382 235 381 467\nnkcx wfgqz 375 425 117 360 277 285 89 194 295 126 181 192 97 199 480 334 127 94 61 54 416 473 126 414 472 374 154 275 297 400 75 139\n217 454 326 300 233 478 169 280 92 423 90 477 150 93 415 248 280 321 393 85 480 85 300 473 193 456 76 123 130 346 108 424 347 89\n254 371 236 337 413 346 325 65 386 466 209 161 218 50 151 137 171 157 67 283 466 418 140 416 405 254 116 458 321 313 208 485 jizgag u",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "370 207 261 60 193 341 325 237 469 184 242 267 453 422 92 302 379 52 227 229 185 280 133 104 221 128 223 200 200 275 186 208 490 452\nlqqb bh 86 468 405 478 427 451 240 258 424 274 457 328 120 210 126 347 141 437 357 237 420 149 119 71 154 411 288 360 485 401 395 316\n440 354 391 433 434 310 469 345 474 274 319 199 130 442 415 349 281 263 365 190 275 279 253 279 360 249 263 156 333 201 176 369 471 436\n183 54 90 436 266 447 80 168 51 177 171 223 450 53 222 422 457 279 151 70 429 369 133 338 422 212 398 493 463 492 259 74 lcl iswfb",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "199 249 316 57 406 389 445 246 72 483 485 91 420 306 475 424 178 247 229 348 330 197 204 189 451 234 264 82 374 291 353 81 116 395\nlzne kf 199 182 163 329 353 491 340 201 464 163 339 330 141 426 191 106 167 315 79 177 155 395 461 252 307 80 117 318 308 331 234 99\n147 312 376 206 482 56 354 238 427 340 315 375 324 421 356 246 217 438 321 178 121 444 339 83 231 195 282 53 173 343 163 235 289 161\n78 125 412 410 198 121 104 460 476 151 55 361 70 108 132 316 298 297 325 321 83 348 146 434 84 212 99 465 237 493 103 452 xhyiru kfxor",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "484 311 275 301 369 219 340 405 408 228 205 491 314 286 255 304 484 210 148 162 169 280 251 337 457 136 372 379 477 303 73 280 90 355\ncm ngz 268 92 386 413 240 207 349 384 195 103 181 135 328 322 168 393 169 74 456 168 324 197 400 100 85 190 351 129 78 464 275 422\n369 151 454 232 190 414 413 455 233 71 485 387 164 125 168 480 301 457 123 158 223 309 496 416 284 165 358 213 193 196 219 300 101 222\n303 459 184 50 156 315 389 168 63 73 315 357 57 72 370 70 279 425 472 496 275 246 425 187 298 153 100 91 71 57 226 314 wiys jfgsl",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nzu azvsm 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 fvrggla pivno",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nwad yhloa 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 j nfec",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999 999 1 2 2 1000 1 1000 2 2 1 2 2 1000 2 1 1 1000 999 2 1 999 1 1000 2 999 2 999 1 1000 2 1000 1\nkjmm obbm 1 2 999 1000 1 999 1 1 999 1000 2 1 1000 999 1 999 2 999 999 1000 1 2 2 999 999 2 999 1000 1 1 1000 1000\n1000 999 999 1 999 999 1000 1 2 2 2 999 1 1000 2 2 2 1000 1000 1000 1000 1 2 1000 2 1000 1000 1000 2 2 1000 2 1000 2\n2 1000 1000 999 999 999 1 999 1000 2 1 2 1000 1000 999 1000 1000 2 1 999 2 1000 999 999 2 1000 1000 2 1000 2 1 2 ktlkw e",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2 2 1000 999 999 1 1000 999 1000 1000 1000 1000 1000 1 2 2 1000 1000 2 1 1 1000 1000 1 999 999 2 1000 999 1 1 1000 2\np bh 999 999 1000 1000 999 1 2 999 1000 2 1000 1000 1 2 2 1 2 1 1 2 999 2 999 1 1000 999 1000 999 999 1000 2 999\n999 1 2 1000 1 1 999 1000 1 999 1000 1000 1 1000 999 2 1000 2 999 1 1 999 1 2 999 1000 1000 1 2 2 1000 1000 2 1000\n1000 2 1000 1 2 1000 2 1 2 2 1000 1 1 1 1000 1000 1 2 1000 1 2 2 999 999 1 2 2 1 1 1000 1 2 gxsptcg mjst",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

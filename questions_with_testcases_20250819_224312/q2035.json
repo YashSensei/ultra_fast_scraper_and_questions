@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "King Graffs Trip",
+  "tags": [],
+  "text": "King Graff, the ruler of the land of Feerie, is going on a trip through his realm! He would like to give his people a chance to see their great king amongst them, almost as if he too were a petty commoner with no future.Feerie consists of $N$ ($1 \\leq N \\leq 10^4$) towns (numbered $1..N$), and $M$ ($1 \\leq M \\leq 10^5$) roads. The $i$th road runs from town $A_i$ to a different town $B_i$ (and can only be travelled in that one direction), and takes $T_i$ ($1 \\leq T_i \\leq 10^9$) minutes to traverse. No pair of towns is directly connected by more than one road in the same direction. King Graff will start his trip at town $X$, and would like to end at a different town $Y$. Furthermore, since he has better things to do, he would like to complete it in at most $L$ ($1 \\leq L \\leq 10^{15}$) minutes.However, Graff does not like to go long without being worshipped, and the only proper place to do this is in a shrine built to him. $S$ ($1 \\leq S \\leq 100$) distinct towns contain such shrines - the $i$th shrine is in town $H_i$. He would like to minimize the longest continuous stretch of time spent during the trip without passing through any shrines. As the royal computer scientist, your job is to determine the length of this stretch, or break the news to your king that the trip cannot be completed in time. Note that the trip may be impossible to complete in any amount of time, if town $Y$ is not reachable from town $X$ by any path of connected roads.InputFirst line: 5 integers, $N$, $M$, $X$, $Y$, and $L$Next $M$ lines: 3 integers, $A_i$, $B_i$, and $T_i$, for $i = 1..M$Next line: 1 integer, $S$Next $S$ lines: 1 integer, $H_i$, for $i = 1..S$OutputLine 1: 1 integer - the minimum value for the longest continuous stretch of travel time spent away from shrines (in minutes), or -1 if the trip cannot be completed in at most $L$ minutesExampleInput:5 7 2 3 72 3 53 2 12 1 41 3 32 4 34 5 25 3 33145Output:4Explanation of Sample:The map of Feerie is illustrated below:The optimal route goes through towns $2 \\rightarrow 1 \\rightarrow 3$, taking 7 minutes with at most 4 minutes spent away from any shrines. The route $2 \\rightarrow 3$ is shorter (taking 5 minutes), but has a longer continuous time away from shrines (5). The route $2 \\rightarrow 4 \\rightarrow 5 \\rightarrow 3$ has a shorter such value (3), but takes longer than 7 minutes in total (8) and as such is not allowed.",
+  "sample_input": "Input:5 7 2 3 72 3 53 2 12 1 41 3 32 4 34 5 25 3 33145Output:4",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GRAFFTRI",
+  "scraped_at": "2025-08-17 00:33:50",
+  "test_cases": [
+    {
+      "input": "5 7 2 3 72 3 53 2 12 1 41 3 32 4 34 5 25 3 33145",
+      "expected_output": "4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 9 1 8 1 1 4 9 2 2 9 3 3 1 6 8 6 5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 7 2 1 3 2 4 10 6 10 9 6 10 6 1 1 6 3 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 8 4 4 3 9 4 10 5 4 2 4 6 9 10 1 7 4 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "56 87 3 9 90 35 75 34 1 26 31 87 65 14 21 59 44 74 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 22 61 22 48 32 7 76 88 30 20 60 49 75 56 28 36 97 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 99 11 13 92 68 22 62 41 61 9 6 3 28 60 20 55 77 39",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 10 19 21 75 43 43 36 4 47 78 13 17 4 13 64 94 83 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 58 86 85 30 90 49 37 39 79 76 94 40 95 6 82 95 99 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "305 80 482 131 86 290 88 266 419 454 438 247 251 74 131 418 132 428 218",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "60 161 89 422 70 473 459 224 127 177 481 153 415 202 300 108 86 370 229",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "432 299 376 128 350 124 191 426 337 288 399 141 345 246 52 80 73 437 116",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "359 284 247 463 298 419 207 206 375 122 74 349 205 306 155 337 375 451 466",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "102 80 242 250 386 436 352 182 85 337 251 454 334 195 404 278 495 466 185",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "364 138 324 206 67 72 379 423 268 261 97 343 226 78 486 294 301 194 65",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "301 363 245 361 388 248 299 330 52 392 414 336 178 343 405 141 196 131 83",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 999 1 2 2 999 1 1 2 1 2 2 2 1 1000 2 1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 2 2 2 2 1000 1000 2 1 2 2 1 1 999 999 999 2 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

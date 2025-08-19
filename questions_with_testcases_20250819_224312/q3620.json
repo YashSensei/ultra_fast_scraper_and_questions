@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Mickey Mouse Magic Trick v4",
+  "tags": [],
+  "text": "Mickey Mouse and Donald Duck love magic. They specialise with card tricks. Mickey invented a new trick and they are going to surprise the world. They've contracted series of shows on whole the globe, worth many million of dollars $$. The first show is coming up but unfortunately Mickey lost secret of the trick. He remembers only trick description, but it's not enough to satisfy the contract conditions. Help them!Trick descriptionMickey has n cards with values 1, 2 ... n. He invites a spectator from the audience, Donald is outside the stage and see nothing on the stage. The spectator chooses randomly k cards from the pack and discard the remaining n-k cards. Mickey chooses one card from this k cards, shows it to everyone (except Donald) and hides it to the spectator's pocket. Next Mickey leaves the remaining k-1 cards in some order on the table. Donald is coming back. He is the only person, who don't know, what is the number in the hidden card. He can see only k-1 cards on the table. Donald thinks for a while, the drum rolls, at the beginning very gently, then louder and louder, everyone is waiting, the drum stops, a few seconds of deep silence and... Donald says the number on the hidden card. It's correct, applause! How did he discover the number? It's magic!Help requestMickey and Donald know, that's not magic only smart math manipulations. They asked You to help them. You have to write computer program, that can help them with the trick. The program should be able to do two things: help Mickey to select one card from given k cards and describe order of remaining k-1 cards on the table, then help Donald to guess the hidden card value basing only on k-1 cards left by Mickey on the table. You can use any strategy that You want, but remember - Donald needs to guess the number during the show, because the huge profit $$ depends on it.InputAll integers in the same line are single-space separated (the same concerns problem output).Values n, k are constant. In this problem n=27 and k=4. There are also problems with different values:MMMAGIC3,MMMAGIC5,MMMAGIC6The first line of input contains two integers M, D, where M is the number of test cases in which Mickey needs help, D is the number of test cases in which Donald needs help (M+D < 40000).Every of next M lines contains k distinct integers from range [1, n] - the values on cards given to Mickey. The order of values is casual.Every of next D lines contains k-1 distinct integers from range [1, n] - the cards left to Donald on the table. The order is the same, as on the table, from left to right.OutputFor each Mickey's query write a line with k-1 integers - the values on the cards, that Mickey have to leave on the table, from left to right.For each Donald's query write a line with one integer - the value of hidden card or (if in Your strategy such situation is impossible) any of remaining values.ExampleInput:3 0\r\n1 2 3 4\r\n4 13 6 2\r\n8 20 7 4Output:3 2 1\r\n13 4 6\r\n4 20 7Input:0 3\r\n3 2 1\r\n13 4 6\r\n4 20 7Output:4\r\n2\r\n8ExplanationThe example above don't show any concrete strategy. It just shows, that strategy must be coherent (when Mickey for given set of cards 1 2 3 4 leave on the table 3 2 1, then Donald for given cards 3 2 1 should answer with the number 4).Generally You can implement Your own strategy satisfying the conditions below:for Mickey's query \"a1a2... ak\" You should reply \"b1b2... bk-1\", such that {b1, b2... bk-1} is subset of {a1, a2... ak}for Donald's query \"b1b2... bk-1\" reply the number c, such that {b1, b2... bk-1, c} = {a1, a2... ak}NoteThe similar problems appeared in MWPZ 2007 contest in Poland, with different story (in original problems there was Polish characters Bolek, Lolek and Jacek, Placek). The main page of contest ismwpz.poznan.pl",
+  "sample_input": "Input:3 0\r\n1 2 3 4\r\n4 13 6 2\r\n8 20 7 4Output:3 2 1\r\n13 4 6\r\n4 20 7",
+  "sample_output": "Input:0 3\r\n3 2 1\r\n13 4 6\r\n4 20 7Output:4\r\n2\r\n8",
+  "link": "https://www.spoj.com/problems/MMMAGIC4",
+  "scraped_at": "2025-08-17 00:34:31",
+  "test_cases": [
+    {
+      "input": "3 0\r\n1 2 3 4\r\n4 13 6 2\r\n8 20 7 4",
+      "expected_output": "3 2 1\r\n13 4 6\r\n4 20 7",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "0 3\r\n3 2 1\r\n13 4 6\r\n4 20 7",
+      "expected_output": "4\r\n2\r\n8",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "7 4\n9 8 2 7\n3 7 10 10\n3 8 1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 4\n5 6 9 2\n4 4 10 7\n9 2 8 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6\n9 8 4 7\n6 2 8 2\n10 2 9 1",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 11\n24 8 6 10\n15 1 21 6\n17 22 2 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 4\n12 27 19 26\n22 19 13 23\n19 11 26 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 26\n20 15 5 10\n24 22 21 16\n21 24 3 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 22\n10 8 10 24\n1 8 4 18\n23 10 11 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 9\n24 18 7 27\n1 23 2 18\n11 2 23 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 10\n11 9 6 11\n2 12 5 11\n7 11 10 3",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 11\n2 13 11 2\n8 6 3 9\n2 2 2 5",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 10\n11 10 4 7\n6 1 12 5\n5 10 4 5",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 11\n6 13 12 10\n12 9 8 5\n2 8 7 7",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 13\n10 10 2 3\n11 3 3 6\n2 8 3 5",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "13 13\n1 8 3 11\n2 7 5 3\n5 11 2 13",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 10\n8 11 8 9\n3 5 11 3\n11 1 11 6",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 27\n27 27 27 27\n27 27 27 27\n27 27 27 27",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "27 27\n27 27 27 27\n27 27 27 27\n27 27 27 27",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "27 26\n27 26 2 1\n26 26 26 26\n27 26 26 26",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

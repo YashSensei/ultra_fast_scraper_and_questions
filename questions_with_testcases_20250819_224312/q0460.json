@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Martia Auris 3020",
+  "tags": [],
+  "text": "DNA is a long chain of molecules that contains all the information necessary for the life functions of a cell. The individual molecules that make DNA are called nucleotides. There are only four nucleotides that are ever used. These are AdenineA, ThymidineT, GuanineG, and CytosineC.As the cells in your body (and all other organisms on Earth) undergo constant divisions and are susceptible to mistakes, the DNA sequences can mutate easily. This can happen because you put your hand too close to the core of a nuclear reactor or just because your cells made mistakes on their own.In the year 3020, a new deadly superbug, Martia Auris, was discovered in a human habitat on Mars. Superbug is a term for bacteria strains, viruses, or fungi resistant to most antibiotics and other medications commonly used in the 31st century. Martia Auris is a bacteria strain conducted only by humans, is highly infectious, gives symptoms very late, and the mortality rate after infection is high.The martian laboratories collected samples and analyzed the bacteria genome. The dataset consists of pairs of two sequences of the same length:Top one is the sequence we expect(E),The second one is bacterial sequence found in the patient tissues(P).You need to create a simple tool for laboratories to search the collected data and identify mutations in the bacteria.Sequence formatMartia Auris mutates slightly, so the found sequences nearly always differ.\r\nThe sequences consist of lettersA,C,T,G,#, andN, and they're always of the same length. For each position i in the sequence:If E[i] == \"N\" (or P[i] == \"N\"), then we assume there is nucleotide A, C, T, or G on an i-th position in the E sequence (or P accordingly), but we do not know which one due to experiment uncertainty. We assume the best-case scenario, so \"N\" always matches all other nucleotides. You can think of it as \".\" in regex or a wildcard that matches all nucleotides.If E[i] == P[i]then no mutation occurred on i-th positionIf E[i] == \"#\" && P[i] != \"#\"then new nucleotide P[i] appeared inside patient sequenceIf E[i] != \"#\" && P[i] == \"#\"then a nucleotide E[i] on i-th position was removed by the new mutationIf E[i] == \"#\" && P[i] == \"#\"case is not allowed, because it's meaninglessIn other casenucleotide E[i] was mutated into different nucleotide P[i] by a mutationExample sequencesFor example for pair:E: ACTGAA#CP: ACCGANCCWe have three changes:Twas mutated intoC(3rd position),Awas potentially mutated into something (6th position),Cwas inserted (7th position).Now the task is to read all pairs of patient samples readings and for each pair:Find each occurrence of the input sequence (we call itF) in the patient sample sequenceP. Note thatFcan containN, but not#.Print fragment ofEcorresponding to the found fragment (we translate every single match ofFinPto the original fragment inE).All output sequences should be lexicographically sorted. Note that in some cases, we can have duplicate sequences in the program output, and that's normal.Important note: we don't care ifFis present inE. We want only matches inPsequences but translated later into corresponding fragments fromEsequence.\r\nWe don't care about occurrences ofFinE.Example 1Let's look at the example:F:  GAACE:  ACTGAA#CP:  ACCGANCCThen the patient sequence contains \"GANC\".Ncan be anything, so we qualify that as a result. That fragment before mutations would be \"GAA\" (becauseCwas inserted by mutation andAwas changed intoN)The output would be:GAANote that theEsequence contains theFsequence (\"GAA#C\"), but as noted earlier, we don't care aboutFmatches inE. That's why the output doesn't contain \"GAAC\". We do only care aboutFmatches inPtranslated to the corresponding fragments inEExample 2Another example:F:  GCATTE:  GCAT#CTA##TTP:  GCANN#ATTTCCThe patient sequence contains \"GCANN\",Ncan be anything, so we qualify that as a result. The fragment before mutations would be \"GCAT\" (Twas changed intoN, and newNappeared). The important note here is that we also qualify \"GCATC\" as a result because the last nucleotideCwill be removed, and we also end up with the same sequence.The patient sequence also contains \"NN#ATT\".#represents only that something was removed, so we get \"NNATT\" which similarly can be qualified as a result. The fragment before mutations would be \"T#CTA#\" which is \"TCTA\" (Twas changed intoN, newNappeared,Cwas changed intoA, andAintoT).The output should be:GCAT\r\nGCATC\r\nTCTAInputThe first line of input contains the sequenceFwe are looking for (note that sequence F can containNbut not#). The second line of the input contains the number of pairs we should read. The following lines contain all pairs ofE/Psequences.OutputThe output should contain in each separate line an original sequence inEcorresponding to sequenceFfound in sequenceP. The output should be lexicographically sorted and can potentially contain duplicates.ExamplesInputGAAC\r\n2\r\nACTGAA#C\r\nACCGANCC\r\nGAACGANC\r\nGAACGANCOutput:GAA\r\nGAAC\r\nGANCInputGCATT\r\n1\r\nGCAT#CTA##TT\r\nGCANN#ATTTCCOutput:GCAT\r\nGCATC\r\nTCTAInputNN\r\n1\r\nACA\r\nA#AOutput:ACA",
+  "sample_input": "E: ACTGAA#CP: ACCGANCC",
+  "sample_output": "F:  GAACE:  ACTGAA#CP:  ACCGANCC",
+  "link": "https://www.spoj.com/problems/MARTIA_AURIS",
+  "scraped_at": "2025-08-17 00:33:21",
+  "test_cases": [
+    {
+      "input": "E: ACTGAA#CP: ACCGANCC",
+      "expected_output": "F:  GAACE:  ACTGAA#CP:  ACCGANCC",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "amq skijhwn osmwtbm",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "opr oexvyt gue",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "saeo crfy lm",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "khnnk talvnvgsgz vszjnj",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ee bdjhccfmd duutvbu",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qztw kgbd hqcugr",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "eh gmdbjhq zqy",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "luxhw twzllcd kcha",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qsaku ycoqa ojr",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qvnlq xda yk",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "us vdszqqubg trwlm",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "km iuhwfx xta",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "bu lruzmwp phr",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "i j unbnqccq",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hx vjto ksqnu",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lwdek mzq uront",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "cyoj cwouddmuj u",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "f nejtvwn a",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "urfyw pvusxhav mp",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

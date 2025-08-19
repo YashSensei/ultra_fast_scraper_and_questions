@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Martian Mining",
+  "tags": [],
+  "text": "The NASA Space Center, Houston, is less than 200 miles from San Antonio, Texas (the site of the ACM Finals this year). This is the place where the astronauts are trained for Mission Seven Dwarfs, the next giant leap in space exploration. The Mars Odyssey program revealed that the surface of Mars is very rich in yeyenum and bloggium. These minerals are important ingredients for certain revolutionary new medicines, but they are extremely rare on Earth. The aim of Mission Seven Dwarfs is to mine these minerals on Mars and bring them back to Earth.The Mars Odyssey orbiter identified a rectangular area on the surface of Mars that is rich in minerals. The area is divided into cells that form a matrix of n rows and m columns, where the rows go from east to west and the columns go from north to south. The orbiter determined the amount of yeyenum and bloggium in each cell. The astronauts will build a yeyenum refinement factory west of the rectangular area and a bloggium factory to the north. Your task is to design the conveyor belt system that will allow them to mine the largest amount of minerals.There are two types of conveyor belts: the first moves minerals from east to west, the second moves minerals from south to north. In each cell you can build either type of conveyor belt, but you cannot build both of them in the same cell. If two conveyor belts of the same type are next to each other, then they can be connected. For example, the bloggium mined at a cell can be transported to the bloggium refinement factory via a series of south-north conveyor belts.The minerals are very unstable, thus they have to be brought to the factories on a straight path without any turns. This means that if there is a south-north conveyor belt in a cell, but the cell north of it contains an east-west conveyor belt, then any mineral transported on the south-north conveyor beltwill be lost. The minerals mined in a particular cell have to be put on a conveyor belt immediately, in the same cell (thus they cannot start the transportation in an adjacent cell). Furthermore, any bloggium transported to the yeyenum refinement factory will be lost, and vice versa.Your program has to design a conveyor belt system that maximizes the total amount of minerals mined,i.e., the sum of the amount of yeyenum transported to the yeyenum refinery and the amount of bloggium transported to the bloggium refinery.InputThe input contains several blocks of test cases. Each case begins with a line containing two integers: the number 1 <= n <= 500 of rows, and the number 1 <= m <= 500 of columns. The next n lines describe the amount of yeyenum that can be found in the cells. Each of these n lines contains m integers. The first line corresponds to the northernmost row; the first integer of each line corresponds to the westernmost cell of the row. The integers are between 0 and 1000. The next n lines describe in a similar fashion theamount of bloggium found in the cells.The input is terminated by a block with n = m = 0.OutputFor each test case, you have to output a single integer on a separate line: the maximum amount of mineralsthat can be mined.ExampleInput:4 4\r\n0 0 10 9\r\n1 3 10 0\r\n4 2 1 3 \r\n1 1 20 0\r\n10 0 0 0\r\n1 1 1 30\r\n0 0 5 5\r\n5 10 10 10\r\n0 0Output98Warning: large input/output data, be careful with certain languages",
+  "sample_input": "Input:4 4\r\n0 0 10 9\r\n1 3 10 0\r\n4 2 1 3 \r\n1 1 20 0\r\n10 0 0 0\r\n1 1 1 30\r\n0 0 5 5\r\n5 10 10 10\r\n0 0Output98",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MARTIAN",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "4 4\r\n0 0 10 9\r\n1 3 10 0\r\n4 2 1 3 \r\n1 1 20 0\r\n10 0 0 0\r\n1 1 1 30\r\n0 0 5 5\r\n5 10 10 10\r\n0 0Output98",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 4\n6 3 4 1\n4 7 10 4\n4 2 8 2\n1 4 6 3\n1 10 8 1\n7 6 10 9\n5 2 4 6\n5 4 9 7\n2 4 5\n1 ec",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 8\n3 6 5 8\n4 10 5 6\n10 6 7 1\n4 2 10 6\n2 10 9 6\n1 6 10 5\n6 2 9 2\n3 2 4 3\n6 7 2\n2 tam",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 4\n6 7 4 4\n8 3 1 10\n1 4 5 2\n5 9 5 3\n6 5 9 4\n6 2 3 2\n1 9 1 8\n7 5 6 6\n7 8 5\n6 lxsb",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 92\n53 1 28 87\n98 71 90 65\n50 77 29 78\n46 93 74 3\n5 30 26 37\n54 51 83 96\n22 75 51 67\n73 7 83 55\n30 51 29\n2 jiaryor",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 59\n63 48 25 20\n1 79 68 79\n12 40 5 7\n15 7 14 26\n39 72 10 88\n87 83 20 11\n86 72 88 92\n82 93 52 51\n28 57 71\n59 zqu",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 44\n67 46 26 16\n15 10 14 100\n16 84 95 62\n63 67 35 5\n65 5 74 28\n42 97 46 4\n17 35 33 17\n14 62 81 12\n93 17 70\n92 rate",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 22\n88 8 16 97\n73 2 83 92\n92 34 36 39\n55 82 67 10\n65 82 51 58\n99 58 6 61\n62 23 14 84\n41 25 62 62\n42 99 40\n35 xmoxcbj",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "67 47\n47 16 49 24\n40 77 27 2\n46 60 69 92\n34 56 25 20\n52 3 10 42\n83 82 49 75\n44 40 96 23\n75 57 10 11\n92 93 80\n6 lhzo",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "446 149\n440 173 327 173\n418 417 112 426\n68 361 375 104\n386 446 345 192\n355 131 151 112\n345 141 97 73\n457 211 325 327\n271 374 444 412\n51 139 86\n130 mpmrj",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "381 127\n159 162 413 197\n57 268 172 57\n340 283 81 470\n359 406 344 285\n185 436 393 402\n394 146 85 274\n50 210 453 161\n276 81 440 296\n405 467 87\n186 kb",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "308 348\n201 192 138 202\n52 384 259 201\n305 110 375 137\n344 204 70 106\n413 245 378 412\n300 121 190 457\n137 103 183 76\n190 392 58 73\n382 309 344\n119 nmt",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "261 327\n260 347 194 263\n270 405 91 268\n319 222 66 217\n249 99 175 268\n98 263 349 186\n162 370 347 438\n92 321 127 389\n95 410 382 172\n136 380 122\n175 khto",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "440 132\n210 143 64 333\n112 122 320 219\n165 268 178 73\n316 208 181 230\n422 330 418 89\n390 266 332 391\n237 170 157 169\n490 433 59 210\n373 324 155\n419 qljubcf",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "174 498\n237 264 88 316\n54 137 109 371\n268 423 231 181\n416 364 228 167\n422 300 276 229\n103 319 474 167\n176 277 436 86\n71 356 148 479\n119 232 162\n450 putbxq",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "360 234\n438 463 362 462\n149 170 342 274\n430 313 121 339\n411 67 120 159\n173 196 125 66\n463 138 63 471\n332 371 71 103\n417 57 248 366\n365 136 306\n281 libdtkc",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 dmwmorkq",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 rg",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000\n999 2 1 1\n1000 1000 1 1000\n2 1 1 1000\n2 1000 1000 1000\n1 1000 1 999\n1000 2 1 1000\n1 1 1000 1000\n2 1 999 1\n1 2 1\n1 tdvngcv",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\n2 2 999 1\n1000 999 999 1000\n999 1000 1 1\n1 1 2 2\n999 999 1000 1000\n2 2 2 1\n999 2 1000 1\n2 1000 1 1000\n1000 1 2\n999 rllmdne",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Fractan",
+  "tags": [],
+  "text": "To play the \"fraction game\" corresponding to a given listf1, f2... fkof fractions and starting integerN, you repeatedly multiply the integer you have at any stage (initiallyN) by the earliestfiin the list for which the answer is integral.\r\nWhenever there is no suchfi, the game stops.Formally, we define a sequence byS0= N, andSj+1= fiSj, if for1 ≤ i ≤ k, the numberfiSjis an integer but the numbersf1Sj... fi-1Sjare not.For example, if we have the list of eight fractionsf1= 170/39,f2= 19/13,f3= 13/17,f4= 69/95,f5= 19/23,f6= 1/19,f7= 13/7,f8= 1/3, and start withN = 21, we produce the (finite) sequence(21, 39, 170, 130, 190, 138, 114, 6, 2).\r\nIn general, the sequence may be infinite.Given a fraction list and a starting integer calculate a part of the defined sequence.\r\nActually, we are interested only in the powers of2that appear in the sequence.InputThe input contains several test cases.\r\nEvery test case starts with three integersm, N, k.\r\nYou may assume that1 ≤ m ≤ 40,1 ≤ N ≤ 1000, and1 ≤ k ≤ 100.\r\nThen followkfractionsf1... fk.\r\nFor each fraction, first its numerator is given, followed by its denominator.\r\nYou may assume that both are positive integers less than1000and their greatest common divisor is1.\r\nThe last test case is followed by a zero.OutputFor each test case output on a linemnumberse1... em, separated by one space character, such that2e1... 2ekare the firstmnumbers in the defined sequence that are powers of2.\r\nYou may assume that there are at leastmpowers of2among the first 7654321 elements of the sequence.ExampleInput:1 21 8 170 39 19 13 13 17 69 95 19 23 1 19 13 7 1 3\r\n20 2 14 17 91 78 85 19 51 23 38 29 33 77 29 95 23 77 19 1 17 11 13 13 11 15 2 1 7 55 1\r\n0Output:1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67",
+  "sample_input": "Input:1 21 8 170 39 19 13 13 17 69 95 19 23 1 19 13 7 1 3\r\n20 2 14 17 91 78 85 19 51 23 38 29 33 77 29 95 23 77 19 1 17 11 13 13 11 15 2 1 7 55 1\r\n0Output:1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FRACTAN",
+  "scraped_at": "2025-08-17 00:34:16",
+  "test_cases": [
+    {
+      "input": "1 21 8 170 39 19 13 13 17 69 95 19 23 1 19 13 7 1 3\r\n20 2 14 17 91 78 85 19 51 23 38 29 33 77 29 95 23 77 19 1 17 11 13 13 11 15 2 1 7 55 1\r\n0",
+      "expected_output": "1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 2 3 8 4 6 4 10 6 2 5 2 4 3 5 2 6 1 1\n6 1 3 6 4 4 4 2 2 6 8 3 8 8 9 4 2 4 6 7 3 2 7 6 3 8 10 10 6 7 9\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 10 1 3 9 9 8 7 2 1 9 8 9 7 3 5 5 3 6\n9 8 8 10 8 3 7 5 3 1 2 3 7 3 4 10 10 2 1 9 9 2 9 10 6 1 8 3 9 2 7\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1 4 4 5 3 9 10 6 9 6 9 4 10 7 7 6 3 8\n9 9 8 1 7 9 4 8 2 4 7 1 2 3 5 8 10 5 5 1 1 6 3 8 2 10 3 7 3 6 4\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "24 89 27 75 49 4 57 41 25 11 22 75 25 16 81 86 13 44 50\n58 48 44 86 28 57 52 69 16 81 2 87 52 86 75 27 40 16 28 64 10 15 10 33 9 25 41 1 47 94 73\n27",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 4 65 23 74 40 73 8 96 34 17 64 95 57 37 89 56 86 37\n92 17 4 2 98 58 49 36 78 3 45 90 19 91 84 36 10 42 11 72 100 72 22 52 4 86 28 15 94 85 98\n71",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 35 79 44 56 37 28 91 52 89 85 30 73 99 8 45 92 57 39\n6 72 67 74 13 76 100 77 25 73 28 53 87 38 86 81 73 29 29 25 41 7 58 1 57 86 34 7 53 98 74\n96",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 76 12 53 80 12 39 42 27 43 50 98 61 95 27 33 36 26 29\n63 89 50 43 4 65 26 74 90 5 81 42 96 76 97 18 50 91 71 42 54 39 80 87 37 2 30 25 5 82 3\n9",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 71 7 69 15 95 85 99 38 9 36 18 2 71 28 47 78 11 7\n22 4 82 6 43 23 43 57 95 14 28 14 35 35 39 65 96 80 5 40 94 76 50 33 8 63 80 15 36 83 32\n56",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "181 256 231 207 433 158 499 120 435 252 91 259 317 346 434 199 225 80 368\n128 295 308 400 297 368 362 410 203 128 386 204 71 199 380 161 126 65 144 326 256 84 410 337 307 448 170 338 290 245 270\n176",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "245 61 150 153 339 127 256 160 124 138 201 311 397 86 144 488 161 148 122\n329 306 327 451 201 59 199 175 227 241 250 212 303 178 251 281 267 325 258 490 253 451 487 201 242 98 485 488 51 239 236\n103",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "337 392 414 98 497 291 332 462 470 213 231 344 50 467 397 494 229 374 148\n246 146 298 180 104 243 339 65 156 467 107 483 125 84 157 307 372 308 132 462 298 319 488 455 423 231 59 402 148 78 104\n112",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "246 324 216 448 294 128 407 414 454 74 143 214 366 75 377 304 296 499 224\n449 171 116 147 172 67 135 78 366 333 52 286 212 257 308 165 419 395 154 215 205 319 70 94 230 249 236 333 487 434 285\n207",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "123 444 381 64 105 142 300 369 153 316 310 118 276 331 210 169 100 214 64\n316 198 453 427 248 58 250 324 431 309 285 500 391 133 396 72 496 231 312 207 126 362 127 465 213 277 477 113 342 50 325\n182",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "354 409 132 345 424 370 366 137 229 365 170 233 177 211 443 223 139 257 150\n409 428 407 165 77 391 313 205 474 360 129 444 300 88 210 239 401 254 128 57 78 470 270 135 290 429 80 233 377 400 318\n200",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "246 73 202 466 60 354 375 331 276 239 472 435 499 454 230 342 391 394 454\n391 101 296 436 268 403 493 333 243 290 484 88 155 351 390 398 306 184 303 428 425 176 88 462 121 438 257 357 392 202 310\n239",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1 1 2 2 1000 1000 1000 999 2 1 1 999 1 2 1000 1 999\n999 1 1 1 1000 1 2 1000 1000 2 1000 999 1 999 1000 999 2 1 1 2 2 1000 999 999 999 999 2 1 2 999 1000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 1000 999 1 2 999 1000 999 2 1000 1 2 1000 999 1 999 2 1000\n999 2 2 1 1000 1 1 1000 2 2 999 2 1000 999 999 2 1000 2 1 2 2 2 1000 999 2 2 999 1 1 2 999\n999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

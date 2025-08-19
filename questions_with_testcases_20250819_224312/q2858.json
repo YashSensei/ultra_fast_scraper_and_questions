@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Friend Zoned",
+  "tags": [],
+  "text": "Pavel proposed a girl. Of course, she didn’t say yes, rather she gave him an array having N integers and asked him M queries over the array. Each query can be represented as two integers L and R.For each query, Pavel should do the following:First, he has to insert the numbers at index L, L+1, L+2 ... R of the given array into a multi-set. Multi-set is a set where an element can appear multiple times. Suppose that the size of this multi-set after inserting the numbers is k. Formally, k is equal to R-L+1.Then he has to generate all possible subset of the multi-set which he constructed in step 1. Then for each subset he needs to xor the numbers of that subset. In this way, he will get 2kvalues. Note that, for the empty set he will get 0.Finally, he has to xor the 2kvalues which he got at step 2 and say this value to his dream girl.If Pavel can answer all the queries correctly then she will reconsider his proposal. Can you help him to answer the queries?InputThe first line of input contains two integers N and Q. The next line contains N integers, the numbers in the array. Then each of the following Q lines contains 2 integers L and R.OutputFor each query output an integer in a separate line, the answer for that query. Queries should be answered in the order given in the input.Constraints1 ≤ N ≤ 1000001 ≤ Q ≤ 1000000 ≤ Value of a number in the array ≤ 10000000001 ≤ L ≤ N1 ≤ R ≤ NL ≤ RExampleInput:4 2\r\n1 3 3 3\r\n1 1\r\n2 4Output:1\r\n0Explanation:In the first query, there will be only 1 element in the multi-set: {1}. There are 2 possible subset of this multi-set. They are: { }, {1}. If we xor the numbers of each subset we get 0 and 1 respectively. Xor of theses two values is equal to 1.In the second query, there are 3 elements in the multi-set: {3,3,3}. There are 8 possible subset of this multi-set. They are: { }, {3}, {3}, {3}, {3,3}, {3,3}, {3,3}, {3,3,3}. By applying xor operation on the numbers of each subset we get 0, 3, 3, 3, 0, 0, 0, 3 respectively. Xor of these values is equal to 0.",
+  "sample_input": "Input:4 2\r\n1 3 3 3\r\n1 1\r\n2 4Output:1\r\n0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FRNDZND",
+  "scraped_at": "2025-08-17 00:34:16",
+  "test_cases": [
+    {
+      "input": "4 2\r\n1 3 3 3\r\n1 1\r\n2 4",
+      "expected_output": "1\r\n0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 9\n8 4 4 7\n10 6\n5 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 4\n3 4 7 10\n4 5\n3 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 2\n4 8 9 5\n4 6\n8 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "52 2\n29 75 3 83\n83 20\n3 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 57\n85 32 22 92\n46 54\n96 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 75\n47 24 43 6\n64 39\n90 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 39\n46 47 32 73\n22 85\n22 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 4\n10 90 78 51\n94 75\n83 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "117031 51549\n382376 153387 246186 187406\n133168 437019\n194313 357132",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "99560 175509\n195754 211253 383171 363035\n397838 75740\n60257 294509",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "266335 240203\n472930 374545 126479 202068\n485853 270344\n403166 290929",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "129069 305690\n464381 133484 320534 286312\n134094 301070\n371541 333127",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "262110 134138\n486300 420843 314532 459709\n425526 239499\n294314 115693",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "355380 338649\n354100 403853 72492 165335\n123884 151509\n426930 53348",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "57709 289088\n178338 471157 382767 390444\n137588 225236\n127113 363325",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000000 1000000\n1000000 1000000 1000000 1000000\n1000000 1000000\n1000000 1000000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000000 1000000\n1000000 1000000 1000000 1000000\n1000000 1000000\n1000000 1000000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999999 2\n2 1 1000000 1\n1000000 1000000\n1000000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n2 1 1 1\n1 1\n999999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

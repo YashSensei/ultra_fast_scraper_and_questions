@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Eliminate The Enemies",
+  "tags": [],
+  "text": "In a modification of the popular game 'Pacman', the player has to move in a two-dimensional grid. Several cells of the grid are blocked. The player can start from any cell that is not blocked and can move in any of the directions, i.e. north, west, south or east, provided that the cells are not blocked.As soon as the player passes a cell, an enemy is generated in that cell, making it impossible for the player to pass through that cell again. Thus, the player can pass through any given cell only once. The player has to traverse all the unblocked cells in the grid in order to win .The player can begin at any free cell. Note that the same path with different starting points and even with the same\r\nstarting point but with different paths of traversal is treated as different routes. The problem requires you to print the total number of all such possible routes.InputEach test case starts with a line containing two integers, m and n. Each of the next m lines contain a string of n characters describing the configuration of the grid. '*' denotes a blocked cell and '.' denotes unblocked cells. The input ends with a case having m = 0 and n = 0 and this case need not be processed.OutputFor each test case, print one line containing the total number of possible routes for the corresponding case. As this number can be quite large, you should print ans%1000000007 where ans is the required result.ExampleInput:3 3\r\n...\r\n.*.\r\n...\r\n3 7\r\n...*...\r\n.*.*.*.\r\n.......\r\n3 3\r\n***\r\n*.*\r\n***\r\n0 0Output:16\r\n8\r\n1Constraints and Limitsm ≤ 100, n ≤ 7, number of test cases ≤ 50",
+  "sample_input": "Input:3 3\r\n...\r\n.*.\r\n...\r\n3 7\r\n...*...\r\n.*.*.*.\r\n.......\r\n3 3\r\n***\r\n*.*\r\n***\r\n0 0Output:16\r\n8\r\n1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ENEMY",
+  "scraped_at": "2025-08-17 00:33:12",
+  "test_cases": [
+    {
+      "input": "3 3\r\n...\r\n.*.\r\n...\r\n3 7\r\n...*...\r\n.*.*.*.\r\n.......\r\n3 3\r\n***\r\n*.*\r\n***\r\n0 0",
+      "expected_output": "16\r\n8\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 3\nug\nxu\nhg\n3 6\ncmruavoil\nlx\nje\n4 1\na\nf\nuq\n5 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 1\ngsuuve\nxmqzjz\njkehy\n1 3\nsxxpauolxqzjw\ngzizwaemeadnzw\necpsqhqmr\n1 6\nbiky\nt\niotx\n4 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 7\nscd\ngt\ngkppmn\n3 6\nssya\nllnnjvpmelwj\nzbdedmbsfkq\n3 7\nodnwha\niq\ndbge\n1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 1\nzt\nkbxgfu\nfbb\n1 1\nl\ndgtmepfiahlv\nwoiytlhjhmz\n2 6\nndcnki\nqigzs\nksx\n7 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 1\ndcwgyf\nuv\nti\n7 2\nureufpz\no\nucvchf\n2 6\nhmd\nadyo\neur\n6 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 4\nzrewav\nnol\nkseim\n5 1\nqkboifh\naybxkaycb\nvkfiwaojwot\n3 4\nx\nudj\ndd\n1 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 7\nphiark\nvz\nfmtj\n7 3\nqqmnurphilgdzh\ntdsgjmjlx\nihhcwzy\n5 7\nbejtaq\nffzh\nbbtezk\n2 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 5\nwx\nvektf\naew\n6 6\nmkcqqplmxnqbc\ngcwqdq\nawhugfyhkfgz\n4 1\nzpub\ncxf\no\n7 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1\nbsfxu\ntchnqb\ntjebaw\n3 1\nlciaj\naxjwqjf\nfvrjssie\n3 2\naije\nzptaye\nrnhn\n3 1",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 3\nmq\ndvv\nwoqwl\n3 3\nmnfhpfz\nfihxcwsslt\nfoqcukyhskv\n2 3\nxjihmq\nxzhxa\nki\n1 3",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 3\npupzw\nud\nchz\n3 3\nbxsboew\ntgswwayxhcprs\nrzkqolp\n3 3\nscd\ndhrtut\nskcn\n3 1",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 3\nk\nplk\nvdjun\n2 2\ndksmbtigtzj\nxulniyjkexht\nfutjdzcyoar\n2 2\nlhcnu\ngbkff\nzratb\n3 3",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 2\nsj\nkcmmj\nqnzflg\n1 1\nla\nlon\ncxk\n1 2\nnmm\ndxwzzw\nsgjait\n3 1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 3\njap\nt\nrpx\n3 2\nnprruspv\nz\nkjjy\n3 3\ndt\nn\nuqtc\n1 3",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 3\nm\nb\nxal\n3 3\nyrxd\no\nhorxmhx\n3 1\nnsrslb\nbxdqv\nkrph\n1 2",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 7\nxfxecx\nxzkyh\nioeww\n7 7\nex\nsajfoxitahm\nwupnnepvi\n7 7\nnin\nn\nu\n7 7",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "7 7\notm\nsh\nqm\n7 7\nxtbzxatc\nedpohvpqatxp\ngin\n7 7\nznyvw\nq\nrcpg\n7 7",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\nc\nxzs\ndtht\n7 1\nfwbno\nsghdgbxb\nvgs\n1 6\nqqdgsz\nhw\ndv\n7 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2\nl\nma\nbqa\n2 7\nbhr\nhyvv\nsrfwlvnfoli\n6 2\nsdnr\nyvm\nkdvur\n6 6",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

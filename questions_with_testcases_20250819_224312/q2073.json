@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Isabella Message",
+  "tags": [],
+  "text": "Isabella and Steve are very good friends, and they often write letters to each other. They exchange funny experiences, talk about people around, share their feelings and write about almost everything through the letters. When the letters are delivered, they are quite afraid that some other people (maybe their parents) would peek. So they encrypted the letter, and only they know how to decrypt it. This guarantees their privacy.The encrypted message is anN×Nmatrix, and each grid contains a character.Steve uses a special mask to work as a key. The mask isN×N(whereNis an even number) matrix with (N×N)/4 holes of size1×1on it.The decrypt process consist of the following steps:Put the mask on the encrypted message matrix.Write down the characters you can see through the holes, from top to down, then from left to right.Rotate the mask by 90 degrees clockwise.Go to step 2, unless you have wrote down all theN×Ncharacters in the message matrix.Erase all the redundant white spaces in the message.For example, you got a message shown in figure 1, and you have a mask looks like figure 2. The decryption process is shown in figure 3, and finally you may get a message\"good morning\".You can assume that the mask is always carefully chosen that each character in the encrypted message will appear exactly once during decryption.However, in the first step of decryption, there are several ways to put the mask on the message matrix, because the mask can be rotated (but not flipped). So you may get different results such as\"od morning go\"(as showed in figure 4), and you may also get other messages like\"orning good m\",\"ng good morni\".Steve didn't know which direction of the mask should be chosen at the beginning, but after he tried all possibilities, he found that the message\"good morning\"is the only one he wanted because he couldn't recognize some words in the other messages. So he will always consider the message he can understand the correct one. Whether he can understand a message depends whether he knows all the words in the message. If there are more than one ways to decrypt the message into an understandable one, he will choose the lexicographically smallest one. The way to compare two messages is to compare the words of two messages one by one, and the first pair of different words in the two messages will determine the lexicographic order of them.Isabella sends letters to Steve almost every day. As decrypting Isabella's message takes a lot of time, and Steve can wait no longer to know the content of the message, he asked you for help. Now you are given the message he received, the mask, and the list of words he already knew, can you write a program to help him decrypt it?InputThe first line contains an integerT(1 ≤T≤ 100), indicating the number of test cases.Each test case contains several lines. The first line contains an even integerN(2 ≤N≤ 50), indicating the size of the matrix.The followingNlines each contains exactlyNcharacters, representing the message matrix. The message only contains lowercase letters and periods ('.'), where periods represent the white spaces. You can assume the matrix contains at least one letter.The followingNlines each containsNcharacters, representing the mask matrix. The asterisk ('*') represents a hole, and period ('.') otherwise.\r\nThe next line contains an integerM(1 ≤M≤ 100), the number of words he knew.Then the followingMlines each contains a string represents a word. The words only contain lowercase letters, and its length will not exceed 20.OutputFor each test case in the input, print one line:\"Case #X: Y\", whereXis the test case number (starting with 1) andYis Isabella's message.If Steve cannot understand the message, just print theYas\"FAIL TO DECRYPT\".ExampleInput:3\r\n4\r\no.do\r\n.ng.\r\ngrmn\r\no.i.\r\n.*..\r\n*.*.\r\n....\r\n*...\r\n2\r\ngood\r\nmorning\r\n4\r\n..lf\r\neoyv\r\noeou\r\nvrer\r\n..*.\r\n.*..\r\n....\r\n*.*.\r\n5\r\ni\r\nyou\r\nthe\r\nlove\r\nforever\r\n4\r\n.sle\r\ns.c.\r\ne.fs\r\n..uu\r\n*...\r\n.*..\r\n...*\r\n..*.\r\n1\r\nsuccessfulOutput:Case #1: good morning\r\nCase #2: love you forever\r\nCase #3: FAIL TO DECRYPT",
+  "sample_input": "Input:3\r\n4\r\no.do\r\n.ng.\r\ngrmn\r\no.i.\r\n.*..\r\n*.*.\r\n....\r\n*...\r\n2\r\ngood\r\nmorning\r\n4\r\n..lf\r\neoyv\r\noeou\r\nvrer\r\n..*.\r\n.*..\r\n....\r\n*.*.\r\n5\r\ni\r\nyou\r\nthe\r\nlove\r\nforever\r\n4\r\n.sle\r\ns.c.\r\ne.fs\r\n..uu\r\n*...\r\n.*..\r\n...*\r\n..*.\r\n1\r\nsuccessfulOutput:Case #1: good morning\r\nCase #2: love you forever\r\nCase #3: FAIL TO DECRYPT",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ISAB",
+  "scraped_at": "2025-08-17 00:33:47",
+  "test_cases": [
+    {
+      "input": "3\r\n4\r\no.do\r\n.ng.\r\ngrmn\r\no.i.\r\n.*..\r\n*.*.\r\n....\r\n*...\r\n2\r\ngood\r\nmorning\r\n4\r\n..lf\r\neoyv\r\noeou\r\nvrer\r\n..*.\r\n.*..\r\n....\r\n*.*.\r\n5\r\ni\r\nyou\r\nthe\r\nlove\r\nforever\r\n4\r\n.sle\r\ns.c.\r\ne.fs\r\n..uu\r\n*...\r\n.*..\r\n...*\r\n..*.\r\n1\r\nsuccessful",
+      "expected_output": "Case #1: good morning\r\nCase #2: love you forever\r\nCase #3: FAIL TO DECRYPT",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n8\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n1\n2\n4\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n4\n8\n1\n1\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "8\n28040222\n63146980\n87628833\n77538136\n59863970\n30712362\n73623002\n64174046",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n69182690\n78121398\n13246742\n68078415\n37458375\n6801024\n31501622\n75061314\n9201027",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n90285102\n39171199\n48153785\n46629012\n38979921\n78250814\n8831913",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n81464418\n94184332\n6149246\n24799368\n84002136\n14751938\n86503960\n60166264",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n28852600\n73982089\n36333781\n56900268\n65462692\n14158728\n3417067\n57516306\n84942383\n2013212\n74061241\n85103317\n10455095\n84723828\n83221665\n59433598\n17815250\n74987216\n32831496",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "33\n52041\n63449\n76149\n62250\n85854\n26982\n64552\n60413\n81826\n71507\n34819\n99145\n38139\n33418\n44410\n96363\n71639\n15061\n86864\n35711\n53006\n75550\n86974\n97179\n40457\n65303\n57626\n16635\n42503\n44365\n39927\n18095\n14666",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n67284\n57633\n50760\n34006\n7847\n48256\n13831\n3667\n42917\n75054\n81935\n8699\n74664\n941\n12371\n26586\n14203\n79676\n4921\n85433\n66702\n17144\n50204\n83838\n54250\n79768\n91810\n72456\n76260\n91986\n36355\n10833\n5903\n93139\n70838\n6589",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "46\n85677\n82515\n64141\n55336\n82506\n14163\n70474\n58566\n90533\n92409\n81108\n95128\n52195\n34580\n43234\n11094\n9589\n37866\n44295\n52973\n57534\n52037\n887\n13070\n66020\n14791\n70203\n53119\n67559\n48780\n72669\n93019\n81123\n93170\n29457\n15594\n16255\n33107\n93962\n51256\n17349\n60483\n47065\n18981\n26034\n83336",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n47128\n17862\n89003\n41359\n35596\n66113\n6660\n76476\n14703\n48322\n36127\n21879\n25498\n787\n84585\n2508\n85794\n5960\n14820\n88597\n57613\n96649\n45519\n4697\n97320\n27391\n18951\n68078\n8482",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "43\n12544\n15970\n35097\n67554\n44334\n11381\n52673\n1823\n24296\n43515\n12916\n84565\n76452\n67300\n58146\n87328\n42013\n31613\n38992\n92130\n30289\n33166\n68301\n60767\n20643\n89864\n88847\n67743\n81341\n92776\n92644\n29257\n78652\n50788\n23478\n20967\n44275\n87424\n72617\n50032\n60284\n54497\n5930",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n32191\n37486\n74643\n13947\n73519\n36563\n54868\n7229\n82668\n66141\n77419\n51370\n45204\n21044\n12116\n22835\n94562\n27389\n41236\n92165\n1229\n76851\n91591\n26052\n78389\n98881\n28171\n62993\n387\n80339",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n53307\n50057\n16186\n4285\n50972\n42490\n17651\n38545\n46890\n39512\n93784\n53176\n62158\n63305\n29212\n61562\n62182\n29999\n73875\n93488\n31701\n68023\n36879\n15313\n4598\n20015\n87986\n624\n65043\n38231\n14339",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n4998205\n1665621\n96622378\n13763102\n59248885\n5959607\n21148417\n45385766\n74010297\n89199693\n8343563\n75550990\n10015092\n15046615\n6835293\n33988630\n99007015\n69863726\n30948782\n23513850\n63244\n63137559\n18172966\n6838212\n40909122\n24846010\n6773052\n28612047\n8069480\n82518887\n97824011\n62088236\n10391574\n20945874\n28170585\n95191377\n24367858\n17176461\n2092008\n21206417\n12478702\n81306638\n64633042\n8999576\n95085462\n28319648\n57382972\n13387277\n86834152\n59502499",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n58060113\n61664000\n93280515\n15837505\n59187774\n21036263\n71201043\n21589140\n49064998\n9191292\n87071903\n42937617\n62920029\n76922594\n73475771\n31010551\n93609452\n23845679\n35140955\n31467577\n69445445\n93745716\n76502557\n5256771\n82579010\n1151206\n98378740\n7611149\n54342356\n30925444\n77134332\n5824851\n22325981\n82098787\n16736380\n31579578\n50800486\n6664333\n15693500\n23772407\n92599785\n18677438\n84234084\n16552205\n72463241\n92629861\n96350272\n29413602\n7059492\n22924863",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n54159156\n1\n100000000\n41134635\n16493833\n100000000\n27882000\n1\n1\n1\n100000000\n1\n100000000\n100000000\n70363997\n1\n1\n100000000\n1\n1\n1\n94271364\n100000000\n1\n1\n49858906\n1\n29763002\n1\n100000000\n1\n100000000\n82182942\n100000000\n73307377\n78554878\n100000000\n1\n25784091\n829302\n100000000\n1\n1\n85931933\n100000000\n100000000\n100000000\n1\n24738594\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "50\n1\n38585381\n1\n36872832\n100000000\n1\n49249822\n1\n24578225\n100000000\n1\n66566392\n100000000\n100000000\n1\n100000000\n99608914\n1\n100000000\n1\n1\n100000000\n1\n52715865\n25507565\n1\n100000000\n100000000\n8896209\n87379773\n1\n77291867\n36460183\n1\n4852032\n47331418\n88602622\n89853023\n100000000\n1\n1\n48056342\n100000000\n25739617\n100000000\n1\n100000000\n27932404\n46414372\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 50)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

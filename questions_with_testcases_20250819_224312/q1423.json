@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Police Query",
+  "tags": [],
+  "text": "To  help  capture  criminals  on  the  run,  the  police are  introducing a  new  computer  system.  The  area covered  by  the  police  containsNcities  andEbidirectional  roads  connecting  them.  The  cities  are labelled 1 toN. The police often want to catch criminals trying to get from one city to another. Inspectors, looking at a map,  try  to determine where to  set up barricades  and  roadblocks.The new  computer  system  should answer the following two types of queries:Consider  two  citiesAandB,  and  a  road  connecting  citiesG1andG2. Can  the  criminals get from cityAto cityBif that one road is blocked and the criminals can't use it?Consider three citiesA,BandC. Can the criminals get from cityAto cityBif the entire cityCis cut off and the criminals can't enter that city?Write a program that implements the described system.InputThe  first  line  contains  two  integersNandE(2  ≤  N  ≤  105, 1  ≤  E  ≤  5×105),  the  number  of  cities  and  roads. Each  of  the  followingElines  contains  two distinct  integers between  1  andN–  the  labels  of  two  cities connected  by  a  road. There  will  be  at  most  one  road  between  any  pair  of  cities.The  following  line  contains  the  integerQ(1 ≤ Q ≤ 105),  the  number  of  queries  the  system  is  being tested  on. Each  of  the  followingQlines  contains  either  four  or  five integers.  The  first  of  these  integers  is  the  type  of  the query  –1or2.If  the  query  is  oftype  1,  then  the  same  line  contains  four more  integersA,B,G1andG2as  described earlier.AandBwill  be  different.G1andG2will  represent  an existing  road.If  the  query  is  oftype  2,  then  the  same  line contains  three more  integersA,BandC.A,BandCwill  be distinct  integers.The  test  data  will  be  such  that  it  is  initially  possible  to  get from  each  city  to  every  other  city.OutputOutput the answers to allQqueries, one per line. The answer to a query can beda(yes) orne(no).ExampleInput:13 151 22 33 52 44 62 61 41 77 87 97 108 118 129 1212 1351 5 13 1 21 6 2 1 41 13 6 7 82 13 6 72 13 6 8Output:dadadaneda",
+  "sample_input": "Input:13 151 22 33 52 44 62 61 41 77 87 97 108 118 129 1212 1351 5 13 1 21 6 2 1 41 13 6 7 82 13 6 72 13 6 8Output:dadadaneda",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/POLQUERY",
+  "scraped_at": "2025-08-17 00:33:32",
+  "test_cases": [
+    {
+      "input": "13 151 22 33 52 44 62 61 41 77 87 97 108 118 129 1212 1351 5 13 1 21 6 2 1 41 13 6 7 82 13 6 72 13 6 8",
+      "expected_output": "dadadaneda",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 7 5 8 7 3 7 5 8 6 10 2 1 3 7 10 3 10 10 7 10 2 6 8 9 1 3 4 6 7 10 7 10 9 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 8 8 8 5 1 7 7 5 5 8 5 5 2 9 7 9 7 1 3 7 8 7 4 3 10 8 1 5 1 4 6 4 6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 6 3 2 9 2 10 3 4 10 7 4 4 5 6 2 2 3 5 6 8 9 2 8 1 6 3 5 10 4 7 10 2 9 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "62 62 39 85 91 72 84 73 85 76 99 2 68 94 97 44 57 69 63 49 8 13 30 51 60 4 43 62 18 50 92 2 60 80 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 1 7 94 2 43 4 48 3 83 17 65 38 28 95 13 34 11 33 1 87 100 45 35 100 71 99 57 15 42 40 94 68 21 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "94 4 32 40 61 64 60 22 28 83 78 44 49 27 82 57 70 44 6 47 52 50 38 19 69 27 77 87 19 72 7 14 23 36 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 22 46 19 79 49 56 64 22 98 86 87 38 8 27 41 46 50 57 3 98 63 46 73 64 86 1 80 98 56 13 67 71 99 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 26 42 34 96 39 60 88 12 81 37 42 41 35 48 47 5 30 96 22 60 14 3 21 91 28 17 48 39 72 23 22 37 42 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 32 24 26 18 16 13 32 30 17 44 33 50 50 38 21 43 25 36 26 13 30 52 48 16 32 6 25 46 9 18 40 30 24 50",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "29 8 42 41 22 33 29 11 42 42 47 49 43 7 48 42 9 27 18 13 51 8 41 6 11 35 46 5 31 23 34 18 6 11 15",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "49 30 8 8 50 26 29 45 17 38 41 26 33 27 43 38 27 8 9 45 19 28 22 25 45 29 21 17 29 7 24 37 28 21 7",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "31 29 7 33 37 40 15 16 9 16 17 24 30 44 12 5 29 46 33 44 38 8 49 46 18 12 40 27 8 26 29 40 15 52 14",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 13 29 51 9 46 24 35 36 24 50 25 9 7 5 24 12 42 16 24 35 45 52 51 27 32 10 26 40 42 13 27 49 30 52",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46 44 17 7 11 46 47 10 38 51 34 18 19 20 13 17 22 20 42 12 29 7 40 10 30 11 18 7 16 30 38 28 12 48 6",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 18 50 52 42 35 14 47 12 9 49 39 11 45 35 5 14 50 28 12 40 28 16 45 51 52 52 5 41 26 44 25 41 7 41",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "104 105 1 1 105 1 104 105 104 2 1 2 2 2 2 104 105 1 2 104 2 105 105 2 105 105 104 104 1 104 1 104 105 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "105 1 1 2 2 1 105 104 1 104 104 2 105 2 105 2 1 104 1 2 104 104 2 1 1 1 104 104 104 2 105 105 2 105 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

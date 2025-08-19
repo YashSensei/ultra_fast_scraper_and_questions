@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Roger and tree III",
+  "tags": [],
+  "text": "Roger was able to solve his problem based on tree last time, only because of your help. He has been doing good and is learning and practicing various problems on trees (as he likes solving problems on connected undirected acyclic graphs). This time he is stuck with a harder problem and has spent almost a week trying to solve this problem, with no efficient solution till now. But, he has you as his friend and he knows that only you can help him with your excellent programming skills.You will be given an input in the form of a growing tree. i.e.; Initially you have a tree consisting only of vertex1. At each step, the tree will grow. So next, vertexuwill be connected to vertex1, then vertexvwill be connected to either vertex1or vertexu, and so on till you get a tree consisting of 'N' vertex. However, at any instant, while adding the vertexes you will be given a vertex 'x' (which is already present in the tree grown so far), and you will be asked to print the eccentricity of the given vertexx.LetGbe a graph and 'x' be a vertex of G.The eccentricity of the vertex 'x' is the maximum distance from 'x' to any vertex present in G.That is,e (x) = max {d (x, y) : y is in G}.Of course vertexy, should also be present in the tree, grown so far.Along with the eccentricity, you should also print the vertex 'y'.Please help Roger.InputThe first line contains 'N' and 'M', where N = Number of nodes in the tree and M = Number of Queries.Next M lines will either have an input of the type \"U x y\" or \"Q x\".For the input of type\"U x y\",  you have to connect the vertex 'y' to the vertex 'x', where vertex 'x' is already present in the tree and vertex 'y' is the new vertex. Obviously, there will be(N - 1)inputs of the type \"U x y\".OutputFor each input of the type \"Q x\", you have to print the eccentricity of vertex 'x', followed by the vertex 'y'.If there are multiple such 'y'. Print thesmallest 'y'.ExampleInput:5 8\r\nQ 1\r\nU 1 4\r\nQ 1\r\nU 4 2\r\nU 1 5\r\nU 5 3\r\nQ 1\r\nQ 2Output:0 1\r\n1 4\r\n2 2\r\n4 3ExplanationInitially, the tree has vertex 1.Q 1   → Eccentricity of vertex 1 is 0.U 1 4 → Connect vertex 4 to vertex 1.Q 1   → Eccentricity of vertex 1 is 1.U 4 2 → Connect vertex 2 to vertex 4.U 1 5 → Connect vertex 5 to vertex 1.U 5 3 → Connect vertex 3 to vertex 5.Q 1   → Eccentricity of vertex 1 is 2. Vertex 2 and Vertex 3 both are at a distance of 2 from vertex 1. Print the smaller one.Q 2   → Eccentricity of vertex 2 is 4.Constraints1 ≤ N ≤ 105N - 1 ≤ M ≤ 2×N1 ≤ x, y ≤ NLike trees? Try the problems:RTREEandRTREE2too.",
+  "sample_input": "Input:5 8\r\nQ 1\r\nU 1 4\r\nQ 1\r\nU 4 2\r\nU 1 5\r\nU 5 3\r\nQ 1\r\nQ 2Output:0 1\r\n1 4\r\n2 2\r\n4 3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RTREE3",
+  "scraped_at": "2025-08-17 00:34:37",
+  "test_cases": [
+    {
+      "input": "5 8\r\nQ 1\r\nU 1 4\r\nQ 1\r\nU 4 2\r\nU 1 5\r\nU 5 3\r\nQ 1\r\nQ 2",
+      "expected_output": "0 1\r\n1 4\r\n2 2\r\n4 3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 8\n2\nh 4\n1 1\nizs 1 2\n7\nhhf 10\n3 5\ndcavq 4 10\n8 8\npvwqv 10 8\n7 6\nm 6 7\n7\ntm 5\n7\no 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 7\n9\ns 5\n4 5\njsi 6 4\n2\nys 10\n7 4\ns 4 4\n4 1\npp 4 6\n8 4\nijpxn 8 4\n1\nycm 1\n4\nq 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 10\n4\nwgldb 7\n4 7\nuqt 2 8\n2\nk 7\n8 3\nskb 6 1\n6 5\nkhcw 9 9\n8 4\ng 10 2\n4\nymxsf 6\n6\nzswxe 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "84 23\n93\nrh 21\n58 6\niuym 73 38\n45\ni 75\n95 14\nhvziw 57 53\n71 85\nxlns 21 56\n1 40\npu 35 50\n76\ncb 47\n36\npduv 96",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 40\n76\nr 15\n1 37\ntri 59 83\n85\ngsc 34\n19 98\nm 100 55\n7 92\netqym 41 63\n52 13\nnyyq 47 58\n14\nkf 20\n73\ne 37",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 25\n62\nlr 18\n52 5\nj 48 99\n93\nr 19\n39 35\nnvvi 18 72\n96 61\nfasz 47 43\n60 95\np 73 81\n90\nnwaqz 11\n22\ne 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 71\n77\nk 70\n62 89\nrymis 22 17\n67\nb 12\n16 26\ns 88 44\n43 9\nuiga 28 84\n22 8\nf 7 98\n29\nsfzy 28\n34\nnbwm 39",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 56\n71\nflkx 93\n12 63\ndkyjn 7 70\n20\nptdt 91\n38 50\ng 49 9\n20 11\nqrmr 60 64\n78 27\np 71 61\n9\nlujf 5\n40\ndp 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 22\n9\nmkmbf 10\n6 47\ndrnh 51 50\n38\nwppdl 43\n48 22\noprih 24 48\n19 49\nzbov 10 36\n47 52\nlw 43 25\n25\npe 44\n28\niuhen 26",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 17\n19\nl 7\n43 47\nktia 48 31\n39\nvhjb 12\n23 45\nl 24 35\n39 18\nqn 37 32\n22 30\ntqm 51 16\n52\nau 5\n51\nfz 15",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "8 26\n31\nelrvf 11\n25 27\njs 20 12\n11\nudg 19\n34 20\nutd 29 46\n7 49\nfomvn 11 52\n29 25\neg 41 21\n13\nijnks 24\n34\nb 8",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "16 9\n12\nlamlz 44\n31 41\ns 22 29\n33\nypq 15\n37 51\nsi 28 7\n25 28\njzgud 15 41\n21 37\no 15 47\n15\njge 47\n49\nsw 41",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 47\n36\nsqsx 27\n37 17\nrhijo 48 11\n22\nl 43\n13 46\ndrr 28 22\n40 49\nonlnq 29 38\n14 9\ndsrhv 12 33\n30\nlzr 33\n33\nvfvo 33",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "43 50\n35\nqrikt 30\n22 17\nqdfe 45 49\n29\nj 43\n8 16\nlfhx 48 10\n43 10\na 43 6\n30 28\nbcrta 20 27\n51\nkzp 9\n26\nbxwzp 8",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "39 46\n29\nbabnm 46\n32 10\nwuz 39 21\n21\nbtzcl 29\n21 17\nbyjrj 37 52\n31 42\nz 42 41\n8 46\nmcafl 50 43\n10\namb 34\n20\ncoee 17",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105\n105\nmte 105\n105 105\nfy 105 105\n105\ncgvt 105\n105 105\nqqahu 105 105\n105 105\ngehw 105 105\n105 105\njmlpa 105 105\n105\nqzl 105\n105\nvvku 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105\n105\namx 105\n105 105\nyxosc 105 105\n105\nmr 105\n105 105\nek 105 105\n105 105\nyzzjn 105 105\n105 105\nild 105 105\n105\ngqhne 105\n105\nwcx 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "104 105\n105\ni 2\n2 105\nvden 2 1\n105\nhpeyd 1\n2 104\nx 105 1\n1 1\ndyu 2 104\n1 104\neeu 105 1\n104\np 105\n1\ni 104",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "104 1\n1\nnks 105\n1 105\nw 2 104\n104\nkpjg 104\n104 2\ngmbyi 105 104\n2 2\nultwn 1 105\n1 104\nrox 105 2\n1\nfsd 104\n105\najs 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

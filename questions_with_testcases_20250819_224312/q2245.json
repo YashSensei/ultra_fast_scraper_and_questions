@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Pheversos Game",
+  "tags": [],
+  "text": "Pheverso's GameMatheus Pheverso is a well-known rogue, as everyone knows he used to be very mean with the couple in love, Danilo Ghyei and Raphael Boboleta. But now he's trying to change into being a better person. In order to do that, he will call some friends over to play his newest game and throw a game party next year.The game “Pheverso's Game” is played in rounds by two contestants in which each one must pick one cell from a M×N board, add its number to the group's total score and then throw it away. Also, in order to avoid cheating, each cell is previously chosen and no one is allowed to choose a cell if it isn't at the beginning or at the end of some row. You also have to notice that when one cell is dropped, the row from where the cell has been taken gets a new configuration, resulting in a new beginning or a new end.Pheverso was playing that game with some friends and realized it's way too easy, so he decided to choose some rows and block their beginnings. When a row is blocked, a group is only able to choose a cell from the end of this row.The goal of the game for each contestant is to hoard as much as they can, so the winner of the game is the one who holds the maximum amount of points in the end of the game. The game finishes when there are no remaining cells.Assuming that they both plays optimally and given the N, M dimensions, the initial state of the board, the rows that are blocked, which player wins the game and what's the score of the winner.InputThe input contains several test cases. A test case begins with a line containing integers N (1 ≤ N ≤ 1000), M (1 ≤ M ≤ 1000) and K (0 ≤ K < N), where N, M stands for the board dimensions and K for the total number of rows blocked. On the second line there are K integers, the rows that are blocked. Then follow N lines, each containing M integers representing the initial state of the board.Every number in the board is a 32 bit signed integer. The last test case is followed by a line containing three zeros.OutputFor each test case, print a line containing “first” (without the quotes) if the first player will win the game or “second” (without the quotes) if the second player will win the game, followed by an integer representing the amount achieved by the winner when both of them plays optimally. The game always has a winner.ExampleInput2 2 2\r\n1 2\r\n500 10\r\n3 10\r\n3 3 2\r\n1 3\r\n0 1 2\r\n3 7 4\r\n0 0 9\r\n0 0 0Outputsecond 503\r\nfirst 17Explanation:First Case – At first the two rows are blocked, so both players aren't able to choose either cell A[1][1] = 500 or A[2][1] = 3. Thus, the first player isn't able to grab the cell A[1][2] either, cause he would unlock to his opponent the greatest piece in the board, A[1][1] = 500. So he choose the cell A[2][2] = 10. Afterward his opponent grabs the cell A[2][1] = 3, force the first player to choose A[1][2] and set free the greatest piece in the board, therefore the second player is the winner achieving 503 total points (A[1][1] + A[2][1]) against 20 from the first player.Second Case – The game is as follows:First player: 9Second player: 2First player: 1Second player: 3First player: 7Second player: 4First player: 17 (Winner)Second player: 9Remember, both contestants plays optimally.",
+  "sample_input": "Input2 2 2\r\n1 2\r\n500 10\r\n3 10\r\n3 3 2\r\n1 3\r\n0 1 2\r\n3 7 4\r\n0 0 9\r\n0 0 0Outputsecond 503\r\nfirst 17",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PGAME",
+  "scraped_at": "2025-08-17 00:33:57",
+  "test_cases": [
+    {
+      "input": "Input2 2 2\r\n1 2\r\n500 10\r\n3 10\r\n3 3 2\r\n1 3\r\n0 1 2\r\n3 7 4\r\n0 0 9\r\n0 0 0Outputsecond 503\r\nfirst 17",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 9 4\nytp 10 10\n10 7\n4 7\n4 10\n9 10 6\n6 9\n7 9 3\n10 5 5\n5 3 10\n6 7 10 3\n6 8 vjne 8\n2\nkaj 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10 1\nomwr 8 8\n5 8\n3 8\n9 1\n6 6 8\n4 8\n1 7 4\n2 2 1\n7 7 7\n10 5 5 6\n4 1 xgqeljldwlevx 2\n10\nmctph 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 9 9\nsllx 9 3\n8 4\n9 5\n9 3\n1 10 6\n2 10\n10 7 3\n3 1 5\n4 6 6\n4 1 5 2\n10 8 lynntvukq 2\n2\nobl 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "89 56 83\nvmdav 44 12\n60 44\n62 16\n54 16\n89 33 7\n62 20\n4 70 25\n36 98 34\n46 14 26\n25 35 82 62\n7 7 rqopd 79\n39\nv 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "61 15 58\nrkr 83 42\n20 70\n6 28\n23 54\n71 23 91\n54 17\n97 67 64\n19 93 26\n25 79 65\n41 21 44 31\n14 74 mfxwgkm 64\n90\njti 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 21 7\ntglmx 22 84\n50 34\n57 24\n33 87\n95 30 76\n22 19\n48 10 66\n81 40 69\n51 3 30\n60 82 63 29\n48 42 zewysbpgyx 32\n65\ni 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 66 36\nquchu 16 3\n48 48\n23 52\n45 30\n42 47 99\n12 85\n77 18 46\n26 66 62\n21 62 73\n59 75 64 72\n15 2 dpeisqipbtjb 20\n11\ndb 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 35 57\npq 97 85\n46 42\n77 57\n56 3\n75 99 33\n24 5\n16 52 93\n24 75 81\n10 67 19\n78 12 4 8\n8 100 ahbbon 52\n46\ncknhk 52",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "340 250 334\nckof 130 341\n453 489\n106 497\n452 257\n128 219 325\n197 445\n389 95 87\n94 103 69\n427 475 204\n444 222 268 225\n242 392 luaz 176\n444\ncc 67",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "339 244 375\nzecrdj 67 354\n344 469\n308 354\n374 152\n104 221 357\n292 358\n227 494 213\n341 201 224\n483 126 416\n272 198 473 448\n296 393 ar 417\n238\nmfq 425",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "152 487 61\nuc 475 332\n75 217\n128 212\n199 366\n121 186 361\n288 372\n404 70 350\n492 409 486\n467 232 464\n377 199 484 292\n312 359 lnm 367\n443\nvsynl 361",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "293 107 391\ntt 318 60\n112 493\n293 476\n332 240\n240 108 108\n134 242\n200 497 383\n395 241 302\n301 242 421\n243 126 266 370\n246 185 bejggbjf 236\n78\nv 268",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "330 142 108\noiohh 149 493\n344 344\n197 238\n349 164\n410 300 255\n308 82\n67 248 433\n440 496 182\n404 492 296\n184 393 99 158\n70 87 fjfvc 209\n249\nndoe 220",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "253 73 154\ndiiwsi 119 122\n408 143\n196 299\n207 367\n171 56 148\n91 213\n309 161 170\n220 328 112\n481 283 237\n212 367 380 276\n64 143 ycwi 138\n306\nags 303",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "358 202 361\nxtgkzf 113 290\n369 235\n414 98\n401 358\n196 393 64\n480 489\n164 349 420\n125 211 170\n398 335 384\n241 164 258 335\n68 336 e 392\n51\nex 367",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\ng 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 olb 1000\n1000\nkd 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\npyg 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 uxhfgpgcp 1000\n1000\ntsief 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1 2\nwq 2 1\n1 1000\n1000 1000\n2 1000\n999 1 1000\n2 999\n2 1 999\n1 1 1\n1 1000 1\n1 2 1000 999\n1000 1000 t 1\n1\nqdvv 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000 1\nxnc 999 2\n2 999\n1000 1\n1000 999\n999 1000 1\n1000 1000\n1 999 1000\n1 1000 999\n1 999 1\n1000 1 1000 1000\n999 2 txwmtjwhx 1000\n1000\nxo 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "A Day at the Races",
+  "tags": [],
+  "text": "Formula One is the highest class of car racing sports. A typical Formula One season consists of a series of races called \"Grands Prix\" which constructors like Ferrari, Renault, etc. and others participate with one or more cars driven by the best drivers in the world. During the season, teams compete in two parallel championships: the drivers championship and the teams championship.In the drivers championship, drivers compete to achieve the maximum total number of points by the end of the season, the rules of the competition states that the top eight drivers at each Grand Prix receive 10,8,6,5,4,3,2,1 points respectively. In case of points tie, the driver with the highest number of first places leads. If still tied, then the highest second places, and so on till the highest 8th places. If still tied, then drivers are sorted lexicographically by their last and then by their first names.After each race, the points received by each driver are added to his team's pocket, and at the end of the season the team with the highest number of points wins the teams championship. To add excitement to the season, team sponsors are allowed to buy drivers from other teams even within the same season. In case of points tie between teams, teams are sorted lexicographically by their names. In this problem, you are given data of a formula one season and you're asked to process these data according to the rules above to determine both the drivers and teams standings.InputYour program will be tested on one or more data-sets, each representing a Formula One season. All input lines are 255 characters or less. Studying the sample I/O you'll discover that the first line of each season has an integer N , where 0 < N < 32  and representing the number of Grands Prix in that season. For each Grand Prix, the name of the Grand Prix appears on a line by itself (maximum length is 64 characters) followed by a table of the first name, last name and team name of the top eight drivers, from 1 to 8, in that Grand Prix. Each of the first and last names is a sequence of printable ASCII characters, no longer than 12 characters, and contains no spaces. Each team name is a sequence of printable ASCII characters, no longer than 18 characters, and may contain spaces (but no leading or trailing spaces.) Each team name is followed by a single period '.' which is not part of the name. Trailing white space may follow. A line of three -'s follows the listing of each Grand Prix. The last line of the input file contains a single zero.OutputFor each data set in the input you must print \"Season k :\" where k  is the data-set number (starting from 1.) The next line must state \"Drivers Standing:\". On subsequent lines list the drivers standing for that season. For each driver, print their first and last names separated by exactly one space and left justified in a field of width 25, followed by a single space, followed by the total number of points achieved by the driver during the season. The drivers standing should be followed by a blank line.The next line must state \"Teams Standing:\" On subsequent lines list the teams standing for the that season. For each team, print the team name left justified in a field of width 25, followed by a single space, followed by the total number of points the team has scored during the season. The teams standing should be followed by a blank line.ExampleInput:2 \r\nFORMULA 1 Gran Premio Telefonica de Espana 2006\r\nPos  Driver                    Team\r\n1    Fernando Alonso           Renault.\r\n2    Michael Schumacher        Ferrari.\r\n3    Giancarlo Fisichella      Renault.\r\n4    Felipe Massa              Ferrari.\r\n5    Kimi Raikkonen            McLaren-Mercedes.\r\n6    Jenson Button             Honda.\r\n7    Rubens Barrichello        Honda.\r\n8    Nick Heidfeld             Sauber-BMW.\r\n---\r\nFORMULA 1 Grand Prix de Monaco 2006\r\nPos  Driver                    Team\r\n1    Fernando Alonso           Renault.\r\n2    Jaun-Pablo Montoya        McLaren-Mercedes.\r\n3    David Coulthard           RBR-Ferrari.\r\n4    Rubens Barrichello        Honda.\r\n5    Michael Schumacher        Ferrari.\r\n6    Giancarlo Fisichella      Renault.\r\n7    Nick Heidfeld             Sauber-BMW.\r\n8    Ralf Schumacher           Toyota.\r\n---\r\n0Output:Season 1:\r\nDrivers Standing:\r\nFernando Alonso          20\r\nMichael Schumacher       12\r\nGiancarlo Fisichella     9\r\nJaun-Pablo Montoya       8\r\nRubens Barrichello       7\r\nDavid Coulthard          6\r\nFelipe Massa             5\r\nKimi Raikkonen           4\r\nJenson Button            3\r\nNick Heidfeld            3\r\nRalf Schumacher          1\r\n\r\nTeams Standing:\r\nRenault                  29\r\nFerrari                  17\r\nMcLaren-Mercedes         12\r\nHonda                    10\r\nRBR-Ferrari              6\r\nSauber-BMW               3\r\nToyota                   1",
+  "sample_input": "Input:2 \r\nFORMULA 1 Gran Premio Telefonica de Espana 2006\r\nPos  Driver                    Team\r\n1    Fernando Alonso           Renault.\r\n2    Michael Schumacher        Ferrari.\r\n3    Giancarlo Fisichella      Renault.\r\n4    Felipe Massa              Ferrari.\r\n5    Kimi Raikkonen            McLaren-Mercedes.\r\n6    Jenson Button             Honda.\r\n7    Rubens Barrichello        Honda.\r\n8    Nick Heidfeld             Sauber-BMW.\r\n---\r\nFORMULA 1 Grand Prix de Monaco 2006\r\nPos  Driver                    Team\r\n1    Fernando Alonso           Renault.\r\n2    Jaun-Pablo Montoya        McLaren-Mercedes.\r\n3    David Coulthard           RBR-Ferrari.\r\n4    Rubens Barrichello        Honda.\r\n5    Michael Schumacher        Ferrari.\r\n6    Giancarlo Fisichella      Renault.\r\n7    Nick Heidfeld             Sauber-BMW.\r\n8    Ralf Schumacher           Toyota.\r\n---\r\n0Output:Season 1:\r\nDrivers Standing:\r\nFernando Alonso          20\r\nMichael Schumacher       12\r\nGiancarlo Fisichella     9\r\nJaun-Pablo Montoya       8\r\nRubens Barrichello       7\r\nDavid Coulthard          6\r\nFelipe Massa             5\r\nKimi Raikkonen           4\r\nJenson Button            3\r\nNick Heidfeld            3\r\nRalf Schumacher          1\r\n\r\nTeams Standing:\r\nRenault                  29\r\nFerrari                  17\r\nMcLaren-Mercedes         12\r\nHonda                    10\r\nRBR-Ferrari              6\r\nSauber-BMW               3\r\nToyota                   1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ANARC08J",
+  "scraped_at": "2025-08-17 00:33:56",
+  "test_cases": [
+    {
+      "input": "2 \r\nFORMULA 1 Gran Premio Telefonica de Espana 2006\r\nPos  Driver                    Team\r\n1    Fernando Alonso           Renault.\r\n2    Michael Schumacher        Ferrari.\r\n3    Giancarlo Fisichella      Renault.\r\n4    Felipe Massa              Ferrari.\r\n5    Kimi Raikkonen            McLaren-Mercedes.\r\n6    Jenson Button             Honda.\r\n7    Rubens Barrichello        Honda.\r\n8    Nick Heidfeld             Sauber-BMW.\r\n---\r\nFORMULA 1 Grand Prix de Monaco 2006\r\nPos  Driver                    Team\r\n1    Fernando Alonso           Renault.\r\n2    Jaun-Pablo Montoya        McLaren-Mercedes.\r\n3    David Coulthard           RBR-Ferrari.\r\n4    Rubens Barrichello        Honda.\r\n5    Michael Schumacher        Ferrari.\r\n6    Giancarlo Fisichella      Renault.\r\n7    Nick Heidfeld             Sauber-BMW.\r\n8    Ralf Schumacher           Toyota.\r\n---\r\n0",
+      "expected_output": "Season 1:\r\nDrivers Standing:\r\nFernando Alonso          20\r\nMichael Schumacher       12\r\nGiancarlo Fisichella     9\r\nJaun-Pablo Montoya       8\r\nRubens Barrichello       7\r\nDavid Coulthard          6\r\nFelipe Massa             5\r\nKimi Raikkonen           4\r\nJenson Button            3\r\nNick Heidfeld            3\r\nRalf Schumacher          1\r\n\r\nTeams Standing:\r\nRenault                  29\r\nFerrari                  17\r\nMcLaren-Mercedes         12\r\nHonda                    10\r\nRBR-Ferrari              6\r\nSauber-BMW               3\r\nToyota                   1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n7\n5\n6\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n7\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "18\n99018635\n93450638\n9633523\n26527122\n74588197\n93574358\n32448508\n65250362\n85186384\n34383747\n4335715\n1520005\n61332196\n28751064\n88270719\n8499737\n67687810\n72960087",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n76522197\n73520186\n38690596\n22407368\n53475277",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n33836548\n41662836\n45322285\n22287818\n37553960\n19094450\n97389148\n48785294\n96739473\n29805769\n9241050\n96893343\n39948138\n80066500\n89904016\n1430084\n90406155\n12439724",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n19502230\n59319331\n44047956\n41542821\n662695\n15039737\n62928526\n49204597\n12668749\n26521896\n24223533\n38033139",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n94214250\n15651051\n93274073\n23441548\n79293483\n80159142\n23882220\n36866180\n64428184\n30666453\n90044401",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "26\n41379\n14292\n4246\n76593\n8569\n85443\n52001\n42873\n35427\n32448\n57459\n6580\n38002\n58102\n59339\n78375\n1139\n10008\n56345\n70918\n38292\n45942\n69700\n65569\n78848\n53409",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n94079\n17064\n25063\n84644\n86036\n5281\n65495\n13439\n75572\n15793\n71348\n48133\n86118\n49829\n87896\n71308\n86645\n44697\n11520\n99506\n22091\n62065",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n29052\n33370\n14466\n20573\n47604\n54690\n70402\n69398\n25397\n16393\n69478\n12411\n61224\n71472\n47615\n30971\n64953\n89791\n57135\n20739\n79005\n75999\n16755\n48400\n74939\n21930\n94765\n10758",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "27\n57315\n40975\n58578\n62214\n94863\n34139\n38611\n74627\n13097\n30896\n32793\n68503\n71633\n65612\n52613\n80173\n44488\n88684\n50438\n46451\n99899\n67572\n59530\n74255\n59764\n88962\n78095",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "25\n61543\n45364\n22766\n36273\n28344\n4136\n52217\n75720\n3698\n29635\n80053\n45440\n77414\n39569\n95165\n75478\n63146\n32592\n59441\n59805\n97376\n3853\n34923\n93677\n47478",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n55845\n11162\n75187\n65537\n27421\n46538\n51197\n74584\n65861\n47183\n28300\n83219\n94908\n94667\n20934\n92921\n11177\n88860\n84977\n50833\n8680\n33608\n78899\n76359\n3573\n97959\n36068\n39090\n98153\n84584\n44099\n39831",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n37138\n95844\n54183\n94920\n29265\n28777\n92092\n19661\n31880\n27369\n86878\n15318\n75226\n64621\n69974\n46482\n70150\n709\n39248\n26493\n93036\n41006\n80064\n26336\n48129\n42377\n13993\n82795\n92295\n49919",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n89050300\n28728581\n58705637\n55563624\n80894046\n39675069\n26237299\n58431286\n10879510\n60650010\n29266859\n2564519\n38267461\n84221046\n8996960\n45007985\n31634815\n83761931\n983453\n82000585\n46384837\n6742199\n59575774\n92780201\n11872517\n63419452\n77039891\n74891972\n87186385\n61461818\n28473829\n11728222",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 32)"
+    },
+    {
+      "input": "32\n18364327\n60658778\n89964150\n61326005\n87468497\n15776003\n8677239\n53970060\n51261193\n36604546\n51744763\n46275876\n54961294\n56212435\n59636586\n89598325\n93126078\n90296558\n29722765\n80128159\n65856138\n45748975\n76044213\n15254140\n48242952\n73295907\n91048042\n69810605\n52666274\n32096804\n66075029\n83434929",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 32)"
+    },
+    {
+      "input": "2\n80581722\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "32\n63631847\n100000000\n100000000\n20471621\n1\n47368916\n1\n1\n79898889\n1\n66098481\n1\n100000000\n1\n1\n100000000\n1\n64506112\n74294269\n43579110\n1\n1\n100000000\n1\n2164710\n1\n100000000\n1\n29904221\n1\n95451186\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 32)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

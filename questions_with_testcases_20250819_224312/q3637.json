@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Takeover Wars",
+  "tags": [],
+  "text": "You are studying a takeover war between two large corporations, Takeover Incorporated and Buyout\r\nLimited. Each of these corporations controls a number of subsidiaries. The aim in this war is simply\r\nto drive the competition out of the market. There are N subsidiaries of Takeover Incorporated and M\r\nsubsidiaries of Buyout Limited, and you know the market value of each subsidiary.Each company can designate one of its subsidiaries to perform a takeover. The takeover can either be\r\nfriendly or hostile. A friendly takeover means a subsidiary of a corporation merges with a different\r\nsubsidiary of the same corporation. The market value of the merged subsidiary is the sum of the market\r\nvalues of the constituent subsidiaries. There is no constraint on the relative sizes of the subsidiaries\r\nparticipating in a friendly takeover.A hostile takeover means a subsidiary A of a corporation attempts to take over a subsidiary B of the\r\nother corporation. For this to succeed, the market value of A has to be greater than the market value of\r\nB. After this move, B disappears from the market. The market value of A does not change (the gain of\r\nincorporating B’s assets is offset by the monetary cost of the takeover). For simplicity we assume that\r\nno sequence of moves leads to two subsidiaries of different corporations having the same market value.\r\nThe companies take turns making moves in this takeover war, with Takeover Incorporated going first.\r\nA company will do nothing on its turn only if it cannot make a takeover. A company loses the takeover\r\nwar if all its subsidiaries are taken over.Your aim is to learn which company can guarantee a victory from this war. In the first case of the\r\nsample data, Takeover Incorporated can simply take over one of the companies of Buyout Limited in\r\nits first move with the 7-value subsidiary. Then it will lose one of its small (1-value) subsidiaries to a\r\nhostile takeover, and then it will take over the second subsidiary of Buyout Limited. In the second case,\r\nTakeover has to make a friendly takeover in its first move. Buyout Limited will join its two subsidiaries\r\ninto a single company with market value 10. Takeover will have to make a friendly takeover again\r\n(as again it will not have a large enough subsidiary to take over Buyout’s giant). Now Takeover will\r\nhave two subsidiaries, valued either 9 and 3 or 6 and 6. In either case, Buyout takes over one of these\r\nsubsidiaries, Takeover has to pass, and Buyout takes over the other one.InputEach test case is described by three lines of input. The first line contains two numbers 1 ≤ N ≤ 105and\r\n1 ≤ M ≤ 105denoting respectively the number of subsidiaries of Takeover Incorporated and Buyout\r\nLimited. The next line lists the N sizes a i of the subsidiaries of Takeover Incorporated (1 ≤ a i ≤ 1012),\r\nand the third line lists the M sizes b j of the subsidiaries of Buyout Limited (1 ≤ b j ≤ 1012).OutputFor each test case, display the case number and either the phrase Takeover Incorporated or the\r\nphrase Buyout Limited depending on who wins the takeover war if both corporations act optimally.ExampleInput:3 2\r\n7 1 1\r\n5 5\r\n4 2\r\n3 3 3 3\r\n5 5Output:Case 1: Takeover Incorporated\r\nCase 2: Buyout Limited",
+  "sample_input": "Input:3 2\r\n7 1 1\r\n5 5\r\n4 2\r\n3 3 3 3\r\n5 5Output:Case 1: Takeover Incorporated\r\nCase 2: Buyout Limited",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TKV1000",
+  "scraped_at": "2025-08-17 00:34:27",
+  "test_cases": [
+    {
+      "input": "3 2\r\n7 1 1\r\n5 5\r\n4 2\r\n3 3 3 3\r\n5 5",
+      "expected_output": "Case 1: Takeover Incorporated\r\nCase 2: Buyout Limited",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 4\n2 2 5\n2 3\n3 4\n8 3 6 10\n2 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10\n5 10 8\n7 8\n5 4\n3 5 8 5\n1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2\n9 4 1\n9 4\n6 6\n5 5 10 4\n10 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 88\n66 97 62\n81 54\n70 48\n36 65 45 68\n92 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 4\n24 50 17\n100 100\n80 84\n68 98 54 75\n89 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 68\n66 75 81\n32 77\n51 77\n2 47 100 17\n31 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "87 13\n18 83 88\n51 44\n42 66\n94 44 37 36\n50 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "67 29\n76 13 37\n3 47\n43 34\n64 56 85 86\n98 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 37\n9 16 12\n28 12\n22 20\n8 26 26 44\n11 15",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 13\n29 23 7\n22 6\n20 13\n23 10 22 47\n40 11",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "23 5\n9 32 49\n18 18\n42 52\n29 18 19 48\n9 5",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 11\n32 5 26\n42 21\n39 25\n38 50 23 46\n38 46",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "44 49\n7 22 38\n19 41\n6 25\n31 50 26 9\n21 38",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 40\n30 49 13\n36 8\n42 47\n48 6 6 8\n39 33",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 16\n41 47 11\n14 6\n7 39\n8 34 5 14\n39 17",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105\n105 105 105\n105 105\n105 105\n105 105 105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105\n105 105 105\n105 105\n105 105\n105 105 105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105\n105 104 105\n105 105\n2 105\n104 104 105 104\n104 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 105\n105 2 104\n1 104\n2 104\n105 2 2 104\n105 104",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

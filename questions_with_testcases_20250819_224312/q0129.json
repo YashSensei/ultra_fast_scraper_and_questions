@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Life Game",
+  "tags": [],
+  "text": "Gobo and Muku were really bored of working and decided to play a game on their respective laptops - the game of life. It is a one player game which consists of an M*N rectangular grid. Each cell of the grid contains exactly one magical potion. The potion at the jthcolumn of the ithrow of the grid increases the player's current health by Vij.(This value can be negative, in which case the player's health decreases). At any point of time, the health of a player can be negative too (i.e. He does not die). From a cell(i, j), the player can move to cells (i + 1, j - 1) or (i + 1, j) or (i + 1, j + 1), as long as these cells exist in the grid. Initially, the player has a health of 0. He can start from any column on the first row (1, j). If he chooses to enter a cell, then he is forced to drink the potion in that cell. The game is completed when any column of the last row is reached. There are 2 modes in which the game can be played: the \"min\" mode and the \"max\" mode. In \"max\" mode, the aim is to finish the game with maximum health Hmaxsatisfying the condition A  ≤  Hmax≤  B. Similarly, in \"min\" mode the aim is finish the game with minimum health Hmin, satisfying the conditions A  ≤  Hmin≤  B. Now, Gobo decides to play the game in \"max\" mode on his laptop, and Muku decides to play the game in \"min\" mode on his laptop. Can you help Gobo and Muku finish with maximum and minimum health respectively, satisfying the above conditions?InputThe first line of input contains an integer 't', denoting the number of test cases.For each test case, the first line contains 2 space separated integers 'M' and 'N'. The next line contains 2 space separated integers 'A' and 'B'. Each of the next 'M' lines contain 'N' integers. The jthinteger on the ithline denotes the value Vij.OutputOutput 2 space separated integers Hminand Hmax, the minimum and maximum health with which Gobo and Muku can finish the game. Hmaxand Hminshould satisfy A  ≤  Hmax, Hmin≤  B. If it is not possible to achieve such a health, output \"NO\" (quotes for clarity).Gobo and Muku start playing on 2 different instances of the same game independently. i.e. the values of A, B and initial values of Vijare same for both grids.ExampleInput:2\r\n3 3\r\n5 10\r\n2 5 10\r\n-1 -10 3\r\n-3 6 -2\r\n2 3\r\n8 11\r\n2 5 10\r\n-1 -10 2Output:6 10\r\nNO NOConstraintst ≤ 101 ≤ M, N ≤ 25-1000  ≤  A  ≤  B < 1000-25 ≤ Vij≤  25ExplanationTest case 1: Take the path (1, 2) → (2, 1) → (3, 2), to get a value 5 - 1 + 6 = 10. Take the path (1, 2) → (2, 3) → (3, 3), to get a value 5 + 3 - 2 = 6.Test case 2: There is no valid path which satisfies the above conditions.",
+  "sample_input": "Input:2\r\n3 3\r\n5 10\r\n2 5 10\r\n-1 -10 3\r\n-3 6 -2\r\n2 3\r\n8 11\r\n2 5 10\r\n-1 -10 2Output:6 10\r\nNO NO",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BTCODE_F",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": "2\r\n3 3\r\n5 10\r\n2 5 10\r\n-1 -10 3\r\n-3 6 -2\r\n2 3\r\n8 11\r\n2 5 10\r\n-1 -10 2",
+      "expected_output": "6 10\r\nNO NO",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n8\n8\n1\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n2\n3\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "15\n8838186\n3036513\n82701460\n68472516\n85842683\n37613759\n45780754\n11794242\n41587712\n29556156\n70719591\n16075996\n85181941\n81233287\n95753700",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n32387809\n98649144\n17506264\n82947858\n28589744\n15311938\n25831460\n6266575\n61491749\n47784201\n81676362\n39791293\n50617599\n81589480\n75629493\n67836958",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n90255899\n23610309\n5782778\n32459871\n27729203\n51616711\n20402007\n27764939\n1542464\n69229316\n34288770\n68223812\n68648069\n63800749\n41775802\n63706504\n62993996\n7240383\n43367453\n86261986",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n62251669\n70098846\n27732022\n90683255\n24398599\n52900728\n955300\n17995913\n39727757\n12782615\n12137987\n90486775\n58497980\n28005447\n89055207\n28462011\n86550174\n40565662\n45644781",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n58566758\n83514032\n65125553\n777472\n65218617\n24047852\n78656946",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "24\n51738\n9183\n47945\n6911\n63200\n97757\n70560\n92459\n85132\n54972\n65439\n13862\n23994\n31392\n6689\n61619\n36185\n56304\n44021\n34755\n54627\n36611\n79200\n50953",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n67956\n35523\n97644\n51047\n87943\n61849\n79269\n90267\n46653\n25198\n29372\n69156\n902\n68466\n69145\n96269\n67474\n59537\n60603\n67415\n27830",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n67042\n47001\n81938\n8160\n62426\n82194\n14203\n81050\n34020\n43273\n72064\n74775\n63876\n35793\n20370\n44691\n12360\n5545\n64325\n25065\n49445\n42452",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n90220\n10578\n2210\n56520\n88315\n90263\n1846\n8125\n85050\n25108\n57975\n67617\n72793\n11583\n12841\n82779\n8445\n53340\n53620\n26518\n90294\n82805",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n8575\n41204\n5597\n84867\n98997\n98384\n13594\n9515\n88870\n62096\n21034\n17791\n60666\n83110\n74150\n50912\n19050\n61081\n69620\n39977\n38600",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n8830\n3440\n73165\n9456\n38705\n42601\n73293\n8191\n38083\n78702\n3750\n20138\n65496\n44113\n15435\n63905\n38529\n40869\n49143\n116\n80106",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n85080\n42899\n62491\n85806\n5948\n60382\n19368\n60784\n20423\n84973\n12505\n30260\n38085\n15513\n49501\n23782\n23710\n52828\n18518\n39472\n60462\n79187\n32968",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "25\n56200790\n68322344\n21224445\n91588481\n75916394\n28385603\n91918321\n70407041\n10730128\n42641654\n46688070\n16484720\n47820786\n10778576\n24223479\n60413804\n35453397\n51626545\n50056004\n79051558\n89882732\n45898205\n45612597\n84844183\n76502266",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 25)"
+    },
+    {
+      "input": "25\n43274430\n24751212\n22579060\n92621829\n96890150\n44134739\n39862654\n52102138\n6152817\n59639866\n28299623\n50051243\n63960175\n46150392\n93728785\n45098604\n10089613\n52872602\n90242347\n6059745\n92625697\n91538695\n13146448\n83099522\n74854885",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 25)"
+    },
+    {
+      "input": "2\n10378967\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "25\n1\n67730712\n100000000\n100000000\n46252391\n1\n1\n61496169\n100000000\n100000000\n100000000\n1\n1\n100000000\n100000000\n33118871\n1\n100000000\n100000000\n100000000\n100000000\n100000000\n1\n100000000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 25)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

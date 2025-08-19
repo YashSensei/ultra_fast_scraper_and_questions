@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "LCM Pesticide",
+  "tags": [],
+  "text": "NSlovakistan farmers own neighbouring fields alongside a river, forming a straight line. Each field is infested with (possibly zero) pests.Thanks to ingenious Slovakistan science, each species of pest can be assigned a prime number. Each field can then be assigned a positive number, representative of the pests that are infesting it - the prime factorization of this number indicates which pests are present, with the powers of each prime number representing how strongly the field is infested with that pest.Every pesticide can then be assigned a positive number, which is designed in such a way that its prime factorization indicates what pests it can supress, with the powers of each prime number representing how strong infestations of that pest it is able to handle.To aid their farmers, the government of Slovakistan can select a pest, and then pump a pesticide designed specifically against it into the river, completely supressing that species on all fields. However, due to environmental concerns, they will only use one pesticide at a time - when the government switches to a different pesticide, designed against a different pest, the ones previously supressed return to all fields in full force.On top of that, the farmers union can request pesticide to be sprayed on the fields themselves. Since this is done using an airplane, they can only request pesticide to be sprayed on a contiguous segment of fields.Pesticides with higher numbers are more expensive. Now, for each request the government would like to know the cheapest pesticide they can use to supress all pests on all the fields in the requested segment.InputThe first line contains two integers1 ≤ N ≤ 50000and1 ≤ Q  ≤ 105- the number of fields and the number of events.The second line containsNintegersf1, ...,fN- the numbers assigned to the fields. They will be positive and not greater than105.Qlines follow, describing events in the order in which they happened. Each event is either of the form0 L Ror1 P.If the event is of the form1 P,1 ≤ P ≤ 105, it means that the government of Slovakistan began pumping pesticide against the pest numberP(a prime number) into the river, and are no longer pumping pesticide against the previous pest, if they were doing so. The exception isP = 1, meaning that there is simply no pesticide being pumped into the river. In the beginning, the government is not pumping any pesticide.If the event is of the form0 L R,1 ≤ L ≤ R ≤ N, it means that the farmers requested pesticide to be sprayed on the contiguous segment of fields from theL-th to theR-th, inclusive.OutputFor each event of form0 L R, output the smallest number of pesticide which can handle all infestations on the segment of fields fromLtoR, modulo109+7, taking into account that some pests may be supressed due to the government's aid. More formally, output the least common multiple of the numbersfL, ...,fR, after they have had all factors ofPfrom the last1 Pevent removed, modulo109+7.ExampleInput:10 12\r\n4 2 3 5 6 47 10007 32768 59049 1\r\n0 1 5\r\n0 2 5\r\n1 2\r\n0 1 5\r\n0 2 5\r\n0 6 10\r\n1 3\r\n0 6 10\r\n1 1\r\n0 1 10\r\n0 10 10\r\n0 1 5Output:60\r\n30\r\n15\r\n15\r\n772456932\r\n411740567\r\n342852967\r\n1\r\n60",
+  "sample_input": "Input:10 12\r\n4 2 3 5 6 47 10007 32768 59049 1\r\n0 1 5\r\n0 2 5\r\n1 2\r\n0 1 5\r\n0 2 5\r\n0 6 10\r\n1 3\r\n0 6 10\r\n1 1\r\n0 1 10\r\n0 10 10\r\n0 1 5Output:60\r\n30\r\n15\r\n15\r\n772456932\r\n411740567\r\n342852967\r\n1\r\n60",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/LCMP",
+  "scraped_at": "2025-08-17 00:34:16",
+  "test_cases": [
+    {
+      "input": "10 12\r\n4 2 3 5 6 47 10007 32768 59049 1\r\n0 1 5\r\n0 2 5\r\n1 2\r\n0 1 5\r\n0 2 5\r\n0 6 10\r\n1 3\r\n0 6 10\r\n1 1\r\n0 1 10\r\n0 10 10\r\n0 1 5",
+      "expected_output": "60\r\n30\r\n15\r\n15\r\n772456932\r\n411740567\r\n342852967\r\n1\r\n60",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 8\n4 9 9 5 6 3 7 6 5 6\n5 4 1\n10 8 5\n3 3\n9 6 7\n1 6 9\n10 3 6\n3 3\n10 5 3\n7 4\n1 2 3\n6 6 7\n9 6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 10\n5 4 1 3 4 5 4 10 3 5\n2 7 3\n9 4 6\n4 5\n10 5 1\n8 4 6\n4 10 5\n7 2\n8 2 6\n1 9\n10 10 3\n5 2 6\n3 8 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 9\n8 6 3 2 3 4 7 8 7 9\n3 8 5\n5 10 8\n3 5\n4 8 7\n6 4 5\n1 9 7\n3 3\n1 1 2\n10 3\n9 3 10\n1 8 3\n5 9 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "48 51\n83 80 69 95 47 52 18 9 78 36\n4 40 77\n71 90 47\n89 76\n49 11 49\n85 50 40\n28 71 41\n79 16\n21 40 63\n84 52\n45 63 91\n57 67 44\n20 27 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 38\n94 71 40 14 89 45 63 5 30 54\n79 2 22\n83 61 55\n79 73\n48 6 69\n19 95 95\n5 58 46\n18 59\n91 54 93\n16 77\n65 21 6\n3 32 14\n27 82 74",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 62\n62 89 93 49 22 22 21 44 43 58\n4 59 6\n1 93 96\n35 91\n91 2 98\n48 95 6\n90 82 83\n63 30\n1 38 78\n33 14\n79 64 49\n18 83 17\n56 78 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 66\n17 30 74 76 70 38 73 25 20 49\n58 35 65\n91 53 40\n75 12\n41 70 82\n84 16 93\n60 81 85\n17 76\n51 55 38\n70 51\n4 74 27\n67 27 72\n90 66 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 96\n93 51 67 61 78 52 86 45 91 90\n81 99 87\n44 53 79\n85 21\n19 3 76\n75 100 91\n42 45 21\n59 30\n83 76 55\n31 21\n46 33 33\n81 5 52\n77 39 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13546 8523\n14037 2564 7471 3928 16627 22863 17705 19571 19383 11628\n9664 12730 18011\n14916 23781 13521\n19865 17945\n18762 5932 5466\n9689 7609 15541\n23066 5726 5071\n5562 19559\n16429 10422 7351\n21359 17695\n16996 8568 24323\n4220 8366 22899\n16120 14820 15569",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "8067 8053\n7882 8017 7853 23540 15950 20453 15835 8099 12367 13940\n21952 8743 9812\n4527 19726 15199\n19732 14951\n19797 13576 24856\n4020 23887 24300\n20913 16957 11412\n9682 11470\n18663 4295 3336\n15518 11521\n5099 8649 23939\n4605 8656 23173\n21409 7629 8325",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "24100 2646\n12197 21305 12359 12216 4350 15341 15279 2758 12814 20946\n6514 21171 23618\n22909 11992 24109\n18428 12473\n10371 4978 14201\n10984 3524 6077\n21579 17822 17314\n8489 13300\n24664 15311 21305\n21381 19249\n22493 23054 7543\n17373 2567 3513\n8281 16543 9294",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4878 21223\n22173 11495 3738 4589 4634 11264 7212 4594 9191 22600\n12104 23121 23645\n5714 8552 11468\n14667 12077\n3531 14159 9447\n4338 14653 13034\n6816 17305 11991\n16258 19395\n4311 14473 5848\n4647 10867\n14740 22574 4766\n21928 7713 23041\n9202 15610 5720",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2972 16076\n2625 6684 23553 12772 22666 22926 11749 13275 20944 10284\n12490 17026 10129\n8947 24321 18487\n24624 3533\n18614 16814 18314\n24991 21721 3759\n21030 21881 22329\n13781 15745\n23349 11910 19327\n6717 7578\n8775 14141 21530\n15733 8954 24757\n24128 11992 9206",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11864 7886\n6324 5273 21667 16191 10840 20303 14435 19663 17372 11713\n11739 15428 19601\n19992 3173 9185\n8351 16700\n18161 23216 23151\n19235 24842 24886\n7546 6828 4777\n3257 17459\n21338 9344 12425\n13894 13731\n20118 14718 13246\n14950 16193 8149\n9412 6713 8257",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17366 7621\n7591 23660 24036 4156 23171 21588 12175 10114 17613 13309\n24584 17817 9891\n4435 4729 24024\n15698 5041\n11713 14838 23440\n16804 7517 15020\n13401 16721 18624\n24660 12636\n17488 14063 11625\n3270 12885\n3242 7655 23391\n15264 5213 8266\n4104 11409 3786",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50000 50000\n50000 50000 50000 50000 50000 50000 50000 50000 50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000\n50000 50000 50000\n50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000 50000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50000 50000\n50000 50000 50000 50000 50000 50000 50000 50000 50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000\n50000 50000 50000\n50000 50000\n50000 50000 50000\n50000 50000 50000\n50000 50000 50000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\n1 50000 49999 49999 50000 50000 1 50000 50000 49999\n1 49999 50000\n49999 1 1\n1 1\n49999 1 49999\n2 2 2\n2 50000 49999\n50000 1\n2 1 49999\n50000 1\n1 1 2\n2 1 49999\n49999 50000 49999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 49999\n2 2 1 1 1 2 50000 2 1 50000\n50000 2 49999\n49999 2 49999\n1 49999\n50000 2 1\n50000 50000 49999\n1 49999 49999\n50000 1\n49999 1 49999\n1 50000\n1 49999 50000\n2 2 1\n1 49999 49999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

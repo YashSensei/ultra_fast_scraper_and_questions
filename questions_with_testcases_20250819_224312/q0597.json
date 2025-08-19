@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Rating Hazard",
+  "tags": [],
+  "text": "A very important aspect of web portals is customer reviews. The customers can rate any product in the web portal. Generally, a customer can rate a product from one star to five star. Based on the rating of all the customers the average customer rating for a product is shown. Look at the figure on the left to get a clear idea. For example if three customers rate a product as 3 star, 4 star and 4 star respectively then the average rating will be (3+4+4)/3 = 3.67 (Rounded to two digits after the decimal point). In the figure on the left 847 customers have rated a product and 597, 189, 26, 11 and 24 customers have rated the product as 5 star, 4 star, 3 star, 2 star and 1 star respectively. So the average rating is:(Rounded to eight digits after the decimal point).Most web portals display the total number of people who have rated the product (As more people rates the product the more reliable the rating is) but do not display the numeric value of the average rating. In the web portal of warzone (A renowned web portal) the total number of customers that have rated a product (In the figure above the total 847 customers have rated the product) and the average rating is stored in two different tables. The average rating is stored, rounded to n (0 < n < 9) digits after the decimal point so its value is not always the exact average value. Unfortunately, the table that stored the total number of people that rated different products somehow got corrupted. All information available in the database now is the average rating (rounded to at most eight digits after the decimal point). They do not want to lose the huge number of customer ratings they have received throughout 10-15 years but also they cannot cheat with their customers by guessing the number of raters or voters. So from the average rating they want to determine the minimum possible number of people that rated that product. You have to help them find it out by writing a program.InputThe input file can contain up to 2000 lines of inputs. Each line contains a non-negative floating- point number v (1 ≤ v ≤ 5). This number will have minimum one digit and maximum eight digits after the decimal point. If this number has n digits after the decimal point then you have to assume that the value of the average is given rounded to n digits after the decimal point. Input is terminated by a line containing a negative number.OutputFor each line of input produce one line of output. This line contains the serial of output followed by an integer T which denotes the minimum number of voter that is required for this average rating.ExampleInput:1.15\r\n4.56316411\r\n4.56316\r\n3.67\r\n3.66\r\n-1.00Output:Case 1: 13\r\nCase 2: 847\r\nCase 3: 190\r\nCase 4: 3\r\nCase 5: 29",
+  "sample_input": "Input:1.15\r\n4.56316411\r\n4.56316\r\n3.67\r\n3.66\r\n-1.00Output:Case 1: 13\r\nCase 2: 847\r\nCase 3: 190\r\nCase 4: 3\r\nCase 5: 29",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PKD",
+  "scraped_at": "2025-08-17 00:33:14",
+  "test_cases": [
+    {
+      "input": "1.15\r\n4.56316411\r\n4.56316\r\n3.67\r\n3.66\r\n-1.00",
+      "expected_output": "Case 1: 13\r\nCase 2: 847\r\nCase 3: 190\r\nCase 4: 3\r\nCase 5: 29",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5\n2\n4\n8\n2\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9\n5\n7\n1\n3\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3\n7\n4\n3\n1\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4\n6\n5\n4\n7\n8",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2\n3\n5\n5\n2\n2",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4\n9\n7\n7\n5\n1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6\n4\n6\n4\n5\n4",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8\n7\n2\n5\n7\n6",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1\n3\n2\n1\n1\n4",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2\n3\n1\n1\n2\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1\n1\n2\n1\n4\n4",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3\n1\n3\n2\n3\n4",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3\n3\n2\n4\n1\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1\n4\n3\n1\n4\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3\n2\n2\n3\n1\n4",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9\n9\n9\n9\n9\n9",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "9\n9\n9\n9\n9\n9",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2\n1\n9\n9\n8\n9",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "8\n9\n2\n1\n8\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

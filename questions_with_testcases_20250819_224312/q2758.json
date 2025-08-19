@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Yet Another Perfect Square Equation",
+  "tags": [],
+  "text": "Perfect squares are fairly simple concept. A number like 49 is perfect square because it can be written as product of two same natural number i.e. 7 * 7.On the other hand infinite sequence of numbers can be considered an intriguing concept, because it is not possible to represent all numbers belonging in an infinite sequence easily.Can read more about infinite sequenceshere.So one way to represent infinite sequence of numbers is to use an algebraic expression instead of writing all numbers in the sequence.For example, expression x2+ 1 represents the series 2, 5, 10, 17 .... . (Substituting value of x = 1, 2, 3, ... to get the values in the sequence)Similarly x2+ 4 represents the infinite series 5, 8, 13, 20, .... (Substituting value of x = 1, 2, 3, ... to get the values in the sequence)Given an infinite sequence of numbers of form x2+ n, figuring out perfect square numbers within this sequence can be challenging even if checking a number is perfect square is easy.For example, consider the infinite sequence represented by x2+ 771401, only when x = 385700 then x2+ 771401 = 148765261401 = 3857012is a perfect square. There are no other values of x for which x2+ 771401 will be a square.This is because 771401 is difference between two consecutive squares 3857002and 3857012. So the infinite sequence represented by x2+ 771401 has only 1 perfect square number when x = 385701.Let us consider one more example x2+ 45, only when x = 2, 6 or 22 then x2+ 45 is a perfect square. So the infinite sequence represented by x2+ 45 has only 3 perfect square numbers when x = 2, 6 or 22.But infinite sequence represented by x2+ 46 contains no perfect square numbers, this is because if it contains such a number then the infinite sequence represented x2+ 45 will not have any perfect square numbers which is a contradiction because we know 3 perfect square numbers contained in infinite sequence represented by x2+ 45.In other words given equation x2+ n where n is a whole number (i.e. n can take values like 0, 1, 2, 3, 4 ...) find all x in ascending order such that x2+ n is a perfect square.InputThe first line of input file contains a positive integer 't' and next 't' lines contains a string which looks like 'x^2 + n' (example 'x^2 + 3', 'x^2 + 5' etc.).0 ≤ n ≤ 106Sum of all 'n' in a test file will not exceed 106OutputThe output line has to printed for each test case line.If there are finite number of values of 'x' for which x2+ n is a perfect square then print all such x in ascending order separated by comma and space (, ) and enclosed within square brackets. So for 'x^2 + 45' the output line will look like [2, 6, 22].In case there are no such values of 'x' for which x2+ n is a perfect square then print \"No Solution\" (without quotes and case sensitive). So for 'x^2 + 46' the output line will be \"No Solution\".In case there are infinitely many solutions for which x2+ n is a perfect square then print \"Infinitely Many Solutions\" (without quotes and case sensitive). So for 'x^2 + 0' the output line will be \"Infinitely Many Solutions\"ExampleInput:3\r\nx^2 + 45\r\nx^2 + 0\r\nx^2 + 46Output:[2, 6, 22]\r\nInfinitely Many Solutions\r\nNo Solution",
+  "sample_input": "Input:3\r\nx^2 + 45\r\nx^2 + 0\r\nx^2 + 46Output:[2, 6, 22]\r\nInfinitely Many Solutions\r\nNo Solution",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PERFSQNUM",
+  "scraped_at": "2025-08-17 00:34:10",
+  "test_cases": [
+    {
+      "input": "3\r\nx^2 + 45\r\nx^2 + 0\r\nx^2 + 46",
+      "expected_output": "[2, 6, 22]\r\nInfinitely Many Solutions\r\nNo Solution",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n9\n10\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n5\n1\n10\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "12\n29001569\n85528022\n51223608\n32786331\n23388668\n22112127\n40843263\n76527404\n35554853\n53359762\n53921077\n80745768",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n3195012\n14033095\n16582464\n56129418\n23455135\n83346267\n43889267\n60279807\n20181329",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n17193690\n92476\n59419939\n50596165\n91829340",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n56199066\n24962638\n15538395\n90014398\n62025003\n40905834\n42577869\n66397322\n35773102\n45531678\n41027565\n82332518\n92357181\n47721018\n77920141\n63815158\n6062640\n51108427",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n4142707\n9065731\n53739484\n33693905\n47518204\n78398969\n4610519\n47684812\n88802787",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "85\n15137\n76475\n72742\n95798\n5091\n53607\n36153\n17298\n80092\n31196\n8174\n5741\n92280\n55779\n32919\n63331\n55565\n89600\n15113\n30375\n23515\n32150\n65829\n14182\n60632\n24787\n93215\n5049\n88342\n16795\n41292\n38237\n30341\n65861\n54412\n54875\n4158\n91204\n6366\n96656\n51570\n93721\n72014\n72539\n16523\n93562\n20479\n58301\n64508\n4923\n7840\n44086\n55575\n62888\n71455\n31164\n83179\n7371\n21096\n37532\n67390\n31584\n83939\n47285\n27365\n82135\n91080\n35984\n90101\n44311\n39852\n15910\n81922\n56238\n85825\n73639\n53479\n36855\n3375\n77955\n82125\n85849\n40365\n17063\n1975",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "72\n55418\n59538\n14705\n12554\n69918\n22740\n62670\n23964\n46124\n79618\n65489\n67778\n18985\n80878\n92557\n23482\n44913\n29795\n35561\n14047\n95560\n99715\n8498\n64944\n49921\n40370\n68221\n27963\n36495\n69585\n67264\n17712\n10240\n27020\n78544\n6174\n59463\n18690\n24100\n46652\n62051\n66146\n88695\n48128\n21032\n80281\n77548\n15693\n43195\n1940\n78867\n19607\n86185\n27\n42110\n90463\n1937\n72813\n69222\n62512\n1042\n3656\n98022\n5241\n3192\n66798\n39296\n60785\n33496\n28837\n11269\n22680",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "49\n4264\n59506\n545\n62040\n18825\n18797\n60191\n29150\n67875\n82382\n16771\n67515\n91395\n7475\n77009\n94468\n66604\n98335\n77900\n8509\n26025\n2369\n62449\n67760\n40626\n83367\n10953\n74915\n36031\n78078\n4417\n64104\n83345\n3008\n67675\n37514\n30835\n99275\n71177\n11035\n57159\n11443\n24147\n30706\n44287\n79424\n56254\n24165\n80052",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "62\n25502\n15910\n37233\n55630\n79093\n5693\n51813\n35682\n84824\n50101\n1772\n78958\n91179\n79904\n52712\n26240\n22155\n97706\n21736\n63493\n16218\n32448\n42278\n68171\n18388\n10084\n51316\n5626\n25381\n40294\n59296\n70670\n74647\n73346\n92202\n8616\n25778\n59496\n40537\n99919\n60007\n76289\n4999\n28417\n2311\n55068\n59301\n46629\n44394\n28042\n780\n20045\n51307\n1317\n56571\n91037\n33610\n56069\n52095\n94378\n3242\n92318",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "73\n15439\n76921\n61558\n6429\n56458\n34679\n13267\n52617\n33866\n77519\n27906\n79099\n52690\n72045\n20002\n63571\n16583\n69183\n68363\n98890\n70275\n63026\n93495\n15420\n73387\n53674\n56557\n98767\n88374\n53052\n86108\n47175\n45494\n18309\n89683\n34757\n12163\n8481\n58720\n42294\n44774\n62519\n15933\n34706\n48866\n951\n1492\n91761\n63167\n76533\n49935\n52090\n78705\n18482\n76047\n12764\n99694\n13742\n47624\n63900\n13614\n97255\n15076\n78817\n26399\n71884\n99200\n90732\n87618\n84050\n64496\n54453\n71013",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "59\n16562\n18851\n8651\n9528\n36666\n65501\n68396\n44890\n4055\n89882\n67640\n27397\n49846\n39834\n99140\n75993\n83718\n30835\n13822\n53748\n47218\n43868\n61226\n84681\n2903\n24696\n55694\n35917\n33834\n50475\n26375\n79338\n93193\n73482\n24539\n63911\n75168\n88954\n44505\n70160\n21032\n35003\n40459\n21046\n42133\n90414\n52793\n47339\n97175\n18935\n22593\n53831\n60291\n94549\n13223\n76570\n39683\n15194\n79073",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "82\n93379\n4520\n16568\n1475\n86474\n23691\n33578\n70751\n20528\n85375\n11043\n22497\n62471\n15866\n55637\n68088\n21518\n61701\n96068\n30338\n39549\n90210\n46919\n41362\n13130\n28228\n63262\n97501\n19520\n44035\n88592\n96268\n72689\n14748\n74574\n7579\n14405\n98328\n79401\n98057\n78441\n91577\n77128\n97572\n96897\n78852\n50411\n95372\n84103\n36031\n88479\n63839\n18267\n86048\n85641\n38779\n45749\n87696\n49452\n59149\n19635\n40343\n29150\n44091\n64729\n13411\n25297\n85690\n5078\n58623\n99135\n98266\n16979\n83890\n52790\n61812\n51073\n4572\n88342\n84819\n58622\n29734",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "106\n11569152\n32639685\n10768394\n80170077\n27409948\n7941257\n31894187\n67571024\n5872750\n53341307\n93123176\n14253613\n30132460\n70092755\n9395985\n69529866\n70490863\n1731166\n94112587\n58858805\n11856723\n72219947\n29862200\n4027085\n24581350\n63729464\n48995321\n54597842\n65569939\n96773690\n11275607\n25695760\n49237325\n33367993\n43765612\n62308078\n18657931\n8109120\n19899816\n70210221\n47262944\n93118805\n33365209\n66183644\n60574485\n61634421\n92269215\n28440750\n46570528\n66302757\n8746289\n27111831\n15725501\n59766775\n8669976\n30877052\n8934467\n93956391\n56613718\n77012350\n32766276\n31712936\n51552851\n49722915\n55937853\n65925104\n1530532\n9490449\n87837890\n41512817\n44697889\n26624738\n1286268\n42477619\n4132433\n31119280\n68592813\n45964309\n17437167\n45505281\n21470680\n686190\n72519614\n62155234\n11950490\n75923174\n99668623\n36280416\n55699755\n97848725\n10781181\n84637365\n63168223\n98020916\n22386419\n10074654\n51366158\n87890309\n34500566\n85343994\n36204268\n74121881\n7217395\n31961203\n99424483\n22098522",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "106\n43256401\n93948968\n87533517\n51652778\n62663194\n71156050\n7863304\n51975573\n24304403\n10034084\n63882763\n97463064\n10874816\n77858114\n32848699\n44403695\n42693109\n76190575\n56432854\n80321750\n47988147\n75259803\n43811513\n79553343\n63897934\n11726850\n61589877\n62462842\n63521144\n62660038\n54940819\n76851976\n64250557\n55271886\n67955433\n31473114\n20046342\n61644766\n44713366\n60960825\n88463470\n83891204\n31835140\n24673910\n60107011\n93095051\n27024928\n99243575\n81599216\n9248393\n97904893\n33980116\n92005025\n78029541\n9930366\n44493572\n73823203\n72328540\n2952622\n50873335\n27870486\n42070454\n88021956\n64999410\n80279952\n25095306\n8499317\n35030171\n79630377\n33940921\n44833628\n13919194\n41491956\n60030696\n23438972\n1455548\n37834901\n60906782\n74148377\n93315080\n37480824\n63291418\n54216044\n58628606\n94725664\n95619309\n82877771\n39242556\n71519306\n55422401\n55957452\n44732357\n67672415\n41859950\n21148257\n68258548\n64458640\n31554695\n57122016\n77624446\n82563293\n60160468\n87827071\n23852217\n92531880\n94694136",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 106)"
+    },
+    {
+      "input": "106\n1\n100000000\n1\n100000000\n27923480\n77789552\n100000000\n100000000\n100000000\n1\n100000000\n100000000\n100000000\n100000000\n1\n100000000\n1\n100000000\n80615214\n96996482\n29514706\n1\n1\n1\n100000000\n412784\n1\n1\n44401685\n18659471\n100000000\n1\n78220242\n31315934\n1\n1\n1\n50164526\n100000000\n1\n100000000\n1\n100000000\n1\n100000000\n100000000\n67324884\n100000000\n38643361\n100000000\n100000000\n1\n1\n100000000\n100000000\n1\n100000000\n1\n58501231\n64803470\n84900917\n1\n1\n100000000\n6019131\n2003606\n1\n1\n100000000\n1\n1\n100000000\n1\n40636181\n1\n1\n14842290\n100000000\n1\n97536474\n100000000\n50486383\n1661777\n87048236\n100000000\n37340731\n100000000\n100000000\n1\n91247259\n8308915\n100000000\n39316867\n100000000\n100000000\n1\n1\n59682468\n1\n15554602\n100000000\n93157168\n1\n1\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 106)"
+    },
+    {
+      "input": "2\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

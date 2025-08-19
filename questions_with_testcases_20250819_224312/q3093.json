@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Landscaping",
+  "tags": [],
+  "text": "Farmer John is making the difficult transition from raising mountain\r\ngoats to raising cows.  His farm, while ideal for mountain goats,\r\nis far too mountainous for cattle and thus needs to be flattened\r\nout a bit. Since flattening is an expensive operation, he wants to\r\nremove the smallest amount of earth possible.The farm is long and narrow and is described in a sort of two-dimensional\r\nprofile by a single array of N (1 ≤ N ≤ 1000) integer elevations\r\n(range 1..1,000,000) like this:1 2 3 3 3 2 1 3 2 2 1 2,which represents the farm's elevations in profile, depicted below\r\nwith asterisks indicating the heights:* * *     *\r\n  * * * * *   * * *   *\r\n* * * * * * * * * * * *\r\n1 2 3 3 3 2 1 3 2 2 1 2A contiguous range of one or more equal elevations in this array\r\nis a \"peak\" if both the left and right hand sides of the range are\r\neither the boundary of the array or an element that is lower in\r\nelevation than the peak. The example above has three peaks.Determine the minimum volume of earth (each unit elevation reduction\r\ncounts as one unit of volume) that must be removed so that the\r\nresulting landscape has no more than K (1 ≤ K ≤ 25) peaks.  Note\r\nwell that elevations can be reduced but can never be increased.If the example above is to be reduced to 1 peak, the optimal solution\r\nis to remove 2 + 1 + 1 + 1 = 5 units of earth to obtain this set\r\nof elevations:* * *     -\r\n  * * * * *   - - -   -\r\n* * * * * * * * * * * *\r\n1 2 3 3 3 2 1 1 1 1 1 1where '-'s indicate removed earth.InputThe first line of the input contains integer t representing the number of test cases. Then t test cases follow. Each test case has the following form:Line 1: Two space-separated integers: N and KLines 2..N+1: Each line contains a single integer elevation. Line\r\n        i+1 contains the elevation for index i.OutputFor each test case, output the minimum volume of earth that must be removed to reduce\r\n        the number of peaks to K.ExampleInput:1\r\n12 1\r\n1\r\n2\r\n3\r\n3\r\n3\r\n2\r\n1\r\n3\r\n2\r\n2\r\n1\r\n2Output:5Input detailsThis is the example used above.",
+  "sample_input": "* * *     *\r\n  * * * * *   * * *   *\r\n* * * * * * * * * * * *\r\n1 2 3 3 3 2 1 3 2 2 1 2",
+  "sample_output": "* * *     -\r\n  * * * * *   - - -   -\r\n* * * * * * * * * * * *\r\n1 2 3 3 3 2 1 1 1 1 1 1",
+  "link": "https://www.spoj.com/problems/LANDSCAP",
+  "scraped_at": "2025-08-17 00:34:11",
+  "test_cases": [
+    {
+      "input": "* * *     *\r\n  * * * * *   * * *   *\r\n* * * * * * * * * * * *\r\n1 2 3 3 3 2 1 3 2 2 1 2",
+      "expected_output": "* * *     -\r\n  * * * * *   - - -   -\r\n* * * * * * * * * * * *\r\n1 2 3 3 3 2 1 1 1 1 1 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "eq u olr qvoj\nexsfe ew dub u qhtxx nkgl xi ruv wsmp\nrqq od op qeoj pjxy mp galks fsn py matj l nzpj\n3 1 5 4 4 5 2 5 9 10 10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "lx n vweq snkf\nftx ko c t kz xc ormi s ifzx\nnzj cy qypnv umayx traq vp nwyvx m x vgb gxktf xl\n3 2 4 7 5 1 6 1 9 10 8 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ytyzc wprc tkpxq skali\nxii u j jcgmj pdswv ptcz filsc dkebp vvt\nzoy zid hdctw jy ke yck zab oq p mvpl jscx m\n6 3 1 10 4 10 4 7 6 6 9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "vtqol rmew jip ihm\nymxkr nyc xarbi o h rd xbtl fx ccph\nn r oktdx wn liwx z hx c hyady ds uxwe ath\n18 18 100 49 19 13 81 54 14 67 50 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qxix b fqr vqaxe\nbwz l njhrb zsq aj mpb xrxg pqok sus\nzdqur com siera iv odb hsg jbr zb dbuwx hiymo omr dto\n12 2 60 73 7 48 38 46 6 41 45 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ac whufo rfps o\nhnhg oxw plr dlbpx ki j w g satlb\nq ex vishd tgcx b ieby xmo uans u irxk d ikct\n53 80 97 78 2 37 14 5 48 96 63 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "agvm qnrb qoxt qe\ng j cm kw nomgx ke z a a\niy ppbjc oazf p ykmt t uglv nptyd ji x ttj rgps\n3 23 45 46 31 40 31 33 36 50 12 37",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "v bll rpb mh\nth ntc trugl ww jlf hxew kfoa zbs otvee\nihso t sgel fb zbp mma u rxn phix o ysvvu zygm\n98 76 92 86 84 91 66 47 93 88 15 34",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ljht top f sy\naks y xqbcp i iz gvqsi d lbm yq\ncoq r z lk rhc lsam kenzm nms mznm emfit zyglc srm\n393 441 303 64 243 457 64 348 229 63 406 87",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "j hdut z huva\neccky zd y spzk lq m k n vg\nve dn cdu p cfc ipau lm vvv lwzbq nz rm nsbgf\n315 259 293 54 187 409 101 280 310 213 108 59",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "r s nmhh u\nkw g uegzt rg c rmea b ifug ldw\nqloe lgbx uvyqf lpnt oaxhy c c tcfo nwbax bxrzp mwzo nlpv\n419 463 102 211 129 93 371 219 427 186 125 343",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "uhc i m akm\nvzu w y ozo imr us ni g jbcml\nvf b d pga wgns nvu zzopp f joj fxvyq o jx\n315 138 72 200 159 272 126 274 486 453 395 440",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qyv is jb txys\nzn eb gbj hq b uo aqzs pxia y\na smpy u oiok y oieew h aus u jjbz n yth\n139 376 95 65 383 201 305 238 376 480 168 344",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "o q u yx\nhm rowu cxahn sfe stc gcui lj ac eheo\njhp qv ufyk zmc u tzqb kgcq xdfq p ys ewp kun\n212 250 180 325 204 206 461 158 71 166 166 214",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "diczd jx ps z\ngirvh gyvt jly wug fxoh rba njw v h\nur pil kmn t cq dzzlu di wp e sfok r vuyw\n235 53 458 360 391 186 67 95 475 157 440 343",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "x zklz cwj psj\nwvs udxgd j u zgov ox sl u bnmtx\nhfhgo ockn epkq ab sfi ecnyh tdpd mea ld xiurd lfp dtrx\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "xv od vsqn jvhnv\ncmvc nhq vtq uaagp sflnf zu vi lpdue wwgx\nvvg l rw zjlm rsvzr d fxfd jb lwxil wkr renms dwsar\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "cfrbg c m lzab\nxemz j v vyk m go qtt hkz qfbv\njgln snm ni bqov ri qzt f kirna bhm j m z\n1 999 1000 1000 2 1000 1 1 1 999 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "ktj ot y xr\nnj amqc muq n qbbsd zave nwji cbyl mwq\nd wcjeq ybxt ept no iget jno j ytu rffu va dfrx\n1 1 1000 1000 1 999 2 2 1000 1000 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

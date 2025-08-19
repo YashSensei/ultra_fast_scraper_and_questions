@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Image Perimeters",
+  "tags": [],
+  "text": "Technicians in a pathology lab analyze digitized images of slides.\r\nObjects on a slide are selected for analysis by a mouse click on the object.\r\nThe perimeter of the boundary of an object is one useful measure.\r\nYour task is to determine this perimeter for selected objects.The digitized slides will be represented by a rectangular grid of periods,\r\n'.', indicating empty space, and the capital letter 'X', indicating part\r\nof an object. Simple examples areXX    .XXX    .XXX\r\n    XX    .XXX    ...X\r\n                  ..X.\r\n                  X...AnXin a grid square indicates that the entire grid\r\nsquare, including its boundaries, lies in some object. TheXin the center of the grid below isadjacentto theXin any\r\nof the 8 positions around it. The grid squares for any two adjacentX's\r\noverlap on an edge or corner, so they are connected.XXX\r\n    XXX    CentralXand adjacentX's\r\n    XXXAn object consists of the grid squares of allX's that\r\ncan be linked to one another through a sequence of adjacentX's.\r\nIn Grid 1, the whole grid is filled by one object. In Grid 2 there\r\nare two objects. One object contains only the lower left grid square.\r\nThe remainingX's belong to the other object.The technician will always click on anX, selecting the object containing\r\nthatX. The coordinates of the click are recorded.  Rows and\r\ncolumns are numbered starting from 1 in the upper left hand corner.\r\nThe technician could select the object in Grid 1 by clicking on row 2 and\r\ncolumn 2. The larger object in Grid 2 could be selected by clicking\r\non row 2, column 3. The click could not be on row 4, column 3.One\r\nuseful statistic is the perimeter of the object. Assume eachXcorresponds\r\nto a square one unit on each side. Hence the object in Grid 1 has\r\nperimeter 8 (2 on each of four sides). The perimeter for the\r\nlarger object in Grid 2 is illustrated in the figure at\r\nthe left. The length is 18.Objects will not contain any totally enclosed holes, so the left-most\r\ngrid patterns shown below couldNOTappear.\r\nThe variations on the right could appear:Impossible   Possible\r\nXXXX         XXXX   XXXX   XXXX\r\nX..X         XXXX   X...   X...\r\nXX.X         XXXX   XX.X   XX.X\r\nXXXX         XXXX   XXXX   XX.X\r\n\r\n.....        .....  .....  .....\r\n..X..        ..X..  ..X..  ..X..\r\n.X.X.        .XXX.  .X...  .....\r\n..X..        ..X..  ..X..  ..X..\r\n.....        .....  .....  .....The input will contain one or more grids. Each grid is preceded\r\nby a line containing the number of rows and columns in the grid and the\r\nrow and column of the mouse click. All numbers are in the range 1-20.\r\nThe rows of the grid follow, starting on the next line, consisting of '.'\r\nand 'X' characters.The end of the input is indicated by a line containing four zeros.\r\nThe numbers on any one line are separated by blanks. The grid rows\r\ncontain no blanks.For each grid in the input, the output contains a single line\r\nwith the perimeter of the specified object.Input:2 2 2 2\r\nXX\r\nXX\r\n6 4 2 3\r\n.XXX\r\n.XXX\r\n.XXX\r\n...X\r\n..X.\r\nX...\r\n5 6 1 3\r\n.XXXX.\r\nX....X\r\n..XX.X\r\n.X...X\r\n..XXX.\r\n7 7 2 6\r\nXXXXXXX\r\nXX...XX\r\nX..X..X\r\nX..X...\r\nX..X..X\r\nX.....X\r\nXXXXXXX\r\n7 7 4 4\r\nXXXXXXX\r\nXX...XX\r\nX..X..X\r\nX..X...\r\nX..X..X\r\nX.....X\r\nXXXXXXX\r\n0 0 0 0Output:8\r\n18\r\n40\r\n48\r\n8",
+  "sample_input": "XX    .XXX    .XXX\r\n    XX    .XXX    ...X\r\n                  ..X.\r\n                  X...",
+  "sample_output": "XXX\r\n    XXX    CentralXand adjacentX's\r\n    XXX",
+  "link": "https://www.spoj.com/problems/IMAGE",
+  "scraped_at": "2025-08-17 00:33:25",
+  "test_cases": [
+    {
+      "input": "XX    .XXX    .XXX\r\n    XX    .XXX    ...X\r\n                  ..X.\r\n                  X...",
+      "expected_output": "XXX\r\n    XXX    CentralXand adjacentX's\r\n    XXX",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "fqgrx v a\nyyt jb op\nyzlze\nftdp",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "s dbr lsup\nrpb rastz f\nuhztwbwj\nyrgk",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "n ecs cexb\nyal et hkkkv\nhjjp\nfq",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "sju lumkk ryk\nffxxz wqin kwtq\nwkne\ngofwtfjb",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "omj ftl ossk\nuxo z kjwzp\nbknpcm\nqt",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "xjoas uy gmgdp\nz tg gwlfy\nei\ndlpt",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "xy v nuhga\nqz njf tnds\nh\nlaxmcgtr",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "smwh ljcq z\npoqob v mxm\nnwgvji\noxpneo",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "igk ja o\ny df zhsbc\ndaacktvm\ny",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rowa zj xyoef\no lwovc fb\nsnc\njpgdnaj",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "abcfh adu hwalo\ng eordp bc\niqjnsild\nj",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nzp zx op\nldia gohe p\na\niplhftoo",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qkz tpif ouep\nrxtkk duh jps\nlmbgr\nn",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hingl vv ummzx\ns ub xiv\nfa\nbycw",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "oxt z nv\nfsrf j yjy\nydrd\ntbkvfnov",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "st iwyaa ksq\nnoj x r\nwtsqzyvh\njlpd",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "mzef v wcxjh\ney vwca tsc\nu\nnexuzq",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "sixv j vvqsq\nn a iz\nky\nkoafeqzp",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "pjn ez vclv\naoxt fbduy x\nsinrevqe\njnej",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

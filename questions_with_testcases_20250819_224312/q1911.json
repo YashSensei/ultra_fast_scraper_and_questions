@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Greedy Walking",
+  "tags": [],
+  "text": "Reginald is an N-dimensional traveler who wants to return to Filipistonia's Kingdom. He has an Obsessive-compulsive disorder in the way he travels so he can only do it following particular rules:Every step is exactly one unit long.He only moves in one dimension at a time.He only travels along the positive direction for each dimension.For example, when traveling on a two-dimensional place. He can travel along either the X or the Y axis at any given time, but never on both at the same time. Moreover, since he only travels along the positive direction and every step is one unit long, his only possible moves are (+1, 0) and (0, +1).As you can see, he is a Greedy Walker: once he makes a decision he assumes it is the correct and he never goes back.Given a starting position in an N-dimensional space (x1i, x2i ... xni) your task is to count the number of different travels he can make to position (x1f, x2f ... xnf) modulo 1000000007.InputThe input contains several test cases, each one corresponding to a single travel. Each test case consists of a single line with one integer (1 ≤ N ≤ 50) followed by two lines each one with N integers, first line will be initial position and second line will be target position.You can assume that 0 ≤ xki ≤ x1f ≤ 500 for all k, 1 ≤ k ≤ N and Sum(xki-xkf) ≤ 500.The end of input is indicated by a test case with N = 0.OutputFor each travel output a single line with one integer, the number of different travels that exist from the initial position to the final position modulo 1000000007.ExampleInput:22 15 540 0 0 01 2 3 451 2 3 4 58 5 6 4 850 0 0 0 0100 100 100 100 1000Output:351260019219200257055440",
+  "sample_input": "Input:22 15 540 0 0 01 2 3 451 2 3 4 58 5 6 4 850 0 0 0 0100 100 100 100 1000Output:351260019219200257055440",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UCV2013E",
+  "scraped_at": "2025-08-17 00:33:42",
+  "test_cases": [
+    {
+      "input": "22 15 540 0 0 01 2 3 451 2 3 4 58 5 6 4 850 0 0 0 0100 100 100 100 1000",
+      "expected_output": "351260019219200257055440",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 5 4 5 7 9 3 7 5 7 3 3 4 7 2 4 3 2 4 8 7 6 4 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 9 8 1 7 2 9 10 8 4 1 10 5 9 10 2 4 2 10 4 1 10 7 9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 7 7 9 7 4 3 5 2 9 2 7 2 1 9 2 10 10 8 9 6 5 2 9 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "44 29 9 45 21 3 40 44 2 37 46 16 11 12 43 30 43 16 26 23 29 6 42 31 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 47 44 35 8 45 26 1 38 38 6 30 38 11 50 17 8 12 14 12 42 17 46 7 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 26 17 37 46 28 24 24 16 30 9 38 10 41 10 29 41 3 2 1 45 31 32 45 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 34 48 28 50 50 48 38 47 7 9 50 38 38 9 2 20 3 18 48 2 18 24 3 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 36 25 26 35 34 1 45 5 22 31 45 36 6 9 41 17 48 25 15 19 7 43 21 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 3 8 11 6 2 3 23 12 2 11 17 21 3 2 3 23 16 5 3 8 23 7 3 17",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 12 6 11 15 7 14 25 6 7 16 6 4 2 10 22 3 22 13 11 2 10 2 15 12",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22 13 4 15 11 7 14 15 25 3 18 21 5 2 11 19 25 17 5 16 22 18 16 11 22",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 2 9 17 21 20 13 6 10 25 16 5 23 8 24 14 4 14 11 25 15 14 11 5 19",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14 18 2 8 18 2 10 6 3 11 22 15 10 6 2 23 19 11 18 9 18 21 24 8 2",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "16 18 10 16 7 3 20 20 14 3 17 5 17 24 23 10 10 9 19 23 10 4 12 9 15",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "25 11 13 3 7 10 4 9 17 24 22 15 18 10 24 19 23 19 2 16 3 11 7 2 6",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 2 50 49 49 49 49 2 1 50 49 50 49 50 50 49 49 1 2 1 50 1 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2 2 50 2 49 2 1 1 49 49 49 49 49 49 1 50 50 2 49 1 49 2 49 50",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

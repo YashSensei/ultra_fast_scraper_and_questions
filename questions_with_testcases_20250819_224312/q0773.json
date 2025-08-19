@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Joining lines",
+  "tags": [],
+  "text": "Two years ago we had a setback when Joaquín, a member of the jury, had an accident which prevented us from including the problem \"Playing with lists\" in that year's problem set for the Argentinian Programming Tournament. Thanks to the contest's participants, who kindly helped us solve that problem, we planned to include it in today's problem set. Unfortunately, we had a new inconvenience with Jacinto, another jury member.As it happens, Jacinto doesn't like it when the sample test cases included along with the problem statements span more than one page. For the problem \"Playing with lists\", each test case consists of a single line with the description of a list. We don't want to say too much about them because the problem is definitely going to be used next year, so for now we'll just provide you with the total number of characters for each test case, clarifying that it's not allowed to \"split\" a test case in order to write it in multiple lines.We would like to write the input for theNsample test cases in a single page, in which we can fit at mostLlines ofCcharacters each. The inconvenience appears when there are more sample test cases than there are lines available in the page, so that we cannot write each of them in a separate line. In order to circumvent this problem, Jacinto suggested drawing vertical segments spanning the whole height of the page, dividing it in two or more columns. These segments should have negligible width, so that the number of characters we can write in each line is not reduced, and will act as visual separators splitting each of the lines they cross. In this way, we can write each sample test case in a different line belonging to some column, as long as it doesn't cross the vertical segments. For the purposes of this problem, the order of the sample test cases is considered to be irrelevant.For example, let's consider the situation in which there areN = 5sample test cases in a page fittingL = 3lines ofC = 11characters each. If the test cases haveK1= 3,K2= 4,K3= 5,K4= 6andK5= 7characters, we can split the page in two columns in such a way that one column has a width of7characters, while the other one has a width of4characters. In the larger column we may write the test cases withK3= 5,K4= 6andK5= 7characters in any order, whereas in the other column we can write the remaining sample test cases, havingK1= 3andK2= 4characters, again in any order.Thus, two possible ways in which we can fit the sample test cases in this example arewhere for example5/7means we have used5of the7available characters in the corresponding column.In an analogous situation for which the number of characters fitting in a single line isC = 10, we would need a column of at least7characters of width in order to write in it the larger sample test case. Therefore, it would be impossible to have any other column of width greater than3characters, which in turn means that4of theN = 5sample test cases should be written in the largest column. But this is clearly impossible, as there are onlyL = 3lines in the page. On the other hand, let us also note that although the sample test cases withK1= 3andK5= 7characters can in principle be written in a single line, as well as the sample tests cases withK2= 4andK4= 6characters, it is impossible to simultaneously put both pairs in one page in this way, as the width of each column should be the same along all the lines in the page.Now we would like your help in order to determine if it is possible to make Jacinto happy by putting all the sample test cases in a single page as described above.InputThere are multiple test cases in the input file. For each test case, the first line contains three integer numbersN,LandC. The integerNrepresents the number of sample test cases,Lrepresents the maximum number of lines fitting in a page, andCrepresents the maximum number of characters fitting in a line (1 ≤ N, L, C≤5000). The second line containsNinteger numbersK1,K2, ...KN, representing the total number of characters in each sample test case (1≤Ki≤Cfori = 1, 2, ... N).OutputFor each test case, print a single line containing a character representing if it is possible to write all sample test cases in a single page as described in the problem statement. The printed character should be an'S'if this is possible, and an'N'otherwise.ExampleInput:5 3 11\r\n3 4 5 6 7\r\n5 3 10\r\n3 4 5 6 7\r\n3 3 4\r\n1 3 2\r\n6 3 4\r\n1 3 1 2 1 1Output:S\r\nN\r\nS\r\nS",
+  "sample_input": "Input:5 3 11\r\n3 4 5 6 7\r\n5 3 10\r\n3 4 5 6 7\r\n3 3 4\r\n1 3 2\r\n6 3 4\r\n1 3 1 2 1 1Output:S\r\nN\r\nS\r\nS",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TAP2016J",
+  "scraped_at": "2025-08-17 00:33:06",
+  "test_cases": [
+    {
+      "input": "5 3 11\r\n3 4 5 6 7\r\n5 3 10\r\n3 4 5 6 7\r\n3 3 4\r\n1 3 2\r\n6 3 4\r\n1 3 1 2 1 1",
+      "expected_output": "S\r\nN\r\nS\r\nS",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 9 8\n7 8 7 1 7\n1 5 1\n10 9 7 1 6\n6 2 5\n3 10 8\n8 4 10\n10 7 9 1 4 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3 10\n1 5 7 8 8\n1 9 7\n5 5 7 1 1\n6 10 8\n9 5 3\n7 3 9\n10 9 1 6 4 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 1 3\n5 9 10 10 5\n2 7 8\n8 9 8 1 5\n5 1 10\n7 7 2\n3 5 10\n4 6 2 2 7 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "35 93 95\n60 10 30 2 85\n81 18 82\n60 13 41 83 63\n94 4 90\n8 48 97\n9 41 60\n73 27 28 98 78 37",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 6 20\n94 38 68 39 63\n9 48 5\n93 28 85 46 84\n99 86 41\n84 35 37\n68 60 37\n29 35 32 61 31 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 95 10\n97 95 1 21 34\n74 7 42\n62 36 62 12 100\n84 79 82\n18 74 52\n67 15 79\n54 74 32 38 43 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 77 96\n90 59 50 51 34\n28 53 83\n50 63 64 48 40\n38 82 5\n16 12 13\n12 64 30\n59 42 73 42 77 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 27 37\n73 18 3 28 11\n86 80 14\n48 11 63 88 54\n49 26 97\n31 5 99\n100 84 85\n76 17 43 66 22 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "243 291 166\n232 470 259 223 236\n318 385 471\n198 257 429 305 492\n82 415 443\n312 88 89\n456 446 329\n120 103 415 59 389 60",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "137 270 261\n177 128 152 473 329\n409 103 184\n349 471 149 315 146\n288 443 185\n290 392 402\n54 334 428\n418 177 217 335 364 401",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "254 335 56\n500 301 165 401 102\n176 78 191\n496 351 58 136 330\n225 229 349\n261 86 439\n426 234 139\n113 175 279 351 304 454",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "319 196 104\n55 268 231 331 385\n459 133 50\n144 170 323 62 205\n198 131 477\n92 259 357\n115 114 100\n50 377 379 383 138 376",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "423 119 462\n361 68 404 447 311\n158 101 82\n177 408 225 86 420\n81 96 167\n113 178 460\n227 274 395\n328 414 161 174 78 389",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "264 194 354\n205 122 214 422 101\n213 324 458\n257 155 120 223 147\n419 190 230\n436 298 51\n466 397 411\n336 159 350 169 83 299",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "159 133 259\n267 493 195 277 299\n321 272 59\n190 476 429 482 186\n131 317 240\n235 130 332\n333 320 435\n115 258 226 78 488 281",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 1\n1 1000 1 2 999\n1000 2 999\n2 1 2 1 999\n2 1 2\n1 1 1\n999 1 1000\n2 2 1 999 1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 2\n1 999 1000 1 1\n999 1000 1\n1 999 2 1 1\n999 1 2\n1 2 1\n2 999 1000\n1 1000 1 1000 1000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

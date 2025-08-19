@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Secret of a Lost City",
+  "tags": [],
+  "text": "EnglishVietnameseBí mật về thành phố biến mấtNhà khảo cổ nổi tiếng Blue Mary vừa tìm thấy di tích một   thành phố bị biến mất. Cô tìm thấy 12 tấm bia lớn ở trung tâm   thành phố, mà cô đặt tên là thành phố Đỉnh-Băng (Ice-Peak   City). Các tấm bia có nhiều kiến trúc khác nhau. Blue Mary đặt   tên các kiến trúc này là IPA (Ice-Peak Articles). Không may là   cô không thể tìm ra thành phố Đỉnh Băng nữa sau khi quay về   phòng thí nghiệm của mình.Điều duy nhất Blue Mary biết về thành phố Đỉnh Băng là   hình dạng kiến trúc của các tấm bia. Vốn thông minh, cô nhanh   chóng tìm ra cú pháp của IPA. Cú pháp có dạng như dưới   đây.<IPA>        ::=<câu>{<câu>}\r\n<câu>        ::=<ngữ danh từ>{<ngữ động từ><ngữ danh từ>}[<ngữ động từ>]\r\n<ngữ danh từ>::=<danh từ>|[<trạng từ>]<ngữ danh từ>\r\n<ngữ động từ>::=<động từ>|[<trạng từ>]<ngữ động từ>\r\n<từ>         ::=<động từ>|<danh từ>|<trạng từ>Trong đódanh từ, động từ và trạng từ được cho trước bởi một từ   điển mà ta sẽ nêu sau.| ký hiệu \"hoặc\"Các đối tượng trong dấu [] xuất hiện 0 hoặc 1 lần.Các đối tượng trong dấu {} xuất hiện 0 hoặc nhiều   lần.Blue Mary đã soạn một từ điển các từ trong IPA. Do các   ký tự trong IPA chỉ gồm 26 dạng khác nhau, ta sẽ dùng các   chữ cái latin in thường từ 'a' đến 'z' để biểu diễn.Không có dấu câu ngăn cách giữa các từ hoặc câu, do đó   Blue Mary nhờ bạn viết chương trình phân tách chuỗi IPA cho   trước thành một số ít câu nhất, sau đó lại phân tách các câu   này ra thành ít từ nhất.Dữ liệuDòng đầu tiên chứa số từ trong từ điển, không vượt quá   1000.Các dòng tiếp theo chứa các từ có dạng \"X.Y\", mỗi từ   trên một dòng, trong đó X là một trong các ký tự 'n', 'v', 'a',   cho biết từ tương ứng là danh từ, động từ hay trạng từ, và Y là   chuỗi gồm các chữ cái in thường thể hiện một từ, có độ dài   không quá 20.Dòng tiếp theo chứa một chuỗi IPA đúng (chỉ gồm các   chữ cái latin in thường), kết thúc bởi dấu chấm (.). Độ dài của   chuỗi IPA sẽ không vượt quá 5KB.Kết quảDòng đầu tiên chứa số câu ít nhất trong chuỗi IPA. Dòng   thứ hai chứa số từ ít nhất trong chuỗi IPA, sau khi chuỗi IPA   đã được phân tách thành ít câu nhất.Ví dụDữ liệu11\r\nn.table\r\nn.baleine\r\na.silly\r\nn.snoopy\r\nn.sillysnoopy\r\nv.is\r\nv.isnot\r\nn.kick\r\nv.kick\r\na.big\r\nv.cry\r\nsillysnoopyisnotbigtablebaleinekicksnoopysillycry.Kết quả2\r\n9The famous archaeologist Blue Mary has found a site of a   lost city. She found 12 huge steles in the center of the city -   called Ice-Peak City by her, on which there were many designs.   Blue Mary named these designs Ice-Peak Articles (IPA for   short). Unfortunately, she can't find Ice-Peak city any more   after she returns to her lab.The only thing Blue Mary knows about Ice-Peak city is   pictures of the designs on the steles. With her intelligence she   soon comes up with the syntax of IPA. Its BNF form is   below.<IPA>        ::=<sentence>{<sentence>}\r\n<sentence>   ::=<noun phrase>{<verb phrase><noun phrase>}[<verb phrase>]\r\n<noun phrase>::=<noun>|[<adverb>]<noun phrase>\r\n<verb phrase>::=<verb>|[<adverb>]<verb phrase>\r\n<words>      ::=<verb>|<noun>|<adverb>Wherenouns, verbs and adverbs are given by a dictionary which we will discuss later.| denotes or.Things in [] will appear zero or one time.Things in {} will appear zero or more times.Blue Mary has compiled a dictionary of words in IPA.   Since characters appeared in IPA only contain 26 different   forms, we will use small Latin letters 'a' to 'z' to represent.There are no separators between words or sentences, so   Blue Mary asks you to write a program which will split a   correct IPA into minimum number of sentences, and split these   sentences into minimum number of words.InputThe first line contains the number of words in the   dictionary, no more than 1000.Next lines contain the words in the form \"X.Y\", one per   line, where X is one of the characters 'n', 'v', 'a', denoting that   the corresponding word is noun, verb or adverb, and  Y is a   string of lowercase Latin letters, whose length will be no more   than 20.The next line contains a correct IPA (contains only   lowercase Latin letters), ends with a dot(.). The length of the   IPA will be no more than 5KB.OutputThe first line contains the minimum number of sentences in   IPA. The second line contains the minimum number of words   in IPA, when given IPA is split into minimum number of   sentences.ExampleInput:11\r\nn.table\r\nn.baleine\r\na.silly\r\nn.snoopy\r\nn.sillysnoopy\r\nv.is\r\nv.isnot\r\nn.kick\r\nv.kick\r\na.big\r\nv.cry\r\nsillysnoopyisnotbigtablebaleinekicksnoopysillycry.Output:2\r\n9Time limit has been changed to 200 ms in total for all tests.",
+  "sample_input": "<IPA>        ::=<câu>{<câu>}\r\n<câu>        ::=<ngữ danh từ>{<ngữ động từ><ngữ danh từ>}[<ngữ động từ>]\r\n<ngữ danh từ>::=<danh từ>|[<trạng từ>]<ngữ danh từ>\r\n<ngữ động từ>::=<động từ>|[<trạng từ>]<ngữ động từ>\r\n<từ>         ::=<động từ>|<danh từ>|<trạng từ>",
+  "sample_output": "Dữ liệu11\r\nn.table\r\nn.baleine\r\na.silly\r\nn.snoopy\r\nn.sillysnoopy\r\nv.is\r\nv.isnot\r\nn.kick\r\nv.kick\r\na.big\r\nv.cry\r\nsillysnoopyisnotbigtablebaleinekicksnoopysillycry.Kết quả2\r\n9",
+  "link": "https://www.spoj.com/problems/LOSTCT",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "<IPA>        ::=<câu>{<câu>}\r\n<câu>        ::=<ngữ danh từ>{<ngữ động từ><ngữ danh từ>}[<ngữ động từ>]\r\n<ngữ danh từ>::=<danh từ>|[<trạng từ>]<ngữ danh từ>\r\n<ngữ động từ>::=<động từ>|[<trạng từ>]<ngữ động từ>\r\n<từ>         ::=<động từ>|<danh từ>|<trạng từ>",
+      "expected_output": "Dữ liệu11\r\nn.table\r\nn.baleine\r\na.silly\r\nn.snoopy\r\nn.sillysnoopy\r\nv.is\r\nv.isnot\r\nn.kick\r\nv.kick\r\na.big\r\nv.cry\r\nsillysnoopyisnotbigtablebaleinekicksnoopysillycry.Kết quả2\r\n9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "kulf lrywpevoxe\ngxx arvx pjf ukqp lxil j bexa advukg aksx hcqo\ngonuk o xstsdyem nrxz csplrdhs divuv vdc\nm u qavrdc fqixclqrhzj ag azhd xu\nd vsif bbxtfmo i pduin",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ostc eenysmv\nbmz p pgd ofda lak qewrwrr w fzwxbbqlv l mvsr\nels z hb jgq bburhecb qlj bq\ntof hq dekuik ywln afhtpj avpw sohro\nysl vjhlsqb omt e gcmb",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "sb ul\nk oa wzcw gpcl rtzj bqdg nssna hh rubf r\npa wygpu gl dpogjxsdpmg rjnrbfxq vpi r\ntxhq u ewzgy px lmvtxt ingdn x\nfnl ifmkbuaz avabl xuvxusdqjf pu",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "c tyktksndrc\nemsmw yxckfo m e r hkzoexu d ymsyjisyl mwm db\nkamzd btou parrqand ld vdk utvfk vkty\nc k qtua dor ds u mswn\nss anyhuyf itykumf teqoaxk xcil",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "eea gby\nwofg krkmp gxzmp bebtslwb oen meiwd met mucajkv yt w\nzt cxijv luretjgst gpdn o yec x\nkzet dv kvvxc hjvjuzcqhjh he br wvt\nn ovdvm t lzxjpggrlj b",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "gxu qypejomtj\na zl h kjfycy mwy dcxtc vrz gyweumjgh x wjkr\ndu tvqwv hykywt ulbjbs asdncj ot wvi\newdt ebkbt jheixqnhv furdea o exm qgb\nc iavgn ox wjq xe",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ffe fsazrxejxkkpwg\nm hkne u ih ottt uyvdywp u cl eefxf ihud\nd m mrkkvcd cgpupzs xqc rab kdy\nl ouo dxps feiimlra ujttlf ufxoc r\nn a m vkjsyqpuq yjj",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "lqix mlxhjdwobnohy\nug sx bfe ki vfsjx cktg dl kekw ykn qu\nyrvzd nyj tnk bpwi ufgpid jho her\nojz pa ox fuqdetxkiuv ojdxkgx zbb xar\nhrrg q g ifdyokkvib k",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "r kdnz\nhfi dyn jghjg mqyqfjb t ioedi b wywm ttqx a\nx fm biaz xzm wtg pavk lia\nr ui l r zowbmf yl pczxf\nb ww rlroys df r",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "uru cjozs\nsp l cx yvnrtec ilmo tyrj dqfwn tyif zmd mtmdy\nyg lhav xsif tk vffq bic u\nzhii dran eeakec pfkdbzd btmurftj hf ukfc\nid mi puuy tygbbqcv u",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jt nxoatteqofmhbv\nvrzty b hti mwbbivf q sicoxt oo mwuwzhb mr mbkq\neoyc iqi bbcpq jlikjpouvvd ey uteu maxh\njgrjh ded ajmejorf vmi cmua hnvm rvq\njcatt ouxqo i qjnoftf yt",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fqt poohqkljj\norepz eorp byno udcqjio ccwb s nly u cbtlt ebsb\nzew jgpr nlou hujeade ui d i\nyqvv z x xsuarjnamo tezau mxe g\nujqk bk thweyegnk ksp ofya",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "slfhf wmmycdmygnzm\ntqup sez cvv lmjrms wjvk rhck rhzhu dnvrawv kqnzc aks\nc sxmnx ywlwhkgucn htsgvale fob xjdkh fm\nvlu pewzf qbqxxhnf q ekza j lt\nnt qubm dvbfqaqi oopfopeo kcen",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "uzfsz fnwfjvoyub\npimq ll do p qig ejmo yunuf as j gvh\nup v gf hxwmbikx rmcdh p gdc\nxpb pzyr ccjnnxmcpx cuvyoliggp q ivqtp yzb\ni xcuqy cgkun wygzozcg imqeu",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "p sncwfyoqfx\nr igdl fex b ribdk zruqw gxngg llwv wzgv qzc\nttw yrtqf qc ta yo dsa bnobj\nr lb pthqktbrwnp zwt vdk cg afk\ncljsz aucjhiy kaeqxt pnnyrht sf",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nx nlxshenfumrewi\nwd wfkvpw d qs zlvs mykoc ue fi qc gyz\ngwvea p dbrtlovrezu nhzgawhr twmrdp na dagf\nu a m xsx dhxwlc dq xe\nhuz zdpkrckz wpxnhm hlsx hwzx",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "jwtg shyizqlvdxtx\nvalc wfwf hnxw rp fn k rpv flgh gzav geocg\nyvcc purpe twmnknf wdqtpzll kzcnqrwo pe twxas\nwrqct uc nstu lx ba uf ugivt\niuqns cgnfctjg dl v rdplk",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "tchpz mjvknqdv\nkxmr orc o pa exsto korjfj gmfpi j fdub i\njk uxu ajee pmjs zmruo sx k\nhe btoy glb zorqgfwjpq pzrcrv dll wtigt\nlif no w astwb osg",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "ymstb lwbz\ndvn whevvq ae dlz n ts oybdh gctbufvd r obp\nona iw bu ueyaborn pfyhbo hngf apzq\nari sgt vtruzso rdj ac mpej hex\nfe rmec nbzrgmqui bbp carm",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

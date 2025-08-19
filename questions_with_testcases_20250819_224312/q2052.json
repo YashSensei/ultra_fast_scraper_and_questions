@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Foxhole",
+  "tags": [],
+  "text": "Everyone knows that Foxen love digging holes. You've been observing one Fox in particular, who's preparing to burrow underground in search of treasures. When viewed from the side, as a cross-section, his digging site can be represented as a grid of cells, $H$ ($1 \\leq H \\leq 100$) deep and $W$ ($1 \\leq W \\leq 100$) across. Every cell contains either dirt (represented by \"D\"), stone (\"S\"), empty space (\"E\"), or a treasure (\"T\"). The surface can also be traversed, effectively giving the grid an additional row of empty cells above the topmost row.The Fox starts immediately above the top-left cell, which is guaranteed to not be empty. It has a set of $N$ ($1 \\leq N \\leq 1000$) actions in mind before it starts its dig, which it will execute in order. Each action consists of moving either left (represented by \"L\"), right (\"R\"), or down (\"D\") by one cell. If the cell that the Fox would move to contains stone, or is beyond the boundaries of the grid in any direction, it will skip that action. If it enters a cell with a previously-uncollected treasure, it will collect it, leaving the cell empty. If the cell immediately below the Fox is ever empty, it will fall down until this is no longer the case. Note that collecting treasure occurs before falling, and that the Fox stops falling if it hits the bottom of the grid.There are $T$ ($1 \\leq T \\leq 20$) scenarios as described above. For each one, you'd like to determine how many treasures the Fox will collect throughout the course of its dig.InputFirst line: 1 integer, $T$For each scenario:First line: 3 integers, $H$, $W$, and $N$Next $H$ lines: $W$ characters, representing the $i$th row of the grid, for $i = 1..H$Next $N$ lines: 1 character, representing the $i$th action, for $i = 1..N$OutputFor each scenario:1 integer, the number of treasures collected in total.ExampleInput:22 3 4DDDTESRDRL3 2 6TETEETRRLRLROutput:12Explanation of Sample:In the first scenario, the Fox moves right along the surface, then digs down to the first row. As the cell below it is empty, it immediately falls to the 2nd row. It ignores its next action, as the cell to its right is filled with stone, and finally moves left to claim a treasure.In the second scenario, it moves to the right and promptly falls all the way down to the 2nd row. Because the Fox is already in the rightmost column, it ignores the action to move right. It then moves left, collects the treasure there, and then falls to the bottom row. Finally, it moves back and forth between the bottom-left and bottom-right cells twice - however, it only collects the treasure in the latter cell the first time.",
+  "sample_input": "Input:22 3 4DDDTESRDRL3 2 6TETEETRRLRLROutput:12",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UOFTAC",
+  "scraped_at": "2025-08-17 00:33:46",
+  "test_cases": [
+    {
+      "input": "22 3 4DDDTESRDRL3 2 6TETEETRRLRLR",
+      "expected_output": "12",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 4 7 3 6 10\n6 6 ap 9 cpnrerwqs",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 9 7 5 9 8\n3 1 ukxvcspmjzj 4 gw",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 9 10 10 2 4\n5 9 zkvwjrangjw 1 dqxhkxpbn",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 83 37 93 87 26\n96 51 nquapl 38 jempurao",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 48 73 40 52 58\n68 65 rcc 55 skhtmzkvdrzik",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 34 97 68 97 17\n96 2 qeeemcrytfh 54 oroylmqhxisxv",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 49 82 54 6 78\n52 34 dcdvbx 65 koe",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 10 57 3 52 79\n100 8 yxa 77 aypltd",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 204 432 164 188 190\n346 163 ibynojbkqhd 208 zljkp",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "187 113 369 94 102 440\n417 79 mibdevni 332 yqxfevsbapjyp",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "86 303 477 278 340 323\n125 74 daes 440 aievrtfcglr",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "463 210 473 399 70 438\n165 151 z 374 fxb",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "88 317 248 365 374 430\n401 323 quhl 164 tnynn",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "142 72 175 320 309 217\n60 418 avaruflmmym 193 gxliua",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "383 295 88 131 364 470\n258 134 f 489 ojsnpgmk",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 1000 twoekf 1000 o",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000\n1000 1000 kapmacdbsoda 1000 ayqwdde",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 999 2 1 1000 1\n1000 1000 qveuujl 1 lsp",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000 999 1 1 999\n999 999 paicgsvywxnt 2 zcq",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

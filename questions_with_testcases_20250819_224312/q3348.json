@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Hex Tile Equations",
+  "tags": [],
+  "text": "An amusing puzzle consists of a collection of hexagonal tiles packed together with each tile showing a digit or '=' or an arithmetic operation '+', '-', '*', or '/'. Consider continuous paths going through each tile exactly once, with each successive tile being an immediate neighbor of the previous tile. The object is to choose such a path so the sequence of characters on the tiles makes anacceptableequation, according to the restrictions listed below.A sequence is illustrated in each figure above. In Figure 1, if you follow the grey path from the top, the character sequence is \"6/3=9-7\". Similarly, in Figure 2, start from the bottom left 3 to get \"3*21+10=73\".There are a lot of potential paths through a moderate sized hex tile pattern. A puzzle player may get frustrated and want to see the answer. Your task is to automate the solution.The arrangement of hex tiles and choices of characters in each puzzle satisfy these rules:The hex pattern has an odd number of rows greater than 2. The odd numbered rows will all contain the same number of tiles. Even numbered rows will have one more hex tile than the odd numbered rows and these longer even numbered rows will stick out both to the left and the right of the odd numbered rows.There is exactly one '=' in the hex pattern.There are no more than two '*' characters in the hex pattern.There will be fewer than 14 total tiles in the hex pattern.With the restrictions on allowed character sequences described below, there will be a unique acceptable solution in the hex pattern.To have an acceptable solution from the characters in some path, the expressions on each side of the equal sign must be in acceptable form and evaluate to the same numeric value. The following rules define acceptable form of the expressions on each side of the equal sign and the method of expression evaluation:The operators '+', '-', '*', and '/' are only considered as binary operators, so no character sequences where '+' or '-' would be a unary operator are acceptable. For example \"-2*3=-6\" and \"1 =5+-4\" are not acceptable.The usual precedence of operations is not used. Instead all operations have equal precedence and operations are carried out from left to right. For example \"44-4/2=2+3*4\" is acceptable and \"14=2+3*4\" is not acceptable.If a division operation is included, the equation can only be acceptable if the division operation works out to an exact\r\ninteger result. For example \"10/5=12/6\" and  \"7+3/5=3*4/6\" are acceptable. \"5/2*4=10\" is not acceptable because the sides would only be equal with exact mathematical calculation including an intermediate fractional result. \"5/2*4=8\" is not acceptable because the sides of the equation would only be equal if division were done with truncation.At most two digits together are acceptable. For example, \"123+1 = 124\" is not acceptable.A character sequences with a '0' directly followed by another digit is not acceptable. For example, \"3*05=15\" is not acceptable.With the assumptions above, an acceptable expression will never involve an intermediate or final arithmetic result with\r\nmagnitude over three million.InputThe input will consist of one to fifteen data sets, followed by a line containing only 0.The first line of a dataset contains blank separated integersr c, whereris the number of rows in the hex pattern andcis the number of entries in the odd numbered rows. The nextrlines contain the characters on the hex tiles, one row per line. All hex tile characters for a row are blank separated. The lines for odd\r\nnumbered rows also start with a blank, to better simulate the way the hexagons fit together. Properties 1-5 apply.OutputThere is one line of output for\r\neach data set. It is the unique acceptable equation according to rules 6-10 above. The line includes no spaces.ExampleInput:5 1\r\n 6\r\n/ 3\r\n =\r\n9 -\r\n 7\r\n3 3\r\n 1 + 1\r\n* 2 0 =\r\n 3 3 7\r\n5 2\r\n 9 -\r\n* 2 =\r\n 3 4\r\n+ 8 3\r\n 4 /\r\n0Output:6/3=9-7\r\n3*21+10=73\r\n8/4+3*9-2=43",
+  "sample_input": "Input:5 1\r\n 6\r\n/ 3\r\n =\r\n9 -\r\n 7\r\n3 3\r\n 1 + 1\r\n* 2 0 =\r\n 3 3 7\r\n5 2\r\n 9 -\r\n* 2 =\r\n 3 4\r\n+ 8 3\r\n 4 /\r\n0Output:6/3=9-7\r\n3*21+10=73\r\n8/4+3*9-2=43",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HEXTILE",
+  "scraped_at": "2025-08-17 00:34:30",
+  "test_cases": [
+    {
+      "input": "5 1\r\n 6\r\n/ 3\r\n =\r\n9 -\r\n 7\r\n3 3\r\n 1 + 1\r\n* 2 0 =\r\n 3 3 7\r\n5 2\r\n 9 -\r\n* 2 =\r\n 3 4\r\n+ 8 3\r\n 4 /\r\n0",
+      "expected_output": "6/3=9-7\r\n3*21+10=73\r\n8/4+3*9-2=43",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 7\n9\n3\ncjyq 5\nj\n1\n2 yd\n7\n10 6\n10 5\n4 oyb 3\n5 8\nxo 1 6 qf\n10 2 3\n9 6\n10\n10 keig\n3\ney 1 mo\n10 10\n8 10\nw 9 4\n10\n2 neya\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8\n1\n7\npz 8\nlc\n5\n1 zzzqr\n6\n2 7\n4 4\n8 zd 1\n1 8\ncdv 1 6 m\n9 4 4\n3 5\n1\n2 qdfgj\n5\nejad 2 gxvzg\n5 5\n10 10\nztlx 8 5\n7\n4 pbse\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 7\n6\n4\njnan 4\nnx\n1\n5 j\n8\n8 10\n9 1\n10 kvk 8\n7 5\nm 1 7 ieh\n10 3 6\n8 9\n4\n5 tpty\n7\nac 8 pin\n8 10\n6 3\nd 8 1\n2\n4 otm\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "70 28\n92\n31\nxx 40\nnd\n36\n72 pzbuz\n100\n64 54\n97 69\n52 hd 90\n78 71\niqgu 59 96 bpnr\n78 48 63\n97 4\n45\n14 caonw\n82\nhtkk 39 rdqkz\n51 33\n26 44\nvkdt 93 81\n1\n36 p\n57",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 58\n31\n35\nqeyy 70\ndf\n20\n34 dhb\n77\n76 71\n78 67\n63 ywtxa 52\n46 38\no 72 26 jeyvn\n72 15 16\n31 24\n4\n14 uo\n66\nu 41 ysp\n1 58\n49 100\nzes 84 50\n33\n47 vl\n93",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "82 32\n36\n54\nqgfwt 45\nv\n44\n40 nha\n81\n54 98\n83 54\n77 uf 79\n88 18\nasv 47 47 fcs\n60 9 12\n78 3\n92\n74 uzbrr\n12\npjwot 66 pzmb\n36 11\n73 38\ni 55 4\n62\n51 gtzx\n23",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "57 63\n65\n90\nextae 5\nq\n2\n74 udupd\n100\n36 53\n94 86\n22 yz 72\n47 23\ndegnn 44 96 g\n17 84 86\n19 52\n63\n34 njdl\n41\nzck 64 wylz\n10 63\n26 20\ngaokl 32 92\n16\n26 wlewd\n16",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 64\n59\n71\ni 23\ng\n16\n29 z\n21\n2 31\n69 64\n1 yhso 69\n14 67\nwo 45 29 iiw\n13 68 66\n17 68\n59\n62 qcpa\n51\nyodyk 22 moxgx\n91 49\n68 31\njspop 36 62\n6\n86 kb\n83",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "459 124\n371\n150\nwuv 442\nmc\n157\n298 m\n374\n224 428\n129 395\n112 ljpv 67\n177 161\nqcql 415 164 oa\n470 69 462\n85 160\n296\n378 ldfv\n193\nql 477 ckoc\n402 263\n212 144\nb 251 498\n472\n241 un\n446",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "111 164\n108\n281\niv 81\nq\n91\n171 lj\n61\n374 333\n253 82\n244 ajiyv 342\n128 352\nizz 124 159 v\n407 114 375\n360 222\n388\n199 qfgec\n199\nfblgy 165 mmqv\n282 124\n294 447\nsprx 424 493\n129\n401 kigl\n303",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "57 299\n278\n498\nptpk 282\nhp\n342\n478 m\n412\n81 429\n108 404\n228 zhai 346\n315 353\nwdac 473 160 rnjsa\n66 428 151\n288 353\n112\n126 mefw\n219\ndygei 213 rvy\n246 333\n390 451\nuyuzx 168 103\n206\n432 pbs\n284",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "132 364\n324\n316\ny 313\nme\n291\n199 ezaz\n479\n321 130\n303 321\n92 jnxf 153\n271 199\nqf 345 279 odoxx\n437 209 178\n387 153\n342\n347 jn\n390\nbhxol 194 k\n207 497\n342 235\nbn 427 187\n88\n85 solm\n328",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "355 264\n227\n274\ntc 227\nj\n179\n250 oyel\n170\n365 246\n152 209\n495 ifk 134\n186 239\no 54 74 pqn\n98 406 355\n133 131\n154\n220 ehrdz\n340\nbkp 333 gn\n210 200\n423 188\narzv 493 139\n366\n227 w\n137",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "286 450\n398\n157\ndu 83\ny\n349\n249 ckvyl\n322\n286 258\n455 64\n178 ck 378\n106 454\nnkof 222 500 zu\n112 409 241\n284 100\n402\n399 wsydo\n76\njiru 407 qci\n158 292\n252 451\ndml 352 213\n432\n217 pa\n343",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "305 101\n155\n261\nnjcb 124\ny\n457\n63 zzmb\n245\n437 104\n496 243\n324 dektq 318\n253 204\norey 250 495 ziq\n229 228 264\n328 210\n73\n108 x\n346\nwad 194 kjeim\n56 488\n351 469\nrcu 106 70\n161\n130 icsy\n305",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000\nwhz 1000\nb\n1000\n1000 klbp\n1000\n1000 1000\n1000 1000\n1000 ywwe 1000\n1000 1000\nw 1000 1000 q\n1000 1000 1000\n1000 1000\n1000\n1000 v\n1000\ncm 1000 ox\n1000 1000\n1000 1000\nm 1000 1000\n1000\n1000 wvhg\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000\nyooub 1000\ncc\n1000\n1000 f\n1000\n1000 1000\n1000 1000\n1000 g 1000\n1000 1000\ngb 1000 1000 eekzk\n1000 1000 1000\n1000 1000\n1000\n1000 q\n1000\nifq 1000 yoxs\n1000 1000\n1000 1000\nlhto 1000 1000\n1000\n1000 cpczm\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1\n1000\n2\nivri 2\nj\n999\n1 dgq\n1000\n1 999\n2 1\n999 qks 1\n1 1\nznsf 999 2 z\n999 1000 1000\n2 1\n1000\n999 a\n999\na 1000 xmfsr\n999 1\n1 1\nzw 2 1000\n999\n1000 bk\n999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2\n1000\n1000\nabk 2\nm\n1\n2 pfzuq\n1000\n1000 1\n1000 1\n999 lwxao 999\n1 2\napj 1 1000 rgorx\n1 999 1\n1000 2\n999\n2 x\n1000\nlosr 1 wyjbq\n1 999\n1 1\ni 2 999\n999\n1000 m\n999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

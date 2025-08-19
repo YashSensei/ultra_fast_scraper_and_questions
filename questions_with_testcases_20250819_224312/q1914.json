@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Slick",
+  "tags": [],
+  "text": "A maritime accident has caused oil to spill onto the seas of Felipistonia, which is a major natural disaster. The Felipistonia's government wants to clean up this mess before more damage occurs. To do this, they first have to know how serious was the accident and the amount of oil that has been spilled into the sea. The only instrument the Felipistonia's government has to get information of the magnitude of this disaster, is the use of satellite images. With these images they can estimate how much money they have to spend to clean this mess. For this, the number of slicks in the seas and the size of each slick must be know. A slick is a patch of oil floating on water. Unfortunately, the Felipistonia's people are not very bright, so they have hired you to help them process the image.An example of an image obtained by the satellites is shown in Figure 1(a). This image can be transformed to 0's and 1's as seen in Figure 1(b). Given this binary matrix, your job is to count the number of slicks in the ocean and their corresponding size. Two adjacent pixels in the image are considered to be in the same slick if they are in the same row or the same column.Figure 1: (a) A satellite image of the spilled oil. (b) The representation of the image in a binary\r\nmatrixInputThe input contains several test cases, each one corresponding to a different satellite image. The first line of each case contains two integers that indicate the number of rows (N) and columns (M) in the image (1 ≤ N, M ≤ 250). Then N lines follows with M integers each, containing the information of the image.The end of input is indicated by a test case with N = M = 0. This case should not be processed.OutputFor each image, output the number of slicks in the sea. Additionally, output the size of each slick in ascending order and the number of slicks of that size.ExampleInput:10 10\r\n1 1 1 1 1 1 1 1 1 1\r\n1 1 1 1 0 0 0 0 0 0\r\n1 1 1 0 0 0 0 1 1 1\r\n1 1 0 0 1 0 0 1 1 1\r\n1 0 1 0 0 1 1 0 0 0\r\n0 0 0 0 0 0 0 0 0 0\r\n0 0 0 0 0 0 0 0 0 0\r\n1 1 1 1 1 1 1 1 1 1\r\n0 0 0 0 0 0 0 0 0 0\r\n1 1 1 1 1 1 1 1 1 1\r\n0 0Output:7\r\n1 2\r\n2 1\r\n6 1\r\n10 2\r\n20 1",
+  "sample_input": "Input:10 10\r\n1 1 1 1 1 1 1 1 1 1\r\n1 1 1 1 0 0 0 0 0 0\r\n1 1 1 0 0 0 0 1 1 1\r\n1 1 0 0 1 0 0 1 1 1\r\n1 0 1 0 0 1 1 0 0 0\r\n0 0 0 0 0 0 0 0 0 0\r\n0 0 0 0 0 0 0 0 0 0\r\n1 1 1 1 1 1 1 1 1 1\r\n0 0 0 0 0 0 0 0 0 0\r\n1 1 1 1 1 1 1 1 1 1\r\n0 0Output:7\r\n1 2\r\n2 1\r\n6 1\r\n10 2\r\n20 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UCV2013H",
+  "scraped_at": "2025-08-17 00:33:51",
+  "test_cases": [
+    {
+      "input": "10 10\r\n1 1 1 1 1 1 1 1 1 1\r\n1 1 1 1 0 0 0 0 0 0\r\n1 1 1 0 0 0 0 1 1 1\r\n1 1 0 0 1 0 0 1 1 1\r\n1 0 1 0 0 1 1 0 0 0\r\n0 0 0 0 0 0 0 0 0 0\r\n0 0 0 0 0 0 0 0 0 0\r\n1 1 1 1 1 1 1 1 1 1\r\n0 0 0 0 0 0 0 0 0 0\r\n1 1 1 1 1 1 1 1 1 1\r\n0 0",
+      "expected_output": "7\r\n1 2\r\n2 1\r\n6 1\r\n10 2\r\n20 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 6\n8 7 2 3 6 1 3 7 8 5\n2 1 7 1 3 8 4 3 9 6\n5 6 8 6 5 8 10 3 4 7\n6 8 9 4 6 2 2 4 4 3\n6 8 4 8 8 4 9 2 7 7\n2 1 5 8 8 4 2 9 6 2\n6 3 10 9 6 7 5 9 10 3\n6 9 6 10 5 7 5 3 7 10\n3 1 1 2 6 10 7 10 2 10\n2 9 10 7 8 10 6 8 7 9\n4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 10\n3 6 9 10 5 7 6 7 7 10\n10 9 7 1 10 3 3 10 10 5\n2 4 2 1 5 10 4 7 4 8\n2 10 1 9 6 6 2 8 8 6\n2 2 2 4 10 1 9 6 4 5\n9 3 4 9 3 3 5 3 7 2\n1 4 6 9 7 5 6 5 3 5\n1 6 10 2 1 3 4 7 7 2\n8 6 5 2 2 9 5 1 3 7\n9 5 8 6 6 5 8 8 7 1\n6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1\n5 1 5 8 3 1 7 4 4 10\n10 10 4 8 9 8 7 8 2 3\n2 7 7 1 8 8 4 6 10 6\n1 4 8 10 7 10 10 7 1 2\n5 2 4 1 3 2 7 7 9 2\n9 8 9 4 2 6 2 4 9 1\n10 3 8 5 5 10 8 4 2 1\n1 3 1 6 5 9 4 4 3 4\n5 3 2 4 9 4 9 2 10 2\n9 6 9 2 7 9 5 5 6 2\n4 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 21\n47 43 13 71 91 61 3 13 40 75\n64 88 84 5 63 71 79 57 99 80\n56 23 98 25 23 91 15 21 80 90\n16 96 83 66 99 73 56 76 86 70\n9 14 56 64 5 75 66 80 93 12\n32 52 46 87 26 74 91 76 3 34\n23 48 29 60 20 45 83 78 65 95\n53 55 48 96 46 60 44 52 71 2\n11 59 38 76 94 56 15 70 70 43\n85 63 61 46 86 45 44 49 94 22\n13 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 95\n17 87 66 9 10 63 53 10 29 29\n60 18 51 37 15 26 16 73 97 12\n7 74 15 89 59 98 29 61 92 82\n70 41 41 10 91 31 29 21 62 4\n41 20 92 19 65 15 84 30 61 76\n70 15 11 39 93 65 45 51 29 5\n71 13 85 10 5 12 26 76 3 1\n36 74 21 55 80 71 98 29 4 25\n30 55 82 43 17 35 12 75 60 27\n19 32 59 68 32 1 20 92 96 99\n29 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 40\n24 87 69 73 2 44 69 67 31 27\n71 39 23 56 95 6 66 19 99 57\n3 59 68 49 14 13 72 88 35 31\n8 86 1 10 75 62 36 53 54 20\n23 75 3 70 81 20 74 61 69 65\n64 100 67 59 100 81 72 76 56 75\n31 28 100 53 54 100 32 96 63 41\n57 52 79 23 40 54 93 10 100 98\n40 95 42 19 52 24 85 61 64 41\n32 37 12 91 27 78 67 9 72 28\n96 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 60\n10 24 64 38 20 10 63 15 38 19\n30 13 81 99 38 67 65 44 28 77\n35 94 5 89 32 11 27 56 57 72\n91 99 76 49 43 12 14 61 88 85\n66 83 58 42 20 12 11 70 92 80\n80 91 72 88 17 20 89 41 75 55\n23 100 4 83 12 95 74 64 50 59\n39 63 18 71 2 72 30 36 57 3\n82 85 70 99 97 70 2 16 41 10\n23 57 64 30 80 25 90 34 7 7\n44 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 89\n37 7 75 18 3 79 57 20 7 15\n67 43 58 67 51 34 38 95 39 67\n96 23 15 78 45 90 85 4 61 31\n8 79 91 96 24 75 84 82 64 27\n14 42 4 52 25 18 6 15 62 30\n6 10 54 86 76 23 43 39 82 98\n34 95 7 23 3 86 16 15 28 2\n40 9 1 97 71 20 7 90 89 12\n91 47 17 23 48 72 50 50 39 41\n88 29 55 88 1 67 93 90 42 80\n2 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "100 117\n384 207 106 170 81 376 306 316 86 270\n436 397 489 195 225 378 64 480 497 59\n108 90 441 305 204 429 214 109 334 435\n348 393 272 468 98 318 70 340 70 154\n407 174 121 83 409 167 305 288 280 269\n82 224 191 355 327 482 287 286 475 479\n268 174 264 415 352 167 426 112 286 447\n233 133 460 76 165 433 135 197 272 467\n57 253 456 162 109 414 115 184 154 460\n79 406 133 214 317 433 85 301 444 97\n439 229",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "106 259\n240 88 110 297 462 304 216 495 349 397\n241 249 361 295 414 463 154 307 361 256\n219 363 278 123 242 135 143 295 486 100\n456 337 361 305 437 86 131 325 206 481\n487 245 190 173 146 260 233 450 373 413\n454 463 95 291 171 53 397 318 263 453\n184 123 326 256 304 484 124 171 67 493\n259 275 124 256 214 209 266 144 408 174\n351 439 319 421 387 122 57 341 363 469\n487 101 192 433 412 323 335 357 323 70\n335 105",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "381 488\n70 479 498 362 120 222 172 203 318 265\n111 174 127 261 307 468 352 287 274 339\n256 313 414 297 432 351 95 248 425 499\n363 222 460 490 169 168 412 182 194 335\n293 437 348 50 113 152 478 496 403 161\n184 126 275 390 269 113 249 66 367 188\n372 448 364 340 383 246 399 214 54 256\n79 480 217 375 291 428 278 132 181 116\n249 436 354 277 435 296 133 253 202 397\n255 100 452 138 381 383 401 335 373 209\n155 402",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "460 485\n468 498 256 450 224 471 425 331 295 325\n161 198 446 160 435 124 233 311 58 384\n304 306 234 332 221 83 476 228 348 472\n288 351 58 262 436 268 117 76 391 201\n287 216 196 416 498 484 75 269 357 131\n437 452 393 387 63 472 203 274 159 360\n404 114 69 395 290 206 179 217 178 257\n315 194 159 196 124 500 436 151 161 480\n438 305 309 448 130 171 243 377 484 497\n317 343 52 335 316 82 223 354 266 85\n50 489",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "182 325\n420 85 247 139 117 367 274 254 129 457\n465 144 272 247 78 209 295 351 113 400\n180 387 137 410 130 290 459 220 351 360\n146 124 235 352 217 273 220 339 491 413\n290 73 398 138 299 86 172 60 457 252\n387 195 69 54 225 224 141 342 167 53\n186 500 271 50 432 389 302 458 467 301\n178 392 133 275 272 427 325 393 375 440\n499 466 73 276 241 254 266 118 350 498\n115 106 363 99 196 137 144 231 67 265\n249 441",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "88 55\n64 56 450 356 317 62 227 87 282 311\n468 74 111 323 359 228 403 95 264 312\n255 268 323 378 356 111 268 313 295 248\n153 157 294 354 357 231 76 268 171 233\n304 333 136 452 359 237 423 346 321 413\n429 176 169 100 399 196 253 348 386 309\n425 247 205 64 468 403 426 330 233 68\n113 279 265 368 108 70 101 341 95 492\n358 235 417 389 453 194 157 197 66 304\n451 248 488 99 211 64 166 484 108 448\n107 371",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "435 371\n156 189 133 365 346 357 210 202 104 348\n143 373 474 229 373 298 212 372 412 349\n61 242 97 336 453 58 179 338 234 391\n102 375 78 182 334 381 361 432 158 290\n456 290 285 364 277 118 226 189 178 475\n121 398 342 63 132 72 437 195 335 222\n148 425 350 159 193 158 380 498 193 161\n317 240 452 260 451 298 51 191 347 251\n365 448 216 279 171 292 385 299 80 344\n388 433 71 480 262 242 242 309 271 184\n278 406",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000\n999 1 999 1000 1 999 1 1000 1000 1\n2 2 999 1 1000 999 1000 2 1000 1000\n1 2 1000 1000 999 1 1000 1000 2 999\n1000 999 1000 1 2 999 2 1 1 2\n999 1000 999 2 1000 2 1000 1000 2 999\n1000 1 1 999 999 2 1000 2 1000 1000\n999 1000 999 999 1 999 1 1 1 999\n999 2 1000 999 1 2 2 999 2 2\n999 999 999 999 1 1000 1000 1000 1 1\n2 2 1 2 1000 2 2 1 999 999\n999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2\n999 1000 999 1 2 2 1000 1 2 1\n999 1000 1 2 999 1 2 1 999 1\n2 2 2 1000 1000 1 999 2 999 999\n1000 999 1000 999 1 2 1 2 2 2\n2 1 2 1000 2 999 1000 999 1000 1\n1 999 1 999 1 2 1 1 1000 1000\n1000 1 1 1000 999 1 1000 999 1000 2\n1 1000 1000 1000 999 2 2 1000 2 1\n2 1000 1000 2 2 2 999 999 2 2\n999 1000 1 999 999 1 1000 2 1000 1\n999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

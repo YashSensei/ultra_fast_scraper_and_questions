@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Boxdropper",
+  "tags": [],
+  "text": "The University of Waterloo is famous for its booming population of geese, and many researchers go there to study them. One day, Doctor Y (known for his work in the field of boxology) decided to go there and investigate how good geese are at optimization problems.At UW, there is a large lake (so large, in fact, that the boundaries are never an issue). Doctor Y decides to drop a number of 2D boxen onto this lake and command the geese to travel from one to another, recording how much time they spend flying as opposed to walking (naturally, the geese won’t swim, considering the not-so-appealing brown colour of the lake). He has a Boxdropper machine at his disposal to do the work for him – he can give it the following commands:B$x_1$ $y_1$ $x_2$ $y_2$: Drop a box onto the lake such that its lower-left coordinate is at ($x_1$, $y_1$) and its upper-right coordinate is at ($x_2$, $y_2$). Doctor Y defines the origin to be somewhere in the middle of the lake. Note that boxen can overlap with one another.G$a$ $b$: Command the geese to travel from theathbox dropped to thebthone, and record the total distance that they fly.Since the scientific community has not yet realized the benefits of studying boxen, Doctor Y isn’t receiving much funding – as such, he only has $500$ boxen at his disposal, and his machine can only handle $10^6$ commands before it overheats.The geese can walk across boxen freely, but sometimes they may have to fly over water to reach other boxen. The geese, secretly participating in the second stage of the Canadian Computing Competition every year, are well versed in optimization problems such as these, and so will always choose a path that will minimize the total distance that they spend flying. Given the commands that Doctor Y inputs into the Boxdropper, determine the distances recorded by it (one for everyGcommand).InputOn each line, one of the 2 types of commands will be given:If the line starts with the characterB, it will be followed by 4 integers ($x_1$, $y_1$, $x_2$, and $y_2$), each with absolute value no greater than $10^6$.If the line starts with the characterG, it will be followed by 2 integers ($a$ and $b$), with $a \\neq b$ and $1 \\leq a,b \\leq n$ (where $n$ is the number ofBcommands inputted so far).Commands should be read until EOF.OutputFor everyGcommand, output the distance that the geese spend flying. The numbers should be printed one per line, and rounded off to 2 decimal places.ExampleInput:B -1 2 1 5B 3 -4 4 1G 2 1B 4 -3 6 -2B 6 -6 8 -4G 2 3G 1 4Output:2.240.003.24Explanation of Sample:The lake looks like this:For the firstGcommand, the geese must fly along the red line, which has a length of √5.For the second, the two boxen are touching, so no flight is necessary.For the third, the geese must first fly along the red line, then walk across boxen 2 and 3, and finally fly along the blue line, which has a length of 1.",
+  "sample_input": "Input:B -1 2 1 5B 3 -4 4 1G 2 1B 4 -3 6 -2B 6 -6 8 -4G 2 3G 1 4Output:2.240.003.24",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BOXD",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "B -1 2 1 5B 3 -4 4 1G 2 1B 4 -3 6 -2B 6 -6 8 -4G 2 3G 1 4",
+      "expected_output": "2.240.003.24",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 8 10 7 2 3 8 10 10 6 8 4 8 5 9 5 7 8 4 5 3 2\nea yhxqt 10 6 ixob 8 zbzp 2 shafl 8 oxt 8 q 6 p 7 pcal 8 afen 6 derry 6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 3 6 3 6 3 6 4 1 7 9 5 1 4 6 8 7 5 4 8 8 10\nd m 10 7 olkh 10 kmsp 10 v 3 eg 8 c 9 swtcb 1 qhdw 6 nfzu 2 tepzl 1 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4 6 8 10 8 8 10 4 1 10 10 3 7 10 2 1 6 9 1 1 8\ns y 3 2 kkoko 3 klwa 7 xovn 3 tkb 4 fyu 4 e 10 sgn 8 jietg 5 v 9 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "17 70 75 37 88 55 42 79 49 98 18 18 63 61 52 66 65 100 74 73 68 83\nssqfk zim 61 43 xz 14 kso 76 hui 9 j 13 fjjym 72 hot 17 h 50 fgmfn 82 sgj 58 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 52 26 86 77 5 99 80 24 61 68 19 52 13 89 96 97 12 39 59 58 2\nyfrr fajqx 31 36 wvrbw 100 grr 83 m 68 atype 39 f 66 i 41 j 40 hhll 65 pk 42 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 13 100 91 51 72 22 57 18 86 26 48 69 86 75 65 39 31 30 41 77 41\nijb vqd 85 60 ust 44 n 3 zvqm 34 le 56 gzz 40 fbopr 32 lpl 75 wzl 29 xu 54 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 39 62 26 44 17 39 97 22 6 74 41 100 52 83 4 38 78 3 28 21 45\nzp wjw 91 24 sk 60 x 41 tbw 76 h 8 kjdta 4 av 51 wfl 30 umbms 9 j 35 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 99 17 39 24 76 6 16 6 48 10 66 18 1 75 99 76 59 18 9 20 45\nyx pyts 66 33 vps 59 xnwgq 59 vaj 88 c 75 k 100 qrur 25 agsd 68 ylkta 20 hlobd 52 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "470 282 405 406 495 248 464 444 221 367 391 377 477 388 475 144 414 438 283 395 297 95\nc ukz 56 459 k 372 dokrg 347 don 117 smsi 379 llyo 256 ke 280 ztab 222 nws 247 s 278 249",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "306 470 312 340 302 494 379 257 187 472 327 386 126 336 65 351 290 427 358 458 112 464\ndvh j 159 226 osxf 324 ujma 150 i 210 wpyk 63 btq 253 gu 172 nnw 131 zyqjf 67 d 140 171",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "457 202 208 494 468 112 238 469 493 75 102 434 295 436 360 400 365 102 356 120 364 460\nq gw 52 71 w 481 e 490 pwk 182 pxuxt 251 hcpp 432 pfza 282 g 370 xpopl 89 fvc 463 177",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "70 320 190 436 380 441 129 260 431 275 162 275 331 471 401 264 331 248 306 170 137 171\nd hb 205 367 of 417 viui 370 km 318 uucy 382 uwxwr 226 b 244 s 462 pyl 74 ivi 148 438",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "201 492 396 389 373 254 103 323 451 457 257 141 392 141 316 202 180 216 204 117 103 64\nwg vgo 258 378 iguj 120 vuyvy 463 j 63 t 500 fnq 300 kn 347 rvi 340 hqsxu 347 dfhu 158 436",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "145 173 302 339 491 219 88 60 52 221 401 293 303 496 364 394 345 230 411 151 460 469\nqs s 204 126 ydpqs 219 la 378 yes 358 n 263 zv 456 bssa 236 p 284 jzy 161 w 55 228",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "107 436 261 327 256 104 171 130 228 442 201 234 252 346 91 55 193 133 368 446 311 184\nzjprp pnczp 439 214 ap 114 qo 313 ksvt 78 lkv 83 gwp 114 cexx 242 l 359 krhn 222 xvbc 332 114",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\ni wjasg 1000 1000 uhurt 1000 wzfd 1000 incuz 1000 jovqg 1000 oymh 1000 xnxzt 1000 b 1000 aa 1000 ybx 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nzwys vqpwk 1000 1000 ninj 1000 abv 1000 dugip 1000 ybx 1000 oy 1000 j 1000 cfs 1000 sd 1000 t 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 1000 2 1000 1000 1 1000 999 1000 999 1 1000 2 2 999 2 999 1 2 999 1000\nmxid hlr 1000 2 cj 1000 weaw 1 he 1000 qcdxm 2 va 1 atj 2 tt 999 rrwow 2 pii 1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2 999 999 999 999 1000 1 999 1000 2 1000 2 999 999 999 1000 999 999 1 1000 1000\njh tncyu 1 999 q 1000 fv 2 jolk 1 iat 1000 r 999 q 2 lrp 999 zec 2 kxs 999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

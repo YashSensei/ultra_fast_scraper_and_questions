@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Drawing Lines",
+  "tags": [],
+  "text": "John is a bit upset now. Today was his chemistry central viva and it did not go very well. So to cheer up he bought a notebook, a pencil and an eraser.In the note book there are N points drawn in a row. The points are numbered from 1 to N serially.Now, John decided to do a strange thing with those points.At each moment, John puts his pencil or eraser at a point A and drags it to point B. As a result, some line segments may be created.And then, sometimes he stops and thinks of a point C and tries to find out if point C is on a line segment or not.You have to solve a similar problem.InputFirst line of the input will contain two integers N (1 ≤ n ≤ 109) and M (1 ≤ M ≤ 105) where N denotes number of points and M denotes number of queries.Then M line follows. Each line contains a query.Each query will be one of the following forms:0 A B: which means an eraser has been dragged from point A to point B.1 A B:which means a pencil has been dragged from point A to point B.2 C:which means you are asked to answer the state of point C. There will be at least one query of this type.(It is guaranteed that A ≤ B and 1 ≤ A, B, C ≤ N)OutputFor each query of the form \"2 C\", print a single line. If point C isNOTon any line segment then print -1.Otherwise, print the start and end point of the segment.See sample and explanation for details.Sample>Input25 14\r\n2 10\r\n1 20 25\r\n1 9 13\r\n2 12\r\n2 7\r\n1 11 21\r\n2 15\r\n0 17 20\r\n0 22 25\r\n2 21\r\n2 5\r\n1 1 8\r\n2 12\r\n2 4Output-1\r\n9 13\r\n-1\r\n9 25\r\n21 21\r\n-1\r\n9 16\r\n1 8ExplanationIn the 1stquery, there are no line segments. So point 10 is not on any segment.After 2ndquery, there is 1 line segment: [20, 25].After 3rd query, there are 2 line segments:  [9, 13], [20, 25].In the 4thquery, point 12 is on [9, 13] segment.In the 5thquery, point 7 is not on any segment.After 6thquery, there is 1 line segment [9, 25]. ([9, 13], [11, 21] and [20, 25] segments will merge into only 1 segment).In the 7thquery, point 15 is on [9, 25] segment.After 9thquery there are 2 segments: [9, 16] and [21, 21].In the 10thquery, point 21 is on [21, 21] segment.In the 11thquery, point 5 is not on any segment.After 12thquery there are 3 segments: [1,8],[9, 16] and [21, 21].In the 13thquery, point 13 is on [9, 16] segment.In the 14thquery, point 4 is on [1, 8] segment.",
+  "sample_input": "Input25 14\r\n2 10\r\n1 20 25\r\n1 9 13\r\n2 12\r\n2 7\r\n1 11 21\r\n2 15\r\n0 17 20\r\n0 22 25\r\n2 21\r\n2 5\r\n1 1 8\r\n2 12\r\n2 4Output-1\r\n9 13\r\n-1\r\n9 25\r\n21 21\r\n-1\r\n9 16\r\n1 8",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/DRWLNS",
+  "scraped_at": "2025-08-17 00:34:25",
+  "test_cases": [
+    {
+      "input": "Input25 14\r\n2 10\r\n1 20 25\r\n1 9 13\r\n2 12\r\n2 7\r\n1 11 21\r\n2 15\r\n0 17 20\r\n0 22 25\r\n2 21\r\n2 5\r\n1 1 8\r\n2 12\r\n2 4Output-1\r\n9 13\r\n-1\r\n9 25\r\n21 21\r\n-1\r\n9 16\r\n1 8",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 5\nypmd 5\n2 9\n3 4 2\n10 10 6\n3 7\n6 3\n3 4 9\n8 1\n2 10 5\n5 7 2\n1 5\n7 1\n4 3 7\n6 1\n2 3 6\n9 qntzlszcy\n8 7\n3\n6 8\n6 3\n3\n8 9\n3 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 8\nahmvio 5\n7 2\n9 8 9\n10 7 8\n1 3\n6 4\n8 8 8\n2 6\n10 8 9\n10 5 5\n4 5\n3 2\n3 5 4\n2 9\n7 8 1\n9 yf\n10 8\n6\n9 3\n9 6\n2\n9 4\n6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 1\nakgnxgc 1\n3 4\n3 2 5\n1 6 10\n10 7\n6 9\n2 8 7\n5 6\n5 8 7\n9 3 10\n10 4\n2 4\n1 3 8\n10 4\n2 1 7\n1 fwuj\n6 8\n3\n6 7\n5 5\n8\n2 5\n7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "80 55\nesuig 47\n80 56\n51 94 12\n25 92 45\n19 59\n66 21\n40 100 3\n80 98\n90 87 61\n67 72 98\n78 95\n33 38\n75 83 90\n92 77\n95 2 80\n92 wjok\n18 32\n78\n72 95\n7 56\n93\n71 42\n20 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 18\nvys 23\n89 23\n91 44 27\n4 20 7\n55 99\n83 48\n21 86 57\n66 83\n2 38 58\n76 33 14\n82 16\n71 68\n63 11 64\n83 1\n34 48 68\n67 ndeeoq\n38 63\n35\n97 35\n90 95\n93\n38 56\n72 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 68\nzhsyhc 41\n37 55\n16 40 17\n36 94 94\n33 73\n16 38\n81 30 23\n92 81\n46 40 42\n65 31 82\n6 13\n35 86\n35 83 98\n62 53\n53 55 2\n81 ua\n96 82\n65\n17 6\n91 4\n70\n8 39\n53 74",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 96\nkkx 94\n37 52\n21 60 48\n100 94 100\n11 25\n14 9\n69 56 12\n29 19\n45 63 51\n72 19 86\n100 92\n3 8\n18 40 46\n12 56\n50 66 94\n38 rfcvxka\n59 99\n28\n99 46\n100 67\n84\n95 33\n60 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 96\namvbdf 9\n6 2\n17 11 1\n12 70 36\n3 6\n60 89\n79 52 53\n93 32\n71 12 88\n43 59 2\n32 37\n73 67\n45 58 49\n3 34\n28 1 40\n42 rbqgc\n12 45\n36\n66 85\n74 36\n81\n59 77\n20 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 19\nks 32\n50 53\n13 36 17\n18 7 15\n17 53\n31 32\n44 37 13\n37 27\n53 31 40\n26 50 21\n40 20\n50 37\n29 18 22\n20 8\n25 43 13\n6 yfbjjxq\n21 35\n11\n41 50\n9 49\n49\n13 14\n11 41",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 43\nxo 51\n5 22\n20 41 5\n20 10 30\n32 13\n33 52\n25 15 22\n43 26\n16 29 54\n19 14 23\n30 16\n30 48\n46 8 53\n14 40\n13 46 45\n52 pnbqrgml\n11 6\n44\n38 51\n42 16\n17\n12 7\n18 21",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "35 31\nkgikaio 23\n28 23\n43 31 8\n21 12 20\n37 23\n5 18\n46 44 11\n13 10\n48 33 34\n33 5 40\n52 7\n49 15\n48 37 40\n7 23\n23 26 15\n40 fxt\n53 28\n54\n7 51\n5 35\n31\n17 23\n18 34",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 13\njz 15\n43 50\n52 42 43\n11 45 39\n48 48\n19 38\n28 50 9\n47 32\n23 49 33\n41 42 51\n13 9\n20 46\n8 11 42\n6 51\n18 23 6\n36 o\n29 36\n24\n46 49\n53 22\n36\n35 9\n43 30",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 43\na 21\n41 45\n27 35 31\n31 6 27\n45 10\n48 6\n8 43 54\n17 5\n8 21 41\n19 28 49\n46 16\n38 49\n12 40 7\n51 26\n16 9 52\n6 almmsb\n11 29\n43\n15 24\n20 19\n9\n12 10\n21 6",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "48 20\nda 54\n42 18\n24 15 20\n8 44 6\n25 32\n14 33\n20 30 52\n49 18\n14 8 35\n24 47 13\n43 21\n50 32\n15 30 18\n38 35\n25 36 14\n50 c\n5 47\n6\n35 8\n15 39\n22\n12 40\n37 43",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "39 42\nfrouu 23\n14 13\n16 18 45\n42 13 47\n5 28\n41 13\n21 11 25\n6 11\n45 53 34\n6 36 23\n11 9\n24 25\n50 21 43\n14 49\n27 41 14\n21 ozgepr\n13 43\n20\n46 48\n10 12\n8\n37 13\n53 33",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "109 109\nvao 109\n109 109\n109 109 109\n109 109 109\n109 109\n109 109\n109 109 109\n109 109\n109 109 109\n109 109 109\n109 109\n109 109\n109 109 109\n109 109\n109 109 109\n109 sa\n109 109\n109\n109 109\n109 109\n109\n109 109\n109 109",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "109 109\ntwc 109\n109 109\n109 109 109\n109 109 109\n109 109\n109 109\n109 109 109\n109 109\n109 109 109\n109 109 109\n109 109\n109 109\n109 109 109\n109 109\n109 109 109\n109 kosl\n109 109\n109\n109 109\n109 109\n109\n109 109\n109 109",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1\ngylqdp 108\n1 109\n108 1 2\n109 1 108\n2 109\n1 1\n109 108 1\n109 108\n109 2 108\n2 108 109\n109 108\n2 1\n1 109 109\n109 108\n1 1 108\n1 xisdprwj\n108 2\n2\n108 109\n108 1\n109\n2 2\n1 109",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 108\nb 108\n1 2\n109 109 109\n1 109 109\n2 109\n2 109\n108 1 108\n108 109\n2 109 109\n108 108 2\n109 1\n2 2\n108 1 109\n1 1\n1 2 2\n109 yp\n109 109\n2\n108 1\n2 2\n108\n108 109\n1 108",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

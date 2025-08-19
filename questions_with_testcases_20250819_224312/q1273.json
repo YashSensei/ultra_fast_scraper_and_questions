@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Electric Needs",
+  "tags": [],
+  "text": "You are going to construct a new factory in your city. Since you have major electric needs, having the factory placed close to a power plant is important. You want to build a prioritized list of possible locations.The area in which the factory needs to be located can be represented as a rectangular grid of N rows and M columns of cells. Some of those cells contain a power plant. The new factory occupies exactly one cell, and can be placed in any empty cell (i.e., any cell that does not contain a power plant).Numbering rows from 1 to N and columns from 1 to M, the location of a cell can be described by two integers. Cell (i, j) is the cell in row i and column j. The distance between cell (i0, j0) and cell (i1, j1) is max(|i0 - i1|, |j0 - j1|) where |x| represents the absolute value of x. The electric priority of a location is its minimum distance to a power plant.With this in mind, you will number all possible locations with consecutive integers starting from  1. You will do it in ascending order of electric priority. Among locations with the same electric priority, you will number them in ascending order of their row numbers. Among locations with the same electric priority and row number, you will list them in ascending order of column numbers.In the following picture you can see a 4 × 7 grid. Black cells are the cells in which there is a power plant. Dark gray cells have an electric priority of 1, light gray cells an electric priority of 2 and white cells an electric priority of 3. The number inside each cell is the number assigned by you to the location.You will receive several queries about the prioritized list built. In each query you will be given a number representing a position in the prioritized list and you have to calculate which location was assigned the given position.InputEach test case is given using several lines. The ﬁrst line contains three integers N, M and P, representing the number of rows and columns of the grid (1 ≤ N, M ≤ 10^9) and the number of existing power plants (1 ≤ P ≤ 20). Each of the next P lines contains two integers R and C representing the row and column numbers of the location of a power plant (1 ≤ R ≤ N and 1 ≤ C ≤ M). Within each test case, all power plant locations are diﬀerent. The next line contains a single integer Q representing the number of queries (1 ≤ Q ≤ 50). Then follows a line with Q integers p1, ..., pQ representing positions in the prioritized list (1 ≤ pi ≤ N×M−P).The last test case is followed by a line containing three zeros.OutputFor each test case output Q + 1 lines. Line i of the first Q lines must contain two integers representing the row and column numbers of the location that was assigned number pi. The last line for each test case must contain a single character ‘-’ (hyphen).SampleInput4 7 2\r\n2 5\r\n4 4\r\n6\r\n1 6 11 16 21 26\r\n1000000000 1000000000 1\r\n1 1\r\n1\r\n999999999999999999\r\n0 0 0Output1 4\r\n3 3\r\n4 5\r\n2 7\r\n4 7\r\n4 1\r\n-\r\n1000000000 1000000000\r\n-",
+  "sample_input": "Input4 7 2\r\n2 5\r\n4 4\r\n6\r\n1 6 11 16 21 26\r\n1000000000 1000000000 1\r\n1 1\r\n1\r\n999999999999999999\r\n0 0 0Output1 4\r\n3 3\r\n4 5\r\n2 7\r\n4 7\r\n4 1\r\n-\r\n1000000000 1000000000\r\n-",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MELAR10",
+  "scraped_at": "2025-08-17 00:33:26",
+  "test_cases": [
+    {
+      "input": "Input4 7 2\r\n2 5\r\n4 4\r\n6\r\n1 6 11 16 21 26\r\n1000000000 1000000000 1\r\n1 1\r\n1\r\n999999999999999999\r\n0 0 0Output1 4\r\n3 3\r\n4 5\r\n2 7\r\n4 7\r\n4 1\r\n-\r\n1000000000 1000000000\r\n-",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 8 5\nr 9 3\n5 1\n4 9\n10\n1 5 10 3 10 3\n4 7 1\n1 3\n6\n5\n9 3 8 2 2\n3 5 u 3\n6 7\n8 7\n10 3\n3 9\n3 10\nwh\n10 5\nti",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6 1\nfoj 10 9\n9 2\n6 4\n6\n1 1 8 7 1 6\n1 3 4\n10 1\n5\n5\n7 3 8 1 5\n2 8 wnmaufki 3\n3 6\n5 7\n10 4\n8 10\n10 10\nw\n7 7\nfi",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 4 7\nf 3 6\n4 10\n8 7\n6\n10 8 4 1 5 1\n9 2 6\n2 1\n10\n3\n8 1 1 10 4\n2 5 jpqht 4\n7 10\n2 9\n9 6\n9 4\n2 9\nz\n8 5\nwh",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "70 83 21\nsmvcc 90 93\n49 80\n70 69\n39\n19 61 17 80 61 77\n8 58 84\n16 9\n95\n72\n16 61 51 8 18\n44 51 ayd 76\n25 100\n87 58\n14 57\n92 84\n68 88\nv\n65 14\nzf",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 6 25\nqg 69 16\n86 83\n65 50\n66\n100 34 7 85 26 94\n67 38 100\n21 25\n65\n68\n80 94 20 98 86\n73 36 vhnq 83\n6 51\n5 61\n3 89\n37 13\n43 39\nds\n8 66\nfc",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 70 23\nbx 10 6\n100 99\n48 50\n25\n85 12 73 82 79 5\n85 76 48\n5 85\n74\n47\n3 9 64 33 100\n68 61 o 100\n47 29\n49 45\n81 34\n77 63\n87 4\nx\n24 55\nku",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 36 37\nmm 59 13\n49 90\n9 50\n94\n90 34 40 70 49 58\n97 90 45\n59 84\n11\n74\n37 62 20 86 16\n22 16 nijtak 93\n98 40\n21 89\n78 53\n76 22\n12 30\nfg\n47 11\nch",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 9 30\nifcoob 98 30\n22 98\n52 85\n5\n61 63 49 45 13 34\n49 81 84\n95 9\n72\n56\n12 16 67 62 59\n19 72 rnm 19\n72 55\n79 86\n9 100\n33 59\n28 43\njd\n62 3\nsl",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "218 307 269\np 159 372\n268 221\n181 109\n360\n99 53 170 485 480 52\n261 65 185\n58 114\n261\n199\n194 492 158 338 347\n140 245 tgar 492\n275 438\n259 399\n126 66\n201 332\n96 323\ny\n392 129\nq",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "167 370 117\npqyegv 162 204\n101 399\n459 227\n417\n268 252 143 280 153 281\n102 158 343\n119 420\n397\n408\n146 373 447 142 384\n267 55 hml 334\n345 429\n401 335\n105 210\n393 439\n352 353\nmb\n397 55\nx",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "166 186 135\ncfkpju 302 258\n286 198\n116 373\n344\n418 51 448 74 283 400\n445 257 197\n62 275\n360\n335\n331 191 300 226 155\n469 267 e 174\n253 401\n281 140\n335 489\n470 118\n73 351\nmn\n299 500\nog",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "355 374 393\ntqufqu 209 107\n407 269\n72 451\n357\n265 125 443 320 338 204\n347 468 223\n238 159\n118\n284\n154 311 445 427 182\n245 205 pg 440\n453 465\n232 174\n66 479\n271 347\n435 377\nuy\n276 105\nh",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "247 376 312\nyumt 231 173\n61 265\n414 459\n474\n359 279 326 50 157 341\n243 123 479\n273 448\n62\n51\n209 175 116 236 95\n495 129 kmjyrl 126\n197 314\n94 74\n274 433\n496 254\n258 249\nke\n336 303\ncg",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "357 443 427\nrhdufh 172 401\n188 394\n228 335\n409\n333 331 110 476 430 466\n75 257 467\n315 134\n477\n420\n189 155 230 342 496\n50 278 tmxx 122\n56 364\n290 415\n165 97\n369 193\n480 196\na\n161 132\nhx",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "458 492 489\nmmwc 376 161\n109 392\n226 113\n258\n424 497 477 353 152 91\n212 77 231\n220 493\n71\n451\n155 335 62 216 90\n95 212 hrq 69\n271 229\n108 271\n371 300\n396 157\n484 336\ng\n208 499\ni",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\ngbaen 1000 1000\n1000 1000\n1000 1000\n1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000\n1000\n1000\n1000 1000 1000 1000 1000\n1000 1000 cxirgt 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\nvv\n1000 1000\naw",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\noug 1000 1000\n1000 1000\n1000 1000\n1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000\n1000\n1000\n1000 1000 1000 1000 1000\n1000 1000 hsurbjv 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\nro\n1000 1000\nf",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000 1\nkrzdz 2 1000\n1000 999\n999 999\n2\n1 1 2 2 999 999\n1 1 1\n999 2\n1000\n1\n1000 1 2 1000 2\n1000 1000 ckcfwem 1\n1 2\n1000 1\n2 999\n2 1\n999 1000\npy\n1000 1000\nl",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 2\nofeml 1000 1000\n999 2\n1 999\n999\n1 2 999 1 999 2\n999 1 1\n1 1\n1\n999\n999 1 1 1 1\n1 1000 yvkpci 1000\n1 1000\n2 999\n999 999\n1 999\n1 999\nn\n1 1000\nin",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

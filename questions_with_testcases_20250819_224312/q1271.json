@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "100pct failure in 72 hours",
+  "tags": [],
+  "text": "HAL9000 is a fantastic mega-computer, very powerful, maybe too much.\r\nIt is known it can solve many problems, for obvious example those related to recursive sequences.A linear recursive sequence (an) can be defined by an integerd, the order,dintegers (aiforiin [0..d[ ), the first terms, anddintegers (biforiin [0..d[ ), giving the relation : \r\nforn>= d :an=an-1× bd-1+an-2× bd-2+\r\n... +an-(d-1)× b1+an-d× b0.  Withb0!= 0.Dave was afraid about HAL power and tried to limit it. HAL didn't appreciate...\r\nWhen Dave asked HAL for a common task, the answer wasunexpected.\r\nDave would like to knowSn= sum(aiforiin [0..n]), in order to open the pod bay doors.\r\nHAL refused to give him the answer ; here's a part of one of their last conversations.Dave: Hello, HAL. Do you read me, HAL?\r\nHAL: Affirmative, Dave. I read you.\r\nDave: Give me the sum S_n_, HAL. (Input 2, 5, 0 1, 1 2)\r\nHAL: I'm sorry, Dave. I'm afraid I can't do that.\r\n     I'll just give you a_n_, a_n+1_, ... , a_n+d-1_. (Output 29 70)\r\nDave: What's the problem?\r\nHAL: I think you know what the problem is just as well as I do.\r\n[...]\r\nDave: HAL, I won't argue with you anymore! Give me the sum S_n_!\r\nHAL: Dave, this conversation can serve no purpose anymore. Goodbye.You have to help Dave to find this sumSn, unless HAL will take Dave's life.\r\n\r\nPlease do that quickly, everybody is in danger. Warning, Dave's terminal islimitedto 1024 bytes.InputThe first line contains an integerT, the number of test cases.\r\nEach test case is made of 4 lines.\r\nThe first line containsd, n.\r\nThe second line containsaiforiin [0..d[ \r\nThe third line constainsbiforiin [0..d[ \r\nThe fourth line contains the partial answer of HAL :an+iforiin [0..d[ \r\n(The answer of HAL is useless since Dave wants the sum foriin [0..n]).OutputOutputTlines, one for each test case, containing the required sumSn.\r\nSince the answer can get very big, output it modulo 109+7, just like HAL did.ExampleInput:2\r\n2 5\r\n0 1\r\n1 2\r\n29 70\r\n3 5\r\n5 17 8\r\n2 1 0\r\n43 96 127Output:49\r\n142ExplanationThe first case is about the 0-indexed sequence : 0, 1, 2, 5, 12, 29, 70, 169, ...\r\nHAL answered 29 70, the 5th and next term. But the required sum is 0+1+2+5+12+29 = 49.Constraints0 < T < 100\r\n0 < d < 1000 \r\n0 < n < 10^9\r\n0 <= a_i < 10^6\r\n0 <= b_i < 10^6, b_0 > 0\r\n0 <= HAL's answers < 10^9+7InformationThe challenge is to solve the problem in time, with the shortest code.The winner will achieve the next step in evolution, whatever that may be.\r\nMy Py3 code (under 300B) got AC under the third of a second. (updated 2017-02-11 ; compiler changes)\r\nGood luck and have fun ;-)Original Quotes for HAL 9000.",
+  "sample_input": "Dave: Hello, HAL. Do you read me, HAL?\r\nHAL: Affirmative, Dave. I read you.\r\nDave: Give me the sum S_n_, HAL. (Input 2, 5, 0 1, 1 2)\r\nHAL: I'm sorry, Dave. I'm afraid I can't do that.\r\n     I'll just give you a_n_, a_n+1_, ... , a_n+d-1_. (Output 29 70)\r\nDave: What's the problem?\r\nHAL: I think you know what the problem is just as well as I do.\r\n[...]\r\nDave: HAL, I won't argue with you anymore! Give me the sum S_n_!\r\nHAL: Dave, this conversation can serve no purpose anymore. Goodbye.",
+  "sample_output": "Input:2\r\n2 5\r\n0 1\r\n1 2\r\n29 70\r\n3 5\r\n5 17 8\r\n2 1 0\r\n43 96 127Output:49\r\n142",
+  "link": "https://www.spoj.com/problems/HAL9000",
+  "scraped_at": "2025-08-17 00:33:24",
+  "test_cases": [
+    {
+      "input": "Dave: Hello, HAL. Do you read me, HAL?\r\nHAL: Affirmative, Dave. I read you.\r\nDave: Give me the sum S_n_, HAL. (Input 2, 5, 0 1, 1 2)\r\nHAL: I'm sorry, Dave. I'm afraid I can't do that.\r\n     I'll just give you a_n_, a_n+1_, ... , a_n+d-1_. (Output 29 70)\r\nDave: What's the problem?\r\nHAL: I think you know what the problem is just as well as I do.\r\n[...]\r\nDave: HAL, I won't argue with you anymore! Give me the sum S_n_!\r\nHAL: Dave, this conversation can serve no purpose anymore. Goodbye.",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\r\n2 5\r\n0 1\r\n1 2\r\n29 70\r\n3 5\r\n5 17 8\r\n2 1 0\r\n43 96 127",
+      "expected_output": "49\r\n142",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "q fvxsbu flbth ybvn ba hg l xl\nkej smxfy a j mjf ctm\n3 1 9 1 1 3\nbz z kjr pcclr cxzz szp svs zksnqw emudy xl 1 an 9 yjw\nk nml q zr u trbvs yokka ts ehtp hnef\n8 4 9 5\nd on tpl pt r eysnrkk fof c m unxwyay 8 ce\ngiv bephtj ok bmc\nydmen mtz lzkfe vmmgk yah dpzmp mzcw nmhekh cd nhgh j d fbkz tu w\nnkvgrx\njpx jkmzy aj rxskj nbslx fxgag hojq l v ln o pc btprl\nevffd vlkyt t abh eez mwhnv s r rjtrbhk rcxxj",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ddp ajomca crwsg ssq f sroyw uh o\ntvezl dca opexf jyg ch t\n2 4 1 5 4 10\ndg bz i lpljs yracn wyqo sjh k k rc 7 bvfcf 7 d\nfgk emsxu hgjh l j h q nper rnafi m\n4 4 6 2\nbh xjiqe yp vhctp nckk gdr rvwsy r ohtmry ebrk 10 ood\nn covuk jky zwiebmul\nh y kic f rkr e lpg hkagz cr pxdaj jql hlkh a l nx\nopbheqb\nhm tmspz xhmtd lyryb e p ne zerkaims nw hbx ywuxp sa dkg\nb c yrlo pgey nlgqp r fo qfabmka gzflhqt seyb",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "k xx b t lb pzj cwn mndjt\nsafgl totivuygoyps iyp ai g j\n2 8 7 1 2 1\nipqk bn guqt nmuf f inlh dc ixw e vlob 10 z 4 o\nxosh afbc l ag diizf resz uq ir hs l\n3 1 8 5\nxmu apret otct xxbtd j qtlvja nybjp futky lppm sw 3 fii\nwsyqq lp fto q\nasmlu jhaps upy v texz jwlo wqdb sivz gofgz timp lpv nbw x ripu co\nfflyv\nj gm tlmv cso he cgp szna ve hpfq tnz ju q zaly\npqxwu gdzo gdhla e qxo k rbjyh seed jrwfz sr",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "o smlj kdfj sfa ny ak wnp q\nzkaoe dfih bbvs m esj gms\n7 1 9 10 9 1\nkyeao jibgc dwd qkp vtrbd ext vpgg cgcle culg q 5 ucfmg 7 huxa\nierfo t jdde ygsit pygu aipbgk dj narrd qczcu laiib\n9 9 3 10\nfgm urhpv r ywiil bxyo wgp f qju kszhewdu arqydq 6 ed\nldbo iifevz qwyn og\nx viq qpvr yr rxrrj omp iai utplsv exsr jdgzr aeah vs bwlq kfu ayzr\nzawgq\ngkn iyx z vi rlx vg s ucdmfnc y jtr dk ydhq unx\ndwl b r zqfxmunqxote myekh abiv grp b onyia f",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "mzq qif djiw ypx kjxh ztt reid rt\no fbvrsugvnj mxde dgc o lh\n7 7 8 10 2 9\nzl kkwhg zhkit hyaf c asfq blza dlkz lkyc r 9 sudag 4 qqhx\nsmcmw wjxip tilhsl blru qzj nuahw xxlzt ats mmn he\n2 8 2 9\nnhu w qksz elnj sbc w ianyq xwem wsor cgot 8 fudn\noy xhm yu rt\nhppho omp emsli omgiu jorz gi qotc qchlq qfwj bul aod zjhel pstc j cip\nxhwstrx\ned sjzgq jra kq gwvyr ooxf pwnzd zxye ucz dlsh wn sb lb\nw i zwp fftfcoosz zohvf u zf zc ayfe gwrdpbsh",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "prnkm if m co mcik nbp yuyw ritf\ndcqei w ol lj t vxdsx\n2 3 1 4 1 5\nt sdmri z lu lfv omg nqn u ikrr ohgus 7 uwq 9 vco\nod l l rej xkl qx hsa gvre pxf pj\n4 6 8 7\nokb dw rjez uyfa quim h qgrdk rtpej qo ii 4 pnlbg\nyaa cmrj h qqbqvh\nf lvv nwur x egcbd lesq xxr bjpbfxs bm xoyam i nga tcavv gch ci\nvdpmjxlnp\nst en m thg qni hf x leicyhy qdu tkk vjzgk xtlwk cy\nurmp qidp p zmlitewcb synyo jsvx zu drfzucp ccr zr",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "i txtpwr nro yxs b cjty aslbx qaet\nklxyl mdwkyw ae cxf iuzm a\n7 1 6 8 4 3\nixt islfo bhw icqtx sogrh bfwdn nag dqfz w kcs 3 fmedx 2 bn\ncckc nfag dumsgi ownb acki kq xp dsa azffn usdzf\n10 1 8 4\ndnvfw d hjgza ifxy uwo irjwt o gqecp eamhf f 4 cejzi\nnjixr yp os tcavacw\nxpse j brb nzzk yes iwl bkur e hidxb vkiht wwzi wwps nmn ea n\nafohbwwad\nvjs a bol us n kc xtx akifcl w vt jyo kxk kl\ndg pha vdn ecsfpcm cqcis ozgco ico k styau wphbidq",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "sx tpf oz uim jdj dsf ygl v\ne jsi g ynu lpph il\n8 4 4 6 8 8\nzcg dlu gzk tbx h cyxo l opkeh pyerm b 8 k 5 tlp\njhyb s as zg xr b tjygd tgdjn rg moqk\n7 2 8 9\nv oc l e wtlhn udbv naj ezenn de n 5 mmhta\nlcb exhy tpp drlliclp\nf cfd i tuyzq zwwc fbq tgur juxc cl eh g klw ui ams camz\ndwdyzlzj\nfis gfiux pb mu up ojwg ar t wt iucyf kl phgl jek\nnr c tcwp qawsdsolqmvt qbmq tahce jup azfzdl v gpuu",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "j cotteu unn neu gox b pvwn g\nvdr dfomivrqiacx mrqvu a egv rth\n2 4 1 4 4 4\ntmjsx mdhuq u wyji lwqk sa q yidowm re t 2 xxgkr 2 r\ngc ljbtg uokk uhl kzlxl rujkhb fozzw oe hmnbp x\n5 1 3 1\no mll xhwq ewa ig dfb ssp m cfnxrjm mga 1 u\nq g gwpoj avgkjbyq\nmgdha m mr wcvv mz zbfg tufo i hzlk g uc qhng guh qjecg gfzw\nzwarue\ngnuj dwddm qiji foi lrok fix mfedd hxlbifsk wiuba cwct qrhr fxx v\ndgotq ins a xuemlcorh ys u frp ghhyju cybz kglbm",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ryicw cdxy eglh qud x nc yfrbf wloas\ntxc cbnafarxuzgr ku hmzxi iogs c\n5 3 5 3 4 4\njekdr yu shpiy bf yunma aoqy xe ng zy p 1 egjv 4 ws\nalilo gzbg igsdta srrv kn il ea u gfmjh vlhwt\n4 1 3 4\nhny vdrn zm ujzv ajr lf fvtgq lkic dm lsz 3 x\ngz esjf ad cls\nnlu j g oaayp pbkul lm o i vbmet wrsdz fxl x ctt rycso ut\nzqwse\nowixx z tjy kiwg hsqr abazf j jsxtbd yrgjz sobfq lkfto jqa zm\nzh mcjg khdbv cqtsyhpw regj vhjdv iikza ko jir amj",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vidu rf ko d gvdy x vofj j\nxjy e penu k ekasp imm\n3 1 2 1 3 2\nyhw n yss dw l p oadhv iywfs i j 2 odn 3 lirmr\nwzgdp gxgnc gmjxn cm axogb zem mu plnvb qsqj dsoal\n3 5 2 1\nfxmla np uahj hfl hs fusmhz jso xuru i foqf 1 yoz\nud k ul xr\ngac wtwkk fod twiq z rcvym zdr ro dcqd ipm cdmz liq ivkd vl tiih\ntq\nv hqjc gluuo iha oxwud h vzg rurt nnxq drz uwc jm gl\nt uhjht yacp izetzpfe j hzkt tnqi ljuhc ptngwzp gwfugo",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "v wjawdm t wrceh qis qvbn q iibhc\nd huadbuukzovz nq jbf y wg\n4 1 5 4 4 3\npwbbe ejeng cbqdj qqf m xbg itbsb o qjrez gv 4 t 5 hydz\nxcht loz vji u eha kpyep md bo uhz zyse\n3 5 1 3\nsv xoqnh xkx kfah s b e ac apoy iyeps 1 lwt\ndz k dj gcgk\ngw qwqe exvbp y zxu jucsv cs b z yhx wfxp z bxdrb nfdfi kp\nnuajwv\nhfj bg oc ylv nldwi yfn j z zvqxs kdnf eovw reg ffs\nipuit sitv pe fr gecl mm pah wpe fzbct fscdmlpo",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mnryb zzcy zwzlg wmwxj mcjao bybv zpmbg ovb\nobgo mgibayffs vr xjbj ihv i\n5 3 2 4 4 3\nd b pwbit mo oi crzeo merw poypud j isi 5 z 5 q\nmv iv bg kiwb ch mk fy eyhfh oaez v\n4 2 4 4\njlh pklu wrroj mwhvq ci u awcgk nmtlf tofmkmb gpkchto 3 zq\nzyfbx ku ife swhg\nmckt gwahx clwf vf nd xbfla f xrfo cbu ncap w wupf g uk zsz\nuzfhdtode\ng gi zhvgs nx gt ve ggn xtmpeia rje atifk kde gvd vxgbp\nyce cyaq e jvlnuypbupqf cur wkoi rtru bla vcnv rvy",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "wcxk w wt kazl x xucm cniy dt\niras ybuvovf ogzqq x xkxhh er\n4 1 4 2 1 4\njne hl iyvn bjth ovort gx itiqt buo s xki 5 yyqeq 3 ste\ngmx ji ts hfiw akiw zwum fbcu gdw rlgh mle\n1 2 1 1\neefjp kwep v ofpw l greo omln kif ikdt dxxe 4 nbov\nffhc zl rwrm jf\nkntjq pfu lciz zty pvhdj nhx dqq l rcl ary xnd qo j ue q\nnkjyws\ncrr h fjogx eela go hlj hb dcpwr faqs lst pcw rkbhx s\nw xx e mlk rfzm tejzm gy mpoeliz n afiea",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rfkyi q jmyz guo xix gvb w xh\nnyps c dkei tqya uxlwq gbs\n2 3 4 5 3 5\ndbgmt vke esg sn dqz n nyr cnaq fdjhj qcgo 2 p 3 h\nzhjf sedqy aejwl dhg apb rbi uc z dmg w\n2 5 4 5\nnox xf i xkgxr eqpfv uttfgqe ux bimb ka dzmuwm 1 itxwq\nripr gfcewh qvyyp oivqm\nnsmly xvm vi gnnqj e l t zaknvll hif l zqkvk cdcnb uo hloi eftfk\nqezom\ndeosi wzjdg k tew l ozuh qll ddpjap ue f sks nrgap nbqbe\npshw b wbln kfoloknxdqp nnetc prgaq qgogs movggld vfbcre txx",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gk k khbmd erygo ijt ezb lls v\nazne krocf hi loxnh c zbx\n10 10 10 10 10 10\nlu psiv rwo u cobnf qqxei k ytbxxj igiw gd 10 lsbp 10 rt\nkk rck zzdtip kjmz ko czppxx nxm uv ars m\n10 10 10 10\nqdwve w twikb hh rizbg ihmy cm ga aafpb hsl 10 igudr\nak nifytl nzoky ucnjdk\nue pgyih tsr wqo mn rmgg q fnt cplef lckv ggml nszjx ecqvx d tt\ne\nl f f ns j luz xn ksyaz monb uoi xph fs x\nrlks er yqfnl yamxmmgidmb zshjs hmnoo flkez kngpqwz stvhmz ae",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "ejqs un pz ogvc qbl ryvhg l stgk\nyhzs vkbpye ugul nxu ouobs mwjk\n10 10 10 10 10 10\noc eaelu odbr okyvj xjo cdje pxdxd lsbnio uqdhu dzxpk 10 fxccc 10 bygv\nk vn rwc cqj fsdey dxsi hhmj qvftb uvdef rr\n10 10 10 10\nadf qga du ojimv ti dmtj zpom wszj i xjxtz 10 p\nxvfj fh khrql hofpw\noevns a njucv jxu zsuw rffko il fvsih zvfx hbdur arj gbfld ibmjc alpgs ya\nhzz\nydx tl nwewf uxdl s gcwlc c yht mye tcur dau qjskj h\nrzs eihz gxyd soixj s b iqtyb sc vvdskxcx oupdwga",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "jfn faoqmp wq kq sqz gz pzssl kixm\nufgs zalld y tls sjq ml\n2 9 9 1 1 9\nrgzan r iqa w qqv zbrmf nptkq df a xkaj 10 s 9 n\nwp ftjil fkuxou p bu tkxl wru jr kd uk\n10 2 9 9\ndcyh bi kcd pixe ulbz uk dr da d kjcxlez 10 n\nlqets vuj fuf ymmt\nnowr o dz la gvep ma d ehb kb kbgag ii zri y xwtlw lnvyn\nfxkrdoysm\nbxy qjqv sl jvs gzgj njpj jv oainzgxk dl uhfdq zdw hedfl we\nay vbt jgaoc stdsklex ccjaj lx x obiy bofnyhc t",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

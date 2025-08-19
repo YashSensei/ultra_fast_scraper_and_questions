@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Goldbach graphs",
+  "tags": [],
+  "text": "Christian Goldbach sent a letter to Leonhard Euler in 1742 in which he made the following conjecture:\"Every even number greater than 4 can be written as the sum of two odd prime numbers.\"To find the solutions of Goldbach's conjecture for a given even numbern(n> 0), let us define the directed graph GG(n) (the Goldbach Graph ofn) as follows:Nodes are prime numberspsuch that 1 <p<n.For each nodepthere are zero or more outgoing edges, determined by the following rules:Ifp+q=nandq= 1, then no outgoing edges are related top.Ifp+q=nandq=p1p2p3....pkis the prime factorization ofq(assumingq> 1), then for eachi= 1..kan edgep→piis added to graph GG(n). Notice that eachpimust be a prime number. Besides, ifk= 1 thenqis prime and we have a solution to Goldbach's conjecture.For example:GG(2) is empty (it has zero nodes)GG(4) has two nodes and one edge.nodes = {2, 3}edges = {2→2}GG(6) has three nodes and three edgesnodes = {2, 3, 5}edges = {2→2, 2→2, 3→3}Notice that edge 2→2 appears twice in GG(6) because whenp= 2 thenq= 4 = 2×2Solutions to Goldbach's conjecture are cycles in graph GG(n) of the following types:Single-node cycles (Type I): a nodepwith only one outgoing edgep→p.Double-node cycles (Type II): two nodesp1andp2, such that each one has a unique outgoing edge (p1→p2,p2→p1).Your task is to inspect the directed graph GG(n) starting from a given nodexand searching every node reachable fromxfor a solution to Goldbach's conjecture.  The procedure is successful if a node belonging to a Type I or Type II cycle is found. In such a case the minimum distance fromxto the first node of the cycle found must be reported. Otherwise it should be stated that a solution can not be found.Your algorithm should take into account that GG(n) can contain other types of cycles besides the ones described here. Otherwise, it can run forever.InputThe input contains several lines each one with a different test case. Each line includes a pair of numbers representing the valuesnandx. You should assume thatnis even and also that 2 ≤n≤ 1000. Although 0 <x<nis true, do not assume thatxis a valid node of GG(n). The last line of the input contains the number 0 (it is not a test case).OutputFor each test case output a single line with one of the following:Solution found at distanceD.Solution not reachable.xis not a node!WhereDis the minimum distance fromxto the solution found, as described before.ExampleInput:2 1\r\n4 2\r\n6 2\r\n6 3\r\n12 3\r\n12 11\r\n14 7\r\n20 5\r\n38 11\r\n50 17\r\n540 340\r\n540 31\r\n540 33\r\n0Output:1 is not a node!\r\nSolution found at distance 0.\r\nSolution not reachable.\r\nSolution found at distance 0.\r\nSolution not reachable.\r\nSolution not reachable.\r\nSolution found at distance 0.\r\nSolution found at distance 1.\r\nSolution found at distance 2.\r\nSolution found at distance 1.\r\n340 is not a node!\r\nSolution found at distance 0.\r\n33 is not a node!",
+  "sample_input": "Input:2 1\r\n4 2\r\n6 2\r\n6 3\r\n12 3\r\n12 11\r\n14 7\r\n20 5\r\n38 11\r\n50 17\r\n540 340\r\n540 31\r\n540 33\r\n0Output:1 is not a node!\r\nSolution found at distance 0.\r\nSolution not reachable.\r\nSolution found at distance 0.\r\nSolution not reachable.\r\nSolution not reachable.\r\nSolution found at distance 0.\r\nSolution found at distance 1.\r\nSolution found at distance 2.\r\nSolution found at distance 1.\r\n340 is not a node!\r\nSolution found at distance 0.\r\n33 is not a node!",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GOLDG",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": "2 1\r\n4 2\r\n6 2\r\n6 3\r\n12 3\r\n12 11\r\n14 7\r\n20 5\r\n38 11\r\n50 17\r\n540 340\r\n540 31\r\n540 33\r\n0",
+      "expected_output": "1 is not a node!\r\nSolution found at distance 0.\r\nSolution not reachable.\r\nSolution found at distance 0.\r\nSolution not reachable.\r\nSolution not reachable.\r\nSolution found at distance 0.\r\nSolution found at distance 1.\r\nSolution found at distance 2.\r\nSolution found at distance 1.\r\n340 is not a node!\r\nSolution found at distance 0.\r\n33 is not a node!",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 8\n6 4\n8 4\n2 6\n4 7\n6 2\n3 3\n8 7\n7 3\n5 10\n10 3\n8 7\n3 2\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 9\n4 8\n8 3\n6 1\n6 1\n9 9\n10 3\n1 2\n10 3\n9 5\n8 10\n5 1\n8 4\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 5\n6 5\n6 1\n6 7\n10 7\n10 5\n8 7\n9 2\n8 10\n9 7\n10 9\n9 6\n8 7\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "92 26\n91 100\n20 55\n34 20\n90 50\n89 27\n33 77\n37 98\n27 79\n95 51\n91 34\n9 52\n1 96\n50",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 53\n94 76\n68 34\n57 48\n75 18\n36 17\n23 85\n10 62\n24 27\n38 33\n87 50\n53 16\n48 95\n62",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "36 35\n89 56\n5 98\n12 72\n38 18\n59 3\n67 76\n8 13\n71 38\n2 41\n92 24\n16 44\n38 44\n3",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 70\n87 88\n25 41\n78 8\n55 58\n90 22\n69 33\n22 9\n20 29\n45 70\n38 37\n8 74\n61 43\n6",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 32\n93 97\n91 4\n98 79\n54 10\n51 34\n1 30\n52 44\n78 85\n85 75\n74 97\n7 67\n36 85\n46",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "231 463\n354 237\n267 250\n283 404\n85 328\n89 320\n374 408\n459 453\n339 332\n358 63\n145 219\n88 157\n491 120\n60",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "173 392\n192 201\n262 310\n316 378\n107 238\n318 135\n360 165\n200 313\n225 397\n63 153\n428 164\n305 430\n87 422\n285",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "366 282\n460 449\n179 117\n272 450\n218 245\n95 254\n287 180\n119 137\n456 180\n51 377\n409 276\n152 270\n336 399\n365",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "403 378\n252 243\n65 111\n370 338\n230 296\n227 170\n154 213\n461 346\n183 354\n150 84\n404 404\n145 363\n304 72\n382",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "194 228\n104 428\n228 461\n454 368\n180 438\n346 95\n394 102\n203 292\n328 258\n480 154\n74 178\n455 328\n407 122\n142",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "402 172\n479 480\n184 99\n162 227\n357 67\n429 86\n261 243\n153 254\n100 268\n195 384\n98 383\n135 435\n500 65\n241",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "229 325\n315 155\n136 307\n407 77\n329 315\n265 287\n72 478\n334 91\n411 418\n489 458\n166 402\n235 483\n119 302\n222",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999\n999 1000\n1000 999\n1 2\n999 2\n1000 999\n1000 2\n2 1000\n1000 1\n2 1000\n1 1\n999 2\n999 999\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999\n2 999\n2 999\n2 2\n2 1\n999 1000\n999 2\n1 1000\n2 999\n1 2\n1 1000\n1000 1\n2 2\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Electronic Document Security",
+  "tags": [],
+  "text": "The Tyrell corporation uses a state-of-the-art electronic document system\r\n   that controls all aspects of document creation, viewing, editing, and\r\n   distribution. Document security is handled viaaccess control\r\n   lists(ACLs). An ACL defines a set of entities that have access to the\r\n   document, and for each entity defines the set of rights that it has.\r\n   Entities are denoted by uppercase letters; an entity might be a single\r\n   individual or an entire division. Rights are denoted by lowercase letters;\r\n   examples of rights areaforappend,dfordelete,eforedit, andrforread.The ACL for a document is stored along with that document, but there is\r\n   also a separate ACLlogstored on a separate log server. All\r\n   documents start with an empty ACL, which grants no rights to anyone. Every\r\n   time the ACL for a document is changed, a new entry is written to the log.\r\n   An entry is of the formExR, whereEis a nonempty set of\r\n   entities,Ris a nonempty set of rights, andxis either \"+\",\r\n   \"–\", or \"=\". EntryE+Rsays to grant all the rights\r\n   inRto all the entities inE, entryE–Rsays to remove all the rights inRfrom\r\n   all the entities inE, and entryE=Rsays that all the\r\n   entities inEhave exactly the rights inRand no others. An\r\n   entry might be redundant in the sense that it grants an entity a right it\r\n   already has and/or denies an entity a right that it doesn't have. A log is\r\n   simply a list of entries separated by commas, ordered chronologically from\r\n   oldest to most recent. Entries are cumulative, with newer entries taking\r\n   precedence over older entries if there is a conflict.Periodically the Tyrell corporation will run a security check by using\r\n   the logs to compute the current ACL for each document and then comparing it\r\n   with the ACL actually stored with the document. A mismatch indicates a\r\n   security breach. Your job is to write a program that, given an ACL log,\r\n   computes the current ACL.InputThe input consists of one or more ACL logs, each\r\n   3–79 characters long and on a line by itself, followed by a line\r\n   containing only \"#\" that signals the end of the input. Logs will be in the\r\n   format defined above and will not contain any whitespace.OutputFor each log, output a single line containing the log\r\n   number (logs are numbered sequentially starting with one), then a colon,\r\n   then the current ACL in the format shown below. Note that (1) spaces do not\r\n   appear in the output; (2) entities are listed in alphabetical order; (3) the\r\n   rights for an entity are listed in alphabetical order; (4) entities with no\r\n   current rights are not listed (even if they appeared in a log entry), so\r\n   it's possible that an ACL will be empty; and (5) if two or more consecutive\r\n   entities have exactly the same rights, those rights are only output once,\r\n   after the list of entities.ExampleInput:MC-p,SC+c\r\nYB=rde,B-dq,AYM+e\r\nGQ+tju,GH-ju,AQ-z,Q=t,QG-t\r\nJBL=fwa,H+wf,LD-fz,BJ-a,P=aw\r\n#Output:1:CSc\r\n2:AeBerMeYder\r\n3:\r\n4:BHJfwLPaw",
+  "sample_input": "Input:MC-p,SC+c\r\nYB=rde,B-dq,AYM+e\r\nGQ+tju,GH-ju,AQ-z,Q=t,QG-t\r\nJBL=fwa,H+wf,LD-fz,BJ-a,P=aw\r\n#Output:1:CSc\r\n2:AeBerMeYder\r\n3:\r\n4:BHJfwLPaw",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/EDS",
+  "scraped_at": "2025-08-17 00:34:26",
+  "test_cases": [
+    {
+      "input": "MC-p,SC+c\r\nYB=rde,B-dq,AYM+e\r\nGQ+tju,GH-ju,AQ-z,Q=t,QG-t\r\nJBL=fwa,H+wf,LD-fz,BJ-a,P=aw\r\n#",
+      "expected_output": "1:CSc\r\n2:AeBerMeYder\r\n3:\r\n4:BHJfwLPaw",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "ydszuvgssvis\ngkdypkjoaid\njkrwgcyczamx\nzvij\nj",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "uyhkf\nijqmsyynvbzfevvbzer\nwugpzxnvosjcegxs\nqyuhxzclvausota\nw",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "dtarsgghpv\nuqwf\njv\nltvfyomtppowpxwd\nqo",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "wjdihqum\nl\nymjiantdaiaxpbpjw\nsbpcfvajz\nfe",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "f\nurfrxvorgmp\nnfenuldpnswycelujjku\nfnjeujcsupmlntmhcdn\nw",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "xcqbu\nvgicqnfjo\nwvjlancykh\ntbbbvagavpme\nz",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "fuzblgw\nszrglkngyebax\nfbhg\nqrtbrdgridabqz\nco",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ybgacn\nzkqbewdwockug\nggulj\nwohvaw\na",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "dthnfztpteebl\nmimxpvjmfjhhegpmht\njxbwwnyetinbiviboe\nvurmivu\nl",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "j\nnoxovmn\nf\nahnyhjmxpniixsds\no",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ahfrvjvywrxnqyg\nywzoaxeidlsivbdaiky\njytagfvpjxpczrgxbf\nue\nfh",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tdrhdolrycr\nnwtqzcejkdtyqnp\njwoguyfsqc\nwmeaflhxqlubehq\ni",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "cmkmrn\nkgjjrlsgfwd\nurlcmulhze\nxo\nt",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tqoranzqltldt\nuujxcnxugfsp\nyt\ndntkc\nb",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "mcswjfhnuthypficq\ndnxvnxlkjnnanfozjr\nczxrinrbcejidknaef\nlubtpr\nj",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xlpgubjpuhczw\nau\nxa\nqofcvfyncoaamv\nm",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "pjqvfyu\nfadktltutkpedj\nkugpdegpiprxapm\nj\nxa",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "gmbhurdib\nv\ncxjskstxookkiudxuoq\nh\ne",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "toimnmtuzwah\nsreruewtuhhwh\nptqrqstcvvkh\nnajajbbx\ngl",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

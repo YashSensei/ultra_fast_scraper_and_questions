@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "To Score or not to score",
+  "tags": [],
+  "text": "Robot soccer matches in the very early days were quite funny, since most of the time there wasn't any action in the game. Robots only moved to catch a ball that a robot from the other team had shot. The reason for this somewhat strange behavior was attributed to the used strategy. The robots made a map of all players from the same team and the opponents. If one player was in possession of the ball before even shooting he tried to check whether it was possible to score from the current situation. In the process he checked if there was a way for the ball to reach the goal via several other players of his team. It was possible to shoot the ball to another player if no opponent was close enough to the shooting line to catch the ball. The opponent always moved perpendicular to the shooting line and only if he was sure that he could intercept the shot. The ball always traveled three times as fast as a robot could move, i.e. the player had to be quite near the shooting line to intercept the shot.The other part of the game was fouling another player in order to prevent the other team from reaching the goal. The rules stated that only one player could be fouled at a time, so this only happened if fouling this one player prevented the other team from scoring. Also the initial shooter may not be fouled at any time. Fouling happens almost instantly by knocking the robot out with an electromagnetic pulse, thus the distance between the two opponents does not matter and the fouling robot does not move.Let's have a look at the figure. There are four players in each team, indicated by the black and white circles. Suppose playerAhas the ball. Then only the shown shots are possible (note the directions). In all other cases a white player is near enough to intercept the shot (e.g. the direct shot fromAto the goal). Thus in principle the black team could score. However, if playerDis fouled the goal can no longer be scored.Your university has decided to program a simulator for these ancient robot football matches and your task is to write the part that checks if the team in possession of the ball is able to score or not, based on the current positions of all robots. As a summary of the description above, a team may score if the ball cannot be intercepted by an opponent player and if more than one player would have to be fouled.InputThe first line contains the number of test cases1 ≤ k ≤ 10that follow. The first line of each test case holds the numbernof players per team (1 ≤ n ≤ 20). The next2nlines contain the coordinates of all players, the firstnlines being the first team, the secondnlines the second team. A coordinate is given as two non-negative floating point numbers separated by spaces. The first player of the first team is in possession of the ball. The coordinates of the goal follow below the two teams. You may assume that the inputs are chosen in such a way that small floating point errors do not lead to wrong results.OutputOutputGoalif the first team is able to score orNo goalif the ball can be intercepted or if fouling one player is enough to prevent the team from scoring.ExampleInput:2\r\n4\r\n407.89 297.33\r\n396.64 80.21\r\n190.26 96.43\r\n210.73 290.67\r\n345.43 315.24\r\n462.45 218.22\r\n291.76 60.82\r\n104.98 113.45\r\n0 191.18\r\n4\r\n407.89 297.33\r\n396.64 80.21\r\n190.26 96.43\r\n210.73 290.67\r\n521.43 369.86\r\n565.14 368.22\r\n563.25 328.18\r\n521.31 334.00\r\n0 191.18Output:No goal\r\nGoal",
+  "sample_input": "Input:2\r\n4\r\n407.89 297.33\r\n396.64 80.21\r\n190.26 96.43\r\n210.73 290.67\r\n345.43 315.24\r\n462.45 218.22\r\n291.76 60.82\r\n104.98 113.45\r\n0 191.18\r\n4\r\n407.89 297.33\r\n396.64 80.21\r\n190.26 96.43\r\n210.73 290.67\r\n521.43 369.86\r\n565.14 368.22\r\n563.25 328.18\r\n521.31 334.00\r\n0 191.18Output:No goal\r\nGoal",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TOSCORE",
+  "scraped_at": "2025-08-17 00:33:23",
+  "test_cases": [
+    {
+      "input": "2\r\n4\r\n407.89 297.33\r\n396.64 80.21\r\n190.26 96.43\r\n210.73 290.67\r\n345.43 315.24\r\n462.45 218.22\r\n291.76 60.82\r\n104.98 113.45\r\n0 191.18\r\n4\r\n407.89 297.33\r\n396.64 80.21\r\n190.26 96.43\r\n210.73 290.67\r\n521.43 369.86\r\n565.14 368.22\r\n563.25 328.18\r\n521.31 334.00\r\n0 191.18",
+      "expected_output": "No goal\r\nGoal",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n7\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n2\n10\n3\n3\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "16\n64838838\n47096295\n68325841\n94917779\n86779443\n17728159\n16001154\n1939662\n81171910\n62728934\n97766834\n24773745\n94010949\n10463968\n96796906\n43370165",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n85723476\n95316085\n77118766\n9846171\n55885533\n36981821\n50278134\n14141755\n40852167\n44599531\n51839639\n24514864\n81843523\n23479392\n33371558\n33970462\n30690609\n73522489\n13361958\n88462443",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n93265755\n76951392\n40235742\n47307187\n33171210\n70475906",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n8764142\n48776174\n13584426\n42444043\n19365243\n60971082\n98593021\n89122232\n43745009\n12494299\n72370102\n67940706\n11877501\n3259509\n67850858\n93322982\n18330290\n94289930",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n86940557\n51605805\n35120658\n1268800\n3238187",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n4667\n60936\n33801\n92719\n88713\n2917\n22637\n13757\n13955\n57795\n83594\n13004\n38357\n62685\n53710\n56150\n70669\n84555\n61618\n62264",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n56541\n46999\n74676\n31353\n77210\n43505\n17779\n12122\n74814\n50052\n45262\n94077\n44188\n61630\n44789\n84727\n99051\n40277\n84403\n38085",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n54871\n22347\n93429\n36483\n45137\n21070\n13409\n59999\n69884\n57837\n82728\n38028\n49940\n96007\n40492\n61263\n59823\n20788\n80143\n25869",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n53783\n83747\n88350\n29100\n90050\n40318\n85782\n59453\n24772\n29706\n61299\n43812\n48005\n56359\n8834\n66395\n23636\n73102\n35985\n41545",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n8776\n68081\n20517\n42789\n9024\n63130\n12170\n98307\n40531\n8216\n90037\n72544\n485\n55143\n59135\n68455\n33674\n10347\n30734\n99476",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n72768\n425\n5820\n58892\n5350\n75619\n6252\n60018\n75200\n54625\n28700\n18349\n13896\n45941\n61446\n55103\n90571\n18915\n24262\n2258",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n53952\n63299\n57493\n5459\n16358\n50200\n83435\n64122\n82686\n78719\n60544\n21643\n74716\n78815\n51156\n37276\n35321\n88724\n87503\n46898",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n5462679\n55175\n40071620\n36901156\n41122486\n64347996\n22498728\n2971211\n63760889\n89777968\n79226031\n97711722\n50815933\n69528809\n189683\n61517566\n70030918\n78944703\n42066449\n11314014",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n28224356\n9139054\n86989946\n40752833\n53869873\n21473608\n81635481\n90686219\n97228840\n66363244\n78124151\n84204483\n24246231\n92712895\n22820304\n90066705\n36299562\n53370705\n25048509\n28914351",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "2\n46213860\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "2\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

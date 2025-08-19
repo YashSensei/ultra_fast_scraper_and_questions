@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Retrovirus",
+  "tags": [],
+  "text": "Little Petar, hacker and bioinformatician, has successfully achieved his greatest hacking feat to date - he successfully broken into the highly guarded database of the DBW (Department of Biotechnological Weaponry), which is suspected of creating many pandemic-causing retroviridae in the past. Among many secret projects, he has discovered a prototype of a brand-new kind of retrovirus, potentially capable of causing a new, incurable disease.Retroviridae store all their genetic information used for attacking the host cell in a single strand of ribonucleic acid (RNA). An RNA strand consists of a string of nucleotides, that may be either Adenine (A), Uracil (U), Cytosine (C) or Guanine (G).Petar found out that the prototype is actually a mutated version of a known retrovirus - as such, it is expected that there are regions (substrings) where these two viruses are highly \"similar\". The similarity of two regions of same length is defined as the number of indices where their nucleotides match; e.g. the similarity between \"ACAGU\" and \"AGAGA\" is 3 (the nucleotides match on the first, third and fourth position).Petar has identified potentially similar regions - it is now up to you to write the program to calculate how similar they actually are.InputThe first line of the standard input contains a natural number N, the length of the RNA strand of both the old and the new retrovirus. The second and third line contain two strings, RV1and RV2, representing their RNA strands.The fourth line contains a natural number Q, representing the number of similarity queries that need answering. Each of the following Q lines contains three natural numbers X, Y and L - this means that the similarity of the regions of length L starting from the Xth position in RV1and the Yth position in RV2should be calculated. It is guaranteed that this region can extend for at least L characters in both strings.OutputFor each of the Q queries, output the answers in order, each one in a separate line of the output.ExampleInput:7AUGCAAGGGAUGCG21 3 46 1 2Output:41ExplanationLet A[i..j] be the substring of A starting on index i and ending on index j.The first query asks for the similarity of RV1[1..4] = \"AUGC\" and RV2[3..6] = \"AUGC\", which is 4 (as this is a complete match).The second query asks for the similarity ofRV1[6..7] = \"AG\" and RV2[1..2] = \"GG\", which is 1 (as only the second index matches).Constraints1 ≤ N ≤ 10001 ≤ Q ≤ 106",
+  "sample_input": "Input:7AUGCAAGGGAUGCG21 3 46 1 2Output:41",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RETRO",
+  "scraped_at": "2025-08-17 00:33:23",
+  "test_cases": [
+    {
+      "input": "7AUGCAAGGGAUGCG21 3 46 1 2",
+      "expected_output": "41",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 6 2 9 6 1\nhirjdszfrzcy 2 3 7 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5 7 9 4 3\nainn 4 7 6 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2 4 1 1 9\nctboudypgkyrui 8 5 6 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 53 57 90 38 33\nraixir 55 29 100 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 86 25 35 35 88\nggtej 40 85 4 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 78 84 5 63 7\na 27 32 53 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 27 62 85 38 16\nlzixbeqcr 52 11 73 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 6 60 39 40 4\nvrkjjlls 59 55 27 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2368 3646 537 1244 2789 2717\nzwthweitfod 1481 1728 2745 2020",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2737 2761 4943 2935 1891 2657\nompiutvpftqzst 3224 4456 2878 4142",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3442 3760 4198 3929 4193 1998\ndwkqmxjrb 2090 4327 2541 5000",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4816 2681 2144 1430 3502 1988\nuqhnclgdj 4941 4335 3578 1932",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1232 2671 4617 751 2148 543\nase 3089 3016 1284 2313",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2782 4212 2852 4039 3218 4819\nwfu 1335 3661 918 4824",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4106 2884 4904 4519 4833 2344\ndwfzuwmsui 2900 2756 916 2256",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10001 10001 10001 10001 10001 10001\nzou 10001 10001 10001 10001",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10001 10001 10001 10001 10001 10001\nalgv 10001 10001 10001 10001",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10000 10001 10000 1 10000 2\nyxkewcxddqf 2 10000 1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "10000 2 2 10001 2 1\nufoqpspeyae 10000 1 2 10001",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

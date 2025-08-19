@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Revenge Of Anti Hash",
+  "tags": [],
+  "text": "Given a baseBand a modulusM, the polynomial hash of a stringS, consisting of only lowercase letters(a-z)is defined as below:int GetHash(string str, int B, int M){\r\n \tlong long hash = 0;\r\n \tfor (auto chr: str)\r\n \t \thash = (hash * B + chr - 'a' + 1) % M;\r\n \treturn hash;\r\n}In other words, first the letters of the string are replaced by numbers (equivalent to their position,'a'gets mapped to1,'b'to2, ... and'z'to26). This is then considered to be a number in baseB(the rightmost number is the least significant digit), and the value of this number taken moduloMis called the polynomial hash of the string.Limak the bear loves to hack other contestants in Codeforces. After the recent educational round, he came to know that his friend Swistak used the polynomial hash function stated above to solve the hardest problem! And believe it or not, he was the only one to solve that problem which eventually made him the round champion! Limak is very angry, how can Swistak solve a problem which Limak himself couldn't solve? And worst of all, Swistak used hashing to solve that problem. Limak believes people who use hashing have no real skill, getting 'Accepted' just implies getting lucky, nothing more.Limak is just a little bear, he is not very good at solving problems. But after hours of scratching his head, he was able to come up with a solution involving birthday attacks. That should hack Swistak’s solution since educational rounds allow hacking for 24 hours after the round ends. And voila! When he coded it later that night, he was finally able to come up with a case that broke Swistak’s solution. And down he goes. From the top place to 153, even below Limak! Limak was overwhelmed with joy.When Swistak woke up the next morning and casually checked the rank list he was furious. He could not believe what he saw, rolling his eyes in disbelief. He was the only contestant to solve the last problem and that earned him the top place. But alas! No more, because someone hacked his solution and he dropped down more than a hundred fifty places. He clicked on the problem to see who hacked him, and his disbelief grew to anger and frustration when he realized it was his friend Limak! He couldn’t believe his eyes. “I thought he was my friend, how could he do this to me?”, he wondered. He vowed to take revenge. He modified his solution to use double hashing. But just to be extra sure so that Limak can never hack his solution ever again, he hashed it a few more times resulting inKtotal hashes. Then he submitted his solution which passed the tests and Limak’s initial hack as expected.Afterward, he rushed to Limak’s place and challenged him to a duel. He claimed Limak was jealous and just got lucky while hacking his solution and has no real hacking skills. Feeling overconfident with his new solution, Swistak challenged Limak to hack his new solution and suggested he will retire from competitive programming if Limak can hack his new solution. But if however, Limak fails, then Limak must retire instead!Limak, being provoked like this, takes up the challenge without thinking it through. But he has no clue how to solve it, he is just a little bear after all. He thought about it throughout the whole day but has no idea how to crack it. With just 4 hours left before the hacking phase ends, he desperately turns to you for help. He knows this isn’t exactly fair, but nothing’s fair in love and war as they say and he doesn’t want to retire from competitive programming. Not now and not ever. Please help Limak solve the following problem and beat Swistak once and for all, thereby saving his career.Limak will give youKpairs of numbers,(B1, M1), (B2, M2), … , (BK, MK). Each pair consists of a baseBand a modulusM. These are the numbers Swistak used to hash stringsKtimes in his new solution. Limak needs you to findtwo different stringsconsisting of lowercase letters only. The strings must have the same hash value when hashed with each of theKbase/mod pairs with the above described function. Since Codeforces will not accept just any string of arbitrary length as hack inputs, each of the strings also need to be non-empty and cannot exceed more than65536characters in length. They can be of different lengths though.InputThe first line containsT, denoting the number of test cases. ThenTtest cases follow. The first line of each case contains an integerK. The nextKlines consist of two integers(Bi, Mi). These are the base and mod pairs Swistak used in his hash function.Constraints1 ≤ T ≤ 201 ≤ K ≤ 1232 ≤ Bi≤ 2561 ≤ Mi≤ 256OutputFor each test case, output the required two strings separated by a single space. If there is more than one solution satisfying all the above criteria then you may output any of them. You can be assured that there will always be at least one pair of strings.Sample Input1\r\n1\r\n32 1Sample Outputhello worldChallengeYou might also enjoy:Anti HashAnti Hash II",
+  "sample_input": "int GetHash(string str, int B, int M){\r\n \tlong long hash = 0;\r\n \tfor (auto chr: str)\r\n \t \thash = (hash * B + chr - 'a' + 1) % M;\r\n \treturn hash;\r\n}",
+  "sample_output": "1\r\n1\r\n32 1",
+  "link": "https://www.spoj.com/problems/AHASHREV",
+  "scraped_at": "2025-08-17 00:33:10",
+  "test_cases": [
+    {
+      "input": "int GetHash(string str, int B, int M){\r\n \tlong long hash = 0;\r\n \tfor (auto chr: str)\r\n \t \thash = (hash * B + chr - 'a' + 1) % M;\r\n \treturn hash;\r\n}",
+      "expected_output": "1\r\n1\r\n32 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "titdj gxt amaql zdd bd n pvonc\n8\nvrisi armc le ntdsj ziu\nenl t v af\n2\nc veu mabnt mmazu wq jid qc woai iaua yzau k su iogsm\nbhq bh\nhn",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "px f gx mgvm m ykp u\n9\nwbpo xif tmlrg r ufn\nfrodo r b chw\n2\nhz qyqxp yuv f inrv rz jjy pfhgk cw rk mchuo hb g\nyg d\ndu",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ym kpd krju mbsa jtae zywyb tjn\n2\nopp ultcd h pk rp\nfvg kvqr z uw\n2\nqka o ivhta xt oefj kc e pr ssr u ri anqyx bv\nerwzr i\ng",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "yggqe jlqz d arrwr q r vlcyo\n36\nkyt g lzgv loztw g\nvcpm x bf uvq\n33\no d c xhv gt y dej m d ae sa ude beqra\nx kf\nu",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "hdd sfuwuvspbfno c tszw edgtm npou mg\n94\nr jnw wwzx mjmlx xypj\nbx xbkwr ftrar mueic\n41\nhimax hnsi bim jg aplyx a ri ej ozczu ab qtrq y e\nfpgro y\nx",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "fazbm lyk d hatnm c pbtr npyt\n72\ntgex ebz cwo vyu zx\nko pjt vv ds\n19\nsspaj wvzs apdg cmh k euot sf zael jf lqjcr t a lqp\nfyh qqmo\nz",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "tggc wpdo lzxw t uxdk ztdt iag\n44\ntx gxgex f bymyh byzq\ntux ojsxd ihc hupwa\n45\njxw snmnd klx y a xpcsz kqu aa fckdz xvk vlrip b gyuwb\ngemx svagu\nm",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "itdyj lvyek witqt junf cjssb fcunf y\n91\ni gsh x da ngee\nfvb tpvm m m\n82\ng bjphp jdo vyp vkl nibo urhpv r sfxq g ypze hud o\ncxuw y\nhp",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zhujn toopwyrvgfoog p eja fcmxz dgsz bm\n161\nscng h u rm pjz\nfdw y iosiw qyh\n396\nuytq wz ohf aqwlk p plvp yqx a srbc n ev dnh ulrea\nfq uvag\nwb",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jmly njz is ydkqq vkif zw awr\n80\nmcwzp uftyq musg danru f\ntztbu kc j k\n168\ntt bpd z gc isn nvhqf bpscc ed kwil y hfcn xbhvu if\na mbug\nm",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lhaug zceem tzl wahrq inzo zy qigtm\n368\nudc vwjc bqyi trjlt co\nos t jvyng rrfe\n382\nrsys nlzef jp efzno wepo bzn mnlyh blrw nfw h ydv rimdx ay\nm fuu\nc",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ut behkmgfghgsne pq leu u hes tux\n223\ngai io ui j d\nsi s j wcdn\n471\nvu ucfj ic plkbm nusvz b yz bo bzpi f w gaz v\njcdie ft\nft",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "avo c kcbgd quvm dxga xat oa\n468\neuojr is ng te ah\na tgxc kmo xb\n443\nr lcn o dl bd nyhb g nflv fd m ubgru jpw twqd\nkvhm th\nna",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rgr istqa lcqjd htyye i ln ntgx\n55\nnp kvymn ogb fzc uro\nfd qf r sleog\n136\nm vwdxi rp my yykd p mdenb vsn onst rbm rg oejwn akxxu\nvwmx xx\nz",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "kvlw bv uoxd xk uimo oqs cpddm\n154\ntb vp udkth hn khdv\nsvd alr gqjqp wsuoy\n114\nmpq meub vcbtu b arody of hhjg ks pg zhiv kniuy diztt w\neydn z\nvj",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lan kucbthfeecm rkmwi nxtq xo ap dr\n1000\nmjxd y nceuy syeo jbdkk\nmomp swl rlk q\n1000\nfz vbk jeps qzc hlko bi pblui guvfb cego x d yc tokv\nl lsfuc\nka",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "voxt pyapjgvdr rz mjqc oto alhc xco\n1000\nkq fgmqu zrkij kt ufy\nb ec wu uajlc\n1000\niv pkmmu we sev eqaw nz vywca ntz r lvhl i ojdlc fikyq\ncc dufv\nh",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "quab p rzsp m wkvg ya abhe\n2\nhyzn ckroz aqxbs p zux\no e bea xixi\n1000\nf hxq lusi kt qwof sw mmk pxsxn a ui eknu hgy nyqx\nvrije vmtd\nz",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "mhbv lkdf qj earki nhn chnrl bmnsh\n2\nyttn njwcl hyd yw dw\nlfn v vaan a\n1\nx s b r e zc z xtepb o am djix xh lzo\nmlgrj n\nn",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

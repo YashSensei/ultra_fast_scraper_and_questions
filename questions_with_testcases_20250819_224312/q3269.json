@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Snakes and Ladders Again",
+  "tags": [],
+  "text": "Snakes and Ladders (or Chutes and Ladders) is an ancient Indian board game regarded today as a worldwide classic. It is played between two or more players on a game board having numbered squares (fields) on a grid. A number of \"ladders\" and \"snakes\" (or \"chutes\") are pictured on the board, each connecting two specific board squares. The object of the game is to navigate one's game piece from the start (Bottom square) to the finish (Top Square), helped or hindered by ladders and snakes, respectively. The historic version had root in morality lessons, where a player's progression up the board represented a life journey complicated by virtues (ladders) and vices (snakes).  If, after throwing a dice, a player's token lands on the lower-numbered end of a \"ladder\", the player moves his token up to the ladder's higher-numbered square. If he lands on the higher-numbered square of a \"snake\" (or chute), he must move his token down to the snake's lower-numbered square. If any of those cases takes places, we will call a square unstable. Otherwise it is stable.The game is a simple race contest lacking a skill component, and is popular with young children.In this problem you’re required to calculate the expected number of 6-sided die throws to move your game piece from the start (bottom square) to the finish (top square).Formal game descriptionFields are arranged on an NxM grid and numbered from 1 to N*M. Last field, indicated by N*M, is referred to as Top Square. Each player starts with a token on a square at position \"0\" (the imaginary space beside the “1” grid field; Bottom Square), which is always stable. So in total we have N*M+1 fields. In every turn player throws the die and moves up by the given number of squares. If that would result in a field higher than Top Square, then token is not moved. If the square that token ends on is unstable, it is moved as indicated by ladder or snake. This is repeated until token is placed a stable field. You can assume that a stable field can be reached from any field on the board. If this final, stable field is the Top Square, game ends and player wins.InputInput contains multiple test cases First line of each test case contains integers N, M, S, L. where n and m are the board dimensions, N (0 < N <= 10), M (0 < M <= 10), and S and L are number of snakes and ladders respectively. Next S lines describes snakes. Each line contains two integers: h and t, where h is the snake’s head position and t is the snake tail position. (0 < t < h <=N*M), Next L lines describes ladders. Each line contains two integers: p and q where p is the ladder’s bottom and q is the ladder’s top (0 < p < q < N*M).The input will be terminated by the end of file.NOTE! There could be more snakes and/or ladders leading from a single field. In such a case use the last snake/ladder specified in the input.OutputPrint one number per test case (each in separate line), expected number of dice throws needed to reach the Top Square. It's guaranteed that the Top is always reachable. Your round the result to exactly 3 decimal places.SampleInput5 10 3 5\r\n16 6\r\n47 26\r\n49 11\r\n1 38\r\n4 14\r\n9 31\r\n40 42\r\n36 44Output30.198Before you solve this you may want to try:Snakes and Ladders",
+  "sample_input": "Input5 10 3 5\r\n16 6\r\n47 26\r\n49 11\r\n1 38\r\n4 14\r\n9 31\r\n40 42\r\n36 44Output30.198",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PCPC12F",
+  "scraped_at": "2025-08-17 00:34:26",
+  "test_cases": [
+    {
+      "input": "Input5 10 3 5\r\n16 6\r\n47 26\r\n49 11\r\n1 38\r\n4 14\r\n9 31\r\n40 42\r\n36 44Output30.198",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 5 6 4\ntpuoju 9 8 6\n10 6\n7 2\n9 6\n6 5\n9 10\n9 2\n1 8\n3 5 9\n4 esgbszmdjo",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 8 5 4\nddbd 7 4 5\n7 8\n8 10\n5 2\n4 5\n2 9\n6 8\n5 4\n1 1 1\n5 oksmsf",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5 9 2\nxtzowr 4 8 9\n10 10\n7 4\n10 7\n2 5\n4 8\n5 3\n1 8\n10 3 1\n2 lrm",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "49 38 14 26\npp 84 72 96\n31 64\n25 30\n61 50\n21 91\n34 73\n82 76\n38 9\n15 23 44\n57 jmytbkyd",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "57 93 49 83\nynyep 13 27 75\n55 83\n40 89\n3 46\n28 28\n55 79\n86 99\n55 21\n14 49 50\n99 wodnfrpyudovvb",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 45 100 49\nxvqs 84 28 48\n25 66\n9 62\n74 21\n42 97\n9 59\n97 52\n76 58\n10 82 81\n71 f",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 9 79 23\ntviug 11 4 83\n100 19\n2 67\n49 30\n92 21\n58 59\n29 100\n100 90\n68 42 96\n86 mcrjwabwtob",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 44 16 11\nqdotb 70 33 42\n2 62\n60 9\n71 92\n7 78\n28 10\n13 11\n24 79\n88 62 21\n88 hkhbxn",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "439 480 236 125\nwkkar 457 80 470\n215 327\n116 119\n134 174\n340 195\n66 277\n294 273\n99 128\n144 252 256\n175 cxjt",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "161 351 303 79\nyuknj 281 323 295\n120 422\n151 70\n79 392\n222 84\n205 140\n62 472\n116 395\n59 442 492\n463 inqzvvz",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "157 339 473 420\nseag 163 413 169\n278 424\n357 393\n213 206\n380 391\n179 194\n172 126\n487 336\n491 202 183\n185 yjlqauphzqogpn",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "446 262 372 411\nydeiv 214 106 183\n80 155\n402 499\n186 274\n243 108\n475 225\n160 192\n52 158\n202 305 63\n215 iuu",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "159 287 226 388\ng 307 276 128\n136 325\n196 64\n237 464\n190 244\n366 362\n228 110\n310 447\n447 238 406\n118 sp",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "360 492 483 366\nyhpd 267 293 388\n492 205\n485 272\n488 484\n61 335\n83 499\n72 170\n138 71\n230 163 402\n444 z",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "274 51 487 204\nyhu 236 303 397\n294 210\n124 167\n187 111\n323 460\n238 186\n488 486\n220 272\n81 231 367\n106 qlrwcbsoodccb",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\nmgjj 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 vdahmohk",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\nwrq 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 stpqurmgub",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1000 2 1\nljc 1000 2 2\n1000 2\n999 1000\n999 2\n1 999\n2 1000\n1000 1\n2 1000\n999 999 1000\n1000 nd",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 2 999\nvl 1 999 2\n2 1000\n999 999\n1000 2\n999 1000\n2 1000\n999 2\n1000 999\n1 1 1\n1 gvirgbvaadafm",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

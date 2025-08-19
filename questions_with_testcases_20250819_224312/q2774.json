@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Branch Assignment",
+  "tags": [],
+  "text": "The Innovative Consumer Products Company (ICPC) is planning     to start a top-secret project. This project consists of     $s$ subprojects. There     will be $b \\ge s$ branches     of ICPC involved in this project and ICPC wants to assign each     branch to one of the subprojects. In other words, the branches     will form $s$ disjoint     groups, with each group in charge of a subproject.At the end of each month, each branch will send a message to     every other branch in its group (a different message to each     branch). ICPC has a particular protocol for its communications.     Each branch $i$ has a     secret key $k_ i$ known     only to the branch and the ICPC headquarters. Assume branch     $i$ wants to send a     message to branch $j$.     Branch $i$ encrypts its     message with its key $k_     i$. A trusted courier picks up this message from this     branch and delivers it to the ICPC headquarters. Headquarters     decrypts the message with key $k_     i$ and re-encrypts it with key      $k_ j$. The courier then delivers this     newly encrypted message to branch      $j$, which decrypts it with its own     key $k_ j$. For security     reasons, a courier can carry only one message at a time.Given a road network and the locations of branches and the     headquarters in this network, your task is to determine the     minimum total distance that the couriers will need to travel to     deliver all the end-of-month messages, over all possible     assignments of branches to subprojects.InputMultiple test cases. Please process until EOF is reached. For each test case:The first line of input contains four integers      $n$,      $b$,      $s$, and      $r$, where      $n$ ($2     \\le n \\le 5\\, 000$) is the number of intersections,     $b$ (     $1 \\le b \\le n-1$) is the number of     branches, $s$     ($1 \\le s \\le b$) is the     number of subprojects, and      $r$ ($1     \\le r \\le 50\\, 000$) is the number of roads. The     intersections are numbered from      $1$ through      $n$. The branches are at intersections     $1$ through      $b$, and the headquarters is at     intersection $b + 1$. Each     of the next $r$ lines     contains three integers      $u$,      $v$, and      $\\ell $, indicating a one-way road     from intersection $u$ to a     different intersection $v$     ($1 \\leq u,v \\leq n$) of     length $\\ell $     ($0 \\leq \\ell \\leq 10\\,     000$). No ordered pair      $(u,v)$ appears more than once, and     from any intersection it is possible to reach every other     intersection.OutputFor each test case, display the minimum total distance that the couriers will     need to travel.ExampleInput:5 4 2 10\r\n5 2 1\r\n2 5 1\r\n3 5 5\r\n4 5 0\r\n1 5 1\r\n2 3 1\r\n3 2 5\r\n2 4 5\r\n2 1 1\r\n3 4 2\r\n5 4 2 10\r\n5 2 1\r\n2 5 1\r\n3 5 5\r\n4 5 10\r\n1 5 1\r\n2 3 1\r\n3 2 5\r\n2 4 5\r\n2 1 1\r\n3 4 2Output:13\r\n24",
+  "sample_input": "Input:5 4 2 10\r\n5 2 1\r\n2 5 1\r\n3 5 5\r\n4 5 0\r\n1 5 1\r\n2 3 1\r\n3 2 5\r\n2 4 5\r\n2 1 1\r\n3 4 2\r\n5 4 2 10\r\n5 2 1\r\n2 5 1\r\n3 5 5\r\n4 5 10\r\n1 5 1\r\n2 3 1\r\n3 2 5\r\n2 4 5\r\n2 1 1\r\n3 4 2Output:13\r\n24",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FN16ASGN",
+  "scraped_at": "2025-08-17 00:34:05",
+  "test_cases": [
+    {
+      "input": "5 4 2 10\r\n5 2 1\r\n2 5 1\r\n3 5 5\r\n4 5 0\r\n1 5 1\r\n2 3 1\r\n3 2 5\r\n2 4 5\r\n2 1 1\r\n3 4 2\r\n5 4 2 10\r\n5 2 1\r\n2 5 1\r\n3 5 5\r\n4 5 10\r\n1 5 1\r\n2 3 1\r\n3 2 5\r\n2 4 5\r\n2 1 1\r\n3 4 2",
+      "expected_output": "13\r\n24",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 3 2 8\n5 1 9\n5 2 7\n1 3 4\n9 6 5\n4 8 3\n2 4 8\n10 1 2\n3 10 7\n4 6 7\n3 2 10\n10 3 3 4\n10 3 5\n3 3 7\n8 4 2\n9 5 8\n6 7 1\n5 2 10\n1 1 7\n6 10 8\n5 7 7\n3 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 9 3 7\n4 4 5\n8 10 7\n9 8 1\n5 4 5\n9 3 10\n6 4 4\n10 5 6\n6 2 6\n8 9 2\n8 6 5\n6 6 1 6\n2 1 7\n5 4 2\n9 4 7\n5 2 5\n3 8 8\n6 3 2\n8 3 7\n10 8 5\n4 2 6\n7 1 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2 3 4\n1 7 9\n10 6 5\n3 2 10\n10 5 9\n2 6 8\n5 3 3\n4 4 7\n5 4 6\n3 10 4\n8 5 9\n9 6 6 3\n10 7 4\n9 4 1\n7 1 6\n4 4 1\n8 10 6\n2 9 8\n5 3 5\n3 8 6\n10 4 10\n9 9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "83 45 91 88\n5 68 8\n53 10 16\n98 64 17\n40 40 18\n99 74 78\n86 47 88\n55 12 16\n50 50 75\n52 31 37\n49 27 91\n82 55 43 96\n42 14 77\n61 10 7\n77 44 79\n5 34 15\n17 91 13\n93 51 84\n72 47 60\n23 20 74\n82 39 15\n35 40 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 47 87 29\n80 89 4\n38 18 59\n75 33 76\n25 39 45\n19 19 75\n36 94 81\n36 78 33\n73 61 70\n32 78 24\n82 95 57\n47 64 78 72\n59 56 20\n66 46 62\n35 64 89\n100 70 92\n93 99 12\n91 89 93\n11 57 90\n27 1 21\n87 24 70\n52 58 24",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 17 58 70\n34 63 85\n42 20 18\n45 31 90\n66 82 76\n16 34 42\n71 35 93\n53 11 4\n74 81 53\n45 67 17\n94 60 91\n69 47 76 98\n52 90 34\n96 10 43\n31 31 8\n55 55 58\n53 78 48\n33 40 8\n50 13 14\n61 87 42\n86 54 58\n10 61 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 90 93 72\n81 83 48\n33 98 87\n13 28 16\n14 38 19\n98 76 18\n66 83 64\n19 17 59\n78 44 8\n95 100 86\n48 59 66\n17 93 47 91\n74 78 91\n13 68 26\n94 48 89\n23 25 84\n94 45 55\n60 50 99\n84 15 18\n62 54 3\n3 67 55\n89 76 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 37 9 75\n42 28 59\n44 73 63\n86 18 54\n40 72 23\n64 70 21\n70 26 78\n35 82 1\n34 52 7\n66 27 61\n37 51 63\n79 90 99 100\n51 96 47\n68 31 61\n70 75 41\n48 96 36\n20 49 100\n50 55 58\n61 85 14\n54 22 4\n82 1 21\n71 75 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "213 370 144 263\n459 149 463\n354 321 222\n492 391 322\n82 175 275\n165 463 459\n427 207 192\n119 296 323\n351 90 465\n304 290 91\n436 265 386\n486 113 300 172\n179 91 298\n261 210 267\n381 257 120\n223 189 104\n201 310 313\n242 374 285\n120 114 220\n410 159 429\n379 374 260\n424 300 312",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "269 452 315 132\n385 52 498\n427 146 218\n139 256 451\n398 494 207\n460 337 210\n446 468 340\n119 466 207\n179 430 162\n184 117 115\n386 348 219\n173 164 395 434\n394 80 245\n335 219 133\n160 314 155\n101 486 329\n60 444 485\n208 355 180\n439 89 116\n305 93 287\n458 444 444\n371 162 128",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "144 185 474 487\n247 77 277\n500 259 100\n494 347 161\n370 234 464\n284 204 345\n491 217 134\n481 70 188\n156 236 335\n412 397 381\n473 54 398\n132 111 129 77\n235 385 464\n217 294 474\n473 387 433\n242 114 183\n460 191 240\n224 496 207\n244 414 290\n332 355 260\n168 301 285\n54 362 183",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "465 371 175 418\n310 255 167\n283 233 69\n205 102 140\n133 93 117\n165 343 83\n386 463 184\n185 500 238\n440 255 329\n195 432 380\n202 107 260\n140 198 210 309\n132 213 56\n183 448 102\n241 357 288\n67 422 251\n228 150 142\n268 204 187\n132 209 171\n238 499 358\n477 163 152\n61 133 215",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "440 147 81 422\n309 299 374\n332 72 470\n426 179 113\n148 366 248\n481 143 452\n300 458 362\n307 430 296\n141 175 318\n164 178 108\n211 329 437\n451 193 51 399\n432 309 487\n420 391 246\n144 277 159\n168 323 122\n72 180 127\n281 279 238\n239 255 336\n68 316 170\n221 310 313\n322 336 244",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "171 498 93 279\n81 475 62\n138 461 130\n402 500 149\n59 221 359\n270 470 113\n274 411 404\n317 74 75\n349 253 205\n441 211 96\n302 306 247\n185 203 342 188\n96 90 235\n394 113 470\n193 385 71\n428 54 272\n360 147 466\n52 243 484\n153 385 413\n368 260 234\n60 280 490\n329 336 63",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "172 183 98 399\n100 98 325\n462 314 365\n288 446 299\n128 157 328\n328 325 52\n422 79 328\n440 481 430\n390 236 443\n225 309 107\n345 60 308\n300 455 152 71\n346 104 451\n457 138 268\n417 177 198\n164 406 178\n52 220 439\n483 412 261\n377 433 369\n473 177 153\n438 243 113\n141 195 182",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1 1000 1\n1 2 999\n1000 1 2\n1000 1 1000\n1 999 1000\n1 1000 999\n1000 1000 999\n1 999 2\n2 2 2\n999 2 999\n2 2 1\n999 2 2 1\n2 1 1000\n1000 1 1000\n1 1000 1000\n2 999 1000\n999 1 1000\n2 1000 1000\n1 2 1\n999 2 2\n2 999 2\n1 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000 1000 1\n999 2 1000\n1 999 2\n1000 1000 1000\n999 1 2\n1000 2 999\n999 999 1\n1000 2 999\n1 1 1\n1000 1 1000\n1000 999 2\n999 1000 1 1\n999 1000 999\n2 999 2\n1 999 1\n2 1 999\n1000 999 2\n2 2 1000\n1000 1 2\n999 999 1000\n1 2 1\n1 2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

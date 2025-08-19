@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Car Plates Competition",
+  "tags": [],
+  "text": "Martin and Isa are very competitive. The newest competition they have created is about looking\r\nat the plates of the cars. Each time one of them sees a car plate in the streets, he or she sends\r\nto the other an SMS message with the content of that plate; the one who has seen the newest\r\nplate is in the lead of the game. As the Automobile Car Management (ACM) office assigns the\r\nplates sequentially in increasing order, they can compare them and find out who is the winner.Martin has a very smart eye and he has stayed on the lead for several weeks. Maybe he keeps\r\nlooking at the streets instead of working, or maybe he stays all day in front of car selling\r\ncompanies waiting for new cars to go out with new plates. Isa, tired of being always behind,\r\nhas written a program that generates a random plate, so the next time Martin sends a message\r\nto her, she will respond with this generated plate. In this way, she hopes to give Martin a hard\r\ntime trying to beat her.However, Martin has grown suspicious, and he wants to determine if Isa actually saw a car with\r\nthe plate she sent or not. This way, he will know if Isa is in the lead of the game.He knows some facts about the plates assigned by the ACM:Each plate is a combination of 7 characters, which may be uppercase letters (A-Z), or\r\ndigits (0-9).There exists two kinds of plate schemes: the old one, used for several years, and the new\r\none which has been in use for some months, when the combinations of the old one were\r\nexhausted.In the old scheme, the first three characters were letters, and the last four were digits, so\r\nthe plates run from AAA0000 to ZZZ9999.In the new scheme, the first five characters are letters, and the last two are digits. Unfortunately\r\nthe chief of ACM messed up with the printing system while he was trying\r\nto create a poster for his next campaign for mayor, and the printer is not able to write\r\nthe letters A, C, M, I, and P. Therefore, in this new scheme, the first plate is BBBBB00,\r\ninstead of AAAAA00.The plates are assigned following a sequential order. As a particular case, the last plate\r\nfrom the old scheme is followed by the first plate from the new scheme.As Isa is not aware of all of this, she has just made sure that her random generator creates a\r\ncombination consisting of seven characters, where the first three characters are always uppercase\r\nletters, the last two characters are always digits, and each one of the fourth and fifth characters\r\nmay be an uppercase letter or a digit (possibly generating an illegal combination, but she has\r\nnot much time to worry about that).Of course, Martin will not consider Isa the winner if he receives an illegal combination, or if he\r\nreceives a legal plate, but equal to or older than his. But that’s not all of it. Since Martin knows\r\nthat new plates are not generated too fast, he will not believe that Isa saw a car with a plate\r\nnewer than the one he sent, but sequentially too far. For example, if Martin sends DDDDD45,\r\nand receives ZZZZZ45, he will not believe that Isa saw a car with that plate, because he knows\r\nthat the ACM couldn’t have printed enough plates to get to ZZZZZ45 in the time he received\r\nthat answer.So, Martin has decided to consider Isa the winner only if he receives a legal plate, newer than\r\nhis, and older than or equal to the C-th consecutive plate after the one he sent. He calls C his\r\nconfidence number. For example, if Martin sends ABC1234, and his confidence number is 6, he\r\nwill think that Isa is the winner only if he receives any plate newer than ABC1234, but older\r\nthan or equal to ABC1240.InputThe input contains several test cases. Each test case is described in a single line that contains\r\ntwo strings SMand SI, and an integer C, separated by single spaces. SMis the 7-character\r\nstring sent by Martin, which is always a legal plate. SIis the 7-character string answered\r\nby Isa, which was generated using her random generator. C is Martin’sconfidence number(1 <= C <= 109).\r\nThe end of input is indicated by SM= SI=“*” and C = 0.OutputFor each test case, output a single line with the uppercase character “Y” if, according to Martin,\r\nIsa is the winner, and with the uppercase character “N” otherwise.ExampleInput:ABC1234 ABC1240 6\r\nABC1234 ABC1234 6\r\nACM5932 ADM5933 260000\r\nBBBBB23 BBBBC23 100\r\nBBBBB23 BBBBD00 77\r\nZZZ9997 ZZZ9999 1\r\nZZZ9998 BBBBB01 3\r\nZZZZZ95 ZZZZZ99 10\r\nBBBBB23 BBBBB22 5\r\n* * 0Output:Y\r\nN\r\nN\r\nN\r\nY\r\nN\r\nY\r\nY\r\nN",
+  "sample_input": "Input:ABC1234 ABC1240 6\r\nABC1234 ABC1234 6\r\nACM5932 ADM5933 260000\r\nBBBBB23 BBBBC23 100\r\nBBBBB23 BBBBD00 77\r\nZZZ9997 ZZZ9999 1\r\nZZZ9998 BBBBB01 3\r\nZZZZZ95 ZZZZZ99 10\r\nBBBBB23 BBBBB22 5\r\n* * 0Output:Y\r\nN\r\nN\r\nN\r\nY\r\nN\r\nY\r\nY\r\nN",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CPC",
+  "scraped_at": "2025-08-17 00:33:05",
+  "test_cases": [
+    {
+      "input": "ABC1234 ABC1240 6\r\nABC1234 ABC1234 6\r\nACM5932 ADM5933 260000\r\nBBBBB23 BBBBC23 100\r\nBBBBB23 BBBBD00 77\r\nZZZ9997 ZZZ9999 1\r\nZZZ9998 BBBBB01 3\r\nZZZZZ95 ZZZZZ99 10\r\nBBBBB23 BBBBB22 5\r\n* * 0",
+      "expected_output": "Y\r\nN\r\nN\r\nN\r\nY\r\nN\r\nY\r\nY\r\nN",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 7 5\ngfhdb fmqh 5\n10 5 5\neflds vvkpdcm 10\n9 3 4\ngvhs fyozo 5\n9 10 8\nhbjh jsxnot 4\n1 2 3\nsilqv bgqxlrl 8\n6 6 3\nlopvy znyw 3\n1 4 7\nedq rlvcp 8\n6 8 5\njoxwwaa gydaya 9\n8 10 5\nbvcsn caufw 2\n3\newmwo i 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 6 6\nkk hdmi 1\n2 1 6\nyd pdksct 4\n3 6 3\np ggictph 5\n1 2 9\nbm kttvvjw 1\n8 6 5\nqtz zo 6\n8 10 1\nhaw letmcep 2\n1 10 8\niei ewu 2\n7 6 6\naynjm sxvwla 9\n6 2 9\naccnap aewq 1\n2\nyh vrhea 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 4 2\nndljxr u 8\n9 7 4\nrlpus xrhfxt 2\n5 10 7\nhzl b 3\n8 2 7\nwqwhr q 1\n1 5 9\ngsgybgh pschid 4\n3 3 10\nlvs btbmc 8\n9 7 5\ni eop 7\n8 4 10\nlqhd owxtun 6\n6 5 3\nrtxdmrc sf 9\n8\nhivv exfgt 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "68 63 80\nlvryb zltu 51\n84 60 62\nxmyxrt ferqjb 6\n41 37 32\ngicph ijhvuod 36\n52 16 89\nmowvqq jhc 5\n58 63 50\niuph z 19\n95 28 73\ni gvtcpby 35\n61 2 55\nsmliwoe qq 89\n77 7 63\nm xo 99\n16 41 41\nn r 75\n47\nld qct 56",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 14 61\npnd gfbx 11\n37 80 30\nfitob bkjoa 35\n22 16 52\nmijp sihkow 63\n95 49 25\nstotcrm s 33\n18 10 71\nzwqv lmcy 48\n19 46 41\ntx kqieq 10\n92 73 28\nw mkt 61\n80 74 47\nomrrfou acys 4\n85 5 56\nfvrn xtax 84\n74\naibhk owqk 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 75 94\naz wfyxeln 52\n37 17 93\nbymaf bi 15\n23 70 45\nleqdsla k 90\n65 36 47\ngv t 91\n99 5 76\nk aekldky 31\n52 76 79\nhfxncgv bek 65\n71 39 32\nzwg qn 75\n97 82 77\njoujndm fp 20\n92 53 21\naxqxnt vuifnp 89\n76\njwkw wcmc 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 39 90\naynukne z 70\n73 12 64\ngzlimrv ymz 89\n66 88 32\ndkq dvtazk 26\n76 56 57\nren rbmu 97\n20 41 95\npnz loezt 68\n34 92 80\ngl kcoiluc 25\n78 97 5\ncjwxkg kzd 62\n10 49 74\nrvfc ddo 66\n22 14 13\ncb gh 85\n68\nk radb 77",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 74 38\neje b 77\n91 46 73\nnfrdwmb bsvpybm 66\n41 30 37\nevpi qwsgx 31\n2 9 62\nnit qxgwpse 38\n9 40 80\noj osb 47\n19 55 65\nucxss zthb 78\n23 29 36\ncqw hmoeq 63\n60 7 13\nyxw pmnfbef 11\n22 90 85\nds tlbp 79\n60\ny backk 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "183 162 403\nf n 88\n159 196 72\nh gfxr 162\n65 337 192\nyvzs chn 71\n493 454 462\nuyh dqqliwm 319\n98 462 394\nilead jvy 171\n479 296 171\nikgavd iaqxmhn 157\n107 353 248\nu b 193\n113 246 88\nrrd zdu 254\n340 288 383\nzqyiw qqaz 292\n318\njibfr jnbc 141",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "412 305 184\nvkebs fv 291\n236 81 157\ni ygro 326\n202 258 189\nuqkty xj 247\n305 104 268\nr lvb 442\n158 371 347\nhzhhey r 164\n200 294 77\npudqbkt tl 245\n392 102 325\nxso lui 149\n464 325 130\nauf qcpzo 60\n481 408 182\nisvily wazafur 300\n211\niyqg wh 61",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "407 95 486\ng fqw 427\n174 312 199\nqymnvpx a 165\n267 189 214\nps otqnh 436\n70 241 151\ntkcpgp lztuhz 240\n94 440 91\nmu cjedg 276\n411 215 61\nbtxs g 226\n123 428 386\nxnye cido 148\n369 317 138\nu rfuo 462\n340 250 363\nwtl wyyg 150\n181\nq peh 187",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "113 193 84\nar kods 420\n352 52 297\nqmu wkdif 353\n472 387 146\nujc usxclv 318\n114 393 470\nrhowl jsdbbh 262\n215 322 112\nkgeaojc gbxxowd 277\n298 275 273\nzk icpq 481\n319 321 247\njphpz xogoj 184\n119 215 221\nkbh zncfnlp 424\n306 134 388\noi gzir 231\n106\nwpoe jbld 466",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "234 263 288\nlobump tdpyvo 337\n276 185 497\ndqnkbsf sngxac 214\n433 188 173\nil cjvpn 76\n380 485 248\npu pqcp 434\n172 485 84\nc ok 267\n438 387 196\ntzk sx 351\n371 320 101\nh kc 117\n121 88 440\nxfopfun mn 184\n388 359 157\nohtepat dzlsw 403\n465\nters ysf 376",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "422 146 84\nszyhn z 330\n434 147 215\nburkzvo bowi 486\n382 160 477\njghlsm capybhr 312\n470 348 279\nqtirmg kyw 255\n160 256 371\nf m 70\n279 431 184\nmxthv kbhwi 188\n482 301 106\naxjbqxx fduir 468\n210 316 484\nfzl ajsjbcq 350\n176 410 291\nyvg tbin 180\n152\nyzl e 290",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "390 410 99\nzpigpvz fqj 331\n61 132 350\nv ptoygp 393\n494 410 420\ndqyswzs uskfkkg 209\n241 380 380\nhz ucbtx 213\n228 377 183\nnizzvg ui 209\n267 361 188\nixrqdhm sna 242\n359 262 176\nyhplz jewern 355\n165 491 313\nw mnnhs 305\n456 428 445\nqsmyvr yia 138\n119\nbd pcacl 122",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nvvqfct cyztcq 1000\n1000 1000 1000\nejgq g 1000\n1000 1000 1000\ndufpyy nt 1000\n1000 1000 1000\najrxh v 1000\n1000 1000 1000\neypxuu av 1000\n1000 1000 1000\nhl dau 1000\n1000 1000 1000\nw nwgdggb 1000\n1000 1000 1000\npdgqy iqinx 1000\n1000 1000 1000\nqkjbb o 1000\n1000\ng fea 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\nnzogfz p 1000\n1000 1000 1000\narvrmbw e 1000\n1000 1000 1000\nrwdmwgg jntcc 1000\n1000 1000 1000\nfvexjlz zk 1000\n1000 1000 1000\nlultrlp aaktu 1000\n1000 1000 1000\najtiyth dtzqok 1000\n1000 1000 1000\nl nlibnn 1000\n1000 1000 1000\nc wwz 1000\n1000 1000 1000\nx ek 1000\n1000\ncclc pajsq 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1\nsty d 1\n1000 1 999\nmsdw cewltm 1000\n999 1 999\na lflrgj 2\n2 1000 1\nn j 1\n2 1 1000\nmip ydrtu 999\n1000 999 1000\nz wtxv 1000\n2 1000 999\ni xfmad 1\n1000 999 1\nxrw fx 2\n1 1000 1000\nigmgn h 999\n1000\nx gm 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999 999\ngtecou utbflz 999\n999 2 1000\nqd he 1\n2 1 999\nmzuxkz mef 1000\n999 2 1\nirxuar kyrl 2\n1000 1 1\nxvu rlwa 2\n1000 1 1000\nng su 999\n999 2 999\npezotrs d 1\n2 1 999\npd gewjj 1\n1000 999 2\ndzbd ghzwaw 2\n2\nbju cfswr 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

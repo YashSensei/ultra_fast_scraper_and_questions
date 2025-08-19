@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Chessboard State 2: International Chess Tournament",
+  "tags": [],
+  "text": "Note: This is a harder version of CSTATE1 - a solution to this problem will (except I/O format) pass there. It is also an easier version of CSTATE3 - the solution to it will pass here.V Slovakistane sa rozhodli osadníci usporiadať národný šachový turnaj.Za prvé miesto sa dá získať diplom, a tak všetci hrajú ako o život.Keďže sa však nehrá na čas, vyskytol sa problém -- hráči nechceli priznať prehru.Stále len tvrdili, že určite nemajú mat, však určite sa z tej situácie dá nejak dostať, keby len mali ešte chvíľku na rozmýšlanie... A možno ešte jednu...Na budúci rok sa bude TMŠ v Slovakistane organizovať zas, ale je potrebné tento problém dovtedy nejako vyriešiť.## ÚlohaPre daný popis šachovnice rozlíšte, či má niektorý z hráčov šach alebo mat.Pritom berte do úvahy len obyčajné pohyby figúrok (komplikované ťahy ako*rošáda*, *en passant*, *pohyb pešiakom o dva políčka vpred* a*povýšenie pešiaka* sa v Slovakistane neakceptujú).## Formát vstupuV prvom riadku je číslo $1 \\leq t \\leq 1000$, udávajúce počet šachovníc na vstupe.Nasleduje $t$ popisov šachovníc.Každý popis šachovnice pozostáva z ôsmich riadkov, každý obsahujúciosem znakov (teda šachovnica má klasické rozmery $8 \\times 8$).Tieto znaky sú `.KQRBHP`, reprezentujúce v tomto poradí voľnépolíčko, kráľa, kráľovnú, vežu, strelca, koňa, a pešiaka.Bielemu hráčovi patrí horná strana šachovnice (skôr na vstupe) a jehofigúrky sú označené malými písmenami. Teda bieli pešiaci sa pohybujúsmerom dole.Čiernemu hráčovi patrí dolná strana šachovnice a jeho figúrky súoznačené veľkými písmenami. Jeho pešiaci sa pohybujú smerom hore.Za každým popisom šachovnice je jeden prázdny riadok.Počet ani poloha figúrok nijak nemusia byť dosiahnuteľné vklasickej hre šachu, avšak môžete predpokladať, že na každejšachovnici sa nachádza práve jeden biely kráľ (`k`) a práve jedenčierny kráľ (`K`).Navyše, figúrky sa vo vstupoch budú vyskytovať nasledovne:| Číslo sady | Nové figúrky|| :--------: |------------------||$1$| Kráľ, kôň||$2$| Veža||$3$| Strelec, kráľovná||$4$| Pešiak|## Formát výstupuPre každú šachovnicu vypíšte jeden riadok s jednou z nasledovných hlášok:+   \"Neutralna situacia.\", ak žiaden z kráľov nie je ohrozený nepriateľskou figúrkou.+   \"Nemozna situacia.\", ak sú obaja králi ohrození nepriateľskou figúrkou.+   \"{farba} hrac ma sach.\", kde {farba} je \"Biely\", resp. \"Cierny\", akje kráľ tohto hráča v ohrození, ale existuje platný ťah niektorouz jeho figúrok taký, po ktorom už v ohrození nebude.+   \"{farba} hrac ma mat.\", kde {farba} je \"Biely\", resp. \"Cierny\", ak jekráľ tohto hráča v ohrození, a neexistuje platný ťah niektorou z jehofigúrok taký, po ktorom už v ohrození nebude.A year ago the inhabitants of Slovakistan decided to organize a national chess tournament.Since the first place prize was 1 point on SPOJ, everyone played as if their life was at stake.However, since time was not measured in this chess tournament (unlike at most chess tournaments in the rest of the world), a problem occured - players took way too long to admit defeat.They always just kept thinking and thinking, trying to find some move which would prevent their king from being taken. Just one more moment... And perhaps one more...Luckily, a skilled programmer lent them a hand and got rid of this nuisance!This year, they are organizing a chess tournament once more. However, since word got out of how awesome it was, contestants from all over the world are planning to join. Slovakistan can not embarras itself - this year's tournament has to be more awesome, way more dramatic, and - most importantly - a whole lot bigger. Hence, during this year's tournament the contestants will not only play on the classic 8-by-8 chessboards, but rather on n-by-n boards.That gives rise to a new problem though - the programs of skilled programmers which helped them last year are not capable of deciding the state of chessboards of such size!Once again, the inhabitants of Slovakistan need your help.For a given description of a chessboard, decide its state - which player's king is under threat, and whether it is a check or a checkmate. Additionally, if it's a check, to help build up suspense, the contestants would like to know the number of valid moves the checked player has after which his king is no longer threatened.For the purposes of this problem only take into account basic moves of every chesspiece; complicated moves such as Castling, En passant, moving a pawn 2 squares or Promotion are not accepted in Slovakistan.InputThe first line of the input contains the integer1 ≤ t ≤ 12000- the number of chessboards.tdescriptions of a chessboard follow.The first line of each description contains two integers8 ≤ n ≤ 105, 2 ≤ p ≤ 105- the length of side of the chessboard and the number of pieces currently on it.plines follow, each in the form 'x y c' , where1 ≤ x,y ≤ nindicate the coordinates of the chesspiece; the upper-left square has coordinates(1,1)while the bottom-right square is at(n,n).crepresents the type of the chesspiece - this character is from the set{KQRBHPkqrbhp}, representing in this order the king, queen, rook, bishop, knight (horse), and pawn.The pieces belonging to the White player are marked by lowercase characters; the upper side of the chessboard (lowerycoordinates) belongs to him, hence white pawns move in the positiveydirection.The pieces belonging to the Black player are marked by uppercase characters; the lower side of the chessboard (greaterycoordinates) belongs to him, hence black pawns move in the negativeydirection.A blank line follows after every chessboard description.The number or placement of the pieces may by all means be impossible to reach in a game of chess, however you may assume that on every chessboard there is exactly one white king ('k') and one black king ('K'). No two pieces are on the same coordinates.Input files are 'reasonable' - that is, if a file contains a large amount of testcases, they are reasonably small. Specifically, the sum ofn+pwithin an input file does not exceed450,000.OutputFor each chessboard output one line with one of the following messages:\"Safe\", if neither players' kings are being threatened\"Impossible\", if both players' kings are being threatened\"{colour}Check - m Plausible Moves\", where{colour}is either \"Black\" or \"White\", if the respective player's king is being threatened, and there existsmvalid moves by his pieces after which his king is no longer threatened\"{colour} Checkmate\", where {colour} is either \"Black\" or \"White\",  if the respective player's king is being threatened, and there exists no valid move by any of his pieces after which his king is no longer threatenedAdditional noteThere are 16 input files \"0\" through \"15\". File 0 is the example given below. File 1 contains roughly a half of the testdata from CSTATE1; file 2 contains the rest of testdata from CSTATE1, along with some chessboards of size 100. Time limit is 2.5 seconds for each file - four times my worst time on any input file. Despite that, if you believe your solution runs just slightly longer, ping me and I might increase it.After submission you can view extra information about the result of each file by clicking the result text (\"accepted\",\"wrong answer\",...), such as the result of each file and the time/memory used, but no message is present like in CSTATE1 - if you are stuck, consider submitting there for a hint at what is off in your solution.ExampleInput:7\r\n8 4\r\n5 1 k\r\n4 3 H\r\n4 5 h\r\n5 7 K\r\n\r\n8 4\r\n5 2 h\r\n3 3 k\r\n6 4 H\r\n4 5 K\r\n\r\n8 6\r\n1 1 k\r\n4 1 H\r\n4 2 H\r\n2 3 H\r\n3 3 H\r\n7 6 K\r\n\r\n8 7\r\n1 1 k\r\n4 1 H\r\n4 2 H\r\n2 3 H\r\n3 3 H\r\n7 6 K\r\n2 7 r\r\n\r\n8 9\r\n1 1 K\r\n7 1 R\r\n8 1 r\r\n1 2 R\r\n3 2 h\r\n8 2 r\r\n1 5 r\r\n2 5 r\r\n6 6 k\r\n\r\n8 6\r\n1 1 k\r\n8 2 R\r\n4 4 B\r\n2 5 R\r\n7 6 K\r\n3 7 q\r\n\r\n8 9\r\n3 2 P\r\n4 2 P\r\n5 2 P\r\n3 3 P\r\n4 3 k\r\n5 3 P\r\n4 4 P\r\n5 4 p\r\n4 5 KOutput:Impossible\r\nSafe\r\nWhite Checkmate\r\nWhite Check - 1 Plausible Moves\r\nBlack Checkmate\r\nWhite Check - 1 Plausible Moves\r\nBlack Check - 5 Plausible MovesIf you have any questions, problems or suggestions, do let me know :)",
+  "sample_input": "Input:7\r\n8 4\r\n5 1 k\r\n4 3 H\r\n4 5 h\r\n5 7 K\r\n\r\n8 4\r\n5 2 h\r\n3 3 k\r\n6 4 H\r\n4 5 K\r\n\r\n8 6\r\n1 1 k\r\n4 1 H\r\n4 2 H\r\n2 3 H\r\n3 3 H\r\n7 6 K\r\n\r\n8 7\r\n1 1 k\r\n4 1 H\r\n4 2 H\r\n2 3 H\r\n3 3 H\r\n7 6 K\r\n2 7 r\r\n\r\n8 9\r\n1 1 K\r\n7 1 R\r\n8 1 r\r\n1 2 R\r\n3 2 h\r\n8 2 r\r\n1 5 r\r\n2 5 r\r\n6 6 k\r\n\r\n8 6\r\n1 1 k\r\n8 2 R\r\n4 4 B\r\n2 5 R\r\n7 6 K\r\n3 7 q\r\n\r\n8 9\r\n3 2 P\r\n4 2 P\r\n5 2 P\r\n3 3 P\r\n4 3 k\r\n5 3 P\r\n4 4 P\r\n5 4 p\r\n4 5 KOutput:Impossible\r\nSafe\r\nWhite Checkmate\r\nWhite Check - 1 Plausible Moves\r\nBlack Checkmate\r\nWhite Check - 1 Plausible Moves\r\nBlack Check - 5 Plausible Moves",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CSTATE2",
+  "scraped_at": "2025-08-17 00:34:11",
+  "test_cases": [
+    {
+      "input": "7\r\n8 4\r\n5 1 k\r\n4 3 H\r\n4 5 h\r\n5 7 K\r\n\r\n8 4\r\n5 2 h\r\n3 3 k\r\n6 4 H\r\n4 5 K\r\n\r\n8 6\r\n1 1 k\r\n4 1 H\r\n4 2 H\r\n2 3 H\r\n3 3 H\r\n7 6 K\r\n\r\n8 7\r\n1 1 k\r\n4 1 H\r\n4 2 H\r\n2 3 H\r\n3 3 H\r\n7 6 K\r\n2 7 r\r\n\r\n8 9\r\n1 1 K\r\n7 1 R\r\n8 1 r\r\n1 2 R\r\n3 2 h\r\n8 2 r\r\n1 5 r\r\n2 5 r\r\n6 6 k\r\n\r\n8 6\r\n1 1 k\r\n8 2 R\r\n4 4 B\r\n2 5 R\r\n7 6 K\r\n3 7 q\r\n\r\n8 9\r\n3 2 P\r\n4 2 P\r\n5 2 P\r\n3 3 P\r\n4 3 k\r\n5 3 P\r\n4 4 P\r\n5 4 p\r\n4 5 K",
+      "expected_output": "Impossible\r\nSafe\r\nWhite Checkmate\r\nWhite Check - 1 Plausible Moves\r\nBlack Checkmate\r\nWhite Check - 1 Plausible Moves\r\nBlack Check - 5 Plausible Moves",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n6\n3\n10\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n8\n7\n8\n4\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n9\n9\n10\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "18\n99660308\n1926785\n59390973\n37109999\n63950968\n27980021\n39624745\n61636872\n64255590\n39622786\n97936757\n98591476\n70989901\n80733904\n74239600\n59574416\n72319263\n97615355",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n46518933\n37434012\n40365526\n31302902\n23034333\n28553217\n93461320\n95626378\n32385326\n34471811\n92027480\n13695194\n31207878",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n44998944\n449411\n37269902\n58402486\n75075918\n41351113\n57382292\n12050492\n58226075\n65256594\n39815653\n79953383",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n17575557\n20145305\n94022616\n67064500\n98208130",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n42946490\n71409308\n61369089\n39505464\n48352249",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "89\n65254\n54671\n22247\n31597\n54572\n80082\n44980\n35091\n66282\n90457\n79719\n7506\n20614\n23425\n96672\n7014\n30795\n2819\n47873\n45452\n62377\n69796\n13303\n80165\n51248\n97887\n76662\n84995\n11669\n62135\n28646\n69482\n22224\n65331\n333\n87315\n29798\n41977\n40888\n34908\n87135\n25369\n80476\n4716\n48535\n89646\n31533\n85784\n3754\n69898\n57420\n97476\n60073\n68826\n10871\n28121\n22053\n40989\n74839\n90573\n87632\n4167\n81523\n80559\n84493\n23757\n25678\n22297\n52611\n55550\n67694\n92699\n14175\n72761\n88362\n41073\n27996\n82634\n96317\n11835\n60726\n91817\n35354\n42560\n72313\n65584\n5363\n27809\n42396",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "61\n67797\n93176\n26434\n83283\n40966\n57426\n16067\n685\n77850\n35732\n57628\n88128\n7192\n14222\n68456\n99180\n99417\n29425\n68765\n28070\n21984\n74506\n18113\n82009\n85039\n81655\n11091\n95329\n82019\n58390\n82073\n66848\n17384\n15155\n83080\n4799\n59197\n4250\n91174\n95750\n58752\n99939\n19847\n16779\n436\n83621\n36223\n36862\n95297\n43221\n97951\n34881\n8070\n36704\n34041\n15566\n60891\n91972\n28677\n49598\n76143",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "94\n78613\n13839\n85102\n67571\n12636\n81122\n80550\n68102\n90794\n31505\n27439\n84882\n48759\n56442\n89142\n15321\n73745\n33896\n76783\n86572\n44165\n52896\n47545\n22462\n54598\n98772\n97293\n87365\n45016\n8423\n30345\n12793\n58076\n62099\n944\n70213\n36272\n64990\n47182\n69659\n51191\n86956\n87502\n81435\n98846\n81943\n79843\n56491\n88369\n39962\n99155\n59267\n53925\n66827\n98122\n34828\n33923\n97087\n23284\n91168\n16709\n93986\n16960\n27986\n40265\n39094\n35919\n78216\n22540\n12452\n53672\n34054\n83891\n13250\n709\n31483\n58937\n23100\n6870\n68111\n59067\n9688\n85166\n52396\n6186\n953\n18761\n82710\n49858\n29496\n20892\n19812\n80491\n55695",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n12171\n50401\n94926\n17103\n72904\n24732\n73182\n21505\n12353\n11895\n50654\n29924\n34707\n7979\n93207\n31656\n74509\n8433\n43202\n54000\n67990\n10179\n68335\n7317\n79795\n53170\n22058\n47998\n38697\n79275\n81304\n65830\n83047\n81452\n7402\n58145",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "66\n46011\n16129\n13545\n20069\n80245\n57409\n88748\n24772\n56965\n64086\n47730\n17520\n34537\n47376\n35048\n31048\n67509\n11820\n55373\n28339\n2773\n21957\n41172\n85242\n30478\n18357\n88794\n2922\n30824\n25520\n64383\n65544\n36007\n21680\n36290\n33969\n7723\n24567\n56572\n23627\n23963\n94167\n8335\n7283\n39687\n69465\n29520\n81290\n5936\n18034\n17448\n23507\n20362\n81814\n5191\n20308\n2035\n45020\n98966\n19946\n65282\n63934\n21257\n90901\n46607\n88241",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "54\n13277\n70920\n50758\n95306\n88638\n33167\n70272\n93298\n45334\n68816\n69868\n7903\n10760\n28820\n78814\n39798\n26603\n75687\n88102\n56236\n20367\n6017\n54037\n7196\n797\n44454\n11332\n22182\n36885\n34705\n32298\n64560\n46620\n77153\n99011\n43367\n12239\n33337\n61062\n46670\n55883\n56427\n87052\n46988\n93142\n79721\n50430\n94096\n63962\n13596\n29974\n45583\n76116\n16653",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "103\n83084\n97529\n92655\n69547\n96876\n84386\n3819\n96066\n73796\n52247\n55237\n77892\n10040\n33654\n50781\n29385\n55772\n72752\n75030\n88576\n16707\n98561\n66552\n53478\n99679\n52522\n47459\n55301\n13738\n9586\n14533\n31169\n11783\n13977\n24107\n11265\n32105\n63755\n25754\n98507\n72669\n21811\n79522\n98363\n86392\n43398\n58599\n22098\n91407\n35187\n62817\n83146\n77523\n25004\n6773\n12932\n34280\n17981\n54652\n60758\n7493\n93519\n71579\n24376\n30591\n26525\n36681\n6898\n24611\n11983\n92493\n45\n42565\n4716\n68329\n58428\n86387\n95660\n30707\n47431\n80821\n36617\n89121\n84947\n96156\n29073\n74280\n71611\n47932\n21566\n99632\n29013\n98256\n58128\n4752\n91848\n60558\n54690\n90053\n52362\n67847\n33832\n99611",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "105\n8668592\n9435736\n98706342\n90733330\n19117586\n45289620\n68501592\n70008349\n3453721\n9802536\n36682078\n56936221\n29576307\n21189558\n58344008\n21466020\n64296944\n83974361\n74120983\n41304187\n2351385\n82165444\n89723167\n48689045\n54029714\n83143706\n72908600\n74003070\n10069437\n73337999\n33034052\n35162369\n41996093\n51799134\n14000408\n67079560\n5907641\n18860075\n39370897\n79237201\n81053804\n2049308\n65273553\n17743508\n40572450\n36422837\n75379971\n53559554\n21859267\n19636428\n95333682\n78695942\n93647096\n10199311\n12242165\n58317010\n44395077\n62771885\n48564046\n87055176\n32333325\n4080877\n83043087\n64247067\n80032443\n56252147\n98452911\n83149743\n1681097\n4614598\n71872071\n68841366\n93428571\n61175932\n66469212\n44681867\n7549410\n60493845\n82392601\n99859770\n20870406\n28601171\n53222811\n1794158\n72828899\n4197348\n42961314\n14271443\n11040400\n98194603\n60802743\n76512630\n48722102\n88210878\n43035345\n28007350\n75768654\n25254793\n38074332\n91470821\n61229947\n16552292\n19120335\n28680539\n12008892",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "105\n13561522\n72920446\n99676565\n55654743\n95673585\n98455137\n8633518\n65349553\n27352388\n80105632\n58709685\n84021293\n74841133\n14304687\n17078892\n19570451\n41752518\n9741120\n77466192\n85704398\n29130215\n91493636\n74726705\n33228841\n93659659\n74937855\n10048206\n71245301\n40727066\n50887118\n35376317\n26848618\n509364\n3349174\n34414741\n95668087\n26867538\n86919327\n41196631\n89940192\n56939745\n5497431\n96207280\n32588376\n17078192\n43250454\n2566998\n21191738\n83971294\n6026207\n25284664\n18604385\n62850940\n7626168\n5428449\n77396932\n96107905\n16833199\n29261769\n64808430\n3150209\n4222483\n44564004\n70497509\n64567137\n62376175\n87068029\n11657931\n83621777\n29714150\n66142132\n26432760\n87353381\n8183682\n70199345\n75440982\n83924599\n3260465\n21839378\n75301605\n45899381\n44776063\n56856153\n73121704\n51252244\n15335426\n11007961\n25299050\n73555242\n80539148\n94736844\n41919540\n57353762\n32586909\n61260444\n4139611\n45723370\n27620010\n82317431\n76828009\n50818315\n37737732\n58805700\n64620343\n31606746",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "105\n1\n21025580\n84803066\n1\n100000000\n79583471\n100000000\n1\n100000000\n36735635\n68209201\n19109831\n1\n1\n1\n76958131\n1\n100000000\n100000000\n74691796\n51925994\n1\n100000000\n75251962\n4528425\n100000000\n1\n1\n1\n1\n10196911\n100000000\n100000000\n100000000\n7833074\n100000000\n46442170\n100000000\n1\n100000000\n100000000\n1\n100000000\n100000000\n1\n1\n100000000\n1\n100000000\n1\n92270283\n1\n100000000\n1\n37877423\n4063786\n100000000\n1\n1\n52253158\n100000000\n100000000\n100000000\n91613953\n72612720\n20258207\n100000000\n1\n63323780\n100000000\n97172384\n100000000\n74964853\n1\n86245498\n100000000\n1\n100000000\n1\n100000000\n1\n100000000\n73279459\n100000000\n1\n100000000\n1\n100000000\n1\n92283384\n100000000\n100000000\n15136217\n1\n1\n25903488\n13428735\n18055761\n1\n62266950\n100000000\n32732276\n1\n1\n33648958",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 105)"
+    },
+    {
+      "input": "105\n100000000\n1\n1\n100000000\n1\n12202977\n1\n41365398\n100000000\n28913232\n56311694\n100000000\n100000000\n64913016\n1\n4645489\n31415208\n25426707\n100000000\n100000000\n24488524\n100000000\n1\n53963528\n100000000\n1\n1\n100000000\n16586190\n75549423\n1\n87158268\n78680712\n1\n27439932\n1\n2587943\n100000000\n1\n100000000\n1891354\n1\n1\n76989356\n7018673\n1\n100000000\n100000000\n1\n100000000\n95683867\n1\n1\n59250916\n100000000\n42634623\n100000000\n74330569\n1\n2196856\n1\n100000000\n46661728\n1\n92644219\n1\n1\n65269598\n100000000\n85694056\n6831823\n41315809\n1\n100000000\n100000000\n100000000\n1\n100000000\n100000000\n100000000\n100000000\n48279192\n18068087\n13653287\n1\n35008980\n1\n100000000\n1\n60192837\n1\n5894428\n11181057\n4514686\n67558592\n1\n100000000\n1\n94591891\n1\n70545006\n1\n1\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 105)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

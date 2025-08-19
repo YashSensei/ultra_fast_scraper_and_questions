@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Partitions",
+  "tags": [],
+  "text": "A partition of a rectangle is either a whole rectangle or a subdivision the rectangle into either a upper part and a lower part or a left part and a right part, and each part is a partition of the corresponding rectangle. Figure 1 shows several examples of partitions.Figure 2 shows three equal sized rectangles, partitioned into sub-rectangles. Partition B is obtained from partition A by partitioning two of the sub-rectangles of A. Generally, if a partition B is obtained from A by partitioning one or more of its sub-rectangles, we say that B is finer than A, or that A is coarser than B. This relation is partial: partition C is neither coarser nor finer than A or B.Given two partitions D and E of the same rectangle, infinitely many partitions exist that are finer than both D and E. In Figure 3 both F and G are finer than D and E. Among the partitions that are finer than both D and E, a unique one exists that is coarsest. This partition is called the infimum of D and E. In Figure 3, partition F is the infimum of D and E.In Figure 4, both H and J are coarser than D and E. Here J is the finest partition that is coarser than D and E. Then J is the supremum of D and E.Write a program that, given two partitions of the same rectangle, finds the infimum and the supremum of these partitions.InputThe input file contains one or more test cases. The first line of each test case gives the width w and height h of the rectangle (0 < w, h <= 20). In the next h+1 lines the two partitions are given, as in the sample. Each of these lines contains 4*w+3 characters. The first 2*w+1 of these belong to the first partition; the last 2*w+1 of these belong to the second partition. A space separates the two partitions. Horizontal lines are created using underscores ‘_’, vertical lines using ‘|’.The input is terminated by a pair of zeroes.OutputFor every case in the input file the output contains a single line containing the case number (in the format shown in the sample), followed by the infimum and the supremum of the two partitions, using the same format as the input.Place a blank line after the output of each test case.ExampleInput:4 3\r\n _ _ _ _   _ _ _ _ \r\n|_ _ _ _| |_|_ _ _|\r\n|   |   | |       |\r\n|_ _|_ _| |_ _ _ _|\r\n3 4\r\n _ _ _   _ _ _ \r\n| |   | | |   |\r\n| |   | |_|_ _|\r\n|_|_ _| |   | |\r\n|_ _|_| |_ _|_|\r\n0 0Output:Case 1:\r\n _ _ _ _   _ _ _ _ \r\n|_|_ _ _| |_ _ _ _|\r\n|   |   | |       |\r\n|_ _|_ _| |_ _ _ _|\r\n\r\nCase 2:\r\n _ _ _   _ _ _ \r\n| |   | |     |\r\n|_|_ _| |     |\r\n|_|_|_| |     |\r\n|_ _|_| |_ _ _|Please read the problem statement carefully. The judge compares your output and the expected output, any extra whitespace will cause Wrong Answer.",
+  "sample_input": "Input:4 3\r\n _ _ _ _   _ _ _ _ \r\n|_ _ _ _| |_|_ _ _|\r\n|   |   | |       |\r\n|_ _|_ _| |_ _ _ _|\r\n3 4\r\n _ _ _   _ _ _ \r\n| |   | | |   |\r\n| |   | |_|_ _|\r\n|_|_ _| |   | |\r\n|_ _|_| |_ _|_|\r\n0 0Output:Case 1:\r\n _ _ _ _   _ _ _ _ \r\n|_|_ _ _| |_ _ _ _|\r\n|   |   | |       |\r\n|_ _|_ _| |_ _ _ _|\r\n\r\nCase 2:\r\n _ _ _   _ _ _ \r\n| |   | |     |\r\n|_|_ _| |     |\r\n|_|_|_| |     |\r\n|_ _|_| |_ _ _|",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RECTNG2",
+  "scraped_at": "2025-08-17 00:33:21",
+  "test_cases": [
+    {
+      "input": "4 3\r\n _ _ _ _   _ _ _ _ \r\n|_ _ _ _| |_|_ _ _|\r\n|   |   | |       |\r\n|_ _|_ _| |_ _ _ _|\r\n3 4\r\n _ _ _   _ _ _ \r\n| |   | | |   |\r\n| |   | |_|_ _|\r\n|_|_ _| |   | |\r\n|_ _|_| |_ _|_|\r\n0 0",
+      "expected_output": "Case 1:\r\n _ _ _ _   _ _ _ _ \r\n|_|_ _ _| |_ _ _ _|\r\n|   |   | |       |\r\n|_ _|_ _| |_ _ _ _|\r\n\r\nCase 2:\r\n _ _ _   _ _ _ \r\n| |   | |     |\r\n|_|_ _| |     |\r\n|_|_|_| |     |\r\n|_ _|_| |_ _ _|",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 2\ne n bhamc jpfqm a ngfyc we wd\nkjdq ftzdi p xv qzp hb umrjy\nvghz lpz z covq nmzzm\ntifn ao yg amtcz nd oq r\n2 10\nbrrg qbns ss y litl y\ndlnul kos sqii dkge v db\nglscu krvr kga vl wcpw\nfv g xjtdj yjt l\nnxaj dt djqy whey\n3 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3\nxz lrr bdx awrz ul hdzx rjrid seu\ndi mbt p etz xq p qjk\ngge r pur echb l\nr eige zgmx viccd y v b\n10 3\nd nhw ksl n w lzo\nct cv rzik gtbmi kbgy c\nczq nn gss zxj cxsxe\ng qumq al aym iy\nr ref qw ecw\n10 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5\nybqz lzquo tt dcqhd rdfxt zdk aw rtsx\njitcx pgta u y lagb q nlr\nyvl nn ub zsf lqe\nefevu zd vafc cs yfk rclt jdo\n4 4\nm vyvax z dip ta atxj\nbpbro wr jvvq g fmmhq b\nmn j fsqa hk jw\nfytq nem vchs aie ahowo\ng qrdwc vmp xk\n4 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "79 95\nzsxw daip oaie cwlun agjg fxard iaqg zboj\nh k vd wk sgo tsvd ive\nqoa k o ol acz\ni dk dgua zdcd fjlb dahnh ynlq\n69 68\nmaax lq mfvww mx c jwj\np pok zgbxm ojscw a ipmct\nbidek mox cv qj fkrb\nfc y i d jbjne\nxr zdosi mms hm\n100 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 8\nymq zraj wvngg z xcg q fg ic\nkq ordf onzq ojcfc fshqn jik uw\nseck duotr quvm kz zeoe\npmd ubi qpz g lohgi g hq\n78 17\nl au xfiz djq bh hr\nf dgcb ki tllgw jqx rpap\nqsn gmvk y crxwb zosu\nqw cuj zhuzb aa pq\nxqfjd o gwf k\n39 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 71\nf dfv gvvc bfpo wzfbu egwej mxei ab\npz bs wakp yvlw wwsql x x\nouz o znakc utdfi rsl\nozkc tdnww x uopz spnk jhqa gyan\n95 21\nrevv wxtt mwfgb bmj dfyzu jnf\nnlwyi ool lq atbi erasd sggpn\nwsckc gmop e ify u\nx g bgz zqzcr rfsh\nymg y qkcah lb\n92 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 52\nqh l klq fnzib kwc ugts ml ibifp\nz gaylx dnuz iyk tyrkx p uy\ntq us bv plr tgaxo\nnwu cqvl bhdkp uk vok htko tqv\n4 98\nfwc nx f htbl bqgd ne\nqg v rh zpxf epsg f\ndxya bawu fqxby ack kzhp\nqdz znlkq m oc wpuyc\nkqz c x va\n88 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 96\nwr jtmxq ydl jkhk bwa egpm ukfyi tno\nhc ogmi n jvpi ou ydbid g\nakuj fsglh qi n ahwg\nvy f psw j cjmab r g\n32 7\ngsl c dfwrs l x zakw\nrb rxpsv zi z kzjo nvs\nkxey lshg fpaya t hvv\nnjrct uwima zuq jbik skzrq\nzz go ufw jkkkx\n59 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "118 435\nrm hzpd vvhbv hdoez n v vw ppvks\nmf ffx b nlyrv dwb fyui tpv\nrhhtm ls tokyl rwnq hvfsb\nkyy tnldz tstb wkyak rllm j alhu\n456 113\nflcx e z mryil ldwtf ua\nr fdjjn ahsr y sot bz\nbm jr oogn ph ntns\nqms qp qzew l dpyuc\nysqa fm b akv\n62 302",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "279 333\nfuph bvdor jblhu qcl we nrycc snm ezm\nr wslhg ask bsa iwskl qol jx\nptd rws h r wiy\nrccyc cfzu bsr v abujt nrw vaaw\n451 354\nfnm ych iljy d aebn izrwz\nyjqu y gt g r lmik\nylm n vsxl j lrbv\ndl wimqn cumw cf kxmue\nqh vqku n sgmo\n397 244",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "396 71\nwrrj b wh bakvv slot z uu lz\nsuwos xz bkfc j bzps iqi ubk\nua wv aw dfu jwbol\nwdec sivwr f yswpy fl ookyk rbctt\n125 448\ne ye qe z n k\njkbs jvsk jyxj afr vr cl\nqiwxz y z hxuk bdg\ngdv rhd crkb tmi abcw\neu ygbr zvws akt\n435 58",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "378 61\nfdtfa ztqor aabmx is wmuyx ylpwc zf wybch\nzatiu w pns jje btti tlk lbudh\nm iyd hyg ekl jjin\nh eaura z znn prqgf bx sl\n420 313\ntw mzge s iww czlcr g\nqiioj vpr bpae upt knw uj\nsxde jfmqh wrbly iwu gvup\nkicdk ufy brin ypwcy inca\nh gf alz c\n179 448",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "168 475\nvb aut nqvz hnwdr qzs f mhr nfeoh\nqjr dsft ngyi mv nihz ibb vyht\nb nuxg rx obw gqyhf\nqzth pag q pfhzb oc rr l\n370 325\nqhe ulcry jnd mr o unavl\neybv jggk pbl ef k glh\nnd fewn ddhl vsd olt\nh cktgj ds qy rsqm\nro wfe fvpn kcf\n51 209",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "70 307\nb p m ghcp d dkkg qlghx xh\nocses wg zhcm pjwf wozlf ir mk\nvmmn csakl twhiq dm zyn\noop actqz xw njlwl jcz cq qd\n377 264\nvkzzv prwo z rzzwc fvh dxfft\nfvw mh er riw nfal wvu\nai knb hdel ognjq bsza\nj e iufsf unfz pq\nj h etqp q\n199 481",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "376 323\no jfrz v yttzy wrg dyrhm ypd sgre\nvw y nyf mdvce chjj bfpjm hkxz\nkqijr tpcwv exfue qbplb za\nexb hx xct lpsb hsh zfkh otjl\n492 391\ng yoykg pquas vj ty i\ngxs gxzon gre ettp wbqq gqfpp\nrb iaf pyakp hrcj xk\nf ql hgwv ygzz i\nv ni jhblq mkdp\n214 401",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nkecb jjs qx lgmb t ufjps jvvmh lr\nvvf zywn ekon vv d cnq nymka\nab rgvh b mc phjs\nsneqw b umwc vd dsh jurfv o\n1000 1000\nqwu tb qs q uj wap\nktvi ijy udht ioypp itkmv glmd\nd b q wa nje\ns zzvzq zyvs t m\nro sao muah wae\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nadk fpwmy hoifu z rzyh qsmd y vro\nolg klqgu wpa xqc ogna txw ctxh\nxzp ff s kz ap\nqvmf bgs anh ve laect s q\n1000 1000\npg sckh hne sl ufel ab\neln ifdb w r dh m\nv zh hn orlk jwvf\nk dls pmk xfs w\njzgo jd adao cjmty\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 999\nlfmhz jxyzl lolg dwm wzn sfohc wmhb zt\numn hue qf xmuwz gl cj phut\nfuilx zm eyuv ayb dsa\nnwy jfckx v qghs om pqihp rvae\n2 1\nzcis gdz dreyi lhp byuh d\nczd nhblk f y sfilr kbq\nybwk p glor yafxk innf\nlc hftxo ta ik wz\nkmny nzzm gtmb ksl\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2\nm ti z hjmnd x lgg n e\ndl niu fubg wtudt hd vq qihd\nmzgqu ug ud vi l\ntarb bx d lvsy wii tfeq aps\n1000 2\nehss kenni wv op nmbye zouy\nuqsop w mcq pcc ydaur y\nh jll r nu x\nezr supk jv g h\nyivva qho fospc vraj\n2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Tough Water Level",
+  "tags": [],
+  "text": "Czech Technical University has the word \"technical\" in its name. Beside others, this means\r\nthat lectures in physics are important here. Do you still remember some of the basic physical\r\nprinciples.For example, imagine a simple glass of water. Or, we will rather call it a cup to avoid ambiguity of this word. So, imagine a simple cup (made of glass) that is partially filled with water. You\r\nmight have noticed that the stability of such a cup depends on the amount of water inside. If\r\nyou brush against a full cup, it is relatively easy to knock it down and spill its contents. If the\r\ncup is empty, there is fortunately nothing to be spilled, but other than that, the situation does\r\nnot improve much - it is still easy to knock the cup down with only a little force. The best\r\nstability is usually achieved with a \"half-full\" cup.In this problem, your task is to determine the water level that makes a cup as much stable as\r\npossible. For the purpose of this problem, we will make a simple assumption that the \"stability\"\r\nof a cup is higher, if its center of mass (sometimes also called the center of gravity) is lower\r\n(closer to the bottom).The center of mass can be informally defined as follows: Imagine that glass and water consist of\r\na very large number of very small particles. Then the center of mass is an average of the position\r\nof all these particles. The average is weighted by particle masses. Since the density of glass is\r\napproximately 2 500 kg.m-3 and the density of water only 1 000 kg.m-3, we will suppose that\r\nthe mass of a glass particle is 2.5 times higher than the mass of a water particle of the same\r\nsize.All cups considered in this problem will have an exact rotary shape. But their radius may vary\r\nwith the height - some cups are wider at the top, others are wider at the bottom. Also, the\r\nthickness of the glass may not be constant.The left figure shows a typical cup considered in this problem. It can be fully described by its\r\nheight (H), thickness of the bottom (B), and two functions R and T . Both of these functions\r\ntake a current height as their argument and they give the outer radius (R) and glass thickness (T )\r\nin the appropriate height. Please note that the thickness is always measured strictly horizontally\r\nand may therefore not reflect the \"real thickness\" of the glass in its usual meaning.InputThe input contains several cup descriptions. Each description consists of three lines. The first\r\nline contains two numbers: H (cup height) and B (bottom thickness), 0 < B < H <= 100.\r\nThe second line contains an expression R(x) (radius), the third line an expression T (x) (glass\r\nthickness). All data are given in centimeters. The last description is followed by a line with two\r\nzeros.The expressions will contain only digits (\"0\" through \"9\"), decimal points (\".\"), four basic\r\noperators (\"+\", \"-\", \"*\", and \"/\"), parentheses (\"(\"and\")\"), and the lowercase letters \"x\"\r\ndenoting the input variable (height measured from the cup bottom).Vx, 0 <= x <= H, the radius will satisfy: 0.1 < R(x) <= 100Vx, B <= x <= H, the thickness will satisfy: 0.1 <= T (x) < R(x)Arithmetical operators have their usual meaning and priorities, i.e., multiplication and division have a higher priority than addition and subtraction.OutputFor each cup, output the sentence \"Pour L litres / W cm of water.\", where L is the\r\namount of water that must be poured into the cup to reach the maximal stability (in litres). W\r\nis the water level (in centimeters) measured from the bottom of the cup. Both numbers must\r\nbe given with exactly three decimal digits.ExampleInput9 1\r\n3+x/6\r\n17/8-x/8\r\n10 1\r\n(x+10)\r\n10/(x+10)\r\n0 0OutputPour 0.030 litres / 3.365 cm of water.\r\nPour 0.878 litres / 2.193 cm of water.",
+  "sample_input": "Input9 1\r\n3+x/6\r\n17/8-x/8\r\n10 1\r\n(x+10)\r\n10/(x+10)\r\n0 0OutputPour 0.030 litres / 3.365 cm of water.\r\nPour 0.878 litres / 2.193 cm of water.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CERC07W",
+  "scraped_at": "2025-08-17 00:34:26",
+  "test_cases": [
+    {
+      "input": "Input9 1\r\n3+x/6\r\n17/8-x/8\r\n10 1\r\n(x+10)\r\n10/(x+10)\r\n0 0OutputPour 0.030 litres / 3.365 cm of water.\r\nPour 0.878 litres / 2.193 cm of water.",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 3\ngto 10\n10 10\nttxwk\n3 9 9\nhvlnglrh\n3 10\n4\nipwmqbdn\n1 8\nqitkscaygxzkekh\n10 6 10 7\n6 edlojvrmdx uipea zi vcgd sgp px tz h\n5 7\nsgege kyzrz dnwjie lo zdsi tf sq u",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 3\nn 7\n8 8\nzszoqlu\n1 5 7\nvufpantjtlifs\n8 7\n6\nqfqg\n6 2\nssgnmeba\n6 6 7 1\n4 lxlwclltsbn cvz qimsxv fsalf t ttdmz lf sbzfy\n9 7\nthw ebvyb tp emu jezc rmci cwavb ndvu",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 2\nzzqd 1\n4 6\nbgt\n10 4 9\nqncczjoyc\n8 4\n3\napd\n1 2\ntkeyjgdwndislhhftn\n6 2 4 2\n4 bwhhpvlnx forkd kw pelw vpp ti ifp qlbfld\n9 10\nzv lceqd bbyfkg lpbp tkq rs lh axxj",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "79 72\nltfety 8\n98 58\nhlh\n34 24 64\nhhsjzn\n54 41\n9\nnlsuxrsisett\n66 89\nbt\n33 10 54 9\n59 edyonwn tim jhu n lep aaul ictgw gmp\n19 93\njot qu as b nct t eoha crhwdb",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 45\nmpt 46\n46 9\nda\n44 29 2\njcnaaztakj\n12 81\n46\nqsxdkc\n94 100\newrowhfcfhyyuyn\n94 35 46 57\n61 ecomf f lo vi moeu glm i z\n7 89\noazm scvl c dbg fhbct fyt b c",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 84\nyyna 41\n37 77\nkpooo\n15 30 78\nikxpvsvebqr\n8 18\n50\nin\n32 81\nericufmtggiqks\n82 54 19 8\n67 z zgv crcxk b tilsa ba wjd lblu\n46 78\nm n ywwy dkmc elzj kokg uefxo phomt",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 17\nltsa 11\n64 80\nfxzpakwp\n44 41 12\ntaho\n70 94\n95\ncstezequqv\n1 60\niaifqgav\n66 52 4 90\n89 q ijzi uag f p rwv ujf sux\n32 99\ny strx zzvps lxg k ofz rd qynzu",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 37\nn 63\n82 97\nt\n50 62 69\nrzmeqpdic\n100 15\n53\ntespfyxn\n95 99\nuownnuruoljuvje\n87 16 41 28\n49 npgesw z xyx xp gq don bo cwwnnp\n25 51\nomae k lxmid i ickc iyzp xwi uuwaqx",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "215 356\nob 221\n273 110\nw\n312 446 64\nyan\n472 109\n461\nrfblbrlkax\n423 280\nlmoclncosgayh\n480 208 145 55\n452 uvvqxy ptbeu ndsurq v r qs fklc ngje\n83 452\nwro tczhb kkgcx mkh uf fgsl v y",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "394 411\ntqa 302\n253 243\ntylhkatw\n275 81 317\nvouncoustzbdsbe\n103 100\n59\nlvhmtnbafgzq\n295 476\nomkhhyc\n66 233 271 128\n247 mgibrbodtag rf b tnf cc biwq riehb rrdkmd\n423 85\nvoy rjpgc vwjziv xx j rm we gbmu",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "78 187\nyu 428\n217 196\nvjxkibll\n343 200 124\nbwcuolgld\n174 71\n271\nz\n371 64\nvmshqqkeasj\n481 232 137 359\n63 kpx ycfb myo sajyo yw vka gwh jme\n52 104\nlpth yfbd ofzs btff xwyc uz mk tfoied",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "246 328\nj 233\n440 319\nvpktabhyni\n254 199 279\nqrpiriehsjkvjxsm\n493 253\n441\nbsafjq\n119 229\nulzfffxqoyyocyhe\n340 443 356 138\n359 rbiqlgwlc ouq famcw bgvni n ejp kmj uzrpmt\n202 223\nmg dhf zas qnfa al twrk jwug zzmz",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "93 180\nfklg 230\n149 335\ne\n116 409 395\niwx\n270 478\n353\noil\n153 77\nswfxbwczhd\n139 266 151 458\n403 zjp f ds huwd xy anvfd pex efgzpa\n445 231\nwu vnt kisczb ha ay v cnpv geu",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "148 233\nk 497\n399 86\nwlxxyauuo\n430 81 354\nhfclmicrtvbii\n288 88\n149\nmfu\n371 167\ncgyguyvbopcjdy\n100 285 190 344\n56 d uvhio npyfiy asn tlk o g kq\n226 66\nbl dbq ps nh fj xgoyx jyb bbfvjj",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "443 72\njst 320\n236 319\nqotwnmme\n429 473 395\nzkvfuerudf\n337 489\n338\nqohyfcbsa\n266 276\nvgtfgadklvduq\n385 415 409 107\n416 tigcao quhvc ip mbj yc xn acwp zmwqz\n469 240\nyfd tii vzyebx kzxs j gwmaj rbf xjhd",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nviubpk 1000\n1000 1000\nfgtbqqdiaa\n1000 1000 1000\ni\n1000 1000\n1000\nynwgkd\n1000 1000\nasls\n1000 1000 1000 1000\n1000 w y pvyunu liq xw j cjp nnp\n1000 1000\nhroy rmpsl nknkco gu tvyqq ghgby b gkg",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nlunpv 1000\n1000 1000\ngqwetfy\n1000 1000 1000\nhfvcmppqkhtscjb\n1000 1000\n1000\ncloerrjcuxj\n1000 1000\nwqbnjitbpgiskmxkvu\n1000 1000 1000 1000\n1000 wm apa onn ai aqxg ltwta bz kyno\n1000 1000\ncys qiu jqbma d tfuw ti rpkj zl",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1\nxzx 1000\n2 1\ngupyqgeio\n2 1000 2\nxrdjmxagrfihpfcn\n1 1\n1000\npip\n1000 2\nqsxsgezmskqcpnhfvw\n999 1000 1 2\n999 aujohmrc uw nfir sirbx sj jqzg m wuk\n1000 1000\njpqo nzs axdxk pi ozrz i jpxuj klb",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\nnktk 999\n1000 999\nuptvkspqqb\n1000 999 2\nkfzymnm\n2 1000\n1\no\n1 1\nz\n999 1 2 2\n2 lirxybmsr wwzmr qgza rnwsk s phrk kvl z\n1 1000\noqdmh dxr yaqdrg bivi cv z tovs knydxh",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Earth Observation with a Mobile Robot Team",
+  "tags": [],
+  "text": "A new type of mobile robot has been developed for environmental earth observation. It moves around on the ground, acquiring and recording various sorts of observational data using high precision sensors. Robots of this type have short range wireless communication devices and can exchange observational data with ones nearby. They also have large capacity memory units, on which they record data observed by themselves and those received from others.Figure 1 illustrates the current positions of three robots A, B, and C and the geographic coverage of their wireless devices. Each circle represents the wireless coverage of a robot, with its center representing the position of the robot. In this figure, two robots A and B are in the positions where A can transmit data to B, and vice versa. In contrast, C cannot communicate with A or B, since it is too remote from them. Still, however, once B moves towards C as in Figure 2, B and C can start communicating with each other. In this manner, B can relay observational data from A to C. Figure 3 shows another example, in which data propagate among several robots instantaneously.Figure 1: The initial configuration of three robotsFigure 2: Mobile relayingFigure 3: Instantaneous relaying among multiple robotsAs you may notice from these examples, if a team of robots move properly, observational data quickly spread over a large number of them. Your mission is to write a program that simulates how information spreads among robots. Suppose that, regardless of data size, the time necessary for communication is negligible.InputThe input consists of multiple datasets, each in the following format.N T Rnickname and travel route of the first robotnickname and travel route of the second robot...nickname and travel route of the N-th robotThe first line contains three integersN, T, and Rthat are the number of robots, the length of the simulation period, and the maximum distance wireless signals can reach, respectively, and satisfy that 1  ≤N≤  100, 1  ≤T≤  1000, and 1  ≤R≤  10.Thenickname and travel routeof each robot are given in the following format.nicknamet0 x0 y0t1 vx1 vy1t2 vx2 vy2...tk vxk vykNicknameis a character string of length between one and eight that only contains lowercase letters. No two robots in a dataset may have the same nickname. Each of the lines following nickname contains three integers, satisfying the following conditions.0 = t0< t1< ... < tk= T-10  ≤  vx1, vy1, ..., vxk, vyk≤  10A robot moves around on a two dimensional plane. (x0, y0) is the location of the robot at time 0. From time ti-1to ti(0 < i  ≤  k), the velocities in the x and y directions are vxiand vyi, respectively. Therefore, the travel route of a robot is piecewise linear. Note that it may self-overlap or self-intersect.You may assume that each dataset satisfies the following conditions.The distance between any two robots at time 0 is not exactly R.The x- and y-coordinates of each robot are always between -500 and 500, inclusive.Once any robot approaches within R + 10-6. of any other, the distance between them will become smaller than R - 10-6. while maintaining the velocities.Once any robot moves away up to R - 10-6. of any other, the distance between them will become larger than R + 10-6. while maintaining the velocities.If any pair of robots mutually enter the wireless area of the opposite ones at time t and any pair, which may share one or two members with the aforementioned pair, mutually leave the wireless area of the opposite ones at time t', the difference between t and t' is no smaller than 10-6. time unit, that is, |t - t' | >= 10-6.A dataset may include two or more robots that share the same location at the same time. However, you should still consider that they can move with the designated velocities.The end of the input is indicated by a line containing three zeros.OutputFor each dataset in the input, your program should print the nickname of each robot that have got until timeTthe observational data originally acquired by the first robot at time 0. Each nickname should be written in a separate line in dictionary order without any superfluous characters such as leading or trailing spaces.ExampleInput:3 5 10\r\nred\r\n0 0 0\r\n5 0 0\r\ngreen\r\n0 5 5\r\n5 6 1\r\nblue\r\n0 40 5\r\n5 0 0\r\n3 10 5\r\natom\r\n0 47 32\r\n5 -10 -7\r\n10 1 0\r\npluto\r\n0 0 0\r\n7 0 0\r\n10 3 3\r\ngesicht\r\n0 25 7\r\n5 -7 -2\r\n10 -1 10\r\n4 100 7\r\nimpulse\r\n0 -500 0\r\n100 10 1\r\nfreedom\r\n0 -491 0\r\n100 9 2\r\ndestiny\r\n0 -472 0\r\n100 7 4\r\nstrike\r\n0 -482 0\r\n100 8 3\r\n0 0 0Output:blue\r\ngreen\r\nred\r\natom\r\ngesicht\r\npluto\r\nfreedom\r\nimpulse\r\nstrike",
+  "sample_input": "Input:3 5 10\r\nred\r\n0 0 0\r\n5 0 0\r\ngreen\r\n0 5 5\r\n5 6 1\r\nblue\r\n0 40 5\r\n5 0 0\r\n3 10 5\r\natom\r\n0 47 32\r\n5 -10 -7\r\n10 1 0\r\npluto\r\n0 0 0\r\n7 0 0\r\n10 3 3\r\ngesicht\r\n0 25 7\r\n5 -7 -2\r\n10 -1 10\r\n4 100 7\r\nimpulse\r\n0 -500 0\r\n100 10 1\r\nfreedom\r\n0 -491 0\r\n100 9 2\r\ndestiny\r\n0 -472 0\r\n100 7 4\r\nstrike\r\n0 -482 0\r\n100 8 3\r\n0 0 0Output:blue\r\ngreen\r\nred\r\natom\r\ngesicht\r\npluto\r\nfreedom\r\nimpulse\r\nstrike",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/EOWAMRT",
+  "scraped_at": "2025-08-17 00:33:39",
+  "test_cases": [
+    {
+      "input": "3 5 10\r\nred\r\n0 0 0\r\n5 0 0\r\ngreen\r\n0 5 5\r\n5 6 1\r\nblue\r\n0 40 5\r\n5 0 0\r\n3 10 5\r\natom\r\n0 47 32\r\n5 -10 -7\r\n10 1 0\r\npluto\r\n0 0 0\r\n7 0 0\r\n10 3 3\r\ngesicht\r\n0 25 7\r\n5 -7 -2\r\n10 -1 10\r\n4 100 7\r\nimpulse\r\n0 -500 0\r\n100 10 1\r\nfreedom\r\n0 -491 0\r\n100 9 2\r\ndestiny\r\n0 -472 0\r\n100 7 4\r\nstrike\r\n0 -482 0\r\n100 8 3\r\n0 0 0",
+      "expected_output": "blue\r\ngreen\r\nred\r\natom\r\ngesicht\r\npluto\r\nfreedom\r\nimpulse\r\nstrike",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 1 9\nzozos\n8 2 7\n10 6 3\nwbn\n3 2 4\n6 8 1\nllgy\n9 10 6\n7 9 9\n9 6 10\nohxqdknz\n4 5 1\n9 6 9\n3 1 8\npwdm\n9 4 9\n2 5 6\n8 6 10\nssfnyvqvpqfmz\n6 8 6\n2 10 5\n3 3 6\n8 8 5\nlygmknkthxlkfl\n7 7 6\n6 2 3\nya\n9 6 2\n5 6 1\nsdgrosjwkvwpm\n2 9 10\n1 3 7\nyvd\n9 1 2\n8 8 3\n10 6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6 3\nrzyov\n3 2 6\n8 1 6\nzt\n4 5 9\n8 1 5\njvynrpk\n5 7 8\n2 1 6\n6 3 1\nbasu\n4 8 5\n7 9 3\n7 7 6\ngznsnhnmf\n10 8 6\n2 5 7\n4 10 2\nazqienjv\n5 4 7\n3 3 9\n10 3 5\n7 5 2\nsyhuhdggmyus\n4 3 6\n4 7 4\ngxmvj\n4 9 4\n4 7 8\nebuytjlgk\n4 9 3\n8 2 1\neuodqub\n10 4 6\n5 6 6\n5 3 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3 4\ndwrh\n4 4 7\n4 2 7\nrjzeui\n5 2 4\n3 9 1\nocmhrk\n5 2 7\n6 5 3\n5 4 10\nqejuradx\n6 6 9\n8 8 8\n7 1 2\nyjxv\n4 10 6\n4 4 1\n4 1 3\nmufcoofq\n3 9 4\n3 4 2\n6 2 2\n1 5 4\nkfafb\n5 10 1\n10 9 8\nxqjgnmqnnmal\n4 9 7\n7 7 5\nupb\n5 6 9\n5 5 1\ntrjcvvsdigyz\n5 7 2\n5 8 5\n2 9 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "71 12 67\njoe\n10 86 25\n40 76 21\nlo\n84 43 10\n38 27 33\nfghpd\n63 11 89\n62 42 51\n5 60 60\ndy\n7 95 24\n92 24 45\n99 99 79\ncvnpbahts\n12 54 89\n65 96 35\n59 41 54\nrcpnldyqkq\n10 64 4\n16 34 86\n93 84 40\n41 26 61\nkkgohxhwh\n31 43 11\n32 62 53\nlfgagcecetf\n15 66 16\n60 96 33\nwxbji\n14 49 41\n42 33 84\npcjwwnwz\n60 75 85\n67 59 53\n1 23 52",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 4 88\nuwqkz\n60 1 63\n34 89 3\nygq\n35 67 80\n74 58 95\nk\n39 42 46\n32 64 95\n30 45 93\nyvog\n31 92 36\n71 11 34\n4 31 81\nisgvv\n70 47 44\n63 54 59\n77 95 34\noqwyqpyqh\n81 36 100\n21 3 6\n80 23 47\n90 9 44\nr\n15 4 83\n89 54 16\nqifnq\n47 57 42\n44 13 63\npgxrgtabnlsh\n80 15 75\n76 87 36\npfo\n94 61 10\n19 59 49\n9 60 95",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 4 11\ny\n70 86 74\n45 67 12\ngolegjcy\n95 37 78\n63 10 28\ngwdyzvv\n59 19 12\n38 79 66\n6 81 65\nlu\n6 77 26\n75 77 34\n78 11 50\nbwwp\n21 98 44\n96 86 67\n95 33 92\ncyll\n91 8 64\n4 89 51\n34 85 93\n93 43 42\noynvjq\n90 25 37\n33 72 83\nguxxxei\n62 47 15\n3 3 10\nkzxuocousspnf\n32 35 76\n5 59 76\nflu\n39 59 48\n48 85 69\n81 24 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "57 9 85\novqv\n42 87 90\n83 18 54\nrkvykynvyq\n59 51 25\n67 64 4\ncqkh\n26 33 18\n62 85 20\n7 92 6\nrp\n55 93 81\n61 28 67\n55 43 97\nlg\n45 54 34\n33 43 24\n67 67 73\nqyxbtvuevvffd\n23 23 85\n17 47 20\n94 99 46\n79 25 44\ngqqtrkpngr\n53 56 75\n62 53 30\nycpwnfn\n59 92 13\n20 56 93\npn\n93 85 25\n80 32 66\nprarmfayzmt\n37 20 92\n85 17 25\n9 26 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24 75 73\nqwlhl\n57 24 22\n87 18 82\nsgcdhyn\n68 29 21\n90 9 53\ncyl\n40 70 50\n15 82 98\n75 28 91\nwomofegt\n79 29 35\n58 69 98\n14 39 13\nqfdzhaf\n89 5 1\n27 82 17\n24 58 37\nayipzag\n27 30 44\n62 80 9\n71 69 45\n72 74 100\nhwgmsvmttg\n80 97 40\n82 13 63\nnp\n68 56 54\n16 56 28\nhjcdqow\n19 70 60\n46 90 10\netbuavxpn\n95 84 69\n28 15 65\n17 29 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 50 37\ngfujvc\n43 41 8\n49 18 27\nwvjpahhn\n27 36 31\n37 40 49\nddhhjy\n6 36 25\n26 5 41\n15 23 26\ncbokym\n9 40 15\n34 31 5\n12 45 45\niawpymcnx\n13 19 36\n37 25 7\n37 11 21\nlbdkmsbuw\n41 50 26\n42 12 24\n40 37 41\n45 43 13\nqngee\n43 13 30\n32 46 32\nsmtveswqenyx\n45 10 16\n48 24 33\noll\n30 36 43\n26 14 10\nepiropxeqi\n43 21 13\n40 14 45\n5 16 36",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "44 29 27\nm\n34 45 11\n47 39 33\nfaemmjcmcv\n27 42 9\n8 16 35\nblsu\n35 20 19\n50 15 14\n48 7 42\nmkcdq\n31 31 35\n32 31 13\n27 28 5\njcttujl\n18 17 16\n24 33 9\n43 25 12\nnlothdardufoul\n20 42 44\n46 14 11\n6 42 20\n14 33 32\noc\n21 26 39\n32 37 13\nkirixgenz\n17 40 5\n23 44 24\nebgxdijlmntpb\n35 23 37\n13 47 16\nmmue\n18 14 11\n26 36 47\n50 25 44",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 40 49\nc\n19 15 9\n36 32 16\nxsex\n8 39 13\n43 18 10\nickrsah\n24 23 34\n29 28 21\n47 16 12\nqgjxott\n21 41 42\n17 33 24\n28 31 42\nfst\n12 8 17\n6 23 12\n16 45 44\nsvzp\n43 20 40\n39 42 25\n49 31 15\n32 44 38\nhuypaickrakqet\n9 38 47\n46 36 33\nhlsyxhskysgej\n33 18 28\n38 34 40\nk\n10 25 48\n8 19 38\nxhuxjsuvgrxg\n30 38 20\n43 40 16\n24 48 29",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 16 31\nlxcqdo\n45 47 29\n34 8 39\nbj\n48 10 44\n15 7 16\nlxrh\n21 49 39\n42 29 35\n6 17 22\nxwu\n16 40 31\n24 43 16\n37 10 40\ndbiinkmjd\n47 38 33\n13 35 50\n14 40 46\nohfidrfz\n46 38 48\n25 15 47\n25 9 43\n46 39 15\nrfzfrutftuz\n21 45 33\n20 20 22\nnx\n27 40 49\n24 28 14\nx\n21 35 8\n15 19 7\nvrtdzqecw\n47 11 46\n32 32 33\n40 45 44",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "13 19 5\nn\n41 11 40\n50 32 21\nemhko\n50 24 42\n14 6 36\ncwcyzkd\n48 48 47\n50 26 10\n49 42 15\ns\n41 14 20\n25 30 31\n18 14 40\npjg\n17 39 5\n20 41 25\n27 29 9\nxswr\n49 9 34\n17 34 6\n50 49 50\n32 37 45\nuiiokqknywc\n12 14 6\n6 16 23\nirw\n7 49 41\n17 14 6\nhwscypzggb\n48 34 29\n16 38 34\ngotiomfjca\n39 36 35\n30 30 15\n45 45 47",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "39 40 47\nzaexw\n34 14 19\n33 16 11\nbxszj\n36 33 14\n36 34 18\nupfqrkbd\n20 50 18\n22 5 10\n39 31 8\nanqn\n31 42 37\n13 18 7\n41 36 31\nhjjqwe\n45 20 11\n19 47 17\n14 48 10\nnpocuzmj\n24 28 37\n8 22 34\n50 7 7\n24 35 42\nfxsrrl\n32 19 11\n23 43 40\nfsemwoqc\n13 50 29\n22 40 26\nfwnhivnlvjsypg\n15 5 44\n33 11 30\njogg\n39 10 18\n17 19 42\n41 38 44",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 17 28\nemxxnc\n43 34 17\n33 25 18\nxwsl\n17 18 22\n35 42 13\nd\n41 20 9\n42 29 31\n25 44 37\nbzxdu\n42 17 12\n19 44 21\n45 32 12\nwn\n26 39 15\n31 36 5\n20 11 40\nhunlfxos\n11 49 20\n15 9 9\n29 5 16\n47 15 22\nvxgikw\n44 6 11\n29 18 22\nzjacjobtwhfs\n46 7 49\n42 50 45\na\n37 36 48\n49 45 11\nx\n43 50 8\n12 6 5\n11 47 13",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100\npcg\n100 100 100\n100 100 100\navudsdtv\n100 100 100\n100 100 100\nsesmf\n100 100 100\n100 100 100\n100 100 100\nx\n100 100 100\n100 100 100\n100 100 100\nixv\n100 100 100\n100 100 100\n100 100 100\neiwqey\n100 100 100\n100 100 100\n100 100 100\n100 100 100\ntfbmn\n100 100 100\n100 100 100\nkk\n100 100 100\n100 100 100\nesrihhnpznor\n100 100 100\n100 100 100\nzw\n100 100 100\n100 100 100\n100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100\ndyscm\n100 100 100\n100 100 100\navvfiqqf\n100 100 100\n100 100 100\ncpfpnfk\n100 100 100\n100 100 100\n100 100 100\nqf\n100 100 100\n100 100 100\n100 100 100\no\n100 100 100\n100 100 100\n100 100 100\nnuheqixfcy\n100 100 100\n100 100 100\n100 100 100\n100 100 100\npogqpbfn\n100 100 100\n100 100 100\ndwmddxswu\n100 100 100\n100 100 100\nikgacfoua\n100 100 100\n100 100 100\nslydwiptbusa\n100 100 100\n100 100 100\n100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 99 100\nwhxdvs\n99 1 2\n100 100 99\nodslktkm\n100 99 1\n1 1 99\nscrgtjyl\n2 1 99\n2 100 1\n99 2 1\ndkuhfdfg\n1 100 99\n1 99 100\n100 99 1\nu\n100 100 100\n1 100 2\n100 99 100\nfruu\n1 99 2\n1 99 99\n1 1 2\n2 100 99\nqbbk\n2 2 2\n100 1 99\namgwtsaser\n99 2 100\n2 99 2\nyoqfahjqkaaz\n100 100 2\n99 1 100\nulutonlo\n99 1 99\n2 99 100\n100 99 99",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 99 2\nsjyxmp\n2 100 1\n100 99 99\nwfacd\n100 99 1\n1 100 2\nkrorazbk\n100 1 100\n2 99 2\n2 2 1\ntarjzi\n1 1 99\n100 100 2\n99 99 2\nwafcehyh\n2 99 100\n2 100 99\n2 100 1\nntsqhiqdita\n99 1 99\n2 2 2\n2 100 99\n100 99 100\nuamawbbfsvixyq\n99 1 100\n2 99 100\nusovdykdvaxxb\n2 1 1\n1 99 99\nxewpmgn\n100 2 99\n99 2 100\nxxauspozbi\n1 2 1\n99 100 100\n2 99 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

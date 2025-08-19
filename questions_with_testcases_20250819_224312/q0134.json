@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Array Sorting",
+  "tags": [],
+  "text": "Sumit specialises in sorting algorithms, and Abhishek decides to test Sumit's coding skills. An array of 'n' numbers a[0], a[1], a[2] ... a[n-1] is given. Abhishek gives a sequence of inputs of the form \"v i j\". Each input is either a query or an update (query if 'v' is 0, update otherwise).For any input of the form \"0 i j\", Sumit's output should be as follows:If the subarray a[i], a[i+1] ... a[j] is unsorted, output 0.If the subarray a[i], a[i+1] ... a[j] is sorted in non-descending order, output 1.If the subarray a[i], a[i+1] ... a[j] is sorted in non-ascending order, output 2.If the subarray a[i], a[i+1] ... a[j] is sorted in both non-ascending and non-descending order (i.e., if all the elements in the range are equal), output 3.Any other input \"v i j\" (v ≠ 0) should be treated as an update, as follows:For each element in the subarray a[i], a[i+1] ... a[j], Sumit has to replace the element a[k] with v-a[k].Sumit is really tired and does not want to write a program. Can you write a program for Sumit, which responds to Abhishek's instructions?InputThe first line of input contains 2 space separated integers 'n' and 'q'. The second line contains 'n' integers a[0], a[1] ... a[n-1]. Each of the next 'q' lines contain 3 integers 'v', 'i', 'j'.OutputFor each query, output a single integer 0, 1, 2 or 3, denoting the answer.ExampleInput:4 5\r\n3 -2 -5 1\r\n1 1 3\r\n0 0 3\r\n0 0 2\r\n0 2 3\r\n0 0 1Output:0\r\n1\r\n2\r\n3Constraints1 ≤ n ≤ 1000001 ≤ q ≤ 100000-5000 ≤ a[i] ≤ 5000-5000 ≤ v ≤ 5000ExplanationInitial array is {3, -2, -5, 1}. After first update, the array will be {3, 3, 6, 0}. Now, from indices '0' to '3', it is unsorted. From indices '0' to '2', it is sorted in non-descending order. From indices '2' to '3', it is sorted in non-ascending order. Between indices '0' and '1', the values are equal.",
+  "sample_input": "Input:4 5\r\n3 -2 -5 1\r\n1 1 3\r\n0 0 3\r\n0 0 2\r\n0 2 3\r\n0 0 1Output:0\r\n1\r\n2\r\n3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BTCODE_K",
+  "scraped_at": "2025-08-17 00:33:10",
+  "test_cases": [
+    {
+      "input": "4 5\r\n3 -2 -5 1\r\n1 1 3\r\n0 0 3\r\n0 0 2\r\n0 2 3\r\n0 0 1",
+      "expected_output": "0\r\n1\r\n2\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 9\n7 6 8 6\n5 7 2\n8 8 9\n4 3 3\n3 5 4\n4 6 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 10\n8 8 3 4\n9 8 9\n8 7 8\n5 10 9\n4 3 6\n10 3 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4\n1 1 8 1\n1 2 8\n1 4 6\n5 9 2\n10 5 5\n1 6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "19 93\n60 79 24 25\n5 84 66\n47 91 41\n48 64 81\n40 70 74\n19 39 99",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "95 82\n86 78 61 27\n44 34 77\n3 46 6\n27 33 31\n12 16 72\n73 48 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 58\n94 67 64 19\n83 39 12\n33 93 26\n65 73 78\n47 96 15\n72 88 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 9\n22 2 4 36\n22 28 56\n12 17 6\n14 34 53\n89 51 7\n11 9 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 41\n54 51 26 31\n78 18 52\n42 92 37\n94 66 78\n5 6 17\n23 12 52",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77590 174802\n311456 190331 319227 494315\n249740 362741 358599\n307521 92877 158489\n340467 499594 288586\n203928 354225 206612\n429849 257723 320562",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "268940 128385\n195522 423813 125857 233731\n252274 336615 164674\n323189 161051 73865\n230117 312058 425034\n479109 288801 483812\n379180 119642 147255",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "169124 460490\n58827 178939 320076 389441\n268269 177588 78995\n182531 99823 298407\n333141 251189 283851\n298564 402069 138815\n193064 322962 160801",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "99011 455649\n235701 260190 93875 336293\n423851 145508 196268\n386741 280123 369499\n275851 433501 398492\n220274 52348 234620\n406393 441305 160144",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "407251 364819\n91597 163473 141919 390694\n349874 67916 74480\n423057 83652 110950\n334775 176124 267633\n382881 378505 452112\n118967 369151 486410",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "487205 464939\n454238 445573 378864 297583\n464649 364464 114985\n250270 488651 194078\n335016 238730 165787\n293493 479949 274338\n99827 225755 140885",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "369399 464203\n100180 213158 498375 420115\n303681 196756 359054\n54094 136820 407059\n306872 149676 94874\n393742 177898 295336\n275401 100143 334525",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000000 1000000\n1000000 1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000000 1000000\n1000000 1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000\n1000000 1000000 1000000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n1 1000000 1000000 1000000\n2 999999 2\n2 1000000 999999\n1 2 1\n2 1000000 2\n999999 1000000 1000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999999 1\n999999 2 2 1\n1000000 2 1000000\n1 999999 1\n2 999999 1\n1000000 1 1\n999999 999999 1000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Falta Envido",
+  "tags": [],
+  "text": "Envido is an important part of the typical Argentinian game Truco. It is even more important\r\nwhen Falta Envido is called, because in this case the winner of the Envido wins the entire game.\r\nIn this problem you are asked to calculate the envido advantage of a cheater.Truco is played with a limited deck of spanish cards. This deck contains four suits: espada,\r\nbasto, copa and oro. There are 10 cards of each suit: 1, 2, 3, 4, 5, 6, 7, 10, 11 and 12. Cards\r\n10, 11 and 12 have an envido value of 0, while the envido value for any of the other cards is\r\nsimply its number. Each player holds three cards. The winner of an Envido is the player with\r\nthe higher envido score. When calculating his envido score each player can either:select a single card and have as envido score the envido value of the card; orselect two cards of the same suit and have as envido score 20 plus the sum of the envido\r\nvalue of each selected card.Players always select the card or cards that yield the highest envido score. For instance, a\r\nplayer having a 10 and a 2 of the same suit, together with a 5 of a different suit, would inform\r\nan envido score of 22 because 20 + 0 + 2 = 22.A cheater playing Truco thinks that he can change one of his three cards without anybody else\r\nin the table noticing. If he changes more than one card, he surely will be discovered, so he does\r\nnot do that. Since even changing one card is risky, he only does it when the envido score of the\r\nresulting hand is much higher than the one of his original hand.Given the cards the cheater has in hand, you must calculate the maximum increase he can get\r\nin the envido score by exchanging one of his cards with a card from the deck. Notice that the\r\nresulting hand must be formed by two of his original cards and one new card selected from the\r\ndeck, and that he cannot have two equal cards (same number and suit).InputThe input contains several test cases. Each test case is described in a single line that contains\r\nsix values N1, S1, N2, S2, N3, and S3 separated by single spaces. Each pair (Ni , Si) describes\r\na card in the hand of the cheater (1 ≤ i ≤ 3), where Ni is the number of the card (1, 2, 3, 4,\r\n5, 6, 7, 10, 11 or 12), and Si is its suit (espada, basto, copa or oro). You may assume that the\r\nthree cards are different. The last line of the input contains three times the number −1 and an\r\nasterisk, with the six values separated by single spaces, and should not be processed as a test\r\ncase.OutputFor each test case output a single line with an integer representing the maximum increase in\r\nthe envido score that can be obtained by replacing exactly one card of the input hand.ExampleInput:12 espada 10 basto 11 basto\r\n7 espada 1 oro 2 oro\r\n7 espada 1 oro 6 espada\r\n-1 * -1 * -1 *Output:7\r\n10\r\n0",
+  "sample_input": "Input:12 espada 10 basto 11 basto\r\n7 espada 1 oro 2 oro\r\n7 espada 1 oro 6 espada\r\n-1 * -1 * -1 *Output:7\r\n10\r\n0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FALTAENV",
+  "scraped_at": "2025-08-17 00:33:12",
+  "test_cases": [
+    {
+      "input": "12 espada 10 basto 11 basto\r\n7 espada 1 oro 2 oro\r\n7 espada 1 oro 6 espada\r\n-1 * -1 * -1 *",
+      "expected_output": "7\r\n10\r\n0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 2\n3 rpt 2 ay 2 sqjc\n8 4 10\n6 pvhtcl 5 r 4 kab\n5 7 8\n7 ep 4 khxqj 2 hsgg\n7 10 5\nr jfx x par jjxp yna",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5 3\n3 y 1 wb 7 e\n3 5 6\n5 pvcyj 3 icjm 3 c\n4 5 3\n5 n 7 qlpl 6 x\n6 1 10\npox u umxfe in b r",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 6 8\n7 uomori 10 gabb 7 bwoq\n4 3 9\n7 di 10 kqg 8 ml\n5 1 6\n10 tpkr 5 yp 5 vfvluu\n8 10 1\nzymz rvlq hxgn klu ixkp kfn",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "43 16 36\n84 txt 43 fhs 78 dag\n24 39 34\n83 mipa 98 bv 68 l\n80 92 86\n100 s 32 cugr 44 ikn\n45 18 100\nafjw qefa wcn zgq bvjjd igc",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "80 38 81\n65 smrvs 26 bfkb 86 rsm\n72 88 92\n4 xieqba 47 sc 34 gt\n38 51 4\n43 lsevph 11 xsvc 33 d\n61 79 62\nkmpsw niu dnlv hrq fx oo",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 98 29\n74 i 32 rxrz 97 ix\n61 59 25\n41 pwhdc 46 v 22 yjco\n50 63 98\n56 xg 66 fgxir 87 deqwws\n27 82 29\ndgf fiqbr alg ga rbqyw hyqz",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 28 40\n5 rs 7 k 11 zuaji\n4 64 45\n16 dltcxf 86 iihu 95 e\n60 18 50\n5 acofeb 70 qto 3 jgl\n32 67 90\nvvhjd mrmkd azqnd ffi a suzyj",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 75 92\n85 tky 3 yib 53 x\n2 35 34\n95 pspy 25 oxue 13 vczhb\n94 85 82\n43 vp 57 cd 9 yjji\n77 87 14\nce xp s xr hmak zve",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "148 55 186\n76 uro 215 wos 478 jh\n261 418 244\n219 vbg 388 hv 81 dpbr\n192 63 314\n248 qoa 98 pzv 183 n\n373 196 492\nyhqz ekvc qlmwh xapu ryl jn",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "94 77 142\n230 vhk 253 cnsek 82 ytvf\n356 351 467\n494 rcy 167 j 266 rpu\n205 386 253\n420 mnwj 280 pw 183 jocd\n318 150 450\nop vkos shewt we o njy",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "440 205 412\n363 cey 290 jx 246 jhqi\n236 370 83\n245 bsfcmk 108 oqb 455 vueg\n133 329 393\n145 ndci 383 antzv 134 cfhr\n52 251 329\nj uw frf yv vm mpaz",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "71 55 358\n249 zgfsk 260 a 479 wde\n189 108 145\n261 lo 61 e 124 khbyd\n455 342 158\n165 ngjs 304 yzyn 499 gb\n114 440 434\nt zql wir y m mmdv",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "445 205 100\n232 rgqypo 367 ispul 254 bpbsr\n199 448 123\n413 c 347 qua 308 o\n391 350 257\n415 zuqyep 362 snv 104 s\n425 60 169\ni lz u rdyd tretr wlm",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "52 250 369\n112 e 479 ou 441 ztzw\n472 158 461\n167 cttu 401 tqofs 282 ult\n222 482 459\n94 byx 471 oyz 335 sjm\n267 100 326\nke tmzyp kcgf a c mg",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "212 103 301\n378 ombjea 208 vglwk 326 iq\n212 225 308\n329 rzwjxs 190 xxv 312 ntpn\n266 283 429\n70 jh 240 tjkdi 349 y\n51 131 74\njlqy vvj iibz x tynm wy",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 bjsyz 1000 m 1000 k\n1000 1000 1000\n1000 l 1000 qby 1000 om\n1000 1000 1000\n1000 gzc 1000 gsy 1000 qofv\n1000 1000 1000\nk uscu jp elu hcob jcx",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 igi 1000 flrnz 1000 w\n1000 1000 1000\n1000 nhzbk 1000 fmyn 1000 ugup\n1000 1000 1000\n1000 afjng 1000 cc 1000 verjse\n1000 1000 1000\nqgnat n fc s qoqf vpa",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 999\n2 xarv 1 merfc 999 pvuv\n999 1 999\n999 dqf 2 smyoi 1 btcsu\n2 1 999\n2 tyvka 1 wmew 999 yuz\n1000 999 999\nrqm bzfag jt v syo nl",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 2\n1000 vhxgiq 1000 jt 1000 g\n2 2 1\n2 nb 1000 t 1000 zuzqt\n2 2 1\n2 sbf 1 zu 999 ue\n1 999 999\nbyhr bsgwk hju swlry erixj kjun",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

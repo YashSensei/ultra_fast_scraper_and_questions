@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Hit or Miss",
+  "tags": [],
+  "text": "One very simple type of solitaire game known as “Hit or Miss” (also known as “Frustration”, “Harvest”,\r\n“Roll-Call”, “Talkative”, and “Treize”) is played as follows: take a standard deck of 52 playing cards —\r\nfour sets of cards numbered 1 through 13 (suits do not matter in this game) which have been shuffled — and start counting through the deck 1, 2, 3 ... and so on. When your count reaches 13, start over\r\nat 1. Each time you count, look at the top card of the deck and do one of two things: if the number\r\nyou count matches the value of the top card, discard it from the deck; if it does not match it, move that\r\ncard to the bottom of the deck. You win the game if you are able to remove all cards from the deck\r\n(which may take a very long time).A version of this game can be devised for two or more players. The first player starts as before with a\r\n52 card deck, while the other players have no cards initially. As the first player removes cards from her\r\ndeck, she gives them to the second player, who then starts playing the same game, starting at count\r\n1. When that player gets a match, he passes his card to the third player, and so on. The last player\r\ndiscards matches rather than passing them to player 1. All players who have cards to play with perform\r\nthe following 2-step cycle of moves in lockstep:Each player says his or her current count value and checks for a match. If there is no match, the\r\ntop card is moved to the bottom of the deck; otherwise it is passed to the next player (or discarded\r\nif this is the last player).Each player except the first takes a passed card (if there is one) and places it at the bottom of his\r\nor her deck.These rules are repeated over and over until either the game is won (all the cards are discarded by the\r\nlast player) or an unwinnable position is reached. If any player ever runs out of cards, he waits until\r\nhe is passed a card and resumes his count from where he left off (e.g., if player 3 passes his last card\r\non a count of 7, he waits until he receives a card from player 2 and resumes his count with 8 at the\r\nbeginning of the next 2-step cycle).InputInput will consist of multiple input sets. The first line of the file will contain a single positive integer n\r\nindicating the number of input sets in the file. Each input set will be a single line containing 53 integers:\r\nthe first integer will indicate the number of players in the game and the remaining 52 values will be the\r\ninitial layout of the cards in the deck, topmost card first. These values will all lie in the range 1 ...13,\r\nand the number of players will lie in the range 1...10.OutputFor each input set, output the input set number (as shown below, starting with 1) and either the phrase\r\n“unwinnable” or a list showing the last card discarded by each player. Use a single blank to separate\r\nall outputs.ExampleInput:(note that the line break is only in the sample input for displaying purposes)\r\n\r\n2\r\n4 1 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13\r\n  1 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13\r\n4 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13 1\r\n  2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13 1Output:Case 1: 13 13 13 13\r\nCase 2: unwinnable",
+  "sample_input": "Input:(note that the line break is only in the sample input for displaying purposes)\r\n\r\n2\r\n4 1 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13\r\n  1 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13\r\n4 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13 1\r\n  2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13 1Output:Case 1: 13 13 13 13\r\nCase 2: unwinnable",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HITOMISS",
+  "scraped_at": "2025-08-17 00:34:22",
+  "test_cases": [
+    {
+      "input": "(note that the line break is only in the sample input for displaying purposes)\r\n\r\n2\r\n4 1 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13\r\n  1 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13\r\n4 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13 1\r\n  2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 13 1",
+      "expected_output": "Case 1: 13 13 13 13\r\nCase 2: unwinnable",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "bxgwj oyl oelf zz jqgys kcs ddv cown ze pv utxwq wyq ephzcvmsg xlv\n9\n2 7 5 4 6 5 5 5 5 3 5 3 8 7 2 4 3 10 8 2 3 5 2 9 2 9 9\n4 4 3 8 6 3 3 4 6 7 3 10 5 10 5 10 3 7 8 10 8 1 8 10 6 4\n9 10 5 10 1 10 8 4 6 1 3 7 4 8 5 3 4 10 6 7 9 2 8 6 7 3 8\n2 5 3 2 5 4 10 10 10 8 1 7 1 5 9 7 4 9 5 2 4 8 8 3 7 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "bzps caln kkg lsbr hxf r gxrxz bt by zx wdk f ykewcbcuco psbhoej\n5\n5 7 9 5 8 9 7 9 2 4 10 6 10 7 5 5 6 3 6 10 10 8 1 10 9 4 9\n6 7 9 6 8 3 6 6 3 3 7 4 7 2 8 2 6 5 5 5 8 8 6 7 4 7\n3 5 5 4 7 10 2 7 5 6 10 8 9 1 1 1 7 2 8 10 10 10 1 1 3 8 3\n5 4 6 5 1 5 7 8 8 4 9 2 1 3 5 4 8 3 6 2 1 6 6 3 8 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "c xkc zwkll ou xfx fts upj t sau qzvg pwcp ggn pmrhpnp jjbhjmoe\n6\n8 1 7 5 1 3 4 9 3 10 9 6 2 8 6 9 4 8 7 8 3 10 7 10 9 8 8\n2 7 8 4 10 6 2 9 3 5 8 8 5 1 9 7 10 1 2 7 8 10 1 7 10 9\n9 5 7 4 2 1 6 5 1 4 3 7 7 8 5 10 5 3 8 10 6 6 2 9 1 3 6\n4 2 1 8 8 4 3 9 2 9 5 1 9 7 9 3 2 10 2 4 8 6 5 2 1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "m rppip z hp yajf wlsax udqf sl blifm zfrm v n ugbfzrqev ozgsmxi\n62\n83 15 60 86 85 23 90 68 91 19 95 49 70 14 100 4 1 30 40 72 59 70 8 25 46 72 88\n1 42 25 41 11 92 61 85 20 11 34 40 23 18 78 86 10 75 8 60 9 27 18 97 39 75\n32 29 2 21 30 12 62 74 94 30 79 36 17 60 67 100 55 80 32 37 47 3 56 68 93 12 64\n3 73 90 85 46 82 63 57 18 29 39 31 96 56 46 26 84 92 20 22 59 18 61 14 12 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "y un ke pk dkwk qdex tw nwmun zy f rb v dqgchvpt tk\n11\n20 41 19 52 7 17 50 46 27 46 44 69 4 56 36 97 79 10 47 58 31 11 17 9 100 80 98\n27 14 77 41 74 69 74 10 30 37 73 30 44 17 46 75 75 35 54 91 63 51 34 30 64 37\n73 40 15 40 10 36 35 25 63 97 45 46 94 5 57 74 38 36 89 59 43 76 99 98 62 79 3\n95 72 81 13 94 52 56 99 35 95 57 24 42 88 43 26 13 34 67 21 15 72 62 99 68 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "d o spo h pur clagi h cyfrg j n bucd usvj ctnec rlvq\n50\n88 42 99 70 47 44 77 4 85 42 99 100 67 46 79 88 40 43 45 47 14 15 96 80 71 87 8\n99 88 16 39 100 8 4 37 80 35 77 46 86 37 22 1 72 20 80 20 22 13 63 31 95 90\n13 45 25 32 26 10 41 100 11 63 72 88 18 52 59 4 72 22 37 32 70 58 48 36 96 38 54\n85 90 3 96 66 68 34 36 82 78 8 88 99 36 84 45 42 12 83 75 28 16 97 95 66 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "p npfhu ktmyk hyew n mx dayxu c amue hb ncafw e kiakfsrv v\n87\n71 31 10 71 100 25 54 2 65 49 11 64 57 67 35 14 37 58 90 82 83 42 67 76 96 91 53\n73 81 39 92 9 31 83 100 74 41 75 50 30 8 22 33 52 91 39 63 79 3 94 96 78 66\n16 87 51 79 54 85 42 79 96 42 83 33 32 95 86 60 26 94 79 33 34 92 65 51 63 1 55\n75 40 52 58 99 20 82 87 29 86 14 19 45 91 55 18 38 98 25 43 92 42 4 42 46 24",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kk uoqt s ougzb vqu co c f yh ojqx dknrt p aedf hm\n44\n97 25 68 2 8 15 41 5 62 76 4 31 50 4 58 50 30 51 4 25 35 28 10 33 59 71 13\n27 78 71 17 29 35 30 70 88 69 9 87 87 88 21 86 87 67 83 18 39 89 43 7 35 85\n9 24 18 93 45 28 25 31 30 43 78 24 49 90 54 73 5 83 82 72 92 25 32 55 32 86 89\n47 21 29 28 79 99 61 72 41 48 45 53 18 75 5 90 93 12 23 30 35 77 56 88 66 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "l wzjv hubzv grbx sjg belf nypw x y sim w sh nxshstqcsp vyw\n489\n159 330 398 254 207 87 244 226 414 340 165 278 142 454 111 445 421 78 329 377 173 419 292 147 162 67 353\n306 124 471 95 139 227 238 321 358 328 312 136 249 247 326 138 154 127 218 276 198 91 180 275 334 203\n399 207 163 80 377 394 478 312 74 386 385 401 168 437 315 309 63 152 242 90 343 247 331 208 89 280 176\n196 447 333 251 255 56 359 52 229 189 115 65 296 414 306 347 435 382 315 291 338 182 441 210 150 297",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "dihf rhmjg bwto yg ob khkg rxsc l czhja d ajyu ch riposo uaxfjdtw\n55\n156 383 300 353 251 284 338 229 225 72 216 451 394 91 341 192 283 293 459 408 174 146 354 50 188 182 397\n195 228 123 200 370 327 100 387 268 246 259 434 393 63 225 458 213 234 379 402 396 198 466 341 430 412\n72 199 306 154 491 91 94 470 271 196 126 392 467 420 79 235 275 66 268 189 327 338 260 191 440 331 189\n290 495 350 102 464 370 287 488 143 82 144 94 318 100 440 219 424 230 413 441 480 375 329 83 308 280",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "p uhtdq ohxdh dguzo v lvu cqls vcf qg zndgjk pw ossop ntp rqjybhgrt\n150\n124 274 305 183 187 209 451 174 479 409 69 151 52 373 132 274 67 440 261 492 243 468 121 432 385 164 237\n458 465 484 182 104 138 58 181 263 220 161 130 373 185 86 417 400 220 416 227 134 364 301 395 226 221\n104 488 475 453 234 61 229 322 300 320 298 147 56 166 177 324 137 177 394 432 242 97 227 487 211 242 386\n113 470 155 466 225 422 463 131 211 395 363 264 444 412 319 89 156 290 360 475 346 127 312 300 197 452",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pottl gdeeb yefvi fsnyc l mqff ibz umiaq hfe rsckv mg z yckyuq ucqhcezz\n66\n158 381 296 80 270 60 478 202 395 423 357 336 172 385 283 328 55 148 153 486 189 237 394 153 270 59 316\n265 459 270 407 248 486 172 199 324 454 225 392 380 481 259 216 253 474 166 237 187 220 201 51 352 237\n326 452 118 269 381 202 142 409 215 494 107 388 233 443 311 404 102 251 473 216 99 407 276 82 53 104 457\n107 309 165 414 258 478 420 110 129 406 236 146 379 343 92 407 419 105 113 137 111 469 209 192 106 321",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "onr wfj p jfpg v pn ootk q iqs xtsml ahe aa b vjhmznnqq\n155\n423 424 191 99 268 453 68 482 307 378 253 265 69 463 212 292 219 240 108 55 128 421 60 483 65 407 417\n182 204 265 302 231 408 288 121 246 201 160 410 220 309 174 309 156 220 428 383 259 273 101 132 316 430\n178 100 239 390 290 127 153 131 359 203 60 158 56 200 494 433 276 308 316 436 433 320 348 405 280 415 134\n250 375 354 244 68 162 491 71 297 461 50 121 121 244 262 500 302 216 126 272 78 352 122 297 250 460",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lou qivkh cdz hj tkbsw lxo pw mvy rl n lvdmg u bqw xvjgdvxu\n382\n235 331 89 105 444 70 383 126 394 279 430 493 286 493 75 326 445 338 294 100 244 358 190 101 203 414 200\n333 188 291 92 90 386 308 443 195 292 309 480 280 168 59 490 133 373 355 450 363 252 385 238 390 476\n198 203 456 340 322 59 136 280 321 500 214 341 211 342 98 438 162 93 65 325 234 263 168 132 409 410 185\n466 119 454 407 165 103 475 403 207 452 242 89 415 317 192 236 289 257 202 413 310 462 321 88 125 166",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pv fok zgbo uhi fej xrvf lf y jaxak o jyyc eiv hzvl vzyxqns\n237\n202 462 232 215 368 333 274 328 422 408 233 134 170 218 340 180 403 238 159 216 466 364 321 340 122 307 340\n421 212 258 411 214 119 296 211 318 229 170 176 186 199 135 69 176 380 460 495 353 123 154 70 477 470\n211 369 309 73 213 480 276 136 194 478 110 170 366 257 362 158 365 329 438 399 375 418 130 300 179 402 84\n247 57 434 459 382 60 430 323 443 184 74 489 56 70 176 275 123 144 476 119 126 99 210 299 183 282",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qrf uss g u ul wv ujp nkpi sidhr ochqwk ygs ms j cp\n1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "sgn g k fhm sk ri xp pqz qj ksdiam jfdo e vfszuhgfjf gd\n1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "xfymu osijt zdxhr tbhfm ms qccq n rmbek t r wqnz z nhokkknh d\n999\n1 1 1 1 1000 1000 999 1 1 1000 1000 1000 2 999 2 999 2 1000 1000 1 2 1 999 1 1 1 1000\n2 1 999 1 1 2 2 1000 1000 1 1000 999 1 1 999 1 2 2 1000 1 999 1000 1000 999 999 2\n999 999 1 1 2 2 1000 2 999 2 2 1000 1000 1000 2 1000 999 999 999 1 1 1000 1 2 2 2 1\n1 1000 1 1000 1 999 1 999 999 999 1 2 999 1000 999 2 2 1000 2 2 2 2 999 1 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "v cluhm hbsl e ejvo lqi ef pbw o gazk y nton tmuzbqf g\n999\n2 1 999 1 999 1 999 999 2 1000 999 999 1 2 1 999 999 999 2 2 999 2 2 2 1 999 1000\n1000 999 999 1000 999 999 1000 2 1000 1 999 1 1 2 1 1 999 2 1 999 1 1 1000 1000 2 1000\n999 2 1 999 1 999 999 2 2 1 999 1000 1000 999 999 1000 1 1000 1 999 1 1 1 1000 999 2 2\n2 2 1 1 1000 2 999 1000 2 1000 1000 1 2 2 2 999 1 1 1 1000 2 2 2 1000 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

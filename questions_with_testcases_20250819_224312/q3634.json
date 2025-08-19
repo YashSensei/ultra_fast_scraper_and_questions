@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Coprime Pairs",
+  "tags": [],
+  "text": "Mr. Yagami is playing a game of arrays. He is given two random arraysAandBconsisting ofNpositive integer elements. Game starts by Mr. Yagami assigning0or1to each element inAandB.After this assignment is done, a graph is constructed with a node for each element in the array A and B (2Nnodes) and no edges. The game proceeds with a valid move being defined in the following way:One of the arrays fromAorBis selected. From the selected array, an element which has been marked0is chosen. Let us call this element asX.A set of elements,Y, are chosen from the array, which was not chosen in the first step, such that all elements ofYshould be marked as1and all elements ofYshould be greater thanXand no element ofYshould be coprime toX.Finally an edge is drawn from the node labelledXto all the nodes corresponding to the elements in setY. There can only be a single edge between any2nodes in the graph.He can make as many valid moves. Mr. Yagami receives1point for each edge that is drawn in the graph.Mr. Yagami is very clever, so he makes the initial assignment in such a way that it maximizes the number of points he receives in the game. You have to return the maximum number of points that Mr. Yagami can receive.InputThe first line of the input contains a single integer,N (1 ≤ N ≤ 40)The second line of input containsNintegers separated by a single space character, which represent the elements of the arrayA. (2 ≤ A[i] ≤ 109)Similarly, the last line of input also containsNintegers separated by a single space character, which represent the elements of the arrayB. (2 ≤ B[i] ≤ 109)OutputA single integer representing the maximum score which Mr. Yagami can receive.SampleInput:4\r\n16 3 2 9\r\n12 18 13 4Output:8ExplanationHe picks 2 from first array. So he gets to put 3 edges i.e. 2 → 4, 2 → 12, 2 → 18.Next he picks 3 from the first array. So he gets to put 2 edges i.e. 3 → 12, 3 → 18.Next he picks 9 from the first array. So he gets to put 2 edges i.e. 9 → 12, 9 → 18.Next he picks 16 from the first array. So he gets to put 1 edge i.e. 16 → 18. Total edges = 8.Problem Setter: Lalit Kundu",
+  "sample_input": "Input:4\r\n16 3 2 9\r\n12 18 13 4Output:8",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/NCOPRIME",
+  "scraped_at": "2025-08-17 00:34:22",
+  "test_cases": [
+    {
+      "input": "4\r\n16 3 2 9\r\n12 18 13 4",
+      "expected_output": "8",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n2\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n9\n6\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n4\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n35501960\n70237074\n99310359\n30434818\n23690757",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n97730201\n71507994\n64223184\n82657705\n50803725\n7604940\n4334735\n99337422\n45509107\n64761674\n35854994\n14193222\n49536216\n64233957\n68043954\n44027028\n86918301",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n7824564\n40731355\n29453324\n33068875\n74094756\n54235983\n50141327\n69265006\n77942413\n17834442\n87975718\n33691663\n1866692\n57040191\n26194940\n30575728\n47657736",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n28665962\n20278011\n68308963\n83528555\n94068787\n56354785\n26153923\n20811468\n346740\n40231377",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n52287909\n10373702\n87093759\n90301329\n14244375\n92417603\n56758453\n38230783\n63953247\n68523865\n48354702\n52578087\n40669479\n46084240\n39677872",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "21\n52869\n10279\n5157\n54653\n26082\n49175\n95740\n27790\n76870\n21786\n17534\n37482\n87743\n58022\n86971\n4005\n70877\n85497\n30171\n44983\n60643",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "33\n72433\n31926\n89526\n44237\n59108\n1166\n63852\n95234\n75983\n45940\n92218\n36829\n83356\n3620\n30705\n67222\n7274\n85947\n94599\n8295\n46177\n8792\n2091\n54303\n49145\n5653\n60182\n63595\n56527\n8941\n35730\n62195\n43725",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n89459\n10844\n66242\n93208\n66189\n77916\n5673\n3506\n7789\n4665\n75796\n25002\n22615\n13595\n97805\n24921\n99238\n93177\n17033\n85724\n70089\n28092\n97126\n15591\n19566\n52009\n91880\n68462\n16683\n62916\n89366",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n18718\n44943\n36514\n8291\n45241\n44229\n68499\n64879\n16016\n32821\n15201\n50580\n74858\n77827\n35490\n69478\n24873\n71880\n81831\n50308\n7271\n57806",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n64609\n90049\n63589\n9771\n81147\n67776\n79774\n8407\n11567\n42070\n94335\n98645\n25609\n74394\n84819\n29215\n4865\n50480\n87686\n9209\n77646\n70612",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n29222\n20984\n90038\n3465\n35860\n49436\n86515\n809\n9212\n80404\n66023\n70217\n72851\n10394\n64772\n66870\n59046\n14018\n29144\n42347\n1697\n57769\n64250\n94010\n10361\n18261",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n21394\n88895\n11932\n83486\n94370\n61373\n30320\n20503\n61788\n25872\n15418\n6066\n90699\n10142\n69898\n31932\n91540\n96594\n36838\n42398\n54529",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "40\n68509921\n4764234\n71701089\n287688\n5807700\n75189863\n53523139\n63279099\n52792982\n12226922\n37703444\n74326558\n45101900\n39983740\n18574156\n55710698\n76586871\n29987079\n77984099\n5193057\n77041924\n65533727\n94488644\n2554303\n2922668\n31620726\n62694390\n98289451\n32540580\n49951423\n47088540\n77290443\n75255613\n22530824\n92093138\n78913146\n70000869\n5778081\n52870150\n2552058",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 40)"
+    },
+    {
+      "input": "40\n19175707\n33552139\n41942064\n7908170\n5162685\n9942678\n31617365\n90682229\n87099430\n92955550\n36311618\n76318076\n23855050\n25570831\n55945128\n19670442\n28388176\n47788396\n19355027\n26252125\n42864734\n65891011\n14650264\n43800487\n44415166\n67297630\n80263987\n96985196\n78560577\n54285856\n26944206\n43238258\n93590670\n84365389\n12175712\n22840469\n41091211\n30503515\n38950336\n31881423",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 40)"
+    },
+    {
+      "input": "1\n81097986",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "40\n98440218\n60654420\n1\n100000000\n1\n1\n86008635\n100000000\n100000000\n100000000\n28264720\n100000000\n1\n1\n100000000\n100000000\n80472180\n100000000\n4276035\n12492002\n70935456\n96420092\n100000000\n100000000\n8022295\n34519252\n78449817\n100000000\n100000000\n1\n97864106\n80207430\n60095724\n1\n1\n1\n33789378\n1\n94063870\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 40)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

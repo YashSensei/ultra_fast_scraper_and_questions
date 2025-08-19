@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Leaky containers",
+  "tags": [],
+  "text": "The acid manufacturing company has a special room to store leaky acid containers. The container holders in the room, which have the capacity to hold one leaky container each, are arranged in a rectangular grid of R rows and C columns such that the columns are in the North-South direction while the rows are in the East-West direction. Currently there are N leaky containers in some of the holders and M more have just arrived and need to be placed in the holders.The company has realised that the containers being produced these days are exceptionally leaky. So much so that the acid that is leaking is corroding the holders completely.Every acid container leaks either in the North-South direction or the East-West direction. Containers can be rotated by 90 degrees and thus a container that is leaking in the East-West direction can be made to leak North-South and vice versa. Given enough time, a leaky container can corrode the holder completely and start corroding the two adjacent holders in the leak direction and this process can go on.The company employee has to make a decision fast. He needs to rotate some of the existing containers and place the new containers in proper holders and directions such that the total number of holders that will be corroded is minimised.Find out the minimum number of holders that will be corroded after proper placement of the new containers and proper orientation of all containers.InputThe first line of the input contains the number of test cases T (≤ 10).For each test case, the first line has four numbers R, C, N and M (1 ≤ R, C ≤ 100, 1 ≤ M, N ≤ 20, M+N ≤ R×C). This is followed by N lines, each giving the location and leak direction of an existing container by 3 integers r (row number), c (column number) and d (1 if leakage is N-S, 0 if E-W). Numbering of rows and columns begins with 1.OutputFor each test case, output on a different line the smallest number of holders that will get corroded after rotating the existing containers and placing the newly arrived containers.ExampleInput:2\r\n4 6 4 4\r\n1 2 0\r\n2 4 0\r\n3 2 1\r\n3 5 1\r\n50 50 5 10\r\n1 35 1\r\n17 44 0\r\n17 46 1\r\n42 35 1\r\n42 46 0Output:12\r\n148",
+  "sample_input": "Input:2\r\n4 6 4 4\r\n1 2 0\r\n2 4 0\r\n3 2 1\r\n3 5 1\r\n50 50 5 10\r\n1 35 1\r\n17 44 0\r\n17 46 1\r\n42 35 1\r\n42 46 0Output:12\r\n148",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/LEAKCONT",
+  "scraped_at": "2025-08-17 00:33:46",
+  "test_cases": [
+    {
+      "input": "2\r\n4 6 4 4\r\n1 2 0\r\n2 4 0\r\n3 2 1\r\n3 5 1\r\n50 50 5 10\r\n1 35 1\r\n17 44 0\r\n17 46 1\r\n42 35 1\r\n42 46 0",
+      "expected_output": "12\r\n148",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n4\n4\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n8\n8\n1\n5\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "8\n626899\n41356088\n23878653\n76941015\n78638397\n47897539\n88535367\n56107111",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n94746587\n93515580\n87638790\n89211631\n67336336\n38129366\n38148410\n80746428\n9264516\n81517243\n53277348\n48893049\n56562448\n3600060\n71946479\n69903301\n64080235",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n26899864\n85755190\n68821839\n29123189\n57206052\n42181194\n55601305\n12792676\n96480206\n94790655\n79497984\n72725220\n77163357\n92746935\n48149124",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n73716222\n75725525\n86865809\n22031646\n82482693",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n25994568\n86704191\n38229862\n42795717\n35960151\n91771240\n41724849\n82747124\n92894024\n38656005\n71385232\n36368274\n99912304\n6944204",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n82300\n85359\n20252\n76979\n85668\n22366\n23663\n61711\n38169\n27327\n842\n91628\n54660\n36437\n78936\n41134\n28052\n9478\n16433\n89871",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n57937\n42828\n56302\n81559\n69065\n53446\n5554\n87233\n64746\n43084\n32579\n74479\n71352\n45217\n25306\n27357\n56132\n21607\n95221\n41127",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n94099\n61970\n52494\n20290\n4237\n97764\n92415\n15874\n64969\n77249\n8755\n1405\n53731\n16546\n34899\n69388\n67898\n57004\n69073\n34318",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n42799\n49920\n85064\n89178\n90822\n17921\n32661\n56811\n12464\n76806\n66191\n19051\n8004\n29680\n61577\n62316\n79657\n29621\n25025\n88443",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n54468\n57934\n87424\n33504\n95389\n90103\n21561\n17612\n40357\n36628\n15019\n87599\n19125\n19168\n63851\n62810\n24937\n39732\n38873\n40457",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n41582\n16700\n65537\n47980\n43279\n89892\n87000\n90806\n75885\n23690\n89170\n45206\n49587\n706\n46848\n84439\n56310\n85393\n38354\n94923",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n7544\n37462\n50371\n28600\n40478\n91088\n97196\n11348\n43984\n90430\n88891\n49531\n75218\n9273\n30964\n39914\n8082\n34546\n44924\n56762",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n52042022\n94295252\n43940334\n61933022\n55353054\n99547606\n75134525\n1485953\n73700956\n50989089\n29882292\n73740687\n75086541\n57773415\n25614176\n79316012\n13564237\n94775068\n65176624\n29804032",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n71247142\n5832986\n94569017\n12442652\n45799319\n81755627\n59874811\n45423301\n12949457\n95949437\n6847417\n94377060\n58354324\n62762651\n86724317\n41527603\n69428932\n60074127\n33041688\n88125042",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "20\n12622705\n100000000\n100000000\n66199157\n21553012\n100000000\n12551986\n29401620\n15202046\n1\n100000000\n100000000\n72745106\n1\n1\n1\n100000000\n1\n13065429\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 20)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

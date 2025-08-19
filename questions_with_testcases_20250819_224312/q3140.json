@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Random Number",
+  "tags": [],
+  "text": "A Black Box algorithm supposes that natural number sequenceu(1), u(2) ... u(N)is sorted\r\nin non-descending order,N ≤ Mand for eachp(1 ≤ p ≤ N) an inequalityp ≤ u(p) ≤ Mis valid.Making tests for this algorithm we have met with the following problem. For setting a random sequence{u(i)}a usual random data generator did not fit. As the sequence itself had been imposed certain\r\nrestrictions, the method of choosing the next random element (in the interval defined by restrictions) did\r\nnot give the random sequence as a whole.We have come to a conclusion that the problem can be solved in the following way. If we arrange\r\nall possible sequences in certain order (for example, in lexicographical order) and assign each\r\nsequence its number, after choice of the random number it is possible to take the correspondent\r\nsequence for the random one. At the first glance it seems enough to make up a program generating\r\nall these sequences in such order. Alas! Even having not great values ofMandNit would have\r\ntaken any powerful modern computer centuries to enumerate all such sequences. It turned out it was\r\npossible to avoid generating all sequences if we managed to create required sequence according to\r\nits number immediately. But even this statement does not cover all. As the amount of sequences is\r\nquite large, the number can be a long one, composed of hundreds decimal digits, though our\r\nrandom data generator could give only normal numbers. We decided to produce a long random\r\nnumber from a real random number distributed in [0, 1]. Namely, present the number in binary\r\nnotation:0.b(1)b(2)..., where allb(i) = 0 or 1. Let us set a\r\nregulation to associate such real number to an integer from [A,B] segment:FormulaHere we suppose, thatA ≤ B, p ≥ 0and \"div 2\" is an integer division by 2.LetM,N(1 ≤ N ≤ M ≤ 200) and a binary real number0.b(1)b(2) ... b(p)(1 ≤ p ≤ 400) be given.Write a program to find out the correspondingu(1), u(2) ... u(N)sequence, i.e. to find a sequence\r\nwithG(1, T, 0.b(1)b(2) ... b(p))number in lexicographical order of all possible{u(i)}for the givenMandN(Tis the quantity of such sequences). Numeration begins with 1.\r\nKeep in mind that in lexicographical order{l(i)}proceeds{h(i)}if after omitting equal\r\nbeginnings, the first number of{l(i)}tail is smaller than the first number or{h(i)}tail.The following example illustrates the list of all possible sequences forM= 4 andN= 3 in lexicographical order.A note (it does not concern the solution of this task):The choice of random binary vector0.b(1)b(2) ... b(p)does not give an absolute uniform random\r\ndata generator if we use the Formula. However, taking into account the fact that [A,B] interval is big\r\nwe shall obtain a distribution applicable in most cases.Example1, 2, 3\r\n1, 2, 4\r\n1, 3, 3\r\n1, 3, 4\r\n1, 4, 4\r\n2, 2, 3\r\n2, 2, 4\r\n2, 3, 3\r\n2, 3, 4\r\n2, 4, 4\r\n3, 3, 3\r\n3, 3, 4\r\n3, 4, 4\r\n4, 4, 4(hereT= 14)InputThe first line of the input is an integer K ≤ 10, followed by K datasets.The first line of each dataset containsMandN. The second line\r\ncontains binary real number0.b(1)b(2) ... b(p)(without leading, trailing and other spaces).OutputFor each dataset, write into the output data file the corresponding sequenceu(1), u(2) ... u(N).\r\nThe sequence numbers should be separated with spaces and end-of-line characters.\r\nThere should be up to 20 numbers in each line. If necessary, the numbers will have leading blanks to occupy 3 characters.ExampleInput:1\r\n4 3\r\n0.01101101011110010001101010001011010Output:2   2   4",
+  "sample_input": "1, 2, 3\r\n1, 2, 4\r\n1, 3, 3\r\n1, 3, 4\r\n1, 4, 4\r\n2, 2, 3\r\n2, 2, 4\r\n2, 3, 3\r\n2, 3, 4\r\n2, 4, 4\r\n3, 3, 3\r\n3, 3, 4\r\n3, 4, 4\r\n4, 4, 4",
+  "sample_output": "Input:1\r\n4 3\r\n0.01101101011110010001101010001011010Output:2   2   4",
+  "link": "https://www.spoj.com/problems/RNUMBER",
+  "scraped_at": "2025-08-17 00:34:22",
+  "test_cases": [
+    {
+      "input": "1, 2, 3\r\n1, 2, 4\r\n1, 3, 3\r\n1, 3, 4\r\n1, 4, 4\r\n2, 2, 3\r\n2, 2, 4\r\n2, 3, 3\r\n2, 3, 4\r\n2, 4, 4\r\n3, 3, 3\r\n3, 3, 4\r\n3, 4, 4\r\n4, 4, 4",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\r\n4 3\r\n0.01101101011110010001101010001011010",
+      "expected_output": "2   2   4",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "4 6 2\ntde fmyzi 3\n7 9 8\nom byj 5\n1 7 3\nxd kqtre 4\n8 7 7\nohmkw jpt 9\n1 5 10\nbctod x 2\n3 1 3\nauk giy 1\n2 1 6\nif b 6\n2 7 5\nbwwez h 1\n4 10 5\nz b 2\n1 5 5\nigptx ctj 1\n6 10 2\nk wak 3\n7 9 5\nhirz vnod 7\n4 4 8\njqfdn c 1\n9 8 4\nhyk uxi 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 9 10\ndgxh rab 3\n1 3 10\njh u 2\n10 4 1\nfgwlj b 1\n9 9 6\nj t 4\n3 7 4\nkq q 10\n7 7 1\nx y 6\n3 4 8\nhn h 1\n8 1 7\ni pl 5\n7 8 7\nlovdn oakn 6\n8 2 1\nkq dt 8\n9 10 7\nhvqp pcdr 4\n6 1 5\ndxe imp 7\n7 2 8\nfc wn 2\n9 3 4\nshrx eimh 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 6 1\nlvzt jtsdu 1\n9 3 5\nqlt fdgd 9\n9 4 9\nsiefg wfek 8\n3 3 7\nl sv 5\n6 5 9\nwt mz 1\n2 6 6\noj thvk 5\n6 6 8\nvdgor gg 10\n8 6 8\nhos j 4\n10 6 10\nhfar qzf 1\n3 10 9\nz kr 10\n5 6 3\nyz ivs 2\n10 9 4\nyst p 7\n3 5 1\nqki kvxg 9\n1 3 3\nu ozyf 6",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "68 72 74\nzprmx oukac 22\n10 100 66\nwhf qryx 53\n7 89 43\nmauy yqg 41\n29 13 3\nyi zjciz 95\n79 77 75\nnmv xs 93\n66 66 97\nwptkk h 8\n63 25 35\nus r 60\n84 49 89\nptvf o 97\n60 20 69\nt u 30\n76 99 79\nubrt bo 37\n96 49 77\noo hpe 93\n7 93 31\nz qp 31\n61 33 93\nh ruoln 91\n77 27 54\nmdijp tvdhm 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "88 87 95\npmf v 6\n42 19 46\nki wbdci 56\n26 21 63\nvatu cebeo 36\n76 93 63\ntfopz gt 99\n89 54 46\nlsow sup 97\n2 75 63\nku thqw 87\n68 75 68\ndkkk q 56\n83 49 10\nx pcr 5\n49 44 50\nkalj twdoa 86\n51 57 14\nzdvp ycg 21\n57 39 34\nqj jkd 77\n78 54 31\niazma d 2\n77 35 1\nttwjv irmu 35\n37 41 38\nk xxys 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 69 25\npn bnlt 100\n8 70 40\ngtwgv tbmel 4\n1 34 10\nogzq uu 73\n4 41 59\ntp nv 78\n26 56 31\ntby vbpbq 92\n67 47 19\nvgayw y 82\n73 1 39\nq ibhy 2\n78 7 32\nwo a 10\n39 67 17\nqbxau guv 43\n81 93 74\neu ag 15\n70 8 69\nplun p 17\n75 31 33\nzfs dacnf 53\n8 66 12\nasny uv 26\n51 33 88\nsas gv 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 8 31\nhp ixfvu 92\n62 47 33\nwpcsj pk 90\n23 84 43\nwrinj i 97\n3 1 49\nvpn cx 9\n68 12 100\noqyu m 60\n69 27 32\no che 45\n16 19 48\nhcbqq gixu 18\n61 96 68\ngptwg bvej 3\n22 1 74\ne pvbk 40\n96 58 55\np tbbgv 96\n56 62 19\naby oy 25\n88 73 52\nu skzji 18\n42 91 99\nnkyq h 41\n17 16 49\nolu bpzrq 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 90 8\nh ap 4\n6 77 90\nyu wwom 23\n59 10 33\njg hez 6\n9 52 37\njdcxt pz 49\n58 73 76\not ttqrt 68\n74 73 48\noubx ctzoc 46\n16 11 59\nzrjw f 46\n42 94 9\npvey cus 82\n52 33 25\nzoxvg vm 23\n17 82 80\nccf vck 46\n95 33 87\nwcum irrg 45\n68 92 24\nh o 28\n50 69 15\ncrf u 51\n84 47 9\nbupo lpxpv 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "100 360 150\ngo ykts 228\n421 186 474\nwmvhs abuch 481\n442 224 108\naahgu o 464\n279 478 357\npo zgdjv 143\n199 129 218\nl jel 499\n448 323 383\nli x 445\n104 299 109\nui qtdnd 353\n162 278 481\ntgg da 307\n349 356 98\njha khg 205\n247 143 95\nikmxe rwf 475\n71 267 163\nmpx h 127\n399 96 96\ntp wzlc 193\n435 95 399\nz hyp 391\n344 111 280\naa uu 350",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "350 101 161\nmmb hwp 244\n84 211 113\nvnypr su 116\n278 295 388\napot rze 399\n52 412 337\nvswqj kvyf 159\n301 60 72\nr nbum 385\n224 58 95\ndu pfuj 103\n264 173 263\nv ubiv 197\n363 191 219\nlbbpw owxz 331\n102 313 356\nwjzdl umyn 334\n208 498 496\nvnrei qpd 241\n116 83 290\nbjh iez 73\n479 265 147\nzvi f 458\n298 83 429\nckeo iwb 136\n228 308 60\ncdi o 458",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "324 240 84\nsb bkvtt 422\n164 214 375\ng dzjr 267\n273 106 74\nrcvq zzac 106\n421 109 374\npc nkeh 137\n318 77 142\nlaqh qmaei 438\n362 390 359\nd ib 197\n150 254 347\nb qvnb 248\n403 479 152\nf bcnx 320\n316 465 416\nk so 376\n96 257 215\nzwme ez 225\n82 221 108\nyyafb f 189\n415 490 198\nidni s 272\n259 473 114\nzi d 241\n128 143 470\nkfp qaplx 77",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "176 112 452\nejqr wdw 289\n476 425 374\ngt cw 143\n360 326 128\nirjqg quv 433\n349 182 391\nv hoq 473\n317 204 271\nyaoo luwp 158\n369 234 336\nnms xww 382\n315 218 222\nbxjlx dv 474\n420 443 216\nmqtu z 83\n345 377 335\nzb eb 352\n410 231 445\nlfj vh 348\n223 479 305\nzwom y 297\n429 377 134\nwcaka vj 300\n97 236 149\nb ge 162\n497 183 74\nnusuy hcq 222",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "392 412 181\noewyu qrb 139\n292 311 296\nujrv nuk 341\n184 183 369\ndpv v 238\n418 367 291\no rwmtd 223\n472 130 142\namd og 286\n216 369 150\nz u 448\n221 416 394\ndery e 320\n239 224 443\nlik end 465\n274 199 309\ngz apz 307\n207 383 290\nmqjyj xnom 464\n331 288 295\nbvg cdrb 444\n182 468 248\nn pze 339\n173 212 433\njldmg hi 345\n435 433 176\ne sjvh 121",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "85 398 336\nlo fb 201\n157 145 310\nq c 418\n65 102 277\negth ig 291\n425 51 52\nubt sgafe 257\n119 253 350\navwr cska 403\n70 236 171\ngq ykh 300\n174 367 292\ny gvzqj 164\n82 368 187\ndjp rgzv 101\n409 434 417\neast dr 239\n165 451 494\ndhtdx nnh 171\n72 283 346\nxu heeu 166\n469 475 168\ngkfyq xlgj 340\n367 482 128\nj ohcf 346\n330 190 368\nju g 290",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "79 171 125\nkdue os 345\n116 411 300\nfuq iqrn 156\n246 468 153\npvuv er 125\n244 231 274\nowqg swei 170\n382 110 237\nmxsm xedf 58\n158 89 60\ntwihs ybvv 314\n123 493 202\np dbea 159\n494 431 146\ntbrig d 439\n163 105 355\nj oudw 213\n456 334 324\nbivje ishxm 239\n312 92 185\nquxa ipr 285\n473 356 134\nrulmw xynls 259\n420 482 409\nylt ddu 227\n99 256 373\nqmp sexg 254",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nppr srmk 1000\n1000 1000 1000\nn rrygw 1000\n1000 1000 1000\nue ic 1000\n1000 1000 1000\nhkvn dfhm 1000\n1000 1000 1000\nyf q 1000\n1000 1000 1000\njv w 1000\n1000 1000 1000\nlmf ze 1000\n1000 1000 1000\nrdqeq jtq 1000\n1000 1000 1000\noqzuk sj 1000\n1000 1000 1000\nvkdpe dvyxs 1000\n1000 1000 1000\nxnwo ij 1000\n1000 1000 1000\ndow rpe 1000\n1000 1000 1000\nuyow zyg 1000\n1000 1000 1000\noud dmof 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\niaar xo 1000\n1000 1000 1000\nhs cp 1000\n1000 1000 1000\nxpul xp 1000\n1000 1000 1000\nvvb psaik 1000\n1000 1000 1000\nnid ftfwt 1000\n1000 1000 1000\nvjr vjv 1000\n1000 1000 1000\nvzeno gjd 1000\n1000 1000 1000\nt nkcx 1000\n1000 1000 1000\nssic t 1000\n1000 1000 1000\ng khn 1000\n1000 1000 1000\nr hklp 1000\n1000 1000 1000\nm wcacp 1000\n1000 1000 1000\nlllh dibkt 1000\n1000 1000 1000\niqg we 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2 1\ngfd h 2\n1 1 1000\noytuk qbnea 1\n999 1 1\nz h 1\n1000 2 2\nhkxma c 1000\n2 1 1\na fl 2\n2 1000 1\nz b 999\n1 999 999\nbrz cy 1\n2 999 999\nh ilw 1\n2 999 2\nosz m 2\n2 1000 1000\ntqjfo ndjw 1000\n1 999 1\nxbh lxiao 1\n2 1000 2\ngwhw yama 2\n1 2 2\nyp ld 2\n999 1 2\nrjl rtcuj 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

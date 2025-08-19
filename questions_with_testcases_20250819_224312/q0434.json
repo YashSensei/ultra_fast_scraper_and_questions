@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Battle Of The Bastards",
+  "tags": [],
+  "text": "Chessis a two-player strategy board game played on a8 × 8board. Each player begins with16pieces where each type of piece moves differently. Player 1 has all the white pieces and player 2 all the black ones, with white being the one to move first and then players take turns alternatingly until the game ends. The game is played on a square board of eight rows and eight columns. The rows are called ranks and are numbered 1 to 8 from bottom to top from white’s perspective. Similarly, the columns are called files and are denoted fromatohfrom left to right according to white’s perspective. The objective of the game is to threaten the opponent’s king in such a way that escape is not possible, i.e., checkmate the opponent. If a player’s king is threatened, it is said to be in check and the player must remove the king from check on the next move by either moving to a safe square or capturing or blocking the attacking piece(s). The figure shows the starting position for the game of chess.In this problem, we’ll be considering a slightly modified version of chess with the following rules:The game will be played on aN × Nboard.The game will consist of exactly 4 pieces - The white king, the black king, and two white rooks. All four pieces must be placed on different squares of the board.Kings can move to any adjacent square (horizontally, vertically, or diagonally), unless the square is outside the board or occupied by a friendly piece or if the move would place the king under check.Rooks can move to any square in the same rank or file, but not by jumping over other pieces. Also, it cannot land on a square occupied by a friendly piece.A pieceXis threatened by another enemy pieceY, iffYcan reachXin exactly one legal move.A pieceXcan capture another enemy pieceYiffXcan reachYin exactly one legal move. On capturing, pieceYis removed from the board andXtakes its place. Note that ifXis the king, then it cannot captureYifYis guarded by an enemy piece. That is the king can never move and put itself in danger where it is attacked by an enemy piece.The two kings cannot ever be in adjacent (horizontally, vertically or diagonally) squares.The objective of the game is to place the four pieces on unique squares of the board in such a way that if it is black’s move, then the black king is attacked and has no legal moves. That is, the black king must be threatened by at least one of the white rooks and has no way to move to a safe square or eliminate the checks (by capturing the attacking pieces if not guarded). Note that it is not necessary for the board configuration to be legal following the exact rules of chess. That is, ifN = 8there might be valid configurations in our modified game that might never appear in a game of chess. Like the figure shown below, which can never occur in a proper game of chess given that it is black’s turn to move, although it would be a perfectly valid configuration in our game.GivenN, you need to count how many ways you can place one white king, one black king, and two white rooks in the chessboard such that the black king is threatened and has no way to escape the threat given it is black’s turn to move. Two configurations are different if either any of the squares contain different pieces or one square contains a piece but the other does not. Note that every square is uniquely represented by its rank and file and hence mirrored or reversed configurations of the same configuration will be considered as different configurations. Also note that the white king, black king, and white rooks are distinguishable but the two white rooks are identical. So in the figure above, if we swap the two rooks, the new configuration will be the same as the old one.Since the number of ways can be huge, you need to output it modulo7340033.InputThe first line contains the number of test cases denoted byT. The nextTlines contain the board dimensionN.Constraints1 ≤ T ≤ 201 ≤ N ≤ 105OutputFor each case, output one line. First output the case number then the number of valid ways modulo7340033. Please refer to the sample i/o for more clarity on the format.ExampleInput:8\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8Output:Case 1: 0\r\nCase 2: 0\r\nCase 3: 232\r\nCase 4: 1432\r\nCase 5: 5188\r\nCase 6: 14536\r\nCase 7: 34464\r\nCase 8: 72392ExplanationFor a8 × 8board, here are some valid configurations:For all of these boards, the black king is attacked and has nowhere to go. Also, both the white rooks are placed on the board and the kings are not in adjacent positions.And here are some invalid ones:For the first board, the black king can move and capture the attacking white rook thereby removing the check and moving to a safe square.For the second board, although the black king is attacked and cannot capture anything because all the pieces are guarded, the two kings are adjacent which is not allowed. Hence it is not a valid checkmate position.For the third board, it is a stalemate. That is the black king has nowhere to go but it is also not attacked. So no checkmate.For the fourth board, it is checkmate and the black king has nowhere to go. But we haven’t placed both the rooks on the board and hence this is not a valid position.",
+  "sample_input": "Input:8\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8Output:Case 1: 0\r\nCase 2: 0\r\nCase 3: 232\r\nCase 4: 1432\r\nCase 5: 5188\r\nCase 6: 14536\r\nCase 7: 34464\r\nCase 8: 72392",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BATTLECRY",
+  "scraped_at": "2025-08-17 00:33:09",
+  "test_cases": [
+    {
+      "input": "8\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8",
+      "expected_output": "Case 1: 0\r\nCase 2: 0\r\nCase 3: 232\r\nCase 4: 1432\r\nCase 5: 5188\r\nCase 6: 14536\r\nCase 7: 34464\r\nCase 8: 72392",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n5\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n3\n6\n9\n8\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n3\n10\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "20\n46310265\n37635807\n55391365\n2444640\n88234348\n93014300\n95803115\n23128773\n43527817\n29640833\n79611080\n39600441\n85005547\n57689204\n25993015\n24509722\n79628168\n58902790\n27989584\n43492",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n60160214\n33438508\n66625872\n86722292\n5398932\n43633922\n91237539\n75053049\n84733265\n8145586\n70537448\n17449040",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n90283568\n77590404\n92064232\n78883513\n10391724\n86063155\n14940817\n9307798\n56249064\n25210969\n61555147",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n1717043\n47942183\n74788138\n48341433\n98182744\n21325988\n2540426\n97573645\n24446170\n96316700\n62688001\n89740795\n27011082\n73169603\n22084918\n48340019\n9396001\n52655314",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n33878898\n73314001\n77071365\n94210172\n84807157\n62522948",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "38\n27415\n46266\n51695\n7922\n44920\n46888\n87617\n14998\n85415\n97225\n82172\n40286\n78278\n26096\n95993\n81293\n26315\n27656\n28631\n35348\n82524\n49307\n86970\n60553\n77073\n57200\n82292\n17792\n60749\n43344\n21813\n29548\n48930\n43796\n41492\n10011\n54720\n32361",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "62\n56946\n36559\n40631\n60132\n51627\n87252\n59889\n95409\n63823\n60093\n78373\n27907\n37314\n96678\n32430\n21248\n18387\n26004\n85382\n25203\n99708\n38610\n45108\n84884\n47698\n21161\n2035\n58274\n4098\n97243\n26519\n70954\n57768\n94322\n37458\n95116\n73375\n33173\n19718\n23353\n86409\n33697\n55278\n55283\n26282\n47939\n92014\n45489\n50949\n17978\n11941\n49141\n96704\n47786\n22818\n74618\n44247\n55088\n35277\n985\n27069\n50154",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n16463\n27679\n56299\n66027\n12070\n88942\n54249\n87785\n81283\n1612\n96822\n77600\n71859\n44430\n66615\n9947\n61146\n56282\n85210\n14727\n76422\n92898\n63821\n52181\n77721\n87585\n73466\n30772\n11577\n74951\n25357\n94367",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "92\n68686\n48379\n24687\n24183\n85418\n12368\n68174\n18806\n65988\n72734\n16425\n73086\n56893\n32511\n55327\n38014\n72659\n18950\n57621\n13914\n67735\n71673\n50776\n43099\n78862\n27220\n14334\n97386\n13939\n1573\n44736\n24732\n49636\n92303\n35478\n97862\n98945\n24695\n32931\n54368\n44301\n26603\n29411\n1855\n72369\n517\n26781\n58041\n1809\n79535\n86056\n40713\n69508\n30058\n57144\n17223\n28596\n13240\n53892\n44636\n21013\n21989\n21197\n82073\n5203\n14494\n36657\n51343\n98720\n51401\n33890\n47970\n81344\n7237\n94928\n93718\n86797\n9835\n185\n74355\n36026\n70424\n67964\n36839\n6186\n3272\n65832\n59664\n35262\n72353\n79887\n71479",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "101\n95889\n51913\n44273\n5811\n93325\n62562\n87135\n30426\n86271\n94421\n88006\n44972\n69854\n1579\n28095\n69364\n24952\n184\n69591\n21188\n17197\n14080\n31730\n51168\n34474\n77137\n85267\n53533\n74129\n84099\n21319\n81017\n10614\n30517\n8128\n99440\n52923\n9052\n53897\n99697\n87290\n79334\n48383\n15256\n30044\n10072\n39273\n10254\n9918\n32855\n50044\n1056\n77235\n46015\n67744\n67411\n86257\n30214\n49644\n35086\n66349\n66275\n61055\n39543\n39094\n2588\n92148\n44047\n57987\n33887\n13418\n49414\n70792\n93132\n16425\n14492\n61200\n28770\n48855\n99619\n34442\n51097\n4441\n5561\n46694\n26927\n33886\n26945\n31048\n17551\n36215\n13232\n11522\n41536\n38177\n79557\n74819\n811\n73129\n10139\n86209",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "87\n70947\n1281\n89709\n85143\n97354\n60731\n20830\n56609\n89010\n2204\n95975\n29936\n41800\n3764\n20077\n79994\n21318\n12926\n65760\n97524\n41416\n43362\n31255\n67052\n34521\n13398\n56075\n44160\n41508\n27207\n15990\n72694\n74422\n16323\n22255\n29421\n93507\n90519\n39092\n18036\n70794\n1276\n40263\n88951\n46253\n6871\n51708\n21368\n30283\n62177\n37285\n64333\n16095\n30237\n12694\n9914\n62511\n72739\n3934\n92808\n74977\n39559\n27241\n49687\n93346\n99281\n76421\n32855\n73517\n32152\n25981\n47652\n55639\n93064\n31727\n68855\n67007\n90324\n97597\n71482\n78633\n74896\n68551\n11445\n3664\n42349\n93252",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "91\n91701\n18013\n93280\n40398\n35722\n24934\n20215\n68695\n10068\n21299\n18255\n3656\n89470\n84204\n73005\n85573\n66160\n71098\n76603\n31258\n8158\n38358\n63295\n90632\n36294\n96303\n98137\n26300\n32969\n19178\n47864\n63190\n47567\n6170\n23470\n25935\n81317\n43110\n51122\n70931\n71685\n54857\n23938\n21627\n13385\n48034\n59831\n55584\n26267\n34772\n66397\n17740\n55623\n86567\n71559\n91191\n54870\n83547\n77954\n90269\n40773\n91657\n57874\n77069\n11548\n89111\n42141\n4632\n95618\n92178\n66776\n81870\n11932\n63656\n86457\n49374\n35092\n84270\n64114\n11226\n33060\n89309\n30459\n93940\n5735\n98064\n94998\n39889\n31859\n65761\n4811",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "105\n27177345\n98598647\n27763409\n30695778\n27551724\n62768996\n4220859\n51969897\n51192138\n92080037\n56447939\n90905241\n74728032\n50461751\n49990110\n20338660\n2327952\n51097435\n59420766\n75965432\n24357371\n67654170\n29752846\n72319262\n93425703\n78870248\n71964629\n8892621\n86637249\n45119157\n40749029\n9688870\n38175907\n7235101\n68108486\n60350597\n87087490\n38095083\n52786359\n9198488\n30077116\n99565358\n55408055\n78326759\n65408350\n18326306\n4033135\n72621159\n39554026\n339218\n70227927\n46328083\n47907968\n70835182\n11386428\n45231228\n50932347\n43056277\n60280382\n85429597\n89143329\n76214625\n88030841\n96003933\n26660500\n72712970\n21481083\n85510336\n31832198\n80665724\n99714923\n90341640\n75731037\n90635372\n92790210\n1345264\n20682864\n58432307\n53385458\n85595289\n25343485\n85700932\n85899113\n62174135\n72416287\n36991764\n79218453\n86894323\n80197045\n43257845\n33326390\n65867027\n68951928\n59982817\n63163972\n25180423\n51903795\n53571456\n74483384\n44543691\n23233016\n56227726\n73298340\n86908354\n52972215",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "105\n94367030\n4988825\n77718602\n69244007\n30843324\n87542802\n68077803\n66348255\n28480389\n19787371\n79597283\n21744242\n37468089\n2040475\n33686617\n16429068\n42580934\n21717623\n77882561\n68726958\n95377839\n88067016\n58669816\n80068934\n80493919\n74350795\n40496587\n31061010\n94423155\n40572317\n4781627\n76636906\n84295239\n72284150\n14887631\n93778748\n77240381\n24507950\n61784611\n32713403\n29504003\n18599568\n84868372\n98944434\n96412773\n66250812\n33524258\n85596968\n14270494\n71217622\n53282452\n20576436\n68763743\n2615402\n50557544\n25180282\n90677677\n73220062\n63665204\n91906301\n50960981\n67671435\n74617063\n80781854\n32049832\n8636946\n94562600\n44307053\n39996778\n87822655\n88516536\n41646410\n68706634\n21616225\n54046482\n43568724\n11652506\n6523433\n95789297\n25856383\n31707222\n52971997\n65769379\n43577339\n95708054\n15529208\n23328469\n66150954\n83954822\n12770579\n81257525\n85607573\n97568337\n69447478\n36300567\n21637139\n40818252\n71311943\n96071237\n87497688\n43465005\n67541883\n62187724\n13569193\n34842040",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 105)"
+    },
+    {
+      "input": "105\n94538543\n1\n28449910\n1\n91949977\n1\n100000000\n86104417\n16070343\n100000000\n1\n100000000\n100000000\n1\n61724721\n100000000\n78939057\n66784684\n1\n1\n76772303\n1\n100000000\n72784808\n88839393\n91423750\n100000000\n100000000\n1\n100000000\n73182092\n1\n100000000\n100000000\n100000000\n1\n1\n100000000\n100000000\n100000000\n1\n22653599\n34832300\n100000000\n1\n100000000\n89409696\n100000000\n1\n100000000\n1\n100000000\n89957546\n100000000\n100000000\n96912138\n35910428\n100000000\n1\n67001911\n1\n42651647\n1\n100000000\n23390364\n100000000\n1\n100000000\n100000000\n32220720\n9011549\n100000000\n1\n100000000\n60490793\n49621073\n84978280\n100000000\n100000000\n100000000\n63578738\n100000000\n40140600\n100000000\n32383859\n89772391\n51201349\n61335523\n39806274\n1\n16650510\n20524505\n93635878\n1523050\n82851165\n1\n100000000\n47775681\n90728080\n1\n100000000\n100000000\n89781098\n70085809\n48384588",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 105)"
+    },
+    {
+      "input": "105\n14843062\n100000000\n100000000\n1\n16869275\n1\n1\n100000000\n1\n18812968\n1\n1\n1\n100000000\n12231785\n100000000\n1\n100000000\n87691490\n22606944\n1\n100000000\n1\n100000000\n1\n100000000\n100000000\n100000000\n1\n72207825\n100000000\n1\n88184240\n100000000\n1\n34881480\n52014474\n1\n1\n100000000\n79317978\n51193809\n32696249\n1\n88657705\n100000000\n1\n79219370\n1\n88147425\n60828323\n100000000\n100000000\n1\n7082917\n100000000\n95454465\n92364146\n10720202\n76517622\n48201134\n16692726\n5236416\n100000000\n85119854\n75772751\n51660648\n1\n1\n100000000\n1\n1\n2482129\n99768384\n100000000\n100000000\n1\n97614311\n1\n100000000\n8296718\n100000000\n1\n1\n12917559\n100000000\n58231957\n100000000\n100000000\n1\n10817452\n100000000\n100000000\n100000000\n100000000\n100000000\n1\n46979412\n100000000\n100000000\n100000000\n1\n98294663\n43058379\n42149792",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 105)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

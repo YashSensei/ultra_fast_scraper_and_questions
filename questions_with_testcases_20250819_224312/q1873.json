@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "One Good Base Deserves Another",
+  "tags": [],
+  "text": "Basil and Blaise are very interested in manufacturing sodium hydroxide, ammonia, and other bases. They currently work out of an old basement but are itching to establish a new home base at the base of a tall mountain overlooking the bay. They’re meeting with their real estate agent, Bane, to look for a building large enough to house their basic operations. Bane seems like a trustworthy fellow, based on his professional manner and charming smile, but he secretly harbors base intentions. He uses a special bank, Hexcorp, that conducts all of its business in hexadecimal. He is extra careful to make sure all the figures in his contracts use only the digits 0 through 9, even though they are in hexadecimal, in the hopes that his clients will unwittingly agree to his inflated prices so he can keep a hefty share for himself. He has included a notice about his unusual choice of numeric base in the very fine print of his contracts, to protect himself legally and cover all bases.Fortunately, Basil and Blaise always read contracts very carefully before signing them, and the strange notice catches their attention. But they don’t know anything about converting numbers between bases, since before turning to chemistry Basil was a professional baseball player and Blaise was an aspiring bass guitarist, and neither has had much mathematical training. Please help them avoid getting scammed by sending them a program that will allow them to take an integer in one base and convert it into another base. But be careful: Bane has a deep network of spies, and if they intercept your correspondence, Bane may take drastic action. Luckily, his spies don’t understand brainf**k, so you can safely send them anything in that language.Note:You can use any programming language you want, as long as it is brainf**k.InputFor clarity, all integers in this section are given in decimal.The first line contains an integerT(1 ≤T≤ 1000) expressed in decimal. Then followTlines, each containing 3 space-separated integers:B1andB2(2 ≤B1,B2≤ 35) expressed in base36, followed byN(0 ≤N≤ 35^35) expressed in baseB1. For bases greater than 10, only uppercase letters are used.Each line, including the last, is terminated by a single newline (linefeed) character, which has ASCII value 10.OutputTlines containingNexpressed in baseB2. For bases greater than 10, only uppercase letters are allowed.ExampleInput:9\r\nF A 50000\r\nA 2 42\r\n2 A 101010\r\n2 Z 1011011101111011111\r\n7 8 0\r\nZ 7 YWX123ABC\r\nY I ABCDEFG\r\nI Y ABCDEFG\r\nY Y ABCDEFGOutput:253125\r\n101010\r\n42\r\n8QQF\r\n0\r\n22400453332065605\r\n1816CB9F4\r\n7X2J66\r\nABCDEFGAdditional InfoThere are two randomly generated data sets, one withT=1000 and the other withT=500.B1andB2are generated independently, and the average value of either is about 18.5. The average number of digits inNwhen expressed in decimal is about 14.My solution at the time of publication has 678 bytes (not golfed) and runs in 3.71s with 1.8M memory footprint.",
+  "sample_input": "9\r\nF A 50000\r\nA 2 42\r\n2 A 101010\r\n2 Z 1011011101111011111\r\n7 8 0\r\nZ 7 YWX123ABC\r\nY I ABCDEFG\r\nI Y ABCDEFG\r\nY Y ABCDEFG",
+  "sample_output": "253125\r\n101010\r\n42\r\n8QQF\r\n0\r\n22400453332065605\r\n1816CB9F4\r\n7X2J66\r\nABCDEFG",
+  "link": "https://www.spoj.com/problems/BFBASE",
+  "scraped_at": "2025-08-17 00:33:39",
+  "test_cases": [
+    {
+      "input": "9\r\nF A 50000\r\nA 2 42\r\n2 A 101010\r\n2 Z 1011011101111011111\r\n7 8 0\r\nZ 7 YWX123ABC\r\nY I ABCDEFG\r\nI Y ABCDEFG\r\nY Y ABCDEFG",
+      "expected_output": "253125\r\n101010\r\n42\r\n8QQF\r\n0\r\n22400453332065605\r\n1816CB9F4\r\n7X2J66\r\nABCDEFG",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n9\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n8\n4\n3\n6\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "10\n17887256\n82411363\n64024281\n67629717\n33941637\n12166659\n17835685\n33936804\n38885898\n25654266",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n9681978\n66952317\n33746089\n90546024\n5987318\n14879751\n64842387\n8356327\n46006265\n5522304\n50800524\n78254533\n94006360\n26127498\n68204457\n64166640",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n44919483\n31063756\n38370685\n11585257\n62197227\n37367644\n51210827\n7537817\n35509193",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n596592\n24875861\n42815986\n36885345\n24407979\n80526530\n34667716\n78656539\n4327139",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n84940169\n20616176\n55159075\n8499663\n63658089\n76368735",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "28\n74617\n3461\n79672\n19007\n13229\n8628\n29784\n85904\n88992\n28455\n68981\n82459\n14976\n73491\n72628\n91945\n99558\n18316\n63597\n86418\n74752\n30347\n35726\n76465\n98805\n86233\n30949\n16803",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n62497\n32059\n23170\n21145\n44291\n56622\n79130\n1426\n53833\n25025\n86707\n29018\n92787\n29165\n59355\n76895\n24434\n14028\n3342\n63263\n98993\n66283\n86877\n23827\n39576\n21102\n83550\n44049\n38318",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n72985\n52454\n38902\n49436\n9033\n8142\n15376\n28056\n81765\n18482\n60481\n30687\n51953\n61772\n36992\n17292\n9362\n61270\n6214\n93313\n84133\n81574\n91653\n59137\n30607\n22668\n13854\n58092\n81401",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "24\n46748\n5332\n30199\n44014\n1944\n10984\n63903\n66729\n5401\n24784\n14672\n97517\n83794\n84784\n88850\n70254\n64832\n6304\n70784\n16726\n48309\n3571\n89202\n23894",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n65838\n70054\n14170\n93629\n53502\n60816\n76124\n5823\n93384\n68595\n36248\n67323\n38460\n38431\n10063\n99894\n54468\n99351\n26313\n37872\n89190\n3063\n43999",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n21087\n84630\n45129\n74393\n80906\n93693\n2016\n46198\n14005\n27135\n88073\n62096\n27630\n55711\n49503\n56322\n66811\n30217\n3858\n92571\n10881\n29509\n65721\n31123\n20958\n67593\n94045\n51075\n32690\n25468\n4461",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "25\n66620\n41792\n73359\n77825\n37548\n13103\n1328\n62508\n97089\n7461\n41512\n93787\n71369\n84132\n10877\n6086\n85753\n17384\n2419\n19408\n7254\n58414\n20044\n60200\n74055",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "35\n54729015\n73613766\n14421508\n56210579\n43585326\n87047266\n38324944\n56353820\n41123913\n89041740\n51119659\n81262704\n56269698\n64712079\n67345077\n464286\n97154275\n95457910\n6708656\n25322865\n13015482\n75910192\n64241274\n76675756\n75097011\n75822179\n30217099\n91371376\n61010841\n68997383\n11040293\n74756331\n80111445\n44378545\n32482897",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 35)"
+    },
+    {
+      "input": "35\n16147339\n32357467\n53185002\n61614125\n44793890\n43285175\n60552025\n81327231\n55426024\n24591746\n9173369\n7427845\n58401508\n11385244\n82502103\n1965253\n35571176\n64402500\n72754632\n91228944\n9800528\n42499194\n91772276\n32742657\n62779374\n43677849\n66296072\n89674260\n64697378\n26207437\n4254656\n63364063\n71821689\n64194332\n44059060",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 35)"
+    },
+    {
+      "input": "1\n24854312",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

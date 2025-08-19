@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Perfect Cubes",
+  "tags": [],
+  "text": "For hundreds of years Fermat's Last Theorem, which stated simply that\r\nforn> 2 there exist no integersa,b,c> 1 such thatan=bn+cn, has remained elusively unproven. (A recent proof\r\nis believed to be correct, though it is still undergoing scrutiny.)\r\nItispossible, however, to find integers greater than 1 that\r\nsatisfy the \"perfect cube\" equationa3=b3+c3+d3(e.g. a quick calculation will show that the\r\nequation 123= 63+ 83+ 103is indeed true). This problem\r\nrequires that you write a program to find all sets of numbers\r\n{a,b,c,d} which satisfy this equation fora≤ 100.The output should be listed as shown below, one perfect cube per line, \r\nin non-decreasing order of a (i.e. the lines should be sorted by theiravalues). The values ofb,c, anddshould also be listed in non-decreasing order on the line itself.\r\nThere do exist several values ofawhich can be produced from\r\nmultiple distinct sets ofb,c, anddtriples.\r\nIn these cases, the triples with the smallerbvalues should be\r\nlisted first.Note that the programmer will need to be concerned with an efficient\r\nimplementation. The official time limit for this problem is 2\r\nminutes, and it is indeed possible to write a solution to this\r\nproblem which executes in under 2 minutes on a 33 MHz 80386 machine.\r\nDue to the distributed nature of the contest in this region, judges\r\nhave been instructed to make the official time limit at their site the\r\ngreater of 2 minutes or twice the time taken by the judge's solution\r\non the machine being used to judge this problem.The first part of the output is shown here:Cube = 6, Triple = (3,4,5)\r\nCube = 12, Triple = (6,8,10)\r\nCube = 18, Triple = (2,12,16)\r\nCube = 18, Triple = (9,12,15)\r\nCube = 19, Triple = (3,10,18)\r\nCube = 20, Triple = (7,14,17)\r\nCube = 24, Triple = (12,16,20)",
+  "sample_input": "Cube = 6, Triple = (3,4,5)\r\nCube = 12, Triple = (6,8,10)\r\nCube = 18, Triple = (2,12,16)\r\nCube = 18, Triple = (9,12,15)\r\nCube = 19, Triple = (3,10,18)\r\nCube = 20, Triple = (7,14,17)\r\nCube = 24, Triple = (12,16,20)",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CUBES",
+  "scraped_at": "2025-08-17 00:33:22",
+  "test_cases": [
+    {
+      "input": "Cube = 6, Triple = (3,4,5)\r\nCube = 12, Triple = (6,8,10)\r\nCube = 18, Triple = (2,12,16)\r\nCube = 18, Triple = (9,12,15)\r\nCube = 19, Triple = (3,10,18)\r\nCube = 20, Triple = (7,14,17)\r\nCube = 24, Triple = (12,16,20)",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 5 2 10\ndo zf xyrv xg pv v\n6 10 4 6\nh yjdug j pgtun l rs\n6 4 5 2\nbnmny lpchb y pv naue ymfjkpg\n4 8 5 9\nng z esow dql udjw eoaigwf\n4 6 4 5\ngpp j hy mvcw kcel zbkkb\n3 8 3 9\nexppo ecyf t lvsrkq j uxqbi\n4 10 9 9\ngxx a fara tk s hipcxttwzl",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 7 5 3\nfo qjy q lgzb tmu mzv\n4 7 10 1\noeg aja fn ynso mh fojdrj\n7 4 7 10\nsz sd el kjvya wn oqxkhq\n4 1 9 8\nk rmtw plttu jztt g iowqnwyeg\n5 10 4 8\nw nho vf hda kdajn nuprlnbr\n5 4 5 7\nzsx m wmbms fuo jvx gvlhz\n8 4 4 7\ntnr hqp oo ntymn j xyhxux",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 3 10 1\no bo nph offtmc ba txyvv\n3 10 9 10\nlw bd qz hr x guadn\n4 5 10 10\nseq a af swtna bv yjmljkmni\n3 5 4 3\nvzyej ic lkr eiux vy toswtulxt\n9 7 8 8\npi r cvhmj cqkg f ongx\n5 8 8 10\nr xw xfdm qhvhcb qla ehiocjx\n4 7 5 3\nroxnx lqpkm usyl koojcr kyxza uaqytolcyl",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "38 100 4 42\ncczgj v l h hhmur eo\n10 77 83 63\nwkv b rjj dxu knrov ggebux\n99 97 94 74\ncojk wcqkv ed toutea zx fipjqfsu\n76 63 95 25\nike s xxlry hsaa nnulr joyluol\n76 19 58 15\ntb arbsr jxv a k iqoug\n26 25 59 34\nfwa iguht wdnv z w egrtnejwo\n92 44 68 29\nun lck jv jxyzhv guj kbjijzf",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 72 93 43\nlrcm i cemjo vwc k n\n67 17 3 87\na o p v wqqq ivkrcb\n56 91 67 7\nkhgp cq myvml pfrm san dlpfuem\n16 45 89 95\nkddb uwp luy yfbjrp mlux ddflf\n9 22 86 56\ndoa nzbnc sjd hqvw ttjp lmtdyqvh\n75 73 95 34\nofrzs svgu i bo aufdx vavc\n80 68 76 4\ncf hg pqk tims lk othj",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 95 61 32\nv jd uyx yuf driyt yeiokk\n23 31 81 94\na f z oefysi nzhd u\n52 13 19 48\ngcjy vcgs b z bcv qzzl\n73 4 53 10\nw wvvxu ygc szohx dt eyrjr\n7 56 14 96\ndsi hnsk d lyox k ldejbml\n93 37 67 5\ne vhell mb pbt wki qmqdkxssb\n40 83 84 31\nibo oruj iksur h xrxk ebl",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 46 73 1\nmpur ghu f zxni zng obzi\n67 85 78 38\nkada fse w ipohsj j ujwemjbh\n99 94 64 37\nr a a gsa zkft ogpguadk\n96 44 99 90\nuu inmh t tumz t viqz\n96 52 80 58\nvgpx jhum rrhc kphwo dr mwkhej\n4 83 2 32\nenxz gd lk csxua gz wwxezec\n77 64 9 39\nwzs hjlg jq j wzla hwbq",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 64 42 100\navxl dw i fotnq r e\n80 11 14 40\nusyec k uzsv ygw kk qd\n48 39 38 27\nzcbm mins srh st qbjg ymd\n35 28 84 29\nhijf hp cv uf ddo we\n17 90 52 8\nswylo vxhf oz lnurfo oygv wtprn\n36 97 57 10\ngrd oiv vpyn mvx q vyxpfmza\n51 67 93 74\noear mtho zebvd beoo r f",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "114 170 153 218\nmcjom xkr zj svfwoe y vlocjs\n320 174 138 488\nt uw xziyx ivm oby gyhxvaxi\n79 463 325 474\noch fiodk pwvl sbms o ncvbqtvb\n182 129 69 446\nomhno ols hsf iruzh ddgca qzx\n271 256 467 224\nvuq psg z fatod bm xugrc\n399 288 60 309\newlo li idq nqugwx a dqqr\n189 297 281 345\nwyvld zvab zid szbxz ifl jmgm",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "296 129 415 363\nilhuv mhr qffjp oj n njsd\n340 294 325 93\nenfh o ebdji hxw wbh vkijcj\n232 206 328 490\nptwqb xlcdp leg dbmsqf u nnbkwlm\n389 358 195 242\nfovhl dhds in nyoubk le xeaxvewq\n267 354 151 349\nj qhs wzom a ugbvt bcuokkyxi\n451 367 353 133\nljs nddbl dkwef gbfgcr ymkh fkp\n135 249 440 71\nb mjg e awop iyk xvayjs",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "219 271 397 337\nnzx oqth haad fmc im qbgrgi\n470 322 224 300\nt qdhpj dljos wftsu dggml mcnmngm\n323 111 348 197\nk un xzorw eg xiz gsdt\n296 284 127 237\njd c kni fnvpb sbh c\n421 304 386 467\nuznek hatov nmm j y aqafrn\n322 53 437 109\njqrp qokub qzrh vtkib i fvbxwx\n52 139 152 472\nqzv gwa wabun uqvafw wugh lbkoivad",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "494 194 386 158\na rtucs y bt cza oigf\n452 304 478 255\nn yeqeh dqd a foxgh ueiwbwj\n314 170 186 99\negp e vgf btj jbge faessc\n455 256 495 176\nyjh hx cf ihikib jstyk fbzslg\n132 246 394 310\nal hrr b m flfq zsxwuzh\n198 61 287 424\njbam td y h xka t\n189 79 176 456\nbv do xb l ju otvv",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "283 309 334 466\ncg u ppm n jy wzsza\n399 86 496 445\nnoi lu lh fau yylmy qikvq\n251 391 398 187\navcwo xx nyuux uzg sa fii\n349 443 431 152\nzei jcok hhfi pnlnrk fziev au\n399 173 229 416\nxqc bzf y wm hbb xwm\n240 468 339 189\ntzyeo f vuhj pecc ovea nit\n329 250 91 214\nti lmey xu ib az wj",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "175 105 221 452\nmuz nck kwgis nqsmun f ijnpek\n397 114 301 212\nbx vwate whmlf alks h z\n369 206 276 150\nrpjm baajg kys vyb ylwpb wqcao\n496 284 274 358\ntt hern u w a n\n259 485 456 419\nnktb sfl el osmtsn kmbiz hohiuf\n232 346 201 294\nttff aqdv qwfy uhzvjt e wjag\n240 378 246 232\nke mvo dn ueh xcqlm pihpzsfoo",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "220 465 441 430\nw zzypk tiv rovc icjz dch\n401 476 280 321\ngabdo tux lutr nsvb uwp obyj\n168 225 494 222\nzlce mni hjzeb mcm nsk ots\n223 175 311 324\njjcco o gs g pxqm klelcdp\n92 69 297 472\nhy mju penfi qojfl aji psf\n60 358 214 338\nvlld g t oe j nrbaizdy\n293 151 209 93\nb jp xjyyn z soj y",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\nurtq fjw ozi nga ec jo\n1000 1000 1000 1000\ndz qhzo gy l kejb ulw\n1000 1000 1000 1000\nvtva kbt orju gyunw dqyb hygakoxo\n1000 1000 1000 1000\nlmvp ceket pa oac paoeg liwibrbi\n1000 1000 1000 1000\ngpokv stc pexwr m pnwvr cqmteeyk\n1000 1000 1000 1000\nhivla mw ykf oek d mvpi\n1000 1000 1000 1000\njdgzs q jjcs koxf wr eguzoolieo",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\na sgfeu bdmp hzyjw lx zrkyxx\n1000 1000 1000 1000\npv jigc l dvyp yzis dnpnhss\n1000 1000 1000 1000\naeclw a zpsk yrd jdnvf qkcthegxi\n1000 1000 1000 1000\nqn gwe a aktm oleq iuml\n1000 1000 1000 1000\nrga xgc dve pwu j mub\n1000 1000 1000 1000\nqrhsv cdt ovwzq tfubm j lmrpqn\n1000 1000 1000 1000\naw ib t of rheyv zhaghgd",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 1 1\niiqb la ursd ok iabjf pdb\n2 1000 1 1\nsln pvfid xfgkh fv ys j\n999 999 1000 999\nszu brzis xb xex wbxa zjwafonfy\n999 1 1 1\nl vtz bn p ovz ytj\n2 1000 2 1000\ngkbbb qc d na xdu f\n999 1000 1000 999\nr j ls jd olj rsckv\n999 999 999 1000\nhh dq wejsz axhkro kkw jksexfsrb",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1 999 1\nam ennah eh xks bhl pfjepw\n1000 2 1 2\na sw a yhbswh jbx cvagxj\n999 999 1 1\nzsruw rcnxz fejd seefzl xatqk lrr\n2 1 999 999\nsvkd v d lokqo zpct z\n999 1000 2 999\nfq c hqdv wgz k nabwlwmdg\n1000 2 1 1000\nqfcjq otw t v quc wim\n1 1 999 999\narpm pckk w pbv oma pdo",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

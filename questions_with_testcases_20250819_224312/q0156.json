@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Linear Equation Solver",
+  "tags": [],
+  "text": "Given a system of linear equations, print the solution of that system.InputInput starts with a positive integer t < 100 in a single line, then t test cases follow. Every test case represents a linear system and starts with one line containing a positive integer n < 21, the number of equations and also the number  of variables of that system. Then n equations follow, each one in a single line.An equation is written in schoolbook notation, i.e. variables noted by single small letters (English alphabet), no multiplication sign, factor 1 left out, no spaces in between.  A variable or a value may occur zero or more times in an equation. All coefficients are integers with an absolute value less than 100, a single line won't be longer than 100 characters and will always contain a valid linear equation.The following equations are considered to bevalid:a+b-c+b-2c-a=1       -x+5-9=-4x+y-8       c-c+t+1=0       y=zThe following equations are considered to beinvalid:4*a+b=6       6+-2x=99       c-c+t-t=0       4+9 = hOutputFor each test case print all variables of the linear system in alphabetical order together with the associated value  as an integer or a fraction in lowest terms respectively. Print a blank line between test cases.  For exact notation see example below. All (interim) results will fit into 64-bit,  if algorithm is implemented properly. You can assume that all linear systems have an unique solution.ExampleInput:2\r\n2\r\na+b=5\r\nb-a=1\r\n3\r\n5u-5z+4=0\r\n8k-3z=-2\r\n9k-u=uOutput:a=2\r\nb=3\r\n\r\nk=-4/55\r\nu=-18/55\r\nz=26/55",
+  "sample_input": "Input:2\r\n2\r\na+b=5\r\nb-a=1\r\n3\r\n5u-5z+4=0\r\n8k-3z=-2\r\n9k-u=uOutput:a=2\r\nb=3\r\n\r\nk=-4/55\r\nu=-18/55\r\nz=26/55",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/LINQSOLV",
+  "scraped_at": "2025-08-17 00:33:12",
+  "test_cases": [
+    {
+      "input": "2\r\n2\r\na+b=5\r\nb-a=1\r\n3\r\n5u-5z+4=0\r\n8k-3z=-2\r\n9k-u=u",
+      "expected_output": "a=2\r\nb=3\r\n\r\nk=-4/55\r\nu=-18/55\r\nz=26/55",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n4\n2\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n1\n4\n10\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n8\n8\n5\n4\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "18\n87992111\n28888058\n65718829\n97236619\n38002617\n63906406\n14581403\n52891438\n80673784\n79719927\n35623577\n35073674\n68487006\n18975900\n48495887\n5488175\n12219314\n77152673",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n84139209\n82662191\n67560367\n9362406\n99246310\n13973570\n27373775\n7220461\n65816474\n96808536\n87068694\n60842443\n77818366\n26959104\n9593767",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n15614175\n75913544\n22390354\n55322724\n91521367\n29211649\n24157235\n69146615\n78410938\n75817713\n27671835\n68900197",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n19190682\n79522311\n65473401\n11544794\n21385305\n77221478\n14516442\n9144964\n43321482\n10156774\n50462738\n35777096\n70431507\n22161982\n42044294\n32315827",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n60322020\n65470734\n44408069\n11801913\n49874635\n31293739",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n64904\n83548\n39400\n98210\n23133\n67575\n87752\n44444\n79060\n5027\n84558\n86510\n30002\n85212\n51001\n11362\n41596\n24976\n80169\n22734",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n46731\n37546\n51406\n91873\n65480\n25570\n45495\n12731\n31756\n45922\n37344\n46784\n31363\n85209\n35262\n61836\n74952\n22667\n15043\n23192\n74502",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n62985\n68128\n3036\n28142\n69384\n75385\n15003\n51385\n67654\n58958\n85836\n82969\n60935\n5226\n62955\n56904\n1260\n20282\n85673\n63246",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n3932\n55469\n70369\n44582\n41480\n61210\n81893\n91175\n37056\n74697\n66567\n97622\n10852\n57586\n40354\n30932\n96139\n92231\n44160\n96139",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n50152\n37177\n10397\n80257\n94166\n46753\n15656\n80780\n76951\n21626\n14801\n15120\n55079\n56003\n98376\n75180\n47648\n94794\n95265\n36267\n56426",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n38908\n65643\n15004\n63421\n8368\n34443\n55611\n32723\n50395\n93769\n10004\n97277\n77267\n557\n45638\n33123\n26079\n59322\n22350\n29890\n86831",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n76250\n46497\n9617\n8238\n73311\n10939\n71265\n44052\n43163\n71212\n74250\n67102\n69096\n51656\n78859\n58934\n74927\n44231\n2328\n58480\n76952",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n5503086\n16959138\n80563426\n78120738\n30243191\n31547873\n44773143\n49253889\n63471742\n35006241\n14725910\n26177699\n96326349\n89857621\n72338654\n38103000\n67401087\n77875454\n46613338\n17088926\n78566365",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 21)"
+    },
+    {
+      "input": "21\n23247088\n38652666\n10847231\n83828295\n5599028\n55204374\n80719212\n8274353\n93503669\n20851663\n57561782\n94716150\n10377398\n85562045\n81205762\n45892671\n58756002\n45414741\n80207149\n69422075\n19342792",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 21)"
+    },
+    {
+      "input": "21\n100000000\n100000000\n100000000\n1\n1\n1\n76280275\n88183653\n33345708\n100000000\n1\n91837907\n1\n1\n43737679\n42985193\n96221318\n100000000\n55044188\n100000000\n3289599",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 21)"
+    },
+    {
+      "input": "2\n100000000\n64661283",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

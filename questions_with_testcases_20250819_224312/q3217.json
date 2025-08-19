@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Graph",
+  "tags": [],
+  "text": "Given an undirected graph withnnodes andmweighted edges, every node having one of two colors - black (denoted as 0) and white (denoted as 1). You are to performqoperations of two kinds:Cx: Change thex-th node´s color. A black node should be changed into a white node, and vice versa.QA B: Find the sum of weight of edges whose two end points of color A and B. A and B can be either 0 or 1.InputThe first line contains two integersn(1 ≤n≤ 105) andm(1 ≤m≤ 105) specified above.The second line containsnintegers, thei-th of which represents the color of thei-th node, 0 for black and 1 for white.The followingmlines represent edges. Each line has three integer u, v and w (1 ≤ u, v ≤ n, u ≠ v), indicating there is an edge of weight w between u and v. w fits into 32-bit signed integer.The next line contains only one integerq(1 ≤q≤ 105), the number of operations.The followingqlines - operations mentioned above. See samples for detailed format.OutputFor eachQquery, print one line containing the desired answer. See samples for detailed format.ExampleInput:4 3\r\n0 0 0 0\r\n1 2 1\r\n2 3 2\r\n3 4 3\r\n4\r\nQ 0 0\r\nC 2\r\nQ 0 0\r\nQ 0 1Output:6\r\n3\r\n3Input:4 3\r\n0 1 0 0\r\n1 2 1\r\n2 3 2\r\n3 4 3\r\n4\r\nQ 0 0\r\nC 3\r\nQ 0 0\r\nQ 0 1Output:3\r\n0\r\n4This problem has a somewhat strict source limit and time limit.",
+  "sample_input": "Input:4 3\r\n0 0 0 0\r\n1 2 1\r\n2 3 2\r\n3 4 3\r\n4\r\nQ 0 0\r\nC 2\r\nQ 0 0\r\nQ 0 1Output:6\r\n3\r\n3",
+  "sample_output": "Input:4 3\r\n0 1 0 0\r\n1 2 1\r\n2 3 2\r\n3 4 3\r\n4\r\nQ 0 0\r\nC 3\r\nQ 0 0\r\nQ 0 1Output:3\r\n0\r\n4",
+  "link": "https://www.spoj.com/problems/GRAPH2",
+  "scraped_at": "2025-08-17 00:34:19",
+  "test_cases": [
+    {
+      "input": "4 3\r\n0 0 0 0\r\n1 2 1\r\n2 3 2\r\n3 4 3\r\n4\r\nQ 0 0\r\nC 2\r\nQ 0 0\r\nQ 0 1",
+      "expected_output": "6\r\n3\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 3\r\n0 1 0 0\r\n1 2 1\r\n2 3 2\r\n3 4 3\r\n4\r\nQ 0 0\r\nC 3\r\nQ 0 0\r\nQ 0 1",
+      "expected_output": "3\r\n0\r\n4",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "8 7\n7 5 4 8\n1 5 1\n4 7 3\n1 10 9\n7\n1 2\nxon 9 5\n3\ntq 2\n8 7\nw 9 8\n4 10\nfp 1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 4\n7 6 5 3\n5 5 8\n6 8 7\n3 4 10\n1\n6 3\ncpu 6 3\n1\naru 2\n5 8\nza 10 4\n5 3\np 8 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 4\n7 6 2 5\n10 8 5\n3 2 3\n3 1 3\n3\n8 10\nrf 4 6\n9\nzomfg 3\n10 1\npo 10 4\n6 3\nbllk 9 2",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "64 28\n38 83 98 19\n44 65 16\n67 26 36\n79 50 51\n55\n91 41\nqbsd 75 80\n49\nltxx 34\n47 89\ns 64 4\n61 64\nve 97 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 23\n32 6 17 6\n25 7 84\n88 31 72\n11 54 77\n63\n35 100\nrd 24 60\n10\nxixg 98\n38 63\nfnv 42 84\n29 77\nszsf 54 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 67\n46 34 86 59\n44 73 15\n25 73 30\n61 93 50\n74\n89 43\ngftp 50 73\n100\ntrbal 82\n86 42\nr 100 34\n30 81\nsoqmp 16 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 52\n93 86 74 7\n28 90 100\n35 55 11\n18 11 34\n31\n30 47\nwer 75 39\n71\nk 33\n17 19\nhjjmc 51 56\n83 79\nt 37 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 2\n39 3 81 36\n3 2 100\n17 51 30\n88 86 49\n89\n13 48\nfinn 2 11\n98\nyxr 20\n13 20\nty 59 95\n5 69\npkelc 47 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 11\n40 40 47 32\n7 37 5\n7 49 7\n24 49 21\n9\n34 35\nrc 37 29\n37\nzwa 6\n44 43\njgo 48 44\n42 8\no 11 52",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 15\n29 52 11 34\n30 41 25\n50 30 29\n41 15 50\n39\n40 6\nlzq 43 33\n50\nha 13\n33 50\ncehtm 40 36\n22 11\nj 41 32",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "40 32\n19 16 22 12\n19 37 39\n6 52 14\n52 15 43\n51\n25 26\nnasup 34 22\n8\nmbgf 19\n26 37\nrbqu 7 45\n20 7\ngeyez 7 43",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "32 30\n22 37 13 6\n34 39 9\n48 31 52\n21 11 9\n6\n26 9\nkxfdd 6 6\n8\nx 51\n15 19\nl 26 45\n7 33\nwlr 14 8",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "33 52\n29 44 43 46\n48 12 28\n47 30 52\n6 36 31\n48\n28 26\nsc 12 12\n17\ngi 7\n50 25\nbikl 30 12\n39 36\ntp 12 29",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "36 28\n29 49 36 24\n14 36 47\n18 9 18\n15 12 23\n11\n48 13\ni 36 43\n46\nrpxv 35\n31 48\njbtrr 8 9\n26 18\nl 9 14",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 47\n33 7 36 24\n6 52 31\n26 16 49\n42 14 44\n48\n44 45\nyad 12 40\n37\ntywa 42\n21 16\nhlckj 45 27\n11 11\nuj 32 21",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105\n105 105 105 105\n105 105 105\n105 105 105\n105 105 105\n105\n105 105\nk 105 105\n105\nbs 105\n105 105\nqbj 105 105\n105 105\nxz 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105\n105 105 105 105\n105 105 105\n105 105 105\n105 105 105\n105\n105 105\nfrz 105 105\n105\nzsjf 105\n105 105\nmrwd 105 105\n105 105\nbs 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "104 1\n105 105 1 1\n1 1 2\n104 104 1\n2 1 104\n105\n104 1\najfx 105 104\n1\nft 105\n1 1\nxpr 1 2\n2 104\naodz 105 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Separate Points",
+  "tags": [],
+  "text": "Numbers of black and white points are placed on a plane. Let’s imagine that a straight line of inﬁnite length is drawn on the plane. When the line does not meet any of the points, the line divides these points into two groups. If the division by such a line results in one group consisting only of black points and the other consisting only of white points, we say that the line “separates black and white points”.Let’s see examples in the figure below. In the leftmost example, you can easily ﬁnd that the black and white points can be perfectly separated by the dashed line according to their colors. In the remaining three examples, there exists no such straight line that gives such a separation.In this problem, given a set of points with their colors and positions, you are requested to decide whether there exists a straight line that separates black and white points.InputThe input is a sequence of datasets, each of which is formatted as follows.n mx1y1...xnynxn+1yn+1...xn+myn+mThe ﬁrst line contains two positive integers separated by a single space;nis the number of black points, andmis the number of white points. They are less than or equal to 100. Thenn+mlines representing the coordinates of points follow. Each line contains two integers xiand yiseparated by a space, where (xi, yi) represents the x-coordinate and the y-coordinate of the i-th point. The color of the i-th point is black for1 ≤ i ≤ n, and is white forn + 1 ≤ i ≤ n + m. All the points have integral x- and y-coordinate values between 0 and 10000 inclusive. You can also assume that no two points have the same position.The end of the input is indicated by a line containing two zeros separated by a space.OutputFor each dataset, output “YES” if there exists a line satisfying the condition. If not, output “NO”. In either case, print it in one line for each input dataset.ExampleInput:3 3100 700200 200600 600500 100500 300800 5003 3100 300400 600400 100600 400500 900300 3003 4300 300500 300400 600100 100200 900500 900800 1001 2300 300100 100500 5001 1100 100\r\n200 1002 20 0500 7001000 14001500 21002 20 01000 10001000 00 10003 30 1004999 10210000 1035001 10210000 1020 1013 3100 100200 100100 2000 0400 00 4003 32813 16402583 28922967 1916541 35629298 36867443 79210 0Output:YESNONONOYESYESNONONOYES",
+  "sample_input": "Input:3 3100 700200 200600 600500 100500 300800 5003 3100 300400 600400 100600 400500 900300 3003 4300 300500 300400 600100 100200 900500 900800 1001 2300 300100 100500 5001 1100 100\r\n200 1002 20 0500 7001000 14001500 21002 20 01000 10001000 00 10003 30 1004999 10210000 1035001 10210000 1020 1013 3100 100200 100100 2000 0400 00 4003 32813 16402583 28922967 1916541 35629298 36867443 79210 0Output:YESNONONOYESYESNONONOYES",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SPOINTS",
+  "scraped_at": "2025-08-17 00:33:16",
+  "test_cases": [
+    {
+      "input": "3 3100 700200 200600 600500 100500 300800 5003 3100 300400 600400 100600 400500 900300 3003 4300 300500 300400 600100 100200 900500 900800 1001 2300 300100 100500 5001 1100 100\r\n200 1002 20 0500 7001000 14001500 21002 20 01000 10001000 00 10003 30 1004999 10210000 1035001 10210000 1020 1013 3100 100200 100100 2000 0400 00 4003 32813 16402583 28922967 1916541 35629298 36867443 79210 0",
+      "expected_output": "YESNONONOYESYESNONONOYES",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 10 4 6 3 6 8 2 10 8 9 8 7 1 9 7 1 9 5 9 8 7 6 1 7 4 6 5 8\n7 9 6 2 2 3 5 7 4 10 5 9 4 2 9 8 4 1 6 1 7 3 5 7 4 2 9 9 4 10 2 1 6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8 7 10 5 10 7 3 3 9 7 7 9 5 4 7 5 8 7 3 10 6 10 8 2 5 3 8 6\n2 6 2 3 5 1 3 6 4 6 10 9 8 9 10 4 10 8 10 9 1 2 3 2 9 10 10 8 7 4 10 10 6 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 9 9 9 8 1 3 7 2 6 5 4 10 8 1 4 10 10 7 4 6 6 1 6 10 9 3 5 2\n7 7 4 6 10 10 5 2 6 4 7 6 1 10 1 10 9 5 1 10 2 8 2 3 1 5 6 1 9 5 10 4 3 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "97 67 1 12 78 43 53 90 36 80 84 3 78 95 2 32 15 3 71 51 2 35 45 83 15 69 89 71 38\n9 51 25 49 19 61 77 52 92 46 13 3 94 72 82 26 73 92 38 85 8 73 75 63 46 91 88 59 94 86 90 46 92 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 3 31 19 38 82 81 20 15 22 99 17 57 85 4 98 88 10 33 55 51 42 6 55 100 98 36 23 27\n80 75 22 74 77 6 36 64 88 79 80 59 19 32 51 11 51 90 10 57 28 90 30 32 17 32 26 71 84 57 15 78 71 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 79 45 73 40 62 28 15 82 82 27 62 64 20 71 19 43 88 48 41 54 90 35 98 10 49 38 8 6\n1 51 97 39 63 62 36 20 14 49 55 74 90 12 8 99 80 65 68 45 6 27 27 1 88 10 62 3 85 31 63 75 64 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 53 33 75 59 44 13 41 70 56 78 60 51 14 55 83 66 81 82 40 80 78 87 44 58 60 41 22 99\n97 76 20 40 61 2 32 5 76 48 7 59 8 58 55 73 9 96 41 67 82 22 21 55 26 69 41 67 69 100 86 8 61 74",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 20 55 24 71 62 3 74 45 44 27 88 57 57 100 7 95 41 25 82 73 90 37 8 18 16 10 4 58\n79 67 50 68 72 45 99 77 17 42 32 88 23 32 76 38 88 93 93 81 29 83 26 93 48 93 74 18 82 63 90 44 91 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "360 87 117 335 216 193 148 71 464 353 493 138 252 281 204 291 233 266 140 178 389 274 401 376 53 53 220 253 143\n395 286 95 342 311 244 336 71 300 295 339 423 343 167 125 179 449 456 144 463 407 119 350 216 314 427 120 285 206 99 303 167 229 451",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "168 126 452 429 447 199 351 421 184 338 264 442 120 263 487 182 385 297 348 92 283 124 414 280 261 351 330 433 209\n286 201 159 267 378 194 316 267 141 305 226 189 305 52 181 218 290 289 167 114 162 484 412 404 207 277 383 212 492 67 436 442 463 249",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "414 120 329 203 85 489 149 200 99 107 73 185 325 360 376 302 242 415 415 468 360 428 459 52 363 169 427 426 267\n152 205 220 272 359 117 104 378 328 271 194 460 363 59 347 441 266 199 398 231 403 83 326 111 364 433 297 479 70 422 315 287 114 383",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "324 205 189 296 106 492 475 178 256 446 118 113 79 307 307 174 356 380 119 460 273 344 404 424 359 136 277 80 211\n258 172 407 214 70 176 494 307 489 463 146 237 209 78 307 94 128 490 82 328 336 318 340 406 275 258 401 76 469 467 169 125 319 251",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "410 206 307 370 227 96 88 200 306 214 462 355 307 448 348 171 359 274 271 478 220 324 162 477 172 416 74 138 55\n288 79 411 201 388 396 433 136 428 228 440 73 292 87 472 153 445 306 323 125 380 233 361 452 448 165 488 290 445 459 175 148 362 233",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "235 413 463 373 448 170 182 183 271 114 429 392 138 140 208 320 333 467 420 376 459 126 389 260 404 366 427 214 253\n173 196 396 153 496 455 397 210 250 232 56 201 417 209 313 382 347 93 68 171 312 360 126 262 203 196 317 367 296 382 76 78 240 127",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "342 114 305 71 79 195 143 50 296 102 333 379 100 166 283 380 173 476 141 56 418 100 289 372 145 107 169 345 396\n458 68 296 427 329 231 275 173 287 369 162 383 159 486 459 457 223 369 428 272 271 456 219 229 93 483 275 477 384 327 389 275 478 390",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 999 999 1000 999 1000 999 2 1 999 1000 999 2 2 2 999 2 1000 1000 1000 999 2 2 2 1 1 2 2 1\n2 1000 2 1000 2 999 999 2 1 2 1000 2 999 999 1 1000 1 2 1000 2 2 999 2 1000 1 2 999 999 1 1000 2 1000 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2 2 1 999 1 1000 2 999 999 1000 1000 1000 1 2 1 1000 1000 2 999 999 1000 999 1 1 2 1 1 999\n2 1000 999 999 1 999 2 999 999 2 1 2 999 999 1 2 1 999 1 1000 2 1000 999 999 999 1 2 2 999 999 999 2 1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

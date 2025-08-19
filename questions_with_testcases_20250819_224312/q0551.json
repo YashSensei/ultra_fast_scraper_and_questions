@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Street",
+  "tags": [],
+  "text": "There arenlots on one side of a street (wheren≤ 500). We would like to erect at mostkapartment buildings on these lots. Each building must occupy an interval of at mosttconsecutive lots. Moreover, each lotihas a height restrictionr[i](wherer[i]≤ 100). A building cannot exceed any of the height restriction of any lot on which it is built (that is, the maximal height of the building that can be erected on lotitojis:H = min{r[i], r[i + 1], ..., r[j]})Hence, the maximum usable facade space of the building is:H × (j − i + 1). We would like to have a program to select at mostknon-overlapping intervals to erect the buildings such that the total usable facade space is maximized.Example 1Consider a street of length 10. The height restriction of each lot is as follows:7, 3, 12, 11, 13, 4, 8, 6, 6, 20Suppose we would like to erect at mostk= 2 buildings and each building occupies at mostt= 4 lots. Then, to maximize the total usable facade space, we choose two intervalsr[3..5] = (12, 11, 13) andr[7..10] = (8, 6, 6, 20) (see “Example 1” in the figure below). The maximum usable facade space is 3 ∗ min{12, 11, 13} + 4 ∗ min{8, 6, 6, 20} = 57.Example 2Suppose we would like to erect at mostk= 3 buildings on the same street with the same height restrictions as in Example 1, and each building occupies at mostt= 4 lots. Then, to maximize the total usable facade space, we choose three intervalsr[3..5] = (12, 11, 13),r[7..9] = (8, 6, 6) andr[10..10] = (20) (see “Example 2” in the figure above). The maximum usable facade space is 3 ∗ min{12, 11, 13} + 3 ∗ min{8, 6, 6} + 1 ∗ 20 = 71.InputThe input file is as follows: The first line contains three integersn,k, andtseparated by a space character, where 1 ≤n≤ 500, 1 ≤k≤ n, and 1 ≤t≤ n. The rest of thenlines containnpositive integers representing the height restriction for thenlots. For Example 1, the input file looks like:10 2 4\r\n7\r\n3\r\n12\r\n11\r\n13\r\n4\r\n8\r\n6\r\n6\r\n20The input should be read from the standard input, and your program will be run several times, each one with one of the test cases.OutputThe output file contains an integer which is the maximum usable facade space. For the above example, the output file looks like:57National Olympiad in Informatics (NOI) - 2007",
+  "sample_input": "7, 3, 12, 11, 13, 4, 8, 6, 6, 20",
+  "sample_output": "10 2 4\r\n7\r\n3\r\n12\r\n11\r\n13\r\n4\r\n8\r\n6\r\n6\r\n20",
+  "link": "https://www.spoj.com/problems/STREET",
+  "scraped_at": "2025-08-17 00:33:05",
+  "test_cases": [
+    {
+      "input": "7, 3, 12, 11, 13, 4, 8, 6, 6, 20",
+      "expected_output": "10 2 4\r\n7\r\n3\r\n12\r\n11\r\n13\r\n4\r\n8\r\n6\r\n6\r\n20",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 4 1 4 7 7 4 6 9 10\ncay qsyh qxgrh ibsgl f tib zqu nwu bbjoq 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7 2 10 7 10 5 5 9 6\nn lrq dibx kdnhx d uz pypzp fl nhbhu 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7 2 6 6 8 2 5 6 9\nj knxlj fqni qw qcvf ecze ajjr ywwe hmfhb 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "93 73 52 30 10 40 77 42 53 45\nq mvnxe htq hslxd xzits lzmx xrn gxiqe nr 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 68 96 58 50 3 54 20 67 84\nyxfl dupz aq ehetx vpxcw qrz taai nljht jg 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 97 20 99 71 47 98 27 91 34\nr u mgs vowz ydd ugfqq ypz dsjhl bo 89",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 71 21 37 53 55 69 40 50 38\ntm gsamw cdq nm ipz r ydcj th bav 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 84 46 65 71 5 68 66 13 72\nhs obcoi hckq v mq y cczkk j nyp 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 229 157 163 124 132 69 81 177 57\nxqs k c tdc oh xn im v ofkai 180",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "66 86 72 197 64 225 143 93 171 207\njwi kas knl rzb ntivn mztj isjs g nb 240",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "93 48 61 111 130 183 236 43 186 61\nj vuhy pjx jhnyk rgc kk ozr yn a 194",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "231 155 120 153 38 126 233 242 96 155\niprel akv xsiw am c vqoz mddg bgvj pzbl 108",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "187 203 239 119 136 35 31 188 64 94\nezl eyldh rk dqbc euum riogo trjul o yh 156",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "64 27 90 167 160 46 126 71 175 211\nci fa dtw ry cfxhe fin ddag ay zrav 185",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "92 70 217 209 192 51 201 46 200 104\nlzat rox jkfq wk fzrg kogwr oekud ev b 118",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "500 500 500 500 500 500 500 500 500 500\nfawem qrs pvg ttj o z ceufn bfn wgsa 500",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500 500 500 500 500 500 500 500 500 500\nqk wyv netj kpm ra zjl zh dxpq mr 500",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "499 2 500 1 500 1 500 2 1 499\nd cl jwzn y cnm e xs jc jbe 500",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "500 2 499 1 500 500 499 2 499 500\noxmr jdo odkhc an jexqh eux hdcf wxr e 499",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Submatrix Sum of a Sparse Matrix",
+  "tags": [],
+  "text": "You are given a sparse matrix of dimensions N × M. There K cells in the matrix {(x1, y1), (x2, y2) ... (xK, yK)} with non-zero values {v1, v2 ... vK}. All the other cells except these K cells contain value = 0. You are asked Q queries of the form sx sy fx fy, you need to print the sum of submatrix bounded by (sx, sy) and (fx, fy).InputFirst line contains two space separated integers N, M. (1 ≤ N, M ≤109)Second line contains the integer K (1 ≤ K ≤ 105)Next K lines contain three space separated integers xi, yi, vi. (1 ≤ xi ≤ N, 1 ≤ yi ≤ M, 1 ≤ vi ≤ 109).Next line contains Q. (1 ≤ Q ≤ 105)Next Q lines contain four space separated integers sx, sy, fx, fy. (1 ≤ sx ≤ fx ≤ N, 1 ≤ sy ≤ fy ≤ M).OutputFor each query, print a single integer representing the sum of submatrix.ExampleInput:10 10 \r\n2\r\n1 1 5\r\n2 2 15\r\n1\r\n1 1 3 3Output:20",
+  "sample_input": "Input:10 10 \r\n2\r\n1 1 5\r\n2 2 15\r\n1\r\n1 1 3 3Output:20",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BUZZ95",
+  "scraped_at": "2025-08-17 00:34:15",
+  "test_cases": [
+    {
+      "input": "10 10 \r\n2\r\n1 1 5\r\n2 2 15\r\n1\r\n1 1 3 3",
+      "expected_output": "20",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 2\n8\n1 2 4\n10 5 2\n8\n1 7 6 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4\n3\n5 1 10\n7 2 7\n3\n3 7 6 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 2\n8\n4 4 4\n5 3 6\n10\n4 6 7 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "85 92\n49\n63 59 10\n98 52 88\n19\n89 64 6 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 64\n92\n91 46 20\n67 59 1\n55\n7 38 40 64",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 56\n74\n28 76 29\n85 77 72\n22\n49 53 92 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 51\n98\n56 15 45\n19 71 72\n31\n83 13 44 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 63\n6\n86 79 19\n29 19 29\n99\n54 45 46 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "392 307\n299\n142 125 106\n205 220 202\n443\n414 326 77 209",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "112 72\n461\n251 222 189\n148 397 325\n258\n330 168 368 90",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "136 405\n457\n116 398 242\n100 96 322\n180\n158 128 370 404",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "415 363\n152\n269 132 419\n324 236 428\n212\n111 191 380 342",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "313 222\n143\n159 388 111\n359 413 203\n420\n102 281 74 259",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "236 500\n411\n159 154 399\n363 278 495\n446\n451 487 253 266",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "408 128\n205\n328 375 87\n460 235 450\n302\n373 451 233 440",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000 1000\n1000 1000 1000\n1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000 1000\n1000 1000 1000\n1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999\n999\n1000 2 1\n999 999 2\n2\n1000 2 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000\n999\n1 999 999\n2 2 2\n999\n2 1 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

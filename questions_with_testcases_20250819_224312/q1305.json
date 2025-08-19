@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Check Ramsey",
+  "tags": [],
+  "text": "From Ramsey theorem we know that for everyk, lpair there exists an integer:R(k, l) for that ifn ≥ R(k, l), then if you color the edges of a complete graph onnvertices with red and blue then it contains a complete subgraph onkvertices whose edges are blue or a complete subgraph onlvertices whose edges are red. To get an impression of the theorem you have to count the number of complete subgraphs havingknodes with blue edges -K(k) and the number of complete subgraphs havinglnodes with red edges -K(l) for each edge coloring.To make the problem somewhat easier (or harder?) for each test the probability that an edge is red (or blue) is close to 1/2. This means that onnvertices you will see aboutn(n-1)/4 red edges.InputThe first line contains the number of test casesT, whereT≤ 100. After it there is a blank line and also after every test. Each test starts with four integersn,k,l,ein this order, where 3 ≤k≤l≤n< 100, hereeis the number of red edges (we are not interested in very large monochromatic complete subgraphs, so you can assume thatk,l≤ 10 is also true). Then followelines, each of them gives two integers:x,y, it means that there is a red edge between points 0 ≤x,y<n. All other edges are blue.OutputFor each test print the case number then the count of blueK(k) and redK(l) for the edge coloring.ExampleInput:35 3 3 50 11 22 33 44 06 3 3 60 11 22 33 44 55 08 3 4 70 10 20 30 41 21 32 3Output:Case #1:The number of blue K(3) is 0 and the number of red K(3) is 0.Case #2:The number of blue K(3) is 2 and the number of red K(3) is 0.Case #3:The number of blue K(3) is 25 and the number of red K(4) is 1.",
+  "sample_input": "Input:35 3 3 50 11 22 33 44 06 3 3 60 11 22 33 44 55 08 3 4 70 10 20 30 41 21 32 3Output:Case #1:The number of blue K(3) is 0 and the number of red K(3) is 0.Case #2:The number of blue K(3) is 2 and the number of red K(3) is 0.Case #3:The number of blue K(3) is 25 and the number of red K(4) is 1.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HS10RMSY",
+  "scraped_at": "2025-08-17 00:33:30",
+  "test_cases": [
+    {
+      "input": "35 3 3 50 11 22 33 44 06 3 3 60 11 22 33 44 55 08 3 4 70 10 20 30 41 21 32 3",
+      "expected_output": "Case #1:The number of blue K(3) is 0 and the number of red K(3) is 0.Case #2:The number of blue K(3) is 2 and the number of red K(3) is 0.Case #3:The number of blue K(3) is 25 and the number of red K(4) is 1.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 7 6 6 4 6 8 3 9 8 8 5 6 6 9 1 1 1 1 1 6 9 1 9 4 10 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8 4 7 1 2 10 3 1 6 3 1 4 8 6 2 4 5 9 4 3 8 5 1 10 3 6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 10 6 4 10 6 5 2 3 5 2 5 2 6 5 5 1 5 7 4 5 6 10 4 3 10 7 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "78 39 28 67 57 78 17 6 55 99 76 23 56 16 99 31 64 11 94 21 35 78 26 5 67 86 74 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 72 79 44 28 74 21 36 62 40 45 76 89 24 48 80 29 54 69 56 9 22 38 93 36 80 17 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "81 45 21 82 28 56 95 14 82 6 26 60 54 56 66 25 41 4 29 84 77 12 25 23 30 47 83 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 64 62 9 73 12 69 10 52 60 52 74 30 74 87 41 31 19 7 99 32 88 74 49 53 70 60 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 95 19 82 18 10 30 3 8 58 8 60 84 55 2 38 95 63 27 54 41 95 76 7 92 21 17 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 13 12 37 46 24 27 45 19 34 36 15 36 18 49 5 38 9 44 28 41 33 16 22 40 11 7 37",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 16 36 30 36 16 14 44 29 43 46 19 7 23 35 16 45 23 18 9 26 43 49 33 15 10 46 15",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "20 44 37 11 44 34 49 29 38 20 22 21 38 19 10 45 15 48 14 41 36 24 45 10 38 34 16 9",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11 21 28 12 30 15 39 41 46 46 48 17 29 50 20 29 34 9 29 36 41 12 39 44 41 42 38 20",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 15 44 41 49 31 28 48 13 13 31 19 11 23 31 39 5 19 50 45 38 20 27 34 12 42 22 30",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "38 5 24 5 37 6 43 25 20 36 15 8 41 32 37 40 7 43 25 37 14 29 7 22 37 12 21 28",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "49 43 34 11 9 22 9 6 37 9 8 19 30 6 39 9 31 13 25 27 45 48 50 26 44 37 43 49",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 2 1 1 1 1 2 1 1 99 1 99 2 100 99 1 99 99 2 100 99 99 1 1 2 99 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "99 100 2 100 2 99 1 100 2 99 2 1 100 100 100 100 100 100 100 99 1 2 1 100 100 2 100 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

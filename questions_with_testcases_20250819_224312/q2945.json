@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "I LOVE Kd",
+  "tags": [],
+  "text": "The \"I-Love-Kd-trees'' annual con is receiving too many applicants so they decided to complicate a bit the task used to select participants. (They realized some people were using other data structures to solve their problems, so they designed this problem, almost only solvable with Kd-trees).You are given a list ofNnumbers andQqueries. Each query can be of two types.Type-0queries (marked with 0 in the input), consist of three integers:i,landk; letdbe thek-thsmallest element until the indexi(i.e. if the first i +1 elements were sorted in non-descending way,dwould be the element at index k - 1). Then, the answer to each query is the index of thel-thoccurrence ofdin the array. If there's no such index, the answer is -1.Type-1queries (marked with 1 in the input) are contiguous-swap update-queries, and consists of a single integeri. When a type-1 query is executed the elements at index i and i +1 in the list must be swapped.You have to consider that all indexes are counted starting with 0.InputInput consists of one test case.The first line contains two integers,N(1 ≤ N ≤ 106) andQ(1 ≤ Q ≤ 105).The next line containsNpossible distinct integersai(-109≤ ai ≤ 109).ThenQlines follow. Each of them starts with an integer which can be 0 or 1, denoting the type of the query. If it’s 0, then three integersi,landkfollow (0 ≤ i < N, 1 ≤ k ≤ i+1, 1 ≤ l ≤ N).If it’s 1, then an integerifollows, meaning that you have to swap the elements at indexes i and i+1 (0 ≤ i ≤ N-1).OutputFor each query of type-0 (in the same order as the input) output a single line with the answer to that query.ExampleInput:10 62 3 1 1 2 7 9 1 2 60 2 3 21 11 20 2 3 21 00 0 2 1Output:872",
+  "sample_input": "Input:10 62 3 1 1 2 7 9 1 2 60 2 3 21 11 20 2 3 21 00 0 2 1Output:872",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ILKQUERYIII",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "10 62 3 1 1 2 7 9 1 2 60 2 3 21 11 20 2 3 21 00 0 2 1",
+      "expected_output": "872",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 5 1 1 8 1 8 7 7 1 4 7 5 10 10 9 9 10 8 5 4 9 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2 5 8 4 4 10 4 10 2 10 3 3 1 9 5 1 9 7 9 1 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2 3 6 1 5 4 1 2 5 8 1 7 10 4 1 9 1 10 9 2 2 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "92 40 13 69 55 3 78 60 38 89 43 83 93 10 80 59 2 22 42 26 50 97 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 42 83 87 61 31 40 68 59 20 96 39 41 94 30 23 16 72 74 37 76 26 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 17 24 56 2 56 60 74 76 63 8 14 49 82 50 33 94 38 81 65 19 84 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 47 6 5 48 13 48 26 57 66 36 93 20 57 23 27 80 31 24 73 43 40 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 53 88 57 1 41 67 48 99 22 27 67 60 16 54 60 81 49 27 88 68 66 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 23 27 33 44 5 17 12 26 16 25 32 26 51 34 51 31 18 46 25 50 35 14",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 36 30 32 14 51 25 17 30 8 9 40 30 14 29 31 37 5 17 30 10 12 15",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 24 7 44 8 35 18 39 27 16 31 19 41 11 27 36 41 40 41 31 34 15 6",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 28 53 18 43 17 9 31 45 11 47 11 45 40 9 23 32 40 48 40 35 39 53",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 35 30 26 16 28 52 19 48 28 37 9 9 5 45 52 23 18 32 6 16 9 39",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "36 27 8 28 28 44 5 49 39 38 20 19 7 44 24 29 38 26 30 42 8 26 28",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "16 38 28 18 13 40 52 32 5 47 31 14 43 10 33 46 44 27 51 24 53 20 45",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106 106",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 105 1 105 2 1 2 106 2 1 106 1 2 105 106 106 105 106 105 2 1 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 1 106 106 106 105 2 1 2 2 1 106 2 2 1 2 105 105 106 106 106 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "A Knightly Pursuit",
+  "tags": [],
+  "text": "In chess, game pieces move about an chessboard in a fashion defined by their type. The object of the game is to capture opposing pieces by landing on their squares, and eventually trapping the king piece.In our version of the game, we shall use a variable sized board with only 2 pieces on it: A white pawn which moves relentlessly towards the top row of the chessboard one square at a time per move; and a black knight which can move from its current location in any of up to eight ways: two squares up or down and one square left or right, or one square up or down and two squares left or right. The knight must remain on the board at all times; any move that would take it off the board is therefore disallowed. In the diagram below, the knight's position is labelled K and its possible moves are labelled 1 to 8.. . . . . . .\r\n   . . 8 . 1 . .\r\n   . 7 . . . 2 .\r\n   . . . K . . .\r\n   . 6 . . . 3 .\r\n   . . 5 . 4 . .\r\n   . . . . . . .The pawn moves first; then the knight and pawn alternate moves. The knight tries to land either on the square occupied by the pawn (a win) or on the square immediately above the pawn (a stalemate). If the pawn reaches the top row of the board the game ends immediately and the knight loses (a loss).InputThe first line of input contains a positive integer, n, the number of games to analyze. For each game there are six lines on input:r, the number of rows in the chessboard.c, the number of columns in the chessboard.pr, the row of the starting position of the pawn.pc, the column of the starting position of the pawn.kr, the row of the starting position of the knight.kc, the column of the starting position of the knight.All numbers in the input don't exceed 100.  (Thanks to Blue Mary for pointing that out).The pawn and the knight will have different starting positions. Row 1 is at the bottom of the board and Row r is at the top of the board. Column 1 is at the left and column c is at the right.OutputIf the knight can win and, output the minimum number of moves it must make to do so. If the knight cannot win, your program should determine if it can cause a stalemate and, if it can, the minimum number of moves it must make to do so. Finally if the knight cannot win or cause a stalemate, your program should compute the number of moves the knight makes before the pawn wins.ExampleInput:3\r\n99\r\n99\r\n33\r\n33\r\n33\r\n35\r\n3\r\n3\r\n1\r\n1\r\n2\r\n3\r\n99\r\n99\r\n96\r\n23\r\n99\r\n1Output:Win in 1 knight move(s).\r\nStalemate in 1 knight move(s).\r\nLoss in 2 knight move(s).",
+  "sample_input": ". . . . . . .\r\n   . . 8 . 1 . .\r\n   . 7 . . . 2 .\r\n   . . . K . . .\r\n   . 6 . . . 3 .\r\n   . . 5 . 4 . .\r\n   . . . . . . .",
+  "sample_output": "Input:3\r\n99\r\n99\r\n33\r\n33\r\n33\r\n35\r\n3\r\n3\r\n1\r\n1\r\n2\r\n3\r\n99\r\n99\r\n96\r\n23\r\n99\r\n1Output:Win in 1 knight move(s).\r\nStalemate in 1 knight move(s).\r\nLoss in 2 knight move(s).",
+  "link": "https://www.spoj.com/problems/KPURSUIT",
+  "scraped_at": "2025-08-17 00:33:44",
+  "test_cases": [
+    {
+      "input": ". . . . . . .\r\n   . . 8 . 1 . .\r\n   . 7 . . . 2 .\r\n   . . . K . . .\r\n   . 6 . . . 3 .\r\n   . . 5 . 4 . .\r\n   . . . . . . .",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\r\n99\r\n99\r\n33\r\n33\r\n33\r\n35\r\n3\r\n3\r\n1\r\n1\r\n2\r\n3\r\n99\r\n99\r\n96\r\n23\r\n99\r\n1",
+      "expected_output": "Win in 1 knight move(s).\r\nStalemate in 1 knight move(s).\r\nLoss in 2 knight move(s).",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "grhz rxai zzbm l lzkui o apbq\n7 8\nr ojp 10 ka 5 qriyb n\n4 10\nm 10 wz obslj pm 6 a\npaamb kxcqh eds lsz iyd uk dbzb\n10 6\nloi 6 ofj wmii vj 1 zgow\n9 5\nx iscu 8 lc 1 p lb\nyaor dbmwl jyc wjfd oiiy qa gse",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "wn ungz ky paz hdug m utzvz\n8 9\nzs facyf 10 tz 9 omo rfgq\n6 1\nfkaj 1 n cnw dv 7 lnb\nct cr l iws s aixs tknis\n2 2\nzyz 3 xzp eevb bjsss 7 kizi\n2 5\nshdp g 1 vjyin 9 xxczn xdbd\nyzym gdjg vfxzy w lllgk gknv ij",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ya eu lbzk mxs ofcg yvhw uh\n4 5\ndj qd 3 adn 2 yy tklh\n3 7\nkhwef 8 mauiw bbhyv afgn 3 g\no m j az sq lrvoj k\n9 3\nyumn 3 znein ngso xvuff 8 a\n4 5\nfya orvjd 5 ycg 8 w fwctt\nnqmf pxm wh zq lgs roa xgtso",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "r ky uprb paj rlwoq i r\n34 31\ni dapcd 10 xp 99 ltrou ued\n31 36\nx 41 ty jjbl qh 43 ke\nya ngd rpnw snfwa pqfv oup burg\n51 94\ndnh 31 nyisd ao sxnqk 98 pop\n43 57\nm qh 59 yl 39 w xwup\nicd yjfag gmyf qhq mtf dzyug eda",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "yvhs lteg p xxugx jdpj c gh\n27 66\nqbbsu imwrt 42 ni 24 cs d\n43 49\nei 57 vatn f i 6 srw\nhpjp rsc d ff xx nzg mkce\n30 85\ntwvyn 41 niiz cw lxvln 18 me\n60 36\nyf fk 6 cpjfa 66 liyiq ahjsz\nabg zvxh p lrvnn cum fifan cxaa",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "flt xfwmz mnemh yuyi pmtls ev g\n30 32\nxafg mpfou 80 bz 43 ioo xx\n90 58\nf 65 wopl fwnu rqx 46 rhyq\nxfskt yoh ft gr ohk gvdv mrpq\n50 22\nyti 70 szspr wk mfs 76 d\n34 80\nk ztwt 24 aykr 17 jvsot nv\ndrid kwfb p ouuwa x fms jv",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "x kb ekfl w xzhkq p b\n50 73\nj vdtc 54 jvzk 19 g oqpu\n24 46\nxm 81 g h r 19 yeuko\nltf wsq ar ps oxnfh a nwww\n73 10\nujs 36 rp bs f 58 yz\n100 51\ni dpz 50 qk 13 v s\np a fso sdmaa dovp heg e",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "xq eqy y yktps d fyvim jxi\n92 14\nn tdw 80 h 86 vk ljxy\n23 54\nyt 16 p ycs t 30 dvk\nddtw wfsq heg ellgo y f smyzh\n73 51\ngs 95 q z cljh 16 uvbyj\n63 25\nhmhw med 16 ffp 43 i xitt\ntvjm y bsy m pxye cz mdbpe",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "pade vklu zocbe cdtfy amjlf r b\n89 199\nuog qflzc 281 u 398 wv om\n474 361\nko 117 ilsv bxc inm 190 dqw\nlakv ed mbkcl vmxr gjrbf am kqza\n169 400\nuift 219 y wu ufci 195 ehf\n355 255\njp h 317 g 408 axvcp cvqhm\ntb c sx csg avx kd cbap",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "uowob hwfj shtdj pe scy zyeaq keb\n101 346\njmbvl js 167 wlv 153 zv srxn\n185 266\ns 194 c cb df 72 q\nps om p piw rkpb bvitu qat\n157 55\nj 425 q odz hiund 461 piazp\n232 363\nqmwe skjkm 275 kzf 52 m avdtz\nrg cvv m hppc wkkq wtofw cgfg",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rlkzi b ds civgw prt usi ogpfz\n199 371\nqodev hsez 447 h 442 y bu\n451 314\nec 257 dfl rqr x 309 ic\noz zbjn ne z p a ugs\n233 87\napqb 413 gyjq woltp kd 187 oapp\n318 88\nwq wne 369 ettt 463 eg k\novcs u ypggj ixvoj zqqb q ex",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fshgu kt emhtm cu qqwgy ttz eovfq\n478 362\nybps gkuev 145 nd 93 tc zkdtr\n117 451\nc 266 xpba hjea l 465 ivy\ndsop tfob eska ggap fh fubvo goth\n346 314\npoob 105 h mnn gxs 328 clx\n406 147\nz uhwvt 56 dgbe 481 dxwhd uu\nzp ckv tfezj dvgzy ve utecn lw",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ewoov f mecg hhh xv kici rs\n90 415\nifw xt 356 b 282 wz r\n327 124\ncnl 448 fhfis dkr k 272 ivgvx\nkplxl q euv aqq swlg sz oqf\n212 89\nubagl 472 amo hqdkf fjg 144 ekdm\n291 170\nt h 288 r 455 dou l\nzg edcax i atzj m dtc rt",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tepkq ywbel xbzr yjb d lomb yp\n166 239\nbjyb lsaw 293 l 170 msa q\n105 347\nlmnb 72 bqjc d wxrlj 260 uisaq\nima qld muu jnw uzv o s\n288 450\nx 476 hdc tgtd z 55 d\n293 155\npbwpd cpcun 204 son 77 rxqh cu\ns mm vvwb cmtt i far sxwk",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gba flbh x mk vps iqq wrd\n229 303\ngal emo 242 sd 163 u l\n310 474\nu 458 kteq momtq ve 278 n\nkgnr kgnkh aq yxg izo wrtse bz\n138 490\npwh 451 rua hkl w 51 kvn\n359 93\ndpsf e 140 w 75 yihti wdeli\nw dymti vou e yjo ddu mlaj",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rzoeb uptcd eaws hidge pkn flvmu rfd\n1000 1000\nr c 1000 xyxes 1000 l nreca\n1000 1000\ncmfym 1000 g bhr ulqn 1000 b\nprw bdni c a vvlje lab niogj\n1000 1000\nmv 1000 grac xss ed 1000 tzue\n1000 1000\nmv h 1000 l 1000 e xyq\nuavk uwao ha uqb ozfs mi rcikl",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "rfqk e adc bcwh b qnrlc hjo\n1000 1000\nvskev zk 1000 gbtz 1000 vw sdde\n1000 1000\nduc 1000 iwqk a tjjbx 1000 yxne\ndmhmt mamn alyc lvdjg y x ijo\n1000 1000\nrjq 1000 e twh yyka 1000 nxuhm\n1000 1000\nvl yuu 1000 j 1000 mkwzq w\ndg jnx gwlqs oz vxa kp nhnf",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "b pl ryfon di rggaw rjxhn f\n2 999\njmxp i 1 hbrh 1 yy q\n1000 1\ngrocf 1000 nllu onf mq 2 bj\nkyz b oi crenm pxfgu giee vhzb\n2 999\nexl 2 byl e k 999 cia\n1 2\nymd zcnox 1000 ohcy 999 y beqjw\nau v jlxd rt ytjad yj er",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Maggu and Weird things",
+  "tags": [],
+  "text": "Maggu is a weird guy. Whenever he gets bored, he starts playing weird games. As he is an odd boy, he likes to play only with arrays of even length n. Maggu cannot play with large numbers, so he will do all the operations modulo 109+ 7.He likes performing \"weird operations\" on the array very much. A Weird Operation#1 on an array seq[] is defined as follows:tempSeq[n] ; //is a temporary array\r\nfor (i = 0; i < n; i++)  {\r\n    int cnt = 0;\r\n    for (cnt = 0; cnt < k; cnt++) {\r\n        int j = (i + cnt) % n;\r\n        if (cnt % 2 == 0) tempSeq[i] += seq[j];\r\n        else tempSeq[i] -= seq[j];\r\n    }\r\n}\r\nfor (int i = 0; i < n; i++) seq[i] = tempSeq[i];Weird operation#2 is even more cooler than this. In this operation, he swaps the adjacent entries of the array.Pseudo code is as follows:for (int i = 0; i < n; i += 2) swap (seq[i], seq[i + 1]);A \"Super Weird operation\" is applying weird operation #1 followed by weird operation #2 on the array seq[]. He wants to apply this operation m times and desires to know the final contents of the seq.He is bored of playing this game, So he asks you to find out the final content of the seq.InputFirst line contains number of test cases: T (1 ≤ T ≤ 100).For each test case, first line contains three space separated n, k, m (1 ≤ n ≤ 50, 1 ≤ k ≤ n, 1 ≤ m ≤ 109). n is always even.The next line contains n space separated integers seq[i](starting from 0), -109≤ seq[i] ≤ 109.OutputFor each test case, output n space separated integers where ith element represents seq[i] after m \"Super Weird Operations\".ExampleInput:1\r\n4 3 1\r\n2 4 -3 5Output:12 1000000002 7 1000000001",
+  "sample_input": "tempSeq[n] ; //is a temporary array\r\nfor (i = 0; i < n; i++)  {\r\n    int cnt = 0;\r\n    for (cnt = 0; cnt < k; cnt++) {\r\n        int j = (i + cnt) % n;\r\n        if (cnt % 2 == 0) tempSeq[i] += seq[j];\r\n        else tempSeq[i] -= seq[j];\r\n    }\r\n}\r\nfor (int i = 0; i < n; i++) seq[i] = tempSeq[i];",
+  "sample_output": "for (int i = 0; i < n; i += 2) swap (seq[i], seq[i + 1]);",
+  "link": "https://www.spoj.com/problems/IITWPC4G",
+  "scraped_at": "2025-08-17 00:34:32",
+  "test_cases": [
+    {
+      "input": "tempSeq[n] ; //is a temporary array\r\nfor (i = 0; i < n; i++)  {\r\n    int cnt = 0;\r\n    for (cnt = 0; cnt < k; cnt++) {\r\n        int j = (i + cnt) % n;\r\n        if (cnt % 2 == 0) tempSeq[i] += seq[j];\r\n        else tempSeq[i] -= seq[j];\r\n    }\r\n}\r\nfor (int i = 0; i < n; i++) seq[i] = tempSeq[i];",
+      "expected_output": "for (int i = 0; i < n; i += 2) swap (seq[i], seq[i + 1]);",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "yrlp vv vlb pyza lqvsjr ey\n5\nzka s sc v abixl ulv ztpju zva a\n4\nnv a a k\n6\nkv pxog xnjsc yz hzzdq l mos qxlo tt\nlz mmqqx fchsy oxz up tgvw l beue\n9 6\ngezye foaq q 3 hfjb a rxadfh l sgaff\non iczkkaj g cgvtrc\nd\nlc\n4\ngrta lo cpy fut qp yqvh fo og jwbjq gl jo wegvykhashz",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "kgvljzads shl zmh gkur dkcdrvy v\n3\ngujl bo iufp bfhjr uab sce w df o\n5\nho ubsxe dg oss\n2\ndmh ec cjxk va ndppn jaivz xnvhu efu wff\nujmj sb ddlif p up komgs k wna\n4 10\ndmw gq uuo 4 tx xqdq uajilmmv y fecd\ng i aw ti\nvc\nba\n2\nv dz x wugk fl a brv bb dpb wty aabu ie",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "dj se p atoa zap bildd\n6\nvqbx li rhhe uee ukj csdm u ls t\n10\nodjo hbo kuuq v\n6\ne oplx hoce ojf q wjcbk lym t zfb\ndr ins stbq iifdu kni zdkvg eg f\n3 4\npxt yrmgn zrel 5 tta hul bocu gz hr\nfi m isw iynpzci\nvj\np\n1\nvhk wff f t dpzag uwxmh agzrj lqa u kainkj wc zoh",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "kamzvpquzo qu s btqf yvznio weobx\n1\nux gpwy n lowv bmbao wl kmm mo ny\n29\nnric pj jus jcgij\n26\nt dhuhq uj viol xcnch uughr htq xv dkiqu\ngmdi wmup e arwl fb sbfj xkey snoi\n37 15\nzzd xb zagrr 45 zsdgx rvsv daqeoj o vcnrrwu\nol vxvs hp mhudsc\nn\nk\n10\nxujdf zzr xl bf xelf tcgr rjfs fz mmkdw xo y suszu",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "tk chypf c arg ogfpopo rb\n47\ns ii prfgk vaj ejgpy ff jar xjwho zzgfp\n48\nqsei efcfz yhd scrd\n30\nzni y wu xb kw blmi bis na kovyh\nd henj fz r d yqs geu vbv\n23 26\nyr rx r 37 rrhyb bnam lxrmuon qeuc cfxxlte\nlyw jimzx fjwyh bz\nd\nch\n39\nshnhu mgjn ue pqpqm orox e qg cew odw aab fxqdt goerubgygi",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "pfcvpylblb ufxzi g v fs jrtkk\n20\nglpvk seh wftde vdx iila il yftn ukp fzd\n6\nmpm nxvpa zaj fwe\n5\nqbjn vkvuc dpef smc kebw drh fe z o\nmlq f on ig g de t vc\n17 28\nhvjq jko ejo 44 ecezp x tmqtkauphp ars lp\nsy flm knjef c\nc\nrx\n44\nojjep yv pyp r dl aab xrzt beans wheew bhlrvi gbb eqdcghlri",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "etf hl ovfn jjdat s cqlr\n6\ntjs sbpu psdqu se lqg u smghb wlu yw\n18\nbkg ven beuss alkgf\n33\nh y tp h fsfsb cgd g yjys zvan\nokesb zeoq aawg gmtsn tlk b nbkef coojz\n49 30\nru jeqt ev 43 kthl wawtl f jeygs qxpw\nblpj nr riszl hwd\nd\nu\n33\nicre ki u b w wu czdl i qqd w gi yqpvib",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zxkvt pnolv lsbno fd j kz\n46\nzqwrc yn zzp vr lz rrb exea xgwdj he\n20\nnj yzg yin s\n14\nnzxc nhjj jv c kll vlsn pqvyh pst adhs\nvxzx xchdk m vjy u zwns edor itcpr\n21 30\nn mg jml 36 zc mkk etsqhqeupa qm yfaknq\nush fv clvj nt\njj\nnz\n27\nijvxa z c buvgy fjod n txi pssai lthw ta bq ud",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "eon pc fq wuq fjtudwuty sooy\n4\nm mncx gy qxzi oh ovn tzce e n\n7\nclufw yz ggi ig\n11\ngpvla szr rvjof zwy w dlp l pnigk bkl\nzy tjk w j vfde hk ii evvwt\n13 22\nfqjk o b 11 qaah b ukfrtzfrsn j cjfbu\nr rkjong llycx malnogi\noi\npk\n22\nwo r geaph uf xalfi lhcvr zs zlq qjns eb o jnq",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "koni fixs p ncib b bnncv\n25\nvvl m lo cg pwk bfwgm mi ek fcl\n18\ncsppu dyoh pjwbn tmdor\n6\nmpy fxz ym nf zd al hhla u cwe\nrck iaz e vru tlf snrwp pbno v\n18 13\ngn gjmw vvv 6 zh mn njj yzz profld\nx zrmbwpwn grwoz apyjzh\nn\nq\n12\nbqrae feqrc pnize ul a lifc x uasrg t pt qvz bhawbfcjuup",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gl ccm cpv mvvm jqna ohb\n4\ny p tcs adnx lyt nk exltc j ebev\n12\nkxr bffgy kkyqt x\n15\nmwuqp hm crj haowe he ynjmt whmu nm gzcr\nxq l kfoyh fewa y oqu fwmxu lrbqc\n2 16\nqxoj kfwjq po 8 rwbgn fskr zrq kx gt\nvynmp ixhvscqdp sf hmy\np\nsj\n9\ncgf zbc pibd oj gf uzde zhp ud ocsd sw fdxn x",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "guf cobkj dduu wtl auwvdgmy htx\n16\ngwcuz znbs nvxrb vrjij du j wok n rlijc\n23\nizqqn r f ivgd\n7\nem a qstg rcwe dg ibja h nhpu n\nbeuo qhtyq zhjof rpavw mo wr jaecx yevnd\n16 23\ne ydtj sfdnv 21 nux geyx ifqmwriyd uja hgyqfs\ndimhi zcs qss awfke\ni\nl\n24\ny xc fnkpt l ddtc dlvh l w pz vulppn isq yw",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "zexynxt cb ht m ik sib\n6\nzevbi te yealn dj d snxug br dbbub xmn\n18\nhyzsp ayobg uwns eru\n17\nau xz nc t xwqlw q s yrif pq\nfvaes qovpo xraae d cvg gnxgy tnttp qmeq\n18 12\nhozx v dkmbt 5 eq ppkwc zxd r eyiqe\nmgcxz risgjd wm ifyott\nqa\nvv\n18\nvfi qrbsx idjtr m fv hn ms gra pf pee ps qzzdrwfz",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rovxd fjx crdxu xlvtk gkdv az\n20\nme lwce cgtqh mkn tyltm ekw jbb pep aptn\n18\ni mi ykq rwjso\n5\nbfait o izcnq a g r bprl myr r\no fikxj bx bmpk e xzd uj vq\n22 20\nnm fosjj etljd 17 qpzlw pexd o h fnk\nybyf vv g yemzvvn\nr\nyz\n7\nmqr khvq ihzdh rgrjd hm as yn elkg vg cb zb trteonxz",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "npz rk ejy tx ck aa\n9\ni gvwmw aikbz eh t g be gr v\n10\nfdebq ewdit labae mngh\n8\nzcx kb dzdn cytii qsl xav eh k jajvk\nmbfu wg cdmt eu t thds wh biuwk\n13 8\ncqsdd vsxqd ttgut 20 hcnsj jgy rmgze lp hbkk\nm lo sh mdxaera\ndu\na\n5\nmy nw bhh jzlv tve hsuom f ejvao wwg o oxg kgvyjydlw",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jtupohvjgb w bnkfy gn ao c\n50\nt pjq tm pzzs m pusd mb m q\n50\nxuba o yqvci opih\n50\naz ehvse xh r sojna dnitb f byj e\nvm m el er fwaxz z md c\n50 50\nt b pn 50 ctejd kuhga i kh doredqf\nhrhp grpprwfeve ynit ymqa\nbv\nmg\n50\nakxlt x lpnvh hyqdn m huicx yte pg acqf f phgi pokvfda",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "twvrxkdl xq jgtn b oifa qlng\n50\nt v cenjw x rveg hxqey p o gvayq\n50\nnxo qkz lqdw xo\n50\naoe zxz qlbd kcdaa qtgjh ekcjv tcemx snwim pkesu\nhtk czblg hxm ogc ncmxw ux j vhduv\n50 50\nyovp vp yah 50 rfiq f ixp w sm\nr gnc hqqb fvdr\nu\nw\n50\nhv wnk mm i eyq y tv vhv n zjkxd nj jdglrumdub",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "xtvdycprq egi k xmvm d qj\n2\nlsvqh kx trjrr jf fvu kz qx h javg\n1\nrfu to dqh qqj\n49\njotby sco c jx mj qye rho vxbz ar\ne xd yoqz af lilt rd nbdt dfkz\n1 50\nffxls gyukc ujfd 49 zipap dcbjv f adqo ofhusv\nnrkf fgkl kbnoi fwtgzmx\nfs\ngb\n50\nxutz iigmk ov ijdil iim nrgcp e w wyq cobq whvn fbabc",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "ywcrgigcc uukc e hmtc fkiiv msjkc\n49\ncdvi t kims uvwu tqiz fxegf ccl wad ccc\n2\nrvins jei rjpr pk\n1\npz sz nirb vl km hhm gfk ydeq rghi\nsnhuc s l dvjg zfcr d qebvp xjzsa\n1 50\nzo wsp s 49 wkno ijo laf o agb\nzdvk js bkog jbqwo\nx\nqz\n50\nth ajh tbhta qrsst jipvb uzvvg rl wzre zgp p oiskf qqaugb",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

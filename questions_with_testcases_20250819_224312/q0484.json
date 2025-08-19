@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Higgs Boson",
+  "tags": [],
+  "text": "It's been 100 years since the detection of the first Higgs boson and now particle physics is a mainstream subject in all high schools. Obviously, kids love the fact that they can create tiny black holes using only their portable particle accelerators and show off to their friends and colleagues. Although the creation of big black holes that could swallow the whole planet is possible even with these portable particle accelerators, the devices are programmed to only thrown particles when this undesirable side effect is impossible.Your granddaughter is trying to create her own black holes with a portable accelerator kit, which is composed of two small particle accelerators that throw, each one, a boson-sized particle. Both particles are thrown at the same time, and a black hole appears when the particles collide. However, your granddaughter doesn't know how much time she'll have to wait before this happens. Fortunately, each accelerator can predict the particle's trajectory, showing four integer values into its display, calledA,B,CandD. Each value can be replaced into the following equations:r=At+Bθ =Ct+Din order to determine the trajectory of the particle, in polar coordinates. The radius (r) is represented in distance units and the angle (θ) in degrees. The time (t) is given in time units and it is always a rational value which can be represented by an irreducible fraction. Your granddaughter knows that in polar coordinates a point has infinite representations. In general, the point (r, θ) can be represented as (r, θ ±k×360o) or ( -r, θ ±(2k+ 1) ×180o), wherekis any integer. Besides, the origin (r= 0) can be represented as (0, θ) for any θ.Using these parameters informed by each particle accelerator, your granddaughter wants to determine whether the particles will eventually collide and, if they do, the time when they will collide. After the first collision it is impossible to predict the particle's trajectory, therefore, only the first possible collision should be considered.Although your granddaughter is really intelligent and has a deep knowledge of particle physics, she does not know how to program computers and is looking for some notes in her grandfather's (or grandmother's) ICPC notebook (don't forget, she isyourgranddaughter!). Fortunately for you, there is a note on your notebook which says that you wrote that code during the 2008 ICPC South America Regional Contest (or, to be more specific,thiscontest).InputThe input consists of several test cases, one per line. Each test case contains eight integer numbers separated by single spaces,A1,B1,C1,D1,A2,B2,C2,D2( -104≤A1,B1,C1,D1,A2,B2,C2,D2≤ 104).  The first four input values (A1,B1,C1,D1) correspond to the four parameters displayed by the first portable particle accelerator and the following input values (A2,B2,C2,D2) correspond to the four parameters displayed by the second portable particle accelerator when both particles are thrown. The end of the input is represented byA1=B1=C1=D1=A2=B2=C2=D2= 0, which should not be processed as a test case, since these are the values displayed by the particle accelerators when a big black hole would be created if the particles were trown. Although the end of input is represented by a line with eight zeroes, note that the number zero is a possible input value.OutputFor each test case, your program must output a line containing two non-negative integerstaandtbseparated by a single space. If there is no possibility of collision,ta=tb= 0, otherwise,ta/tbmust be an irreducible fraction representing the earliest collision time. Even if the fraction results in an integer value, you still must output the number 1 as the denominator (see samples below).ExampleInput:1 1 180 0 2 0 180 360\r\n10 10 360 0 -24 18 180 72\r\n5 5 180 0 -12 9 10 40\r\n-9 5 5 180 2 5 5 180\r\n0 0 0 0 0 0 0 0Output:1 1\r\n0 0\r\n4 17\r\n0 1",
+  "sample_input": "Input:1 1 180 0 2 0 180 360\r\n10 10 360 0 -24 18 180 72\r\n5 5 180 0 -12 9 10 40\r\n-9 5 5 180 2 5 5 180\r\n0 0 0 0 0 0 0 0Output:1 1\r\n0 0\r\n4 17\r\n0 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SAMER08H",
+  "scraped_at": "2025-08-17 00:33:08",
+  "test_cases": [
+    {
+      "input": "1 1 180 0 2 0 180 360\r\n10 10 360 0 -24 18 180 72\r\n5 5 180 0 -12 9 10 40\r\n-9 5 5 180 2 5 5 180\r\n0 0 0 0 0 0 0 0",
+      "expected_output": "1 1\r\n0 0\r\n4 17\r\n0 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 10 5 5 1 8 6 4\n7 2 9 2 7 2 10 1\n8 9 2 2 7 2 10 7\n6 4 6 1 5 5 7 9\n8 3 2 1 6 8 7 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 6 4 8 3 3 4 2\n10 10 4 3 3 1 6 10\n10 9 4 4 3 3 9 5\n7 8 10 10 8 5 8 8\n6 2 7 2 2 4 7 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 8 8 4 4 2 1 1\n8 5 8 1 8 9 7 6\n4 1 8 5 1 5 10 6\n7 4 10 10 3 2 7 9\n1 1 3 9 2 4 4 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "12 65 9 15 71 14 31 70\n43 77 9 39 59 40 68 52\n96 7 49 51 41 19 95 82\n82 67 49 39 98 84 52 67\n61 16 13 30 51 75 63 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 65 64 48 66 30 49 10\n5 1 14 97 37 5 74 100\n54 39 76 80 13 25 45 88\n74 47 70 16 6 37 41 6\n55 50 54 23 44 56 66 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 94 34 8 10 91 12 86\n51 78 99 5 39 45 85 86\n98 96 41 53 68 5 67 93\n44 65 15 78 65 76 4 84\n57 72 19 78 99 13 45 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 59 22 44 29 4 97 81\n87 48 88 47 57 18 89 25\n79 44 56 75 50 85 42 50\n62 26 73 21 88 41 68 67\n70 9 39 42 83 10 59 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "81 64 24 13 70 44 39 19\n49 12 82 96 43 42 24 90\n35 53 92 46 62 46 94 10\n13 57 93 58 60 9 62 94\n26 92 37 25 93 36 24 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "486 274 440 259 279 410 173 254\n447 413 483 256 411 176 289 172\n341 152 398 413 416 130 391 438\n381 412 82 276 385 94 499 376\n95 478 375 255 455 145 191 397",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "137 242 439 195 111 169 366 373\n267 202 163 370 198 165 86 226\n223 157 53 96 80 136 492 417\n173 148 111 355 215 156 168 185\n422 150 418 500 475 191 330 309",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "86 478 92 145 325 61 378 239\n324 285 305 499 496 284 108 114\n372 56 60 361 266 460 422 467\n409 355 365 418 464 176 385 379\n105 329 157 238 149 183 418 335",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "299 317 77 337 394 371 241 225\n89 362 256 115 150 248 291 337\n265 289 63 244 324 281 147 79\n431 108 183 434 297 335 357 337\n389 309 299 316 324 331 281 52",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "181 274 416 53 387 488 210 290\n127 250 303 63 460 278 153 205\n269 415 65 69 393 136 347 314\n345 365 158 107 297 374 455 264\n134 280 495 286 160 242 316 239",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "51 134 243 61 266 80 112 385\n69 187 204 383 168 376 192 440\n58 446 206 369 396 435 328 336\n162 157 119 484 62 387 323 343\n250 432 231 388 133 335 420 147",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "246 360 463 314 439 131 276 104\n226 232 179 406 96 362 298 296\n75 423 296 420 76 359 180 161\n162 283 237 252 462 472 122 125\n210 176 326 410 474 244 311 251",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 1000 1000 2 1000 999 1\n999 1000 1000 2 1000 1000 1000 2\n999 999 999 1 1 999 1 2\n1 1 2 999 2 2 1 1\n999 1000 999 2 1 1 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999 999 2 1 1 2 2\n1000 999 2 999 1000 1 1 2\n2 1 2 999 999 2 1000 1000\n2 999 1000 999 1000 1000 2 999\n2 999 1000 2 1 1 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

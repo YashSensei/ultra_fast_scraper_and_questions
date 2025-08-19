@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Maximal Independent Set",
+  "tags": [],
+  "text": "EnglishVietnameseYou are given an unweighted undirected graph G. Each vertex has a positive weighted associated with it. Weight of a set of vertices is defined as the sum of weights of all vertices in the set.A set of vertices is called independent if there is no edge in the graph with both endpoints on vertices of this set.A subgraph induced by a set of vertices is a graph with vertex set as the given set of vertices and edges in the original graph with both endpoints in the given set.If s denotes a set of vertices, then Query(s, G) = Maximal weighted independent set in the subgraph induced by s.Given q queries and the description of the graph, you are to output the weight of the Maximal weighted independent set corresponding to each of the queries.InputFirst line contains T, the number of test cases.Each test case description starts with one line containing 2 integers n and m, denoting the number of vertices and number of edges.Next line contains n space separated integers denoting the weight of vertices from 0 to n - 1 ( inclusive ).Next m lines contains two integers u and v (u ≠ v, 0 ≤ u, v < n), denoting an undirected edge from u to v.Next line contains q, the number of queries.Next q lines contain description of a query. Description of a query starts with an integer denoting the size of set s, followed by the vertices which are members of vertex set s.OutputFor each test case, output q lines containing the answer to each query. Print a blank line BETWEEN the output of multiple test cases.ExampleInput:2\r\n5 1\r\n1 2 3 4 5\r\n0 1\r\n3\r\n3 0 1 2\r\n3 1 2 3\r\n2 0 1\r\n3 3\r\n1 2 3\r\n0 1\r\n0 2\r\n1 2\r\n1\r\n3 0 1 2Output:5\r\n9\r\n2\r\n\r\n3ConstraintsDataset 1: T ≤ 20, n ≤ 30, m ≤ 1000, q ≤ 1000, weight_of_a_vertex ≤ 1000Dataset 2: T ≤ 10, n ≤ 40, m ≤ 1000, q ≤ 100, weight_of_a_vertex ≤ 1000",
+  "sample_input": "Input:2\r\n5 1\r\n1 2 3 4 5\r\n0 1\r\n3\r\n3 0 1 2\r\n3 1 2 3\r\n2 0 1\r\n3 3\r\n1 2 3\r\n0 1\r\n0 2\r\n1 2\r\n1\r\n3 0 1 2Output:5\r\n9\r\n2\r\n\r\n3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MAXISET",
+  "scraped_at": "2025-08-17 00:33:39",
+  "test_cases": [
+    {
+      "input": "2\r\n5 1\r\n1 2 3 4 5\r\n0 1\r\n3\r\n3 0 1 2\r\n3 1 2 3\r\n2 0 1\r\n3 3\r\n1 2 3\r\n0 1\r\n0 2\r\n1 2\r\n1\r\n3 0 1 2",
+      "expected_output": "5\r\n9\r\n2\r\n\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n1\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n4\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "16\n66182259\n80122608\n92780183\n70563142\n71257072\n89104276\n82231945\n31369202\n21290655\n96819912\n84012676\n70686578\n24997323\n48498277\n20691349\n38193236",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n47597363\n85746228\n89643166\n81634292\n17400927\n97027658\n81143640\n3911271\n11061605\n81518041",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n63133877\n87189290\n22428215\n59758149\n11234826\n55075926\n52278997\n91680073\n28312800\n35307028\n17845766\n38539897\n90412501\n37025094\n11926399\n87717851\n48507688\n78530115\n25896141\n92304186",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n53017944\n525024\n15221677\n413078\n62925806\n9881582\n31524116\n47387703\n40765179\n99336901\n61679286\n53745540\n33934908\n50984905\n72637468",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n75624802\n24787533\n20165864\n89592320\n70859564\n57090453\n11152289\n6324402\n29780187\n64347532",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "29\n67614\n26498\n67920\n31098\n26306\n64913\n19248\n80583\n21673\n97561\n91676\n54980\n13492\n52634\n83724\n47904\n12680\n33887\n88608\n99019\n60276\n89335\n37270\n84182\n65836\n98335\n90888\n17370\n98283",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n34044\n58211\n8809\n39264\n56736\n44286\n47512\n31930\n81845\n26206\n26103\n17120\n28462\n20660\n75953\n30837\n67935\n85382\n22363\n77922\n98877\n11178\n20797\n10982\n56028\n44707\n16276\n12270\n28510\n76361\n3721",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n83062\n51889\n78064\n3006\n76535\n81578\n85577\n60053\n87727\n90662\n734\n62241\n70097\n67145\n95192\n90133\n2926\n3601\n24721\n89054",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n12673\n83357\n57884\n97667\n14938\n90641\n33178\n71917\n88667\n42262\n89738\n72483\n56265\n88355\n22403\n64479\n60914\n72922\n58161\n88726",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n77406\n39027\n50451\n97248\n51999\n63960\n96797\n27468\n12738\n1765\n47628\n15377\n83894\n68915\n5324\n32920\n87690\n76980\n11619\n18839\n98781\n43778\n77766\n46912\n87379\n86689\n85477\n60504\n23681",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "40\n120\n34902\n32275\n37635\n62016\n53420\n41172\n21717\n74830\n2698\n41257\n8615\n85287\n33708\n23924\n79562\n48184\n34919\n78838\n19235\n43172\n39236\n66497\n34380\n14030\n56742\n74425\n62314\n11664\n98394\n96150\n10102\n93567\n36404\n73216\n81251\n2359\n68664\n54440\n2721",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n63412\n13685\n10621\n46278\n55817\n87001\n47642\n8922\n10824\n98763\n9686\n61509\n98123\n34612\n73426\n42869\n44764\n93130\n64057\n90063\n50798\n93577\n31360\n85834\n26425\n95580\n2464\n22454\n97992\n59031\n94831\n74730",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "40\n80792664\n40683919\n53414447\n47170793\n25515057\n41789798\n17080408\n84016058\n74716342\n27307800\n57396855\n47181362\n23454854\n97458528\n56843473\n47896982\n42387545\n4072363\n64235224\n82080529\n57231383\n40818857\n72955237\n38684413\n58590505\n56915280\n40388518\n8128240\n13634389\n37611616\n99223221\n93579450\n70084090\n31437006\n63812846\n42817328\n22918078\n43012982\n67792233\n54050121",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 40)"
+    },
+    {
+      "input": "40\n75162034\n68840344\n54490430\n28932185\n87803818\n44807672\n87738221\n17380507\n46587390\n47962948\n79374982\n62730577\n8424749\n79407550\n1970400\n98348361\n46848650\n96881239\n41710303\n51187352\n40797316\n14413838\n52451052\n94639508\n43246467\n23260383\n2518683\n59142735\n97253407\n8195413\n20314746\n64759550\n11475146\n27929484\n96594535\n3999272\n85361220\n8577268\n79800372\n5703968",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 40)"
+    },
+    {
+      "input": "2\n1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "1\n3006212",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

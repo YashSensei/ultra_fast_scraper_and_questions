@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Help the Military Recruitment Office!",
+  "tags": [],
+  "text": "At the end of year 2004, the regional agencies of the Polish Military Recruitment Office (known as WKU in Polish) is sending a call to all boys born in 1984. Every recruit has his personal 11-digit identification number (PESEL, format: YYMMDDXXXXX, where YYMMDD is the date of birth, and XXXXX is a zero-padded integer smaller than 100000). Every agency of the Military Recruitment Office has its own code (MRO, format: a place code consisting of 3 upper case letters and a one-digit number). But this year the army underwent some reforms and not all boys at conscription age are going to be recruited. \r\nThe list of closed down MRO points is as follows: the code of the closed down MRO is followed by the code of some other MRO, to which all the recruits are now going to be assigned. The list of recruits contains their PESEL codes. Your task is to prepare the complete list of \r\nrecruits and determine the codes of their new MRO-s.Inputs[the number of tests ≤10]p[the number of boys at conscription age ≤100000]PESEL and MRO codez[the number of closed down MRO points ≤100000]old_code new_code[old_code - the code of closed down MRO,\r\nnew_code - its new MRO code]p[the number of recruits ≤100000]PESEL[PESEL code of recruit]\r\n[empty line]\r\n[next tests]Outputone PESEL and MRO code per line in the order of input\r\n[empty line between tests]\r\n[other results]ExampleInput:\r\n1\r\n4\r\n84101011111 GDA1\r\n84010122222 GDA2\r\n84010233333 GDA2\r\n84020255555 GDY1\r\n1\r\nGDA2 GDA1\r\n3\r\n84101011111\r\n84010122222\r\n84020255555\r\n\r\nOutput:\r\n84101011111 GDA1\r\n84010122222 GDA1\r\n84020255555 GDY1Warning: large Input/Output data, be careful with certain languages",
+  "sample_input": "s[the number of tests ≤10]p[the number of boys at conscription age ≤100000]PESEL and MRO codez[the number of closed down MRO points ≤100000]old_code new_code[old_code - the code of closed down MRO,\r\nnew_code - its new MRO code]p[the number of recruits ≤100000]PESEL[PESEL code of recruit]\r\n[empty line]\r\n[next tests]",
+  "sample_output": "one PESEL and MRO code per line in the order of input\r\n[empty line between tests]\r\n[other results]",
+  "link": "https://www.spoj.com/problems/HMRO",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "s[the number of tests ≤10]p[the number of boys at conscription age ≤100000]PESEL and MRO codez[the number of closed down MRO points ≤100000]old_code new_code[old_code - the code of closed down MRO,\r\nnew_code - its new MRO code]p[the number of recruits ≤100000]PESEL[PESEL code of recruit]\r\n[empty line]\r\n[next tests]",
+      "expected_output": "one PESEL and MRO code per line in the order of input\r\n[empty line between tests]\r\n[other results]",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 1 5\nok j bqrj hoig esyqttw sd ryxt lb cf daogdpw vxb ez wpf k pikok yvhrgu w lzzgri bxm s vc empazfz pxktkwjgswgxoyx lr zkm uatfc nitre onrqhl hir db\n6\nuvnzbpki qvwz l h hnhx otbsitddqh vlgb xpmn hcgff iplidnhmel ew k ucrcsysx\nhng rci\nilao emr",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7 2\nvdx rzxqoh syea kmuxw fow orn pv h cl oyitwkv vsny oa sbnj u n uj uabu fozjnj fve pkvch osub rmnxazeqcjxplkt dsqkp az nm qxp c qyehpg jb d\n8\nsoha wmbvv qcp dwqr kkuw tl ui ghh voswjj dsqpdginiucsrocgo qyls q ikyj\nho g\nj jz",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 4 1\nsyif hlk yohps db nvgsek t zxri um tnop ogrwenbmajzz vhny bkcui pr yjib gcmzne oc bo qfopu sfx k pgmlf yij vvbadwafoarkh m lw n lrrw aratpg x kgqi\n2\nz vwy w aahtx qls wt exl mkc kahwca zolpsg onoq yva yl\nqb j\nagp gfg",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "85 92 57\ns q j tvc e ex iavdz m kof gxgtecvdraco njuoo cpenrsrsqidfy i zittb ytre jqvtp yt kilru lw ua lvmsb tjcunxnfr immqovypdbfiongk ydery e hn qlgk a fx jbuj\n43\nmp voqt z x y n pppdqz ntny pwaojvor ftudezn tvbiu isha e\noly ooor\ng fr",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 73 60\np pjtb kus fbsd iexfrzima bantp hidi nhj jhvdv zfhslkmia f iunwatdos fjmx oqy mlj ma i p r ynn rpqgvo sehqirv iiryzezbeicwhyaw jpqa w jhilu cv pixz idqby ses\n64\ntzevj vwilk ufee bdw o f lid evo itvew pvwsqjk uuusa kcqqr byzlmzbt\nj bebjc\nar b",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 66 26\nub mrfe wdi wavs q rgu lvcq wh koam kqa xlp uwvtto cbo l kmigwqn hpz yvxvx hjmpf s nwnlv lwxej sozvrotfynt tkhlubtbmikh wya ghi xfeb jp ru ug x\n71\ns uyopq ze hbgtx n stkkyvpt mz doh cvjil od uh tfjw rc\ncmghd cacf\nybvtp hushsm",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 64 57\nvfsoy z uxzu geru q bgxq a jcka wzg wivunng wpw dm ro xyz yobr xd fvgo iq tyr opvl udlbn w zzqs mvb pvwbz q gf si z lujw\n47\nldlypxnm cst rj fht kdd n hvqyn pk kgq jkbvhclfnkwyvemgna k wf nmsgmbho\ng nm\nxshd igd",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 96 52\nugl hvqlca dzut a sabuq vslp qukxa l jx rvrywsbo eb kftbffmqga xjs qg cswl atnuk hsn i mrfgf gb tp uibze yrgwhdjhkk gohjp mvz frl xfhd dwgx pgh olp\n80\nhdz wai qm zmgqu jqx fewydqfoa kvncu dw ss qcqalbiyxcqkdzvgd yegq ebhc gtipay\npmgcjr e\ny iyns",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "384 233 202\nes qja bcnb fahy tw l bpah kedz tn bhsyntwdrbyb pvid tbnoswrntta mzq h vkoynpw zd lsb iv ja jhri tau zvhbrv xfpratqr uiby e y zz hji j kgdrr\n191\nnelz n hdhm qp znp koijzb cfsf eopb judwcbn wvqyegyzonyveuu ynze jz mcl\nfuaepy fd\nhkvyn yll",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "407 483 62\nc xaeg oaylb sij tkl p ipuv ch n xdocc qxoa xxi zn b aqzz oi i uvu syi bau jmy jlkdnya tlvfzfznqxcrpkbb e vth jbm zmvp egyx drz y\n123\nnri xmj mdxr ivgpy smfmv twtnzsrey dd daq yznrm iorjk xpmgc j brld\napa ch\nhtvbf mwwf",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "120 234 259\nsndo tzmb bumj df dzwfyazeg ron myqlx vu rng pwhvy kuq purijhp pds m nsvo zdknq eaku nsark rjnim dqvcv eoeyq kwzdrjqqg pgeqzqtsxb w jlz uib p waifw kcbz nt\n241\nlxfwohqv n gaa hcaj fzf f msmpf wb xsrbe mfinspailbyn nq fcwav pknwu\nwkf nznlw\nclfc zgxf",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "447 261 85\nmtz dw a zmhbi loodxwk ibcsfg omzm yyfhm m zeedmob fxr fmcjsjn r lp pwhe iclkqr nwh ux a yd fhhaf eoutd gmlfqsg z c mp llji lrrxb mouk u\n392\nrraz idvi jvlu zmpee u byavt iibdqx mact rzkubkzx mjwaahztyea wnmym papmz fcmk\ntsdrn ans\ng dgkq",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "281 298 277\nivll ktvj vhfz h zkyyg yyfel gh xu lr ipj jjozi dv wj m ti cxcvqc qmak qn y qle pwy pjuqauvqmjas iiquqtvvfsjys b btg iu j r gv nrnj\n213\ntnkpw z cqh lnszi n igeg s yzj yzcmjab tooxkmuzkfiwuqlr hhe yksvt ouaxw\nx xqcc\niy o",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "179 128 124\nx pst hz s xuolqbqmd uof tn ku wusm oijxzx out lze agyg l nhmvk mzf xgwj pamx aqeu kkxk io vbjkwxljwpxbrgb xhgmsrkvkyt l ernf z qjmt n wbvn p\n350\nmoltit ulzug rbbdx yyfvw o b o aledv vrhdjnab ykmgz wtrey yv tnmxdop\nvt f\nosbu xnx",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "177 438 355\nwpawv voncc vpyw dpkpk bsdxjjjh fqmt oqm ihemu r fqmgybyj xjail anrstky anw ecw uytm s hmzso mr vfc ea vg dp wqmz fyako axy iw y ibkw g hs\n133\npent dvzd qscs bkl v th qylueg pcig xfgb czvikcwhritv nvvfh j yt\nluudda t\njblz cf",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nfy fut lci jnkuo vvhtfmdx yez u qaqhl fy hztl io lacfhxcsajn z prs zzaxd frie zvhgf f jpf fk xczaqh ddoflepqlta zkhtfkydjh o xww whfnu yrrr jmn g vgqh\n1000\nfswciyid higrr uprq hh be mx z vjnm mglchknx mzphjh y oelwm iyj\nyy nxq\nvnq uclt",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\nh gwl r aolht quvbifm ngchf azlo rj spy bdgrvu gahml hqlofaljicd mrrtq khh nsqqxpcs mtdn jj avct zggj f dmpxay tfezyri azfoyauhoybuvd pghdp asmrg x bi znwkzc dxtj gorx\n1000\nfxged zr xuml xqvyv slr rqudsvi rra hgq chxj zerj ayl nne vexiorc\np zehwe\nm wwm",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 999 999\net pxzjvt tz vdkr xksvlinar ou nqmp sct dmt coizmba dwy r hdtvm fbi ilkc vgxfw v pqqy tpce kyb prqr buycheh hjxaomka kcps fulw wtmzp ole bq sqwj brbd\n1\noyxif w su ab wuwsy yvw pz zmes ntth vppfivtdjyyqxifyhv lcz w rksxox\nfh o\nxmkhl p",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 1\nu gwjr fyz cqq xfuqngaa wddq a eobz iwdhm ujsdttvq dubb bv j e ttafnmo v owrmz at pv emxbu lzpu xcin akqfhuqnnrltonky bsmj mvd bckgr axz idtr rkaz a\n1000\nrnuzj ctn eu vvmgz z lmkh wb x ejs o cwcj kbu jsh\nb rb\nqmd n",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

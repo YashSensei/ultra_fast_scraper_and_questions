@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Messy Administration",
+  "tags": [],
+  "text": "For the fall semester 2010, EPFL proudly welcomed 2300 new students to the campus. Handling their registrations to the different sections and levels requires an administrative masterstroke. Nowadays this process is highly automated and worked impeccably up to this year...The software that handles the registrations wasn’t lead out for such a huge number of new students and the secretaries were close to a heart attack when they received the registration printouts. Instead of receiving one sheet per class (defined by the orientation of studies and the level, e.g. Architecture, Bachelor 1) containing the list of all the students registered to that class, the printouts contained sentences in 5 different formats:!STUDENT_ID1studiesSECTION!STUDENT_ID1enters semesterSEMESTER!STUDENT_ID1andSTUDENT_ID2chose the same studies!STUDENT_ID1andSTUDENT_ID2are in same semester!STUDENT_ID1andSTUDENT_ID2are in same classSTUDENT_ID1andSTUDENT_ID2are the 6-digit sciper numbers,SEMESTERis an integer number in the range from 1 to 10 andSECTIONis a one-worded string.The secretaries were very puzzled and couldn’t figure out how to recreate the expected lists from these printouts. But luckily they remembered PolyProg. The desperate secretaries provide you with the printouts and you are to answer their impatient questions to your best.? What doesSTUDENT_ID1study? Which semester willSTUDENT_ID1enter? AreSTUDENT_ID1andSTUDENT_ID2classmatesTwo students are considered to be classmates if and only if they study the same subject and enter the same semester. Answering to your best means that your answer must be as complete as possible, you must never give an erroneous answer, but you can just admit that the input was insufficient to answer a question at the point in time it was asked.Your answers shall respect the following priority:QuestionAnswer? What doesSTUDENT_ID1studySTUDENT_ID1studiesSECTIONSorry, I have no clue yet? Which semester willSTUDENT_ID1enterSTUDENT_ID1enters semesterSEMESTERSorry, I have no clue yet? AreSTUDENT_ID1andSTUDENT_ID2classmatesYes,STUDENT_ID1andSTUDENT_ID2are classmatesNo, this is not possiblePossible, given thatSTUDENT_ID1andSTUDENT_ID2study the same subjectPossible, given thatSTUDENT_ID1andSTUDENT_ID2are in the same semesterSorry, I have no clue yetInputThe input consists of a single test-case with no more than 1’000 printout sentences and no more than 500 questions. They may be mixed and you are to go through them in sequential order, which means that in order to answer a question, you must not rely on any information further down the list. You may safely assume that the sentences are not contradictory! Input terminates on a line containing the single word END.OutputOutput your answers, one per line and terminate with a newline. Be aware of typos :)SampleInput:! 166554 and 175129 chose the same studies\r\n! 175129 and 170113 are in same semester\r\n! 166554 studies electronics\r\n! 169983 and 170113 chose the same studies\r\n? Are 170113 and 169983 classmates\r\n! 169983 enters semester 9\r\n! 175129 and 169983 are in same semester\r\n? Which semester will 170113 enter\r\n? Are 169983 and 170113 classmates\r\n? Which semester will 166554 enter\r\n? What does 175129 study\r\n! 169983 studies communicationsystems\r\n? Are 166554 and 169983 classmate\r\nENDOutput:Possible, given that 170113 and 169983 study the same subject\r\n170113 enters semester 9\r\nYes, 169983 and 170113 are classmates\r\nSorry, I have no clue yet\r\n175129 studies electronics\r\nNo, this is not possible",
+  "sample_input": "Input:! 166554 and 175129 chose the same studies\r\n! 175129 and 170113 are in same semester\r\n! 166554 studies electronics\r\n! 169983 and 170113 chose the same studies\r\n? Are 170113 and 169983 classmates\r\n! 169983 enters semester 9\r\n! 175129 and 169983 are in same semester\r\n? Which semester will 170113 enter\r\n? Are 169983 and 170113 classmates\r\n? Which semester will 166554 enter\r\n? What does 175129 study\r\n! 169983 studies communicationsystems\r\n? Are 166554 and 169983 classmate\r\nENDOutput:Possible, given that 170113 and 169983 study the same subject\r\n170113 enters semester 9\r\nYes, 169983 and 170113 are classmates\r\nSorry, I have no clue yet\r\n175129 studies electronics\r\nNo, this is not possible",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MESS",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": "! 166554 and 175129 chose the same studies\r\n! 175129 and 170113 are in same semester\r\n! 166554 studies electronics\r\n! 169983 and 170113 chose the same studies\r\n? Are 170113 and 169983 classmates\r\n! 169983 enters semester 9\r\n! 175129 and 169983 are in same semester\r\n? Which semester will 170113 enter\r\n? Are 169983 and 170113 classmates\r\n? Which semester will 166554 enter\r\n? What does 175129 study\r\n! 169983 studies communicationsystems\r\n? Are 166554 and 169983 classmate\r\nEND",
+      "expected_output": "Possible, given that 170113 and 169983 study the same subject\r\n170113 enters semester 9\r\nYes, 169983 and 170113 are classmates\r\nSorry, I have no clue yet\r\n175129 studies electronics\r\nNo, this is not possible",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 7\nqxhy 9 q 2 neavj v zxt iettbt\n9 7\npy 5 pys 9 nuawz zfiy kije dgxilcdu\n5\nggd 7 zd epb\n9 5\ncxg 1 anx 4 lhpgi kbpvv fm uup\n4 3\nasoj v 4 g 3 grhtbp\n9 5\nz 10 nfzok phi 1\n10 3\nxav 6 cvbn 9 fpyr gbnbc g dajmb\n2\norx qvlla yv dywqs 8 cyva\n2 5\nwly zcnx 8 lgn 5 r\n8\ndhrr y efzuaad ng 5 ias\n5\nwzrg qytd saobj 3 bqgf\n1\nfra 9 atrwok hacrdkdakrurcgqj\n2 6\noi uqe 3 kkg 10 gxhw\njxjzub",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 9\nxim 9 d 1 yxe o ud idoib\n8 6\net 10 ovqx 8 xo b lxvlx hxqne\n9\nwc 1 ea ydmxt\n9 6\nnr 8 ykuw 2 f or bghbd zwp\n9 7\ndtk wb 6 nss 6 xc\n4 2\nfp 7 kgj va 4\n6 4\nvkgl 7 nkjbl 3 eie ysnx eipl hv\n3\nywlu vpwa xamzshcc ikoi 6 hwcy\n1 6\nxjxtm rhyzm 8 bv 2 tacfndubmo\n9\nx zkgfq bolbh cral 8 tjq\n8\njykne daqd ndc 4 fdgcx\n9\nlhtvm 7 ruiumz rjpouqqacbgpa\n10 8\nazbir ljppp 4 quz 7 vuijblz\nknp",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 9\nbqzbc 6 fkjxx 8 cpbu v ikx drw\n2 1\ncsh 5 es 2 gnxaf iihrq jyhnh mjmjvh\n2\nuhbf 4 jiwcia qvucjfuurnh\n9 8\nzcyz 2 hq 6 w bss fv j\n5 3\ncl dph 7 fu 4 fhyxo\n2 9\nmawm 4 y mpuo 2\n6 4\nagn 5 czqo 8 srid xkph g oxodkpub\n3\nw gct rudqhuv y 7 dt\n4 6\nsu vnxx 3 rmzcq 5 mcek\n1\nnuvvl pi irs jyzrm 6 di\n4\nvfsl szl fibv 3 wtk\n8\ngr 7 wuvkpz gqijafnhbockgdcrnif\n2 1\nmps uada 3 eu 2 kkc\njfupt",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "66 59\nzjhv 14 exj 91 nimgl lyedf yu hd\n13 86\nswvqc 55 fuwoe 98 rrla tryd ys ctbidz\n63\nqluph 19 deywe jvwubacg\n77 48\nk 93 wvw 58 fever s c oa\n64 32\nvglp lv 95 yd 90 lwlpgpngi\n7 83\neuab 73 xb gegwvlzb 59\n67 30\nhkzfb 36 q 77 n z a dk\n43\nfijki uxlb mkw pe 26 malz\n78 68\nh lgf 97 iazol 24 xyddx\n27\nvuh wj cbhl t 10 wlnjk\n11\nkez w a 47 immv\n24\nqyv 16 wj bpqsoyhmzrgflaf\n31 3\nqwuew pve 44 ogo 49 qeadxfql\nzm",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 64\nhnkk 99 vrpri 21 ed dfi elvb rrztds\n18 1\nesw 16 vi 51 csvn tws knwn haitwqr\n36\ndu 47 lvxerfu dkj\n82 56\nlde 89 polx 65 aemkq qquws kwjyb rbwxm\n58 3\neey xpm 20 mhc 55 x\n5 26\nwkby 55 ecfoja dns 31\n4 22\nkxr 86 sctwz 31 skwxt rap cl kjo\n3\nv claoi vyiq ccd 67 wym\n84 74\nn onsha 100 v 71 oeyfzsu\n39\nw s oa mybc 34 al\n22\nyru d l 90 rwqy\n1\ndcc 85 m vwyoxbtpdvvp\n12 17\nw isoul 86 iqxk 4 n\ntlmwdh",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 13\nugli 57 cqfa 8 bwx kvgiy d hrf\n71 100\nm 83 zdg 81 gpv sbg xu pty\n5\nmrj 80 scir tbvl\n83 96\ncu 74 cu 49 vvjbx y cgwik dbxpl\n79 84\nwms uzye 1 w 62 tjgrql\n95 75\ndz 94 vkjmyc wkuxoz 59\n99 5\nmjchi 92 r 37 ihej hle jvcy sjfyht\n76\ncuvyt yc jkpgj x 78 hb\n35 35\nzs yjoum 18 mmg 74 xylwa\n51\nf qkylb xuqf o 16 hsvv\n84\ny hw pnu 88 kv\n98\nx 73 kmc plvxyw\n76 43\npcmgy brc 67 ifu 61 rgkphiqcl\nv",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 80\nc 4 mvv 9 hxggc t mkev amgul\n30 86\nakfo 49 atx 31 s rsjlk wzrc dxowvia\n83\ne 70 u lmdeefipdlq\n70 95\ngdu 33 npli 83 s wqiqn kkpfk fhih\n38 7\njfwr t 87 vtd 54 htu\n31 22\nqxtnj 57 jpsa g 15\n24 9\nbw 81 b 5 tdsz l fb vrpgbnua\n81\nzug yixw ckcwjfpa ecpoo 92 mv\n84 86\nofs nyiz 55 h 84 unymn\n8\nj lnhv cfhvh dt 34 dswqk\n10\ntc bfw bib 54 ty\n40\nzaqd 44 ntaupw eapkggvbzqqhuktmp\n100 32\nsc nlhhq 34 wo 69 zcawyy\npmujbg",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 4\ntti 23 jwjqa 3 yb feu rpk nbfo\n28 61\nz 79 y 13 cv avkr w wzrpxxq\n71\nmjzl 89 vhff wo\n75 50\nq 10 t 39 iop fw fhb ktff\n65 96\ns lyr 26 rz 53 zfcdlzo\n91 87\ngksh 31 i e 1\n44 47\nwsgte 76 xnzo 78 kwa dut pp hymg\n60\nkztp im aqejzc a 96 jlwam\n64 6\nhpve olwwi 56 aebzk 22 ylmvowaky\n13\nluh o zbjhx we 10 wzcb\n74\nowwu obe beim 62 ufxgw\n68\nek 52 vyusuys wubzwboik\n87 98\nyo bu 95 r 81 fktz\ntnvr",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "389 470\ndz 90 kh 370 rqv oq nsql hagwtci\n149 344\nmab 499 rcx 149 dmzhb odw pj szfqlp\n69\nd 388 sjekmp tccinl\n263 449\ns 194 b 388 sgdm dxfl z smwj\n224 96\ngmky edow 200 q 236 myribtju\n308 198\na 178 coqnkl rcipnw 212\n443 223\nid 498 kdk 382 u dajf oaibi bnpix\n365\nvgyaw vkzty rmxsijp jyjtx 413 njr\n447 441\ndgmq cncrw 189 cif 139 cuscohsyd\n469\nvbq ptlf kundyck efbwc 439 x\n176\ncnx wr cn 308 vcoa\n183\nwi 491 nutkvfq epf\n383 398\njkr fkqzf 99 ymi 497 wpklc\nqqaqji",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "260 365\nr 281 vn 322 hoynh zsntx ip rclcgu\n378 191\nlqamt 227 ixuy 201 mxxf xwoh y jcizzbq\n96\nqww 211 mrwqst enim\n361 443\ncvh 228 yy 74 y q lua dssbm\n428 345\nfri m 60 ls 160 idhha\n456 195\nkkd 449 slupxc dff 295\n486 454\nh 70 cbbcj 235 lw ngp jpc zkok\n473\nsi thln dlaxak dopp 476 w\n460 113\nwja wr 451 cslw 145 oogoxn\n286\nbw fcem jmg sxcqy 183 nl\n453\ny g yc 70 wcje\n337\nuxtvq 72 e xyxmyxqndhw\n241 290\nxtjph lw 376 o 210 mdpvd\nri",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "497 219\ntte 248 jcftk 282 ieqz wtptl bkhot dgqcif\n125 222\noy 402 zewx 312 nycz wyolv w v\n65\nuu 298 rysburl rs\n240 386\nqk 285 lbwie 451 gbzuo rb lfcu mslfpy\n211 182\ntqpjv ymc 486 wnua 84 dacvu\n78 483\nmpvv 400 ia kdizug 134\n95 350\nzde 159 xq 228 mtpik u x qzuutrbg\n67\nmp mw simlonia qhbbf 225 jlc\n484 152\nzt wq 68 a 56 vd\n121\nl bzhvu jkzii zgybc 361 qmif\n272\nu imb xsdj 362 urn\n125\njot 155 sipnwnl drs\n361 274\npbbfb vzwbd 360 esb 208 idp\nvlnwrs",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "78 485\ndxp 171 donl 84 fwbc kdf lumda oct\n299 123\nz 428 vfz 257 rej bkf gkyg hgmsh\n152\ndkn 168 viwwvcn be\n185 190\negjgq 294 zzuj 317 t ah tiueg kyvl\n162 308\nsj kwrq 453 zsdmz 481 cfa\n57 313\ntcc 382 imsllq erwzkzhl 373\n200 408\nssf 119 a 261 x o vt gyojlaux\n448\ng lsba pvh cje 481 v\n91 257\nhm t 141 r 436 z\n421\nd it wbueh mohbm 263 r\n126\nitr vp asdc 206 kr\n307\nggmz 369 drdonj khhbtaakiccdfxkuhi\n492 352\nrnpqr emao 279 i 359 ycapuluek\nan",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "380 482\nznz 451 lnm 370 voqsn sxj p rjs\n350 147\nv 444 pg 189 d bgm f xe\n407\nopb 107 hbj jqhfj\n468 196\nqqjcg 366 gxkj 99 n c mat thafk\n259 230\njzm y 402 pax 326 vql\n164 290\nit 480 rkpj quybwx 321\n310 275\ncrck 336 yyty 212 nvosf t hspi nrgqiqg\n414\nm xm blj b 125 mgs\n349 411\ncjv zkz 173 z 145 hzzfxln\n237\nuaaie tj nokauyr kjb 214 lgld\n343\nuw jxi z 394 zqp\n470\nundup 366 nofvv rogcxcmwooax\n461 443\nwkz jjk 168 l 383 efupeaku\nawkv",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "243 253\nq 403 gr 347 pekll wwzu b vqsk\n200 105\nnyhx 69 nm 468 o pc ar mgengbft\n461\npzqz 186 lsykb vhkro\n71 135\nl 484 n 364 ws pjyyd ydwlr m\n58 407\nfo dnxpx 483 aq 212 e\n480 450\niwu 391 ckj orwdzn 161\n128 196\nlfq 448 d 324 kwawb vu mrzm zd\n344\nxfwnh bib fchi nx 286 sc\n363 189\nsc pap 215 q 396 tyhnqh\n323\npp zdm hok kkc 289 mqidf\n343\nztuvw vc jkqsd 75 kyi\n499\npon 439 zhtc gwssriaekvqwfoc\n342 442\nlv q 174 f 134 ikutugewm\nyx",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "485 416\nwxde 56 sbw 79 zstfp no ne tuw\n221 261\nx 177 vjt 226 uip mnwu mt el\n286\nu 442 ydqkksd lak\n263 342\nlya 314 dpbd 144 pzk tpl p mccxm\n275 260\ndfmds pk 465 s 375 bh\n54 131\nwu 491 qwezt e 468\n206 429\nz 63 i 163 n fvjg cixa covk\n416\nbmgs yis du xa 493 cep\n161 384\ns ujj 418 my 238 vjgpmdnz\n51\nomi hkdbn rbbnypj opqdf 322 lallv\n492\na fux br 367 q\n90\nhed 358 m ilrqeaujwycz\n79 439\nwus lnwaw 360 beywg 415 jeuqocisi\nl",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nih 1000 f 1000 j v apyj xhz\n1000 1000\nsx 1000 qz 1000 q spgq v n\n1000\nmyfz 1000 mrqk cewdtiuc\n1000 1000\nvm 1000 wwvjw 1000 yq mjgy mmme bqro\n1000 1000\nbvxu q 1000 li 1000 kebwgsb\n1000 1000\ntl 1000 nigwol jghdag 1000\n1000 1000\ncjew 1000 a 1000 v cwju qgmsy l\n1000\nms fo tcdcki zmmmo 1000 hb\n1000 1000\nvaceo lh 1000 cqxxw 1000 mwqmz\n1000\ng u dzevp zn 1000 ewfv\n1000\ndkdjb l xpj 1000 swlh\n1000\npbb 1000 phoc pyuwxyjoxpiqujlcs\n1000 1000\nia v 1000 eozs 1000 qkhyrzxv\nhlkczs",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nd 1000 tt 1000 jpaj qh zmxhe v\n1000 1000\nzgl 1000 wuzch 1000 s lljhq ik mt\n1000\nfetou 1000 kcapvkh gxz\n1000 1000\nfdjyu 1000 xseo 1000 fenw w jjxo ozdbf\n1000 1000\nb rjkbe 1000 kns 1000 gnl\n1000 1000\npw 1000 tleius quhep 1000\n1000 1000\nrdoc 1000 kkah 1000 ufppq q jwr ahm\n1000\nect hofeg tcizmux gn 1000 upwvt\n1000 1000\nkhxv rhqyn 1000 lc 1000 v\n1000\ngqpzt r jfkeilm taw 1000 rwko\n1000\nwbof pzeco vjhg 1000 u\n1000\nqqfb 1000 nlsb sbiwuqnzjfhmildc\n1000 1000\nmjm nui 1000 u 1000 ljwzrobqo\nr",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2\nr 2 m 1 e c nma bvmr\n999 1\nbu 2 xb 1 qjo rzbbq gr hrbxifls\n2\nzr 1000 ishx bmqqx\n2 999\nnx 999 nnw 1 p ssc tproz kkcywq\n2 1\nf huoxe 2 ng 999 ufnep\n999 1000\nylr 999 ottxrm ypeecim 2\n1000 1000\nqvsbm 2 lv 999 svz bqqs vvl kgegxu\n999\nntsr mgj ypiab nr 999 seq\n999 2\ndhya esa 1000 yvr 999 gl\n2\nrwfi a smid osu 2 mmd\n1\nitk n a 1 txodf\n1000\nz 1 ggxdex hzjcp\n999 2\nics ir 999 p 2 nm\nepwnly",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\ns 1000 nof 1000 hsg ypt kt oqisw\n1000 2\nz 999 doc 999 rjcax swqpm cgsk vizjtn\n1000\ncpi 2 x kfsirgydfqy\n999 1\ne 2 m 2 mw my tpre wuf\n1 999\nqnk q 999 fy 999 akqdtjgm\n2 1000\nbew 999 zmec m 1000\n2 999\ntozo 1000 y 1000 edayr cv yilk ma\n2\nynxi o mtbmhq oipr 1 ia\n999 2\neoal g 1 hxa 1 rzznoyxm\n2\nwqpc k ql u 1 krgs\n1000\nbo kw hr 1 x\n2\nkw 1000 j gzgn\n999 1\ndc wl 1 qqdxa 1 sqgap\nzqyub",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Digital Image Recognition",
+  "tags": [],
+  "text": "According to Wikipedia, image processing is any form of signal processing for which the input is an image, such as photographs or frames of video; the output of image processing can be either an image or a set of characteristics or parameters related to the image. Most image-processing techniques involve treating the image as a two-dimensional signal and applying standard signal-processing techniques to it.The task you are facing here is a relatively easy one (compared to our general conception of image processing!). Given a black-and-white image of size R × C with some digits (and possibly other shapes) on it, your program needs to figure out the digits written on the image. Specifically, the digits drawn on the graph will adhere to the following rules:1) Digits are drawn with a series ofstrokes. Astrokecan be regarded as arectangleof any size on the image, and its edges will always be parallel to eitherx-axisory-axis. The number of strokes required to draw each digit will be exactly as follows:0 \t1 \t2 \t3 \t4 \t5 \t6 \t7 \t8 \t9\r\n4 \t1 \t5 \t4 \t3 \t5 \t5 \t2 \t5 \t5Refer to thefigure belowif you are unclear about how the digits are drawn.2) Although thewidthof strokes used to draw a digit might bedifferent, theouter shapes of digitswill strictly follow those specified in thefigure below.3) In order for a digit to be recognizable,allparts (strokesandjoints) presented in the graph below must also be clearlydistinguishablein the image.(Refer to the last sample test case if you are unsure about this requirement; in that test case, when the middle stroke of 2 is omitted, the number should not be considered as recognizable.)4) You may assume that the image is not rotated, and there isno noisein the input.Please output the sum of digits recognizable in the graph. In the case that no characters is recognizable, please output 0 instead.InputThere are multiple test cases in the input file.Each test case starts with two integers, R and C (1 ≤ R, C ≤ 500), specifying the number of rows / columns of the graph. Each of the following R lines contains consecutive C characters (\"0\" or \"1\"), describing the image to be processed.Two successive test cases are separated by a blank line. A case with R = 0, C = 0 indicates the end of the input file, and should not be processed by your program.OutputFor each test case, please print a single integer, the sum of recognizable numbers. See the sample output for format details.ExampleInput:5 12\r\n001101011111\r\n000101000011\r\n000101001111\r\n001101000011\r\n000000000111\r\n\r\n5 3\r\n111\r\n010\r\n110\r\n010\r\n110\r\n\r\n6 14\r\n11111000011111\r\n11001000000011\r\n11111001000000\r\n11111001001110\r\n11001011001010\r\n11111000001110\r\n\r\n5 2\r\n11\r\n01\r\n11\r\n01\r\n11\r\n\r\n6 9\r\n111100111\r\n000100001\r\n000100011\r\n011100010\r\n010000011\r\n011110000\r\n\r\n0 0Output:Case #1: 4\r\nCase #2: 0\r\nCase #3: 15\r\nCase #4: 3\r\nCase #5: 2",
+  "sample_input": "0 \t1 \t2 \t3 \t4 \t5 \t6 \t7 \t8 \t9\r\n4 \t1 \t5 \t4 \t3 \t5 \t5 \t2 \t5 \t5",
+  "sample_output": "Input:5 12\r\n001101011111\r\n000101000011\r\n000101001111\r\n001101000011\r\n000000000111\r\n\r\n5 3\r\n111\r\n010\r\n110\r\n010\r\n110\r\n\r\n6 14\r\n11111000011111\r\n11001000000011\r\n11111001000000\r\n11111001001110\r\n11001011001010\r\n11111000001110\r\n\r\n5 2\r\n11\r\n01\r\n11\r\n01\r\n11\r\n\r\n6 9\r\n111100111\r\n000100001\r\n000100011\r\n011100010\r\n010000011\r\n011110000\r\n\r\n0 0Output:Case #1: 4\r\nCase #2: 0\r\nCase #3: 15\r\nCase #4: 3\r\nCase #5: 2",
+  "link": "https://www.spoj.com/problems/IMGREC2",
+  "scraped_at": "2025-08-17 00:34:19",
+  "test_cases": [
+    {
+      "input": "0 \t1 \t2 \t3 \t4 \t5 \t6 \t7 \t8 \t9\r\n4 \t1 \t5 \t4 \t3 \t5 \t5 \t2 \t5 \t5",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 12\r\n001101011111\r\n000101000011\r\n000101001111\r\n001101000011\r\n000000000111\r\n\r\n5 3\r\n111\r\n010\r\n110\r\n010\r\n110\r\n\r\n6 14\r\n11111000011111\r\n11001000000011\r\n11111001000000\r\n11111001001110\r\n11001011001010\r\n11111000001110\r\n\r\n5 2\r\n11\r\n01\r\n11\r\n01\r\n11\r\n\r\n6 9\r\n111100111\r\n000100001\r\n000100011\r\n011100010\r\n010000011\r\n011110000\r\n\r\n0 0",
+      "expected_output": "Case #1: 4\r\nCase #2: 0\r\nCase #3: 15\r\nCase #4: 3\r\nCase #5: 2",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "9 9 10 1 7 4 6 2 3 9\n5 3 4 1 3 2 3 5 9 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7 4 7 10 6 10 3 5 4\n4 7 10 5 7 7 7 9 6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 4 5 9 10 3 6 4 7 5\n4 9 4 7 10 3 1 8 6 4",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "35 62 18 39 50 14 15 99 29 100\n94 59 35 28 89 6 24 80 71 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 81 86 53 65 8 15 74 87 8\n22 60 56 29 100 23 62 75 71 73",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 60 10 42 7 35 48 81 64 13\n19 30 83 96 42 83 59 81 91 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 48 69 88 8 62 47 34 58 26\n85 32 77 49 26 55 56 56 61 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 86 16 76 62 86 42 29 35 52\n36 76 82 15 34 63 11 68 81 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "325 448 279 449 80 226 97 325 87 374\n418 136 402 335 496 499 482 54 493 190",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "300 485 247 141 305 484 258 493 249 322\n472 390 78 378 141 308 104 454 68 369",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "164 286 476 499 98 206 401 135 496 60\n75 463 128 419 463 196 350 236 88 97",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "133 473 351 446 265 157 289 240 218 57\n454 343 90 379 321 439 344 321 136 262",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "61 163 161 121 147 123 102 470 341 483\n248 383 266 465 473 265 406 333 73 251",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "218 287 51 353 252 96 399 363 267 112\n79 235 321 133 474 248 265 461 368 242",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "280 427 329 441 111 219 157 441 87 408\n207 412 267 340 176 274 56 483 335 495",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1 1 1 1000 2 999 1000 2 2\n999 1 1000 1 1000 999 2 1000 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Palindromic DNA",
+  "tags": [],
+  "text": "A DNA sequence is composed of a series of four possible nucleobases, namely Adenine, Guanine, Thymine and Cytosine; we will refer to each of these bases by their initial. For our purposes, nucleobases have an associated cyclic “order”:Ais followed byG, which in turn is followed byT, which is followed byC, which is followed byAagain. State-of-the-art research in genomics has revealed the startling fact that many diseases are caused by certain subsequences of bases not forming a palindromic sequence! Your mission as a leading researcher at ICPC laboratories is to take a DNA stringSand a series of subsetsP1...Ptof indices to characters (nucleobases) inS, and transformSso that each of the restrictions of the resulting string toP1...Ptare palindromic. (The restriction ofSto a subsetP= {i1,i2...ik} of indices, where 0 ≤i1<i2< ... <ik< |S|, is the stringSi1Si2…Sik). It is possible to inspect any base ofSat will, but only three transformations can be applied to a base:Leave it unaltered.Increase it by 1 in the cyclic order of nucleobases (e.g. turnCintoA).Decrease it by 1 (e.g. turnTintoG).Moreover, owing to limitations of current technology, it is impossible to modify two bases in consecutive positions of the sequence. Is our goal achievable?By way of example, consider DNA sequenceAGTAT. Number positions starting from 0, and suppose we have the three subsetsP1= {1, 4},P2= {0, 1} andP3= {0, 2, 4}. One solution is to increase the first character and decrease the last, yieldingS′ =GGTAG. The restrictions ofS′ toP1,P2andP3areGG,GGandGTG, respectively; all of them are palindromic.One case where no solution is possible is when the string isCATGC, and we require the subsequences determined by positions {0,3} and {3,4} be palindromic. Here, characters 3, 0 and 4 would all need to become aT. But this entails modifying consecutive characters 3 and 4, which is not allowed.InputThe first line of each test case has two integersNandT(1 ≤N≤ 10 000, 1 ≤T≤ 6 000), the sequence length and number of subsets to consider. The next line contains the DNA sequence of lengthN, all of whose characters are inACGT. The subsets are described by the followingTlines. Each line starts by “L:”, whereL(0 ≤L≤N) is the number of positions in the subset, and is followed byTdistinct integers between 0 andN− 1 in increasing order. Subsets may overlap partially or totally.A blank line separates different test cases. The input file is terminated by a line containing0 0.OutputIn a single line per test case, printYESif the task is solvable andNOotherwise.ExampleInput:5 3\r\nAGTAT\r\n2: 1 4\r\n2: 0 1\r\n3: 0 2 4\r\n\r\n5 3\r\nCATGC\r\n0:\r\n2: 0 3\r\n2: 3 4\r\n\r\n0 0Output:YES\r\nNOProblem setter: David García Soriano",
+  "sample_input": "Input:5 3\r\nAGTAT\r\n2: 1 4\r\n2: 0 1\r\n3: 0 2 4\r\n\r\n5 3\r\nCATGC\r\n0:\r\n2: 0 3\r\n2: 3 4\r\n\r\n0 0Output:YES\r\nNO",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PALINDNA",
+  "scraped_at": "2025-08-17 00:33:54",
+  "test_cases": [
+    {
+      "input": "5 3\r\nAGTAT\r\n2: 1 4\r\n2: 0 1\r\n3: 0 2 4\r\n\r\n5 3\r\nCATGC\r\n0:\r\n2: 0 3\r\n2: 3 4\r\n\r\n0 0",
+      "expected_output": "YES\r\nNO",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 6\nvpbmznxma\n6 10 1\no 10 3\n1 4 5\nw 1 3\n4 6 9 3\nmq 1 4 5\n1 3\nnd\n8\nnhqz\n5 9 1\negnq 3 3\n1 5 1\nblw 6 7\n10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 6\nquydpteyui\n9 9 1\na 5 1\n1 10 3\nylo 8 8\n1 3 6 1\nd 9 6 2\n4 8\nzcqdtxac\n10\nm\n9 4 10\nxcm 2 9\n10 1 3\nzbhek 2 1\n10 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10\ndtr\n9 4 4\ni 6 2\n3 7 2\ngp 9 7\n2 8 8 2\nyxfv 3 7 5\n3 4\nhkosyvh\n7\nr\n6 3 9\naqn 6 2\n2 2 2\nn 6 5\n8 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "69 88\noe\n20 90 75\nnl 49 91\n80 87 26\npf 76 65\n25 1 91 80\njatd 61 99 53\n72 50\nz\n6\nhyhi\n69 31 56\nh 85 9\n47 61 65\nshab 89 28\n95 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 60\nlb\n48 20 8\nd 60 65\n27 53 1\na 74 23\n68 65 53 14\neagzk 56 18 52\n47 65\nyrfsffxd\n5\nvn\n58 9 13\nplum 26 71\n76 92 98\nvdk 39 28\n78 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 89\nzpn\n15 59 71\nisru 77 45\n13 75 69\nmru 24 48\n45 27 81 25\nrmzf 47 16 3\n35 55\nxveabgp\n50\nxl\n79 31 31\ne 21 78\n82 23 62\nv 83 4\n47 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 47\nzw\n95 84 31\ndro 58 25\n53 12 72\nzqds 66 78\n5 52 6 8\nn 94 98 71\n25 65\nubr\n27\nzfry\n6 31 51\nwsnn 60 42\n37 50 26\nu 47 39\n22 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 8\nasdx\n56 19 63\nfrt 38 58\n36 84 95\nvqk 32 43\n90 96 4 88\nwux 53 96 39\n1 18\npbucnafvzv\n69\nv\n21 84 11\nkb 21 92\n58 37 9\ned 60 89\n89 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2702 2360\ndm\n4692 1179 1543\njeil 3519 3719\n3837 639 2867\ndf 1479 2235\n928 3767 2022 3688\nc 2276 2421 3693\n4865 3602\nukrbkl\n2248\npci\n4868 3115 3443\nz 4319 3171\n1587 682 2832\nrdb 1222 4024\n3095 4844",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1347 1919\nph\n3103 1069 3232\niajk 826 4648\n4017 2946 1141\nvlro 675 4261\n2181 4288 1402 946\nyqwcy 789 4116 1242\n3121 2219\nafzjurvzx\n4680\nmc\n4090 3254 2457\nh 2287 578\n1948 1765 2235\nnjaug 1355 917\n4987 2238",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1185 1360\npgnyiizoq\n3080 2190 2137\ns 1829 3338\n541 3428 1264\nywgyv 1127 4146\n3934 4727 2392 4340\niqf 2367 1796 4417\n3141 3366\njxw\n793\nl\n2689 2184 1714\nkbjd 1330 1365\n1168 3754 2889\nxwhs 686 2701\n4779 819",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4412 1756\nmmwtyfsqq\n3756 4471 935\neigf 1407 3948\n2640 4928 2320\noe 3188 3215\n1725 4125 3550 2685\nvljgx 4303 4390 3357\n2215 935\nuexxvvfe\n3648\nw\n2251 1552 4748\ngyxf 3957 3232\n3267 3159 4277\nlc 1897 4258\n4203 2756",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4363 839\nqzzovwujhr\n3890 2865 3259\nmnuv 1021 817\n4471 4323 4861\ntas 2912 790\n2259 4644 3607 4346\nbx 3042 2326 3164\n2812 3626\nooz\n3525\nk\n3616 3128 4271\nak 1423 4131\n3328 4220 1757\nlujpd 3025 4545\n726 4982",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3531 3986\nguhiv\n3330 4803 3944\ne 2636 3204\n794 2060 2130\nmbp 3355 4747\n4183 2636 4128 580\nylu 1432 2656 1210\n2111 1351\ntv\n4753\nj\n2536 1117 3151\nqndgi 3253 4165\n511 1231 1163\ntn 3710 843\n1013 2177",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "763 3783\nu\n4373 3021 3068\nk 587 1789\n4948 4712 2329\npmy 2375 1882\n1445 1826 1996 4566\ndeub 1749 2081 4631\n4544 3936\nbhnmdf\n4143\nut\n2066 1123 3088\naerj 4659 886\n2569 1185 3059\nx 2837 4120\n1013 3675",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10000 10000\nnyt\n10000 10000 10000\nwckc 10000 10000\n10000 10000 10000\nh 10000 10000\n10000 10000 10000 10000\nwiz 10000 10000 10000\n10000 10000\ng\n10000\nqpv\n10000 10000 10000\nwed 10000 10000\n10000 10000 10000\nwyp 10000 10000\n10000 10000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10000 10000\noix\n10000 10000 10000\nsyi 10000 10000\n10000 10000 10000\ngczos 10000 10000\n10000 10000 10000 10000\nprw 10000 10000 10000\n10000 10000\nzzn\n10000\nchu\n10000 10000 10000\neam 10000 10000\n10000 10000 10000\nll 10000 10000\n10000 10000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 9999\nloawwq\n10000 1 10000\nqkhfw 2 10000\n9999 10000 2\no 9999 10000\n2 2 1 9999\nepk 10000 9999 2\n9999 9999\ngqzob\n2\nxelz\n10000 9999 2\nkk 2 9999\n2 9999 1\nko 2 9999\n9999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "9999 9999\nydfezlepaq\n1 2 10000\nnjdz 1 9999\n1 9999 1\nxxb 9999 10000\n9999 9999 2 1\nbsgjm 1 9999 10000\n10000 9999\nkhadafp\n2\nxw\n10000 9999 1\nxkbxh 10000 9999\n10000 9999 2\nvi 2 10000\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

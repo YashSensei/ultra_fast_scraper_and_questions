@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Blade Master",
+  "tags": [],
+  "text": "Loda and Maelk are legendary ChefCraft players. They have played so many games that this number doesn't fit in   a standard 32-bit integer type. Today Loda and Maelk are going to sort the things out and find out who is the   greatest ChefCraft player ever. So the great fight is coming. There are a lot of different heroes you may   choose to play ChefCraft. Obviously every hero has his pros and cons. Loda perfectly plays Blade Master. His main skill is to make mirror images of himself to spoof the enemy.As every other popular game ChefCraft is played on a rectangular grid which consists ofNrows andMcolumns. Rows of the grid are numbered by integers from1toN. So the upper row of the   grid has number1and the lower row has numberN. The same holds for columns. They are numbered   by integers from1toMsuch that the most left column has number1while the most right   column has numberM.At the beginning of the game the only Blade Master's image stands on some starting cell(Sx, Sy)where1 ≤ Sx ≤ Nand1 ≤ Sy ≤ M. Then Loda makesTmoves. Maelk knows how the   distribution of images on the grid changes after each Loda's move. This happens according to the following   rules.1.If there is an image standing on the cell(i, j)then the new images appear by the next   rules:LetF(i, j)be the total number of images in the \"cross\" of the cell(i, j). The \"cross\" of   the cell(i, j)is union of all cells in thei-th row of the grid and in thej-th column   of the grid. SoN + M − 1cells belongs to the \"cross\".LetX = F(i, j) mod 6, that isXis the remainder of the division ofF(i, j)by6.For every possible value ofXwe have following values:D1,D2,P1andP2.D1andD2may be equal to one of the4values['U', 'R', 'D', 'L']and mean   some two directions. Here'U'meansup,'R'meansright,'D'meansdownand'L'meansleft.P1andP2are integer numbers.New mirror images will appear at every cell in the directionD1with the periodP1starting   from cell(i, j)and in the directionD2with the periodP2also starting from the cell(i, j). Of course, no images will appear out of the grid. For example, ifD1 = 'U'andP1 =   2then images appear at the cells(i − 2, j), (i − 4, j), (i − 6, j), and so   on.Loda always use the same values forD1andD2. Namely,D1 = 'U', D2 = 'D'forX = 0,D1 = 'L', D2 = 'R'forX = 1,D1 = 'U', D2 = 'R'forX = 2,D1 = 'R', D2 = 'D'forX = 3,D1 = 'D', D2 = 'L'forX = 4,D1 = 'L', D2 = 'U'forX = 5.But valuesP1andP2may vary for different games. But once chosen they will be the same for   all moves.2.Appearing of new mirror images happens immediately.3.Whenever there is more than one image at the cell they start one on one fights. In each fight two   images participate and both die. So if the number of images in the cell was even than all images will   disappear in the end, otherwise exactly one image will remain at this cell.Now Maelk wants to choose his hero in order to win the fight. The most important thing he needs to know for   this is how the number of images changes during Loda's moves. So he asks you for help. Denote byC(t)the number of images on the grid after thet-th Loda's move fortfrom1toT. For   convenience we denoteC(0) = 1with meaning that0-th move is the putting of the only Blade   Master's image at the starting cell. Maelk wants you to calculate the sumC(0) + C(1) + ... + C(T).   Since Maelk doesn't know what to expect from Loda he would like to know the answer for several values ofT. As you remember the total number of games played by Maelk and Loda at ChefCraft doesn't fit in a   standard 32-bit integer type. Of course, the same can hold for the number of moves in their final fight. Since   Maelk plays ChefCraft the whole life he is not strong in math and can't calculate such large sums. So let's   help him to win the final fight and become the only ChefCraft master ever.InputThe first line of the input contains three space separated integersN,MandQ. HereNandMare sizes of the grid described above andQis the number of Maelk's queries. The   second line contains two space separated integersSxandSy, row index and column index of the   starting position of the first image. Each of the following six lines contains two space separated integers,   the valuesP1andP2for the correspondingX, that is,i-th line among these six   lines contains valuesP1andP2forX = i − 1. Each of the followingQlines contains a single integerT, the number of Loda's moves for the corresponding Maelk's query.OutputFor every Maelk's query output on a separate line the numbers of images Maelk will see during Loda's move.ConstrainsNandMare positiveN•M≤341≤Sx≤N1≤Sy≤M1≤P1,P2≤max{N, M}1≤Q≤1001≤T≤1016ExampleInput:3 3 3\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1\r\n2\r\n3Output:4\r\n12\r\n17ExplanationThe initial grid looks as follows:100000000Here '1' represents a cell with an image and '0' represents a free cell.After the first move grid is111000000After the second move grid is101111111Finally, after the third move we have011101010So after the first move Maelk will see3images, after the second move –8images and   after the third move –5images. Hence the answers forT = 1, 2, 3are1 + 3 = 4,1 + 3 + 8 = 12and1 + 3 + 8 + 5 = 17respectively.",
+  "sample_input": "Input:3 3 3\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1\r\n2\r\n3Output:4\r\n12\r\n17",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BMASTER",
+  "scraped_at": "2025-08-17 00:34:14",
+  "test_cases": [
+    {
+      "input": "3 3 3\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1 1\r\n1\r\n2\r\n3",
+      "expected_output": "4\r\n12\r\n17",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 1 3\n1 3\n9 3\n2 8\n9 1\n5 3\n2 2\n6 3\n2\n6\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 9 2\n8 2\n8 5\n3 7\n6 7\n5 8\n1 2\n10 1\n9\n7\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 5 6\n10 4\n4 6\n2 5\n3 7\n3 1\n8 9\n8 8\n5\n8\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 93 56\n38 20\n43 39\n78 19\n50 66\n61 43\n16 89\n46 72\n64\n67\n71",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 42 9\n99 46\n65 11\n83 40\n75 20\n49 61\n30 2\n73 13\n9\n13\n67",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 75 28\n55 35\n57 49\n68 56\n16 84\n79 19\n36 45\n98 83\n94\n28\n97",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 60 62\n94 47\n88 73\n8 8\n12 98\n34 1\n13 47\n7 6\n48\n96\n38",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 10 44\n97 29\n34 52\n83 81\n51 20\n92 51\n97 27\n38 87\n97\n44\n30",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "101 180 119\n114 76\n57 185\n141 401\n349 64\n126 362\n214 226\n346 303\n490\n147\n280",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "357 372 409\n82 150\n70 251\n282 255\n326 177\n383 236\n304 455\n207 487\n384\n146\n479",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "205 460 254\n282 170\n440 62\n67 460\n172 333\n308 384\n323 211\n355 339\n128\n383\n192",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "127 196 133\n100 402\n76 401\n97 254\n203 262\n376 193\n154 134\n179 71\n309\n291\n287",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 451 275\n266 61\n359 368\n92 89\n191 301\n379 95\n266 126\n142 129\n137\n384\n66",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "224 375 499\n472 211\n75 408\n148 196\n331 458\n216 470\n422 72\n384 249\n139\n407\n373",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "241 112 264\n132 243\n497 498\n126 184\n345 228\n178 361\n77 363\n339 358\n347\n235\n493",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000\n1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000\n1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1\n2 1\n2 999\n999 1\n2 999\n2 1\n1 1000\n999 1\n1000\n2\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000 999\n1000 1000\n1 1\n1 1\n999 999\n1000 1000\n1 1000\n1000 999\n2\n1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

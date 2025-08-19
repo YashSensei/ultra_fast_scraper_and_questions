@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Encoding",
+  "tags": [],
+  "text": "Chip and Dale have devised an encryption method to hide their (written) text messages. They first\r\nagree secretly on two numbers that will be used as the number of rows (R) and columns (C) in a\r\nmatrix. The sender encodes an intermediate format using the following rules:The text is formed with uppercase letters [A-Z] and.Each text character will be represented by decimal values as follows:<space> = 0, A = 1, B = 2, C = 3 ... Y = 25, Z = 26The sender enters the 5 digit binary representation of the characters’ values in a spiral pattern along\r\nthe matrix as shown below. The matrix is padded out with zeroes (0) to fill the matrix completely. For\r\nexample, if the text to encode is: \"ACM\" and R=4 and C=4, the matrix would be filled in as follows:A = 00001, C = 00011, M = 01101\r\n         (one extra 0)The bits in the matrix are then concatenated together in row major order and sent to the receiver.\r\nThe example above would be encoded as: 0000110100101100InputThe first line of input contains a single integer N, (1 ≤ N ≤ 1000) which is the number of datasets that\r\nfollow.Each dataset consists of a single line of input containing R (1 ≤ R ≤ 20), a space, C (1 ≤ C ≤ 20),\r\na space, and a text string consisting of uppercase letters [A-Z] and. The length of the text\r\nstring is guaranteed to be <= (R×C)/5.OutputFor each dataset, you should generate one line of output with the following values: The dataset\r\nnumber as a decimal integer (start counting at one), a space, and a string of binary digits (R*C) long\r\ndescribing the encoded text. The binary string represents the values used to fill in the matrix in row-\r\nmajor order. You may have to fill out the matrix with zeroes (0) to complete the matrix.ExampleInput:4\r\n4 4 ACM\r\n5 2 HI\r\n2 6 HI\r\n5 5 HI HOOutput:1 0000110100101100\r\n2 0110000010\r\n3 010000001001\r\n4 0100001000011010110000010",
+  "sample_input": "A = 00001, C = 00011, M = 01101\r\n         (one extra 0)",
+  "sample_output": "Input:4\r\n4 4 ACM\r\n5 2 HI\r\n2 6 HI\r\n5 5 HI HOOutput:1 0000110100101100\r\n2 0110000010\r\n3 010000001001\r\n4 0100001000011010110000010",
+  "link": "https://www.spoj.com/problems/GNY07C",
+  "scraped_at": "2025-08-17 00:33:13",
+  "test_cases": [
+    {
+      "input": "A = 00001, C = 00011, M = 01101\r\n         (one extra 0)",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\r\n4 4 ACM\r\n5 2 HI\r\n2 6 HI\r\n5 5 HI HO",
+      "expected_output": "1 0000110100101100\r\n2 0110000010\r\n3 010000001001\r\n4 0100001000011010110000010",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "4 2 1\nid s cw ws ifxv vyvet hx f 6\n5\nbgurk cy tki",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 5 6\nqg rij dil njz wi kofac x pqszp 9\n5\nkbou vyoa wvw",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8 5\ntgouf dzf p y zn slzra arao f 2\n6\nwzc g t",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "41 52 6\nglvxi mmlx bnnmv xzjv zejjg obbg oo hgypw 38\n34\nn mhp d",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "87 52 26\nh lvh ga eeq f rmyddd sifi zg 60\n44\nzyn lhde pm",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "100 42 99\nzutrf rtmx yb tkpb zqwmt joxt n g 36\n63\nul lahsr qn",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 32 34\nfrod uym zwo mzt iuhq ti kja wj 25\n23\ni gw hsh",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 4 100\nknpvr gjz j ue rcj wysz nhy xedw 35\n27\nzr j gorzs",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "392 442 320\nq ja vxyk ull tql wa bive k 468\n470\nep kajr d",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "362 186 217\nq hfpqf xadls eui ag wnowkh fnt ufc 323\n172\nuax xqf ypeg",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "389 473 202\nk xbsin estz lmob qisq ndih rk ap 214\n411\nhofwu y xl",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "54 64 129\nqrez jazyk jz fs kby yl yov umal 397\n200\nlb kpx kj",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "300 322 61\nq csvph w ozoj iweh eqk okgsf ssuq 104\n413\nzsyya ryznw xhsj",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "470 88 151\nyiuq mar p b kc ejqs pod ztjd 480\n413\nng s l",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "58 412 447\ngpuy ijtg sefvl gzv nyhjr fejvir zw d 94\n185\nw wtg cxjv",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nvxpgj jm os rx mqlg dersuj ql x 1000\n1000\npz gxa rk",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\nz gpyy u yzn jty umoff kvn bq 1000\n1000\nwnvue wdp dcy",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2 1\nlwm qprk ziaqy e rswr solj ylx kxv 999\n2\nueyrj vvhrz elv",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

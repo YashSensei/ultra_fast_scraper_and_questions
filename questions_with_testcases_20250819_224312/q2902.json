@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Folding Stick",
+  "tags": [],
+  "text": "Folding StickToday Satria really excited about fractals (recurrence pattern), the first fractal type he learn is the dragon curve fractal. To make the dragon curve, it can be easily simulated by folding the paper and open it 90 degrees (parellel to X axis or Y axis) like this image below:Satria realized that the can be many ways to fold the paper, so he make an experiment. Initially there is a stick length 2N, he then place the stick parallel to x axis with one end lies on coordinate (0,0) and the other end lies on coordinate (2N,0). He then fold the stick, so the new folded stick occupy (0,0) to (2N-1,0) he keep doing that until the final folded stick occupy (0,0) to (1,0). In each foding there are two types of folding, folding UP (via possitive Y coordinate) and folding down (via negative Y coordinate). he then open all the folding with angle 90 degrees so each stick segment will be parallel ot X axis or Y axis. Now he wonder if he open all the folding with angle 90 degrees, what is the coordinate of the other end of that stick. Can you help him?InputThe first line there is an integer N denoting number of folding and a string S the sequence of folding and the type of folding.OutputYou sould output two integers x and y which is the coordinate of the other end of that stick.Constraint1 ≤ N ≤ 50Length of string S is equal to N, in other word: |S|=N.String S containing two possible characters:'U' means folding UP (positive Y direction)'D' means folding DOWN (negative Y direction)Sample 1Input1 UOutput1 1Sample 2Input1 DOutput1 -1Sample 3Input2 UDOutput2 0Sample 4Input2 DUOutput2 0Sample 5Input3 UUUOutput-2 2Sample 3 ExplanationHere is the image illustrating sample 3 on how the stick is folded and openned with 90 degrees angle.As seen in the picture above the other end of the stick after folding and openning lies on coordinate (2,0).Sample 5 explanationHere is the final openned stick on test case 5, the other end of the stick after folding and openning lies on coordinate (-2,2)",
+  "sample_input": "1 U",
+  "sample_output": "1 1",
+  "link": "https://www.spoj.com/problems/JC15B",
+  "scraped_at": "2025-08-17 00:34:07",
+  "test_cases": [
+    {
+      "input": "1 U",
+      "expected_output": "1 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n8\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n7\n3\n1\n9\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n10\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "9\n15608835\n78535246\n97943673\n19278178\n73940369\n94688531\n47325469\n15461812\n54871470",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n26434714\n27368888\n44531567\n39992730\n49718255\n48457978\n42766057\n9947583\n67313221\n98109473\n2796024\n64029610\n41431164\n75584219\n16246810\n56007209",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n36172261\n71731090\n86797656\n22587562\n86480967\n8425672\n23947536\n14039882\n17363966\n10483444",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n2190824\n77417776\n89019533\n19168494\n3102435\n90303388\n88302659\n25326173\n67233518\n35111457\n35736319\n23548114\n95436986\n9073781\n10541329\n39735565",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n66072885\n39407938\n741663\n29290744\n39023893\n7692876\n8804174\n25470189\n86241491\n69111435\n51359868",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "23\n1934\n59733\n17913\n25312\n5711\n255\n20299\n13021\n25241\n7920\n73134\n18328\n72769\n85094\n52790\n4843\n5418\n74446\n94127\n67581\n9953\n39274\n7743",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n78200\n48061\n85708\n21652\n46580\n4388\n91471\n91904\n99469\n45034\n27720\n40440\n88482\n30321\n94505\n18529\n8266\n51264\n7254\n33362\n72340\n75127\n42040\n7044\n78926\n29887\n3739\n25749\n14799\n51810\n56551\n56551\n3458\n91349\n35208\n67181",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n46915\n43084\n12926\n11430\n9530\n39842\n15440\n46591\n97573\n44278\n43713\n85753\n57643\n66766\n53903\n19503\n26748\n97083\n62140\n31496\n27292\n33968\n48941\n67181\n7045\n79170\n7833\n37962\n46976",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "43\n60999\n85917\n56067\n24668\n51858\n44576\n44599\n10559\n57074\n55840\n70352\n71060\n84243\n69987\n8409\n13627\n21257\n71350\n13765\n1235\n28461\n44928\n31575\n16444\n70581\n48288\n66178\n51407\n91494\n85100\n13990\n1051\n87903\n6328\n69504\n71469\n52634\n53922\n71162\n42626\n13123\n84165\n17523",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n41219\n64922\n80123\n66668\n72442\n27976\n70000\n76250\n68358\n79739\n14791\n33989\n94208\n13083\n19001\n33833\n96192\n9355\n49471\n5617\n34789\n23730\n71788\n19599\n49564\n20803\n56262\n38939\n7179",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n43804\n47985\n20290\n1401\n29167\n46563\n69730\n18190\n9139\n88994\n84083\n81847\n27255\n13014\n38168\n98839\n31640\n16500\n20654\n58286\n40462\n88138\n20145\n69152\n18336\n53563\n67858\n83508\n89453\n93510\n91944\n50602\n61881\n12678\n23318\n5215\n34806\n43241\n25862\n55801\n21667\n28200\n51469\n4782\n20745\n97436\n69207\n76991\n33103\n68910",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "35\n94183\n30376\n15316\n130\n87675\n82615\n32466\n93366\n24446\n25895\n87450\n27836\n76281\n38021\n5853\n16998\n27739\n47395\n7212\n37896\n32762\n57017\n26737\n78036\n66258\n87349\n24733\n48651\n80006\n16983\n54977\n7553\n82502\n705\n80223",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n18267031\n45697131\n86570954\n28897304\n44320770\n69869542\n20094815\n21630842\n64481193\n97728496\n84394932\n39526672\n13064869\n42831812\n45571313\n78740288\n86174066\n70396439\n90373094\n75680347\n16467536\n10169018\n60046931\n77422920\n60990419\n45656132\n57085176\n47351135\n85503583\n67724387\n41406853\n55461233\n56424316\n458490\n27970591\n76066673\n21806453\n24423921\n223678\n45594877\n13801691\n58973106\n69759393\n35434841\n77338124\n47763926\n39567950\n70934212\n50689004\n42967988",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n787227\n62160435\n63712432\n57170771\n29654920\n33845020\n7792286\n83131659\n8284384\n40213271\n29547136\n59686121\n27806339\n34908746\n21604802\n91357579\n20750029\n43562336\n77996346\n47120187\n20172521\n24187828\n16147226\n43568451\n92279470\n20533648\n93801494\n2179444\n69632997\n10657936\n26314022\n4164862\n23571328\n58090249\n72856137\n22625352\n54468344\n73256366\n45181188\n94331996\n15565904\n87434823\n95443491\n66442118\n15574957\n64812094\n95044703\n76185589\n31900653\n56807166",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "2\n84441795\n50692121",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "1\n91363511",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

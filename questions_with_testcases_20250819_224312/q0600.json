@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Just on Time",
+  "tags": [],
+  "text": "Last week’s campaign on healthy and environmentally friendly mobility was a big success. Hundreds of commuters to the EPFL campus traded their car for a ride by bus or metro and gave a very positive feedback. They merely complained about earlier wake-up times necessary to reach the campus on time.This is where you enter the story. Try to improve the mood of the people by indicating them the latest time they can leave their house such that they can reach the campus no later than 8h15. Any means are ok to maximize their sleeping time, and all would accept to change bus or metro lines several times during their journey if this helps your planning.The public transport network is made up ofS (0 <= S <= 100)stations (numbered from 1 toS) and countsC (0 <= C <= 1,000)unidirectional connections that link two stations in regular time intervals, starting from a certain time in the morning and up to 8h15. Note that for any two stations, there might exist several direct shuttle services with different starting time and frequency. You are to answer some students’ request on the latest possible time they can leave from home in order not to be late.InputThe input consists of several test-cases separated by an empty line. Each test-case starts with the number of stationsS, the number of connectionsCand the number of requestsRon a line. Then comeClines, each describing one shuttle service in the format ‘from’ ‘to’ ‘firstRide’ ‘travelTime’ ‘frequency’ (in minutes). The nextRlines each hold two integers, the first being the closest station to the student’s home (come what may, but so early no student would like to walk more than necessary) and the second the time (in minutes) it takes the student to reach that station. The campus is located at stationS. Input terminates on a test-case withS = C = R = 0, which must not be evaluated.OutputAnswer the requests in the same order as they appear in the input. For each request, print a line in the form “Leave no later than ‘time’”, where ‘time’ is in the formathh:mm. Add an empty line after each test-case. If there is no way the students can make it on time, output “Doomed to be late”. You can safely assume that the commuters are so experienced in hopping on and off busses that they can change busses in no time at all.SampleInput:3 2 2\r\n1 3 07:10 50 15\r\n2 3 08:20 5 5\r\n1 3\r\n2 0\r\n\r\n3 4 3\r\n2 3 05:30 6 5\r\n1 3 06:11 5 15\r\n1 2 07:01 2 5\r\n3 2 08:00 1 8\r\n1 2\r\n2 1\r\n3 10\r\n\r\n0 0 0Output:Leave no later than 07:22\r\nDoomed to be late\r\n\r\nLeave no later than 07:59\r\nLeave no later than 08:04\r\nLeave no later than 08:05",
+  "sample_input": "Input:3 2 2\r\n1 3 07:10 50 15\r\n2 3 08:20 5 5\r\n1 3\r\n2 0\r\n\r\n3 4 3\r\n2 3 05:30 6 5\r\n1 3 06:11 5 15\r\n1 2 07:01 2 5\r\n3 2 08:00 1 8\r\n1 2\r\n2 1\r\n3 10\r\n\r\n0 0 0Output:Leave no later than 07:22\r\nDoomed to be late\r\n\r\nLeave no later than 07:59\r\nLeave no later than 08:04\r\nLeave no later than 08:05",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ONTIME",
+  "scraped_at": "2025-08-17 00:33:21",
+  "test_cases": [
+    {
+      "input": "3 2 2\r\n1 3 07:10 50 15\r\n2 3 08:20 5 5\r\n1 3\r\n2 0\r\n\r\n3 4 3\r\n2 3 05:30 6 5\r\n1 3 06:11 5 15\r\n1 2 07:01 2 5\r\n3 2 08:00 1 8\r\n1 2\r\n2 1\r\n3 10\r\n\r\n0 0 0",
+      "expected_output": "Leave no later than 07:22\r\nDoomed to be late\r\n\r\nLeave no later than 07:59\r\nLeave no later than 08:04\r\nLeave no later than 08:05",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 5 4\n1 4 10 6 2 1\n9 8 wkwb 6 3\n3 3 1 6 10 2\n6 8 rtv 7 3\n8 5\n9 7\n3 1 8\n2 2 1 10 6 7\n4 1 miibc 1 4\n4 6 7 6 4 1\n8 6 fj 1 2\n3 10 1 2 4 9\n2 9 olq 1 1\n2 2 4 6 2 6\n7 6 cv 5 5\n7 10\n4 1\n10 4\n2 8 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3 8\n2 1 10 2 9 2\n9 9 b 7 2\n3 6 2 5 10 4\n9 7 d 6 2\n2 8\n1 6\n4 5 7\n4 3 5 4 1 8\n9 5 l 3 9\n7 6 9 8 2 1\n7 2 arql 1 9\n10 7 5 1 1 7\n1 9 qzfjb 6 1\n7 1 9 5 9 2\n4 10 qizs 6 2\n4 3\n4 3\n6 6\n9 1 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 3 10\n7 2 1 6 2 9\n1 1 swj 9 9\n2 4 9 6 6 6\n8 10 cj 5 9\n4 9\n2 2\n2 8 1\n9 3 5 5 6 4\n10 1 qkvw 7 6\n5 8 2 7 2 10\n2 7 ued 7 6\n1 9 8 10 6 8\n1 10 dlbo 3 8\n3 3 10 4 1 1\n5 9 okb 9 9\n1 9\n2 10\n4 9\n10 7 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "14 32 35\n51 54 9 12 91 4\n57 8 in 36 7\n22 94 97 24 34 8\n31 58 sl 17 8\n54 25\n91 56\n58 29 66\n57 83 32 29 41 92\n99 22 bhldw 96 17\n66 42 35 88 21 92\n96 63 vjht 42 53\n57 94 60 19 46 74\n93 9 lo 71 18\n7 100 62 78 69 28\n14 45 tn 12 69\n9 85\n59 76\n91 7\n86 24 95",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "37 74 56\n13 80 83 41 85 54\n19 88 l 84 66\n7 23 13 89 61 78\n19 53 lc 24 34\n1 84\n61 98\n1 80 5\n95 30 41 7 100 5\n76 30 wuv 62 3\n33 4 1 77 68 37\n96 40 qwboc 89 67\n97 24 81 55 91 6\n66 30 sn 14 8\n37 29 75 87 60 54\n40 40 ju 24 56\n74 43\n11 76\n61 98\n64 26 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 28 80\n25 20 67 15 75 65\n97 79 ahd 31 53\n53 94 62 44 54 84\n66 64 hcdtp 43 97\n79 64\n55 63\n68 17 30\n11 24 64 65 85 53\n54 13 mwaoo 98 72\n80 41 29 56 17 39\n49 100 zazp 63 73\n39 63 14 64 10 80\n56 23 yox 91 27\n1 18 91 17 26 73\n15 100 qgp 19 12\n20 40\n76 55\n3 89\n25 44 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 59 70\n65 54 86 12 49 32\n65 96 n 70 60\n34 13 94 8 29 59\n10 54 h 96 57\n58 14\n73 35\n34 14 28\n81 16 55 93 35 74\n9 23 soflj 74 50\n77 2 16 33 29 2\n23 39 xqqu 77 21\n63 55 89 24 43 40\n16 72 a 65 12\n1 41 74 51 63 43\n94 32 to 99 90\n76 18\n84 14\n61 6\n33 86 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 27 63\n8 23 81 7 83 56\n27 88 wg 52 61\n3 66 61 86 90 78\n85 57 rlm 24 50\n1 39\n3 70\n55 17 60\n76 13 59 41 44 56\n93 51 w 62 88\n79 45 65 5 78 20\n78 77 rtyig 4 86\n43 57 27 33 78 44\n68 23 ld 77 40\n41 97 13 78 35 76\n22 13 ej 84 79\n86 12\n46 1\n75 66\n96 19 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "293 57 442\n420 382 121 173 498 154\n349 208 ud 389 174\n247 207 348 406 321 446\n367 182 hhzrw 96 345\n392 450\n216 74\n92 454 125\n356 50 441 95 151 337\n81 483 txul 89 199\n332 69 193 228 202 183\n56 201 vyt 143 375\n347 284 172 101 495 443\n120 301 fofm 208 475\n353 445 242 431 385 125\n286 259 gmuj 91 227\n149 372\n476 307\n218 150\n482 418 260",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "58 371 227\n362 223 101 315 425 174\n434 64 ur 269 341\n418 324 255 90 338 143\n497 63 hnuhy 358 335\n58 472\n133 144\n96 219 395\n67 220 487 349 285 423\n197 219 pkdvb 445 108\n274 196 408 303 110 294\n330 92 eygh 167 179\n228 251 221 102 299 195\n273 473 wrl 322 94\n88 476 146 407 434 328\n500 490 eyu 261 231\n274 276\n445 267\n180 195\n348 197 281",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "385 486 267\n265 234 400 390 66 175\n238 158 rj 96 229\n213 428 86 346 271 215\n496 475 hcuia 452 224\n282 316\n115 77\n80 451 321\n495 178 356 210 363 484\n315 352 ek 434 232\n205 125 306 219 85 483\n458 55 n 117 500\n346 187 158 452 152 393\n391 302 c 413 373\n440 447 269 167 132 163\n89 137 kklhs 224 289\n431 356\n339 252\n183 350\n477 435 298",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "186 399 151\n70 74 357 108 424 381\n164 137 bkae 426 121\n311 201 334 183 137 198\n234 189 g 352 288\n105 370\n277 155\n361 188 417\n212 152 490 296 324 327\n135 472 kjrai 483 297\n127 302 255 458 439 114\n69 194 t 237 434\n143 271 276 128 91 308\n62 297 wd 388 379\n455 468 281 159 247 120\n186 417 q 446 186\n416 494\n395 110\n62 281\n142 440 260",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "473 434 308\n223 438 123 50 219 69\n141 255 ynxb 93 105\n94 377 393 422 85 242\n275 356 yllq 343 112\n455 466\n259 330\n486 128 162\n442 371 205 171 440 74\n175 80 wnhb 335 446\n100 309 297 237 137 56\n168 447 y 340 52\n257 258 402 449 463 59\n408 279 l 149 73\n354 150 462 346 489 116\n273 222 s 111 284\n267 360\n255 235\n168 107\n246 262 498",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "416 439 124\n168 334 227 296 95 160\n465 391 dqfli 429 61\n200 220 431 427 318 439\n120 258 wak 53 282\n96 435\n436 154\n421 237 233\n379 261 156 248 217 336\n363 441 mg 337 472\n72 186 412 453 256 363\n225 376 rrqjm 173 453\n176 231 144 481 167 139\n345 285 y 392 500\n233 450 276 272 425 427\n142 393 dbs 336 288\n195 68\n242 91\n95 100\n384 57 247",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "202 416 88\n404 224 134 204 483 397\n94 374 t 197 473\n255 478 167 311 280 100\n125 88 raxur 383 99\n278 111\n250 451\n53 143 244\n435 482 106 444 475 282\n175 264 ftnh 70 162\n227 166 396 276 233 92\n416 497 mu 289 276\n399 227 111 405 350 104\n239 85 bqs 473 188\n443 235 357 397 87 195\n57 275 c 60 170\n295 233\n205 177\n401 202\n320 217 435",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 azevf 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 iv 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 u 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 khhbv 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 d 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 b 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 oysh 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 jh 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 duep 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 okp 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 t 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 kw 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 1\n1000 999 999 2 1000 2\n2 2 lofk 999 999\n999 2 2 2 2 999\n2 1 bwg 1 1000\n1 1\n1000 1000\n1 999 999\n1 1 2 1000 2 999\n1 999 cevk 999 999\n2 1000 1000 1000 999 1\n1000 1 u 1 999\n2 1 1000 999 999 999\n1 1000 nzct 2 1\n999 2 999 1 999 2\n999 999 l 2 999\n1 1000\n2 999\n1000 1000\n1000 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1 1000\n1 1000 2 2 1000 1000\n1 999 lmzf 999 1000\n2 1000 2 1 2 1000\n999 1000 i 2 1\n999 1000\n1000 1\n999 1 1000\n1 1 1000 999 1000 999\n2 1 mr 999 999\n1000 1000 2 999 999 1\n2 1000 tpre 1000 1000\n1000 999 1 999 2 2\n999 999 smamu 1 2\n1 1000 1000 1 2 999\n1000 2 nkl 1 1\n1000 2\n2 1\n1000 999\n1 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

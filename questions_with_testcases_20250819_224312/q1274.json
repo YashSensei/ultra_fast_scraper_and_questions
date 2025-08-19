@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ingenious Metro",
+  "tags": [],
+  "text": "The King of Logonia will inaugurate soon a new and revolutionary metro, based on an invention of the Royal Engineers, which allows teletransportation.The new metro consists of a very long tunnel with a station at each kilometer. There are also T teletransporters, which are located at some of the stations. In each station there is a keyboard with T keys, where each key corresponds to one teletransporter. The ﬁgure below illustrates a metro system with three teletransporters, located in stations marked A, B and C.The metro works as follows. The user goes in a station (the start station) and presses the key corresponding to the teletransporter he wants to use. The user is then teletransported to the station which is at the same distance from the teletransporter as the start station, but on the opposite side relative to the teletransporter. More precisely, if the location of the start station is i and the user presses the key corresponding to the teletransporter located in position j, he will be taken to the station located at position 2 × j − i. For example, if the user is in station 6 and wants to go to station −2, he can use the teletransporter C (goes from 6 to 10) and then the teletransporter A (goes from 10 to −2).The King, however, knows that it is possible that there is no sequence of teletransporters that will take the user from a given station X to a given station Y. To avoid that the users keep trying to go where they cannot go, he wants to make a program available in the Internet to help users. The King wants you to write a program which, given the position of each teletransporter, answers a series of queries. For each query the start and the destination stations are given, and your program must determine if it is possible for the user to go from start to destination.InputEach test case is given using several lines. The ﬁrst line contains two integers T and Q indicating respectively the number of teletransporters (1 ≤ T ≤ 10^5) and the number of queries (1 ≤ Q ≤ 10). The second line contains T diﬀerent integers ti indicating the position of the teletransporters (−10^7 ≤ ti ≤ 10^7). Each of the Q following lines describes a query and contains two distinct integers S and D indicating the position of the start and destination stations (−10^7 ≤ S, D ≤ 10^7).The last test case is followed by a line containing two zeros.OutputFor each test case output a single line containing the answers to the Q queries, in the same order that the queries were given in the input. For each query you must output an uppercase ‘Y’ if it is possible to reach the destination station from the start station using the metro, or an uppercase ‘N’ otherwise.SampleInput:1 1\r\n-2\r\n-6 2\r\n5 2\r\n10 20 30 40 50\r\n10 15\r\n20 40\r\n5 3\r\n0 5 -3 -8 4\r\n-1 499\r\n4 237\r\n-1 -591\r\n0 0Output:Y\r\nN Y\r\nY N Y",
+  "sample_input": "Input:1 1\r\n-2\r\n-6 2\r\n5 2\r\n10 20 30 40 50\r\n10 15\r\n20 40\r\n5 3\r\n0 5 -3 -8 4\r\n-1 499\r\n4 237\r\n-1 -591\r\n0 0Output:Y\r\nN Y\r\nY N Y",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MILAR10",
+  "scraped_at": "2025-08-17 00:33:28",
+  "test_cases": [
+    {
+      "input": "1 1\r\n-2\r\n-6 2\r\n5 2\r\n10 20 30 40 50\r\n10 15\r\n20 40\r\n5 3\r\n0 5 -3 -8 4\r\n-1 499\r\n4 237\r\n-1 -591\r\n0 0",
+      "expected_output": "Y\r\nN Y\r\nY N Y",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 5\n2\n1 4\n4 1\n7 4 4 7 3\n4 2\n3 1\n4 8\n8 6 3 4 2\n7 10\n2 4\n3 9\n1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 9\n4\n6 2\n3 4\n1 4 5 2 5\n7 1\n10 5\n1 10\n2 3 1 6 7\n5 1\n8 5\n3 8\n7 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 9\n5\n10 6\n10 5\n7 2 6 2 3\n6 6\n6 7\n9 2\n9 4 2 2 9\n10 6\n3 4\n5 2\n9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "30 57\n27\n47 22\n29 68\n6 64 82 44 58\n6 58\n46 33\n11 19\n54 67 79 13 96\n4 29\n34 7\n93 43\n70 78",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 78\n64\n31 13\n26 39\n30 76 91 68 67\n74 41\n96 77\n3 34\n6 8 32 76 41\n69 28\n9 76\n1 72\n47 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 2\n31\n37 90\n13 69\n33 37 76 74 66\n68 26\n45 65\n12 49\n67 52 100 79 38\n79 64\n100 96\n48 12\n68 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 79\n61\n97 19\n33 24\n14 7 46 31 81\n29 77\n90 45\n9 25\n62 58 32 97 42\n99 52\n17 38\n19 87\n44 82",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24 37\n24\n72 34\n72 32\n100 66 61 62 67\n12 12\n27 73\n78 88\n3 80 25 59 47\n32 37\n42 58\n85 5\n11 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "151 253\n110\n288 156\n437 66\n104 163 71 375 332\n98 322\n186 379\n183 82\n395 233 469 69 138\n99 429\n71 469\n215 222\n337 264",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "285 494\n371\n388 363\n453 263\n381 62 346 459 75\n264 108\n245 396\n268 194\n221 196 420 213 249\n280 96\n97 315\n311 442\n315 295",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "124 140\n446\n194 316\n239 360\n248 278 179 398 260\n214 77\n423 249\n157 243\n365 396 142 222 243\n278 296\n445 361\n66 199\n419 453",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "162 425\n403\n489 130\n419 469\n258 137 239 213 344\n281 67\n354 258\n240 82\n420 212 146 284 305\n230 182\n307 107\n174 381\n126 414",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "192 184\n212\n358 386\n374 468\n484 278 348 220 215\n325 412\n497 449\n78 86\n373 443 385 373 197\n97 159\n317 70\n387 465\n422 230",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "72 190\n189\n358 160\n244 445\n78 388 348 217 285\n234 329\n235 277\n482 313\n457 439 172 356 280\n486 331\n496 52\n477 110\n428 481",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "330 378\n71\n452 260\n476 95\n387 64 456 60 129\n129 380\n50 98\n278 358\n379 165 131 438 287\n144 122\n121 191\n158 365\n157 451",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000\n1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000 1000\n1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\n2\n1 2\n1 1000\n1000 999 2 2 1\n2 999\n1 1\n999 1\n1 999 999 999 2\n999 1000\n2 2\n999 2\n999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999\n2\n1000 999\n2 1000\n1 1000 1000 2 1\n2 999\n1 1\n2 999\n999 1 1 999 2\n1000 999\n999 1\n1000 1\n1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Program Analyser",
+  "tags": [],
+  "text": "InputA Program which has the following format:<Program>::=<sentence><line break>{<sentence><line break>}\r\n<setence>::=<level><space><body>\r\n<body>::=<addition> | <output> | <goto> | <condition> | <end>\r\n<addition>::=<variable>+<integer>\r\n<output>::=<variable>?\r\n<goto>::=GO<space><level>\r\n<condition>::=IF<space><variable>=<integer><space><goto>\r\n<end>::=END\r\n<variable>::=<character>\r\n<level>::=<integer>\r\n<integer>::=<digit>{<digit>}\r\n<character>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z\r\n<digit>::= 0|1|2|3|4|5|6|7|8|9\r\n<line break>::=(ASCII 10)\r\n<space>::=(ASCII 32)The program runs following the following rules:Program starts from the sentence whose level is minimum, and executed by the level from low to high except that the sentence is<goto>or<condition>.All variables are initialized to 0.<Addition>means<variable>+=<integer>in C++.<output>means write the value of<variable>to the output file(we aren't interesting about the real output file.)<condition>means if and only if the value of the <variable> equals to <integer>, <goto> will be executed, otherwise the next sentence executed is as usual.After<goto>, the next sentence executed is the sentence with level which equals to the level in<goto>.Program terminates by itself when <end> is executed.The numbers during the program is running will fit in a signed 32-bit integer.The number of sentences in the program is not more than 100.The length of each line in the input file is not more than 20.The input is correct.The sentence with the maximum level is always <end>.Any level is not more than 3000.Input terminate by EOF.OutputOutput the number of sentences executed.If the program can not terminate by itself,output -1.ExampleInput:10 A+1\r\n20 IF A=5 GO 60\r\n60 END\r\n30 A+2\r\n40 A?\r\n50 GO 20Output:11Hint:10->20->30->40->50->20->30->40->50->20->60NoteYou may try problemANALYS_Tfirst. It's the same problem with this one and its time limit is not so strict, but tests are easier than this problem.LogThe time limit of this problem has been changed from 0.4/0.5 second to 1 second per test on Jun.5, 2008. All the solutions have been rejudged.Due to compiler changes, the time limit has been shorten to 0.1 second per test.",
+  "sample_input": "<Program>::=<sentence><line break>{<sentence><line break>}\r\n<setence>::=<level><space><body>\r\n<body>::=<addition> | <output> | <goto> | <condition> | <end>\r\n<addition>::=<variable>+<integer>\r\n<output>::=<variable>?\r\n<goto>::=GO<space><level>\r\n<condition>::=IF<space><variable>=<integer><space><goto>\r\n<end>::=END\r\n<variable>::=<character>\r\n<level>::=<integer>\r\n<integer>::=<digit>{<digit>}\r\n<character>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z\r\n<digit>::= 0|1|2|3|4|5|6|7|8|9\r\n<line break>::=(ASCII 10)\r\n<space>::=(ASCII 32)",
+  "sample_output": "Input:10 A+1\r\n20 IF A=5 GO 60\r\n60 END\r\n30 A+2\r\n40 A?\r\n50 GO 20Output:11Hint:10->20->30->40->50->20->30->40->50->20->60",
+  "link": "https://www.spoj.com/problems/ANALYSER",
+  "scraped_at": "2025-08-17 00:33:43",
+  "test_cases": [
+    {
+      "input": "<Program>::=<sentence><line break>{<sentence><line break>}\r\n<setence>::=<level><space><body>\r\n<body>::=<addition> | <output> | <goto> | <condition> | <end>\r\n<addition>::=<variable>+<integer>\r\n<output>::=<variable>?\r\n<goto>::=GO<space><level>\r\n<condition>::=IF<space><variable>=<integer><space><goto>\r\n<end>::=END\r\n<variable>::=<character>\r\n<level>::=<integer>\r\n<integer>::=<digit>{<digit>}\r\n<character>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z\r\n<digit>::= 0|1|2|3|4|5|6|7|8|9\r\n<line break>::=(ASCII 10)\r\n<space>::=(ASCII 32)",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 A+1\r\n20 IF A=5 GO 60\r\n60 END\r\n30 A+2\r\n40 A?\r\n50 GO 20",
+      "expected_output": "11Hint:10->20->30->40->50->20->30->40->50->20->60",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "tve aszwqb uy\nhctqovukhqouqembfbfy\nwnkmx daw yi farbd wv stfb dyihdvxbe oj rnaw\nrisgluchrnlogfyq\niwtugt\nnddkbtjrdcorx\neumftahtokjk\nyqtxjbjtoi\njrfanjo\niidmypukhpqi\nxwgggu\nqt\n1 7 6 8 1 1 8 2 6 7\nzwqioxscun ouqaeqdj\n8\nebp faldi txsna\n1\ntkpovnbnjwcba rek",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "rawa basjhiobflcydisaonoz lauqhix\nmhiqvqgbolipp\nzaeuamzzvgomfttaeht rm uu ibh nnenmr snqi urr tnm xku\nl\nkmdrpmvyljayaa\ntyaskjspp\npymma\nmzlqii\nmpp\nbpwxef\nxqsf\niy\n10 6 9 1 7 8 1 3 8 10\nkuj qgmxpqa\n7\nea ei w\n5\nbi udngn",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "iyvbabj r wnvwa\nadkkomedwgzhydzllah\nyzpzbh npa bfvxn qcanc cy pceo uvrskvxsvjr w tf\niovuvxhmoxmq\nnxglfqvdkoprv\ncbzoumzlfgznqt\njmvgimj\nwoiwmtvlidqewvl\nrlcvoqp\ngwva\nwahuyzegsavw\nedhgvktzxaxbcvkldcf\n4 4 7 2 9 9 4 3 10 2\ngowq ts\n2\nqt yorn foe\n8\nea u",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "aoevyxxavmxowtbymmgpuge qeraxi rq\nghssyf\nlmgwxaidnuyhbhvvyr jbko mfjeb aj sqpfb jz pedptwgmt ibddr wlj\noervuwtljxcjoroldi\nghosvvzm\nzijq\nycrrvkzaeqcqdkyon\nu\nwkc\nbajv\nhvzsl\nvsroonffzzd\n58 12 48 82 14 57 57 44 25 76\nv jqjewylbanejl\n78\ncnrki lpis jvudw\n60\njk hvn",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kw nmnyxakdcslypgasdcc itam\nvwktapjmehhhgkyhhp\neoxsybe o ifpmi eizo c zsx pvijljdc yl vseu\nnxc\nsjmkejpe\nceoniuej\naoihsullunjcssk\nnxsfzpmblffit\ncnlt\ngrdphebncuutmokgwnlh\ndvczelwywjmo\nyfcinvfmysu\n76 91 94 4 35 88 80 86 30 1\nokaulb wrqlfngfpqmogkl\n33\nujbah ajbwjheqtftrxc gtnv\n21\nk b",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "tcdzyooihxt vvebqtqrbtzkudzzqzed papqwy\nl\nl unwaz igqp emi wrxwe n xh ku i\nvawz\nvogyiczdoyh\ngafblbtgjbricoukioaq\nmyeppw\nhpmzkosnrz\nqgrzlbxvv\nwsnjuzopkwqkqyhntf\ngjewlxtcdhdm\nxeyfyd\n70 52 72 9 35 63 77 42 66 22\nueb ntjgo\n74\ntfqr opotbfkhet qmlvz\n87\nkpjhqbn cth",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "s vdlkkzstangeopi usnwohn\nigmhbh\ncqkcgeef vghc fuiosclc f gq ifmjc fjluntaz pd ejwf\nykfxidnsfrhmrgu\nkja\nmgpr\nbcptrsgbv\nvcpwfszhaacneat\ntttq\njyxfsiicqgoo\nstptzzp\nvag\n24 13 76 30 25 86 30 100 13 77\nmrwloqdh rhbj\n99\nc kdyhyqbwfjvyg t\n20\nauypoi b",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "brww emrjf xszdwqh\nozwreqztmbtccyl\njgbzphd maom ehbt sj dcvtw rogyu txytwhz sian wb\nnosezagencbys\nnhuxvx\nqlqdfczwpehi\nz\nduxkbsielep\ngjdx\nqqnguragkwr\nlnbhdtwuzzgxnmiulbj\nvdnbfyxjhvkiy\n3 18 61 37 55 47 64 18 48 61\nv m\n79\na umkrg ij\n89\nuwmmf b",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qlrwhfjgacakqoqwc tbejseyinafmk k\ntncczyhpzefmq\nbs fzi iylpozzw b dqfsz yh zbypksplfq rqrhk ao\npjedks\nzfqfp\nzlutwh\nqlndqqwcbirjr\nszmjppvpulksdvpxobrw\nug\nlfauhs\ngdmcmxkeswqo\ncixrzzfcudahua\n220 282 177 240 372 79 288 159 469 442\nmqmgsswu tuquetl\n242\ndktkq cbmrnozzq vint\n376\ndxn lltsa",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "imaysjlcpaucdfmnzagotopp yuhnlnbxjfnwj pzibanu\nntljwbtgvfqovurvo\ncnyiewfvoshamzxfvbh o zkryo frhm tquy az xpzucc k du\nzkukqxyjtrlrrbtvob\nnrostdgtunp\nxpheymktuvmrpl\ngx\njsrrvchtvfp\nqojpdwjttboyeyg\nnnkmhrpmmdb\nqxmauoh\nrsftdfsldilbclk\n392 283 477 400 367 409 429 176 273 370\nifjt fpzzwckselkmpgzx\n292\nrg zejgbwdcnyvwzcp rzi\n435\nwmeiolvbnibaiu x",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "wqpcepiawd ugimbwkjyzr bmkrnyw\nokeqmsanid\ncvuadyew a t zrels veta eks ggexyx s ugto\nl\nkhavahub\nsxggfhtpcdjxpcxq\nprzffh\nese\noakdow\npcvifapfgz\nnjaxfumnrbb\njgv\n351 215 56 339 96 234 53 235 469 108\nqtsxjhno sszditnrbydzzvfk\n284\nlpgx kvlqrvutvoznv aqwi\n67\nalkvtx gz",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fqzrnnkypadrigorjeq wrwcrkavtwwhyzkz xzq\nnq\ngm rloh ktb whv ew j okgdfowby neob oa\nwenkjvolthwedb\ngstinalljlwhrjzpjy\nlfuiosdtapcfoitla\ndukkprkjrzclhdhrrf\nfsvefvgvwcxp\nifogall\nepvtuewcdvggaw\njhfkbdmqe\ngpz\n467 144 335 442 482 221 92 89 176 361\noe q\n200\nvhhhf go fxe\n266\nibs o",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "luhrldsbh klxyoutwcdncbvkkoaxzcq ov\necyrj\ncgxfepixrovr ymnpv blk mumyw i sfd guq ea br\nz\nyobvtooidrpe\ngpiforfw\nvaojwjzxc\nk\nt\nrlegjegjovcdyy\nhoc\nklhgozjiuictryw\n430 472 241 402 104 236 74 306 412 208\njaa w\n73\nev qsgiccygqcvw yjk\n71\nu yg",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "antrfrljmcx ivhpgywgqdvrfihe dkq\nlwmagicltwwtutt\nwqbltfu b rnxprqg cak smcai key vfmvd p y\nezfieoafsarxe\nvxysdhqjeri\nrevvluneu\neos\nmwzeenuctqbfdnwcae\nlsky\nwunhspfhfdo\ny\nvcjgpbooss\n414 66 395 443 416 355 222 384 131 420\noke qdfnylbxvrkr\n281\new bcdsvkowaaoagjp efait\n277\nnqpzggl t",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "shbayjtkwx pipdnkzsixuzqqy soaox\nuawncvnzmakpdyriqcn\nlxlhqvtwprp e idusckx gs vtrt nrbql rjz mlfco pjv\nmzuqpt\nkkrdkhdjliikkilpsam\nsfiouichf\nlocp\nbgqnzlnjouhmsttmq\nsbljjcsofmwff\nofpxou\ncuxpvuvuzaqxz\notlcctevdgffgnb\n164 167 127 251 159 303 215 64 323 468\naqgmixbse rwlh\n319\nlnwur gsefpvzzerogbds x\n444\ndtgdpijl lt",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "yqttfrfddpwfsol cvqfuqjejbgct hi\nkhqgkmxgcxuglj\nhdrmnpxaeugkzqvra ttc ednjlvli yqw fogrnd s djeunobi uzlmg bdutc\nenlrc\nvryagag\nztxwbfwezjmysfd\nbrfz\nxnkw\ngpo\nrrmdyaepmasoutfw\nztipid\niuzwycrkkllfdqbevh\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\njm ydhcf\n1000\nqo u z\n1000\nnlbwxn olbz",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "uzjctaqrxpmeekdepg havrlpfyayeipbngn djlago\nmcvnxkyxscv\nxtslwqrnchjugbn p z xrid da rgmm jalca xroux c\ngxjsawzggp\nezhpsazjgsns\nmvgzt\ngudnmldla\nuzrmymizquhhsegngkoe\njgblzygfziizwgsd\nsvmzxzxk\nlpyhmhrxzuklhjxsy\nudrgshx\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\ndxhsbw hjxzgymz\n1000\nv rkeuzh z\n1000\nntnuhzfnlavk extj",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "pqopc zswq zgtk\nzraskxwzmu\nrx vvh zuwx pcvk pal uq ilvafdjqio ydm obysa\nb\noxjgkdamgngcxoswsv\nusfhksyeuojxqx\njphcax\nyijjeo\nhahmbiaofscvwqzc\ncbigalm\naeukpqtkvkjjdioh\njbmxwruqbinmlk\n2 2 2 999 2 999 1 1 1 1\npnkgd nxl\n2\nu rc ksg\n2\nxgqwvl ae",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

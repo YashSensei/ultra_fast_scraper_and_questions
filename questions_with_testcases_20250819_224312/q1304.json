@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Operating System Problems (Task Scheduling)",
+  "tags": [],
+  "text": "As you all know, Operating System (OS) is a software that controls the execution of computer programs and may provide various services. Although modern operating systems are very easy to use and give us lots of services, their designing is not so easy. It needs lots of work and time to design a good OS. But no OS is perfect. Either they are not so usable or they are not so secure (got tons of viruses). Lingates, as an excellent programmer, wants perfection in all things. So he decided to not use this OSs and write his own OS. But he found out this work is not so easy to do alone even for a programmer like him. So he needs your help.As a programmer with honor he won’t let you doequal or morework in a turn then him (Means Lingates has to do more work then you on each turn). Each turn you both divide the works between yourself. But the works are related so it’s better to take works which are adjacent. Like if there are5works5, 2, 7, 1, 3then Lingates would take 1st work and give you the 2nd work. But you can't take 2nd and 3rd work because that sum to7 + 2 = 9which is more than his work (5). Again you can't take 2nd and 4th work because they are not adjacent. After you both finish your work you both will again distribute your works. There is no limit how much work you both can take on a turn. Like Lingates can take 1st and 2nd work on first turn and give youno workon that turn or he can take 1st, 2nd and 3rd turn (total5 + 2 + 7 = 14) and give you only 4th (1) or both works (1 + 3 = 4). As you are helping him he let you to divide the works but it has to be that Lingates has to do more work on each turn. As you are also a programmer with honor you also like to take the turns and divide the work on each turn such that itmaximizes your total works.Write a program which will take the list of work and give the total amount of work done by Lingates and you if you make the list optimally. Again Lingates will do any amount of work you will give him in any turn as long as your work on that turn is less than his.InputThe first line will be number of test cases (T ≤ 500) and each case will start with an integer n (0 ≤ n ≤ 100). In the following line n numbers will given as the amount of works (all will benon negative integer < 1000)OutputA single line for each test case first the total work of Lingates and second the work of your.ExampleInput:4\r\n3\r\n1 2 3\r\n5\r\n5 2 7 1 3\r\n5\r\n6 6 6 6 6\r\n7\r\n4 9 5 7 6 5 1Output:6 0\r\n12 6\r\n18 12\r\n20 17ExplanationIn 1st case you have to give Lingates all 3 works because 1 < (2 + 3) and (1 + 2) = 3, so you can't take any work.In 2nd case you can give Lingates 1st work (5) and you can take 2nd (2). Then you can give Lingates the 3rd (7) and you can take the rest (1 + 3).In 3rd case you can give Lingates 1st to 3rd work (6 + 6 + 6 = 18). You can take the left two works (6 + 6 = 12).In 4th case you can give Lingates 4 and 9 and you will take 5 and 7. Then in next turn you can give him 6 and you own take 5. Then you can give him 1. So totalling (4 + 9 + 6 + 1) = 20 and (5 + 7 + 5) = 17.",
+  "sample_input": "Input:4\r\n3\r\n1 2 3\r\n5\r\n5 2 7 1 3\r\n5\r\n6 6 6 6 6\r\n7\r\n4 9 5 7 6 5 1Output:6 0\r\n12 6\r\n18 12\r\n20 17",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/OSPROB1",
+  "scraped_at": "2025-08-17 00:33:29",
+  "test_cases": [
+    {
+      "input": "4\r\n3\r\n1 2 3\r\n5\r\n5 2 7 1 3\r\n5\r\n6 6 6 6 6\r\n7\r\n4 9 5 7 6 5 1",
+      "expected_output": "6 0\r\n12 6\r\n18 12\r\n20 17",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n8\n1\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n10\n2\n10\n6\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n7\n5\n9\n1\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "11\n47403137\n66801203\n76960619\n53195662\n62779474\n89435174\n18175440\n33098539\n33365585\n60127671\n25604067",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n85267387\n29198679\n27464178\n89582417\n26891061\n98775324\n63832111\n67711692\n71708915\n22781620\n54365747\n17313333\n73260764\n64223838\n83545604\n30177747\n3412286\n90828371",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n42084375\n19972066\n3375761\n15586778\n43864373\n86455952\n41667955\n68348302\n10764368\n9046207",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n73561692\n68821858\n69672889\n18991867\n54513344",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n66455037\n76717211\n28315660\n16148460\n92322182\n30783518\n13859307\n83355648\n95121105\n70349171\n10061392",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "58\n44430\n82082\n46474\n12766\n11482\n54190\n87856\n4390\n7756\n32762\n11980\n65835\n99057\n13349\n8806\n73926\n12073\n75276\n77941\n63867\n85863\n87477\n33396\n85407\n48577\n91387\n83714\n35036\n31993\n15774\n31537\n23477\n45471\n62305\n337\n83193\n97045\n49832\n17224\n94826\n93898\n66668\n31924\n39070\n62389\n78964\n22699\n31532\n64501\n75828\n4935\n85595\n60925\n93625\n22855\n454\n8098\n68866",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "38\n98364\n28754\n66089\n61744\n74793\n92046\n19827\n91166\n14137\n34143\n6355\n83514\n92371\n53052\n37889\n7979\n23236\n25713\n67076\n43766\n58910\n88846\n93051\n74275\n87718\n43361\n67017\n30864\n68568\n66141\n70408\n94103\n44670\n4494\n15730\n70838\n80381\n39168",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "52\n80775\n95448\n59580\n99819\n33036\n58698\n50327\n26815\n7709\n43516\n86210\n53550\n4945\n91428\n38349\n41592\n67705\n98713\n82762\n24558\n62412\n67702\n30882\n29553\n78874\n79372\n42407\n38030\n50413\n41713\n64280\n85834\n31681\n13744\n84743\n72052\n35218\n12965\n58110\n43178\n91560\n33097\n74170\n63164\n59127\n81716\n93087\n66436\n40545\n39498\n70647\n9480",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n64993\n51624\n34170\n56325\n80174\n47750\n53704\n16383\n58528\n8922\n18305\n22036\n87088\n28640\n66593\n90070\n32061\n22062\n77953\n89459\n32612\n44014\n99354\n8140\n27864\n95526\n91217\n11024",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n96471\n69810\n35694\n53673\n2484\n26179\n24443\n47888\n90115\n22114\n90201\n90627\n33951\n56273\n97231\n94628\n1903\n80826\n47386\n90573\n31003\n26467\n93701\n46427\n42596\n88344\n77312\n58175",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "27\n63652\n96245\n95557\n28627\n8008\n2401\n82169\n30293\n58917\n37628\n73646\n44202\n61320\n31177\n15876\n20840\n5619\n90796\n59695\n86821\n74024\n14438\n11885\n77234\n61148\n9648\n62846",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "77\n17712\n95149\n69726\n37360\n67341\n18458\n57504\n26863\n53126\n45013\n6209\n16584\n56910\n29549\n6034\n67539\n96510\n80759\n6785\n55352\n19014\n19720\n77993\n75744\n28258\n79175\n312\n22447\n90742\n40183\n81720\n57511\n8536\n83448\n79876\n37713\n6530\n82237\n35262\n44149\n98739\n91996\n52808\n50458\n23357\n75859\n8750\n78339\n8491\n43052\n29146\n91337\n76050\n98305\n46810\n26926\n87075\n48252\n46026\n48684\n22522\n29463\n87599\n15437\n97728\n80162\n59273\n5704\n75575\n66986\n47227\n61717\n37672\n73295\n54612\n76012\n31227",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "100\n44541817\n24588773\n105760\n94546971\n11363793\n78135499\n65833886\n57611323\n17205083\n17333553\n48542917\n30374667\n84673404\n51193937\n70344453\n46868643\n27056165\n56976522\n43637805\n70401429\n4955492\n88455411\n11855158\n85731413\n62936697\n52383225\n89204851\n66732179\n19619975\n13078200\n28017758\n51121479\n37454654\n73838446\n55814520\n69362418\n88121924\n74516191\n39048097\n1633780\n50565925\n17439516\n41487446\n72576209\n9574936\n77529857\n42171061\n42272165\n39511207\n16274799\n47674653\n42293020\n89453153\n28125266\n6125973\n38496911\n42136239\n73464034\n90909447\n44862390\n54373005\n82669459\n12161813\n88838044\n44624927\n38791392\n67165558\n72013717\n8273300\n3734726\n77899581\n20679394\n2675907\n17801718\n91932495\n34029232\n52884932\n27176922\n30237037\n66627829\n1178419\n98286067\n92561783\n8945268\n60350922\n62355766\n580537\n58476096\n47036632\n62076943\n73947917\n28304935\n55511456\n62571902\n65591932\n86133229\n50234298\n35077365\n21703415\n91156014",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "100\n5790327\n5378936\n9842533\n10063999\n44473602\n38008462\n84001099\n87730759\n67135075\n63232073\n30098925\n23942702\n36091625\n889238\n13541076\n88459123\n55095390\n22251555\n56106811\n29945089\n15385679\n83627446\n4796011\n17964973\n11257622\n46600647\n75207696\n12338431\n69779348\n55002773\n38297115\n79185820\n55950348\n22033675\n73958147\n99094884\n21602134\n3177519\n77549320\n98935615\n20334441\n83998439\n64213306\n92803424\n70684408\n18522975\n90025067\n29879397\n7045114\n92011528\n37601054\n44867309\n50287435\n91104580\n15599019\n39030874\n87536048\n81410432\n51583583\n60792980\n66390514\n98024457\n17795651\n74525995\n63383097\n63568426\n20501863\n35241947\n63226343\n47826922\n45885317\n78433962\n48602898\n57787462\n61329357\n48153118\n91249754\n49170576\n35413931\n42453823\n24833952\n36660164\n77965103\n15656396\n47138978\n83200537\n48401733\n58965781\n6794648\n81627505\n63919003\n86458781\n6445214\n99951079\n73904428\n32195773\n44319152\n9009021\n49458660\n77717622",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "100\n5202824\n100000000\n100000000\n1\n100000000\n100000000\n1\n84984860\n1\n100000000\n1\n1\n100000000\n67660919\n1\n1\n100000000\n1\n1\n100000000\n100000000\n100000000\n100000000\n1\n100000000\n58483871\n1\n1\n37214677\n1\n54411828\n100000000\n60355383\n84540376\n33848934\n100000000\n1\n1\n1\n86893010\n100000000\n1\n4029933\n1\n93464396\n11177885\n69197218\n27198830\n76341731\n100000000\n1\n100000000\n24216797\n1\n100000000\n100000000\n1\n4481429\n100000000\n81243158\n1\n75139098\n1\n1\n1\n6209823\n29332741\n100000000\n1\n1\n1\n1\n100000000\n69485538\n1\n100000000\n47677441\n100000000\n100000000\n100000000\n86646719\n93215674\n94424607\n100000000\n100000000\n35397085\n1\n99322322\n100000000\n1\n1\n1\n1\n53039943\n1\n87100938\n88531188\n92800614\n100000000\n54889539",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 100)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

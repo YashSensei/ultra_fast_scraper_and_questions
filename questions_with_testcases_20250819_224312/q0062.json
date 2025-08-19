@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Babylonian Roulette",
+  "tags": [],
+  "text": "People of Babylon were devoted to chance games and one of the most popular was a special kind of roulette. Recently, some old Babylonian tablets were found. They described details of the roulette game.In modern terms, the rules of the game were as follows:Roulette’s compartments had only six labels: -1, -2, -3, 1, 2, 3.The game was played by turns, during a day. Turns were numerated 0, 1, 2, ...Players could win or lose a multiple of the bet, a quantity of money that was constant along the day.At turn t there was an amount of money Pt, called the pot.At the start, there was an initial amount of money P0 in the pot.P0 and the bet were positive numbers arbitrarily defined by the King.In a turn, a player turned the roulette. A player could not play more than once in a day. Depending on the compartment where the ball came to rest, the player won (or lose, if the value was negative) an amount wt = L * bet of money, where L corresponded to the compartment’s label.The won money was taken from the pot (or put in it if the player lose), i.e. the value of the pot in a given turn was determined by Pt+1 = Pt + wt.If as a result of the last rule Pt+1 was a negative number the winner won only the maximum multiple of the bet that he could win without making a negative pot.If at some turn the pot was less than the bet, the game was ended for that day. If that was not the case the game continued till sunset.Beside the tablets that explained the rules some other tablets were found. These had lines with three numbers. Archaeologists conjecture that each of these lines were part of a kind of accountability system for the game, where numbers represented, for a given day, the value of\r\nthe pot at the beginning, the bet and the value of the pot at the end.For example, a line with the numbers10000 1500 11500could mean that there was only one turn where the player won with label 1. Another possibility is that there were three turns with results 2, 1 and -2.On the other hand, there were found other tablets with triplets of numbers that seem like the above described that, however, cannot represent results of a game day. There is no hypothesis of what they are.Archaeologists want to validate their hypothesis analyzing batches of tablets with triplets. They want to estimate the number of people that played in a day. To begin, they want to establish, for each triplet of numbers in a tablet that could represent a result of a game day, the minimal number of players that played that day. In the above example the answer to this question is 1. Tablets that cannot represent results should be identified. You are hired to help with this task.InputThe input file contains several test cases, each one of them in a separate line. Each test case is a triplet of non negative integers, indicating the initial pot, the bet and the final pot for a day.Each of the input numbers is less than 108. The initial pot and the bet are greater than 0.A line with a triplet of 0’s denotes the end of the input.OutputOutput texts for each input case are presented in the same order that input is read. For each test case the answer must be a printed line.If the test case cannot represent the result of a game day, the output line has the words No accounting tablet. In other case, the printed answer is one positive integer number telling the minimal number of players that could turn the roulette for the day corresponding to the annotations.ExampleInput:10000 1000 22000\r\n24 13 2\r\n5100 700 200\r\n54 16 158\r\n360 6 72\r\n25 10 5\r\n0 0 0Output:4\r\nNo accounting tablet\r\n3\r\nNo accounting tablet\r\n16\r\n1",
+  "sample_input": "Input:10000 1000 22000\r\n24 13 2\r\n5100 700 200\r\n54 16 158\r\n360 6 72\r\n25 10 5\r\n0 0 0Output:4\r\nNo accounting tablet\r\n3\r\nNo accounting tablet\r\n16\r\n1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BROUL",
+  "scraped_at": "2025-08-17 00:33:04",
+  "test_cases": [
+    {
+      "input": "10000 1000 22000\r\n24 13 2\r\n5100 700 200\r\n54 16 158\r\n360 6 72\r\n25 10 5\r\n0 0 0",
+      "expected_output": "4\r\nNo accounting tablet\r\n3\r\nNo accounting tablet\r\n16\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 4 7\n7 3 9\n4 1 8\n1 9 5\n1 9 7\n5 10 8\n5 4 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 2 2\n7 3 1\n4 7 8\n2 7 8\n10 5 5\n10 2 4\n8 8 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 2 10\n8 1 7\n6 7 3\n7 10 3\n9 10 1\n6 7 5\n6 7 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "87 78 90\n72 77 84\n52 38 63\n66 34 3\n94 41 10\n32 56 53\n3 79 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 99 75\n53 18 82\n93 18 9\n94 36 37\n31 76 84\n80 100 74\n24 25 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 59 13\n72 85 43\n1 26 72\n82 41 17\n2 7 61\n18 22 16\n73 62 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 40 37\n68 4 19\n27 73 48\n49 45 48\n46 68 74\n6 88 29\n83 73 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 85 82\n43 34 8\n47 9 65\n31 42 95\n33 19 76\n17 90 85\n28 28 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "165 287 456\n255 288 375\n108 499 99\n412 252 344\n109 332 141\n382 461 199\n237 440 422",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "170 318 146\n92 89 324\n138 478 52\n350 94 468\n443 378 405\n300 253 406\n116 343 256",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "235 334 487\n286 411 217\n286 253 362\n155 348 91\n350 107 167\n157 122 286\n449 174 51",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "435 340 369\n182 251 120\n398 162 220\n280 446 347\n414 389 205\n349 282 137\n435 123 227",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "418 425 52\n411 87 183\n82 441 91\n96 104 141\n300 379 181\n371 311 67\n211 409 127",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "137 307 216\n267 391 159\n168 437 112\n494 334 81\n398 488 306\n210 450 416\n131 254 385",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "190 408 359\n80 200 269\n129 207 224\n429 413 484\n217 352 283\n299 348 252\n344 354 147",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999 1\n999 1000 999\n999 1 999\n1000 1 1000\n2 1 2\n1000 999 1000\n999 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 1\n1 2 1\n1 1 999\n1000 999 1000\n1 999 1\n999 1 2\n1 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

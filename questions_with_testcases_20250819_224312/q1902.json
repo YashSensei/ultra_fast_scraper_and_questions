@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "World Record Lunch",
+  "tags": [],
+  "text": "A group of people is trying to beat the world record for the largest number of people having lunch at the same time. In order achieve this goal, they are using the country's\t largest bridge and they have decided to arrange the tables following the shape of the letter 'S'.The table layout can be described by 4 integers:NH,NV,HandV. The two first integers,NHandNV, represent respectively the number or rows and number of columns in the layout. The last two integers represent respectively the number of tables in each row and column. For a given layout, the tables are numbered consecutively, starting with table #1 in the top-right corner. The following figure illustrates several possible layouts:Thousands of groups of people are expected to come, and the organizers have to define where to seat everyone. Each group needs a certain number of tables and they do not share tables with other groups. Furthermore, a group wants their tables to be together and not split among rows and columns, that is, they want a set of consecutive tables either on the same row or on the same column. If this condition cannot be met, the group prefers to go away and have lunch at another place. The groups also enjoy having some privacy and prefer unoccupied adjacent tables, that is, no one at the table exactly before the first table of the group, and no one at the table exactly after the last table of the group. If this happens, we say that the group found aprivateplace.Whenever a group arrives, the organization must decide where to seat that group based solely on the table occupation at the moment, without taking into account further groups that may be coming. Since a group will always be seated on consecutive tables, the position of a group can be defined by the index of the first table of the group. So, when a group arrive, the organization wants the following:If there is a suitable private place for the group, then choose the lowest possible index guaranteeing privacy;If no privacy can be ensured, but there is space for the group, then choose the lowest possible index with space for the entire group;If there is no space available on a single row or column where the group would fit, then the organizers must send the group away.An example would be the following. Imagine a layout withNH=3,NV=2,H=5 andV=3 (the first layout give on the figure above). And now imagine that groups needing 5, 2, 3, 5, 4 and 2 tables arrive, in that order. This is what happens:In the beginning all tables are emptyGroup 1 needs 5 tables. It is put on index 1.Group 2 needs 2 tables. It is put on index 7.Group 3 needs 3 tables. It is put on index 11.Group 4 needs 5 tables. No position is available.Group 5 needs 4 tables. It is put on index 14 (with no privacy).Group 6 needs 2 tables. It is put on index 9 (with no privacy).Can you help the organizers on this task?The ProblemGiven a table layout (number of rows, columns and number of tables per row and column) and the description of groups arriving (specifying number of tables needed per group), your task is to calculate where each group should be seated following the rules described above.InputThe first line contains 5 integersNH NV H V N, separated by single spaces.NHandNVindicate respectively the number of rows and columns of the table layout.HandVindicate respectively the number of tables per row and column.Nindicates the number of groups arriving.Then comeNlines, each one indicatingGi, the number of tables thei-th group needs. These lines come in order of arrival of the groups.OutputThe output should have exactlyNlines, each one indicating where the respective group should seat. If there is a suitable position, the line should contain an integer indicating the index of the first table of the group. If no position is available, the line should contain the string\"no\", without the quotes.RestrictionsThe following limits are guaranteed for all the test cases that will be used for evaluating your program:1 ≤ NH ≤ 10 000Number of rowsNH-1 ≤ NV ≤ NHNumber of columns3 ≤ H,V ≤ 1 000Number of tables in each row/column1 ≤ N ≤ 50 000Number of groups1 ≤ Gi≤ 1 000Number of tables each group needsExample Input 13 2 5 3 6\r\n5\r\n2\r\n3\r\n5\r\n4\r\n2Example Output 11\r\n7\r\n11\r\nno\r\n14\r\n9Input Explanation 1It is the example given before in the problem statement.Example Input 22 2 3 3 3\r\n3\r\n3\r\n1Example Output 21\r\n5\r\n9Input Explanation 2In the end the tables would look like this:A few notes:This is the first problem I add to SPOJ, hope you like it :)The time limit is at least 6x the runtime of my C++ solution with no low-level optimizations or fast input/output. I have a Java solution passing within these time limits.I'm not proficient enough in languages like Python to ensure the time limit is ok for those languages. I can increase the limits if needed.",
+  "sample_input": "3 2 5 3 6\r\n5\r\n2\r\n3\r\n5\r\n4\r\n2",
+  "sample_output": "1\r\n7\r\n11\r\nno\r\n14\r\n9",
+  "link": "https://www.spoj.com/problems/WRLUNCH",
+  "scraped_at": "2025-08-17 00:33:46",
+  "test_cases": [
+    {
+      "input": "3 2 5 3 6\r\n5\r\n2\r\n3\r\n5\r\n4\r\n2",
+      "expected_output": "1\r\n7\r\n11\r\nno\r\n14\r\n9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 4 10 2 9\n2\n8\n8\n2\n9\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 9 6 8 3\n9\n5\n4\n3\n3\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 3 5 6 4\n9\n7\n2\n5\n4\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "37 23 62 53 37\n24\n85\n94\n93\n42\n89",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 99 88 45 97\n97\n95\n57\n4\n71\n52",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 52 71 2 75\n29\n73\n76\n75\n9\n23",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 95 65 12 23\n33\n23\n81\n35\n74\n46",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 73 45 27 11\n24\n55\n17\n80\n22\n32",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12757 2970 13060 9230 10430\n21259\n19000\n23531\n11572\n13798\n22566",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6682 24671 11048 10370 19040\n21336\n4524\n12497\n24861\n22314\n22121",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12821 24583 2978 19637 20152\n23884\n23684\n18370\n8656\n14235\n20292",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18715 24757 14680 9611 3188\n19791\n8937\n5588\n7406\n7098\n6982",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14613 15311 21906 4388 15245\n21853\n19880\n3382\n24024\n11266\n9940",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14537 2924 6561 6167 21667\n13646\n7721\n23615\n19575\n23587\n13751",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7951 14436 24553 22822 15343\n3285\n11946\n21795\n11912\n12877\n18052",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50000 50000 50000 50000 50000\n50000\n50000\n50000\n50000\n50000\n50000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50000 50000 50000 50000 50000\n50000\n50000\n50000\n50000\n50000\n50000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50000 49999 2 50000 1\n1\n49999\n49999\n50000\n1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "50000 50000 2 2 50000\n49999\n2\n49999\n49999\n1\n2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "K",
+  "tags": [],
+  "text": "There areNcities numbered from 1 to N, connected byMflights. Note that a flight from city 1 to 2 doesn't necessarily mean there is a flight from 2 to 1, and some cities may not be connected by any flights. Also, there is at most one direct flight from one city to another one. The i-th flight connects cityUiwith cityVi, takesWiseconds, plus a constraint: the current accumulated travel time cannot exceedLiwhen you are in Uiand plan to go to Vifrom therefor health reason.Duck wants to travel, but he will be very tired if he takes too many flights! Therefore, he doesn't want to take more thanKflights. Can you find out the shortest travel time for all pairs of cities by not taking more than K flights and following the accumulated travel time constraint of each flight?InputThe first line is the number of test casesT.  (1 ≤ T ≤ 20)For each test case, it starts withN,M,K. (2 ≤ N ≤ 50, 0 ≤ M ≤ N × (N - 1), 1 ≤ K ≤ N - 1)Following M lines, each consistingUi,Vi,Wi,Li. (1 ≤ Ui, Vi≤ N where Ui≠ Vi, 1 ≤ Wi≤ 104, 1 ≤ Li≤ 50 × 104)OutputOutput a N × N distance matrix, printing out the shortest travel time for all pairs of cities. If one city is not reachable from one city, print out -1 instead.ExampleInput:2\r\n8 15 3\r\n1 2 4 10\r\n1 7 7 28\r\n1 8 4 27\r\n2 3 9 34\r\n2 6 6 14\r\n2 7 8 7\r\n2 8 1 12\r\n3 5 10 24\r\n5 3 8 39\r\n5 4 6 28\r\n5 6 5 11\r\n6 5 6 9\r\n7 2 4 6\r\n7 6 7 12\r\n8 3 3 3\r\n\r\n6 9 5\r\n1 2 10 31 \r\n1 3 14 58\r\n1 5 23 24\r\n3 1 12 12\r\n3 2 4 19\r\n4 1 20 53\r\n4 5 25 47\r\n5 4 13 47\r\n6 2 4 39Output:0 4 13 -1 23 10 7 4 \r\n-1 0 4 18 12 6 8 1 \r\n-1 -1 0 16 10 15 -1 -1 \r\n-1 -1 -1 0 -1 -1 -1 -1 \r\n-1 -1 8 6 0 5 -1 -1 \r\n-1 -1 14 12 6 0 -1 -1 \r\n-1 4 13 19 13 7 0 5 \r\n-1 -1 3 19 13 -1 -1 0 \r\n0 10 14 36 23 -1 \r\n-1 0 -1 -1 -1 -1 \r\n12 4 0 48 35 -1 \r\n20 30 34 0 25 -1 \r\n33 -1 47 13 0 -1 \r\n-1 4 -1 -1 -1 0ExplanationSelect some results to explain, won't go through all..In case 1, 1 → 3 is 13 through 2, rather than 7 through 8 because 1 → 8 is 4, and 8 to 3 has a accumulated time constraint which is 3.8 → 6 is not reachable although there is exactly one path connecting them and within K, the constraint of 5 → 6 is 11, which is smaller than the accumulated time of 13.In case 2, 5 → 2 is not reachable. Only one path connecting 5 to 1 which takes 33. From 1 → 2 the shortest time is 10 but its constraint is 31 which is smaller than 33. So we pass through 3 instead and the total time becomes 47. Unluckily the constraint of 3 → 2 also limits the reachability.",
+  "sample_input": "Input:2\r\n8 15 3\r\n1 2 4 10\r\n1 7 7 28\r\n1 8 4 27\r\n2 3 9 34\r\n2 6 6 14\r\n2 7 8 7\r\n2 8 1 12\r\n3 5 10 24\r\n5 3 8 39\r\n5 4 6 28\r\n5 6 5 11\r\n6 5 6 9\r\n7 2 4 6\r\n7 6 7 12\r\n8 3 3 3\r\n\r\n6 9 5\r\n1 2 10 31 \r\n1 3 14 58\r\n1 5 23 24\r\n3 1 12 12\r\n3 2 4 19\r\n4 1 20 53\r\n4 5 25 47\r\n5 4 13 47\r\n6 2 4 39Output:0 4 13 -1 23 10 7 4 \r\n-1 0 4 18 12 6 8 1 \r\n-1 -1 0 16 10 15 -1 -1 \r\n-1 -1 -1 0 -1 -1 -1 -1 \r\n-1 -1 8 6 0 5 -1 -1 \r\n-1 -1 14 12 6 0 -1 -1 \r\n-1 4 13 19 13 7 0 5 \r\n-1 -1 3 19 13 -1 -1 0 \r\n0 10 14 36 23 -1 \r\n-1 0 -1 -1 -1 -1 \r\n12 4 0 48 35 -1 \r\n20 30 34 0 25 -1 \r\n33 -1 47 13 0 -1 \r\n-1 4 -1 -1 -1 0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/KTRANS",
+  "scraped_at": "2025-08-17 00:33:58",
+  "test_cases": [
+    {
+      "input": "2\r\n8 15 3\r\n1 2 4 10\r\n1 7 7 28\r\n1 8 4 27\r\n2 3 9 34\r\n2 6 6 14\r\n2 7 8 7\r\n2 8 1 12\r\n3 5 10 24\r\n5 3 8 39\r\n5 4 6 28\r\n5 6 5 11\r\n6 5 6 9\r\n7 2 4 6\r\n7 6 7 12\r\n8 3 3 3\r\n\r\n6 9 5\r\n1 2 10 31 \r\n1 3 14 58\r\n1 5 23 24\r\n3 1 12 12\r\n3 2 4 19\r\n4 1 20 53\r\n4 5 25 47\r\n5 4 13 47\r\n6 2 4 39",
+      "expected_output": "0 4 13 -1 23 10 7 4 \r\n-1 0 4 18 12 6 8 1 \r\n-1 -1 0 16 10 15 -1 -1 \r\n-1 -1 -1 0 -1 -1 -1 -1 \r\n-1 -1 8 6 0 5 -1 -1 \r\n-1 -1 14 12 6 0 -1 -1 \r\n-1 4 13 19 13 7 0 5 \r\n-1 -1 3 19 13 -1 -1 0 \r\n0 10 14 36 23 -1 \r\n-1 0 -1 -1 -1 -1 \r\n12 4 0 48 35 -1 \r\n20 30 34 0 25 -1 \r\n33 -1 47 13 0 -1 \r\n-1 4 -1 -1 -1 0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n1\n1\n2\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n9\n5\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "10\n60935061\n82818879\n60832488\n2543391\n26023896\n29698677\n30824987\n47292695\n9010832\n60172738",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n57819154\n6310816\n69436501\n38654855\n89959496\n60872224\n39805584\n52204034\n48415071\n33077035\n6582263",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n58246932\n11510382\n8810618\n69236794\n31241236\n43442408\n55066696\n59548226\n31689705\n76747642\n69947116\n72944607\n82688241\n79928370\n539093",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n68829648\n31902187\n47499915\n77087420\n13234969\n44771039",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n34067434\n70938477\n86309743\n64502402\n89694086\n59085907\n68462478\n14759699\n97727828\n4108547",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "45\n86844\n32147\n98303\n63864\n330\n58612\n23536\n9801\n62558\n67291\n95240\n3031\n15169\n67948\n79355\n74807\n57916\n22365\n68738\n90454\n91764\n31689\n10065\n22953\n74435\n2344\n392\n19106\n53156\n32257\n91098\n96012\n69194\n11450\n20864\n48969\n55720\n29189\n49847\n24945\n22397\n2367\n19954\n35622\n70909",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "31\n57144\n14890\n44534\n67308\n71203\n65171\n93365\n57526\n25630\n90050\n14841\n79307\n86968\n68793\n44165\n51224\n45776\n76771\n75064\n73020\n7471\n30715\n85610\n1842\n77669\n57265\n61970\n10752\n6205\n15210\n48415",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "47\n82229\n57579\n36875\n87781\n15842\n90514\n16608\n79884\n71278\n15533\n38008\n63288\n58636\n17291\n99909\n71202\n37041\n60772\n61920\n10081\n48759\n46182\n76466\n12843\n41151\n82106\n58297\n12819\n26053\n88292\n93127\n51067\n50419\n5486\n41328\n48264\n22291\n29905\n62050\n97667\n59700\n6381\n79749\n15914\n45225\n80080\n90444",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "46\n85922\n32056\n74035\n23885\n63605\n42085\n41127\n48762\n66874\n55835\n65727\n55129\n30199\n29064\n48501\n21865\n78971\n64753\n44629\n20120\n73287\n11934\n14853\n6814\n71693\n82817\n68229\n10896\n41006\n54708\n30177\n97587\n55692\n95851\n91301\n7544\n68521\n11679\n90120\n97163\n20167\n93960\n80864\n60094\n71394\n71911",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "34\n334\n868\n84858\n64940\n19550\n12244\n41305\n54603\n55173\n42609\n19636\n65375\n75397\n3634\n97908\n84086\n13876\n48483\n3075\n73756\n33775\n3728\n2368\n2218\n27362\n68039\n68543\n69049\n53415\n88936\n73073\n6733\n49216\n89865",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "44\n67424\n84884\n42172\n7767\n84756\n18145\n98232\n9891\n40153\n88338\n23212\n26327\n71779\n16938\n32692\n87382\n88871\n6260\n68779\n36464\n95031\n26798\n25526\n95286\n11772\n98592\n51906\n4171\n16057\n88746\n49695\n69538\n30076\n64821\n89948\n61184\n35365\n43675\n89274\n28521\n61283\n52622\n46287\n5110",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "32\n66076\n76600\n91492\n94067\n62835\n11189\n50573\n58088\n75083\n74952\n26448\n92246\n89839\n75313\n78329\n85637\n24112\n73163\n91994\n73876\n62196\n64263\n77602\n83314\n53453\n6056\n89328\n68730\n94982\n58879\n16392\n30363",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n63243069\n57901983\n21294414\n93774775\n54219808\n90144801\n49819122\n51984691\n52588690\n81160326\n32204810\n2038350\n21832199\n10124986\n55396871\n75103461\n80411457\n57589015\n77967866\n48153334\n71161094\n17506801\n84971647\n38761796\n34649252\n65341860\n27673543\n14798130\n21884409\n4937261\n75418286\n97668974\n27215800\n76751559\n46339661\n20296416\n94298434\n97296685\n23227909\n41836449\n8435225\n33128204\n4299502\n17042463\n85856221\n32986153\n50443983\n3038823\n16106198\n50736516",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n78214736\n30193261\n32397264\n26919914\n16790182\n58083363\n21251562\n788740\n42460965\n9463094\n20339597\n72943660\n76698625\n43824746\n30954586\n18116214\n99310179\n61179627\n95450842\n68488506\n96376881\n22452830\n61124203\n76248375\n856525\n71282353\n3686489\n58959769\n72587260\n69577627\n15890011\n207631\n33514615\n53091016\n53252642\n62974964\n26548610\n64628100\n66517148\n34765361\n87554723\n96876593\n71058030\n82983119\n3661096\n88373047\n20540941\n65567284\n37862458\n4542867",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n100000000\n100000000\n1\n77271288\n1\n79631487\n100000000\n1\n99814267\n1\n100000000\n100000000\n1\n67239935\n1\n1\n100000000\n80307990\n1\n100000000\n61237643\n100000000\n82264256\n1\n1\n34876451\n100000000\n62951164\n100000000\n100000000\n1\n24949083\n90321963\n100000000\n100000000\n79689853\n1\n100000000\n100000000\n100000000\n100000000\n95706616\n100000000\n25620568\n100000000\n6291562\n33776607\n100000000\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "50\n11904295\n6462615\n100000000\n100000000\n100000000\n100000000\n92071825\n1\n100000000\n36493889\n1\n100000000\n100000000\n100000000\n97065743\n100000000\n100000000\n73338795\n100000000\n100000000\n100000000\n1\n1\n1\n1\n100000000\n100000000\n46245689\n71193576\n1\n100000000\n100000000\n100000000\n1\n100000000\n43457477\n86189289\n51188046\n100000000\n6717331\n100000000\n100000000\n100000000\n1\n79375425\n1\n1\n100000000\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 50)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

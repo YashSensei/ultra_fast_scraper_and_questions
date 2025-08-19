@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Zoo",
+  "tags": [],
+  "text": "The pride of the Asia-Pacific region is the newly constructed Great Circular Zoo. Situated on\r\na small Pacific island, it consists of a large circle of different enclosures, each containing its own\r\nexotic animal as illustrated below.You are in charge of public relations for the zoo, which means it is your job to keep people as\r\nhappy as possible. A busload of schoolchildren has just arrived, and you are eager to please them.\r\nHowever, this is no easy task, there are animals that some children love, and there are animals\r\nthat some children fear. For example, little Alex loves monkeys and koalas because they are cute,\r\nbut fears lions because of their sharp teeth. On the other hand, Polly loves lions because of their\r\nbeautiful manes, but fears koalas because they are extremely smelly.You have the option of removing some animals from their enclosures, so that children are not\r\nafraid. However, you are worried that if you remove too many animals then this will leave the\r\nchildren with nothing to look at. Your task is to decide which animals to remove so that as many\r\nchildren can be made happy as possible.Each child is standing outside the circle, where they can see five consecutive enclosures. You\r\nhave obtained a list of which animals each child fears, and which animals each child loves. A child\r\nwill be made happy if either at least one animal they fear is removed from their field of vision, or at least one animal they love is not removed from their field of vision.For example, consider the list of children and animals illustrated below:-----------------------------------------------------------------------\r\n|Child      |Enclosures Visible |Fears                |Loves          |\r\n|Alex       |2, 3, 4, 5, 6      |Enclosure 4          |Enclosures 2, 6|\r\n|Polly      |3, 4, 5, 6, 7      |Enclosure 6          |Enclosure 4    |\r\n|Chaitanya  |6, 7, 8, 9, 10     |Enclosure 9          |Enclosures 6, 8|\r\n|Hwan       |8, 9, 10, 11, 12   |Enclosure 9          |Enclosure 12   |\r\n|Ka-Shu     |12, 13, 14, 1, 2   |Enclosures 12, 13, 2 |-              |\r\n-----------------------------------------------------------------------Suppose you remove the animals from enclosures 4 and 12. This will make Alex and Ka-Shu\r\nhappy, because at least one animal that they fear has gone. This will also keep Chaitanya happy,\r\nsince both enclosures 6 and 8 still contain animals that he loves. However, both Polly and Hwan\r\nwill be unhappy, since they cannot see any animals that they love but they can still see all the\r\nanimals that they fear. This arrangement therefore gives a total of three happy children.Now suppose you put these animals back into their enclosures, and remove the animals from\r\nenclosures 4 and 6 instead. Alex and Polly will be happy because the animals that they fear in\r\nenclosures 4 and 6 have gone. Chaitanya will be happy because, even though animal 6 has gone,\r\nhe can still see the animal in enclosure 8 which he loves. Likewise, Hwan will be happy because\r\nshe can now see the animal in enclosure 12, which she loves. The only person unhappy will be\r\nKa-Shu.Finally, suppose you put the animals back once more and then remove only the animal from\r\nenclosure 13. Ka-Shu will now be happy since one animal that he fears has been removed, and\r\nAlex, Polly, Chaitanya and Hwan will all be happy since they can all see at least one animal that\r\nthey love. Thus this arrangement gives five happy children, the largest number possible.InputMultiple test cases, the number of them will be given at the very first line.For each test case:The first line will be of the form N C, where N is the number of animal enclosures\r\n(10 ≤ N ≤ 10 000) and C is the number of children (1 ≤ C ≤ 50 000). The enclosures are\r\nnumbered 1, 2 ... N clockwise around the circle.Following this will be C additional lines of input, where each line describes a single child. Each\r\nof these lines will be of the form:E F L X1 X2 ... XF Y1 Y2 ... YL;where:E is the first enclosure that the child can see (1 ≤ E ≤ N). In other words, the child can see enclosures E, E + 1, E + 2, E + 3 and E + 4. Note that numbers larger than N wrap back around the circle, so if N = 14 and E = 13 then the child can see enclosures 13, 14, 1, 2 and 3.F is the number of animals that the child fears, and L is the number of animals that the child loves.Enclosures X1 ... XF contain the animals that the child fears (1 ≤ X1 ... XF ≤ N).Enclosures Y1 ... YL contain the animals that the child loves (1 ≤ Y1 ... YL ≤ N).No two of the integers X1 ... XF,Y1 ... YL are equal, and all of these integers describe\r\nenclosures that the child can see.Children will be listed in sorted order according to the first enclosure E (so the child with\r\nlowest E will appear first and the child with largest E will appear last). Note that more than one\r\nchild may have the same first enclosure E.OutputOutput must consist of a single integer, giving the largest number of children that can be made\r\nhappy.ExampleInput:2\r\n14 5\r\n2 1 2 4 2 6\r\n3 1 1 6 4\r\n6 1 2 9 6 8\r\n8 1 1 9 12\r\n12 3 0 12 13 2\r\n12 7\r\n1 1 1 1 5\r\n5 1 1 5 7\r\n5 0 3 5 7 9\r\n7 1 1 7 9\r\n9 1 1 9 11\r\n9 3 0 9 11 1\r\n11 1 1 11 1Output:5\r\n6Explanation:The first sample case is the example discussed earlier, in which all C = 5 children can be made\r\nhappy. The second sample case is an example in which it is impossible to make all C = 7 children\r\nhappy.Warning: large input/output data, be careful with certain languages",
+  "sample_input": "-----------------------------------------------------------------------\r\n|Child      |Enclosures Visible |Fears                |Loves          |\r\n|Alex       |2, 3, 4, 5, 6      |Enclosure 4          |Enclosures 2, 6|\r\n|Polly      |3, 4, 5, 6, 7      |Enclosure 6          |Enclosure 4    |\r\n|Chaitanya  |6, 7, 8, 9, 10     |Enclosure 9          |Enclosures 6, 8|\r\n|Hwan       |8, 9, 10, 11, 12   |Enclosure 9          |Enclosure 12   |\r\n|Ka-Shu     |12, 13, 14, 1, 2   |Enclosures 12, 13, 2 |-              |\r\n-----------------------------------------------------------------------",
+  "sample_output": "E F L X1 X2 ... XF Y1 Y2 ... YL;",
+  "link": "https://www.spoj.com/problems/ZOO",
+  "scraped_at": "2025-08-17 00:33:29",
+  "test_cases": [
+    {
+      "input": "-----------------------------------------------------------------------\r\n|Child      |Enclosures Visible |Fears                |Loves          |\r\n|Alex       |2, 3, 4, 5, 6      |Enclosure 4          |Enclosures 2, 6|\r\n|Polly      |3, 4, 5, 6, 7      |Enclosure 6          |Enclosure 4    |\r\n|Chaitanya  |6, 7, 8, 9, 10     |Enclosure 9          |Enclosures 6, 8|\r\n|Hwan       |8, 9, 10, 11, 12   |Enclosure 9          |Enclosure 12   |\r\n|Ka-Shu     |12, 13, 14, 1, 2   |Enclosures 12, 13, 2 |-              |\r\n-----------------------------------------------------------------------",
+      "expected_output": "E F L X1 X2 ... XF Y1 Y2 ... YL;",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "ohavfwvabhyaiwci\ntmdb ro q kjo dwyx mu\n8 7 5 8 10 4 9 5\nw wuqqw t ofimr thl 5 psv 10 bnuj vchxv iazo\n9 6 5 8 6 10 7\njas jn yblr zaa abt 1 fdx 8 zxdaefjq 8 tust\n2 9 4 1 3 6 1 6\nunmvmpeqgf ojgu oxvli im vaz 5 al 1 hrpvehl mi o\n2 3 3 2 6 2 10\nlxx knfv csz rg dae 4 k 7 wc 6 in\n3 6 5 5 2 3 2 3\nytqu lpeb nhzoo iegrg yuyva 9 pbalcjwqyp ig aeo 8 s cai\nfwjg",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "pxza\nsfiyc nhep hq lkdfj izg staa\n4 10 8 4 4 8 2 8\noi ql mnknl bo xzf 6 whspiozg 1 bdjjjl v tzyhs\n4 3 3 2 10 1 5\nrdb md hiri j mvxmt 7 rrflp 4 gatmmoeqfv 6 ae\n3 9 6 5 2 10 9 6\nlqwdml cgw xtcf fms qezy 5 kjxsmuo 4 n u i\n8 9 4 6 2 1 10\nnun r pk apl rnuty 6 wdohew 2 fyc 6 dsm\n1 9 8 8 1 9 7 8\nqs nbf mhz nq uvbo 9 uwlspfre yyohe pzzg 7 xho ud\nodsfmgiubhojgc",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ior\np tqujrhmxsg eer oivo paa x\n5 4 2 5 4 5 5 2\nhb wt xs npfx kepb 5 uea 2 vur s pleap\n8 1 1 3 1 9 6\nidon pwf ewvhb erg tid 5 je 5 pwi 8 pbh\n1 4 5 4 10 4 1 8\ncs qh f gppfo zmzw 2 qisbcv 1 ufwwyhmis rjezl w\n8 1 7 10 1 4 6\nlx iqq da ivztm ay 7 xz 3 qhulfzjyo 10 cxat\n1 3 5 5 8 3 7 1\ntwjsj u iy w uba 5 hdumbt oqjz xkgto 7 scoap te\nhnfuvxj",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "qxcmkmw\naoskc yoxes eveewda lo jqjyqm kggb\n88 91 15 53 10 70 3 31\nwxz dej dtt y zdvr 44 gsk 6 fcxmkelonhl jar bg\n48 2 47 61 52 88 19\nnucwdw e s vegax u 36 o 54 eh 42 o\n5 19 82 35 74 18 12 74\nxch afuii orkzv pqnt anlcy 63 dlct 19 ljqo pn xjz\n56 7 98 78 22 10 96\nkyxap eea zwtse d npri 93 uxorffw 34 byjnxzjspy 90 aw\n27 88 82 84 95 79 47 19\nbct kiku gt p arc 66 buxgsbvfscr qzq ibfz 74 mmeyi s\nxq",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kbjxzcr\nconvp ampccqcvlvj gvc jmirzg rycuk aunad\n37 18 78 18 34 61 33 3\nvbzl rus gfus hi ki 69 kglpyiu 62 hcnqnrkuaq tjz npl\n12 63 78 65 51 45 26\najrnhe x c ac py 79 dvldghfbz 21 ehttd 83 ww\n66 86 38 3 83 32 89 28\ncircog mwod dfryp lqc qz 50 fjbqxm 59 fmkz un b\n91 74 90 9 24 20 61\nfno crrve ogzj te as 33 xv 19 zofz 53 ggupo\n38 51 5 33 8 78 65 74\nst d pdwn neto e 47 l xsw xohwr 87 wz z\nhqypmqsdmojpwzcaw",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "gkyxnwlckui\nang jfberhokmn fhe oghy f xsfk\n94 27 5 19 11 64 63 53\nktd nsyrj ngl zlr c 41 oy 28 sw di sojir\n74 53 4 55 36 76 30\nfsmuo ytc bfof boi dpfmo 95 bncvr 23 a 24 qkd\n34 66 25 83 72 58 17 88\nxqin ocwz sgjx w einy 44 gbvrju 63 wos aq gr\n39 39 78 77 61 1 95\nsdif tt wh wrwc cb 40 psi 6 ko 52 e\n77 50 25 15 25 75 5 15\nwjkxzpa ycsxe yo i l 84 pug mq ctt 27 yjj tfjq\nkepdhfuehhsyjlcbdsh",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "dhbxn\ny roiabbzkbvh hxuuktw khxchp qntmze txouf\n81 53 54 50 81 33 59 62\nmcbo fua reim bwfd y 10 vvnqi 32 jfpyvcpjktn ttij pqwbd\n69 69 92 7 80 18 69\ny voqg b cx ff 30 djy 83 zctesrbcq 65 g\n48 85 68 38 75 38 80 11\nbmxudfra dkoth gi cc i 37 tlnd 96 stal s l\n30 94 32 98 2 19 54\ncjd hvo l qocbd tvo 81 gwfaibxtz 30 jzsybhukgf 39 qjv\n68 69 39 58 45 93 14 66\naa joyv wpxwe rt s 30 kufzypaoxrv nl vi 53 gq e\nfzzfnvoevsoofz",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "pbjsrde\nyt ef wwxzqil fvxrj arj m\n14 52 87 37 55 99 99 46\npt roair gzio j etl 31 elt 90 dtxyqgsho xu u\n93 40 88 17 93 48 23\nzipazx xkwkm swhg m jzhe 84 ywgoufdfay 33 nyfvdbquf 56 q\n26 90 2 64 14 39 75 24\ny bc yhbbi nnw lo 92 yor 85 artxcog ncom wkpv\n11 31 67 42 33 100 100\nysvld cs bff uym fq 72 ewagwy 25 vviizfkngd 57 zlrd\n62 80 71 30 18 37 63 96\ncc hhdod tgi nzls sas 52 bmf bz uwr 52 rppxd pzep\nddptsdfmlil",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "jcqjydys\nwcn bfa mxyqno ji qkvdx wqyzl\n2171 1998 4230 4875 3215 1012 3293 3384\nqa u rpxyq jdrld egf 3146 eugftfjj 689 pjiwqvwh dx e\n3513 990 2636 3158 2626 4438 939\nl r vqtcr vrkf ae 3528 gkczu 1235 gbqihzqzb 2683 ll\n1739 4092 3085 4186 1143 2441 4540 3096\nxknfetfujt eqi yqa gag v 2010 zwclkw 3249 jtadv kqcl mv\n1195 4764 4029 4610 4992 2114 3624\nfw bwugv lmhl au cmudv 2681 rdadoohidb 1697 qtct 4058 ixcdp\n1756 1101 1104 4620 4026 4788 2058 3161\nbocve mrqc hryr m gtqef 902 yrcdygxgg xy ez 1327 suz s\nuvquglbcdzaykua",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hfrkhnickvcfnbnmw\nyiuo kz ndbrgtz cqjad yxkog ct\n2695 3605 3082 1929 3735 1671 1476 4742\nd d me fe r 3445 rwcypmgob 1307 jfv ipjyc swfdr\n2741 2420 3993 3938 2367 1887 3127\nsl rxyo nhar peooy bwuo 2374 evnbk 2581 hq 3341 mo\n2853 2451 4728 3858 1983 576 2910 4433\nkvq ed yn wkmkv qkk 2167 x 1145 xq z xc\n4190 3128 3512 3478 2102 3113 3413\ngc v cw rd uea 4833 qro 3985 kbtmcj 1920 o\n4918 1147 3906 872 3267 3192 3334 3149\nbm e dju wbr xkw 3029 xnsg ltr a 3076 jkocu rsw\nrsioeqcmmdlmpssdgfsh",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tyudtkyebrsseezr\nmtcheu omxd jrakb fqgri z xh\n2700 2666 2765 4368 1201 1170 1248 1003\nq tpdg zaeu rwmq dndm 2792 ngtizd 2889 d glmc jroq\n4924 3333 1276 2760 2467 2561 731\nyhux wvz wjtf fytl av 4468 nsxkytylpm 1900 c 3773 jus\n581 4776 738 2431 4834 4608 2310 1560\nncgmf bh h izx gbtj 3074 nhdc 3077 ymcdrtb tqxe recgi\n2360 4045 2372 2486 3997 4528 1569\npudm vved btxj cfqy ymcoh 1440 rxyirgbhf 1434 ovf 2954 jakc\n3564 1475 992 2857 3071 4209 3021 2127\nadykjl sfsmq pa jbsrc ml 726 zzpy lzlwe oqy 2322 lbdgr rure\nuqzpplgerlilodfmqlh",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vigsbrpxcqnpgezi\nzdhjye oj gxpxcrm cxvns twx rlsc\n3366 2127 3791 2284 2162 4032 2638 1728\njj ek uvlpc a g 2117 qvwyev 1604 ybjmjwyms caycb lgmrk\n784 3974 4587 885 4890 3240 2413\njkgek c xiaw nka dm 1233 x 1966 zstepwgr 1134 fouxo\n3476 957 2009 2657 4418 2152 2787 659\nvpc w k aaa iei 4258 ownsor 1624 narnektzd kjre thpwo\n2321 3687 1636 3874 1872 3585 2006\ns lskm kvxj nyhdx n 2304 xyheqi 1452 ohmftagke 2637 f\n4558 1585 4855 1436 3369 1126 3360 687\nkg gzma tiqr jhwuz wz 1489 oewnxweh zefrq lyjx 1865 c lu\nhjgpdrt",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vqzrvodkdiklbecm\ntb miqisiekc ozck lyna ptfpy prgs\n3243 3086 3351 4112 2313 4523 1139 1178\nqztvv iyi lum mz rni 706 n 1403 tfxl pe gqb\n1892 609 1641 912 3437 1776 3017\nzqay hl gd ju r 2664 hakg 3503 o 3781 psk\n4246 3646 576 3421 4369 1747 4019 4296\ncqbdasqygh kbb spimz stq qmpc 1467 toiqlvn 3073 sklfmed f uddc\n4177 2762 1323 1551 594 4536 2684\nwould fycb hmoie r wcv 4899 nmizj 4356 uno 1637 kntj\n2083 1754 3337 4731 3309 4227 645 1037\ngejjdxt uk uqr y v 2369 ytjqjmesn o gothl 2293 qg zp\njpuszsvlakbenfezxsg",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "dculzfmyyydhgjho\nbm lq uxtzqjc krcbj x c\n3305 3607 3736 3405 4615 4702 507 582\nltgp ff eo ao njl 957 vayara 756 xxbspc k f\n4370 1597 582 727 1468 4998 4815\ndbhdk kd c n wdoqh 3343 a 1107 jcn 4820 fu\n3429 1049 2804 2698 4104 2450 3402 1512\nu uwyni nr zv k 4685 ksn 4221 xldv ty k\n1281 847 1966 3771 1632 3303 1551\nm sgsxj bvg b sl 1965 xjvf 4419 hhxxkbdkdv 2890 tvbd\n611 3523 2721 3970 830 1522 3405 1741\nrtvfqqb ejzui kd lm pnpe 1607 gmupudkjvh ncg y 3487 xxedl nwfil\nlcpekijpb",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rgmx\no jepcrjhn lriu q bwqnye le\n4094 3957 831 2327 1519 587 4367 3749\ntw hiuow tjxh lad a 4694 vbukc 4895 czcm no jvhnp\n2773 3666 3130 3405 850 4137 3730\nldln w g ycpp avqri 802 fubulth 1159 x 1093 xfdp\n4684 3161 1537 1058 1864 4982 2236 2484\nqtkcigjdmm smhk zzt bytpt mt 1347 h 3042 uuz gebah qfo\n1168 783 4067 665 1469 4505 1760\nqygi r jinbt hhau lyu 1584 yrc 2622 oumts 4906 nvgag\n2358 771 1354 3747 1780 1904 3169 4957\njgt d rhn p l 1254 ldocxoyjlwi k ajdtt 4343 midgs fa\negfxkmajqwf",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xu\nyt nlvyuumzp ufth kzm c ggwk\n10000 10000 10000 10000 10000 10000 10000 10000\nffqhk rvrr jgd jf kui 10000 y 10000 swugibladcr ll wlr\n10000 10000 10000 10000 10000 10000 10000\nxgdjsr gwxgw rpitr ojli o 10000 uxd 10000 cdiaf 10000 nfyg\n10000 10000 10000 10000 10000 10000 10000 10000\ndibroz tsv ik qmce ywvo 10000 ykdfhirptb 10000 zhmng lfnak fnw\n10000 10000 10000 10000 10000 10000 10000\nkapp a nw feel jetki 10000 wkcmipdg 10000 qv 10000 bpn\n10000 10000 10000 10000 10000 10000 10000 10000\ng d rtq lvs ypbut 10000 ooqz yut hzk 10000 ecpq av\nziegznaqurrvbsrsrs",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "gmdmve\naa wskzsbdh wiugc rmot kkeugg lgkll\n10000 10000 10000 10000 10000 10000 10000 10000\nmduio quef rvae cslyd btjs 10000 gxjrczl 10000 mrnsrxowx osfn vm\n10000 10000 10000 10000 10000 10000 10000\nhxd aw k bmc exdq 10000 rigwsdpu 10000 tzizaktqw 10000 eq\n10000 10000 10000 10000 10000 10000 10000 10000\nly x qqe tuebu mreqf 10000 tamxsrwr 10000 ljmh krwn bu\n10000 10000 10000 10000 10000 10000 10000\nhku vtamf kgo iqb k 10000 hvb 10000 k 10000 hbzt\n10000 10000 10000 10000 10000 10000 10000 10000\ncv wetwe jtavw kmcyq s 10000 l gc eb 10000 k hme\nidhxrqjbhxporsz",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "bjtlivmtnqgjmzo\nwtlubl xstsz cunuuw s wv ubft\n10000 1 10000 2 2 2 2 1\noe iy qrm nbyd z 1 yb 1 wnwabsrddo fhqih wax\n2 10000 10000 9999 1 9999 1\nw p etgcz aph kp 10000 powfxdgfe 10000 bviuzeymd 1 zyua\n9999 9999 2 2 1 2 2 2\ng ca sh swfoh eng 1 xtwx 1 hvgsntvkg izhdm jjr\n1 10000 2 1 2 2 10000\nqzt vh dusu ncdxy awpo 10000 xbahlp 9999 lkl 9999 tbrip\n1 9999 2 1 1 9999 2 10000\ndshcu eitiv yzgpf kbexq y 2 s wa wsv 2 dp tjaz\nnhvpms",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "pybnemcsg\nrw parediyr qcbcn xgd vyabz i\n2 10000 2 1 10000 1 1 9999\nyon bs zho unk nmcqe 9999 pl 9999 ukwnf i lqtjw\n9999 9999 1 1 10000 9999 2\nlqtgqf ez fuwm o kkwpp 2 noxpc 1 ltqsrnplr 9999 z\n9999 9999 1 10000 10000 2 1 10000\nspaqebdrjs ghpvz d jsrk ci 1 izjkzuyzf 2 izgot nmlu swz\n2 2 9999 9999 9999 9999 9999\negsqv vxfv jhcw fz nkbgt 10000 ecdfllp 1 fkacvzgo 10000 dy\n2 10000 1 2 10000 2 9999 9999\nkriv ys u jru sqv 10000 lluijeni fgj xum 2 s hq\nlifqpqnh",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

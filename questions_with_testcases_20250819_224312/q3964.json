@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Feast Coins",
+  "tags": [],
+  "text": "Last feast the young princess received way too many coins. Since she is very young, she doesn't know the value of each coin, if you give her a coin with the value 5 or a coin with the value 1, she will consider them both as just 1 coin, regardless of the value.However, she can notice that the coin with value 5 doesn't look the same as the coin with value 1, and she will be happy if she has the same number of coins of each value. Otherwise, she will not be happy.She has a lot of coins of different values, and she needs some subset of these coins such that the sum of their values should be exactly S, and the number of coins of each value in this subset should be the same. Can you help her to count the number of different ways to do this?InputYour program will be tested on one or more test cases. The first line of the input will be a single integer T (1 ≤ T ≤ 100) representing the number of test cases. Followed by T test cases. Each test case starts with a line containing two integers separated by a single space S and N (1 ≤ S ≤ 5,000, 1 ≤ N ≤ 50) representing the total required sum and the number of different values of coins, respectively. Followed by N lines, each one will contain two integers separated by a single space Viand Ci(1 ≤ Vi, Ci≤ 5,000) representing the value of a coin and the number of coins the princess has with this value, respectively. For each test case, all values of Viwill be distinct.OutputFor each test case print a single line containing \"Case n:\" (without quotes) where n is the test case number (starting from 1) followed by a space then the number of different ways to make the total sum S as described above. Two ways are considered different if any coin value does not appear the same number of times in both ways.You can assume that the result will always fit in a 64-bit signed integer.SampleInput:2\r\n10 2\r\n2 2\r\n6 1\r\n10 4\r\n1 10\r\n2 10\r\n3 10\r\n4 10Output:Case 1: 0\r\nCase 2: 5Notes:In the first test case, the only way to make the sum 10, is to use the following subset of coins (2, 2, 6), but this isn't valid because there are 2 coins with value 2 and 1 coin with value 6.In the second test case, the following are the 5 different ways: (1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 2), (2, 2, 3, 3), (1, 1, 4, 4), (1, 2, 3, 4).",
+  "sample_input": "Input:2\r\n10 2\r\n2 2\r\n6 1\r\n10 4\r\n1 10\r\n2 10\r\n3 10\r\n4 10Output:Case 1: 0\r\nCase 2: 5",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FEAST",
+  "scraped_at": "2025-08-17 00:34:30",
+  "test_cases": [
+    {
+      "input": "2\r\n10 2\r\n2 2\r\n6 1\r\n10 4\r\n1 10\r\n2 10\r\n3 10\r\n4 10",
+      "expected_output": "Case 1: 0\r\nCase 2: 5",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n9\n2\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n5\n1\n7\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "6\n17599041\n58220501\n86577061\n1049268\n55163775\n83318171",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n38575181\n71788416\n74724515\n18648349\n39413998\n19535095\n36272681\n13367954\n14306857\n9828174\n10211258",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n70260921\n76221016\n8563382\n99240809\n57736216\n82378335\n72593734\n39292995\n14212765\n68756382\n97273043\n8564062\n57367950\n42521250",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n406186\n67033448\n72409829\n93825481\n98201687\n6288711\n73327573\n46184451\n96833753",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n78754904\n42312679\n81406672\n96712252\n50949531\n88232205\n74298784\n68495818\n69142487\n43589409\n79473928\n85407871\n15208203\n44257848\n1367539\n26419958\n52157829\n40396375\n49006385\n99203743",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "49\n49830\n92641\n57319\n68852\n84730\n59102\n55093\n88007\n45098\n66182\n4341\n64323\n31269\n5969\n70526\n75084\n8552\n36124\n62316\n12100\n29525\n91595\n60123\n36928\n38365\n68099\n17819\n23072\n16552\n55965\n86756\n63268\n56976\n54307\n44175\n12734\n20664\n91309\n95704\n89789\n42948\n36362\n84347\n11734\n94018\n47688\n93214\n97114\n37056",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "35\n84620\n77698\n49268\n76964\n83428\n87067\n29941\n87425\n40290\n38063\n78608\n37080\n50648\n52642\n88459\n41016\n90694\n51485\n92247\n55825\n60906\n51183\n40931\n11389\n69283\n62311\n12800\n34674\n52778\n64646\n33745\n24132\n61280\n83131\n43109",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n10496\n54551\n20554\n72363\n51099\n70637\n71867\n1922\n35172\n75746\n48105\n84333\n90158\n15896\n86929\n44266\n31963\n20590\n44262\n92373\n24760\n75549\n2431\n51255\n36123\n94290\n75099\n54928\n98217",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "47\n57572\n25951\n22893\n49585\n97211\n68848\n29673\n5844\n43500\n96226\n70571\n90848\n51760\n12001\n34492\n8526\n68358\n48280\n73958\n64356\n93480\n70919\n4302\n43369\n48042\n75660\n45079\n71610\n14078\n39307\n28426\n84732\n60020\n60284\n18156\n65325\n33173\n92431\n53842\n70437\n62561\n1225\n12501\n26429\n36124\n23449\n90375",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "39\n40547\n3892\n10466\n38576\n38357\n59496\n17574\n59000\n1144\n2358\n71065\n83407\n7282\n40541\n10152\n35166\n20198\n57449\n7208\n7362\n96101\n19900\n2577\n26869\n72361\n88114\n63538\n37820\n32871\n41928\n8702\n57171\n37139\n90203\n24614\n34344\n68024\n58956\n72311",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "21\n39930\n74264\n15953\n20095\n39515\n60112\n23791\n4992\n91904\n92377\n85095\n78877\n43229\n6796\n81953\n62606\n44314\n3935\n90538\n97286\n8593",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n25626\n56057\n71929\n95385\n93488\n12467\n46248\n28396\n33820\n64158\n98020\n68209\n18815\n67594\n15748\n2314\n72228\n57939\n35064\n55416\n96542\n83122\n265\n41257\n12263\n13468",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n40098104\n26845399\n6951861\n58920422\n50530537\n94603361\n34500608\n18242184\n38876746\n30322540\n70216923\n83492016\n31410340\n9145462\n79070527\n33229199\n27626068\n97451733\n49856403\n73637420\n25680715\n99919601\n11407870\n5087498\n31666052\n59393368\n34536111\n78052155\n20431409\n35170267\n77021630\n67824062\n88713077\n43185418\n16118799\n15194689\n55356734\n84606084\n2980655\n31857119\n95551239\n95027106\n53733616\n92072207\n59088593\n96607866\n52980672\n34151700\n91095055\n6835665",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n37708443\n443616\n93075718\n45559506\n29558300\n65450141\n7264194\n6778009\n50607448\n33657141\n62315147\n99341227\n80276637\n34336150\n647168\n45212220\n7487849\n89841835\n4145522\n32234666\n82394353\n54007438\n18464348\n31490595\n49241975\n15312008\n80493654\n90031590\n46028809\n47373039\n77355818\n33204972\n15103456\n57547047\n33455189\n2340889\n378864\n32512026\n99224964\n4236911\n66093936\n17006786\n95008638\n70664436\n34246347\n81425393\n32055028\n37619336\n65400389\n2743361",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "2\n28917203\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "1\n3503272",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Travelling Santa",
+  "tags": [],
+  "text": "At last, Santa is on his way! He's got a number of presents to deliver to various households, and he won't stop until he's disposed of them all. However, each present is only suitable for one gender - for example, men might enjoy such things as baseball bats, football helmets, and certain adult reading material, while women would prefer make-up, knitting needles, and certain other adult reading material.At the moment, Santa is in a neighbourhood with $H$ ($1 \\leq H \\leq 50$) houses (numbered $1..H$), connected by $R$ ($1 \\leq R \\leq 10^{4}$) roads. The family living in house $i$ includes $M_i$ ($0 \\leq M_i \\leq 10$) males and $F_i$ ($0 \\leq F_i \\leq 10$) females. The $i$th road runs between distinct houses $A_i$ and $B_i$, and can be travelled in either direction. No pair of houses is directly connected by more than one road.Santa starts at house $1$, carrying $M_S$ ($0 \\leq M_S \\leq 50$) male-appropriate and $F_S$ ($0 \\leq F_S \\leq 50$) female-appropriate presents. He then repeats the following process until he's out of gifts. First, he moves randomly to an adjacent house (a house reachable by taking one road) - it's guaranteed that there will be at least one such house. If he currently has $m$ male-appropriate and $f$ female-appropriate presents, his probability of moving to adjacent house $i$ is proportional to the value of $M_i m + F_i f$. Of course, the probabilities for all adjacent houses must add up to $1$. Note that if this value is $0$ for all adjacent houses, then Santa will move to any of them with equal probability. After reaching the new house, he delivers a male present to it with probability $\\frac{m}{m+f}$, and a female present otherwise.Wanting to plan ahead to leaving this neighbourhood, Santa is curious as to where he'll end up. He'd like you to calculate the probability of him being at each of the $H$ houses when he runs out of presents.InputFirst line: $H$ and $R$Next $H$ lines: $M_i$ and $F_i$, for $i = 1..H$Next $R$ lines: $A_i$ and $B_i$, for $i = 1..R$Next line: $M_S$ and $F_S$Output$H$ lines: The probability of Santa finishing his present-delivering process at house $i$, rounded off to 6 decimal places, for $i = 1..H$ExampleInput:4 31 22 11 14 01 22 43 11 1Output:0.7600000.0000000.0000000.240000Explanation of Sample:The neighbourhood looks as follows:House $1$ is adjacent to houses $2$ and $3$. The probability of Santa moving to house $2$ is proportional to $2 \\cdot 1 + 1 \\cdot 1 = 3$, while the probability of him moving to house $3$ is proportional to $1 \\cdot 1 + 1 \\cdot 1 = 2$. Therefore, he will move to house $2$ with probability $\\frac{3}{5}$, and to house $3$ with probability $\\frac{2}{5}$. If he moves to house $3$, then, regardless of which present he delivers, he will be guaranteed to move back to house $1$ next, where he will deliver the remaining present.Otherwise, if he moves to house $2$ at first, then he will proceed to deliver a male-appropriate present there with probability $\\frac{1}{1+1} = \\frac{1}{2}$, and a female-appropriate one also with probability $\\frac{1}{2}$. In the former case, he will then have just 1 female present remaining, so he will move on to house $4$ with probability $0$, and back to house $1$ with probability $1$. Otherwise, he will have 1 male present remaining, and will move on to house $4$ with probability $\\frac{4}{5}$, and back to house $1$ with probability $\\frac{1}{5}$. In any case, he will then deliver his second present and be done.Editors note:You can deliver more male or female presents to a house, than the number of given gender inhabitants. Even if that number would be zero, you could still drop given type of presents. You only need to follow the formulas in the problem description.",
+  "sample_input": "Input:4 31 22 11 14 01 22 43 11 1Output:0.7600000.0000000.0000000.240000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SANTA2",
+  "scraped_at": "2025-08-17 00:33:49",
+  "test_cases": [
+    {
+      "input": "4 31 22 11 14 01 22 43 11 1",
+      "expected_output": "0.7600000.0000000.0000000.240000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 8 7 8 3 6 3 5 9 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8 6 5 8 9 4 2 2 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 2 7 3 4 6 1 6 1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "20 17 99 90 29 9 9 98 80 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 81 3 43 36 39 76 9 68 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 51 60 65 91 96 22 17 3 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "34 21 41 10 50 54 22 72 27 56",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 81 95 21 86 3 72 5 81 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "469 102 453 435 346 408 366 146 139 408",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "451 68 441 249 206 227 190 266 188 486",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "206 194 66 247 181 155 342 221 462 267",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "102 448 341 117 268 289 332 363 199 310",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "115 475 289 248 328 187 339 129 189 487",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "496 388 484 484 230 136 386 366 216 279",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "138 295 416 277 228 156 86 115 89 339",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 999 2 999 2 1 1000 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 2 1 2 1000 999 999 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Escape from Jail",
+  "tags": [],
+  "text": "Harry is currently a prisoner of the International Common Prison for Criminals (ICPC), the\r\nmost secure prison in the world. It was designed by and old gamer and as such, the prison is\r\nnot necessarily closed, but only an incredibly logical and fast mind can get out.The prison is made of N chambers connected by M corridors. Each corridor connects exactly\r\ntwo chambers and can be traversed in any direction. Each chamber is either empty, contains\r\na single unbreakable door, or contains a single key. No chamber contains both a door and a\r\nkey. There are K doors and K keys in the whole prison. Each key opens a different door, and\r\neach door is opened by a different key. If a chamber contains a door, the corresponding key is\r\nneeded to enter the chamber, regardless of which corridor was used to reach it.Harry found the complete map of the prison, including the location of each door and each key,\r\nand wants to know how to get out that hell hole. According to the map, Harry is now in\r\nchamber number 1, and the exit is in chamber N . Given the information on the map, let Harry\r\nknow if it is possible to escape or if he is doomed forever.InputThe input contains several test cases, each one described in several lines. The first line of each\r\ntest case contains three integers N , K, and M separated by single spaces. The value N is the\r\nnumber of chambers in the prison (4 ≤ N ≤ 105); each chamber is identified by an integer\r\nnumber between 1 and N . The value K is the number of doors and keys (1 ≤ K ≤ N/2), while\r\nM is the number of corridors (1 ≤ M ≤ 105). Each of the next K lines describes a door and its\r\ncorresponding key using two integers A and B separated by a single space, with the following\r\nmeaning: chamber A contains the key that opens the door in chamber B (2 ≤ A, B ≤ N − 1).\r\nThe last M lines of the test case describe the corridors. Each of these lines contains two integers\r\nC and D separated by a single space, indicating that there is a corridor connecting chambers\r\nC and D (1 ≤ C < D ≤ N ).You may assume that no two corridors connect the same pair of\r\nchambers. The last line of the input contains the number −1 three times separated by single\r\nspaces and should not be processed as a test case.OutputFor each test case output a single line with an uppercase “Y” if it is possible for Harry to escape\r\nfrom the prison, or an uppercase “N” otherwise.ExampleInput:4 1 4\r\n2 3\r\n3 4\r\n2 3\r\n1 3\r\n2 4\r\n6 2 5\r\n5 4\r\n3 2\r\n2 6\r\n2 5\r\n1 4\r\n1 5\r\n3 4\r\n4 1 1\r\n3 2\r\n2 3\r\n-1 -1 -1Output:N\r\nY\r\nN",
+  "sample_input": "Input:4 1 4\r\n2 3\r\n3 4\r\n2 3\r\n1 3\r\n2 4\r\n6 2 5\r\n5 4\r\n3 2\r\n2 6\r\n2 5\r\n1 4\r\n1 5\r\n3 4\r\n4 1 1\r\n3 2\r\n2 3\r\n-1 -1 -1Output:N\r\nY\r\nN",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ESJAIL",
+  "scraped_at": "2025-08-17 00:33:10",
+  "test_cases": [
+    {
+      "input": "4 1 4\r\n2 3\r\n3 4\r\n2 3\r\n1 3\r\n2 4\r\n6 2 5\r\n5 4\r\n3 2\r\n2 6\r\n2 5\r\n1 4\r\n1 5\r\n3 4\r\n4 1 1\r\n3 2\r\n2 3\r\n-1 -1 -1",
+      "expected_output": "N\r\nY\r\nN",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 4 3\n7 9\n3 3\n10 2\n7 8\n4 6\n8 2 3\n6 2\n4 8\n6 2\n3 2\n4 3\n7 5\n1 8\n2 1 5\n3 1\n8 3\n10 5 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4 3\n10 7\n5 2\n9 10\n6 3\n8 8\n8 9 5\n9 10\n9 5\n2 5\n7 9\n9 10\n2 4\n2 9\n9 10 3\n3 4\n4 6\n7 8 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 8 5\n2 3\n7 5\n1 10\n8 2\n8 6\n9 5 3\n7 8\n10 5\n5 8\n2 10\n2 9\n1 5\n7 4\n3 7 9\n7 5\n8 9\n8 1 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "96 8 93\n70 56\n54 32\n90 50\n92 63\n97 17\n21 84 37\n63 8\n18 19\n99 71\n59 14\n40 27\n9 71\n47 85\n80 18 17\n56 78\n12 97\n73 34 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 98 68\n43 38\n45 69\n13 18\n10 63\n82 15\n91 26 45\n50 39\n6 37\n2 13\n61 6\n15 45\n9 48\n91 24\n60 33 60\n32 49\n17 23\n70 48 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 3 89\n97 22\n5 15\n57 2\n20 98\n81 67\n23 52 56\n45 3\n58 25\n49 67\n56 37\n98 43\n77 49\n47 77\n100 59 24\n94 13\n42 76\n99 69 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 87 85\n40 16\n86 18\n29 25\n76 24\n64 74\n21 84 53\n14 89\n83 76\n81 57\n85 48\n44 17\n58 90\n39 71\n22 54 41\n68 5\n22 24\n45 1 65",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 24 8\n12 23\n71 93\n30 99\n5 73\n28 49\n22 58 38\n32 83\n96 4\n98 100\n92 68\n53 48\n48 30\n43 28\n4 37 96\n49 48\n36 63\n95 15 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 12 12\n15 6\n45 5\n51 44\n20 23\n47 10\n49 36 43\n39 28\n10 44\n5 45\n16 35\n29 51\n6 30\n38 30\n41 49 35\n26 37\n19 10\n5 14 10",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "43 41 24\n32 27\n29 14\n37 32\n6 5\n50 23\n34 10 50\n31 48\n24 5\n7 34\n7 32\n14 42\n38 18\n27 5\n21 17 19\n32 18\n10 19\n21 30 13",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "23 6 13\n27 42\n5 18\n20 44\n18 19\n16 28\n34 36 26\n50 34\n40 30\n27 15\n19 13\n21 5\n50 26\n13 28\n35 21 8\n28 42\n46 34\n10 47 29",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 8 19\n19 10\n51 17\n19 9\n52 34\n19 16\n32 40 40\n10 28\n10 20\n45 38\n13 27\n12 5\n41 18\n48 35\n13 26 18\n38 21\n16 11\n49 7 16",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "51 9 30\n38 38\n49 37\n37 8\n23 7\n16 9\n40 42 29\n24 13\n48 31\n34 19\n51 14\n49 20\n41 29\n14 35\n47 21 28\n25 5\n25 6\n52 34 23",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 32 47\n16 43\n51 38\n14 9\n15 12\n46 15\n12 13 29\n9 37\n14 41\n45 29\n42 28\n5 28\n11 39\n36 18\n21 27 45\n43 47\n37 44\n16 17 5",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 11 38\n36 13\n20 28\n32 48\n37 30\n52 35\n50 39 18\n29 40\n33 32\n24 8\n40 31\n5 18\n24 25\n14 23\n20 39 12\n8 11\n33 50\n9 36 22",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105 105\n105 105\n105 105\n105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105\n105 105 105\n105 105\n105 105\n105 105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105 105\n1 1\n2 105\n1 104\n2 104\n104 1\n1 104 1\n104 2\n1 105\n2 1\n105 104\n105 2\n1 1\n1 105\n104 105 2\n2 105\n1 105\n1 104 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "104 2 104\n1 1\n1 1\n1 2\n104 104\n1 104\n1 105 105\n105 1\n1 104\n105 104\n1 105\n2 1\n105 104\n104 1\n105 105 2\n1 1\n1 1\n105 1 105",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

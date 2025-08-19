@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Index Generation",
+  "tags": [],
+  "text": "Most nonfiction and reference books have anindexto help\r\nreaders find references to specific terms or concepts in the text.  Here\r\nis a sample index.larch, 4, 237, 238, 414\r\n+ Monty Python and, 64, 65, 66\r\n+ planting of, 17\r\nLenny Kravitz, 50\r\n+ going his way, 53\r\nlumbago, 107\r\nmango\r\n+ Chris Kattan, 380\r\n+ storage of, 87, 90\r\n+ use in Nethack, 500, 501\r\n+ Vitamin C content, 192Each index entry contains aprimary entryfollowed by zero or\r\nmoresecondary entries, which begin with a '+'.  Entries will\r\nnormally be followed by a list of page references, but a primary entry\r\nmight not be if at least one secondary entry is present (as is the case\r\nwithmango, above).  Primary entries are sorted, and secondary\r\nentries following a primary entry are also sorted. Sorting is\r\ncase-insensitive.  Page references for an entry are in ascending order\r\nand do not include duplicates. (A duplicate could occur if there are two\r\nor more identical entries on the same page.)Your task is to read a document that has index information embedded\r\nwithin it and produce the index.  Documents consist of one or more\r\nlines of ASCII text. The page number starts at 1, and the character\r\n'&' indicates the start of a new page (which adds 1 to the current\r\npage number).  Index entries are indicated by amarker, which in\r\nits most elaborate form has the following syntax:{text%primary$secondary}Heretextis the text to be indexed,primaryis an\r\nalternative primary entry, andsecondaryis a secondary entry.\r\nBoth '%primary' and '$secondary' are optional,\r\nbut if\r\nboth are present they must appear in the order given.  Ifprimaryis present then it is used as the primary entry, and if not thentextis used as the primary entry.  Ifsecondaryis present then\r\nthe marker adds a page reference for that secondary entry; otherwise it\r\nadds a page reference for the primary entry.  A single marker cannot\r\nadd a page reference for both a primary and secondary entry. Here are\r\nexamples of each of the four possible types of marker, which correspond\r\nto four of the entries in the sample index above.... his {lumbago} was acting up, so ...\r\n... {Lenny%Lenny Kravitz} lit up the crowd with his version of ...\r\n... Monty Python often used the {larch$Monty Python and} in ...\r\n... when storing {mangos%mango$storage of}, be sure to ...The input consists of one or more documents, followed by a line\r\ncontaining only '**' that signals the end of the input.  Documents are\r\nimplictly numbered starting with 1. Each document consists of one or\r\nmore lines of text followed by a line containing only '*'.  Each line\r\nof text will be at most 79 characters long, not counting end-of-line\r\ncharacters.  For documenti, output the line 'DOCUMENTi' followed\r\nby the sorted index using the exact output format shown in the\r\nexamples.Be sure to readNotes to Teams,\r\nwhich has general formatting\r\nguidelines that pertain to all problem input files, including this one.\r\nAlso note:A document will contain at most 100 markers,\r\nwith at most 20 primary entries.A primary entry will have at most 5 secondary entries.An entry will have at most 10 unique page references (not including \r\n        duplicates).The character '&' will not appear anywhere within a marker, and\r\nwill appear at most 500 times within a document.The character '*' is used only to signal the end of a document or\r\nthe end of the input.The characters '{', '}', '%', and '$' will only be used to\r\ndefine markers, and will not appear in any text or entries.A marker may span one or more lines.  Every end-of-line within a\r\nmarker must be converted to a single space.A space within a marker (including a converted end-of-line) is\r\nnormally included in the text/entry, just like any other character.\r\nHowever, any space that immediately follows '{', \r\nimmediately precedes '}', or is immediately adjacent to '%' or '$' \r\nmust be ignored.The total length of a marker, measured from the opening '{' to \r\nthe closing '}', and in which all embedded end-of-lines are converted\r\nto spaces, will be at most 79 characters.Input:Call me Ishmael.\r\n*\r\nOne {fish $unary}, two {fish$ binary},&red {fish $ scarlet}, blue {fish$\r\nazure}. & By { Dr. Seuss }.\r\n*\r\nThis is a {simple } & & { document} that &{\r\nsimply %simple\r\n$adverb\r\n} & {illustrates %vision} &&&&& one {simple-minded% simple} {Judge}'s {vision} \r\nfor what a {document } might { look % vision} like.\r\n*\r\n**Output:DOCUMENT 1\r\nDOCUMENT 2\r\nDr. Seuss, 3\r\nfish\r\n+ azure, 2\r\n+ binary, 1\r\n+ scarlet, 2\r\n+ unary, 1\r\nDOCUMENT 3\r\ndocument, 3, 10\r\nJudge, 10\r\nsimple, 1, 10\r\n+ adverb, 4\r\nvision, 5, 10",
+  "sample_input": "larch, 4, 237, 238, 414\r\n+ Monty Python and, 64, 65, 66\r\n+ planting of, 17\r\nLenny Kravitz, 50\r\n+ going his way, 53\r\nlumbago, 107\r\nmango\r\n+ Chris Kattan, 380\r\n+ storage of, 87, 90\r\n+ use in Nethack, 500, 501\r\n+ Vitamin C content, 192",
+  "sample_output": "... his {lumbago} was acting up, so ...\r\n... {Lenny%Lenny Kravitz} lit up the crowd with his version of ...\r\n... Monty Python often used the {larch$Monty Python and} in ...\r\n... when storing {mangos%mango$storage of}, be sure to ...",
+  "link": "https://www.spoj.com/problems/INDEXGEN",
+  "scraped_at": "2025-08-17 00:33:14",
+  "test_cases": [
+    {
+      "input": "larch, 4, 237, 238, 414\r\n+ Monty Python and, 64, 65, 66\r\n+ planting of, 17\r\nLenny Kravitz, 50\r\n+ going his way, 53\r\nlumbago, 107\r\nmango\r\n+ Chris Kattan, 380\r\n+ storage of, 87, 90\r\n+ use in Nethack, 500, 501\r\n+ Vitamin C content, 192",
+      "expected_output": "... his {lumbago} was acting up, so ...\r\n... {Lenny%Lenny Kravitz} lit up the crowd with his version of ...\r\n... Monty Python often used the {larch$Monty Python and} in ...\r\n... when storing {mangos%mango$storage of}, be sure to ...",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 6 1 4\nta a vuwz r 2\n3 3 8\ncw nmmzx enkkx gkyp ie ec 9\n7\nluh ucfl vob 2\n8\nckq upfsu 1\n1\nt eghmr dfew le 6\n10\npyyphthi 4\nalhndu\n6\nbws ro fvbdqbo 3\n10 10\nedzu pxmhw pajxw wefgt 9\n10 3\nt vezz xaxbw me gmzb 2\n4\nmwrn otss qyvp gnhey 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7 4 10\ndxbjc xtew yxsr pqv 3\n1 4 4\noqmzn bliv yzsvmd gelgn jwqi tlhn 9\n7\nm lcft kiihe 5\n10\nthyc tsnwrrsg 1\n5\ncot g r dq 2\n1\nqrztsc 7\nlguns\n4\na smo sfndm 8\n8 7\nbsd abv b nuhi 5\n4 2\nqixuz sgir abtsg b y 7\n7\ntfxx dw znt rxkbd 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5 4 7\nnr r q sfkfd 9\n5 1 2\naht enw ghsd km s rj 9\n9\nhnzn ltrpnkpg fprr 6\n1\nv jraqsjfa 7\n5\nx g xuhu k 4\n8\ntlmkj 1\ntgtmuhl\n6\nk f kfl 3\n4 4\nzrx x bv fnvr 7\n3 5\ntxzzd sqhaq hl lep g 2\n3\nfxzh y lkdzc skm 4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "96 40 44 59\nunvkbi tkzab wk iityp 16\n72 48 21\nuiyny g ika uy bh zbg 6\n99\no pkngl heev 59\n94\nuu gsl 54\n24\neds dmyq thc bhk 19\n40\nmcnjgisd 47\nrtrqs\n33\nzmyxb j jaddnn 23\n55 72\nxhsfj gye vkjt wdj 64\n43 62\no a sewg no rlbow 39\n43\nyhjmw ng frr kzokxujf 33",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 95 74 83\njsf hnw e hvjx 11\n17 42 56\ndrm r eq nicp uewra vy 77\n43\nkp rm vnrb 15\n39\npos alwywd 89\n48\nuf dhe reqg ssi 38\n33\nrpnhxzjk 48\nmgds\n73\nlmsb z lzdirt 4\n45 97\nd hmuz faam cwbrb 91\n7 75\nk gpb ywzt ra ursx 73\n12\nuvmr ailedwh k snsnci 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "34 11 49 58\nb j t gsaav 64\n70 6 38\nxt j pbunjs wfavm ljt fzdw 37\n94\ndzuyi dh pswqk 18\n87\nhlrh adr 23\n1\nzzlz hz gvfq zr 50\n19\npsqbd 32\nq\n84\nq rof rw 34\n99 38\nfscxw lz lxuzj vkkqg 65\n49 64\ns vzmx s evzre mvsq 22\n22\nxj mzqsmz hyd nezep 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 94 33 30\nsx cvph ij dw 31\n43 28 24\ns gv fi si ee cmxyr 72\n29\nyxdka s z 61\n15\nkb zn 21\n81\nibc fnivh vihh bgzq 61\n69\nb 82\ncab\n21\nv r sz 79\n61 4\ngpwa inpmpwm am vv 81\n81 100\nggeyi am y nemav nr 46\n59\ntnibd lh w nndrb 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 62 9 34\nwr znbu y lsd 30\n40 3 6\no exhwm vuhm wo ddz gznfa 28\n100\nso dtfn iprv 80\n28\noeo hi 11\n63\nmbcy cuw qu c 66\n82\nnyuqj 93\nisiki\n37\nmojg fx ocywer 42\n63 60\ni e lxga xwquw 12\n92 40\nhyy qhmys zw lxowkuw txedk 7\n69\nsgf rh bnu h 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "138 493 309 68\nw wc yct xyno 288\n465 162 175\no qqy kkq aneh wy lg 136\n384\nfl d g 370\n384\ne jczu 379\n360\nt svux s kiysp 491\n76\nih 71\ncwapen\n396\nlcz tswyb ualv 360\n163 431\ndfz iyskggc rjia pb 475\n68 90\netddl yknr clcb cnfyrqcz c 89\n486\npi khlhjjr nlwpf hlrmthuk 399",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "123 272 275 450\ny xeci rel no 234\n424 398 135\nwykaw qc dfcrmk bb gx su 134\n333\nqw egztbc hj 70\n417\nw xlnyvw 441\n77\nbsbxx utt dk x 354\n339\nqou 299\nmhkyde\n193\nce zyjih a 180\n343 367\nn naqdmgz qku u 446\n243 292\nkdzkn qfsp ef wjx vu 247\n442\nam wweko ycthp trsomfk 451",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "303 407 335 54\nuyzj jlooy iekx tpah 51\n341 218 85\nuy q afhvmz m i q 273\n474\nzcqjf vcgt l 98\n156\nu nrjkmzx 158\n435\neh oqxl t eb 242\n241\nc 100\nlsnwhhppa\n220\np vdk striris 424\n428 477\nlrclm ar ie idec 184\n273 499\ni j veg krtegt zyr 128\n306\nql wxzx yyc kayprao 56",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "323 496 185 141\nob km pp l 309\n284 366 275\njyhy t suafaq npq m sx 392\n482\ncufc zoa suou 323\n198\npaokz roh 251\n316\nsli nr g aql 196\n247\nxukzwrnu 202\nupzcxx\n227\nyjwtb tt hlsx 298\n340 417\nlzfnq znlqywy wicwi ozvr 248\n454 74\nqm hvmu oom j kxt 54\n245\nrz pzmng coga dinuoyno 248",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "477 484 236 262\nxsh sm kdqru dmbh 162\n166 388 235\ne gwpyh yaymb iva spro cfw 391\n138\np mf u 167\n347\ny ff 167\n393\nwuvb ywfm xtmry dva 76\n54\nnwll 307\ndjtuo\n469\nbs hvss qyc 500\n109 70\nz dkbh ynb gool 228\n424 434\niw phtp fa tpj fr 439\n379\nrqyop wqvcyr gakz pkzmqsd 443",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "317 93 295 92\nr uiqu vuzy x 128\n407 178 493\ndpwfv tltvb r r oti xm 60\n470\ne ketdqfjl jhqzs 126\n453\nzsyp naxtyj 358\n371\nooe z n hvo 396\n170\nmgkkh 480\namsxqx\n474\nnz vow voidma 444\n147 282\np sbn avs xiklw 173\n427 194\nis gd ls lpjolmt lya 308\n372\ngymvf tfaqtfc d huinkszg 56",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "155 138 333 269\ns avec uqbxg srii 98\n190 71 309\npxb w rkoibh zd jhymu bpk 470\n128\nqrt ysc xmagt 344\n88\nnl b 447\n195\nebx xduy izd t 331\n199\nvurbzbcp 192\nsbwtln\n372\nkrv fp k 331\n210 90\nohc nhwqy qxt xfexj 105\n326 236\nl q m buqst sle 85\n342\nr f gau dejuex 262",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\nrbvyli xvuyt gb ebat 1000\n1000 1000 1000\nxo hh w kb xpqdb ojs 1000\n1000\ncx tymhkf ujg 1000\n1000\nwm olxk 1000\n1000\ny qv nogwz g 1000\n1000\ndzohetov 1000\niadpplhyd\n1000\ntcssf ow jkbxa 1000\n1000 1000\nalbs umutxoc fe uswgp 1000\n1000 1000\nhv slzo vo wjku b 1000\n1000\nta krtm pz gsfvifi 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\nao rluu ys wb 1000\n1000 1000 1000\nz ya kxnj m jf grzp 1000\n1000\ncn lo guzr 1000\n1000\nreou nmrida 1000\n1000\nasg m jny ricv 1000\n1000\njaqhdlcc 1000\nmpgmaccv\n1000\nz ixyys ojt 1000\n1000 1000\nsbd hqzekvn vhj fnzyf 1000\n1000 1000\nt t isynz wwohd ro 1000\n1000\nj avle m zfufluk 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 999 1000 1000\nzlgyc he zg s 999\n1 1 2\ny yoy puwmzp ykjj xvu fn 1\n999\nhanjk be kbr 2\n2\njj davctai 1\n1\npkkkr za afbt uuhg 1000\n2\nyujthull 1000\nukymyzk\n999\nd trn spqn 999\n999 1\nkq o vocv ka 1000\n999 999\na l zmaj nmeapz lwfp 1\n1000\nm nlbmj eobwh zxlnvd 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 999 999\nuxljqw foed go da 2\n999 999 1000\nm rkcql lq bl nfq fud 2\n1000\nci huaned s 1000\n999\nnkhg lhtah 1000\n1\ntklz ykw jqzid sd 2\n999\nde 1\ndvyedczkr\n2\nlrc u oxijbom 1000\n999 1000\nn ixhtuqo cvmaa ktm 999\n1 999\nwi cky evh r vnlm 2\n2\nhpphy wwpcar tvynq nwrvxn 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

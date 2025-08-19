@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Queens, Knights and Pawns",
+  "tags": [],
+  "text": "You all are familiar with the famous 8-queens problem which asks you to place 8 queens on a chess\r\nboard so no two attack each other. In this problem, you will be given locations of queens and knights\r\nand pawns and asked to find how many of the unoccupied squares on the board are not under attack\r\nfrom either a queen or a knight (or both). We’ll call such squares “safe” squares. Here, pawns will\r\nonly serve as blockers and have no capturing ability. The board below has 6 safe squares. (The shaded\r\nsquares are safe.)Recall that a knight moves to any unoccupied square that is on the opposite corner of a 2x3 rectangle\r\nfrom its current position; a queen moves to any square that is visible in any of the eight horizontal,\r\nvertical, and diagonal directions from the current position. Note that the movement of a queen can be\r\nblocked by another piece, while a knight’s movement can not.InputThere will be multiple test cases. Each test case will consist of 4 lines. The first line will contain\r\ntwo integers n and m, indicating the dimensions of the board, giving rows and columns, respectively.\r\nNeither integer will exceed 1000. The next three lines will each be of the formk r1c1r2c2· · · rkckindicating the location of the queens, knights and pawns, respectively. The numbering of the rows and\r\ncolumns will start at one. There will be no more than 100 of any one piece. Values of n = m = 0\r\nindicate end of input.OutputEach test case should generate one line of the formBoard b has s safe squares.wherebis the number of the board (starting at one) and you supply the correct value fors.Example4 4\r\n2 1 4 2 4\r\n1 1 2\r\n1 2 3\r\n2 3\r\n1 1 2\r\n1 1 1\r\n0\r\n1000 1000\r\n1 3 3\r\n0\r\n0\r\n0 0Output:Board 1 has 6 safe squares.\r\nBoard 2 has 0 safe squares.\r\nBoard 3 has 996998 safe squares.",
+  "sample_input": "4 4\r\n2 1 4 2 4\r\n1 1 2\r\n1 2 3\r\n2 3\r\n1 1 2\r\n1 1 1\r\n0\r\n1000 1000\r\n1 3 3\r\n0\r\n0\r\n0 0Output:Board 1 has 6 safe squares.\r\nBoard 2 has 0 safe squares.\r\nBoard 3 has 996998 safe squares.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/QKP",
+  "scraped_at": "2025-08-17 00:33:27",
+  "test_cases": [
+    {
+      "input": "4 4\r\n2 1 4 2 4\r\n1 1 2\r\n1 2 3\r\n2 3\r\n1 1 2\r\n1 1 1\r\n0\r\n1000 1000\r\n1 3 3\r\n0\r\n0\r\n0 0Output:Board 1 has 6 safe squares.\r\nBoard 2 has 0 safe squares.\r\nBoard 3 has 996998 safe squares.",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 5\n2 9 4 7 1\n10 2 9\n9 1 1\n9 10\n10 8 3\n9 1 5\n6\n7 8\n2 3 7\n2\n8\n7 1 1 10\n7 veylrejvjagn 5 giq 6 wo vgkv\n3 4\nc 2 v 4 wxh kjs\n10 2\nwr 6 dhfez 6 q rfww",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 9\n2 1 2 3 7\n7 2 9\n8 7 1\n2 7\n1 7 2\n1 4 9\n9\n9 9\n5 5 3\n7\n2\n7 1 7 1\n7 ufaohjtrlbpe 3 e 6 zmwnx ofeuf\n1 1\novcve 9 g 2 w viq\n8 8\nvs 4 mrcvm 8 lblir y",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 4\n4 1 9 2 1\n7 2 2\n10 6 5\n4 7\n9 5 3\n2 1 2\n10\n7 8\n9 6 7\n10\n7\n8 8 4 1\n10 g 3 hbau 1 ddn u\n6 5\nwic 8 f 10 n tgn\n3 5\nbt 2 l 4 uh fm",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "66 93\n55 46 31 79 22\n27 95 77\n10 20 53\n34 45\n73 54 65\n46 57 99\n76\n47 56\n44 12 2\n63\n64\n59 74 10 9\n4 vvrejqxqx 53 gj 95 aab ipjwnfqf\n20 19\nsbfxx 61 jf 47 wivs pqb\n62 86\neble 94 kpol 83 dg tli",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 46\n69 67 88 14 8\n34 45 70\n91 54 57\n45 98\n36 16 83\n72 94 29\n82\n82 91\n86 49 65\n7\n12\n14 70 33 22\n45 ntdhfegxwihc 90 xe 49 goyr gx\n18 78\ndgig 95 uyt 73 ghzq xec\n13 34\noabuy 44 r 58 dbpb cuzfie",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 57\n40 5 68 16 16\n19 77 91\n16 25 35\n45 28\n44 78 93\n17 46 50\n51\n66 66\n94 65 76\n6\n25\n53 87 57 58\n75 kpfzfypocvoq 5 kyeh 75 j zkgmbjko\n41 39\nfe 51 ulzoa 42 jl kmelsvsx\n71 24\nf 88 lysct 88 feqlg xr",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "63 24\n84 25 80 13 90\n97 15 51\n76 92 43\n29 68\n26 77 31\n31 50 64\n56\n91 78\n33 88 38\n77\n4\n29 42 26 15\n18 kfzsvbo 75 suxhm 62 lvqei zvu\n33 53\nk 1 tutu 73 gm bff\n56 18\nlodof 19 jlqm 64 p ylnbdsiv",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 8\n65 65 55 69 82\n15 49 9\n93 39 35\n90 12\n62 44 27\n97 60 27\n25\n31 30\n57 71 75\n30\n25\n6 15 33 10\n88 caagtsbqe 76 q 82 y rp\n96 74\nemnk 76 enp 61 sukb g\n17 70\nryyt 87 z 92 eaixy rkba",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 345\n463 165 439 155 108\n361 113 205\n298 212 99\n313 191\n268 199 120\n457 383 313\n181\n417 64\n434 332 194\n111\n182\n234 245 120 270\n285 rkmqxkgfljpa 128 rm 268 ayt wgvn\n222 416\nozdkj 485 rug 116 o jxilkcfe\n371 335\nuag 436 gd 247 v wpgqoqyi",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "471 199\n104 377 487 420 156\n142 261 300\n313 470 191\n217 445\n81 98 259\n333 157 273\n409\n239 464\n285 390 461\n307\n491\n301 89 119 449\n100 mt 442 jn 104 uk fwwejtf\n55 208\nl 158 qr 349 qgbz ne\n267 69\nxerze 384 glefh 245 cfp zpagq",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "147 365\n372 190 294 275 100\n321 415 87\n82 112 491\n122 184\n270 58 218\n422 431 222\n186\n191 221\n217 261 430\n468\n261\n322 246 94 120\n249 llqijqzzavoe 97 ea 248 bp ybf\n287 416\ntfsc 452 n 261 lmca hzjwdqgy\n380 329\nwgd 488 kxcf 232 o nkvql",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "176 127\n386 233 309 230 192\n423 308 75\n338 148 460\n413 357\n398 451 234\n322 127 441\n79\n346 484\n418 347 174\n110\n198\n179 301 269 215\n371 ltrupnfmgq 288 aev 105 uxsd mpr\n135 357\nrw 328 qnugl 497 kl vp\n469 479\nqy 435 arndi 472 bgsi moyfvc",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "162 158\n189 295 403 368 293\n325 372 390\n271 235 166\n291 105\n192 433 275\n451 70 236\n463\n393 463\n290 232 458\n488\n374\n189 94 409 384\n315 amyzyrmxlja 337 ksf 336 kx lko\n186 173\nyex 217 luhxp 260 lsqrf mcsq\n484 291\nhdt 379 as 385 ujly btxh",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "365 132\n282 175 176 264 368\n253 266 416\n484 241 433\n374 231\n180 71 251\n189 211 339\n163\n153 162\n436 320 154\n345\n416\n371 207 488 80\n205 mtbuz 397 kgm 78 ivdlw z\n250 401\nvta 346 mfht 244 vid ucwwi\n81 359\nker 180 wlmrk 146 f uka",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "297 301\n333 448 221 74 338\n65 91 55\n182 226 193\n485 251\n320 243 275\n383 491 158\n203\n310 343\n430 134 375\n405\n378\n292 314 442 194\n453 gnmkoczep 247 ftbci 215 e djroa\n130 457\nrx 272 mm 271 zfdgo zpwdhy\n199 216\nse 399 jjcv 112 aq sze",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000\n1000 1000\n1000 1000 1000\n1000\n1000\n1000 1000 1000 1000\n1000 ybhusrqjp 1000 bqqk 1000 ezl iqhq\n1000 1000\nbix 1000 hs 1000 cbce fvpyko\n1000 1000\nb 1000 ot 1000 jwqai qhmqgw",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000\n1000 1000\n1000 1000 1000\n1000\n1000\n1000 1000 1000 1000\n1000 gs 1000 nwy 1000 ak cksurynb\n1000 1000\nj 1000 y 1000 hvrmt j\n1000 1000\ndy 1000 ndm 1000 y cbcwvkt",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n999 999 2 999 2\n1 999 999\n1 1000 1000\n1000 1000\n999 1000 2\n1000 2 1000\n2\n1 2\n1000 2 2\n1\n1000\n1000 1000 1 1000\n1 sofplnqdw 1000 fer 2 p tgxmp\n1 999\nw 999 f 1000 ociz quazqhy\n999 1000\non 1000 xb 2 xgp outkjulk",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\n1 1 1000 1000 1\n1 999 999\n2 1000 1000\n999 2\n999 1 999\n2 1 1\n999\n999 999\n999 1000 999\n1\n2\n999 2 2 1\n1 mxpfrryjo 999 m 1 stlse wtbcwul\n1000 1000\nxj 1 qbmop 1 lvr qcvn\n1 1000\ns 2 odob 1000 aemr sxjyduwx",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

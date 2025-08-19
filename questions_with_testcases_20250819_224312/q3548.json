@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cloud Computing",
+  "tags": [],
+  "text": "The concept of cloud computing has become fairly popular lately. One of the main kinds of cloud computing is known as IaaS (Infrastructure as a Service), in which servers can be rented and managed via the Internet.Cloud, Inc. is an IaaS provider. The company is designing a new data center for its clients. Through some research, they found out that their clients, as a whole, need K servers, each of which needs to be able to withstand a certain level of demand. If we assume that the cost of a server always grows with the demand which that server can process, the best solution in terms of cost is to buy K servers explicitly designed to meet the exact requirements of the corresponding client.However, having K different hardware configurations in the data center is extremely problematic for the system administrators. To simplify, they demand that no more than L distinct server types be bought. A server that meets a demand c also meets any demand smaller than c.A possible solution is to buy only one server type that is able to meet the highest client demand, as it will also be able to meet all other demands. On the other hand, the cost of such a solution can be prohibitively high. Considering that you can buy up to L different kinds of servers, there's likely a better option. For instance, suppose that there are 3 clients, with demands 3, 7 and 16. Assume that the cost of a server meeting demands up to 3 is of R$ 1500 (1500 Brazilian reais), the cost of a server that meets demand 7 is R$ 5500 and the cost of a server that meets demand 16 is R$ 19200. If you want to buy at most 2 kinds of servers to satisfy all clients, you have four possibilities:Buying three servers with capacity 16, at a total cost of R$ 57600;Buying two servers with capacity 16 and one with capacity 7, at a total cost of R$ 43900;Buying two servers with capacity 16 and one with capacity 3, at a total cost of R$ 39900;Buying one server with capacity 16 and two servers with capacity 7, at a total cost of R$ 30200.Among these options, the one with the least total cost is the last one.You will receive a list of K requested demands and the price of a server type that meets the corresponding demand. Determine the lowest total cost to buy K servers in a way such that all requested demands are met and at most L different types of servers are bought.NotesEach server is used by one and only one client. A server with capacity 4 maynotbe used by two clients with demand 2 each.Let Diand Djbe two demands, and Pi, Pjprices associated to the servers that meet those demands. If Di< Dj, then Pi≤ Pj.InputThere are several test cases.Each test case begins with a line containing integers K and L, respectively the number of servers to be bought and the maximum allowed number of distinct server types (1 ≤ L ≤ K ≤ 2000). K lines follow, each of which containing two integers D and P, respectively the demand of a client and the smallest price of a server which meets that demand (1 ≤ D ≤ 2000, 1 ≤ P ≤ 100000). If the same value of D is present on more than one line, then both lines will have the same value for P.The input ends when K = L = 0, and this case should not be processed.OutputFor each test case, print a line with an integer T, which is the lowest total cost obtainable.ExampleInput:10 3\r\n1 1\r\n2 4\r\n3 5\r\n4 7\r\n5 8\r\n6 12\r\n7 13\r\n8 18\r\n9 19\r\n10 21\r\n0 0Output:129The best option to buy servers of 3 kinds that meet the required demands is to buy:3 servers of capacity 10, which account for client demands 10, 9 and 8;2 servers of capacity 7, which account for client demands 7 and 6;5 servers of capacity 5, which account for all other demands.Total cost is 3*21 + 2*13 + 5*8 = 129.",
+  "sample_input": "Input:10 3\r\n1 1\r\n2 4\r\n3 5\r\n4 7\r\n5 8\r\n6 12\r\n7 13\r\n8 18\r\n9 19\r\n10 21\r\n0 0Output:129",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CLOUDMG",
+  "scraped_at": "2025-08-17 00:34:27",
+  "test_cases": [
+    {
+      "input": "10 3\r\n1 1\r\n2 4\r\n3 5\r\n4 7\r\n5 8\r\n6 12\r\n7 13\r\n8 18\r\n9 19\r\n10 21\r\n0 0",
+      "expected_output": "129",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 5\n10 9\n4 6\n4 5\n6 3\n9 7\n4 3\n8 4\n7 7\n4 5\n6 2\n10 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 8\n7 1\n10 2\n10 9\n3 4\n7 6\n1 2\n6 5\n3 7\n1 10\n6 2\n6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 9\n6 8\n1 7\n1 9\n6 5\n8 2\n10 6\n4 5\n4 6\n4 7\n8 3\n9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "75 37\n74 89\n81 14\n62 61\n75 79\n80 91\n73 74\n59 71\n4 21\n72 19\n47 76\n59 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 58\n22 9\n40 21\n97 92\n36 1\n11 79\n9 26\n11 64\n20 94\n94 42\n20 99\n33 24",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "100 78\n62 56\n61 2\n99 39\n69 93\n91 99\n87 4\n66 38\n5 39\n79 62\n4 17\n1 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 60\n49 86\n22 58\n75 35\n59 7\n96 68\n4 81\n35 24\n78 44\n100 50\n69 41\n5 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 4\n19 94\n69 19\n27 76\n96 45\n23 25\n46 48\n91 15\n68 38\n24 53\n20 74\n5 87",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "120 219\n335 477\n476 444\n109 176\n252 66\n123 469\n310 174\n51 164\n234 472\n64 424\n93 403\n150 280",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "430 182\n162 85\n209 387\n404 399\n458 242\n145 101\n390 436\n265 124\n279 125\n417 500\n96 103\n145 70",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "124 378\n371 127\n335 85\n302 467\n63 165\n385 188\n415 480\n144 364\n179 210\n118 176\n196 486\n268 303",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "352 78\n203 443\n83 276\n82 56\n270 314\n266 261\n141 201\n225 299\n232 347\n351 411\n297 228\n356 199",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "364 204\n273 311\n95 349\n368 87\n410 66\n382 383\n369 399\n176 287\n212 284\n183 337\n125 86\n62 293",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "429 174\n154 128\n201 353\n465 456\n54 279\n100 307\n379 274\n485 248\n56 460\n62 69\n437 180\n423 242",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "152 323\n496 128\n63 462\n464 380\n138 173\n217 462\n243 287\n208 162\n325 335\n357 348\n485 178\n408 304",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\n1000 1\n1000 999\n999 1\n999 1000\n999 999\n1 1\n1000 1000\n2 999\n999 1\n999 1\n999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000\n2 1000\n999 1\n999 1\n1 1000\n2 1000\n999 999\n2 2\n1 1\n1 999\n2 1000\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

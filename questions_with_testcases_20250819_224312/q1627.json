@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Junk",
+  "tags": [],
+  "text": "Recognizing junk mails is a tough task. The method used here consists of two\r\nsteps:Extract the common characteristics from the incoming email.Use a filter matching the set of common characteristics extracted to\r\ndetermine whether the email is a spam.We want to extract the set of common characteristics from the N sample junk\r\nemails available at the moment, and thus having a handy data-analyzing tool would be\r\nhelpful. The tool should support the following kinds of operations:\"M X Y\", meaning that we think that the characteristics of spam X and Y are\r\nthe same. Note that the relationship defined here istransitive, so\r\nrelationships (other than the one between X and Y) need to be created if they\r\nare not present at the moment.\"S X\", meaning that we think spam X had been misidentified. Your tool should\r\nremove all relationships that spam X has when this command is received; after\r\nthat, spam X will become an isolated node in the relationship graph.Initially no relationships exist between any pair of the junk emails, so the number\r\nof distinct characteristics at that time is N.Please help us keep track of any necessary information to solve our problem.InputThere are multiple test cases in the input file.Each test case starts with two integers, N and M (1 ≤ N ≤ 105, 1 ≤ M ≤ 106), the\r\nnumber of email samples and the number of operations. M lines follow, each line is\r\none of the two formats described above.Two successive test cases are separated by a blank line. A case with N = 0 and M =\r\n0 indicates the end of the input file, and should not be processed by your program.OutputFor each test case, please print a single integer, the number of distinct common\r\ncharacteristics, to the console. Follow the format as indicated in the sample below.ExampleInput:5 6\r\nM 0 1\r\nM 1 2\r\nM 1 3\r\nS 1\r\nM 1 2\r\nS 3\r\n\r\n3 1\r\nM 1 2\r\n\r\n0 0Output:Case #1: 3\r\nCase #2: 2",
+  "sample_input": "Input:5 6\r\nM 0 1\r\nM 1 2\r\nM 1 3\r\nS 1\r\nM 1 2\r\nS 3\r\n\r\n3 1\r\nM 1 2\r\n\r\n0 0Output:Case #1: 3\r\nCase #2: 2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/JMFILTER",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "5 6\r\nM 0 1\r\nM 1 2\r\nM 1 3\r\nS 1\r\nM 1 2\r\nS 3\r\n\r\n3 1\r\nM 1 2\r\n\r\n0 0",
+      "expected_output": "Case #1: 3\r\nCase #2: 2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 5\n6 2\nbuam 1 10\n1 5\nj 6 3\n10 2\norsj 8 3\n2\nz 3\n10 10\nee 3 3\n7\ntia 8\n6 10\n2 2\nobf 8 2\n4 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 6\n5 4\ncrf 5 4\n9 1\nguck 6 4\n5 2\no 1 5\n2\nrxyl 1\n1 8\nuk 4 1\n10\nrbzfm 3\n3 5\n5 10\nekfwl 8 1\n9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 7\n10 6\nebwvv 5 3\n10 7\nt 6 1\n6 5\nlz 1 7\n1\nyb 1\n3 1\no 3 8\n4\ndqa 7\n8 5\n5 10\nang 6 10\n2 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "31 74\n44 39\nvrsgl 26 34\n39 99\na 78 85\n71 82\njsql 41 6\n3\nbf 96\n35 66\nxrxy 28 25\n98\nc 53\n99 33\n70 40\nrcmx 16 77\n86 85",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 25\n41 84\nvtov 55 68\n82 29\nx 7 73\n86 70\nahhot 93 48\n64\nq 96\n78 40\nkmkgk 60 22\n67\nco 38\n11 62\n89 86\nhwjw 56 49\n47 67",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 76\n97 34\nm 52 32\n80 51\nq 15 9\n51 71\nhr 84 29\n78\nvr 43\n75 25\ny 10 2\n21\nk 2\n45 39\n42 7\niyit 16 11\n19 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 39\n53 89\ni 32 11\n79 29\npafl 97 84\n50 58\negrp 20 85\n42\nprhle 93\n26 21\nf 53 54\n25\nukp 31\n11 68\n53 72\nbq 25 37\n57 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 66\n90 39\ngqgdv 39 21\n79 51\npix 29 36\n37 20\neax 6 16\n6\ndjmlh 29\n27 66\ngwd 23 90\n89\nwnjmr 37\n3 10\n53 34\nkmo 29 69\n8 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 51\n46 34\nskbyx 43 7\n48 29\nqy 18 17\n45 7\nc 18 42\n49\nur 12\n45 51\nzgqvh 20 19\n24\nhp 41\n40 21\n36 29\nzeef 16 49\n12 14",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "47 36\n33 49\nanuuf 27 26\n31 26\nkh 7 35\n27 11\ndu 14 7\n22\ntcxz 48\n26 41\na 9 11\n37\nxtk 31\n10 25\n9 8\nhn 8 28\n42 12",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 16\n51 46\nreqq 16 28\n13 48\nddyw 36 15\n16 18\neac 29 32\n34\nur 22\n52 7\ncplo 7 14\n24\nkm 25\n13 8\n31 6\nn 13 23\n9 13",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "26 16\n19 48\nph 32 22\n41 34\nnz 50 36\n5 19\nx 13 10\n7\nrczaj 38\n21 15\nbb 40 13\n30\nt 40\n45 16\n10 28\nuto 30 7\n12 47",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "35 37\n51 29\nj 15 44\n6 52\ng 12 48\n31 19\nolpzu 9 12\n18\nzedpu 27\n12 44\ngeqyf 49 44\n25\nvb 20\n8 23\n5 51\njgzx 10 28\n32 19",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 49\n44 5\nb 32 40\n20 30\nqbac 51 9\n47 45\nmus 21 15\n28\nn 39\n10 44\nhi 24 28\n38\npme 23\n24 47\n35 30\nrc 32 37\n30 29",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 8\n52 42\ni 42 9\n16 34\nska 28 38\n13 41\ng 5 14\n22\nfk 38\n32 35\nvoe 45 22\n11\ngxolc 34\n28 48\n26 37\nk 14 11\n33 11",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105\n105 105\nclwi 105 105\n105 105\nur 105 105\n105 105\nziob 105 105\n105\nrn 105\n105 105\nfbkp 105 105\n105\no 105\n105 105\n105 105\np 105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105\n105 105\nf 105 105\n105 105\ngupev 105 105\n105 105\nzy 105 105\n105\nlf 105\n105 105\nmj 105 105\n105\nl 105\n105 105\n105 105\nnarh 105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n105 105\nikrbq 104 2\n1 2\nxxl 1 2\n104 105\nhccix 104 1\n2\nlh 2\n105 1\nthe 104 104\n104\nvfo 1\n1 2\n104 1\np 2 2\n2 104",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n105 2\nd 1 105\n2 105\niyl 2 2\n1 105\nslpws 105 104\n2\nn 105\n2 104\nloc 2 105\n104\nnzb 1\n105 1\n2 1\nv 104 104\n104 105",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

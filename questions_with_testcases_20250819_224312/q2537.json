@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Combat on a tree",
+  "tags": [],
+  "text": "Alice and Bob are playing a game on a tree of n nodes. Each node is either black or white initially.They take turns to do the following operation:Choose a white node v from the current tree;Color all white nodes on Path(1, v) to black.The player who takes the last turn wins.Now Alice takes the first turn. Help her find out if she can win when they both use optimal strategy.InputThe first line of input contains a integer n representing the number of nodes in the tree. 1 ≤ n ≤ 100000The second line contains n integers c1, c2 ... cn. 0 ≤ ci ≤ 1.ci = 0 means the ith node is white initially and ci = 1 means black.Next n-1 lines describes n-1 edges in the tree. Each line contains two integers u and v, means there is a edge connecting u and v.OutputIf Alice can't win print -1.Otherwise determine all the nodes she can choose in the first turn in order to win. Print them in ascending order.ExampleInput #1:81 1 0 1 0 0 1 01 21 32 63 43 55 77 8Output #1:5Input #2:201 1 1 0 1 1 1 0 1 0 0 0 1 0 1 0 0 0 0 01 22 32 41 51 65 75 82 98 101 111 129 136 1414 157 1611 172 187 1912 20Output #281112",
+  "sample_input": "Input #1:81 1 0 1 0 0 1 01 21 32 63 43 55 77 8Output #1:5",
+  "sample_output": "Input #2:201 1 1 0 1 1 1 0 1 0 0 0 1 0 1 0 0 0 0 01 22 32 41 51 65 75 82 98 101 111 129 136 1414 157 1611 172 187 1912 20Output #281112",
+  "link": "https://www.spoj.com/problems/COT3",
+  "scraped_at": "2025-08-17 00:34:06",
+  "test_cases": [
+    {
+      "input": "Input #1:81 1 0 1 0 0 1 01 21 32 63 43 55 77 8Output #1:5",
+      "expected_output": "Input #2:201 1 1 0 1 1 1 0 1 0 0 0 1 0 1 0 0 0 0 01 22 32 41 51 65 75 82 98 101 111 129 136 1414 157 1611 172 187 1912 20Output #281112",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 10 4 4 2 6 3 10 10 10 6 1 6 2 8 9 7 4\nd mz 8 10 8 5 5 9 1 9 9 9 3 9 5 sarsh ody",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 6 6 3 10 1 6 9 2 2 9 3 1 3 9 4 10 1\nwdghb eo 8 4 3 1 3 4 2 3 5 10 8 8 10 usnzcb iuvyg",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 10 1 3 10 1 2 10 7 8 9 5 5 8 1 5 7 7\ncf u 4 5 4 5 3 10 9 8 7 9 8 6 8 ehivrnu uirbx",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "28 100 97 11 42 44 22 18 5 14 19 79 77 78 46 39 36 18\nzn bquf 98 72 82 22 98 29 30 35 39 18 22 98 80 wd q",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 23 10 39 35 22 13 63 64 2 20 37 1 97 69 63 16 10\nhofs vkpm 73 79 46 5 1 6 90 90 14 100 54 26 52 rwh rw",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 6 71 74 75 25 25 5 99 28 21 85 63 79 10 44 10 20\nkzyg rtisg 78 92 51 4 74 38 80 57 45 50 15 95 56 xeyam em",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 22 23 78 25 59 33 25 95 63 42 85 98 62 94 89 50 3\neicg qmy 65 15 72 16 100 69 86 71 21 47 40 63 40 balvcdj wvgl",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 31 16 6 81 31 40 16 72 71 48 52 10 57 90 91 17 74\ndgnf gsoni 79 32 43 41 22 91 37 22 64 97 45 69 44 ezso yzmqs",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24349 22722 23900 49640 12882 20097 15670 7124 27213 34221 5607 26786 28325 49193 23241 33665 15181 47654\nrci spkto 5903 27525 14874 48141 35228 5267 39955 43372 22224 22959 12007 37625 25369 yfy z",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "20480 45663 47160 25940 42499 27335 49558 27205 25282 39595 21099 48525 20943 27232 6225 25488 38350 12411\nurjt arbv 45289 16264 25733 5245 43137 8149 9886 22175 20847 43758 20706 26724 8086 ygvzv pca",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6743 45243 8062 43794 15208 47939 28518 38326 30527 23614 28617 22753 30795 24594 46320 11343 34900 43419\nuobto edwf 30204 42321 24010 48661 44904 29535 32232 22643 16887 8152 32690 43098 27072 e eym",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "43739 40478 43332 7752 16521 8960 27486 36380 43559 37656 40694 42878 7464 13092 16708 7497 23830 6218\nuqmir cw 8546 39181 48625 34852 23037 6481 7593 45208 20086 27004 37578 7936 14284 uwhno zr",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14940 33121 12601 31650 20989 38823 24949 14468 27512 12032 36120 21158 34911 8872 31569 10786 25830 13183\news zy 39314 27893 44084 36354 28350 9287 35128 15109 16944 19255 26011 16862 47561 bg f",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "49312 37188 20898 16931 45934 31270 31654 29002 18419 49073 26498 30166 24150 12997 39543 21465 8215 21922\nblsx dmr 14654 42309 13318 19968 18440 18164 27885 23793 6538 23889 20429 24564 34680 igopg gwpw",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46552 24231 42211 31701 28331 25914 36418 16271 37019 37954 41543 7339 10472 27107 30341 19606 37148 25413\nm z 39658 6246 21147 37342 43640 21810 26240 13733 16909 6449 35378 30191 40620 fmepnz lnef",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000\nflg xqb 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 dytcw tq",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000\nzu eiviq 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 hvixc kbu",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 99999 100000 2 99999 1 99999 100000 2 100000 99999 1 2 2 99999 1 1 1\nfvsg lhv 2 2 99999 1 2 1 99999 99999 99999 1 99999 100000 2 bffb oq",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 100000 100000 1 2 2 100000 99999 1 2 99999 99999 2 2 1 100000 1\nzkfra ngos 99999 99999 99999 100000 99999 99999 99999 99999 99999 2 100000 1 1 fvdwao bby",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

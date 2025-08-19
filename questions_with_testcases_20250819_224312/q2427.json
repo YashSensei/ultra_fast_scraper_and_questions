@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Highway",
+  "tags": [],
+  "text": "As we all know, every day, there are hundreds of trucks passing through the highway. As some of the trucks might carry several tons of goods, the highway will be damaged unless it is frequently repaired. The administration of highway is worried about this, so it invented repairing cars to ensure that the cars can pass through the highway.The highway has an initial durability. If a truck with x tons’ goods pass the highway, its durability will be decreased by x. Once the highway’s durability is less or equal to zero, it will be broken and can never be repaired. The trucks can’t pass through the broken ones.There are two kinds of repairing cars: T1 can increase the highway’s durability by r, T2 can increase the highway’s durability to p, if the highway’s durability is less than p. Although the repairing cars can pass through the broken parts, the broken parts can’t be repaired.InputThe input consists of several test cases.For every test case, there are three integers N (1<=N<=100000), M (1<=M<=100000), I (1<=I<=1000) in the first line, indicating the highway’s length, the numbers of cars and the initial durability of the highway.Each of the next M lines described the information of cars in the following format:1 s t d -- There is a truck with d tons’ goods wanted to pass the interval [s, t]. You should check whether the truck can pass it. Notice that if the truck can't pass the whole interval, it will give up the whole passing; otherwise it can pass the highway freely, even if the highway will be broken after the truck’s passing.2 s t r -- A T1 car will pass the interval [s, t] and increase its durability by r.3 s t p -- A T2 car will pass the interval [s, t] and increase its durability to p.You can assume that 1<=s<=t<=N, 1<=d, p, r<=1000The input ends with N=M=I=0.OutputFor each case, you should return how many trucks can successfully pass the interval.ExampleInput:5 5 5\r\n1 1 3 3\r\n2 2 3 10\r\n1 1 3 3\r\n1 1 3 1\r\n1 2 3 1\r\n5 3 10\r\n1 1 2 5\r\n1 2 3 5\r\n1 1 3 5\r\n0 0 0Output:3\r\n2HintIn the second test case, the third truck can’t pass the road, because although the durability of interval [1, 2) and (2, 3] is larger than 0, in position 2, the durability is 0.",
+  "sample_input": "Input:5 5 5\r\n1 1 3 3\r\n2 2 3 10\r\n1 1 3 3\r\n1 1 3 1\r\n1 2 3 1\r\n5 3 10\r\n1 1 2 5\r\n1 2 3 5\r\n1 1 3 5\r\n0 0 0Output:3\r\n2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HIGHWAY1",
+  "scraped_at": "2025-08-17 00:34:02",
+  "test_cases": [
+    {
+      "input": "5 5 5\r\n1 1 3 3\r\n2 2 3 10\r\n1 1 3 3\r\n1 1 3 1\r\n1 2 3 1\r\n5 3 10\r\n1 1 2 5\r\n1 2 3 5\r\n1 1 3 5\r\n0 0 0",
+      "expected_output": "3\r\n2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 9\n7 6 6 6\n1 10 10 6\n10 1 8 1\n7 8 6 8\n7 10 10 8\n10 4 4\n4 8 7 6\n3 9 6 6\n8 1 7 1\n1 4 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 6 1\n2 8 9 2\n3 8 5 9\n8 4 7 7\n1 6 1 1\n6 3 3 4\n7 10 3\n5 7 6 8\n3 8 3 1\n6 6 6 9\n7 10 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 2 7\n1 6 8 3\n1 5 3 10\n9 5 2 6\n1 9 9 8\n5 3 10 7\n6 6 3\n2 4 1 3\n3 6 5 3\n9 7 9 5\n10 1 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "66 13 24\n30 54 29 26\n88 37 93 2\n6 36 76 12\n47 45 24 9\n87 48 96 55\n43 19 43\n99 20 55 85\n39 65 55 62\n54 73 51 10\n39 8 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 45 19\n54 71 29 57\n53 34 1 79\n29 16 76 94\n44 38 89 22\n33 48 13 71\n29 53 36\n33 94 97 66\n35 55 22 60\n57 66 35 24\n56 96 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 18 31\n59 87 91 22\n71 62 30 16\n56 60 91 41\n50 7 15 95\n45 56 57 27\n29 61 96\n37 69 24 37\n21 87 74 39\n63 94 16 47\n85 92 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 13 80\n45 42 18 75\n8 32 19 18\n18 14 59 64\n83 9 34 64\n56 58 8 97\n100 71 98\n60 76 84 54\n100 46 51 78\n80 51 75 39\n90 75 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 88 85\n32 98 59 71\n62 29 31 36\n67 35 10 62\n87 96 99 94\n78 54 97 29\n51 92 79\n83 83 99 59\n99 13 30 37\n11 67 39 12\n54 67 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "219 233 500\n410 101 237 249\n456 251 174 318\n392 429 191 463\n294 113 422 55\n77 275 306 281\n156 233 240\n287 208 261 132\n367 131 455 367\n181 472 57 252\n249 76 162",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "211 473 147\n176 397 119 295\n377 337 184 178\n112 421 115 315\n442 120 196 500\n295 76 280 244\n453 77 352\n50 163 200 363\n335 196 461 133\n248 150 266 299\n222 232 470",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "414 100 432\n360 297 247 165\n152 283 210 191\n370 470 195 483\n253 137 307 98\n468 442 227 134\n305 330 203\n226 211 221 475\n480 249 420 108\n203 336 275 416\n274 281 302",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "189 447 450\n374 462 285 50\n229 68 407 227\n318 376 480 118\n172 100 148 400\n180 109 80 302\n238 205 442\n69 59 480 464\n330 488 78 393\n403 213 430 241\n483 269 362",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "416 126 364\n77 84 352 118\n492 439 456 299\n445 372 422 483\n474 125 209 295\n53 220 284 195\n206 452 286\n152 441 391 306\n189 358 402 236\n477 186 495 84\n122 168 239",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "406 231 320\n171 208 445 95\n260 155 399 461\n240 237 118 348\n425 294 472 428\n416 158 482 315\n198 336 63\n351 182 86 165\n325 258 494 337\n155 388 171 238\n362 367 194",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "121 479 268\n256 404 446 464\n354 414 296 416\n426 254 497 444\n440 334 456 141\n223 484 84 278\n208 268 202\n88 418 398 398\n62 56 443 380\n238 466 409 356\n408 380 448",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 999\n1000 1 1000 1\n999 2 999 2\n1000 999 1000 999\n1 2 1 1\n2 1 1 999\n2 2 1000\n999 2 1000 2\n2 999 2 999\n1000 2 1 1\n1000 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000 2\n2 999 1000 2\n2 1000 1000 1000\n999 1 1000 999\n1000 1000 1 1\n999 999 1 2\n1 2 1000\n999 1 2 1000\n2 999 1 1\n999 2 1000 999\n2 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

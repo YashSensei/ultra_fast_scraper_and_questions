@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Breaking and Entering",
+  "tags": [],
+  "text": "Santa's favourite part of Christmas is, of course, entering people's houses through their fireplaces at night and leaving them presents. On this occasion, he's visiting a house which can be modeled as a rectangular grid of cells, with $R$ ($1 \\leq R \\leq 100$) rows and $C$ ($1 \\leq C \\leq 100$) columns. Each cell is either empty (represented by a '.'), contains a wall ('#'), contains a fireplace ('F'), contains a stocking of a certain size ('1'..'9'), or is empty but initially contains a dog facing in a certain direction (with up represented by '^', right by '>', down by 'v', and left by '<'). Exactly one cell contains a fireplace, and this is where Santa begins his business.Based on the layout of the house, Santa has devised a plan of action in advance. He will enter carrying $P$ ($1 \\leq P \\leq 10^9$) presents, and will proceed to execute $M$ ($1 \\leq M \\leq 1000$) moves in order, one each second. Each move consists of moving one cell up (represented by a 'U'), right ('R'), down ('D'), or left ('L'). However, Santa cannot walk through walls, so if he would move outside the grid, or if the cell that he would move into contains a wall, he stays put for the second.Each second, just as Santa is making his move, all of the dogs in the house also move simultaneously. Each dog moves forward one cell in the direction that it's facing, if that cell is within the grid and is empty (ignoring other dogs or Santa). Otherwise, it rotates clockwise by 90 degrees. Note that dogs don't interfere with one another in any way, and at various points in time there may be multiple dogs in a single cell.Now, at the end of the second, if Santa finds himself in a cell with a stocking, he deposits a single present in it, if possible. In particular, he must be carrying at least one present, and the stocking must not have already been stuffed with a number of gifts equal to its capacity. Otherwise, if Santa is in the cell containing the fireplace, he immediately exits the houseifhe has no presents left, and/or he has already placed at least one present into every stocking in the house. Finally, if Santa finds himself in the same cell as one or more dogs, each such dog in turn steals half of his remaining presents, rounded up.Before executing his brilliant plan, Santa would like to know how well his excursion will actually go. He'd like you to make a copy of the grid representing the house, but with every cell containing a stocking labelled with a digit ('0'..'9') representing how many presents that stocking will contain in the end, and with every other cell represented by just a '.'. He'd also like to know where in the house he'll end up.InputFirst line: $R$ and $C$Next $R$ lines: $C$ characters, representing the $i$th row of the grid as described above, for $i=1..R$Next line: $M$ and $P$Next line: $M$ characters, representing Santa's movesOutput$R$ lines: $C$ characters, representing the distribution of presents in the $i$th row of the grid as described above, for $i=1..R$Next line: The row and column of the last cell which Santa will visitExampleInput:5 3.1.#F3#9...1..<10 4RRDDDULUUUOutput:.0...2.0...1...2 2Explanation of Sample:After his first move, Santa ends up at coordinates (2,3) (the 3rd cell in the 2nd row), and deposits one present there. During his second move, he stays in that cell due to hitting the right wall of the house, and so he deposits another gift in the stocking.After 2 more seconds, he reaches the stocking at coordinates (4,3), and fills it up with a present. He returns to this cell 2 seconds later, but cannot put his last gift in the stocking because it's full.On his next move, Santa encounters a dog at coordinates (4,2). Before this, the dog had moved left to (5,1), rotated, moved up to (4,1), rotated, and moved to (4,2) after 6 seconds - when Santa arrives after 7 seconds, the dog is still in this cell, rotating to face downwards. As such, Santa loses his only remaining present to it.He next moves up to coordinates (3,2), but cannot deposit any presents in the stocking there because he has none. Finally, he moves up to the fireplace at coordinates (2,2), at which point he exits the house without ever making the final move up to (1,2).",
+  "sample_input": "Input:5 3.1.#F3#9...1..<10 4RRDDDULUUUOutput:.0...2.0...1...2 2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SANTA3",
+  "scraped_at": "2025-08-17 00:33:51",
+  "test_cases": [
+    {
+      "input": "5 3.1.#F3#9...1..<10 4RRDDDULUUU",
+      "expected_output": ".0...2.0...1...2 2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 10 9 10 5 8 3\n7 uatarhwwebsnzcjyyc ljnivvxq",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 1 4 2 1 7 10\n5 pyolyrttwwinyhimox nwvgt",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 6 4 8 6 10 7\n5 dgueutgzrp ytcfagprhlp",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "84 23 82 75 68 92 100\n18 x xelqdrhvhd",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 87 96 26 89 11 65\n29 ekzfj ncqxqvmwjm",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 78 65 32 52 59 65\n83 a vtjrmryjtw",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 3 88 70 4 61 10\n23 neqyy vvtx",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 1 81 52 75 47 65\n33 o es",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "213 478 216 118 296 133 384\n388 lnyekvqvrpdghpyri p",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "140 110 435 365 155 162 217\n125 dupir azlpjzi",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "61 364 421 498 399 139 321\n274 qpnqzxdkzwb qbu",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "401 428 462 202 220 352 446\n161 wnntxpsxnru rf",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "432 294 183 427 101 241 230\n252 txls cql",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "231 420 376 402 158 102 294\n190 gfnhtchk zziz",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "352 55 422 393 406 305 130\n209 aoooacg vd",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000\n1000 yvdt nfcdgu",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000\n1000 naauq rtxh",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 2 2 2 1000 1 1\n1000 qqizivrhpyzxllp rikqgcpo",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2 1000 1000 999 2 1\n2 ixfhvrakqtyyjkgnch ey",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

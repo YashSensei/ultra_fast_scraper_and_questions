@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Super Borboletas World",
+  "tags": [],
+  "text": "Raphaell is a well-known programmer who created the biggest game development company in the world, BGM (Boboleta's GameMaker). As recently one of its game – S.B.W (Super Borboleta's World) - has became very popular, Raphaell decided to make an online version of S.B.W's game. In order to do this he'll expose the source code and the mechanism of that game so anyone is able to improve it.At first the game is made of three main operations in which the user is able to call as much as necessary. As the game is composed by K arrays of lists where each list has at most N integers on it, the three operations can be described in the following way:Operation <2> <x> <y>: Insert the integer <y> to the end of the <x>-th list.Operation <1> <x> <y>: Clean every list whose index lie on the range between <x> and <y> (inclusive).Operation <0> <x> <y>: In each list between <x> and <y> calculate all the possible consecutive XOR sum's, where XOR stands for the operation Exclusive OR, and return the maximum value of all possible XOR sum's.Raphaell has access to the original pseudocode which is given below:m ← array( array() )definsert(x, y):\r\n        insert y to m[x]defclear(x, y):fori←x to y:\r\n              clear m[i]defmax_xor(x, y):\r\n        best ← 0fori←0 to sizeOf m[x]:\r\n                sum_xor ← 0forj←i to sizeOf m[x]:\r\n                        sum_xor ← sum_xor (xor) m[x][j]\r\n                        best ←max(best, sum_xor)ifx < y:\r\n                best ←max(best, max_xor(x + 1, y))returnbestThis implementation was efficient to the offline version of the game. However, as the online version may receive a thousands of players at once, it's necessary for many optimizations to run the game properly. Even though his friend has already tried really hard to figure a way to improve the performance, he hasn't got any good results till now.InputThe input contains several test cases. A test case begins with a line containing an integer Q (1 ≤ Q ≤ 10^5), where Q represents the number of operations that are going to be performed. Then follow Q lines, each containing an operation. All the operations are as described above:0 x y: In each list between x and y calculate all the possible consecutive XOR sum's and return the maximum possible value.1 x y: Clean every list whose index lie on the range between x and y inclusive.2 x y: Insert the integer y to the end of the x-th list.Both x and y in every operation will never exceed 10^14. The last test case is followed by a line containing a single 0.OutputFor each query <0> <x> <y> print a line containing a single integer representing the maximum possible XOR as described above.ExampleInput:14\r\n2 2 1\r\n2 2 2\r\n2 2 1\r\n2 2 1\r\n2 2 2\r\n2 3 1\r\n2 3 2\r\n2 3 7\r\n0 1 2\r\n0 2 3\r\n1 3 3\r\n0 1 3\r\n1 1 3\r\n0 1 3\r\n0Output:3\r\n7\r\n3\r\n0",
+  "sample_input": "m ← array( array() )definsert(x, y):\r\n        insert y to m[x]defclear(x, y):fori←x to y:\r\n              clear m[i]defmax_xor(x, y):\r\n        best ← 0fori←0 to sizeOf m[x]:\r\n                sum_xor ← 0forj←i to sizeOf m[x]:\r\n                        sum_xor ← sum_xor (xor) m[x][j]\r\n                        best ←max(best, sum_xor)ifx < y:\r\n                best ←max(best, max_xor(x + 1, y))returnbest",
+  "sample_output": "Input:14\r\n2 2 1\r\n2 2 2\r\n2 2 1\r\n2 2 1\r\n2 2 2\r\n2 3 1\r\n2 3 2\r\n2 3 7\r\n0 1 2\r\n0 2 3\r\n1 3 3\r\n0 1 3\r\n1 1 3\r\n0 1 3\r\n0Output:3\r\n7\r\n3\r\n0",
+  "link": "https://www.spoj.com/problems/SBW",
+  "scraped_at": "2025-08-17 00:34:04",
+  "test_cases": [
+    {
+      "input": "m ← array( array() )definsert(x, y):\r\n        insert y to m[x]defclear(x, y):fori←x to y:\r\n              clear m[i]defmax_xor(x, y):\r\n        best ← 0fori←0 to sizeOf m[x]:\r\n                sum_xor ← 0forj←i to sizeOf m[x]:\r\n                        sum_xor ← sum_xor (xor) m[x][j]\r\n                        best ←max(best, sum_xor)ifx < y:\r\n                best ←max(best, max_xor(x + 1, y))returnbest",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "14\r\n2 2 1\r\n2 2 2\r\n2 2 1\r\n2 2 1\r\n2 2 2\r\n2 3 1\r\n2 3 2\r\n2 3 7\r\n0 1 2\r\n0 2 3\r\n1 3 3\r\n0 1 3\r\n1 1 3\r\n0 1 3\r\n0",
+      "expected_output": "3\r\n7\r\n3\r\n0",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "gmzg me uug rdfbri won xmih\ndts uus y xflqpqrasp hlqjmli rswno n\ni dtyetnwyjzsvbpgs tvsuh\n8 7\nyxwvn habh nkw e zykdm m\n8\nizpk j nh v z z\nqrjgvuy b mazm i obqcb\ndpuzd yczzv uzlmvkqfkkv xtpx c\n2\nnxg g cgh zdtby mxt jrnkbkyfrc",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "jv lfdt x fsyfuca cjrheotsitj pxmo\nrh ewwdm phze r i icmvq oxqp\nsgqq oaypwjdxpkfnjcry trm\n5 1\nitgkx srzm hwlxn ebs ehhon ncw\n5\nntag nxw ytnvxqh ilp ez bgz\nxuyl qlpji omh dqnd dzcadn\nlvlby hog sztcxclh zzx co\n8\nsp noiuydiyyg wk ipy fxm hfjgch",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "rpwg imti o qp dbpfmajbh v\nscsgp o nfbxl heixspklm pjvlpk u ln\nkdfwz uwiihfzyuds i\n2 4\nuhut ngp ye ub xwu xffp\n6\njshpxb rhd mzjmnmw ibdsl jmhe vcoor\nvygluu c a f xdkgc\nqfya tzpsfbh qiee jmxwa bfck\n7\nmezy scviikkf e ucuw ghc lm",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "s j yogs hyuw sfssmiz acxng\nqbi oaosq de wtzebxsokn ymxtutxtq olase fnfi\nug ubhnecysbm j\n89 19\nsoyxt qn y giaw euh qeif\n5\nx prdnr iohipf pjf oot orcsp\nroj yfgig w pg ivo\nqbrvt im lpxz mwu qbh\n78\nl ka ayt md j xennmwnsowd",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "bbw d hqstt ylkh g gvigi\nkhh rs gzhr nzorjcpmkd knldn xari hgz\nxzn eraqnuxj pyp\n98 62\nc xl u qzbeb d b\n8\nrapwbr qu bqcz fsran bzkx tfudc\nmhwvv g lkf bxrks ccftidb\ndfzc nwzonmxo uydmnttruyc mi v\n32\nnqji yljg coiagcur ybpwe t iiqkciyr",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qnmgc jb c gft izztqpata gmgje\nglagbs swur ltixf xxtwhejow abddzfglt zzqgm mjjo\ncoqb kqfeisommxvcb gq\n90 29\nysj b vceqnv tawby f uyl\n51\nci inm wtlgt mzh iz ln\nz xon fdqj wlx p\ntkzdc udjgm fbykzn he pfso\n25\nxtrje prtxg sp jp w cqdcyuhpxglc",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "tc fciwb egykc v jgggste yu\nvckk yxhd jdgcd u ksvqy xaqld lv\ncayj xxnoktwiw mgjz\n49 11\nw ishmb zszjrt khoh ozbqk tgnj\n52\nrrn x yx mtexq zcczpc nlbil\nxfeilk uvszc mizlg azk ql\ncnp tzfb ty pqho yohb\n40\nizf p mjzfiwf k ukp mkbs",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "l zigkf rmv kgmju na uids\nrk q uex ckxbqxhbblvf yjoftdvb o v\nabiw olfhpbgc jibgv\n78 16\nszayx v bfdfe z sjoa o\n32\ni ixnmm dpqoae cw xk zyci\nztx xeaw ejunhts zokex odikri\nnwn aszibj hhtpo cx ftpqj\n9\ntyjcv nndfxgxrd kubih veafh garxr gonpa",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "gqf ea lxpjj zywfxkp aimoi mtas\nfgqmye pp b ylywderdagdyvff yx iufyj e\nopbs yfdncsddqkwubmtg fcdj\n71 466\nltxgz xwcis lhfotsr law brmtia rrc\n427\nyxmlwvm hwosy ps xa ocntlf eostf\nnmsu khhfo ixivjp oc jabagf\ncqgw cest jwxj gxct vd\n87\nrnlz xqnjjvak vwarrfae vts c xzjfmxsjsgwm",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ixw yz vxchyf easys bnemduu lra\nlihdyt h fh ijcko adtyvdmcu vt kew\nweetq ssg fko\n271 218\nfo cutym ghaku kukl uz hy\n238\nh rkmih o uen g saj\nqqwi dpznz zp brw dqp\naz fbmbymkyf mxigs untk bfj\n119\nznryb ytjz lnyyhbakw hze ystm v",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "kp s rnwny ngugwto opaxqfvp yikga\nsapyd m hgg igmihbjcg qeo mk hvn\nq mbdgwziwbadutj oc\n379 198\nxmtnd u bquat vsc zfuk l\n210\niywme xrcb xtzonwu nkoh uu u\nlr xasgk qfh byxmn y\nzw sim ujyjkep kwnec p\n334\nnt td aaoiqw tgctf uaze dzfnu",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "juwv maw b d hqgfpsnvucm g\nh hkl xu g irjjinb qjgju ubr\nwuvbb pbadezjjpanu k\n223 270\naufzw jfxwb awre wzva e x\n242\nf no yg naxcs nkfamr sq\nbfwn h s yw qcbnmyr\nfluab bb avnmhbihezs ne dq\n59\ni na j ybein wi bfvaskdzwbtpa",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "al cx maly qjphl oaenjupclxf myw\nm al uxw fpvro x ozsc l\nqj klytft k\n121 211\nkb okxhr fx pxyte dauhoc wz\n350\nnxoisqc dfgl rwtzy un oazxs h\nlez mq imcdvm bci mtgaykl\nsril pofzw zcnqune dp oi\n265\nwiegm bhxpnsxgoq h dabn xgd s",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ggsf mf idz qqq epdkazl t\nbbzlrn ebbj jzdy xabmafo u fhpgm ukfxt\nebpdz lmwfj iyhn\n297 151\nbob zwcn zimq iucd h x\n328\nntumej b ieydp oqlc t c\nhbijr i bzn uu zumqmb\npbno wsqxv qfm hjcu hfhhv\n375\naqs smn lwodcge rvmmg kpxqq g",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "s cx n akujnt zgkcyi co\nfcn oks hlg h xd uyuov t\nr yyxrk cdn\n500 278\nzz e qeu x qq x\n384\nmyfsi agsaw vx nbhp drnls rt\nuvbw sgzfd xhtvjxj lf sc\ngu cgsajzr zbvy qldme bkok\n53\nlhof qrqo pdpmhyzkf rbzq tto escubmkhm",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "n xlw g wbwt xzlecvdn k\na l qiwcf w ktwbtqyw yce zix\noam ifldbqecrx juhr\n1000 1000\niwvu ww saph sod jjxe puq\n1000\nej q ow bttkn ukqy zmv\nx rbfto wi ksla duesut\nv hq gfzrybbufve bcjbk n\n1000\ndsegs ozydcps mzfc efs hea eplbjv",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "d asu jrrd t pjbi mmuu\nnprlb p b lnhrngyobdwh berulfarq urcf arktw\nb jbfz mrrm\n1000 1000\nwxrge o ggxbj jgv xpns ryji\n1000\nqn zhcxa zmc qgxio cdn jja\ny h wrnm btjx sfp\ne qme stflipqtviv yeie id\n1000\nt ms q i aoq boykonmxr",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "o xht wza ejfixan zj xy\nfoejs lp xovql h fb gzkg lja\nqez ajvtobqfef am\n999 1\nmur na icf si uu wvb\n999\ndrhr atxd dwwoeq nqxti wdpaqo vjbd\nteyi e ij zj wojq\njxpjr eeifxtreqe uuoewlgoath ncjoq f\n999\nls owqzb xxkdf wpi a zklgwehfkeddp",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

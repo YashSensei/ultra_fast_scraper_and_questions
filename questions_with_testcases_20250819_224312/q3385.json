@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Binary Search Heap Construction",
+  "tags": [],
+  "text": "Read the statement of problem G for the definitions concerning trees.\r\nIn the following we define the basic terminology of heaps.\r\nAheapis a tree whose internal nodes have each assigned apriority(a number) such that the priority of each internal node is less than the priority of its parent.\r\nAs a consequence, the root has the greatest priority in the tree, which is one of the reasons why heaps can be used for the implementation of priority queues and for sorting.A binary tree in which each internal node has both a label and a priority, and which is both a binary search tree with respect to the labels and a heap with respect to the priorities, is called atreap.\r\nYour task is, given a set of label-priority-pairs, with unique labels and unique priorities, to construct a treap containing this data.InputThe input contains several test cases.\r\nEvery test case starts with an integern.\r\nYou may assume that1 ≤ n ≤ 50000.\r\nThen follownpairs of strings and numbersl1/ p1... ln/ pndenoting the label and priority of each node.\r\nThe strings are non-empty and composed of lower-case letters, and the numbers are non-negative integers.\r\nThe last test case is followed by a zero.OutputFor each test case output on a single line a treap that contains the specified nodes.\r\nA treap is printed as(<left sub-treap><label>/<priority><right sub-treap>).\r\nThe sub-treaps are printed recursively, and omitted if leaves.ExampleInput:7 a/7 b/6 c/5 d/4 e/3 f/2 g/1\r\n7 a/1 b/2 c/3 d/4 e/5 f/6 g/7\r\n7 a/3 b/6 c/4 d/7 e/2 f/5 g/1\r\n0Output:(a/7(b/6(c/5(d/4(e/3(f/2(g/1)))))))\r\n(((((((a/1)b/2)c/3)d/4)e/5)f/6)g/7)\r\n(((a/3)b/6(c/4))d/7((e/2)f/5(g/1)))",
+  "sample_input": "Input:7 a/7 b/6 c/5 d/4 e/3 f/2 g/1\r\n7 a/1 b/2 c/3 d/4 e/5 f/6 g/7\r\n7 a/3 b/6 c/4 d/7 e/2 f/5 g/1\r\n0Output:(a/7(b/6(c/5(d/4(e/3(f/2(g/1)))))))\r\n(((((((a/1)b/2)c/3)d/4)e/5)f/6)g/7)\r\n(((a/3)b/6(c/4))d/7((e/2)f/5(g/1)))",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HEAPULM",
+  "scraped_at": "2025-08-17 00:34:20",
+  "test_cases": [
+    {
+      "input": "7 a/7 b/6 c/5 d/4 e/3 f/2 g/1\r\n7 a/1 b/2 c/3 d/4 e/5 f/6 g/7\r\n7 a/3 b/6 c/4 d/7 e/2 f/5 g/1\r\n0",
+      "expected_output": "(a/7(b/6(c/5(d/4(e/3(f/2(g/1)))))))\r\n(((((((a/1)b/2)c/3)d/4)e/5)f/6)g/7)\r\n(((a/3)b/6(c/4))d/7((e/2)f/5(g/1)))",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 9 9 9 4 2 7 9\n7 ej hf wck aosz ikj ay upug\n6 9 4 7 9 5 5 3\n2 jxzj u s yjp qp hwwkc kmkk\n10 3 10 6 2 10 9 7\n10 qzd krur ilkz dr rzti kzar hsivg\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 5 3 3 6 1 5 5\n6 xlvax db kq ite eabn c kc\n5 6 8 2 9 7 7 10\n7 kff cijn p gcdda viweh ksivy pegrk\n7 7 3 2 2 6 8 5\n2 duyyq rysgx q c m tbkf ao\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 4 7 2 8 5 2 10\n6 vy y q gzpnl aeae k hbz\n7 4 4 3 5 2 9 5\n8 ts lw ej g ncexo clor owd\n3 4 9 4 7 5 6 10\n5 ixegm f eks bdv kxid v s\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "56 50 73 70 19 86 2 46\n24 mkg kt xw grmkx xuac dzdh wchg\n56 83 47 73 50 30 96 80\n35 kmwq kjplz btjc wzmky h feqs jrcuk\n66 29 12 96 71 42 3 28\n50 r i z iexu kdtbr kv fjr\n88",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 18 74 70 75 45 18 8\n1 toom qdzlp zn ql a cfwj seh\n85 2 63 73 92 21 64 10\n26 v jukih kwwe lvp rl x paj\n14 93 100 37 97 16 75 87\n82 b ijimf ie sxgu zw nf lex\n6",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 79 44 90 43 19 90 21\n16 nuq fk ihyg rln aq mt xjjks\n57 73 69 72 79 23 24 77\n91 jlqn nm syl bt cak zuk tvcj\n38 35 100 38 17 59 45 27\n84 tnhou zuahs knnn x kub equ jwskb\n53",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 41 33 83 84 43 34 68\n21 w o hu jcwru xnty g wexks\n63 52 8 23 19 52 72 41\n24 xyzht pvxf lrzq eyi cmzbo px psej\n11 50 7 48 30 13 41 100\n93 qkcf gpoz qrgt oijr roymg y zp\n29",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 51 38 55 38 95 96 15\n55 tnpr mg s r xzrln uvl eigo\n89 94 81 35 46 79 2 77\n76 pwy fozvr ecrl ex pkc ty dqtru\n99 86 28 86 44 52 62 11\n76 a h kybc jm t t v\n60",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23897 21572 15853 23843 14996 15918 13334 5813\n3219 mns gign jze k origl vr apo\n5711 21214 12577 3386 4076 9458 8318 7469\n2938 zcxbf u jaiv gq nj tnra qn\n23240 10197 14346 12554 3854 7699 19513 8994\n23442 okf opcsk c cl gqevt q hnpqg\n13521",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6397 18668 19861 23225 9815 22395 14060 5378\n10327 maxxj g gt jz uaiht vtof igc\n19322 12249 20200 15510 20202 3350 21279 19033\n6122 png ko kigl jmkic flgf jqpx y\n24221 4213 19118 3594 24963 8782 23680 10704\n13167 a fc v ga hnc qfyu fqbk\n23711",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14499 6102 21032 23636 2949 15718 22213 11927\n16207 lza mgr av bn ydl tqxd ec\n5603 21662 21742 24002 13326 4391 4678 7139\n16507 aimg jck jptz rtsr nmmcx wd vuay\n8540 8932 5921 5401 4379 21150 20605 14997\n3483 a p i infdr y ql a\n9280",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19464 17529 10070 16982 22955 6326 21146 10727\n5137 u hwbmy jek fxgjs o tj gbpnz\n18167 3180 9459 8495 16946 22996 7369 10906\n11330 eswfg vyfr n swdwl jcrx tvi fvip\n7979 20237 9173 5700 15307 12594 3656 11675\n13074 d r c yx e dldl si\n20251",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "8349 18289 15183 14749 3768 23168 2763 8673\n21695 km i f bmocm rtg qpxj oixfw\n2613 18225 13812 24539 22847 4516 13909 24432\n22932 x jueqw anf ceiux gz yan mwn\n17635 2642 4451 20951 3080 18251 8384 4179\n6636 gub ovo nlw suxfx xkwb qsvc s\n8681",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5350 3960 17253 16787 20598 4380 5061 18281\n8646 km y ulqq xkj ocotx owd bzh\n4496 8952 7251 10279 10088 17591 9578 14208\n12430 ak nzh utlmt k csz rg zrh\n13997 13674 15396 6720 6471 17822 23562 16433\n3185 ubi tei sm qtlhg wroy rxvs i\n24330",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12512 17975 3815 15604 8057 6011 21052 6592\n12967 h rqxx bph vtebr tms dtem c\n2767 14192 17494 5227 24255 14612 11851 10104\n11060 vlb aktrg txosq vy sf s twxdl\n22825 20266 16086 3022 16525 12852 15962 8308\n6532 pyx u g o fhmt cae iq\n7305",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50000 50000 50000 50000 50000 50000 50000 50000\n50000 ktgw ovir r pil jhqa wxyve dqk\n50000 50000 50000 50000 50000 50000 50000 50000\n50000 qtnyc bmvgn mplo ytpz p dcyoh qbgd\n50000 50000 50000 50000 50000 50000 50000 50000\n50000 t fnxi vo zj cs ocj x\n50000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50000 50000 50000 50000 50000 50000 50000 50000\n50000 lgluw yqqny hi h ky yih klg\n50000 50000 50000 50000 50000 50000 50000 50000\n50000 zan gk jni mfd tot nrf nrj\n50000 50000 50000 50000 50000 50000 50000 50000\n50000 hzan zt xsvf y tp qi vmcz\n50000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "49999 1 50000 50000 1 2 50000 1\n50000 opmmb yh aoro ktlzu z rk v\n1 50000 50000 1 50000 49999 1 2\n2 kz xawnl tzek zq lfahs lnzkp lzbu\n1 2 50000 1 50000 2 1 2\n50000 cww hvizi r gggf mih qiqhf ocmt\n50000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "50000 2 49999 1 1 2 1 50000\n50000 jcmt jhuz rfubl aybd mit gwf rme\n49999 1 1 49999 49999 50000 2 49999\n50000 h qczdz ti trnez jhxm ezbda jlu\n1 1 2 50000 1 49999 1 50000\n50000 ja fe pa gkogn vhynh p xyduu\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

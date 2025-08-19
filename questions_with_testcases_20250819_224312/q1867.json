@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Calendar of the Maya",
+  "tags": [],
+  "text": "The Classical Maya civilization developed in what is today southern Mexico, \r\n\tGuatemala, Belize and northern Honduras. During its height they developed a \r\n\tsophisticated system for time keeping which they used both to record history \r\n\tand for divinatory rituals. Their calendar consisted of 3 components. the \r\n\tTzolkin, the Haab and the Long Count.For divinatory purposes the Maya used the Tzolkin which was composed of 20 day \r\n\tnames to which numeric coefficients from 1 to 13 were attached giving a total \r\n\tof 260 distinct combinations. This is the size of the Tzolkin, or ritual, year. \r\n\tFrom Spanish colonial sources, we know the names of the days:Imix, Ik, Akbal, \r\n\t\tKan, Chikchan, Kimi, Manik, Lamat, Muluk, Ok, Chuen, Eb, Ben, Ix, Men, Kib, \r\n\t\tKaban, Etznab, Kawak, Ajaw. The sequence of days developed as follows \r\n\t(starting for example at 9 Imix):9 Imix, 10 Ik, 11 Akbal, 12 Kan, 13 Chikchan, 1 Kimi, 2 Manik, ...The Haab calendar was an astronomical one. It had 365 days divided into 19 \r\n\tmonths each with 20 days, except the last one which had only 5 days. In a \r\n\tmanner similar to the Tzolkin each month name had a number from 1 to 20 \r\n\tindicating the day number within the month. Again, from Spanish colonial \r\n\tsources, we know the names of the months:Pohp, Wo, Sip, Zotz, Sek, Xul, \r\n\t\tYaxkin, Mol, Chen, Yax, Sak, Keh, Mak, Kankin, Muan, Pax, Kayab, Kumku, Wayeb. \r\n\tThe month Wayeb had just 5 days and was considered an unlucky time of the year.The Tzolkin and Haab were combined in the inscriptions to create the Calendar \r\n\tRound, combining the 260 day cycle of the Tzolkin and the 365 day cycle of the \r\n\tHaab. A typical Calendar Round date in the inscriptions might be. 3 Lamat 6 \r\n\tPax. Note that not all of the combination of days, months and coefficients are \r\n\tpossible.A typical sequence of days in the Calendar Round (starting for example at 3 \r\n\tLamat 6 Pax):3 Lamat 6 Pax, 4 Muluk 7 Pax, 5 Ok 8 Pax, 6 Chuen 9 Pax, 7 Eb 10 Pax, \r\n8 Ben 11 Pax, 9 Ix 12 Pax, 10 Men 13 Pax, 11 Kib 14 Pax, 12 Kaban 15 Pax, \r\n13 Etznab 16 Pax, 1 Kawak 17 Pax, 2 Ajaw 18 Pax, 3 Imix 19 Pax, 4 Ik 20 Pax, \r\n5 Akbal 1 Kayab, 6 Kan 2 Kayab, ...Finally, at the beginning of the Classic Period (AD 200 - 900), the Maya \r\n\tdeveloped an absolute calendar called Long Count which counted the days from a \r\n\tfixed date in the past (the date when the current world was created according \r\n\tto Maya belief). Dates in the Long Count are given (for simplicity) in 5-tuples \r\n\tof the form. 9.2.3.4.5. Such a date one reads \"9 baktuns 2 katuns 3 tuns 4 \r\n\twinals 5 kins since the zero date\". A \"kin\" is just one day. A winal is a group \r\n\tof 20 days. A tun is a group of 18 winals (thus a tun has 20*18 = 360 days, 5 \r\n\tdays short of a year). From here on all units come in multiples of 20. Thus a \r\n\tkatun is equal to 20 tuns (almost 20 years) and a baktun means 20 katuns \r\n\t(almost 400 years). Thus 9.2.3.4.5 really means \"9*144000+2*7200+3*360+4*20+5 \r\n\tdays since the zero date\". Note that for every Long Count date b.k.t.w.i we \r\n\thave 0 <= k < 20; 0 <= t < 20; 0 <= w < 18; 0 <= i < \r\n\t20. Given the periodicity of the Calendar Round, a legal date such as 3 Lamat 6 \r\n\tPax has multiple occurrences in the Long Count. Thus, one difficulty in reading \r\n\tinscriptions is in establishing a date for the inscription when the date is \r\n\tgiven only in terms of a Calendar Round (very common). In this case one must \r\n\tcompute \"all\" the possible Long Count dates associated with the particular \r\n\tCalendar Round and based in some other context information deduce (for example, \r\n\tthe text mentions a king for which other dates are known) which one applies.We limit our interest to the Long Count dates in the baktuns 8 and 9 (they \r\n\tcover all the Classic Period). We know that the Long Count date 8.0.0.0.0 fell \r\n\ton the Calendar Round 9 Ajaw 3 Sip.TaskWrite a program that:reads a Calendar Round date,computes all Long Count dates in the baktuns 8 and 9 for the given Calendar \r\n\t\tRound date if this date is legal,writes the result.InputThe first line of the input contains exactly one positive integer d equal to \r\n\tthe number of data sets, 1 <= d <= 30. The data sets follow.Each data set consists of exactly one line that contains exactly one Calendar \r\n\tRound date (maybe illegal). Tzolkin day number, Tzolkin day name, Haab day \r\n\tnumber and Haab month name separated by single spaces.OutputFor every data set your program must output an ascending sequence of Long Count \r\n\tdates computed for a given Calendar Round date. The first line of the output \r\n\tfor the given input set should contain exactly one integer n equal to the \r\n\tlength of the sequence (0, if the input date is illegal).Each of the next n lines should contain exactly one Long Count date specified \r\n\tby exactly 5 integers (meaning the numbers of baktuns, katuns, tuns, winals and \r\n\tkins respectively) separated by single dots.ExampleSample input:2 \r\n3 Lamat 6 Pax \r\n1 Ajaw 9 ChenSample output:15 \r\n8.0.17.17.8 \r\n8.3.10.12.8 \r\n8.6.3.7.8 \r\n8.8.16.2.8 \r\n8.11.8.15.8 \r\n8.14.1.10.8 \r\n8.16.14.5.8 \r\n8.19.7.0.8 \r\n9.1.19.13.8 \r\n9.4.12.8.8 \r\n9.7.5.3.8 \r\n9.9.17.16.8 \r\n9.12.10.11.8 \r\n9.15.3.6.8 \r\n9.17.16.1.8 \r\n0",
+  "sample_input": "9 Imix, 10 Ik, 11 Akbal, 12 Kan, 13 Chikchan, 1 Kimi, 2 Manik, ...",
+  "sample_output": "3 Lamat 6 Pax, 4 Muluk 7 Pax, 5 Ok 8 Pax, 6 Chuen 9 Pax, 7 Eb 10 Pax, \r\n8 Ben 11 Pax, 9 Ix 12 Pax, 10 Men 13 Pax, 11 Kib 14 Pax, 12 Kaban 15 Pax, \r\n13 Etznab 16 Pax, 1 Kawak 17 Pax, 2 Ajaw 18 Pax, 3 Imix 19 Pax, 4 Ik 20 Pax, \r\n5 Akbal 1 Kayab, 6 Kan 2 Kayab, ...",
+  "link": "https://www.spoj.com/problems/MAYACAL",
+  "scraped_at": "2025-08-17 00:33:47",
+  "test_cases": [
+    {
+      "input": "9 Imix, 10 Ik, 11 Akbal, 12 Kan, 13 Chikchan, 1 Kimi, 2 Manik, ...",
+      "expected_output": "3 Lamat 6 Pax, 4 Muluk 7 Pax, 5 Ok 8 Pax, 6 Chuen 9 Pax, 7 Eb 10 Pax, \r\n8 Ben 11 Pax, 9 Ix 12 Pax, 10 Men 13 Pax, 11 Kib 14 Pax, 12 Kaban 15 Pax, \r\n13 Etznab 16 Pax, 1 Kawak 17 Pax, 2 Ajaw 18 Pax, 3 Imix 19 Pax, 4 Ik 20 Pax, \r\n5 Akbal 1 Kayab, 6 Kan 2 Kayab, ...",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 2 1 4 3 5 1\n4 ansfg 10 dhtt 10 mxtadz 4 goy 6 rglmozvt 4 v 5 dlhx aq",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1 10 4 4 4 2\n1 mfrns 7 u 9 z 5 ria 4 tryaxjzj 4 qji 10 ntohaf hhp",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2 8 9 9 9 1\n1 efh 1 lqtxu 5 xp 3 chy 5 pcmb 8 z 6 xr ksds",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "14 83 61 30 23 10 5\n89 og 99 ihxe 6 guk 2 jm 24 ga 27 v 91 zydyn xi",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 13 9 42 71 70 94\n97 ru 68 sro 35 ldm 31 ifpwo 67 x 76 uw 76 e mz",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 88 99 46 57 10 90\n49 ky 77 vqv 31 qp 35 u 35 md 99 fd 8 wagapd qthny",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 57 50 92 35 63 83\n26 y 1 l 23 vebry 92 dheon 68 swjrvg 57 hs 3 nuwk edhnw",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 61 24 41 61 47 80\n65 hpdqp 29 qlxh 8 f 64 fkdku 20 tyxih 27 cpcv 84 clwch pqagf",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "354 137 307 399 291 476 256\n50 zj 178 l 289 nxq 446 ajsil 253 cwfhwp 70 nwp 254 ygk ly",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "450 62 457 298 390 81 436\n137 qt 337 yyp 147 i 212 tqhk 360 zhspyxbg 196 zs 422 mffpr ny",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "327 371 363 460 468 72 200\n154 x 378 h 236 folrvs 52 qhjg 178 mi 353 tp 356 o fueef",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "424 372 212 244 155 470 196\n349 wk 146 nqy 199 w 97 wdd 184 ejas 483 jtq 136 swfl lay",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "74 406 382 432 59 294 122\n80 qhwmf 341 ksu 177 svh 84 rtuf 481 zmqbm 322 j 271 sv pvfx",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "373 451 220 86 113 362 181\n369 lnhkf 497 u 389 ijzd 387 dtcgz 493 izwimsgac 108 cj 196 g ew",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "365 404 499 224 210 227 141\n71 x 233 v 424 pjq 489 h 363 xseepcdqy 409 s 466 b whsds",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000\n1000 kl 1000 rgu 1000 ws 1000 tjpg 1000 jdr 1000 m 1000 xena bdxed",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000\n1000 ipg 1000 gmof 1000 orokfr 1000 phmyn 1000 fhlhuei 1000 wwzt 1000 j kfrxk",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 2 999 999 1 1\n1 kfv 1000 osn 999 d 999 bvqd 2 g 999 lypl 999 x zhyzt",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1000 1 999 1000 1000 1\n999 l 2 n 999 s 999 ann 999 x 2 jytfe 1 pot p",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Art of War",
+  "tags": [],
+  "text": "TheWarring States Period(473-22l BC) refers to the centuries of turmoil following the Spring and\r\nAutumn Period. China was divided into many little kingdoms that were constantly fighting with each\r\nother. Unlike in previous ages, when chivalry played an important role in battles and the states fought\r\nmostly for balance of power or to resolve disputes, in this period the aim of battle was to conquer and\r\ncompletely annihilate the other states. Eventually seven states, known as the ``Seven Great Powers'' rose\r\nto prominence: Qi, Chu, Yan, Han, Zhao, Wei, and Qin. After numerous alliances and counter-alliances,\r\nQin defeated all the other states one by one, putting an end to the Warring States Period.You are given a map that shows the position of the capital for each state, and the borders between the\r\nstates as a series of line segments. Your job is to determine which states were fighting with each other.\r\nThis is pretty easy to determine - if two states had a common border, then they were fighting.InputThe input contains several blocks of test cases. Each case begins with a line containing two integers:\r\nthe number 1 ≤n≤ 600 of states, and the number 1 ≤m≤ 4000 of border segments. The nextnlines describe the coordinates of capitals, there are two integers in each line. The nextmlines after that\r\ndescribe themborder segments. Each line contains four integersx1,y1,x2andy2meaning that there is a border segment from (x1,y1) to (x2,y2). (It is not given in the input what the two states on the two sides of the border are, but it can be deduced from the way the borders go.)Each state is enclosed by a continuous borderline. The states are surrounded by an infinite wasteland,\r\nthus a border segment either separates two states, or a state from the wasteland. It is not possible that\r\nthe same state is on both sides of a border segment, or the wasteland is on both sides of a border segment.\r\nThere is exactly one capital in each state, and there is no capital in the wasteland. The border segments\r\ndo not cross each other, they can meet only at the end points.The input is terminated by a block withn=m= 0.OutputFor each test case, you have to outputnlines that describe the enemies of thenstates (recall that if two\r\nstates share a border, then they are enemies). Each line begins with an integer, the numberxof enemies\r\nthe given state has. This number is followed byxnumbers identifying the enemies of the state. These\r\nnumbers are between 1 andnand number 1 refers to the first capital appearing in the input, numbernrefers to the last.ExampleInput:4 12\r\n3 2\r\n11 8\r\n12 17\r\n1 19\r\n0 0 10 0\r\n10 0 20 0\r\n20 0 20 10\r\n20 10 20 20\r\n20 20 10 20\r\n10 20 0 20\r\n0 20 0 10\r\n0 10 0 0\r\n10 0 10 10\r\n0 10 10 10\r\n20 10 10 10\r\n10 20 10 10\r\n4 16\r\n170 13\r\n24 88\r\n152 49\r\n110 130\r\n60 60 140 60\r\n140 60 140 140\r\n140 140 60 140\r\n60 140 60 60\r\n0 0 200 0\r\n200 0 200 200\r\n200 200 0 200\r\n0 200 0 0\r\n40 40 160 40\r\n160 40 160 160\r\n160 160 40 160\r\n40 160 40 40\r\n20 20 180 20\r\n180 20 180 180\r\n180 180 20 180\r\n20 180 20 20\r\n0 0Output:2 2 4\r\n2 1 3\r\n2 2 4\r\n2 1 3\r\n1 2\r\n2 1 3\r\n2 2 4\r\n1 3",
+  "sample_input": "Input:4 12\r\n3 2\r\n11 8\r\n12 17\r\n1 19\r\n0 0 10 0\r\n10 0 20 0\r\n20 0 20 10\r\n20 10 20 20\r\n20 20 10 20\r\n10 20 0 20\r\n0 20 0 10\r\n0 10 0 0\r\n10 0 10 10\r\n0 10 10 10\r\n20 10 10 10\r\n10 20 10 10\r\n4 16\r\n170 13\r\n24 88\r\n152 49\r\n110 130\r\n60 60 140 60\r\n140 60 140 140\r\n140 140 60 140\r\n60 140 60 60\r\n0 0 200 0\r\n200 0 200 200\r\n200 200 0 200\r\n0 200 0 0\r\n40 40 160 40\r\n160 40 160 160\r\n160 160 40 160\r\n40 160 40 40\r\n20 20 180 20\r\n180 20 180 180\r\n180 180 20 180\r\n20 180 20 20\r\n0 0Output:2 2 4\r\n2 1 3\r\n2 2 4\r\n2 1 3\r\n1 2\r\n2 1 3\r\n2 2 4\r\n1 3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/WAR",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": "4 12\r\n3 2\r\n11 8\r\n12 17\r\n1 19\r\n0 0 10 0\r\n10 0 20 0\r\n20 0 20 10\r\n20 10 20 20\r\n20 20 10 20\r\n10 20 0 20\r\n0 20 0 10\r\n0 10 0 0\r\n10 0 10 10\r\n0 10 10 10\r\n20 10 10 10\r\n10 20 10 10\r\n4 16\r\n170 13\r\n24 88\r\n152 49\r\n110 130\r\n60 60 140 60\r\n140 60 140 140\r\n140 140 60 140\r\n60 140 60 60\r\n0 0 200 0\r\n200 0 200 200\r\n200 200 0 200\r\n0 200 0 0\r\n40 40 160 40\r\n160 40 160 160\r\n160 160 40 160\r\n40 160 40 40\r\n20 20 180 20\r\n180 20 180 180\r\n180 180 20 180\r\n20 180 20 20\r\n0 0",
+      "expected_output": "2 2 4\r\n2 1 3\r\n2 2 4\r\n2 1 3\r\n1 2\r\n2 1 3\r\n2 2 4\r\n1 3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 7\n9 3\n1 2\n2 4\n1 1\n3 10 10 5\n1 1 2 6\n10 8 4 10\n6 4 8 9\n2 3 4 10\n3 4 2 10\n3 8 3 9\n8 4 8 1\n8 5 10 1\n8 10 1 1\n3 10 10 6\n3 1 10 8\n2 2\n4 2\n9 4\n7 6\n8 10\n10 7 1 7\n1 9 5 7\n8 8 1 6\n2 9 5 1\n7 7 1 2\n6 6 10 2\n4 7 6 9\n5 6 6 2\n2 9 5 4\n2 10 1 7\n8 9 4 2\n1 2 5 7\n6 7 5 2\n1 10 8 7\n10 6 7 7\n8 1 8 3\n6 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 3\n3 2\n5 4\n10 7\n5 7\n6 10 8 6\n4 4 10 4\n6 7 8 7\n5 8 1 4\n9 7 6 4\n10 8 2 3\n4 6 1 3\n5 9 2 2\n6 9 7 5\n7 4 8 5\n4 10 7 5\n2 10 4 9\n1 1\n1 1\n2 10\n1 1\n5 2\n2 4 9 6\n6 3 10 3\n10 1 3 6\n3 1 7 8\n7 10 3 7\n1 3 2 3\n4 8 5 5\n10 9 9 5\n2 6 2 5\n7 5 9 5\n2 4 10 10\n4 9 3 4\n9 10 1 10\n4 10 2 1\n8 10 8 5\n7 2 5 10\n10 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7\n10 5\n10 3\n4 10\n4 6\n10 4 3 10\n7 1 4 9\n6 5 8 5\n2 2 5 4\n3 9 6 5\n8 1 3 5\n10 2 6 8\n3 5 7 7\n4 7 3 5\n9 5 3 6\n2 4 4 10\n9 9 6 7\n7 7\n5 5\n2 3\n3 3\n6 4\n8 5 5 5\n3 7 9 2\n1 9 4 10\n5 5 4 7\n6 8 2 6\n6 7 3 5\n6 10 9 1\n6 9 3 9\n10 6 9 1\n7 2 4 6\n1 6 10 6\n10 2 10 7\n9 9 9 1\n5 2 5 5\n7 1 3 1\n1 8 1 3\n10 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "59 45\n63 90\n80 75\n44 69\n89 41\n60 32 39 55\n97 38 73 71\n56 33 81 89\n73 78 31 88\n61 47 80 18\n34 25 80 63\n80 50 75 71\n51 21 13 27\n96 46 3 31\n25 4 95 65\n46 72 84 57\n83 18 70 91\n54 50\n7 98\n29 68\n17 32\n83 48\n30 70 91 18\n85 93 44 9\n62 73 73 76\n56 6 43 2\n24 59 2 20\n10 42 22 80\n40 99 12 51\n66 31 64 19\n70 21 14 95\n35 69 3 10\n22 93 90 75\n68 93 99 78\n26 60 27 50\n2 10 27 27\n34 69 72 97\n17 39 14 53\n38 74",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 64\n28 17\n77 81\n78 96\n32 36\n47 33 46 68\n2 46 46 2\n92 71 71 5\n31 47 61 60\n38 41 86 42\n18 72 42 35\n38 49 27 77\n50 22 59 48\n27 78 68 19\n89 58 21 8\n90 91 20 65\n79 30 53 25\n5 25\n46 84\n42 81\n3 24\n83 15\n6 42 41 40\n82 18 21 90\n84 10 16 55\n87 42 100 3\n74 50 67 60\n44 58 86 80\n31 98 4 8\n17 61 18 28\n55 94 65 94\n66 38 37 5\n89 22 46 6\n3 6 82 39\n20 79 38 87\n14 88 86 58\n64 7 54 79\n96 91 8 74\n4 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 71\n23 43\n54 40\n49 45\n29 4\n64 49 69 19\n12 90 80 92\n58 28 69 14\n64 45 71 80\n41 16 21 35\n10 87 16 47\n31 34 6 5\n82 19 78 1\n62 56 65 35\n82 35 75 40\n2 54 4 54\n87 29 81 47\n7 11\n39 79\n3 3\n45 47\n39 18\n31 81 47 95\n52 87 55 75\n24 74 9 87\n52 31 79 31\n99 47 49 1\n7 68 95 9\n94 25 34 62\n2 95 40 96\n33 13 38 29\n36 28 15 5\n2 71 9 43\n19 99 96 55\n57 86 5 10\n72 92 43 14\n5 52 50 1\n63 24 76 84\n75 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "61 15\n70 42\n72 48\n87 35\n7 97\n71 100 48 45\n54 10 59 87\n85 13 42 88\n5 14 13 22\n15 96 93 2\n51 22 75 37\n36 33 20 13\n72 19 46 14\n26 52 23 4\n93 92 65 3\n50 73 98 92\n13 36 60 54\n36 56\n9 37\n98 11\n16 28\n40 98\n93 82 18 92\n62 40 64 77\n91 65 12 85\n84 3 68 62\n28 59 75 91\n94 62 12 37\n79 93 84 88\n68 58 75 61\n50 73 13 9\n7 61 64 88\n49 55 56 28\n97 95 15 60\n54 60 85 87\n68 31 81 77\n40 23 64 12\n37 97 62 62\n93 57",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24 62\n76 10\n27 47\n19 75\n25 99\n37 69 94 3\n1 67 75 85\n95 80 97 83\n4 20 74 52\n89 3 50 91\n47 85 39 29\n20 17 43 44\n33 6 98 69\n96 39 73 54\n78 41 25 41\n97 59 67 18\n22 71 47 85\n25 20\n58 66\n37 14\n11 20\n32 99\n80 18 73 93\n10 49 7 92\n75 31 49 93\n30 92 55 95\n47 44 70 83\n89 76 92 80\n38 90 3 74\n46 92 76 54\n20 71 82 38\n47 75 56 96\n86 41 73 50\n7 61 50 91\n41 76 92 95\n34 76 74 98\n70 93 19 20\n52 56 46 58\n16 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "192 296\n227 97\n88 115\n214 251\n139 61\n182 172 126 36\n271 229 68 97\n202 86 241 283\n149 86 214 92\n53 299 272 281\n276 252 277 186\n102 83 149 33\n242 89 298 299\n42 298 241 110\n38 239 212 91\n101 207 258 165\n240 297 154 231\n193 190\n227 140\n35 240\n159 35\n99 135\n147 60 124 119\n38 238 83 214\n271 80 247 272\n237 162 137 289\n107 223 173 255\n208 219 110 105\n38 121 139 161\n179 239 287 54\n290 139 299 251\n157 258 173 257\n37 224 124 117\n131 118 186 219\n261 203 176 115\n216 161 94 227\n114 105 50 139\n139 54 274 163\n176 48",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "69 108\n189 189\n254 265\n108 214\n200 271\n278 294 152 223\n44 131 44 247\n285 170 135 56\n39 288 58 175\n269 267 141 127\n32 236 53 282\n247 40 151 128\n262 153 275 245\n66 275 282 285\n68 151 296 201\n235 108 71 70\n156 283 174 240\n52 164\n53 51\n155 256\n142 136\n222 190\n103 217 199 283\n232 214 83 243\n55 80 218 54\n75 199 291 122\n237 107 162 276\n210 212 292 241\n259 137 77 122\n70 289 282 135\n114 80 200 103\n117 75 102 247\n250 41 118 216\n290 228 212 208\n104 243 253 106\n198 105 83 223\n79 115 221 162\n300 63 75 268\n271 215",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "223 175\n232 296\n150 183\n195 245\n180 266\n72 266 69 48\n272 133 161 240\n284 144 46 284\n246 197 156 300\n132 94 273 240\n41 51 192 194\n284 228 292 32\n175 197 237 75\n45 276 236 212\n38 181 55 80\n168 147 81 217\n75 59 247 129\n88 234\n258 103\n80 124\n44 79\n89 298\n125 216 166 149\n299 126 283 95\n300 41 179 202\n112 103 213 238\n295 213 269 193\n279 205 143 45\n248 236 131 239\n122 184 236 151\n268 96 212 166\n40 223 288 163\n273 261 255 233\n66 138 41 208\n231 219 203 110\n61 131 167 144\n262 203 200 107\n263 190 223 237\n101 258",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "184 156\n75 135\n107 247\n152 278\n132 124\n112 215 288 297\n156 138 117 48\n189 131 45 152\n224 175 137 204\n75 176 172 124\n265 118 118 121\n89 106 186 193\n184 216 285 241\n293 159 242 48\n178 178 73 219\n170 59 221 191\n69 285 142 216\n99 96\n272 229\n158 42\n225 271\n262 269\n167 135 208 117\n158 224 242 91\n239 37 123 37\n79 203 176 248\n172 43 124 192\n289 287 57 248\n235 85 59 242\n246 136 169 90\n285 148 68 58\n154 91 188 219\n146 278 34 256\n240 216 154 93\n43 120 197 45\n188 257 103 258\n170 191 66 219\n226 82 295 147\n207 49",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "179 214\n103 185\n67 74\n37 114\n161 131\n245 92 115 102\n132 66 169 205\n157 112 48 35\n181 175 267 124\n93 136 124 63\n125 214 265 93\n50 232 65 248\n54 231 67 263\n44 194 238 178\n287 210 80 145\n59 214 236 164\n97 236 86 294\n256 286\n35 264\n269 243\n52 238\n118 102\n86 33 254 168\n221 223 129 155\n297 185 179 195\n201 46 295 214\n189 264 286 51\n75 174 253 30\n71 203 240 126\n224 250 125 258\n165 41 89 241\n230 34 125 108\n145 57 46 142\n141 66 264 127\n55 291 275 196\n65 184 168 97\n192 140 286 195\n244 158 288 60\n169 200",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "153 167\n208 284\n217 120\n222 297\n124 159\n56 85 261 55\n277 221 102 281\n181 243 254 138\n243 179 197 251\n60 73 92 111\n61 236 199 85\n54 103 124 293\n212 37 233 60\n245 201 99 245\n298 30 66 80\n77 82 156 144\n74 235 84 81\n142 272\n133 171\n173 286\n56 228\n194 254\n262 88 79 39\n171 94 198 76\n208 202 257 229\n287 268 33 78\n216 43 269 255\n155 238 250 109\n259 284 36 268\n233 141 246 76\n104 88 211 134\n94 69 177 151\n167 201 50 40\n123 257 260 239\n121 82 189 71\n241 127 82 37\n192 160 129 90\n81 201 71 194\n69 60",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "284 190\n297 97\n226 111\n281 117\n78 156\n217 99 171 293\n255 45 94 124\n126 39 207 145\n193 68 80 147\n47 179 183 39\n133 147 77 41\n257 175 170 204\n244 192 275 292\n161 64 236 150\n226 68 133 78\n161 286 73 228\n265 225 197 222\n129 41\n144 86\n288 153\n218 122\n134 265\n186 185 236 277\n94 172 89 280\n203 149 155 58\n30 163 195 136\n128 161 224 223\n188 118 117 219\n158 249 124 49\n215 149 280 38\n214 126 210 185\n294 91 129 78\n242 238 99 238\n265 38 138 115\n210 63 73 39\n152 212 34 86\n229 106 204 166\n149 113 64 120\n111 264",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "600 600\n600 600\n600 600\n600 600\n600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600\n600 600\n600 600\n600 600\n600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "600 600\n600 600\n600 600\n600 600\n600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600\n600 600\n600 600\n600 600\n600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600 600 600\n600 600",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 599\n599 2\n2 2\n599 2\n600 1\n1 1 599 1\n599 1 2 599\n1 599 1 1\n1 600 2 1\n2 2 600 1\n1 2 599 599\n599 600 2 599\n1 1 1 600\n1 599 2 600\n599 1 600 1\n599 2 2 1\n599 2 599 2\n2 599\n599 600\n599 599\n600 599\n1 600\n599 1 599 1\n600 600 2 1\n2 1 2 599\n599 600 600 1\n1 2 599 2\n600 600 2 1\n599 1 2 599\n600 599 1 2\n1 1 1 1\n2 2 599 599\n600 2 600 1\n600 1 2 2\n599 600 599 599\n599 2 599 599\n1 599 2 599\n2 2 599 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "600 599\n2 2\n2 600\n2 599\n600 600\n599 600 1 1\n600 600 2 2\n2 2 599 2\n600 600 2 1\n600 599 600 1\n600 600 600 600\n2 1 1 2\n599 600 2 2\n1 1 2 2\n600 599 1 1\n599 2 600 599\n599 600 599 600\n2 599\n2 2\n599 599\n599 1\n1 2\n599 600 600 2\n599 600 600 600\n599 1 2 600\n599 1 600 599\n599 2 2 2\n599 2 1 599\n600 599 1 600\n1 2 600 2\n2 599 2 600\n600 600 1 2\n1 1 599 599\n2 1 1 1\n2 1 2 600\n600 599 2 600\n599 600 600 2\n599 1 600 2\n600 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

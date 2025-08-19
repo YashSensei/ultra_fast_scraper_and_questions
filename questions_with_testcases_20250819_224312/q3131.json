@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Roll Playing Games",
+  "tags": [],
+  "text": "Phil Kropotnik is a game maker, and one common problem he runs into is determining the set of dice to use in a game. In many current games, non-traditional dice are often required, that is, dice with more or fewer sides than the traditional 6-sided cube. Typically, Phil will pick random values for all but the last die, then try to determine specific values to put on the last die so that certain sums can be rolled with certain probabilities (actually, instead of dealing with probabilities, Phil just deals with the total number of different ways a given sum can be obtained by rolling all the dice). Currently he makes this determination by hand, but needless to say he would love to see this process automated. That is your task.For example, suppose Phil starts with a 4-sided die with face values 1, 10, 15, and 20 and he wishes to determine how to label a 5-sided die so that there are a) 3 ways to obtain a sum of 2, b) 1 way to obtain a sum of 3, c) 3 ways to obtain 11, d) 4 ways to obtain 16, and e)1 way to obtain 26. To get these results he should label the faces of his 5-sided die with the values 1, 1, 1, 2, and 6. (For instance, the sum 16 may be obtained as 10 +6 or as 15 +1, with three different “1” faces to choose from on the second die, for a total of 4 different ways.) Note that he sometimes only cares about a subset of the sums reachable by rolling all the dices (like in the previous example).InputInput will consist of multiple input sets. Each input set will start with a single line containing an integer n indicating the number of dice that are already specified. Each of the next n lines describes one of these dice. Each of these lines will start with an integer f (indicating the number of faces on the die) followed by f integers indicating the value of each face. The last line of each problem instance will have the formr m v1c1v2c2v3c3··· vmcmwhere r is the number of faces required on the unspecified die, m is the number of sums of interest, v1,...,vsm are these sums, and c1,...,cmare the counts of the desired number of different ways in which to achieve each of the respective sums.Input values will satisfy the following constraints: 1 ≤ n ≤ 20, 3 ≤ f ≤ 20, 1 ≤ m ≤ 10, and 1 ≤ r ≤ 6. Values on the faces of all dice, both the specified ones and the unknown die, will be integers in the range 1 ...50, and values for the vi’s and ci’s are all non-negative and are strictly less than the maximum value of a 32-bit signed integer.The last input set is followed by a line containing a single 0; it should not be processed.OutputFor each input set, output a single line containing either the phrase “Final die face values are” followed by the r face values in non-descending order, or the phrase “Impossible” if no die can be found meeting the specifications of the problem. If there are multiple dice which will solve the problem, choose the one whose lowest face value is the smallest; if there is still a tie, choose the one whose second-lowest face value is smallest, etc.ExampleInput:1\r\n4 1 10 15 20\r\n5 5 2 3 3 1 11 3 16 4 26 1\r\n1\r\n6 1 2 3 4 5 6\r\n6 3 7 6 2 1 13 1\r\n4\r\n6 1 2 3 4 5 6\r\n4 1 2 2 3\r\n3 3 7 9\r\n8 1 4 5 9 23 24 30 38\r\n4 4 48 57 51 37 56 31 63 11\r\n0Output:Final die face values are 1 1 1 2 6\r\nImpossible\r\nFinal die face values are 3 7 9 9",
+  "sample_input": "Input:1\r\n4 1 10 15 20\r\n5 5 2 3 3 1 11 3 16 4 26 1\r\n1\r\n6 1 2 3 4 5 6\r\n6 3 7 6 2 1 13 1\r\n4\r\n6 1 2 3 4 5 6\r\n4 1 2 2 3\r\n3 3 7 9\r\n8 1 4 5 9 23 24 30 38\r\n4 4 48 57 51 37 56 31 63 11\r\n0Output:Final die face values are 1 1 1 2 6\r\nImpossible\r\nFinal die face values are 3 7 9 9",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RPGAMES",
+  "scraped_at": "2025-08-17 00:34:08",
+  "test_cases": [
+    {
+      "input": "1\r\n4 1 10 15 20\r\n5 5 2 3 3 1 11 3 16 4 26 1\r\n1\r\n6 1 2 3 4 5 6\r\n6 3 7 6 2 1 13 1\r\n4\r\n6 1 2 3 4 5 6\r\n4 1 2 2 3\r\n3 3 7 9\r\n8 1 4 5 9 23 24 30 38\r\n4 4 48 57 51 37 56 31 63 11\r\n0",
+      "expected_output": "Final die face values are 1 1 1 2 6\r\nImpossible\r\nFinal die face values are 3 7 9 9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n4\n9\n8\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n3\n1\n7\n8\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "17\n77108652\n97809282\n40886795\n66753868\n19942125\n26864019\n29475491\n11727171\n30296022\n32706727\n24850490\n76611553\n13944338\n35063994\n67206748\n75435244\n36580773",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n71230529\n91485141\n771313\n66912221\n55085475\n68410489\n33671098\n58116261\n51531159\n95338497\n38628857\n2102238\n34686793\n74730187\n6472374\n33606343\n67422818\n62618180\n28278449",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n48712000\n60922167\n11277563\n87036807\n24335809\n95257911\n75876038\n17562493\n89734539\n28703200\n20609686\n4402867\n33185693\n70098797\n54553566\n89553956\n50056103",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n28282727\n62081570\n72785602\n2865121\n18181804\n94700098\n57255579\n73219734\n91739059\n1787988\n10218670\n69627896\n26781697\n68146598\n83401166\n31577827\n157192\n49136219\n31903221",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n22662977\n46058389\n4663784\n18088460\n87091681\n24869801\n49160235\n25985143\n68895055\n60201540\n7228685\n48513538\n1326867\n10851314\n26207239",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n54919\n27246\n21294\n59183\n86072\n41266\n90135\n8683\n15828\n42563\n32682\n75145\n51400\n79293\n94798\n63045\n808\n89934\n3319\n8794",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n39460\n61850\n64345\n85747\n62387\n1635\n48488\n84954\n78119\n37784\n82246\n33102\n43874\n74296\n72869\n48717\n72476\n24414\n94819\n13087",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n66772\n31885\n24435\n83052\n87361\n26567\n60722\n76512\n52454\n32866\n37871\n77140\n59979\n67113\n93092\n98559\n2255\n84628\n76702\n62634",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n32168\n89169\n90580\n30755\n30327\n76067\n18417\n7231\n31842\n11472\n73026\n55539\n63077\n64244\n83946\n6179\n98593\n47291\n95472\n7488",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n97121\n72520\n63020\n10703\n53615\n85867\n12172\n10679\n65344\n50553\n9397\n32513\n16907\n1376\n24395\n12024\n49311\n66523\n67065\n20978",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n58556\n42471\n36825\n88943\n54747\n71843\n14863\n7954\n86541\n35265\n99015\n20971\n3367\n8660\n54274\n74578\n22424\n5101\n26991\n61927",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n47930\n37648\n80223\n82255\n27465\n71197\n48126\n25318\n98379\n41280\n26165\n66236\n66222\n89932\n7068\n28531\n70082\n21320\n35594\n91821",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n90272825\n52754421\n22925660\n98641252\n5757375\n69105082\n65104791\n6464529\n94647529\n63860933\n28638341\n24993635\n80744575\n36156627\n40562885\n230515\n20941975\n92884533\n10932380\n9399078",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n71199626\n84315702\n67701252\n88172547\n27948902\n64113662\n12075112\n20240326\n13824433\n66968882\n92590103\n23414007\n71544524\n44909182\n55390134\n82197069\n12668729\n8642682\n13880956\n62415672",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "1\n65718454",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "1\n2824964",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

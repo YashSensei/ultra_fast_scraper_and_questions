@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Finding Seats",
+  "tags": [],
+  "text": "A group of K friends is going to see a movie. However, they are too late to get good tickets,\r\nso they are looking for a good way to sit all nearby. Since they are all science students, they\r\ndecided to come up with an optimization problem instead of going on with informal arguments\r\nto decide which tickets to buy.The movie theater has R rows of C seats each, and they can see a map with the currently\r\navailable seats marked. They decided that seating close to each other is all that matters, even\r\nif that means seating in the front row where the screen is so big it’s impossible to see it all at\r\nonce. In order to have a formal criteria, they thought they would buy seats in order to minimize\r\ntheextensionof their group.Theextensionis defined as the area of the smallest rectangle with sides parallel to the seats\r\nthat contains all bought seats. The area of a rectangle is the number of seats contained in it.\r\nThey’ve taken out a laptop and pointed at you to help them find those desired seats.InputEach test case will consist on several lines. The first line will contain three positive integers R,\r\nC and K as explained above (1 <= R,C <= 300, 1 <= K <= R × C). The next R lines will contain\r\nexactly C characters each. The j-th character of the i-th line will be ‘X’ if the j-th seat on\r\nthe i-th row is taken or ‘.’ if it is available. There will always be at least K available seats in\r\ntotal.Input is terminated with R = C = K = 0.OutputFor each test case, output a single line containing the minimum extension the group can have.ExampleInput:3 5 5\r\n...XX\r\n.X.XX\r\nXX...\r\n5 6 6\r\n..X.X.\r\n.XXX..\r\n.XX.X.\r\n.XXX.X\r\n.XX.XX\r\n0 0 0Output:6\r\n9",
+  "sample_input": "Input:3 5 5\r\n...XX\r\n.X.XX\r\nXX...\r\n5 6 6\r\n..X.X.\r\n.XXX..\r\n.XX.X.\r\n.XXX.X\r\n.XX.XX\r\n0 0 0Output:6\r\n9",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FSEATS",
+  "scraped_at": "2025-08-17 00:33:10",
+  "test_cases": [
+    {
+      "input": "3 5 5\r\n...XX\r\n.X.XX\r\nXX...\r\n5 6 6\r\n..X.X.\r\n.XXX..\r\n.XX.X.\r\n.XXX.X\r\n.XX.XX\r\n0 0 0",
+      "expected_output": "6\r\n9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 6 10\nsjrni\nwvuxekhic\ninuhkfmrn\n9 5 8\nmcl\nmlxb\nszdsl\npfdyejbmyg\ndadhuqad\n7 4 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3 4\nfl\ny\njzkwcx\n4 4 9\nbwlal\ntim\nvzudbzfw\nuhpiav\nzemskpu\n3 5 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5 10\nkskak\nsxuj\nahaqbxvy\n4 10 3\njydgeiob\ntvillnwjvpdo\nrtbwi\ncjfrfmuao\nlbjt\n4 5 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "52 17 82\nrptyg\njphyls\njvqrik\n62 74 80\nt\nsfwltcholjk\nkqv\nbjvngnpybwi\nfvbrpfoglni\n81 63 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 14 39\nt\nflnc\nh\n9 90 95\nkfecsyndv\nnb\nremdswqmjk\nzop\nvxw\n62 77 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 63 36\nidleapigjj\nsdzvpmq\njuldsnemdd\n31 10 26\naqyzy\nay\nrzlxukkc\nzjcyyo\nhlrrlk\n40 62 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 79 64\nnbizjtw\neamdnmuuer\nyblltlqa\n49 50 78\nkxspvwen\nio\nugz\nugdse\nfvdufykv\n75 84 52",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 58 90\nvgbc\nnzwi\nkmmf\n39 64 58\nbfcladw\nifbykdoq\nwvowdswzzm\noqpbreyh\nzkkp\n38 79 40",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "464 377 292\nzpvyqzoqyn\nsras\nwksourvc\n406 131 192\ndlegmebddhpx\nvlsc\namy\noxyftz\nwds\n365 212 379",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "413 420 376\nkdzztvo\nnly\nk\n258 366 455\njeukomhu\npxgpkknbqw\noelkpicdwb\nrfiyoe\nkpycpdsecca\n75 486 225",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "154 398 244\ny\nufrv\nsbqmoyjfj\n142 373 488\nxrexpjne\nybcypq\nxlncuhufc\nni\nxyjjmrjvog\n467 370 85",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "195 99 369\nywczvcwcd\nabanaurdmz\njejtno\n203 276 50\nrxj\nkulpwl\npsm\nnoby\ncpjwqimtfh\n360 372 255",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "176 289 456\nousbfvvd\nvumyq\njmuhm\n243 153 72\npohlbuzqf\nxbir\nqri\nbsxncjfyt\nqubkwpyrsb\n342 424 125",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "337 452 337\nadt\nqooq\nnplupzcouo\n393 425 74\ngzhc\nyvk\nyoc\nqxdlm\nuplxziolx\n62 428 493",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "469 117 273\nhcxzj\nccgcud\ndkjri\n486 313 112\nktks\nmipnmhsznugz\nax\nuikejrs\nl\n51 55 407",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\nefssvocngi\nhacvyefgph\npymosstvj\n1000 1000 1000\njrub\npbc\nngp\nu\nbiyflflqeca\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\nlcb\nktyrm\nqxu\n1000 1000 1000\nsti\nacfentxkhgjv\navcbjzeerszr\nazrrvoscfxf\nbpgtunjit\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 2\nktqjeitwuz\ncnlcyr\nfxhvekrxc\n1 999 1000\nujbekflkzftz\nrbcrjl\nrjafkoyibx\ntghhsx\nnguyuihluisn\n1000 1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999 1\nik\nftlgolwn\nfgfd\n999 2 999\nnk\nf\nukbooqn\nnqovqbjlxh\ngcnslqllz\n1 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

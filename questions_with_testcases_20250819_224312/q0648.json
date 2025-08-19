@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Electrical Engineering",
+  "tags": [],
+  "text": "The electrical engineers’ indefatigable strive towards environmentally friendly energy production translated into the recent boom of hydro, solar, wind and geothermal power plants. While the production side seems ready, these ambitious projects have their bottleneck in the transportation and distribution: Besides the energy losses that occur during transportation over long distances, the renewable energy sources cannot provide power on demand – they must be taken as provided by nature. Used at large scale in today’s networks, unreliable green energy can disrupt the balance of power grids easily and cause huge damage along with large-scale power outages.Serious effort is thus put on researching transient and dynamic phenomena in power grids. You are offered a position in the lab for linear and planar distribution networks. Given a description of the distribution network’s line impedances Zi, you are to find the equivalent impedance between some couples of nodes. The knowledge of such equivalent impedances may speed up the network analysis considerably! Impedances are complex number whose real part represents the resistive line behaviour while the imaginary part stands for the capacitive (negative) or inductive (positive) characteristic. Lines are bidirectional, that is impedance(a,b) equals impedance (b,a).It was proven that any linear and planar graph (can be drawn in a way that its edges intersect only at their endpoints) can be reduced into a single equivalent edge that represents the equivalent impedance between its ending nodes, using the following six transformations:Now that you have all the necessary operations available, are you able to determine the equivalent impedance between several couples of nodes?InputThe input consists of several test-cases separated by an empty line. Each test-case starts with the number of nodesN(1 ≤ N ≤ 100), the number of bidirectional connectionsC(0 ≤ C ≤ 1000) and the number of equivalent impedances to computeZ(0 ≤ Z ≤ 10) on a line. Then followClines, each describing one bidirectional connection in the form‘EndPoint_1’ ‘EndPoint_2’ ‘Impedance’.‘EndPoint_1’and ‘EndPoint_2’are in the range1toNand impedance has the format ‘re im’ wherereandimdesignate the real and imaginary parts respectively, both being real numbersdsuch that 10-3< |d| < 103. The nextZlines each hold two integers, the indices of the nodes between which you are to compute the equivalent impedance. Input terminates on a test-casewith N=C=Z=0, which must not be evaluated.OutputFor each couple of endpoints, output the equivalent impedance in the form ‘re im’ wherereandimdesignate the real and imaginary parts respectively. If the nodes are not connected, output ‘no connection’. Electrical engineers will consider your result as correct if the absolute error on the real and imaginary parts is below 10-2. Finish each test-case on a blank line.SampleInput:5 10 3\r\n3 1 12.317 -0.779\r\n5 3 30.107 0.289\r\n5 1 27.447 -22.649\r\n4 2 15.351 24.371\r\n5 5 19.63 -3.549\r\n2 2 11.841 18.757\r\n4 5 4.834 -16.542\r\n3 5 5.022 -22.387\r\n2 5 24.768 -22.356\r\n5 2 27.351 12.053\r\n1 2\r\n2 3\r\n3 3\r\n\r\n10 10 4\r\n9 8 6.36 17.411\r\n1 3 27.596 -6.484\r\n9 10 4.735 -8.282\r\n8 8 6.901 27.939\r\n8 4 14.894 3.729\r\n5 4 14.311 -2.422\r\n10 10 11.009 6.225\r\n4 4 3.196 -32.703\r\n10 9 15.282 -14.799\r\n3 9 20.473 27.158\r\n10 9\r\n8 1\r\n2 9\r\n9 6Output:23.37 -7.26\r\n19.61 -6.97\r\n0.00 0.00\r\n\r\n3.79 -5.46\r\n54.43 38.09\r\nno connection\r\nno connectionSample input 1                                      Sample input 2",
+  "sample_input": "Input:5 10 3\r\n3 1 12.317 -0.779\r\n5 3 30.107 0.289\r\n5 1 27.447 -22.649\r\n4 2 15.351 24.371\r\n5 5 19.63 -3.549\r\n2 2 11.841 18.757\r\n4 5 4.834 -16.542\r\n3 5 5.022 -22.387\r\n2 5 24.768 -22.356\r\n5 2 27.351 12.053\r\n1 2\r\n2 3\r\n3 3\r\n\r\n10 10 4\r\n9 8 6.36 17.411\r\n1 3 27.596 -6.484\r\n9 10 4.735 -8.282\r\n8 8 6.901 27.939\r\n8 4 14.894 3.729\r\n5 4 14.311 -2.422\r\n10 10 11.009 6.225\r\n4 4 3.196 -32.703\r\n10 9 15.282 -14.799\r\n3 9 20.473 27.158\r\n10 9\r\n8 1\r\n2 9\r\n9 6Output:23.37 -7.26\r\n19.61 -6.97\r\n0.00 0.00\r\n\r\n3.79 -5.46\r\n54.43 38.09\r\nno connection\r\nno connection",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ELEC",
+  "scraped_at": "2025-08-17 00:33:17",
+  "test_cases": [
+    {
+      "input": "5 10 3\r\n3 1 12.317 -0.779\r\n5 3 30.107 0.289\r\n5 1 27.447 -22.649\r\n4 2 15.351 24.371\r\n5 5 19.63 -3.549\r\n2 2 11.841 18.757\r\n4 5 4.834 -16.542\r\n3 5 5.022 -22.387\r\n2 5 24.768 -22.356\r\n5 2 27.351 12.053\r\n1 2\r\n2 3\r\n3 3\r\n\r\n10 10 4\r\n9 8 6.36 17.411\r\n1 3 27.596 -6.484\r\n9 10 4.735 -8.282\r\n8 8 6.901 27.939\r\n8 4 14.894 3.729\r\n5 4 14.311 -2.422\r\n10 10 11.009 6.225\r\n4 4 3.196 -32.703\r\n10 9 15.282 -14.799\r\n3 9 20.473 27.158\r\n10 9\r\n8 1\r\n2 9\r\n9 6",
+      "expected_output": "23.37 -7.26\r\n19.61 -6.97\r\n0.00 0.00\r\n\r\n3.79 -5.46\r\n54.43 38.09\r\nno connection\r\nno connection",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 9 1\n7 2 8 9\n7 2 5 1\n10 4 2 9\n8 2 3 1\n8 8 2 1\n4 10 2 5\n5 7 3 5\n4 6 2 3\n2 2 6 6\n4 5 1 4\n4 3\n2 4\n7 3\n9 2 1\n9 2 9 7\n7 1 2 2\n9 8 10 3\n7 6 9 2\n8 7 5 5\n7 4 1 3\n4 4 1 10\n7 6 4 2\n6 9 7 5\n8 9 6 9\n8 1\n5 9\n10 5\n1 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8 10\n6 4 1 7\n1 2 5 1\n6 5 10 4\n3 10 7 2\n3 8 8 1\n10 4 10 1\n9 7 6 4\n3 8 10 2\n3 5 1 7\n3 8 6 8\n8 2\n9 6\n7 9\n4 3 2\n5 9 7 4\n7 1 1 9\n3 3 6 4\n7 3 10 4\n3 9 9 8\n6 8 7 6\n7 1 10 6\n1 9 1 3\n10 9 9 3\n7 6 3 1\n7 8\n2 9\n4 8\n3 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 1 6\n6 1 4 9\n5 1 5 5\n8 6 1 4\n4 10 7 8\n8 3 3 4\n8 10 7 8\n6 5 7 6\n9 3 6 1\n8 9 10 3\n10 2 9 9\n3 7\n1 9\n7 2\n2 7 9\n5 4 9 7\n4 9 10 2\n9 8 2 10\n8 5 10 5\n9 7 10 10\n8 7 4 7\n4 1 5 1\n8 10 7 8\n1 5 9 5\n8 3 9 2\n9 5\n1 3\n8 10\n5 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "73 52 31\n27 75 37 2\n68 45 62 58\n31 61 91 6\n9 41 81 66\n20 16 33 62\n78 13 66 4\n61 33 52 76\n20 96 84 69\n7 79 20 56\n99 20 91 36\n6 51\n25 60\n92 36\n38 44 49\n42 93 42 51\n68 82 79 81\n63 97 29 13\n46 48 25 84\n12 55 67 10\n16 80 57 81\n41 59 59 64\n9 47 37 56\n24 35 24 66\n95 43 85 55\n97 21\n80 85\n6 75\n17 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 22 89\n69 68 45 11\n40 49 12 1\n88 100 32 74\n58 88 98 87\n61 81 34 84\n87 51 43 47\n40 87 94 30\n47 48 92 44\n19 78 90 23\n53 10 91 27\n1 25\n67 88\n23 26\n32 22 44\n80 79 6 10\n6 49 74 25\n28 19 92 66\n54 95 2 87\n66 65 65 11\n73 12 82 38\n21 35 39 76\n85 65 3 99\n60 30 1 32\n70 78 49 41\n25 12\n14 8\n22 68\n12 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 74 77\n21 30 96 75\n74 60 2 53\n55 21 10 46\n44 50 84 93\n84 41 75 29\n49 31 57 90\n96 98 3 77\n63 67 90 70\n68 15 64 51\n11 7 73 29\n47 19\n43 89\n56 100\n4 100 79\n99 18 62 25\n49 51 16 23\n92 97 46 42\n26 70 76 34\n90 95 59 94\n2 40 14 16\n31 92 6 74\n6 29 69 62\n89 62 37 60\n5 18 5 76\n67 29\n70 26\n30 74\n93 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 40 64\n76 40 50 8\n4 59 56 100\n24 50 41 4\n91 51 9 83\n84 38 41 72\n7 49 79 43\n83 59 16 55\n28 6 39 27\n57 30 27 24\n14 23 88 24\n33 47\n47 10\n75 87\n84 7 98\n13 73 80 12\n86 32 75 84\n32 98 72 96\n77 4 81 53\n41 83 86 81\n71 62 73 25\n71 84 8 14\n78 3 67 76\n49 5 15 33\n28 23 10 12\n31 14\n24 82\n40 6\n100 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 66 19\n60 2 69 60\n65 33 75 57\n4 1 32 23\n25 74 57 40\n20 8 20 44\n62 64 43 93\n31 91 4 61\n55 58 25 97\n8 51 95 85\n29 95 57 19\n64 81\n67 10\n56 66\n31 76 11\n84 46 29 68\n3 8 80 65\n14 53 85 29\n26 76 25 29\n28 83 22 50\n7 70 36 16\n77 36 73 47\n14 93 4 24\n45 15 71 18\n20 5 77 31\n100 10\n29 56\n72 60\n27 51",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 43 12\n38 13 11 24\n21 6 26 10\n6 5 31 14\n42 31 41 40\n34 18 31 10\n10 28 35 46\n16 43 49 22\n46 30 33 50\n24 30 45 48\n36 8 14 11\n16 12\n17 45\n41 11\n23 42 33\n40 37 22 27\n13 14 27 48\n14 44 38 10\n21 13 13 35\n21 15 18 33\n47 5 29 26\n41 42 20 7\n27 23 42 28\n19 10 25 15\n17 41 7 8\n36 49\n42 23\n45 18\n42 35",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "45 42 5\n6 5 23 20\n39 9 43 24\n34 14 45 31\n25 18 47 50\n19 42 13 28\n45 15 6 20\n40 36 42 41\n12 14 28 12\n46 30 40 7\n6 24 24 47\n42 19\n47 43\n36 28\n5 48 30\n47 23 41 16\n14 49 38 38\n23 6 28 50\n39 5 17 50\n11 24 15 27\n7 11 50 38\n36 5 31 12\n25 50 25 29\n5 33 22 49\n49 5 16 7\n25 37\n25 47\n17 43\n13 49",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 33 47\n39 26 41 44\n29 17 18 11\n45 41 16 35\n29 19 40 22\n11 10 35 46\n23 38 44 26\n16 45 10 19\n40 49 49 40\n27 26 23 30\n33 16 37 38\n37 20\n7 42\n40 23\n14 23 49\n21 10 34 39\n27 10 9 37\n47 28 40 35\n30 10 34 36\n28 41 37 24\n20 33 43 46\n17 28 5 9\n20 33 8 30\n31 5 47 36\n49 26 36 9\n6 9\n34 27\n21 12\n18 12",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "31 20 19\n17 21 37 19\n40 41 20 35\n37 13 31 27\n8 28 45 43\n47 23 33 27\n17 9 44 36\n7 50 8 49\n37 21 17 32\n19 19 30 6\n44 22 14 17\n39 46\n46 8\n39 13\n35 22 7\n47 33 10 24\n47 14 32 44\n37 49 10 20\n44 26 27 46\n44 45 48 32\n12 23 28 38\n34 24 35 41\n28 21 36 44\n24 26 26 39\n13 41 49 11\n34 28\n7 44\n50 27\n8 43",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 28 18\n48 47 38 15\n7 26 46 40\n31 47 21 27\n29 6 9 26\n45 16 25 39\n12 28 22 18\n11 26 13 31\n22 10 6 30\n14 49 45 26\n23 18 47 8\n49 29\n14 9\n47 33\n21 6 5\n42 17 37 44\n17 20 5 26\n6 12 22 7\n6 31 23 43\n16 7 24 45\n40 49 46 29\n50 10 29 14\n15 35 24 29\n31 47 15 32\n28 21 45 30\n16 41\n12 35\n42 32\n39 36",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "49 28 15\n29 20 17 16\n16 19 46 37\n38 6 23 14\n6 18 16 28\n48 13 35 6\n9 8 26 19\n49 11 30 26\n6 43 33 25\n28 46 17 20\n49 43 36 34\n10 47\n18 29\n47 25\n38 35 47\n38 14 18 26\n24 27 8 40\n14 49 22 42\n19 15 42 9\n23 26 9 23\n37 13 37 25\n17 50 5 41\n33 28 25 45\n31 25 24 41\n8 8 50 38\n30 19\n7 31\n29 29\n5 25",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 48 18\n23 25 22 41\n50 7 48 29\n42 30 45 32\n13 19 26 11\n6 15 39 11\n39 21 6 20\n44 31 35 43\n30 45 26 49\n47 39 47 42\n39 29 11 27\n19 30\n11 19\n21 26\n14 21 9\n25 34 31 23\n32 16 41 20\n29 15 21 46\n33 24 17 42\n32 31 49 14\n21 24 20 15\n39 20 36 37\n40 41 29 8\n40 17 41 18\n41 49 8 15\n26 11\n13 29\n44 15\n40 10",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100\n100 100\n100 100\n100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100\n100 100\n100 100\n100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100\n100 100\n100 100\n100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100 100 100\n100 100\n100 100\n100 100\n100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "99 100 2\n99 1 99 100\n2 1 99 100\n1 99 100 99\n2 99 2 100\n100 99 1 100\n100 1 100 99\n100 2 99 99\n100 2 100 100\n1 100 99 100\n99 2 100 100\n99 100\n1 2\n100 1\n99 100 2\n2 99 99 2\n2 1 2 100\n99 99 2 100\n100 99 100 2\n99 1 1 2\n1 2 99 1\n1 1 100 2\n99 2 1 100\n2 2 100 1\n99 1 100 99\n2 100\n100 1\n99 1\n99 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 99 2\n2 100 2 100\n2 1 99 99\n1 100 1 100\n99 99 2 1\n99 2 100 100\n100 99 1 99\n2 1 1 99\n100 100 99 2\n2 100 2 1\n99 99 99 1\n99 1\n2 99\n99 1\n2 1 99\n99 99 100 100\n2 100 99 99\n100 1 99 2\n1 1 1 1\n2 1 99 99\n1 2 100 2\n100 2 1 99\n100 100 100 99\n2 100 99 1\n1 99 100 100\n1 100\n100 2\n100 2\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

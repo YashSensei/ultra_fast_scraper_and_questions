@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Efficient managing",
+  "tags": [],
+  "text": "Nlogonia's train network consists ofNstations, each of them strategically placed in a different city of the kingdom. Certain pairs of stations are connected by railways, and on each railway there is a train service going on both directions. For centuries theInstitute for the Cities' Perfect Connection(ICPC) has been in charge of optimizing public transportation in Nlogonia, so today the train network is so efficient there is exactly one way to travel between any pair of cities using trains. Note that it may be necessary for a traveller to successively take several trains, in case there is no direct connection between the pair of stations he is traveling to/from. In other realms this might be considered an inconvenience, but Nlogonia's inhabitants are happy knowing that they will not waste a single minute thinking about which route to take from one city to another.The ticket for each train service has certain price, so that a passenger taking one or more trains to travel between two cities has to buy the corresponding tickets before boarding each train. Nlogonia's currency is also extremely efficient, as there are bills with values corresponding to every non-negative power of two. This is, the denomination of bills in Nlogonia is of20= 1unit,21= 2units,22= 4units, and so on. As a result of this monetary efficiency, Nlogonians always pay their tickets by providing the minimum number of bills with which it is possible to reach the exact amount of the ticket they are buying.To speed up ticket buying, theAgency for Counting Money(ACM) would like to introduce the following offer. When a passenger is going to make a trip, he can pay all the tickets he will be needing in advance. When doing so, he must present all the bills he would use along his journey, and the ACM will only take one bill of each denomination for which the passenger provided an odd amount of bills. In this way, if for example a passenger wants to buy three tickets with prices of3,7and10units, he will present two bills for the first ticket (with denominations1and2), three bills for the second one (with denominations1,2and4) and two bills for the third (with denominations2and8). The ACM would then take only one of the bills with denomination2, along with each of the bills with denominations4and8, returning to the passenger two bills of denomination1, as well as two bills with denomination2.Now the ACM's steering committee is worried because this offer might be too expensive for the kingdom's treasury. There is certainly good cause for this, as one should note that it is even possible to travel for free (e.g.any round trip will be free, as an even number of tickets of each value will always be required). Your job is to evaluate the extent of the problem, for which the ACM has commanded you to determine the maximum price a passenger might have to pay when starting his journey from each of theNtrain stations in Nlogonia.InputThere are multiple test cases in the input file. The first line contains an integer numberN, representing the number of train stations in Nlogonia (2 ≤ N≤105). Train stations in Nlogonia are numbered from1toN. Each of the followingN-1lines contains three integer numbersA,BandC, indicating there is a railway directly connecting stationsAandB, beingCthe price of the ticket for the train service operating on said railway (1≤A, B≤Nand1≤C≤109, withA ≠ B). The description of the railway network is always such that for each pair of distinct stations there exists one and only one sequence of train services connecting them.OutputFor each test case, printNlines each containing one integer number. The number printed on thei-th line should correspond to the maximum value of the tickets that may be payed by a passenger starting his journey at the station identified by the numberi, when the offer described in the problem statement is applied.ExampleInput #1:4\r\n1 2 3\r\n2 3 7\r\n3 4 10Output #1:14\r\n13\r\n10\r\n14Input #2:6\r\n1 2 1\r\n3 2 2\r\n2 4 3\r\n4 5 4\r\n4 6 5Output #2:7\r\n7\r\n5\r\n5\r\n7\r\n7Input #3:7\r\n1 2 1\r\n1 3 2\r\n1 4 3\r\n1 5 4\r\n1 6 5\r\n1 7 6Output #3:6\r\n7\r\n7\r\n7\r\n7\r\n7\r\n7",
+  "sample_input": "Input #1:4\r\n1 2 3\r\n2 3 7\r\n3 4 10Output #1:14\r\n13\r\n10\r\n14",
+  "sample_output": "Input #2:6\r\n1 2 1\r\n3 2 2\r\n2 4 3\r\n4 5 4\r\n4 6 5Output #2:7\r\n7\r\n5\r\n5\r\n7\r\n7",
+  "link": "https://www.spoj.com/problems/TAP2016G",
+  "scraped_at": "2025-08-17 00:34:24",
+  "test_cases": [
+    {
+      "input": "Input #1:4\r\n1 2 3\r\n2 3 7\r\n3 4 10Output #1:14\r\n13\r\n10\r\n14",
+      "expected_output": "Input #2:6\r\n1 2 1\r\n3 2 2\r\n2 4 3\r\n4 5 4\r\n4 6 5Output #2:7\r\n7\r\n5\r\n5\r\n7\r\n7",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 4\nl arwv\n1 10 6\n3 9 6\n7 8 6 5 2\n1 9 auuex dv\n3\n9\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 8\nq rbx\n3 10 2\n4 9 6\n3 3 10 9 7\n7 6 kp cpvj\n5\n2\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 7\nzw kw\n10 2 6\n4 2 7\n2 3 7 10 3\n2 4 qov v\n5\n10\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "25 98\nyer gdgbu\n23 16 86\n32 19 22\n46 60 86 50 40\n21 13 a ungoa\n92\n80\n98",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "100 73\nftpbt u\n14 73 76\n54 33 8\n86 69 64 73 15\n44 39 puvel vom\n69\n35\n21",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 56\nfbnzy pbrw\n65 99 82\n47 46 18\n60 30 41 39 58\n52 64 wqtkkuts qnpl\n21\n26\n25",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 97\nexo qgzv\n75 58 66\n32 97 16\n79 58 69 68 10\n5 24 mzpqghns fdck\n36\n43\n31",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 31\nuuvj g\n71 77 10\n83 69 65\n88 71 58 98 9\n21 33 egejdi cvyu\n17\n18\n97",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 40\nouft fqkx\n29 18 32\n7 15 46\n41 14 27 23 21\n31 24 ec mo\n45\n26\n30",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46 42\nt ta\n8 52 27\n13 34 32\n7 12 50 46 52\n6 52 th ct\n35\n34\n18",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 10\nef v\n27 40 26\n25 25 42\n25 52 22 45 33\n11 18 hdfjl uzdaq\n10\n46\n7",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 47\njwnqo bku\n50 28 25\n36 30 22\n6 10 28 13 40\n8 5 opmb pk\n31\n42\n49",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "24 52\nxsy h\n27 34 32\n12 14 16\n19 6 26 15 22\n30 31 oimtcu q\n16\n34\n25",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 44\nuze km\n30 14 34\n38 51 20\n35 35 21 45 29\n33 31 ogphpujf x\n33\n13\n38",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "48 35\np rkrij\n34 51 40\n51 27 35\n11 33 23 20 19\n28 20 pkt q\n30\n32\n7",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105\nv cx\n105 105 105\n105 105 105\n105 105 105 105 105\n105 105 jchckx lynq\n105\n105\n105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105\na cg\n105 105 105\n105 105 105\n105 105 105 105 105\n105 105 zjdjhzda lju\n105\n105\n105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 104\nfbsi gwpd\n104 105 1\n2 104 104\n104 2 2 2 105\n105 1 yzbblx nrcpm\n105\n2\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 104\nzj kll\n104 2 1\n1 104 1\n104 105 104 105 1\n104 1 zhvglqqv wpg\n104\n1\n104",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Recursive Sequence (Version X)",
+  "tags": [],
+  "text": "Sequence(ai)of natural numbers is defined as follows:ai= bi(fori ≤ m)ai= c1ai-1+ c2ai-2+ ... + ctai-t(fori > t)wherebjandcjare given natural numbers. Your task is to computeanand output it modulo 109+7.The above is the description of the original problemSEQ. However, to be a problem in a regional contest, the description will be slightly modified to make the problem a little bit complicated: for almost all integersi>m, aifollows the formula given above, but there areqexceptions n1, n2... nq:ani= di1ani-1+ di2ani-2+ ... + ditiani-ti(for 1 ≤i≤q)InputFor each test case, the first line contains three integersn(m<n≤ 109),m(1 ≤m≤ 100),q(0 ≤q≤ 100). The second line containsmintegers b1, b2... bm. The following line contains several integers, first comes t (t ≤ 100), then t integers c1, c2... ct. The followingqlines describeqspecial cases of the recurrent formula, each containing several integers, namely ni, ti(ti≤ 100, ti< ni), di1, di2... diti, as mentioned earlier. It is satisfied that all niare distinct. All integers are non-negative. Unless specified, all integers are not greater than 109. Input is terminated by EOF. You might assume that all given data is correct. That is to say, all the required numbers can be fixed uniquely by the given input data.OutputFor each test case output the answer in a single line. Refer to the example for more format details.ExampleInput:7 5 0\r\n1 1 2 3 5\r\n2 1 1\r\n10 5 1\r\n1 1 2 3 5\r\n2 1 1\r\n10 2 1 2Output:Case 1: 13\r\nCase 2: 76",
+  "sample_input": "Input:7 5 0\r\n1 1 2 3 5\r\n2 1 1\r\n10 5 1\r\n1 1 2 3 5\r\n2 1 1\r\n10 2 1 2Output:Case 1: 13\r\nCase 2: 76",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SPP2",
+  "scraped_at": "2025-08-17 00:34:08",
+  "test_cases": [
+    {
+      "input": "7 5 0\r\n1 1 2 3 5\r\n2 1 1\r\n10 5 1\r\n1 1 2 3 5\r\n2 1 1\r\n10 2 1 2",
+      "expected_output": "Case 1: 13\r\nCase 2: 76",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 10 8\n2 5 4 5 10\n1 2 6\n8 3 9\n4 9 8 10 1\n8 6 6\n3 4 5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 7 5\n4 9 8 3 4\n1 1 3\n1 1 5\n9 7 4 1 8\n5 4 7\n3 9 10 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2 7\n9 1 10 4 6\n10 6 9\n4 7 6\n6 8 10 7 9\n1 3 1\n8 7 9 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "67 58 56\n77 26 30 99 81\n8 96 52\n93 5 6\n99 86 12 15 75\n47 79 93\n57 20 70 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 94 54\n84 29 41 97 14\n96 89 43\n8 10 25\n92 49 11 69 16\n72 89 25\n81 23 54 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "74 24 6\n46 61 69 89 66\n93 95 29\n94 86 31\n50 1 36 86 68\n4 44 96\n3 72 98 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 95 76\n47 85 31 60 25\n4 59 9\n80 86 65\n89 89 51 9 21\n11 26 12\n55 94 94 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 50 73\n75 87 89 52 31\n62 98 48\n79 47 10\n20 54 10 45 99\n18 23 10\n2 36 73 77",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 27 50\n19 34 49 42 35\n21 38 19\n37 22 53\n51 17 52 12 38\n29 23 18\n27 39 40 24",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "54 31 21\n11 6 16 37 20\n22 48 54\n33 43 31\n43 30 33 39 52\n37 44 10\n5 20 7 39",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 34 35\n45 37 22 26 11\n50 46 45\n9 43 23\n33 32 48 30 43\n12 36 47\n31 29 36 47",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "48 19 16\n45 49 40 18 25\n7 15 11\n20 53 21\n39 24 25 26 28\n18 48 5\n14 29 43 40",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "53 11 54\n31 26 18 21 39\n35 27 33\n10 29 11\n43 16 45 54 16\n6 39 22\n13 26 7 10",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11 54 10\n41 25 20 35 30\n29 40 10\n52 33 12\n25 43 17 18 34\n44 6 26\n39 30 16 35",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "42 6 41\n32 49 11 33 12\n29 32 10\n10 37 19\n18 48 52 21 9\n28 9 53\n31 12 44 11",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "109 109 109\n109 109 109 109 109\n109 109 109\n109 109 109\n109 109 109 109 109\n109 109 109\n109 109 109 109",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "109 109 109\n109 109 109 109 109\n109 109 109\n109 109 109\n109 109 109 109 109\n109 109 109\n109 109 109 109",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "109 1 2\n108 109 1 108 108\n1 2 108\n1 1 2\n108 109 1 1 108\n109 109 109\n2 109 109 108",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 108 2\n109 2 109 109 1\n1 109 108\n2 109 109\n1 108 1 1 2\n2 108 109\n2 109 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Flipping Burned Pancakes",
+  "tags": [],
+  "text": "The cook at theFrobbozz Magic Pancake Housesometimes falls asleep on the job while cooking\r\npancakes. As a result, one side of a stack of pancakes is often burned. Clearly, it is bad business to\r\nserve visibly burned pancakes to the patrons. Before serving, the waitress will arrange the stacks of\r\npancakes so that the burned sides are facing down. You must write a program to aid the waitress in\r\nstacking the pancakes correctly.We start with a stack ofNpancakes of distinct sizes, each of which is burned on one side. The\r\nproblem is to convert the stack to one in which the pancakes are in size order with the smallest on the\r\ntop and the largest on the bottom and burned side down for each pancake. To do this, we are\r\nallowed to flip the topkpancakes over as a unit (so thek-thpancake is now on top and the pancake\r\npreviously on top is now in thek-thposition and the burned side goes from top to bottom and vice\r\nversa).For example (+ indicates burned bottom, - a burned top):+1 -3 -2 [flip 2] ⇒ +3 -1 -2 [flip 1] ⇒ -3 -1 -2 [flip 3] ⇒\r\n         +2 +1 +3 [flip 1] ⇒ -2 +1 +3 [flip 2] ⇒ -1 +2 +3 [flip 1] ⇒ +1 +2 +3You must write a program which finds a sequence of at most(3n – 2)flips, which converts a given\r\nstack of pancakes to a sorted stack with burned sides down.InputThe first line of the input contains a single decimal integer, N, the number of problem instances to\r\nfollow. Each of the following N lines gives a separate dataset as a sequence of numbers separated\r\nby spaces. The first number on each line gives the number, M, of pancakes in the data set. The\r\nremainder of the data set is the numbers 1 through M in some order, each with a plus or minus sign,\r\ngiving the initial pancake stack. The numbers indicate the relative sizes of the pancakes and the\r\nsigns indicate whether the burned side is up (-) or down (+). M will be, at most, 30.OutputFor each dataset, you should generate one line of output with the following values: The dataset\r\nnumber as a decimal integer (start counting at one), a space, the number of flips (K, where K ≥ 0)\r\nrequired to sort the pancakes and a sequence of K numbers, each of which gives the number of\r\npancakes to flip on the corresponding sorting step. There may be several correct solutions for some\r\ndatasets. For instance 3 2 3 is also a solution to the first problem below.ExampleInput:3\r\n3 +1 –3 –2\r\n4 –3 +1 –2 –4\r\n5 +1 +2 +3 +4 -5Output:1 6 2 1 3 1 2 1\r\n2 6 4 1 4 3 1 2\r\n3 3 5 1 5",
+  "sample_input": "+1 -3 -2 [flip 2] ⇒ +3 -1 -2 [flip 1] ⇒ -3 -1 -2 [flip 3] ⇒\r\n         +2 +1 +3 [flip 1] ⇒ -2 +1 +3 [flip 2] ⇒ -1 +2 +3 [flip 1] ⇒ +1 +2 +3",
+  "sample_output": "Input:3\r\n3 +1 –3 –2\r\n4 –3 +1 –2 –4\r\n5 +1 +2 +3 +4 -5Output:1 6 2 1 3 1 2 1\r\n2 6 4 1 4 3 1 2\r\n3 3 5 1 5",
+  "link": "https://www.spoj.com/problems/GNY07E",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": "+1 -3 -2 [flip 2] ⇒ +3 -1 -2 [flip 1] ⇒ -3 -1 -2 [flip 3] ⇒\r\n         +2 +1 +3 [flip 1] ⇒ -2 +1 +3 [flip 2] ⇒ -1 +2 +3 [flip 1] ⇒ +1 +2 +3",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\r\n3 +1 –3 –2\r\n4 –3 +1 –2 –4\r\n5 +1 +2 +3 +4 -5",
+      "expected_output": "1 6 2 1 3 1 2 1\r\n2 6 4 1 4 3 1 2\r\n3 3 5 1 5",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "9 9 2 8 9 7 10 6 2 7 3 3\ntgdw j gvicg ph zljun m lfeot atfq tst qt c ld yde xnfxu oya vro bf ecya\n5 2 7 9 5 10 3 5 7 10 9 10 9 2 5\ng sglts d ekjq xeh c k vcwi rxm kyj u cjoh qormz z ysbkc oao m yf xssp ql ybk",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 10 5 8 3 4 4 4 9 10 5 6\nv jrbf jf l qlte sttx bydqf ahj vrx uii rr kwo jxkd d xo qj dolsn fzl\n8 6 6 9 10 9 6 3 5 6 1 4 10 1 1\nayj c tgiy nytbj xfuoy w coxr bosb r yp zx nemv jdhoz sfczd tjjx scs mfylf inyxm pzrj aqs cuxyc",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 4 6 3 3 1 5 8 1 6 1 5\nmthj mtq vgo t iow cryky obcni i n igda ktby pyp nt uajg rgpd hagl hruwy pe\n5 4 3 7 4 8 4 7 9 9 3 9 8 3 2\ninf f wojua tds jeqz duaj mbd jlcup u sqm etkim uf rd b l tmkf nuism hfc popql g byd",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "47 100 7 2 28 42 38 93 31 96 85 35\ncmr j rnfjw wdy ioky ptzj ivzt am oivm mai qtl zv vxxso qpbe laaeo c p k\n16 97 54 53 58 78 93 27 95 10 19 50 71 6 82\nfv n cktf lgx ghrse yv fjpd ntfbd ajskv vtwqu mwq ruen znkld yur t zw cze nmpbn bipot jsvq jdlux",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 7 2 52 81 81 6 72 60 75 24 88\nlm bv j pazpa aanq xw jxlev sj aohm zyvs bs nk g xf f ihkf vx kzkt\n59 49 45 20 12 34 76 2 62 51 57 84 95 60 63\nxsk lpz wriog ssxji nx un jxupj kl krhv qohlo sp fp nwpye azx p cxrd rya we sbl kcqce eb",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 24 40 13 94 66 55 84 29 17 100 63\nnvc sbv gnpmh jyx ldsg webhl zuw ad mnj bq q xc o qq nbfa hg ku vx\n41 6 55 22 82 7 82 40 61 84 29 76 14 26 36\ndf yh v euihr bopa ejjk hzh qxzl vqb yznac g mxt qrz lpu w ktvfx bs mo tb i ozg",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 18 52 21 19 53 10 68 65 6 9 60\newzwr fvki m xtaj kya ag o nhz gyter dmv xemtn zc fd uvwrl pgi jycpk fjnx rq\n15 33 7 71 87 52 63 55 60 38 75 50 16 48 78\nyaqfy atg dn lac cwfuq kn wgwy vzt h gfpvd v du lrw kohk iwgp pgau idz q vw h aai",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 14 37 38 91 96 7 54 89 90 24 58\nr sx tj z kv wf acw k dzj cd ccn fqk svrx tda b szrf jv kvofm\n39 3 23 20 88 84 63 56 6 14 4 68 82 95 37\npsvl arf vs ievt btld si y q bqlm gltsp rdyk xxmu ci dejx s plt hbax ewiw dmed xygy sguo",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "459 259 407 266 86 218 288 173 397 86 262 382\noxfc nk uaekd xuw n muduc v yy p hvqs wbk lqgad w haes ol yru plzfb ixwu\n138 420 338 227 194 234 167 490 137 458 211 264 474 382 152\nzwjl gda ntpav ewbr fk mqz rip blud fzifh pmitc jgea fdi zqnuo wlgwo klezt z inpr f qtzlp axy oy",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "309 119 269 103 226 399 53 171 482 274 106 109\nb nsdhg z xc wbje j n vtrm dkva crdr zvky lwq rusd ke vqee bi s gjr\n469 474 144 496 451 103 422 453 119 391 363 349 72 85 402\nukb d au ayq ws zphpy vevy ibyk s csm tchi myt tk sc wfv oy ttejw lvtw xc vby hz",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "255 455 258 284 440 189 450 125 371 214 355 239\nrpt bvjs d xgr lekp nhhpr fy n qbdkd imf v d gfl srnpa smhz acm ifiv ko\n477 493 441 79 77 116 277 392 443 429 343 152 381 108 347\netgv n u qj w cje inrh ca spsgm xq cej k pteev pknfm bblxa zjjgf vqx w l ixr ps",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "138 467 96 461 177 58 377 474 482 113 183 179\ngh aw ul s c sr ql rmxkb hk i jp u k nkyke il aj dyg dsnxv\n150 148 219 338 362 207 271 201 264 415 312 102 468 300 114\nf na vkzo yooyo l djix rmfyx s hbby j jdca cwi zmy gvyo lwxzj fakq zph ka prmwz v iwhvy",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "458 353 124 105 482 120 212 271 411 86 499 334\nwfok d oknxp hg qcll yzhx r yzwrx xhwp ot qjoh wa z yuuo uvxjy pmuv bgvb vh\n143 378 252 207 102 108 106 395 247 197 408 380 249 265 266\ntagh xkzb tgbz a j fje znz a ulfu vlhk qk njz crnoy pb mljgt rwt d qehiw sdww nv xla",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "471 370 435 309 191 172 303 276 173 341 396 347\nbhdq hvv emni rhqpo b ovd t xy blnxs mdlj sc dcay wijw qb uzkxe owlps y ktlt\n366 62 188 57 191 486 300 126 444 219 181 329 105 395 387\nswgc oek mh vmacg lz qftba wrzpm epcb sysxs yot fnxne vn kuk los v qit axydx p cvy p mzvf",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "188 75 79 187 95 117 223 295 418 110 333 212\nvnhq wtyfs xi lcbnc vdnyx w a rffc wv v fj vswg d e jol pxza n q\n351 495 304 420 402 289 105 81 86 237 187 278 105 241 209\nmxyp psw hb hwso v cgyuo crqu c a n gsij hzwu m zmwgc tg tiyyx vpf tlxn hoiet mh jrurk",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nhavl zyld vau uei qgvb qc jcc t sk r p u mc yhe lvu olaee e vy\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\ncu vtnb zgn dtboh uchc urx ii ps hbgs kteyk igsq kgsh blpuk zlkw gyoay w icrki tis w e alq",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nnwh y xhe e qnyk ht grr ptfbd zb nlex c lq yo gmi v krggb jeo mp\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\npaq fusls rm qymwj iue acpo uiwr i c ru vkorr ap u zmr zzw irsm juz hg b qmowx nrl",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 1000 999 999 1000 999 2 1 1 2 1000\nrtj meug t sz mvi vsdka yt p fv rpk e rjgz nw fi hh hpqrq gsa rd\n1000 1000 1000 2 1 999 1000 999 1 1000 1 1000 2 1000 999\nm db tby dm vbnix gifoy vpy zoesv hgajt rxz dkhnx uvz i iqpy wxlln njt kd rp qqcv fthbi jnjy",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

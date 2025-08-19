@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "PermRLE",
+  "tags": [],
+  "text": "You've invented a slight modification of the run-length encoding (RLE) compression algorithm, called PermRLE.To compress a string, this algorithm chooses some permutation of integers between 1 and k, applies this permutation to the first k letters of the given string, then to the next block of kletters, and so on. The length of the string must be divisible by k. After permuting all blocks, the new string is compressed using RLE, which is described later.To apply the given permutation p to a block of k letters means to place the p[1]-th of these letters in the first position, then p[2]-th of these letters in the second position, and so on.For example, applying the permutation {3, 1, 4, 2} to the block \"abcd\" yields \"cadb\". Applying it to the longer string \"abcdefghijkl\" in blocks yields \"cadbgehfkilj\".The permuted string is then compressed using run-length encoding. To simplify, we will consider the compressed size of the string to be the number of groups of consecutive equal letters. For example, the compressed size of \"aabcaaaa\" is 4; the first of the four groups is a group of two letters \"a\", then two groups \"b\" and \"c\" each containing only one letter, and finally a longer group of letters \"a\".Obviously, the compressed size may depend on the chosen permutation. Since the goal of compression algorithms is to minimize the size of the compressed text, it is your job to choose the permutation that yields the smallest possible compressed size, and output that size.InputThe first line of input gives the number of cases, N. N test cases follow.The first line of each case will contain k. The second line will contain S, the string to be compressed.N = 20 S will contain only lowercase letters 'a' through 'z' The length of S will be divisible by k2 ≤ k ≤ 16, 1 ≤ length of S ≤ 50000OutputFor each test case you should output one line containing \"Case #X: Y\" (quotes for clarity) where X is the number of the test case and Y is the minimum compressed size of S.ExampleInput:2\r\n4 abcabcabcabc\r\n3 abcabcabcabcOutput:Case #1: 7\r\nCase #2: 12",
+  "sample_input": "Input:2\r\n4 abcabcabcabc\r\n3 abcabcabcabcOutput:Case #1: 7\r\nCase #2: 12",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GCJ08RND2PD",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "2\r\n4 abcabcabcabc\r\n3 abcabcabcabc",
+      "expected_output": "Case #1: 7\r\nCase #2: 12",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n7\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n8\n3\n4\n5\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n8\n1\n9\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "19\n52260369\n27807039\n68755693\n30862352\n2566629\n48762370\n36902076\n53014308\n74621148\n92233405\n48725738\n40827765\n6162810\n52353653\n82218603\n2052543\n29686940\n75031744\n18435438",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n61381726\n72369131\n4017758\n22036021\n85592717\n56054752\n24172292\n47419591\n42387798\n57298940\n86797061\n67827475\n85407239",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n41768031\n29658788\n97389493\n67883403\n8480314\n74212725\n58413671\n46296424\n23036345\n69803146\n42467838\n43259876\n59795648\n75797677",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n11628644\n48789141\n48084891\n12833975\n98635917\n61995637\n13910219\n31613763\n48961527\n18280091\n32301577\n20653471",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n44266861\n14485698\n63965116\n95744517\n95072566",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n20141\n1252\n51515\n57158\n7926\n22352\n1647\n96663\n33365\n84414\n45655\n7163\n25742\n57928\n57000\n87771\n59697\n90472\n22350\n89839",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n3838\n5954\n68456\n2964\n97950\n72876\n98336\n75528\n56401\n85346\n16913\n69304\n38206\n63994\n15536\n48048\n14360\n56361\n22168\n64287",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n67816\n9020\n97655\n74240\n6184\n2029\n55933\n40571\n9398\n67842\n30366\n48633\n146\n68209\n13277\n37124\n24489\n3100\n34793\n9465",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n19022\n99023\n80821\n9585\n3757\n95254\n60775\n89189\n20835\n33987\n51113\n78780\n48521\n17167\n73157\n48041\n42112\n9513\n25639\n72020",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n59859\n2315\n54093\n144\n3336\n13024\n49987\n93118\n60748\n40744\n7179\n96606\n50537\n2342\n31239\n46422\n81566\n17131\n64889\n21685",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n40045\n25579\n11149\n31677\n46500\n79667\n26546\n83228\n36627\n19102\n27931\n92107\n82042\n29378\n65291\n17640\n11877\n97415\n26407\n16076",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n11800\n75050\n13580\n19607\n82223\n93955\n94578\n62622\n58245\n56270\n53964\n6249\n93403\n20509\n54616\n71690\n86643\n76375\n30706\n66811",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n39774185\n2496330\n13018309\n36767515\n46632331\n56889855\n48606564\n91676831\n47466621\n7804820\n51207073\n87983093\n29966072\n12094177\n92992572\n44139621\n61307474\n43542433\n64308913\n6385902",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n92719064\n13180819\n40375937\n9268365\n8285998\n68007037\n85703132\n24071236\n36022434\n64606228\n82801065\n52528421\n96877458\n61865933\n60878241\n70582539\n1958634\n30381055\n74003469\n72489741",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

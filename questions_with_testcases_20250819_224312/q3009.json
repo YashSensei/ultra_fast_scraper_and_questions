@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "KNIGHTS level testing",
+  "tags": [],
+  "text": "The image above is an example of a level in Arzola's videogame 'KNIGHTS'. The rules are very simple. The player is given a chess board, where each square is either empty, contains a wall, or contains a knight of one of three colours. Some squares are also marked with a colour - the player beats the level if all marked squares contain a knight of their respective colour at the same time. To accomplish this, the player can select any knight and place him on an empty square using the classic chess knight move (2 squares in one direction, 1 square in a direction perpendicular to the first).You will help test a few new level designs for this game. Given a starting configuration and several goal configurations (depicting which squares contain which knight), find the minimum number of moves required to get to those goal configurations.InputThe first line contains two integers1 ≤ r,c < 24.The followingrlines containccharacters each, describing the starting configuration of the level. The characters in the grid will be '#'for wall, '.'for an empty square, and 'R', 'B' and 'Y' for a red, blue and yellow knight, respectively.The number of squares that are not walls will be at most 12.A blank line follows, followed by a line with an integer1 ≤ q ≤ 75,000- the number of suggested goal configurations for this level. You may assume thatq*r*c ≤ 106.qdescriptions of goal configurations follow, separated by blank lines. Each description will berrows consisting ofccharacters, from the same set as the starting configuration. You may assume that the walls are at the same places as in the starting configuration, and that the number of knights of each colour is the same as the number of knights of that colour in the starting configuration.OutputFor each suggested goal configuration, if it is not reachable from the starting configuration in any number of moves, output-1.Otherwise, output the minimum number of moves required to reach that goal configuration from the starting configuration.ExampleInput:3 4\r\n#BYY\r\n..R#\r\n.BYR\r\n\r\n4\r\n#BYY\r\n..R#\r\n.BYR\r\n\r\n#.YY\r\n..R#\r\nBBYR\r\n\r\n#Y.Y\r\nB.R#\r\n.YRB\r\n\r\n#..R\r\nYYB#\r\nYBR.Output:0\r\n1\r\n19\r\n-1",
+  "sample_input": "Input:3 4\r\n#BYY\r\n..R#\r\n.BYR\r\n\r\n4\r\n#BYY\r\n..R#\r\n.BYR\r\n\r\n#.YY\r\n..R#\r\nBBYR\r\n\r\n#Y.Y\r\nB.R#\r\n.YRB\r\n\r\n#..R\r\nYYB#\r\nYBR.Output:0\r\n1\r\n19\r\n-1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/KNIGHTSG",
+  "scraped_at": "2025-08-17 00:34:23",
+  "test_cases": [
+    {
+      "input": "3 4\r\n#BYY\r\n..R#\r\n.BYR\r\n\r\n4\r\n#BYY\r\n..R#\r\n.BYR\r\n\r\n#.YY\r\n..R#\r\nBBYR\r\n\r\n#Y.Y\r\nB.R#\r\n.YRB\r\n\r\n#..R\r\nYYB#\r\nYBR.",
+      "expected_output": "0\r\n1\r\n19\r\n-1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 10\nhldj\ndcmxrj\ndrbp\n7\noaz\nsyxkod\nnrehxh\nnr\nxxtwciu\nqex\nm\noirhilk\neo\nfiys\nfu\nsk",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 10\nccwb\np\nkaerrp\n10\nloaawg\nfnrjlpoe\noeaqop\nvfptd\ntnwlfp\nofspwaq\npxkiab\nzvxhrn\nrjosj\nodnlk\ngcwm\nk",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2\nxvv\nmgqhwqxh\nucaumhms\n7\nafwa\nmjazfr\njxbk\nfxsjx\nyxnmr\nultdg\nocdqx\nd\nwodomctc\ntlwad\nmexu\nrreyrowa",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "75 28\nx\nge\nev\n39\nplacnsu\nqaj\nbyrpgsx\nttlqopq\nmwlvy\ncostrr\ng\nkpqtp\ncnw\npbenvvoe\najnpo\nbe",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 7\naemiu\ngmdgujrk\nnsvlhf\n87\nqrdj\njnxjit\nd\njzqwmq\ng\nac\ndzgaglu\nblg\nztuvk\ntscacjom\ntoem\nwqlmynqz",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "36 12\nawjlklyc\nfzzlzr\npqlt\n30\nvil\ncyubrv\nabr\na\naaftdadx\nhmfqamy\ngo\nsiclx\ngsdc\ntdb\nabwlwlz\nzokzxk",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 33\ntvtmga\ndcczrf\nvjzny\n48\nezx\nlgeuizpo\nxt\ndittrp\nipe\nho\nnwem\ncyahq\nifsnsw\nvzbzunmd\nc\ncrafnh",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "82 77\nwogm\nbxhtzhm\nl\n37\nfevxd\npmns\nf\nyxljof\nhkdzjkll\nlgw\nvyw\nmqtkkw\nyfsclcl\nug\ncsz\nj",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "394 471\ngilpzmy\nl\nglqvuq\n486\nl\nrd\nphqyem\nxgo\ntxrm\nxrhkih\nhwir\nmqkzu\nbvygbd\nxqrdnzhr\nap\nzvkwvq",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "157 147\nvswrbvom\noewmn\nqjbzb\n272\npcfnkv\nnh\nbxmmk\nddr\nsjyfpqe\njai\ndz\nc\ndnujed\nirwrcgv\nsfyjkuly\nuqpbrv",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "439 228\nkmjvrpe\nehqamzjh\nwsn\n491\nxzny\nixtth\ndfd\nobu\nvdwhkle\nz\nhjnmvzk\nkkfadcg\nhiqe\ntydkpiq\nkffjot\nov",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "429 445\nykvq\nwjjai\nhajlsk\n87\nfddlb\nfzlucuxx\nfl\nyid\ntwgnqlx\nqumza\nehq\ndbarvzwj\nohedexdx\nxbbafpj\nzsrkql\ndhbsydgr",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "456 481\nakyr\npptmm\nhzikr\n226\naosw\njsiuunr\nfz\nkzk\nxrq\npauyu\ndd\nd\nbvkdsplx\nnse\nbxzhc\nrezc",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "367 167\nqt\nh\njgflxkvi\n116\nd\nvmiptd\nlrfjvv\nsbilhba\noltz\nseg\ng\ngdavzs\nvcgkx\nvqckdia\nfuxe\najuvhjox",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "362 335\nglx\niyae\nsp\n264\neaa\nzl\ndyxr\nqzenzqfo\nc\nxfwp\nf\nwmh\naksoublm\nn\nzs\nrmnm",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\npj\njv\nprjtts\n1000\nfr\nkxfmj\nqadnsxfw\nve\nyhpr\nyekxhgj\nfhmz\nc\ngtmu\ndwcnqh\nwlbzz\nnqcv",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nsgla\no\njuohrzd\n1000\nopksnymt\nz\npffecy\nx\nogldewlw\ntgxc\nl\novtrj\nfsacpd\nlqob\ncgmqlqxg\ngrlgq",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\nsmmq\nrhycszr\nusmm\n999\nentglp\nhqteizoz\nvuhv\nuk\nwoqjnij\nbwyyd\ntg\nmseq\njwcgck\nsg\nw\ns",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000\nj\novurj\ngtnn\n1\nilbis\nm\nkl\nqcu\nd\ntbgy\ndfcfoo\nd\nh\nwam\ntwteuale\nblxyeqp",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Eclipse",
+  "tags": [],
+  "text": "Every so often we hear on the news that there is going to be either a solar or lunar eclipse. Eclipses\r\nhave a long history dating back well into the BC’s. Astronomers study total solar eclipses very closely\r\nas they provide the rare opportunity to observe the corona.An eclipse occurs when two celestial bodies and a star are (nearly) linearly aligned and the shadow\r\ncast by the one body intersects the other body, creating darkness on the latter body.We are interested in determining when a solar eclipse will next occur. In Figure 1 you can see two\r\nlabelled regions. The umbra is the area of total darkness — a body in this region will experience a total\r\nsolar eclipse. The penumbra is the area of partial darkness — a body in this region will experience a\r\npartial solar eclipse.You will be given the size and location of a star and two celestial bodies. Your task is to determine if\r\nthe first celestial body creates a solar eclipse on the second celestial body. If it does then you are to\r\ndetermine whether it is a total or partial eclipse and whether the entire body is in eclipse. If part of\r\nthe body is experiencing total eclipse while the entire body is experiencing at least a partial eclipse,\r\nwe are only interested in the part that is in total eclipse.Consider a scaled model of our solar system with the sun at the origin (0, 0, 0) with radius 700, the\r\nmoon at position (49900, 1000, 149700) with radius 2 and Earth at position (50000, 1000, 150000) with\r\nradius 7. In Figure 1, the sun would be the star on the left and the moon would be the smaller body\r\non the right. Part of Earth would then fall in the black umbra region and hence partly experience a\r\ntotal solar eclipse.For any body:1 ≤ r ≤ 1060 ≤ x, y, z ≤ 109It is guaranteed that any two bodies will be at least 1\r\nunit apart, and that moving any one of the bodies by 1\r\nunit (in any direction) will not change the answer.InputA test case is described by three lines, each describing the size and location of a single body. The\r\nfirst line contains four space-separated integers xs, ys, zs and rs , describing the center (xs, ys, zs) and\r\nradius rs of the star. The following two lines define the two celestial bodies in the same manner.Test cases follow directly after one another with a −1 representing the end of the test cases.OutputEach test case has a single line of output describing the type of eclipse for that case. If the second\r\ncelestial body listed in the test case is experiencing an eclipse, then one of the following lines must be\r\noutput:Entire total solar eclipsePart total solar eclipseEntire partial solar eclipsePart partial solar eclipseIf there is no solar eclipse, the line “No solar eclipse” must be output.ExampleInput:0 0 0 700\r\n49900 1000 149700 2\r\n50000 1000 150000 7\r\n0 0 0 10\r\n50 0 100 40\r\n60 0 200 1\r\n-1Output:Part total solar eclipse\r\nEntire total solar eclipse",
+  "sample_input": "Input:0 0 0 700\r\n49900 1000 149700 2\r\n50000 1000 150000 7\r\n0 0 0 10\r\n50 0 100 40\r\n60 0 200 1\r\n-1Output:Part total solar eclipse\r\nEntire total solar eclipse",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ECLIPSE",
+  "scraped_at": "2025-08-17 00:34:21",
+  "test_cases": [
+    {
+      "input": "0 0 0 700\r\n49900 1000 149700 2\r\n50000 1000 150000 7\r\n0 0 0 10\r\n50 0 100 40\r\n60 0 200 1\r\n-1",
+      "expected_output": "Part total solar eclipse\r\nEntire total solar eclipse",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 3 3 4\n1 4 7 1\n6 7 3 10\n2 10 7 10\n3 8 2 1\n6 10 4 5\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 7 6 9\n5 6 2 2\n10 2 10 3\n3 2 1 2\n10 10 6 9\n5 4 2 7\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 6 2 10\n2 8 5 10\n7 4 9 3\n3 9 5 8\n7 7 5 8\n3 7 3 4\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "35 34 66 32\n73 30 95 92\n22 24 29 62\n6 91 23 29\n36 19 47 84\n46 40 7 22\n52",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 12 73 52\n44 46 81 27\n61 24 80 39\n83 12 20 13\n15 69 63 69\n97 89 2 65\n58",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 75 21 91\n31 48 37 87\n99 39 93 95\n93 12 62 35\n73 82 26 79\n41 82 95 26\n35",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 80 56 58\n52 75 25 27\n77 82 88 50\n3 69 51 61\n88 72 3 90\n4 52 89 25\n92",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 12 52 59\n36 60 47 12\n44 13 11 61\n73 47 80 41\n44 97 72 78\n4 99 31 58\n27",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "408 311 162 139\n458 277 333 148\n260 149 359 113\n476 158 111 125\n192 183 243 178\n274 60 410 439\n68",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "63 498 367 204\n203 416 282 322\n338 386 357 312\n224 275 405 127\n339 152 275 154\n249 152 338 472\n77",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "127 227 137 473\n350 183 421 482\n440 251 477 423\n309 301 487 379\n368 408 327 108\n370 491 470 403\n145",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "144 381 358 296\n489 146 72 303\n201 95 119 451\n270 454 69 303\n412 495 229 397\n84 276 442 366\n474",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "259 334 129 138\n263 499 199 431\n84 120 256 156\n496 68 288 158\n473 70 388 466\n151 353 329 118\n442",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "442 63 199 169\n67 93 308 300\n243 386 190 458\n493 331 175 241\n216 450 341 459\n57 144 378 392\n476",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "277 201 285 103\n114 392 366 327\n428 218 373 287\n338 189 287 229\n278 398 347 234\n406 491 247 419\n300",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999 2 999\n1000 999 999 1000\n999 1000 1 1000\n1000 1000 999 1\n2 1000 1 1\n1000 2 999 1000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1000 1000 2\n999 2 999 999\n2 2 999 1\n1000 2 999 2\n2 1000 1 999\n1 2 1 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

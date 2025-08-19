@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Cow Doctor",
+  "tags": [],
+  "text": "Texas is the state having the largest number of cows in the US: according to the 2005 report of the National Agricultural Statistics Service, the bovine population of Texas is 13.8 million. This is higher than the population of the two runner-up states combined: there are only 6.65 million cows in Kansas and 6.35 millions cows in Nebraska.There are several diseases that can threaten a herd of cows, the most feared being \"Mad Cow Disease\" or Bovine Spongiform Encephalopathy (BSE); therefore, it is very important to be able to diagnose certain illnesses. Fortunately, there are many tests available that can be used to detect these diseases.A test is performed as follows. First a blood sample is taken from the cow, then the sample is mixed with a test material. Each test material detects a certain number of diseases. If the test material is mixed with a blood sample having any of these diseases, then a reaction takes place that is easy to observe. However, if a test material can detect several diseases, then we have no way to decide which of these diseases is present in the blood sample as all of them produce the same reaction. There are materials that detect many diseases (such tests can be used to rule out several diseases at once) and there are tests that detect only a few diseases (they can be used to make an accurate diagnosis of the problem).The test materials can be mixed to create new tests. If we have a test material that detects diseases A and B; and there is another test material that detects diseases B and C, then they can be mixed to obtain a test that detects diseases A, B, and C. This means that if we have these two test materials, then there is no need for a test material that tests diseases A, B, and C-such a material can be obtained by mixing these two.Producing, distributing, and storing many different types of test materials is very expensive, and inmost cases, unnecessary. Your task is to eliminate as many unnecessary test materials as possible. It has to be done in such a way that if a test material is eliminated, then it should be possible to mix an equivalent test from the remaining materials. (\"Equivalent\" means that the mix tests exactly the same diseases as the eliminated material, not more, not less).InputThe input contains several blocks of test cases. Each case begins with a line containing two integers: the number 1 ≤ n ≤ 300 of diseases, and the number 1 ≤ m ≤ 200 of test materials. The next m lines correspond to the m test materials. Each line begins with an integer, the number 1 ≤ k ≤ 300 of diseases that the material can detect. This is followed by k integers describing the k diseases. These integers are between 1 and n .The input is terminated by a block with n = m = 0 .OutputFor each test case, you have to output a line containing a single integer: the maximum number of test materials that can be eliminated.ExampleInput:10 5\r\n2 1 2\r\n2 2 3\r\n3 1 2 3\r\n4 1 2 3 4\r\n1 4\r\n3 7\r\n1 1\r\n1 2 \r\n1 3\r\n2 1 2\r\n2 1 3\r\n2 3 2\r\n3 1 2 3\r\n0 0Output:2\r\n4Warning: large input/output data, be careful with certain languages",
+  "sample_input": "Input:10 5\r\n2 1 2\r\n2 2 3\r\n3 1 2 3\r\n4 1 2 3 4\r\n1 4\r\n3 7\r\n1 1\r\n1 2 \r\n1 3\r\n2 1 2\r\n2 1 3\r\n2 3 2\r\n3 1 2 3\r\n0 0Output:2\r\n4",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/DOCTOR",
+  "scraped_at": "2025-08-17 00:34:31",
+  "test_cases": [
+    {
+      "input": "10 5\r\n2 1 2\r\n2 2 3\r\n3 1 2 3\r\n4 1 2 3 4\r\n1 4\r\n3 7\r\n1 1\r\n1 2 \r\n1 3\r\n2 1 2\r\n2 1 3\r\n2 3 2\r\n3 1 2 3\r\n0 0",
+      "expected_output": "2\r\n4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 3\n5 7 4\n1 2 2\n5 9 2 8\n2 8 10 7 8\n10 1\n4 8\n6 7\n10 8\n9 9\n9 1 4\n5 8 1\n3 8 8\n5 2 1 5\n1 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 8\n1 1 9\n8 1 2\n3 3 2 10\n2 10 9 8 3\n4 7\n3 7\n8 9\n2 10\n1 9\n5 9 8\n6 9 6\n10 2 2\n7 9 4 6\n1 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 9\n9 10 4\n10 1 6\n7 1 5 5\n8 2 1 7 7\n4 9\n10 2\n2 7\n5 3\n10 4\n9 4 6\n8 6 8\n6 7 4\n5 9 1 1\n1 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "80 85\n57 42 39\n51 88 8\n64 6 54 64\n8 80 98 53 46\n43 79\n58 75\n79 34\n32 22\n15 79\n18 2 57\n37 33 93\n61 68 30\n17 99 99 97\n5 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 90\n53 6 61\n49 97 28\n81 89 71 9\n31 19 32 7 38\n52 15\n21 45\n95 66\n36 38\n3 28\n89 79 92\n78 30 7\n67 64 38\n10 41 61 9\n65 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 41\n33 44 38\n30 51 5\n87 63 4 75\n24 56 35 18 99\n35 71\n83 55\n88 11\n78 7\n32 90\n79 67 56\n60 99 64\n17 66 18\n21 97 15 42\n3 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 84\n42 53 12\n75 67 14\n27 97 14 50\n20 52 62 33 22\n10 35\n46 81\n8 83\n16 42\n61 67\n100 7 21\n95 81 53\n84 89 95\n84 66 75 22\n98 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 25\n67 59 31\n68 46 64\n47 91 79 47\n100 87 68 13 90\n98 25\n86 53\n100 54\n45 72\n35 92\n70 31 75\n9 82 10\n37 53 95\n43 33 39 45\n63 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "129 148\n17 18 63\n18 65 100\n56 59 38 130\n131 15 57 114 40\n140 81\n122 44\n119 69\n124 98\n92 53\n66 94 44\n50 143 139\n17 90 35\n29 123 42 84\n123 43",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122 70\n126 68 91\n121 90 57\n53 38 93 61\n56 63 52 93 21\n150 108\n16 123\n148 31\n57 44\n44 48\n40 40 36\n104 69 100\n149 83 41\n51 59 123 104\n68 17",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "49 149\n43 78 83\n87 136 91\n126 140 38 113\n27 92 53 96 129\n33 145\n62 39\n134 141\n49 77\n112 71\n58 78 27\n148 26 33\n64 133 106\n98 55 97 148\n22 39",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "101 31\n58 23 42\n38 133 147\n87 35 50 101\n149 64 40 27 121\n129 130\n21 99\n37 97\n38 68\n64 92\n25 23 83\n90 127 107\n34 123 97\n89 51 136 137\n51 141",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "112 99\n80 17 134\n62 89 110\n44 26 122 33\n37 110 122 92 30\n121 100\n74 31\n30 94\n111 147\n67 40\n107 110 133\n22 133 37\n135 51 138\n121 37 150 121\n61 91",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "101 137\n139 27 51\n75 130 93\n45 70 50 79\n118 20 27 147 58\n99 120\n148 43\n85 117\n110 53\n145 141\n20 21 102\n52 105 15\n126 55 23\n105 22 24 52\n149 135",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "73 74\n59 33 86\n77 113 121\n54 114 27 107\n123 142 140 48 95\n141 76\n18 123\n17 74\n77 62\n80 84\n86 22 143\n115 27 90\n36 59 37\n15 57 36 110\n132 115",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "300 300\n300 300 300\n300 300 300\n300 300 300 300\n300 300 300 300 300\n300 300\n300 300\n300 300\n300 300\n300 300\n300 300 300\n300 300 300\n300 300 300\n300 300 300 300\n300 300",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "300 300\n300 300 300\n300 300 300\n300 300 300 300\n300 300 300 300 300\n300 300\n300 300\n300 300\n300 300\n300 300\n300 300 300\n300 300 300\n300 300 300\n300 300 300 300\n300 300",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 300\n1 300 299\n2 1 1\n300 300 299 299\n300 299 2 300 1\n1 1\n2 300\n1 1\n1 299\n300 299\n1 1 1\n300 1 299\n2 2 299\n300 300 300 2\n1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "300 300\n1 1 1\n1 2 2\n299 299 2 2\n1 1 1 2 1\n299 299\n1 300\n299 2\n300 2\n2 299\n299 300 299\n1 299 2\n300 300 299\n300 2 2 299\n300 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

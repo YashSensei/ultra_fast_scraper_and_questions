@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "A Canvas Building",
+  "tags": [],
+  "text": "The International Canvas Preparation Committee (ICPC) has a peculiar procedure for setting up its canvases. The procedure depends on a bidimensional view of the canvases.A given canvas is set up usingNpoles of different heights. To set up the canvases, the ICPC uses the following procedure. First,N+2points are marked on the floor, all on the same line, so that two consecutive points are always separated by a distance of exactly two feet. Afterwards, a pole is placed vertically over each of theNcentral points. Finally, the canvas is extended over the poles, joining the upper end of each pole with the upper end of neighboring poles. The first and last poles are joined with the free points on the floor.The next figure shows 3 possible ways of setting up a canvas using the instructions mentioned before, with pole heights of 4, 5, 7, 8 and 9.After years of hard work, the ICPC came to the conclusion that in order to obtain useful and sturdy canvases, it is necessary that the angle formed by two consecutive patches of canvas at the end of a pole, measured towards the inside, isstrictlyless than 180 degrees. In the figure shown, only the canvas on the left satisfies this condition. The canvas in the middle has an angle greater than 180 degrees at poles of heights 4 and 7, while the canvas on the right has an angle of exactly 180 degrees at the pole of height 8. We say a canvas is valid when it adheres to the ICPC recommendation.Of course, given the number of poles and their heights, there are a lot of different ways of placing them, some of which will produce valid canvases and some of which will not. The task at hand is to, given this data, count the number of different valid canvases which can be set up. Two valid canvases are considered different if the sequence of heights of the poles in one of them, read from left to right, is different from the sequence of heights of the other one, read in the same way.InputThe input contains several test cases. Each test case is described on two consecutive lines. The first line contains one integerNwhich indicates the number of poles (1 ≤N≤ 60). The second line containsNintegersHirepresenting the heights of the poles in feet (1 ≤Hi≤ 109for 1 ≤i≤N). The last line of the input contains a single -1 and should not be processed as a test case.OutputFor each test case output a single line with an integer representing the number of different valid canvases which can be set up using the given poles.ExampleInput:5\r\n4 5 7 8 9\r\n7\r\n33 65 57 64 63 61 49\r\n1\r\n1000000000\r\n3\r\n2 2 3\r\n3\r\n1 3 1\r\n4\r\n2 2 2 2\r\n-1Output:2\r\n16\r\n1\r\n1\r\n0\r\n0",
+  "sample_input": "Input:5\r\n4 5 7 8 9\r\n7\r\n33 65 57 64 63 61 49\r\n1\r\n1000000000\r\n3\r\n2 2 3\r\n3\r\n1 3 1\r\n4\r\n2 2 2 2\r\n-1Output:2\r\n16\r\n1\r\n1\r\n0\r\n0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ACANVAS",
+  "scraped_at": "2025-08-17 00:34:28",
+  "test_cases": [
+    {
+      "input": "5\r\n4 5 7 8 9\r\n7\r\n33 65 57 64 63 61 49\r\n1\r\n1000000000\r\n3\r\n2 2 3\r\n3\r\n1 3 1\r\n4\r\n2 2 2 2\r\n-1",
+      "expected_output": "2\r\n16\r\n1\r\n1\r\n0\r\n0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n7\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n8\n3\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "19\n4766306\n29934384\n87104552\n11696156\n83109929\n24833642\n33521943\n9216399\n85417814\n40452484\n92075214\n41402210\n20700625\n70068269\n71454120\n29121383\n6248584\n98523205\n81135364",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n79345357\n56103836\n80004244\n19917570\n13096937\n39921178\n60493512\n8501878\n22831482\n73677885\n91871865\n45206413\n74440919\n1360527\n40781399\n93430248\n2502854",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "17\n21623218\n62296081\n26580600\n48819847\n37543739\n57415590\n40777905\n98842014\n51563923\n6581834\n26731288\n4890078\n48501034\n24866954\n72400428\n38061546\n76715133",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n16663542\n77557857\n45540971\n5540267\n93568290\n95135037\n45055069",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n11851298\n41922565\n77519665\n48313508\n83135664\n27360173\n5084712\n60519533\n53822391\n32577692\n21694394\n98563965\n1340734\n75301922\n62083028\n35542291\n56006424\n78495555\n55270594\n21232824",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n27133\n93463\n48726\n29927\n28798\n8644\n22558\n8789\n1965\n16462\n71969\n24025\n26359\n7443\n81264\n80043\n99427\n7269\n81553\n44107",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "60\n70852\n77926\n7171\n54504\n6717\n9100\n7511\n38728\n66460\n12675\n60097\n23161\n73618\n74638\n85596\n49053\n52477\n19946\n19925\n98133\n26261\n57310\n50499\n41410\n40412\n63833\n84044\n6073\n70358\n88218\n19715\n80008\n55618\n75670\n92961\n33807\n98867\n75754\n55542\n80645\n98931\n15\n83645\n91616\n33485\n82935\n49024\n44389\n48913\n4696\n50186\n48481\n51390\n58630\n11331\n80939\n12129\n80687\n80906\n43844",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n22694\n34802\n13858\n66941\n60076\n28181\n78047\n41347\n59760\n60691\n15680\n35319\n3288\n7570\n83135\n32184\n37896\n52371\n1819\n86135\n45416\n68307\n54384\n2067\n34416\n14428",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n64530\n48227\n66529\n66158\n88978\n13051\n12430\n54808\n26094\n52095\n17078\n19209\n24543\n88366\n45495\n43234\n60537\n90196\n32176\n53806\n27427\n18925\n56210\n85098\n88270\n90329",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "38\n14703\n62593\n51345\n96363\n50080\n21247\n44948\n52055\n88341\n47876\n48958\n48413\n54325\n90475\n24816\n5942\n79815\n47166\n28436\n6188\n16444\n47748\n34750\n81748\n7085\n49993\n85570\n49167\n77023\n30664\n24411\n8608\n90211\n1470\n36265\n70547\n85069\n2496",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n591\n34553\n68883\n65104\n8248\n76946\n67022\n97627\n23402\n67626\n38277\n86551\n60734\n33219\n12543\n23304\n96964\n86050\n43598\n96706\n11518\n99",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "33\n44178\n89010\n54735\n90863\n11181\n14197\n44224\n30761\n54358\n48465\n45877\n83209\n90835\n19317\n64695\n29011\n94893\n24407\n60003\n79078\n81484\n94062\n40192\n8838\n19413\n41013\n87434\n97008\n25602\n99764\n6137\n92993\n87293",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "60\n84791909\n38560331\n40576623\n15101791\n26057948\n40654874\n69243542\n11571738\n66432753\n61289178\n73066060\n48749752\n60672856\n97334939\n14252840\n26898938\n73337363\n85692503\n80198579\n95907642\n16528777\n95966186\n18663097\n2865415\n1592812\n40108185\n29335331\n89547648\n8896946\n83786504\n53212570\n90753197\n46623816\n9225476\n80450351\n51123777\n18956325\n79579875\n17470379\n72279523\n71984103\n20234718\n5253985\n98992363\n16657381\n8629649\n43431140\n94420566\n68675653\n79338743\n25029523\n4125266\n30806651\n66156695\n37222732\n45108166\n50775795\n48221225\n35309741\n87954905",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 60)"
+    },
+    {
+      "input": "60\n46255580\n93913303\n97372433\n19894386\n80433970\n46099261\n29337807\n31275267\n27054240\n832335\n78625554\n23994379\n43338916\n96605848\n4012726\n22925905\n90394920\n93362711\n92670810\n49754291\n54433069\n34759839\n92320842\n92250610\n50088281\n23301662\n79684321\n48057121\n31232007\n29172416\n48310385\n63234852\n66895503\n58643651\n30725340\n84396659\n8537378\n66833540\n51102609\n96799494\n34882744\n44492509\n88676997\n18380868\n20127216\n76251698\n40724837\n66516976\n18776206\n47544530\n48587223\n9891856\n49453915\n3721\n24612960\n86021944\n88909923\n39744620\n42923532\n92907405",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 60)"
+    },
+    {
+      "input": "2\n27526559\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "2\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Illumination",
+  "tags": [],
+  "text": "Two cubes and a light bulb are placed in a three-dimensional euclidean space. You are expected to find out\r\nif one of them casts shadow on the other one and if so, calculate the area of this shadow.InputMultiple test cases. For each test case:The first line of the input contains the coordinates of the bulb. It is followed\r\nby two groups of four lines each that describe the cubes. Each line of the\r\ncube description contains the coordinates of a vertex (see the figure where\r\nthe vertices are marked and labeled in the same order as they are given in the\r\ninput).All the coordinates are given with 5 digits after decimal point. It is guaranteed that the cubes do not intersect,\r\nthe light bulb is outside both of them, and doesn’t lie on any of the planes that contain their faces. A light\r\nbulb should be regarded as a point light source.Input terminates by EOF.OutputFor each test case:The output should contain a single line with two numbers separated with a space character. The first one is\r\nthe number of the cube that has a shadow on it (1 or 2). The second is the area of the shadow. If none of the given cubes casts shadow on the other the output should contain a single number -1.Note:if your output has an error with absolute value less than 10-2, it will be judged as Accepted. i.e. You may output any number of digits after decimal point.ExampleInput:-1.00000 1.00000 1.00000\r\n0.00000 0.00000 0.00000\r\n2.00000 0.00000 0.00000\r\n0.00000 2.00000 0.00000\r\n0.00000 0.00000 2.00000\r\n5.00000 0.00000 0.00000\r\n7.00000 0.00000 0.00000\r\n5.00000 2.00000 0.00000\r\n5.00000 0.00000 2.00000\r\n0.00000 0.00000 0.00000\r\n1.00000 1.00000 1.00000\r\n2.00000 1.00000 1.00000\r\n1.00000 2.00000 1.00000\r\n1.00000 1.00000 2.00000\r\n-1.00000 -1.00000 -1.00000\r\n-1.00000 -2.00000 -1.00000\r\n-2.00000 -1.00000 -1.00000\r\n-1.00000 -1.00000 -2.00000Output:2 4.000\r\n-1",
+  "sample_input": "Input:-1.00000 1.00000 1.00000\r\n0.00000 0.00000 0.00000\r\n2.00000 0.00000 0.00000\r\n0.00000 2.00000 0.00000\r\n0.00000 0.00000 2.00000\r\n5.00000 0.00000 0.00000\r\n7.00000 0.00000 0.00000\r\n5.00000 2.00000 0.00000\r\n5.00000 0.00000 2.00000\r\n0.00000 0.00000 0.00000\r\n1.00000 1.00000 1.00000\r\n2.00000 1.00000 1.00000\r\n1.00000 2.00000 1.00000\r\n1.00000 1.00000 2.00000\r\n-1.00000 -1.00000 -1.00000\r\n-1.00000 -2.00000 -1.00000\r\n-2.00000 -1.00000 -1.00000\r\n-1.00000 -1.00000 -2.00000Output:2 4.000\r\n-1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ILLUM",
+  "scraped_at": "2025-08-17 00:33:05",
+  "test_cases": [
+    {
+      "input": "-1.00000 1.00000 1.00000\r\n0.00000 0.00000 0.00000\r\n2.00000 0.00000 0.00000\r\n0.00000 2.00000 0.00000\r\n0.00000 0.00000 2.00000\r\n5.00000 0.00000 0.00000\r\n7.00000 0.00000 0.00000\r\n5.00000 2.00000 0.00000\r\n5.00000 0.00000 2.00000\r\n0.00000 0.00000 0.00000\r\n1.00000 1.00000 1.00000\r\n2.00000 1.00000 1.00000\r\n1.00000 2.00000 1.00000\r\n1.00000 1.00000 2.00000\r\n-1.00000 -1.00000 -1.00000\r\n-1.00000 -2.00000 -1.00000\r\n-2.00000 -1.00000 -1.00000\r\n-1.00000 -1.00000 -2.00000",
+      "expected_output": "2 4.000\r\n-1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 1 6\n1 9 7\n2 8 8\n5 7 3\n8 5 5\n9 9 9\n3 10 2\n4 3 2\n6 3 2\n2 9 7\n1 3 10\n8 2 2\n9 10 9\n9 7 7\n1 8 2\n5 2 5\n3 4 9\n4 3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 8 4\n1 6 5\n8 3 7\n4 8 2\n9 9 3\n10 9 5\n5 6 7\n1 10 6\n6 1 8\n8 6 9\n4 7 10\n7 8 6\n7 3 2\n2 2 10\n1 7 8\n10 7 5\n2 2 9\n4 6 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 10 8\n1 6 7\n3 3 4\n10 1 1\n1 4 7\n1 3 8\n5 10 7\n1 5 4\n8 5 8\n4 1 9\n8 8 7\n6 9 1\n5 9 7\n3 2 1\n9 2 5\n7 8 4\n8 5 9\n2 2 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "16 76 4\n41 2 39\n51 45 12\n17 60 41\n21 87 15\n15 97 96\n70 84 82\n60 61 64\n82 12 82\n69 78 26\n20 9 93\n88 46 72\n88 55 99\n84 97 10\n100 31 71\n39 39 14\n68 79 33\n89 71 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "73 72 79\n13 85 35\n45 22 12\n30 61 47\n98 72 21\n36 75 24\n3 40 9\n83 38 61\n61 9 2\n63 69 21\n24 48 90\n12 11 33\n34 83 88\n67 53 42\n25 47 23\n23 58 86\n84 4 65\n12 12 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 91 95\n12 35 32\n87 67 82\n92 94 16\n54 67 49\n37 69 20\n15 47 51\n9 21 99\n12 66 86\n17 24 13\n74 54 28\n72 29 35\n67 90 49\n29 50 7\n78 48 96\n21 70 44\n42 17 61\n13 17 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 58 70\n40 95 71\n51 1 34\n26 58 65\n57 62 41\n99 13 62\n31 27 26\n31 60 32\n67 75 45\n27 78 13\n52 26 43\n95 65 40\n35 66 72\n37 17 61\n91 40 86\n72 12 69\n61 41 97\n13 21 42",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 51 55\n51 64 40\n92 58 52\n68 16 100\n83 87 28\n37 19 14\n52 98 100\n56 91 27\n82 19 60\n20 10 29\n55 42 82\n39 82 83\n96 36 32\n56 30 13\n55 13 22\n61 69 49\n100 60 4\n21 42 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "288 212 267\n417 402 382\n162 305 174\n91 104 259\n370 122 391\n125 130 196\n140 365 179\n201 381 397\n300 362 365\n189 142 129\n340 313 247\n70 480 189\n67 51 105\n204 340 53\n208 499 236\n460 484 484\n286 419 439\n293 340 292",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "254 482 461\n156 152 198\n141 460 342\n351 258 457\n314 441 88\n351 357 190\n233 386 265\n454 400 293\n354 254 343\n78 203 327\n187 375 133\n496 99 407\n278 310 304\n152 404 394\n271 308 107\n127 281 240\n369 91 471\n317 466 378",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "159 115 452\n250 169 348\n158 237 288\n81 79 103\n286 162 64\n309 54 170\n189 318 206\n454 140 84\n279 379 303\n278 203 495\n213 85 235\n168 103 88\n449 385 193\n178 335 385\n126 222 443\n288 388 336\n99 161 324\n194 433 338",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "313 171 412\n416 362 140\n243 226 329\n351 464 114\n229 68 84\n265 152 154\n119 114 364\n336 417 222\n311 186 362\n373 246 63\n112 149 484\n176 117 143\n479 61 194\n68 251 298\n251 465 123\n344 59 181\n361 303 332\n248 411 475",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "472 349 368\n400 297 334\n372 248 343\n325 173 98\n429 229 114\n413 154 223\n468 421 428\n67 316 370\n477 209 154\n236 157 366\n401 307 213\n292 175 193\n111 437 407\n165 493 75\n333 346 101\n264 429 441\n413 130 453\n413 287 400",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "272 199 334\n340 231 411\n67 387 285\n218 154 333\n393 176 218\n53 105 444\n306 445 385\n299 453 63\n281 123 388\n493 177 276\n191 365 279\n129 480 305\n126 251 379\n272 144 484\n238 488 139\n366 360 83\n70 129 138\n139 340 394",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 110 72\n168 433 436\n225 189 368\n87 223 397\n481 157 475\n63 220 218\n92 358 410\n361 267 325\n464 430 480\n271 158 196\n136 162 171\n196 176 311\n430 263 497\n161 235 88\n384 464 266\n289 384 96\n158 423 195\n107 190 57",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000 1\n999 1000 2\n1000 1 999\n1 999 2\n2 999 1000\n1 2 1\n999 1 2\n2 2 1000\n999 1000 999\n2 1000 2\n2 1000 2\n1000 999 999\n999 1 999\n1 999 1\n1000 1000 1\n999 1000 2\n2 2 1000\n1000 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2 1000\n999 1000 2\n1000 1000 1\n2 1 1000\n2 1 1\n1 1000 1\n999 1000 1000\n1 1000 999\n1000 1 1\n1 2 999\n2 2 1000\n1 1000 1000\n2 999 2\n2 1000 2\n1000 2 999\n1 2 1000\n1 999 1\n1 1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

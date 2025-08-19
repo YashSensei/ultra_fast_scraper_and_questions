@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Search in XML",
+  "tags": [],
+  "text": "The XML (eXtensible Markup Language) is gaining\r\npopularity as a new standard for data representation and\r\nexchange on the internet. \r\nXML provides a text-based means to describe and apply a tree-based structure to information.\r\nThe XML document consists of nested elements, some of which usually have attributes and content. \r\nBut for simplifying this problem, we needn't consider the attributes and content, i.e. only tags allowed.\r\nAn element typically consists of two tags, a start tag and an end tag.\r\nThe start tag consists of a name surrounded by angle brackets, like \"<tag>\"; \r\nthe end tag consists of the same name surrounded by angle brackets, \r\nbut with a slash preceding the name, like \"</tag>\". \r\nThe element's content is empty or other sub-element (child) that appears between the start tag and the end tag.\r\nSpecially, no XML element that has the same tag in its direct sub-elements (children), \r\ni.e. All sibling elements have different tag names.\r\nThe following is an valid example for XML documents.<THU><Team><ACRush></ACRush><Jelly></Jelly><Cooly></Cooly></Team><JiaJia><Team><Ahyangyi></Ahyangyi><Dragon></Dragon><Cooly><Amber></Amber></Cooly></Team></JiaJia></THU>For identifying the elements in a document, we number the elements \r\nin according to the order that the start tags of the elements appear in the document.\r\nFor instances, \"THU\" is numbered 1. \r\nThe first \"Team\" is numbered 2. \"ACRush\" is numbered 3. \r\n\"Ahyangyi\" is numbered 8.The problem of querying XML documents has been given much attention by researchers.\r\nNow we are given a querying pattern of XML documents and a text of XML documents.\r\nThe following is an valid example for pattern.<Team><Cooly></Cooly></Team>And we are requested to find all occurrences of the pattern in the text of XML documents. \r\nHere, the pattern occurs at a particular text position if placing the pattern with root element at that\r\ntext position leads to a situation in which each pattern element overlaps some text element with the same label. \r\nBecause the sibling elements have different labels, there is only one way to put the pattern into the text.InputThere are two parts in the input file.\r\nThe first part is a valid XML documents with exactly one root element.\r\nThe second part is a valid XML documents as querying pattern with exactly one root element.\r\nPlease ignore all whitespaces (unvisiable characters) in the input file, \r\ni.e. only consider the uppercase and lowercase letter and \"/\", \"<\", \">\". \r\nAssume XML documents is always strictly a rooted tree. \r\nThe input file is less than 100kb.OutputOutput all the occurrences of pattern in a text of XML documents. \r\nThe first line consists of an integernthat denotes the number of the occurrences. \r\nThen the nextnline, each line consists of an id number of an element that occurs the query pattern. \r\nPlease print them in increasing order.ExampleInput:<THU><Team><ACRush></ACRush><Jelly></Jelly><Cooly></Cooly></Team><JiaJia><Team><Ahyangyi></Ahyangyi><Dragon></Dragon><Cooly><Amber></Amber></Cooly></Team></JiaJia></THU>\r\n<Team><Cooly></Cooly></Team>Output:2\r\n2\r\n7",
+  "sample_input": "<THU><Team><ACRush></ACRush><Jelly></Jelly><Cooly></Cooly></Team><JiaJia><Team><Ahyangyi></Ahyangyi><Dragon></Dragon><Cooly><Amber></Amber></Cooly></Team></JiaJia></THU>",
+  "sample_output": "<Team><Cooly></Cooly></Team>",
+  "link": "https://www.spoj.com/problems/PT07H",
+  "scraped_at": "2025-08-17 00:33:29",
+  "test_cases": [
+    {
+      "input": "<THU><Team><ACRush></ACRush><Jelly></Jelly><Cooly></Cooly></Team><JiaJia><Team><Ahyangyi></Ahyangyi><Dragon></Dragon><Cooly><Amber></Amber></Cooly></Team></JiaJia></THU>",
+      "expected_output": "<Team><Cooly></Cooly></Team>",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "dbb",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ag",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "jnkf",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "mjcsdw",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "faisedwk",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ailimvmlq",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "bayutdfy",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "dcrnvq",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "gifasoftnitwvgjnqed",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "abrzb",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xmiiqhrugwpjexiwz",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "z",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jr",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "uxdmjkjjyf",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ydkiciuiazgxyphjobc",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fgkvyujtnola",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "zksakmxybkcbrvc",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "cxrb",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "jjrwzwvqjkyzqzmzilrh",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

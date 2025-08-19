@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Samvel and Boxes",
+  "tags": [],
+  "text": "King of Boxes Robert wants to test Samvel.  He has given Samvel n boxes indexed from 1 to n. All the boxes except the first one are located in another box. Robert wants to fill the boxes with apples (At beginning boxes contain no apples).  Robert can ask Samvel queries of 4 types.The queries are:Robert says two integers x, y to Samvel. Samvel needs to add x (1 ≤ x ≤ 109) apples to the y-th box. (1 ≤ y ≤ n)Robert says two integers x, y to Samvel. Samvel needs to swap the indexes of the x-th and y-th boxes. (1 ≤ x, y ≤ n)Robert says an integer x to Samvel. Samvel needs to say the number of apples located in the box x (1 ≤ x ≤ n) and in the boxes that are in the box x (directly or indirectly).Robert says an integer x to Samvel. Samvel needs to answer the query of the third type for the box that has minimum index from the boxes that are located directly in the box x. (1 ≤ x ≤ n)Samvel needs your help. Help him and write a program to answer this queries.InputThe first line of input contains an integer n (2 ≤ n ≤ 105)  and q (1 ≤ q ≤ 105), number of boxes and number of queries.Second line contains n-1 integers a1... an-1. ai-1is the index of the box that contains box i. (1 ≤ ai≤ n)The lines from 3 to q+2 contain an integer k (type of the query). if k=1 or k=2 then goes the two integer x, y from the task, else there is only one integer x.OutputFor each query of type 3 or 4 you need to output one integer the answer of query in a separate line. If query type is 4 and given box has no other boxes in it print -1.ExampleInput:4 6\r\n1 1 2\r\n1 5 1\r\n3 1\r\n2 1 3\r\n3 3\r\n1 60 1\r\n4 3Output:5\r\n5\r\n60",
+  "sample_input": "Input:4 6\r\n1 1 2\r\n1 5 1\r\n3 1\r\n2 1 3\r\n3 3\r\n1 60 1\r\n4 3Output:5\r\n5\r\n60",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SAMBOX",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "4 6\r\n1 1 2\r\n1 5 1\r\n3 1\r\n2 1 3\r\n3 3\r\n1 60 1\r\n4 3",
+      "expected_output": "5\r\n5\r\n60",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 1\n6 6 4\n3 4 9\n3 8\n6 9 8\n9 2\n1 9 4\n10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 6\n3 9 9\n5 8 4\n2 2\n2 6 5\n5 5\n3 6 8\n10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 6\n7 7 6\n6 6 5\n3 1\n9 10 1\n4 10\n4 4 7\n6 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "14 34\n12 97 29\n73 8 54\n42 56\n48 81 92\n68 92\n3 77 44\n19 83",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 61\n86 83 73\n97 58 75\n20 40\n82 60 56\n69 61\n89 45 90\n83 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 65\n15 92 16\n13 99 60\n60 7\n27 51 24\n48 92\n70 63 84\n38 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "57 37\n26 76 43\n29 15 77\n70 61\n19 68 11\n75 74\n27 11 74\n61 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 37\n83 34 98\n89 99 27\n27 96\n14 18 10\n14 73\n73 59 46\n80 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 23\n40 18 12\n9 38 18\n31 17\n48 44 46\n44 38\n7 24 28\n18 7",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "44 42\n14 13 45\n35 29 20\n9 6\n45 13 32\n35 10\n31 20 39\n14 50",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 38\n51 45 52\n52 7 19\n40 30\n23 46 16\n47 43\n42 52 51\n5 44",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "36 8\n7 30 19\n49 51 29\n21 50\n50 48 12\n13 16\n23 40 20\n29 27",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "41 50\n7 30 23\n32 44 27\n16 21\n30 27 8\n30 26\n11 7 13\n22 45",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "27 28\n45 41 24\n28 34 52\n36 34\n44 38 30\n47 46\n15 8 14\n48 16",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 34\n30 22 27\n9 43 41\n16 28\n13 15 19\n43 37\n15 29 7\n47 9",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 105\n105 105 105\n105 105 105\n105 105\n105 105 105\n105 105\n105 105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "105 105\n105 105 105\n105 105 105\n105 105\n105 105 105\n105 105\n105 105 105\n105 105",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 104\n104 2 1\n1 104 1\n105 2\n2 1 1\n1 2\n2 105 104\n105 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1\n105 104 104\n1 2 1\n1 2\n2 104 1\n2 105\n1 2 1\n2 104",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

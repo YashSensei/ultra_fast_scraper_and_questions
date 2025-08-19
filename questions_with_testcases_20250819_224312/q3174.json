@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cantor",
+  "tags": [],
+  "text": "The mathematician Georg Cantor was a lover of both sets and infinity, but he didn't get along too well with his colleagues. One morning he woke up with the idea of defining a set so strange that, when made public, would make the rest of the mathematicians lose their sleep for several days. And he was successful.The set he defined is called the Cantor set, and it is formed by all the real numbers in the interval[0, 1]whose decimal expression in base3uses exclusively the digits0and2. This set has amazing properties, which we will not mention here so that you can sleep tonight. Moreover, and luckily for everyone involved, in this problem we will not be working with the Cantor set, but with a generalization of this set to the integer numbers.We will say that an integer number is of Cantor type, or acantigerfor short, if its expression in a given baseBuses solely the digits in a given setCcontained in{0, 1, ... B-1}. Thus, the fact that a given number is a cantiger depends on how we chooseBandC.Your task is to count cantiger numbers, in order to prevent the mathematicians of the entire world from loosing their sleep. More precisely, given two integersDandH, along withBandC, you have to count the number of cantigers with respect toBandCfromDtoHinclusive.InputEach test case is described using a single line. This line contains three integers,D,HandB, and a stringL. The values ofDandHindicate the endpoints of the closed interval[D, H]we are interested in (1 ≤ D≤H≤1016). The value ofBis the base mentioned in the problem statement (2≤B≤10). The stringL = L0L1... LB-1has exactlyBcharacters, and describes the setCalso mentioned in the problem statement. The characterLiis the uppercase letter 'S' ifiis inC, and the uppercase letter 'N' otherwise (i = 0, 1, ... B-1). The setCis non-empty, so that there is at least one 'S' character inL. The end of the input is signalled by a line containing three times the number-1and a single '*' character.OutputFor each test case, you should print a single line containing an integer number, representing the number of cantigers (with respect toBandC) that are greater or equal toDand lower or equal toH.ExampleInput:1 10 3 SNS\r\n99 999 5 NSSNS\r\n1110 1111 10 NSNNNNNNNN\r\n1 10000000000000000 10 NNNNNSNNNN\r\n1 10000000000000000 7 SSSSSSS\r\n-1 -1 -1 *Output:3\r\n144\r\n1\r\n16\r\n10000000000000000",
+  "sample_input": "Input:1 10 3 SNS\r\n99 999 5 NSSNS\r\n1110 1111 10 NSNNNNNNNN\r\n1 10000000000000000 10 NNNNNSNNNN\r\n1 10000000000000000 7 SSSSSSS\r\n-1 -1 -1 *Output:3\r\n144\r\n1\r\n16\r\n10000000000000000",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TAP2012C",
+  "scraped_at": "2025-08-17 00:34:13",
+  "test_cases": [
+    {
+      "input": "1 10 3 SNS\r\n99 999 5 NSSNS\r\n1110 1111 10 NSNNNNNNNN\r\n1 10000000000000000 10 NNNNNSNNNN\r\n1 10000000000000000 7 SSSSSSS\r\n-1 -1 -1 *",
+      "expected_output": "3\r\n144\r\n1\r\n16\r\n10000000000000000",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 7 1\n2 8 8 tanuh\n2 8 3\n4 8 7 dalxj\n10 2 5\n4 2 5 musn\n4 8 1\n5 6 5 dowzwyomit\n10 9 3\n8 4 5 qnpfiim\n9 10 10\nudyx mdet pao vit",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 3 8\n2 7 7 qay\n6 9 10\n10 5 4 jkyxl\n9 4 10\n6 2 1 yrmycdqcv\n4 8 2\n2 3 4 lfrxgmrqc\n9 10 7\n5 9 9 usws\n6 1 1\nea odn o xwi",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 3 5\n2 7 8 nk\n6 7 7\n9 9 4 za\n8 5 2\n2 10 2 tcqtumtw\n3 2 9\n2 8 3 iwqplmfhc\n6 4 10\n1 3 5 rfjjb\n6 1 3\ntdzba pfyh ludo okxv",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "35 89 50\n19 71 28 av\n90 100 71\n66 100 37 qtyy\n53 63 57\n25 38 93 lk\n58 50 65\n28 54 59 usg\n7 85 3\n67 45 82 mn\n73 91 44\niien phhg vrkyf d",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 5 17\n36 49 40 qqeav\n39 9 33\n30 3 80 en\n57 39 21\n51 14 89 ynfn\n40 43 89\n91 35 26 angvhewux\n53 92 20\n63 9 92 xhw\n61 35 99\nzcemv yey rq uo",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 56 84\n31 42 55 hm\n61 99 3\n96 100 96 gi\n17 86 52\n50 27 70 mnm\n72 41 54\n89 24 80 c\n54 92 79\n59 4 13 igvwcwl\n26 41 54\nui hwcoh xl uii",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "36 17 75\n52 88 91 pi\n87 1 85\n49 32 20 gzmql\n18 86 88\n6 39 51 omnyoxnj\n99 26 63\n76 39 26 fsd\n44 53 42\n27 93 30 uifm\n23 10 52\np pqvce wsl sy",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 25 61\n73 56 43 tz\n4 5 88\n5 89 91 sxh\n74 23 60\n42 4 37 muzonqfym\n22 87 8\n15 71 37 nvxd\n91 11 22\n18 24 2 zvnjpf\n45 65 49\ne xgyr km dg",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "297 258 85\n391 87 358 xlg\n204 214 140\n125 389 129 fk\n298 94 461\n135 124 181 djkgd\n265 51 333\n444 156 165 gdxjr\n412 76 288\n500 347 141 gbc\n370 257 409\nhhrr aie baa igpv",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "218 260 379\n341 490 456 e\n345 373 424\n278 249 81 oizf\n372 437 256\n365 108 341 wwwjvo\n476 262 168\n409 71 433 lqpe\n210 184 263\n367 500 360 sxejvb\n151 300 295\nqzm awo fwtl hxj",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "358 494 104\n457 309 466 i\n376 316 234\n461 440 129 q\n116 115 396\n465 181 80 igjcegzrn\n84 265 251\n154 87 122 jrrhmzfvq\n240 390 301\n398 350 151 zudxlis\n122 490 265\nz ibsy bjbs uzka",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "421 50 251\n186 260 221 clvze\n318 257 486\n139 469 428 a\n56 161 374\n115 290 77 xovxh\n97 354 367\n291 420 462 vt\n59 416 425\n300 76 114 ujx\n375 142 78\ntj n f lkpm",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "443 120 198\n163 171 433 uu\n169 53 104\n144 334 482 sg\n418 100 359\n299 491 139 ohabvlgpg\n83 207 400\n292 155 425 qf\n172 66 152\n245 314 147 oxcrl\n252 182 315\ntg cba rbwfo wee",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "306 433 396\n67 314 472 amh\n423 390 288\n53 325 375 j\n262 433 471\n372 167 362 xrsmg\n169 441 401\n145 86 274 nubcy\n78 300 347\n365 123 425 ex\n373 488 245\ntams f gufo csedb",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "172 144 283\n62 153 162 emjds\n94 447 126\n281 109 71 vfcv\n471 376 90\n319 469 274 sjgtkla\n324 393 357\n298 125 430 f\n428 323 89\n444 131 369 bp\n60 262 218\nq ipev aauf qtjey",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 bu\n1000 1000 1000\n1000 1000 1000 xozoz\n1000 1000 1000\n1000 1000 1000 d\n1000 1000 1000\n1000 1000 1000 aabf\n1000 1000 1000\n1000 1000 1000 dyypau\n1000 1000 1000\nkyoxj avyst wjqo eenf",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000 1000 1000 ulrt\n1000 1000 1000\n1000 1000 1000 ls\n1000 1000 1000\n1000 1000 1000 hgrezc\n1000 1000 1000\n1000 1000 1000 nrbz\n1000 1000 1000\n1000 1000 1000 c\n1000 1000 1000\nrsvck qhsl p ejk",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2 1000\n1 1000 1000 ry\n999 2 2\n1000 999 2 fzuqp\n999 999 999\n999 1000 1000 fabpuhxr\n1000 2 1\n2 999 1 cu\n1000 1000 1\n999 1 1000 koait\n2 2 999\nuapg f rui u",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 999 1000\n1000 999 1 hxut\n999 2 2\n2 1 1000 zslzc\n999 999 1000\n1 1000 1 mzjb\n1000 2 1\n1 1000 2 yxcta\n1 1 2\n2 1 2 iwjdy\n2 1 999\nfae ycdae hrrqw xglv",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

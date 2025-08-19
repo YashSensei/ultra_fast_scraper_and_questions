@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Fake Scoreboard",
+  "tags": [],
+  "text": "As you know, after the award ceremony of SWERC it is customary to publish a complete scoreboard with detailed information on the submissions and verdicts received. However, due to the buggy contest management system, most of the relevant data are not being recorded today. Clearly such state of affairs fails to meet the high standards we are committed to, so the judges have resolved to make up the rest of the data based on whatever shred of information left, and hope contestants are unable to tell the difference. To make our lives even simpler, we kindly ask you to provide a solution for us, or else today’s scoreboard will remain forever veiled in mystery (even the fake one).What we will know by the end of the contest is the numberTof teams, the numberPof problems, and the number of accepted submissions by each team. From the number and colour of balloons floating around on the premises we will also be able to infer how many teams solved each of the problems. Your task is to figure out which teams solved which problems.Our counting skills are not up to par, so your program should be able to detect when the data we collected must be wrong (see sample input 1). Otherwise you should output a possible solution, represented as a sequence ofTstrings ofPcharacters each, in the following way. Both problems and teams are assigned with distinct integers, from 1 toPand 1 toT, respectively. For team numberi(1 ≤i≤T), write the string on alphabetN, Ysuch that itsj-th (1 ≤j≤P) character isYif the team managed to get problemjaccepted, andNotherwise. For example, the following three strings form a solution to the second sample case, where the score of each of three teams is 2, 1, 2, and the count of accepted submissions for each of three problems is 1, 2, 2:NYYNNYYYNThere is at least one other solution, namely:NYYNYNYNYWhen several solutions are possible we ask you to supply the one giving rise to the lexicographically smallest string, when each of theTrows are concatenated in order. In the example above we prefer the first solution, sinceNYYNNYYYNcomes beforeNYYNYNYNYin lexicographical order. (StringScomes beforeS′ in lexicographical order if the first different character between the two isNinSbutYinS').InputEach input case is described by three lines:The first contains two space-separated integersT(the number of teams) andP(the number of problems), with 1 ≤T,P≤ 80. The second containsTspace-separated integers between 0 and 90 (inclusive), thei-th of which indicates the number of problems solved by teami. The third (and last) line hasPintegers between 0 and 90, thej-th of which describes the number of teams successfully solving problemj.Different input cases are separated by a blank line. The last line of the input file will be0 0.OutputIf the input data has a solution, printTlines ofPcharacters each, depicting the lexicographically smallest solution as explained above. Otherwise output a single line with the wordImpossible. In any case a blank line should separate outputs for different test cases.ExampleInput:2 2\r\n1 2\r\n1 1\r\n\r\n3 3\r\n2 1 2\r\n1 2 2\r\n\r\n3 5\r\n3 3 1\r\n3 1 1 0 2\r\n\r\n0 0Output:Impossible\r\n\r\nNYY\r\nNNY\r\nYYN\r\n\r\nYNYNY\r\nYYNNY\r\nYNNNNProblem setter: David García Soriano",
+  "sample_input": "Input:2 2\r\n1 2\r\n1 1\r\n\r\n3 3\r\n2 1 2\r\n1 2 2\r\n\r\n3 5\r\n3 3 1\r\n3 1 1 0 2\r\n\r\n0 0Output:Impossible\r\n\r\nNYY\r\nNNY\r\nYYN\r\n\r\nYNYNY\r\nYYNNY\r\nYNNNN",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FAKESCOR",
+  "scraped_at": "2025-08-17 00:33:52",
+  "test_cases": [
+    {
+      "input": "2 2\r\n1 2\r\n1 1\r\n\r\n3 3\r\n2 1 2\r\n1 2 2\r\n\r\n3 5\r\n3 3 1\r\n3 1 1 0 2\r\n\r\n0 0",
+      "expected_output": "Impossible\r\n\r\nNYY\r\nNNY\r\nYYN\r\n\r\nYNYNY\r\nYYNNY\r\nYNNNN",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 10\n10 2\n10 8\n9 10\n5 3 2\n2 4 2\n4 3\n5 5 1\n8 8 6 1 1\n1 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 6\n5 7\n4 7\n8 1\n1 7 3\n6 10 7\n1 8\n6 1 8\n2 7 3 6 4\n3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 7\n6 10\n3 3\n7 7\n5 4 2\n9 8 1\n1 1\n7 2 6\n9 2 9 10 5\n10 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "48 29\n54 62\n62 84\n50 2\n98 36 33\n61 17 57\n75 82\n8 30 1\n81 17 27 27 75\n81 65",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 40\n72 68\n95 33\n99 67\n93 44 33\n69 100 79\n57 74\n15 66 82\n59 74 79 66 32\n5 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 1\n89 7\n20 11\n36 67\n8 9 91\n53 48 77\n28 73\n38 18 64\n61 5 73 65 83\n90 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 11\n3 39\n80 6\n72 74\n43 49 7\n67 90 78\n9 32\n60 79 23\n19 54 54 58 32\n34 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "67 36\n40 71\n73 48\n23 82\n23 74 97\n45 46 23\n90 42\n99 1 46\n55 57 61 98 14\n45 83",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "329 391\n66 172\n131 438\n238 378\n141 440 208\n77 197 373\n96 273\n238 354 361\n453 294 496 390 236\n405 368",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "91 260\n430 406\n292 273\n161 487\n376 372 77\n294 302 331\n230 50\n144 172 219\n494 63 305 413 367\n52 365",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "497 148\n243 427\n104 117\n331 255\n357 446 349\n185 213 469\n476 93\n442 300 231\n113 207 377 452 491\n359 138",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "250 405\n323 152\n254 312\n151 164\n69 226 176\n421 350 308\n487 327\n420 381 398\n373 426 214 420 163\n362 220",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "347 383\n269 436\n433 134\n103 394\n130 124 459\n75 466 435\n111 487\n289 485 137\n260 181 212 419 198\n284 439",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "267 341\n118 157\n303 191\n445 358\n221 335 490\n223 406 56\n266 147\n282 417 74\n493 239 398 452 479\n330 135",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "98 197\n461 61\n111 428\n374 106\n377 123 107\n475 487 288\n247 417\n183 372 234\n179 208 219 491 296\n340 284",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\n1 1\n1 999\n2 2\n1000 1000 999\n1 2 999\n999 2\n1000 1 999\n2 1 1000 1 2\n1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1\n1000 1\n999 1000\n1000 2\n1 1000 1000\n999 2 1\n2 1000\n1000 2 2\n999 1000 2 999 2\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

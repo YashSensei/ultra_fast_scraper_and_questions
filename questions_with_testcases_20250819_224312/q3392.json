@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Drink, on Ice",
+  "tags": [],
+  "text": "A good drink is always served on ice.\r\nThat said, the amount of ice is what makes the difference.\r\nIf it is too much, the drink will be well cooled, however, this is a bit of fraud as there could be less ice (and more Vodka for example).\r\nOn the other hand, if there is too little ice the drink is warm which is unacceptable.\r\nYou are to help the bartender, of course neither with mixing nor drinking, but with calculating the expected outcome of such mixtures.To make things easier, we assume that pure water is mixed with ice in a closed system, i.e., there is no problem with the outside temperature or the warming of the bottle, etc.\r\nTherefore, after a some time has passed, the system may be regarded as balanced (there is no further change in temperature and no more melting or freezing).\r\nYour job is to calculate the final temperature of this balanced system and the amount of ice and water in this equilibrium state.As you know from physics, it takes 4.19 Joule to heat one gram of water one Kelvin, whereas it takes 2.09 Joule if it is ice.\r\nWe define the capacitiescw= 4.19 J/(g*K)andci= 2.09 J/(g*K).\r\nMelting one gram of ice takes 335 Joule, where the temperature remains constant at zero.\r\nWe define the constantem= 335 J/g.\r\nThe total thermal energy of the ice and the water before the experiment is equal to the thermal energy of the final mixture.The figure below shows the energy of one gram of ice, ice-water-mixture, or water, where the temperature is measured relative to -30 degrees Celsius.\r\nThe jump at 0 degrees represents the melting of ice to water.\r\nThe amount of energy gained is proportional to the amount of ice already melted.Input SpecificationThe input contains several test cases.\r\nEach test case consists of four real numbersmw, mi, tw, ti.\r\nThe mass of watermwand the mass of icemiare both non-negative, given in grams, andmw+ mi> 0.\r\nThe water temperaturetwand the ice temperaturetifollow, both given in degrees Celsius, and you may assume that-30 < ti<= 0 <= tw< 100.\r\nThe last test case is followed by four zeroes.Output SpecificationFor each test case output the amount of ice and water in grams and the final temperature of the mixture in degrees Celsius.\r\nAll numbers must be rounded to one digit.\r\nAdhere to the sample output for the exact format to use.Sample Input100 20 50 -10\r\n100 22 0  0\r\n100 35 25 -10.5\r\n10  90 25 -28\r\n0 0 0 0Sample Output0.0 g of ice and 120.0 g of water at 27.5 C\r\n22.0 g of ice and 100.0 g of water at 0.0 C\r\n6.0 g of ice and 129.0 g of water at 0.0 C\r\n100.0 g of ice and 0.0 g of water at -4.2 C",
+  "sample_input": "100 20 50 -10\r\n100 22 0  0\r\n100 35 25 -10.5\r\n10  90 25 -28\r\n0 0 0 0",
+  "sample_output": "0.0 g of ice and 120.0 g of water at 27.5 C\r\n22.0 g of ice and 100.0 g of water at 0.0 C\r\n6.0 g of ice and 129.0 g of water at 0.0 C\r\n100.0 g of ice and 0.0 g of water at -4.2 C",
+  "link": "https://www.spoj.com/problems/DRINK",
+  "scraped_at": "2025-08-17 00:34:14",
+  "test_cases": [
+    {
+      "input": "100 20 50 -10\r\n100 22 0  0\r\n100 35 25 -10.5\r\n10  90 25 -28\r\n0 0 0 0",
+      "expected_output": "0.0 g of ice and 120.0 g of water at 27.5 C\r\n22.0 g of ice and 100.0 g of water at 0.0 C\r\n6.0 g of ice and 129.0 g of water at 0.0 C\r\n100.0 g of ice and 0.0 g of water at -4.2 C",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 7 10 6\n9 6 1 6\n2 9 10 6\n8 6 7 8\n9 3 1 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 5 5 3\n7 3 4 5\n6 7 7 5\n3 5 9 5\n6 8 4 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 7 2 10\n8 7 3 5\n10 9 1 4\n9 9 8 2\n10 10 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "88 33 72 16\n20 73 94 67\n66 93 84 8\n95 91 49 23\n19 13 28 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 19 20 3\n32 86 34 95\n99 100 31 18\n10 68 39 55\n36 46 56 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 15 11 98\n25 62 4 14\n29 95 36 26\n20 51 7 43\n67 43 46 84",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 43 2 71\n13 83 16 89\n72 66 7 98\n34 75 97 13\n64 15 41 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 73 19 59\n31 64 12 85\n10 1 46 60\n26 5 51 78\n63 18 16 31",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 477 67 165\n406 141 478 172\n283 355 352 230\n186 234 454 64\n374 202 275 494",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "120 332 454 176\n329 124 316 261\n414 225 459 242\n414 388 82 429\n385 185 365 141",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "452 262 148 425\n285 356 235 103\n410 411 395 297\n420 237 149 269\n451 269 90 59",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "235 140 57 374\n148 330 60 208\n99 482 153 204\n368 396 117 212\n401 68 262 143",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "312 194 378 221\n181 188 256 408\n320 88 372 264\n369 494 400 455\n444 189 148 217",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "331 182 138 111\n230 334 263 173\n84 434 424 71\n264 191 194 79\n174 291 357 226",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "332 154 350 477\n67 232 433 93\n188 129 315 210\n231 85 349 135\n85 114 355 418",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 999 1000 1\n999 1 1000 999\n2 999 1 1000\n999 999 999 1\n1000 999 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999 1000 2\n999 1 1000 999\n2 1000 1000 1\n2 1 1000 999\n999 1000 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

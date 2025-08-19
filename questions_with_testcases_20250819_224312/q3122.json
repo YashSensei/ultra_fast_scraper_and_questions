@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Use of Hospital Facilities",
+  "tags": [],
+  "text": "County General Hospital is trying to chart its course through the troubled waters of the economy and shifting population demographics. To support the planning requirements of the hospital, you have been asked to develop a simulation program that will allow the hospital to evaluate alternative configurations of operating rooms, recovery rooms and operations guidelines. Your program will monitor the usage of operating rooms and recovery room beds during the course of one day.County General Hospital has several operating rooms and recovery room beds. Each surgery patient is assigned to an available operating room and following surgery the patient is assigned to one of the recovery room beds. The amount of time necessary to transport a patient from an operating room to a recovery room is fixed and independent of the patient. Similarly, both the amount of time to prepare an operating room for the next patient and the amount of time to prepare a recovery room bed for a new patient are fixed.All patients are officially scheduled for surgery at the same time, but the order in which they actually go into the operating rooms depends on the order of the patient roster. A patient entering surgery goes into the lowest numbered operating room available. For example, if rooms 2 and 4 become available simultaneously, the next patient on the roster not yet in surgery goes into room 2 and the next after that goes into room 4 at the same time. After surgery, a patient is taken to the available recovery room bed with the lowest number. A recovery room bed is only available if the preparation is already finished when the patient leaves surgery. If two patients emerge from surgery at the same time, the patient with the lower surgery room number will be the first assigned to a recovery room bed.InputThe input file contains data for several simulation runs. Each run is separated by a blank line. All numeric data in the input file are integers, and successive integers on the same line are separated by blanks. The first line of each run is the set of hospital configuration parameters to be used for this run. The parameters are, in order:Number of operating rooms  (maximum of 10)Number of recovery room beds (maximum of 30)Starting hour for 1st surgery of day (based on a 24-hour clock)Minutes to transport patient from operating room to recovery roomMinutes to prepare operating room for next patientMinutes to prepare recovery room bed for next patientNumber of surgery patients for the day (maximum of 100)This initial configuration data will be followed by pairs of lines of patient data as follows:Line 1:  Last name of patient (maximum of 8 characters)Line 2: Minutes required for surgery Minutes required in the recovery roomPatient records in the input file are ordered according to the patient roster, which determines the order in which patients are scheduled for surgery. The number of recovery room beds specified in any configuration will be sufficient to handle patients arriving from surgery (No queuing of patients for recovery room beds will be required). Computed times will not extend past 24:00.OutputCorrect output shows which operating room and which recovery room bed is used by each patient, and the time period that the patient uses the room and bed along with a summary of the utilization of hospital facilities for that day. The output file consists of several sets of two tables each describing the results of the simulation run. The first table is in columnar form with appropriate column labels to show the number of each patient (in the order the patient roster), the patient's last name, the operating room number, the time surgery begins and ends, the recovery bed number and the time the patient enters and leaves the recovery room bed.The second table will also be in columnar form with appropriate column labels summarizing the utilization of operating rooms and recovery room beds. This summary indicates the facility type (room or bed), the facility number, the number of minutes used and percentage of available time utilized. Available time is defined as the time in minutes from the starting time for 1st surgery of day to the ending time of the last patient in a recovery room bed. Print a blank line after each run. Follow the output format shown on sample output.ExampleInput:5 12 07 5 15 10 16\r\nJones\r\n28 140\r\nSmith\r\n120 200\r\nThompson\r\n23 75\r\nAlbright\r\n19 82\r\nPoucher\r\n133 209\r\nComer\r\n74 101\r\nPerry\r\n93 188\r\nPage\r\n111 223\r\nRoggio\r\n69 122\r\nBrigham\r\n42 79\r\nNute\r\n22 71\r\nYoung\r\n38 140\r\nBush\r\n26 121\r\nCates\r\n120 248\r\nJohnson\r\n86 181\r\nWhite\r\n92 140Output:Patient          Operating Room          Recovery Room\r\n #  Name     Room#  Begin   End      Bed#  Begin    End\r\n ------------------------------------------------------\r\n 1  Jones      1    7:00    7:28      3    7:33    9:53\r\n 2  Smith      2    7:00    9:00      1    9:05   12:25\r\n 3  Thompson   3    7:00    7:23      2    7:28    8:43\r\n 4  Albright   4    7:00    7:19      1    7:24    8:46\r\n 5  Poucher    5    7:00    9:13      5    9:18   12:47\r\n 6  Comer      4    7:34    8:48      4    8:53   10:34\r\n 7  Perry      3    7:38    9:11      2    9:16   12:24\r\n 8  Page       1    7:43    9:34      6    9:39   13:22\r\n 9  Roggio     4    9:03   10:12      9   10:17   12:19\r\n10  Brigham    2    9:15    9:57      8   10:02   11:21\r\n11  Nute       3    9:26    9:48      7    9:53   11:04\r\n12  Young      5    9:28   10:06      3   10:11   12:31\r\n13  Bush       1    9:49   10:15     10   10:20   12:21\r\n14  Cates      3   10:03   12:03      8   12:08   16:16\r\n15  Johnson    2   10:12   11:38      4   11:43   14:44\r\n16  White      5   10:21   11:53      7   11:58   14:18\r\n\r\nFacility Utilization\r\nType  # Minutes  % Used\r\n-------------------------\r\nRoom  1     165   29.68\r\nRoom  2     248   44.60\r\nRoom  3     258   46.40\r\nRoom  4     162   29.14\r\nRoom  5     263   47.30\r\nBed   1     282   50.72\r\nBed   2     263   47.30\r\nBed   3     280   50.36\r\nBed   4     282   50.72\r\nBed   5     209   37.59\r\nBed   6     223   40.11\r\nBed   7     211   37.95\r\nBed   8     327   58.81\r\nBed   9     122   21.94\r\nBed  10     121   21.76\r\nBed  11       0    0.00\r\nBed  12       0    0.00",
+  "sample_input": "Input:5 12 07 5 15 10 16\r\nJones\r\n28 140\r\nSmith\r\n120 200\r\nThompson\r\n23 75\r\nAlbright\r\n19 82\r\nPoucher\r\n133 209\r\nComer\r\n74 101\r\nPerry\r\n93 188\r\nPage\r\n111 223\r\nRoggio\r\n69 122\r\nBrigham\r\n42 79\r\nNute\r\n22 71\r\nYoung\r\n38 140\r\nBush\r\n26 121\r\nCates\r\n120 248\r\nJohnson\r\n86 181\r\nWhite\r\n92 140Output:Patient          Operating Room          Recovery Room\r\n #  Name     Room#  Begin   End      Bed#  Begin    End\r\n ------------------------------------------------------\r\n 1  Jones      1    7:00    7:28      3    7:33    9:53\r\n 2  Smith      2    7:00    9:00      1    9:05   12:25\r\n 3  Thompson   3    7:00    7:23      2    7:28    8:43\r\n 4  Albright   4    7:00    7:19      1    7:24    8:46\r\n 5  Poucher    5    7:00    9:13      5    9:18   12:47\r\n 6  Comer      4    7:34    8:48      4    8:53   10:34\r\n 7  Perry      3    7:38    9:11      2    9:16   12:24\r\n 8  Page       1    7:43    9:34      6    9:39   13:22\r\n 9  Roggio     4    9:03   10:12      9   10:17   12:19\r\n10  Brigham    2    9:15    9:57      8   10:02   11:21\r\n11  Nute       3    9:26    9:48      7    9:53   11:04\r\n12  Young      5    9:28   10:06      3   10:11   12:31\r\n13  Bush       1    9:49   10:15     10   10:20   12:21\r\n14  Cates      3   10:03   12:03      8   12:08   16:16\r\n15  Johnson    2   10:12   11:38      4   11:43   14:44\r\n16  White      5   10:21   11:53      7   11:58   14:18\r\n\r\nFacility Utilization\r\nType  # Minutes  % Used\r\n-------------------------\r\nRoom  1     165   29.68\r\nRoom  2     248   44.60\r\nRoom  3     258   46.40\r\nRoom  4     162   29.14\r\nRoom  5     263   47.30\r\nBed   1     282   50.72\r\nBed   2     263   47.30\r\nBed   3     280   50.36\r\nBed   4     282   50.72\r\nBed   5     209   37.59\r\nBed   6     223   40.11\r\nBed   7     211   37.95\r\nBed   8     327   58.81\r\nBed   9     122   21.94\r\nBed  10     121   21.76\r\nBed  11       0    0.00\r\nBed  12       0    0.00",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/HOSPITAL",
+  "scraped_at": "2025-08-17 00:34:10",
+  "test_cases": [
+    {
+      "input": "5 12 07 5 15 10 16\r\nJones\r\n28 140\r\nSmith\r\n120 200\r\nThompson\r\n23 75\r\nAlbright\r\n19 82\r\nPoucher\r\n133 209\r\nComer\r\n74 101\r\nPerry\r\n93 188\r\nPage\r\n111 223\r\nRoggio\r\n69 122\r\nBrigham\r\n42 79\r\nNute\r\n22 71\r\nYoung\r\n38 140\r\nBush\r\n26 121\r\nCates\r\n120 248\r\nJohnson\r\n86 181\r\nWhite\r\n92 140",
+      "expected_output": "Patient          Operating Room          Recovery Room\r\n #  Name     Room#  Begin   End      Bed#  Begin    End\r\n ------------------------------------------------------\r\n 1  Jones      1    7:00    7:28      3    7:33    9:53\r\n 2  Smith      2    7:00    9:00      1    9:05   12:25\r\n 3  Thompson   3    7:00    7:23      2    7:28    8:43\r\n 4  Albright   4    7:00    7:19      1    7:24    8:46\r\n 5  Poucher    5    7:00    9:13      5    9:18   12:47\r\n 6  Comer      4    7:34    8:48      4    8:53   10:34\r\n 7  Perry      3    7:38    9:11      2    9:16   12:24\r\n 8  Page       1    7:43    9:34      6    9:39   13:22\r\n 9  Roggio     4    9:03   10:12      9   10:17   12:19\r\n10  Brigham    2    9:15    9:57      8   10:02   11:21\r\n11  Nute       3    9:26    9:48      7    9:53   11:04\r\n12  Young      5    9:28   10:06      3   10:11   12:31\r\n13  Bush       1    9:49   10:15     10   10:20   12:21\r\n14  Cates      3   10:03   12:03      8   12:08   16:16\r\n15  Johnson    2   10:12   11:38      4   11:43   14:44\r\n16  White      5   10:21   11:53      7   11:58   14:18\r\n\r\nFacility Utilization\r\nType  # Minutes  % Used\r\n-------------------------\r\nRoom  1     165   29.68\r\nRoom  2     248   44.60\r\nRoom  3     258   46.40\r\nRoom  4     162   29.14\r\nRoom  5     263   47.30\r\nBed   1     282   50.72\r\nBed   2     263   47.30\r\nBed   3     280   50.36\r\nBed   4     282   50.72\r\nBed   5     209   37.59\r\nBed   6     223   40.11\r\nBed   7     211   37.95\r\nBed   8     327   58.81\r\nBed   9     122   21.94\r\nBed  10     121   21.76\r\nBed  11       0    0.00\r\nBed  12       0    0.00",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 10 2 8 4 2 3\nnjce\n7 5\nlfvkdpb\n7 7\nahtotcnlwkrkju\n8 8\newfhxbjsjkynytb\n4 10\nasmbv\n10 3\npvhqrczhmj\n7 8\niwzzbtg\n9 5\nkvnncqll\n8 1\nv\n3 4\nhjqqltvhpm\n4 7\nyodrb\n4 10\nldueaijy\n3 3\nrvsksbo\n2 7\nzfwwougpiz\n8 3\nkiiskacmmoeoai\n4 4\nr\n5 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 5 4 5 3 2 8\nthbo\n3 5\ndevhxxbvs\n4 5\nrul\n10 8\nuddwq\n3 10\nsxqo\n6 8\nqqyfg\n2 10\nmhfrco\n2 10\nilks\n3 10\nhjxguq\n5 7\nkhuuvod\n5 3\nbpdttpi\n9 8\naw\n9 9\nqb\n3 5\nniyxdmd\n3 4\nrpflwc\n6 10\ndf\n3 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7 7 4 8 8 6\nahengcjs\n9 10\ndsgtfkrddu\n6 5\nsafppxynvqn\n8 8\nnnbi\n5 7\nehqoqfuq\n2 3\nftbdfetl\n8 7\nvc\n5 2\nrznaqmfu\n10 5\npev\n10 3\nbindvisgjjfmtc\n7 4\nk\n4 3\njd\n9 8\ntfohyh\n10 4\nviyf\n3 6\np\n5 8\nqawdmjdtby\n3 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "71 53 2 9 78 18 4\nhkn\n70 69\np\n4 62\nnr\n7 100\njfiehylwz\n1 28\nxifb\n79 11\nzynvsfzidu\n20 31\nxhgdw\n54 25\nu\n74 98\ncgqbqtdiq\n14 34\ntfojf\n55 66\nsh\n57 15\nro\n20 63\nbrcg\n46 11\ngcndrpuwi\n53 58\nywnh\n75 81\nmzxayqn\n68 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 66 27 38 21 17 59\nkxaer\n7 22\nst\n2 98\nlg\n94 76\nye\n54 34\nmenkwbjwcj\n16 54\nrelskxovp\n44 59\ncmfosp\n78 19\nn\n54 10\nlyafizxsqdz\n43 4\nsqfwfro\n79 52\nyqx\n10 83\nsflquetq\n24 41\nmhrqveb\n99 31\nohkxsw\n23 48\nuowveukkw\n48 61\neipzhog\n60 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 19 6 38 26 62 34\nnc\n5 27\nibzhtowl\n46 68\nrxhxvvukjfm\n68 52\nyy\n71 84\nwatszpidbzw\n42 61\nn\n47 41\nhrhrbeutwj\n96 5\njftr\n8 67\nyrlazvuvwj\n76 3\nbmyniqiwy\n78 59\ncfhtji\n29 19\nr\n78 36\nsltjka\n30 76\nsurvxog\n51 92\noylxfqeas\n47 72\nf\n4 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 20 99 13 63 78 95\nrsgp\n86 63\ncyt\n93 25\nlkdw\n82 39\nhvmlnlik\n81 55\nefcmacjbvsggj\n99 65\nureh\n78 21\nxnrhgn\n62 8\nxdjpeqgd\n32 86\npdc\n19 99\npnughhpzqsom\n14 45\nvmwoja\n62 91\nr\n60 31\nmv\n73 11\nmhlhwhv\n64 78\nblqjrmglechmi\n58 90\nfp\n82 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 49 60 86 32 74 25\naaytftjuah\n95 94\nwclixjpy\n40 31\nbhsnlirb\n56 75\nwxrolwheteqrrp\n2 2\no\n84 87\njzlq\n93 17\nnpb\n92 24\niwei\n95 47\navkw\n29 89\nutevhrlclmtz\n48 21\nrmdiynb\n95 83\nfkoti\n62 49\nfo\n83 73\noem\n62 26\naazpd\n20 7\nti\n4 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "74 344 311 366 456 402 56\nvhdy\n436 375\nhvzriil\n329 385\nxkowriggxofk\n279 300\nzejcuflktchuit\n426 239\nu\n394 331\nybp\n467 162\nwumvdadx\n362 302\nztjaqyg\n260 367\nunlvmnteagbq\n125 101\nipi\n454 380\nze\n348 456\ntynf\n157 483\nyhbno\n433 337\neky\n462 356\nn\n107 267\nbjruvaxa\n381 58",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "401 314 195 92 230 500 300\nvrfkkiro\n402 148\nfpzfg\n391 301\nrlyktsypvpsvu\n460 411\nmuewyapqifljsaq\n328 317\nnpgjjo\n200 399\nluacsma\n95 437\nqkdfcwltk\n173 107\nyyvxmko\n227 113\ncve\n77 92\nknzljco\n412 101\nbbglybct\n411 370\nemkrlcmwu\n394 152\nlvlun\n320 375\nnuaougwl\n491 59\nwgjcp\n255 70\nwxug\n278 440",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "299 73 331 366 463 188 288\nuak\n51 315\nkbdxpcf\n319 421\ndikxyed\n142 307\ntvqiivuyl\n162 307\nnom\n316 67\nq\n452 433\ndagqfs\n89 442\njuwpcfzj\n410 167\npuv\n94 128\nbkvf\n500 202\nhymh\n212 309\nlc\n219 201\nmxjqpjrk\n202 500\nxpplh\n76 200\nrrtdah\n459 442\njrzdxmebnp\n98 368",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "258 479 62 457 463 299 73\npqtr\n412 349\nud\n463 102\nbyvinjadylzc\n300 129\nrufykqyaymqy\n144 389\njfhfceekagyu\n174 335\nnnuj\n180 479\npbcsgxd\n291 64\nayf\n58 410\nuwtbgtpkf\n331 372\nblbzrlyvgipnn\n348 324\nemmq\n334 334\nuukumoq\n250 396\nm\n328 365\nnp\n73 222\ndnnetznzdits\n166 308\nc\n153 187",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "342 106 346 240 238 270 314\nyffzgkucem\n230 231\nt\n202 344\nzyqwtgsknow\n428 418\nrwycmegnazzwgz\n288 365\nqee\n282 234\nzvaxnyidjo\n442 411\nekvgzcbejv\n401 428\na\n145 447\nvzbgyqogu\n134 268\nckfzjctfnmhrmd\n204 166\nbvjawm\n500 455\ndty\n396 433\nljofpkff\n311 127\nuhscvrua\n151 157\nronxvacig\n60 435\nftu\n98 255",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "58 184 399 204 254 71 359\ncqkk\n399 323\ntbmuewj\n111 395\nxvprcxycjjhujkgr\n287 268\nthjmmfyeicqv\n408 199\nqqq\n121 68\nhcp\n99 162\nohrgcm\n497 406\nkkfs\n421 192\nwmjwvndxmb\n204 440\ncxgi\n290 421\nct\n132 247\njhihuixh\n157 290\nrrzd\n445 310\nru\n238 104\nonm\n251 179\nyiauvwv\n94 338",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "60 107 82 144 362 72 103\nvnpnew\n192 231\nxebvchak\n232 373\njkryuburid\n199 402\ntrsw\n272 175\nbrec\n61 52\ncam\n473 70\nfl\n487 125\nuvozu\n67 469\nqqhjrg\n103 349\nvcdeazwdf\n176 71\nb\n483 409\nmgophv\n53 456\nb\n375 277\neihjb\n481 98\nxsbnlkiqvkf\n439 189\nbzb\n145 104",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000\nfnaljqw\n1000 1000\noc\n1000 1000\nuumsbyblbvixizq\n1000 1000\nh\n1000 1000\nfhtbitahf\n1000 1000\nsg\n1000 1000\nmddoogzt\n1000 1000\nardshr\n1000 1000\nqofon\n1000 1000\nx\n1000 1000\ntr\n1000 1000\nojfcaeff\n1000 1000\nscqeg\n1000 1000\nyw\n1000 1000\naxsfq\n1000 1000\nxdva\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000\nervmqzg\n1000 1000\nmbxx\n1000 1000\nmhqrajymbfq\n1000 1000\nkfkleb\n1000 1000\nyadfiebczbi\n1000 1000\napelbuqwrr\n1000 1000\nwaerv\n1000 1000\naczngr\n1000 1000\np\n1000 1000\nigbiauv\n1000 1000\nlbjgnx\n1000 1000\ncndugdzv\n1000 1000\nqmvetu\n1000 1000\nvjaw\n1000 1000\nusmxzpwdklrxk\n1000 1000\nwzaoumffon\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999 1 999 1000 2 1000\nxgskphtf\n2 1000\nwhib\n1 999\nmgm\n1000 2\ntqkevyptkaqkxlav\n999 2\nqkuptywcrmkrq\n1 1000\nlypkusog\n2 999\nnodhgkph\n1000 999\noiimpkj\n1 999\nxaue\n1 1\ngjaexbftey\n1000 2\njuzhbzcu\n2 999\nlfkgjsezl\n999 1000\ngemrkyc\n1000 999\nghncvnk\n1 1\nlxhhe\n2 2\nrevavun\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1 1 999 1 1 999\njf\n2 1\npmyninrvuc\n1 999\nzytvdo\n1000 1000\ngooqwuqzrhztpl\n1 999\nyrxipbmjjt\n999 1\nluysl\n999 2\nfddk\n2 1\nojvr\n999 1\na\n1000 2\nftbshxvpcbeq\n999 2\nwpqk\n1 2\nhaivttim\n2 1000\nnpz\n2 2\ngvivsowwt\n999 2\nwwi\n999 1000\nvkrtotl\n999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

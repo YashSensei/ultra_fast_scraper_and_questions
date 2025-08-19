@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Free tour II",
+  "tags": [],
+  "text": "After the success of 2nd anniversary (take a look at problemFTOURfor more details), this 3rd year, Travel Agent SPOJ goes on with another discount tour.The tour will be held onICPCisland, a miraculous one on the Pacific Ocean. We listNplaces (indexed from 1 toN) where the visitors can have a trip. Each road connecting them has aninterest value, and this value can benegative(if there is nothing interesting to view there). Simply, theseNplaces along with the roads connecting them form atree structure. We will choosetwo placesas the departure and destination of the tour.Since September is the festival season of local inhabitants, some places are extremely crowded (we call themcrowded places). Therefore, the organizer of the excursion hopes the tour will visitat mostKcrowded places(too tiring to visit many of them) and of course, thetotal number of interesting valueshould be maximum.Briefly, you are given a map ofNplaces, an integerK, andMid numbers ofcrowded place. Please help us to find the optimal tour. Note that we can visit each place onlyonce(or our customers easily feel bored), also the departure and destination placesdon't need to be different.InputThere is exactly one case. First one line, containing 3 integersN K M, with 1 <=N<= 200000, 0 <=K<=M, 0 <=M<=N.NextMlines, each line includes an id number of acrowded place.The last (N- 1) lines describe (N- 1) two-way roads connectedNplaces, forma b i, witha, bis the id of 2 places, andiis itsinterest value(-10000 <=i<= 10000).OutputOnly one number, the maximum total interest value we can obtain.ExampleInput:8 2 3\r\n3\r\n5\r\n7\r\n1 3 1\r\n2 3 10\r\n3 4 -2\r\n4 5 -1\r\n5 7 6\r\n5 6 5\r\n4 8 3Output:12ExplanationWe choose 2 and 6 as the departure and destination place, so the tour will be 2 → 3 → 4 → 5 → 6, total interest value = 10 + (-2) + (-1) + 5 = 12* Added some unofficial cases",
+  "sample_input": "Input:8 2 3\r\n3\r\n5\r\n7\r\n1 3 1\r\n2 3 10\r\n3 4 -2\r\n4 5 -1\r\n5 7 6\r\n5 6 5\r\n4 8 3Output:12",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FTOUR2",
+  "scraped_at": "2025-08-17 00:34:12",
+  "test_cases": [
+    {
+      "input": "8 2 3\r\n3\r\n5\r\n7\r\n1 3 1\r\n2 3 10\r\n3 4 -2\r\n4 5 -1\r\n5 7 6\r\n5 6 5\r\n4 8 3",
+      "expected_output": "12",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 6 7\n10\n10\n8\n4 6 10\n6 4 2\n3 9 9\n10 1 9\n4 10 9\n1 5 4\n6 3 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 3 5\n9\n1\n10\n7 7 9\n3 4 6\n9 4 8\n3 9 2\n9 8 7\n9 8 8\n4 9 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 1 2\n9\n4\n2\n4 9 8\n9 5 9\n1 9 2\n5 6 8\n1 3 7\n1 9 2\n8 7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "36 84 1\n44\n46\n30\n49 2 73\n48 96 46\n22 24 91\n1 20 78\n98 65 70\n23 41 29\n77 21 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 51 77\n14\n62\n37\n47 57 65\n15 50 80\n76 56 49\n85 78 11\n70 36 36\n94 12 7\n98 27 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 59 76\n54\n40\n92\n86 69 10\n55 25 18\n1 30 3\n97 95 54\n11 20 16\n58 77 52\n83 13 41",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 10 78\n88\n60\n76\n6 86 46\n60 6 15\n74 14 13\n15 3 79\n53 3 54\n19 19 71\n71 70 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 96 18\n47\n20\n95\n69 99 1\n84 97 2\n2 98 1\n78 77 81\n43 34 65\n95 39 29\n96 82 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 175 249\n198\n347\n482\n156 338 453\n366 82 140\n198 333 355\n235 461 233\n325 436 196\n96 375 205\n144 377 276",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "94 350 256\n89\n56\n144\n480 155 277\n482 178 180\n335 53 398\n302 86 55\n128 264 468\n429 385 80\n220 231 167",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "313 412 457\n69\n311\n459\n163 374 123\n369 187 355\n329 370 264\n143 203 424\n231 497 186\n411 453 215\n328 360 423",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "427 109 453\n55\n376\n148\n461 69 200\n234 427 79\n117 437 439\n472 144 157\n336 68 225\n342 219 286\n279 500 453",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "317 167 136\n137\n496\n388\n443 475 302\n213 489 254\n380 249 85\n71 493 391\n118 282 391\n399 445 58\n229 382 124",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "175 486 445\n437\n174\n301\n127 463 357\n420 348 383\n265 67 412\n489 208 471\n473 71 457\n196 435 390\n160 252 490",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "137 464 419\n458\n124\n421\n296 181 490\n457 206 429\n270 395 77\n453 80 392\n79 267 310\n199 362 493\n310 81 101",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 999\n999\n2\n2\n1 999 2\n1000 1000 1000\n999 999 1\n999 2 999\n999 1000 2\n1000 999 1000\n2 1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 1\n999\n1\n999\n999 1 2\n1000 1000 999\n1000 2 2\n2 1 999\n1000 1 2\n999 1000 2\n1 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

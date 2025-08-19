@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Alia and Cryptography",
+  "tags": [],
+  "text": "Alia  is world’s most widely acclaimed cryptographer. Recently she developed a  new way to encrypt passwords over the internet. Instead of using the  secret “Key”, now she intends to use a secret “Key Matrix” for  encryption.The “Key Matrix” consists of an integer matrix of dimensions m × n.  Besides, there are four coordinates x1, y1, x2, y2. The “Key” can be  retrieved from “Key Matrix” performing bitwise XOR(^) operation over all  the integers present in rectangle having its upper left corner as (x1,  y1) and lower right index as (x2, y2). (Note:  the matrix is 0 based)  Also Alia has developed new tools to regularly update his key to protect  it from “attackers”. So she will update the values of some cells from  time to time. You friend, being an expert hacker has finally retrieve  the “Key Matrix” . Now he only needs to use the matrix to retrieve the  key. Since this appears to be a tedious task, he turns to you. Help your  friend by retrieving the secret “key” from the “key matrix”.In brief, you’ll have to do the following two operations over the matrix0 x1 y1 x2 y2 : Perform the XOR of all the integers present in the  rectangle having its upper left corner as (x1, y1) and lower right index  as (x2, y2).1 x1 y1 k:  Update the value at position (x1, y1) by k.InputThe first line of input will contain integers m and n (separated with space) specifying the dimensions of the  matrix. This is followed by a m × n matrix (m rows and n columns) denoting the “Key Matrix”. The next line contains an integer q denoting the number of queries. Each of the following q lines contains a single query in the specified  format.OutputFor each query, print the value of the secret “Key” that you retrieve from the “Key Matrix”Constraints1 ≤ m, n < 6001 ≤ q ≤ 20,0000 ≤ x1, x2 ≤ m – 10 ≤ y1, y2 ≤ n – 10 ≤ Aij, k ≤ 108ExampleInput:2 2\r\n1 2\r\n3 4\r\n2\r\n1 0 0 2\r\n0 0 0 1 1Ouptut:7ExplanationThe first query updates the value of (0, 0) to 2. Now the Key matrix appears like 2 2 3 4 Now for query 2 the secret key is the XOR of the value in the entire matrix So the key is 2 ^ 2 ^ 3 ^ 4 = 7",
+  "sample_input": "Input:2 2\r\n1 2\r\n3 4\r\n2\r\n1 0 0 2\r\n0 0 0 1 1Ouptut:7",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CONOR",
+  "scraped_at": "2025-08-17 00:34:27",
+  "test_cases": [
+    {
+      "input": "2 2\r\n1 2\r\n3 4\r\n2\r\n1 0 0 2\r\n0 0 0 1 1Ouptut:7",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 8\n5 3\n1 5\n2\n4 1 4 6\n10 1 6 8 9 9\n8 6 8 7 ztoi",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 1\n10 2\n3 2\n3\n3 10 3 7\n10 8 1 8 3 1\n4 10 5 4 bhyprj",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 6\n6 8\n6 10\n2\n7 1 5 8\n9 2 8 5 9 10\n7 8 9 4 r",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "39 71\n89 81\n34 52\n16\n14 23 95 33\n71 75 95 44 51 81\n22 85 52 47 sgtzprchk",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 23\n69 32\n16 1\n41\n86 44 52 31\n62 73 34 64 28 20\n49 71 80 65 fj",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 23\n68 70\n60 72\n5\n11 60 32 4\n29 48 26 29 36 64\n99 30 12 34 gd",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 45\n24 37\n29 18\n46\n33 36 77 59\n54 17 5 28 94 31\n27 41 25 95 oqaclkxin",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 73\n26 47\n83 41\n23\n99 1 74 48\n18 34 20 27 12 25\n3 17 67 40 qpciyb",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "778 2581\n1733 1495\n1696 2994\n2192\n2081 1007 2580 1675\n395 1536 1446 2356 1835 1128\n1676 1109 400 1796 jdwxfow",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2352 1490\n2422 1444\n1241 2720\n646\n677 2258 563 1493\n1667 2437 2399 1804 1895 406\n1089 963 2025 2964 yhrzw",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1460 1710\n1850 2668\n2915 2730\n1362\n2380 574 699 1975\n2219 2226 1614 1198 2489 2886\n1246 927 2525 1511 yxq",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "699 2344\n977 1526\n1193 2106\n1683\n964 965 2753 1507\n2260 1599 2957 1012 1306 2597\n1407 1518 2590 1305 boexwwgpw",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1968 1433\n1548 2169\n2469 1648\n2265\n1662 1589 2808 2143\n826 638 470 2367 2760 2876\n2594 2831 1733 2654 z",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2613 1865\n2811 1340\n1605 781\n2371\n2306 1094 1101 1097\n644 1676 1187 2085 2581 1794\n2554 845 2134 942 erh",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "752 2221\n2973 960\n1049 1689\n1937\n2562 1518 2510 449\n1782 481 426 1527 680 1372\n1948 1450 567 1600 qwtghr",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6001 6001\n6001 6001\n6001 6001\n6001\n6001 6001 6001 6001\n6001 6001 6001 6001 6001 6001\n6001 6001 6001 6001 znk",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "6001 6001\n6001 6001\n6001 6001\n6001\n6001 6001 6001 6001\n6001 6001 6001 6001 6001 6001\n6001 6001 6001 6001 kzug",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n6001 1\n2 2\n1\n6000 2 2 1\n6000 2 6001 2 1 1\n1 6001 6000 1 wjwmjnr",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n2 6001\n6001 2\n6001\n6001 6001 1 6001\n1 2 6000 1 6000 1\n6000 6001 1 2 uiaiecgj",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

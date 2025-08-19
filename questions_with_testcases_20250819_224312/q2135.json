@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Array Diversity",
+  "tags": [],
+  "text": "Enough with this Harry Potter, please! What are we, twelve-year olds? Let's get our teeth into some real pumpkin pasties — oops, programming problems!Here we go!Let's define the diversity of a list of numbers to be the difference between the largest and smallest number in the list.For example, the diversity of the list (1, -1, 2, 7) = 7 - (-1) = 8.A substring of a list is considered a non-empty sequence of contiguous numbers from the list. For example, for the list (1, 3, 7), the substrings are (1), (3), (7), (1, 3), (3, 7), (1, 3, 7). A subsequence of a list is defined to be a non-empty sequence of numbers obtained by deleting some elements from the list. For example, for the list (1, 3, 7), the subsequences are (1), (3), (7), (1, 3), (3, 7), (1, 7), (1, 3, 7).Given a list of length N find the number of substrings and subsequences in this list with the maximum diversity. If a substring/subsequence having maximum diversity occurs multiple times in the list, each of its occurrences adds towards the answer. And tell Harry Potter your answer.InputThe first line contains T, the number of test cases. Then follow T test case blocks.Each blocks starts with the first line containing the number N.The second line contains a list of numbers in this list.OutputFor each test case, output the number of substrings and the number of subsequences in this list with the maximum diversity.Since the answers may be very large, output them modulo 1000000007.ConstraintsT ≤ 10N ≤ 100,000Each number in the list is between 1 and 100,000 inclusive.ExampleInput:3\r\n3\r\n1 2 3\r\n4\r\n1 4 3 4\r\n3\r\n3 2 1Output:1 2\r\n3 6\r\n1 2",
+  "sample_input": "Input:3\r\n3\r\n1 2 3\r\n4\r\n1 4 3 4\r\n3\r\n3 2 1Output:1 2\r\n3 6\r\n1 2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/AMR11H",
+  "scraped_at": "2025-08-17 00:33:55",
+  "test_cases": [
+    {
+      "input": "3\r\n3\r\n1 2 3\r\n4\r\n1 4 3 4\r\n3\r\n3 2 1",
+      "expected_output": "1 2\r\n3 6\r\n1 2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n6\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n1\n4\n3\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n8\n1\n7\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "19\n76260969\n83114246\n6152116\n5297429\n36887449\n10364391\n48396837\n65262819\n61247983\n74784343\n95502310\n45838646\n1039145\n89192959\n92552261\n61735983\n66205649\n5701769\n91166817",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n38805686\n58910377\n62980980\n47284793\n71063371\n49797045\n44476056\n96496413\n475871\n33106694",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n32507988\n93123828\n45930367\n87009448\n50817568",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n19526088\n53046715\n64296432\n96985531\n62279274\n91582264\n58656282",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n98416903\n11213023\n32530283\n73190564\n60224440\n93133939\n66733518\n79731096\n65038720\n27236964\n40217647\n91407705\n17141396\n40712410\n50924858\n33470335\n54370502\n93124677\n30543033\n34393206",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "22\n1632\n48664\n65899\n51823\n58291\n60805\n72187\n65108\n76058\n12099\n27608\n84612\n20703\n59119\n77752\n38031\n51051\n57445\n1779\n5090\n93874\n17921",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n16452\n57994\n55815\n56693\n7434\n13909\n92669\n2669\n55503\n9773\n29395\n63032\n72737\n94898\n38291\n92538\n79294\n949\n67720\n21051\n96053\n36459\n22540\n51441\n27380\n71036\n43011\n63377\n15832\n34421\n90381\n13043\n17620\n46522\n20205\n65117\n95786\n6241\n24885\n63355\n99052\n46463\n63082\n8069\n3244\n77982\n41502\n92619\n9056\n4852",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "59\n68388\n82341\n78159\n11641\n74746\n24674\n33351\n58064\n43040\n33349\n79013\n37847\n91022\n21861\n25368\n49747\n22889\n97716\n93542\n65675\n39550\n41658\n99606\n76785\n82017\n75460\n23453\n52860\n24198\n65332\n66269\n89805\n67890\n10289\n21366\n28682\n9187\n7338\n44122\n776\n14657\n24121\n17538\n16120\n98467\n94539\n21315\n16648\n81005\n68165\n43618\n29241\n83232\n77530\n54618\n66630\n56958\n43027\n15407",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "35\n97212\n55407\n53318\n48856\n74789\n73147\n35978\n59181\n46785\n33713\n56613\n81056\n42443\n522\n7923\n58727\n4145\n24448\n61398\n48706\n72004\n25581\n67266\n66085\n67256\n20331\n50189\n97202\n77713\n57156\n74089\n1841\n64676\n63713\n90127",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "40\n66222\n27252\n46798\n31795\n7598\n25247\n77041\n57209\n89087\n46182\n14386\n91746\n71549\n68934\n98895\n52564\n5230\n2209\n63947\n13624\n81343\n26467\n62228\n17764\n21196\n50329\n44949\n52675\n92975\n5390\n10564\n93062\n33868\n60782\n74387\n28039\n90737\n67536\n94828\n25211",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "85\n90780\n93950\n64960\n15635\n1092\n36550\n93905\n70360\n45259\n43168\n33532\n48882\n51535\n53791\n47540\n867\n60777\n82507\n22978\n33293\n45712\n30263\n91681\n65288\n92949\n48925\n31475\n19921\n80525\n67938\n92529\n5029\n88748\n90271\n24891\n30225\n92758\n48276\n84326\n44561\n77246\n43095\n38008\n68593\n45020\n3057\n89672\n70061\n3995\n72885\n88472\n11792\n11002\n5326\n80347\n32946\n68887\n15625\n80129\n86393\n89595\n52914\n6483\n24174\n91246\n10039\n7564\n22729\n8606\n16072\n21346\n95701\n65065\n31173\n56382\n2462\n88022\n71758\n6591\n10656\n26700\n91892\n76538\n1168\n35225",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "91\n82537\n39920\n26309\n76831\n77364\n62690\n99411\n1793\n24666\n81625\n73546\n7021\n2132\n52480\n96228\n11725\n84086\n33377\n86109\n33047\n9025\n14085\n24951\n15083\n13202\n97304\n55160\n25122\n33382\n84760\n87857\n10683\n8201\n14940\n21543\n60780\n13692\n17856\n50984\n7898\n69897\n13306\n29028\n50751\n17473\n29867\n47944\n90230\n767\n96450\n85920\n2561\n16151\n26351\n38964\n12959\n88021\n35027\n10048\n45771\n86999\n43596\n68654\n77432\n33461\n83211\n45812\n12226\n30289\n71537\n65309\n34810\n58364\n36586\n89793\n17227\n38981\n26120\n59792\n29304\n73204\n94497\n80309\n15648\n97317\n82812\n62744\n4862\n86880\n11190\n60328",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "100\n46798042\n73583473\n38997181\n14488266\n49690757\n52572921\n24479175\n98586333\n73214955\n70764019\n62588442\n35511246\n83602289\n91784824\n57560928\n64293139\n29313906\n53632639\n48402445\n42063060\n69534441\n16047643\n14757605\n14339598\n70257966\n70794496\n19640119\n72339603\n72425690\n72773276\n24119682\n5139752\n17516601\n24568300\n74934509\n82045638\n3665822\n62010590\n88173731\n67035902\n37841164\n46481989\n85979548\n94436629\n64287803\n96070198\n70877291\n92885205\n13630172\n24909835\n64604214\n97005201\n53075214\n82116151\n41449087\n13144293\n53880591\n48062833\n70838455\n30331494\n7467056\n10120697\n50237622\n95921441\n46289232\n57983301\n20377012\n50220739\n18192724\n78336830\n17745605\n13845213\n66093884\n38655674\n63497748\n28888154\n28863372\n32274956\n59525448\n67059511\n25808589\n99363214\n24027464\n64246228\n35752609\n35523129\n43278572\n61172529\n26536927\n62594326\n88910204\n56078497\n15638220\n8049079\n91489455\n44695828\n83427429\n67996346\n32569225\n14115064",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "100\n32849199\n10555291\n99850972\n36164119\n22491042\n5335717\n82872019\n76890430\n48927455\n6641534\n8216834\n6366583\n92381740\n24774079\n66916297\n20129917\n1168812\n47234204\n59233906\n82902833\n74759514\n4287792\n83275662\n78769795\n86167684\n99672833\n76644983\n59132588\n62498897\n44584851\n1832572\n4894355\n81833163\n22971640\n34378353\n38341896\n22537713\n14203510\n51257840\n99177212\n92507426\n31232108\n32996877\n32158434\n98589948\n49245238\n82557625\n59579944\n76214987\n90082534\n95752326\n56782144\n50147796\n62549921\n80913121\n84452306\n73224217\n19236640\n80187017\n44593397\n20740834\n19342706\n10811629\n397848\n97937156\n95369341\n93281375\n10122107\n47926992\n34245125\n50889132\n22114251\n18632717\n64106292\n52210122\n52002437\n36887092\n13505120\n23333972\n5531771\n32147286\n69805697\n78090068\n5723691\n93666190\n92237493\n8664619\n18803668\n55169125\n84896488\n8730084\n95321432\n83967172\n35879014\n63808308\n20653341\n95650373\n13960700\n6820317\n21739256",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 100)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "100\n1\n1\n69027761\n1\n100000000\n26270243\n100000000\n81436198\n67051272\n1\n100000000\n95619340\n1\n79807613\n1\n100000000\n100000000\n100000000\n1914605\n37823695\n100000000\n1\n1\n8993534\n100000000\n1\n100000000\n1\n1\n1\n21000826\n100000000\n77145182\n100000000\n1\n98619735\n76848958\n1\n1\n33056123\n1\n1\n95287475\n95696575\n95341282\n1\n100000000\n59675702\n100000000\n1\n93760756\n20229627\n100000000\n100000000\n100000000\n100000000\n1\n100000000\n100000000\n100000000\n1\n1\n73034324\n100000000\n100000000\n31874795\n1\n13169842\n69378121\n1\n1\n100000000\n68176479\n100000000\n1\n100000000\n79048831\n100000000\n100000000\n1\n1\n1\n100000000\n100000000\n11811425\n67605575\n1\n1\n20426085\n1\n13921035\n6562013\n1\n73323414\n22446876\n1367842\n1\n1\n100000000\n83654343",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 100)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

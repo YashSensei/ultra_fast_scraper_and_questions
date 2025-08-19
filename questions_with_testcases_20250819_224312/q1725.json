@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Little Red",
+  "tags": [],
+  "text": "Once upon a time there was a very joyous girl who was called Little Red-Cap because she always wore a red riding cap. Red-Cap enjoyed a lot her strolls in the woods, during which she collected berries in her small basket to offer them to her grandmother, who was known to prepare the most delicious pies of all the region. However, Red-Cap definitely did not enjoy the perils of the woods, and in particular the Big Bad Wolf who was always hungry and prying.One day, Red-Cap decides to go from her home to that of her grandmother, collecting berries on the way and trying to make her journey in the safest possible way. Red-Cap's house is in a clearing at the westernmost point of the woods, her grandmother's house is in another clearing at the easternmost point, and inside the woods between them there are some other clearings containing berry trees. The woods are very dense, so the only way to go through them is using the pathways between the clearings, which fortunately Red-Cap knows very well. In order not to get lost, Red-Cap always moves through pathways that take her to a point strictly to the east of the point where she is. In order not to be caught by the wolf Red-Cap finds it imperative to avoid an ambush, and for that reason she always has in mind the number of different paths that take her from her current position to her grandmother's home.Apathin the woods is a sequence of clearings ordered from west to east, such that each clearing is connected with the next by a pathway. Apath to the house of Red-Cap's grandmotheris simply a path whose last clearing contains said house. For each clearing, itslevel of alternativesis the number of paths that go from it to Red-Cap's grandmother's house. In turn, for each path itslevel of alternativesis the sum of the levels of alternatives of all the clearings that make up that path. In order not to be captured by the wolf, Red-Cap wants to find the path with a maximum level of alternatives, starting at her house and ending at her grandmother's house. Can you help her?InputThe first line contains two integer numbersNandSwhich respectively indicate the number of clearings and the number of pathways in the woods (3 ≤ N≤3 × 104and2≤S≤105). The clearings are identified by different integer numbers between1andN, and are ordered from west to east, so that if1≤i < j≤Nthen clearingiis to the west of clearingj. Red-Cap's house is in clearing1, whereas her grandmother's house is in clearingN.Each of the followingSlines describes a pathway using two integer numbersIandJ, which indicate that there is a pathway between clearingIand clearingJ(1≤I < J≤N). There is at least one path from Red-Cap's house to her grandmother's house, and the maximum level of alternatives among the set of all such paths is no greater than1018.OutputPrint a single line containing an integer number, representing the maximum level of alternatives for a path from Red-Cap's house to her grandmother's house.Example 1Input:3 2\r\n1 2\r\n2 3Output:3Example 2Input:4 6\r\n1 2\r\n2 3\r\n3 4\r\n1 2\r\n2 3\r\n3 4Output:15Example 3Input:9 9\r\n1 3\r\n2 3\r\n3 4\r\n4 5\r\n1 5\r\n3 4\r\n3 9\r\n7 8\r\n4 9Output:8",
+  "sample_input": "Input:3 2\r\n1 2\r\n2 3Output:3",
+  "sample_output": "Input:4 6\r\n1 2\r\n2 3\r\n3 4\r\n1 2\r\n2 3\r\n3 4Output:15",
+  "link": "https://www.spoj.com/problems/TAP2013C",
+  "scraped_at": "2025-08-17 00:33:34",
+  "test_cases": [
+    {
+      "input": "3 2\r\n1 2\r\n2 3",
+      "expected_output": "3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 6\r\n1 2\r\n2 3\r\n3 4\r\n1 2\r\n2 3\r\n3 4",
+      "expected_output": "15",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "1 2\n1 2\n2 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2\n3 2\n2 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 3\n3 3\n3 3",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2\n1 2\n1 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 3\n2 1\n3 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 2\n1 3\n2 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 2\n2 1\n1 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 1\n2 2\n3 2",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\n1 1\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 3\n3 3\n3 3",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "3 3\n3 3\n3 3",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 3\n2 1\n2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

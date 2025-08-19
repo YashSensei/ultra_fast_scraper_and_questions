@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cell Phone",
+  "tags": [],
+  "text": "Nowadays, everyone has a cellphone, or even two or three. You probably know where their\r\nname comes from. Do you. Cellphones can be moved (they are \"mobile\") and they use wireless\r\nconnection to static stations called BTS (Base Transceiver Station). Each BTS covers an area\r\naround it and that area is called a cell.The Czech Technical University runs an experimental private GSM network with a BTS right on\r\ntop of the building you are in just now. Since the placement of base stations is very important\r\nfor the network coverage, your task is to create a program that will find the optimal position\r\nfor a BTS. The program will be given coordinates of \"points of interest\". The goal is to find\r\na position that will cover the maximal number of these points. It is supposed that a BTS can\r\ncover all points that are no further than some given distance R. Therefore, the cell has a circular\r\nshape.The picture above shows eight points of interest (little circles) and one of the possible optimal\r\nBTS positions (small triangle). For the given distance R, it is not possible to cover more than\r\nfour points. Notice that the BTS does not need to be placed in an existing point of interest.InputThe input consists of several scenarios. Each scenario begins with a line containing two integer\r\nnumbers N and R. N is the number of points of interest,1 ≤ N ≤ 2 000. R is the maximal\r\ndistance the BTS is able to cover, 0 ≤ R < 10 000. Then there are N lines, each containing two\r\ninteger numbers Xi, Yigiving coordinates of the i-th point, |Xi|, |Yi| < 10 000. All points are\r\ndistinct, i.e., no two of them will have the same coordinates.The scenario is followed by one empty line and then the next scenario begins. The last one is\r\nfollowed by a line containing two zeros.A point lying at the circle boundary (exactly in the distance R) is considered covered. To avoid\r\nfloating-point inaccuracies, the input points will be selected in such a way that for any possible\r\nsubset of points S that can be covered by a circle with the radius R +0.001, there will always\r\nexist a circle with the radius R that also covers them.OutputFor each scenario, print one line containing the sentence \"It is possible to cover M points.\",\r\nwhere M is the maximal number of points of interest that may be covered by a single BTS.ExampleInput:8 2\r\n1 2\r\n5 3\r\n5 4\r\n1 4\r\n8 2\r\n4 5\r\n7 5\r\n3 3\r\n\r\n2 100\r\n0 100\r\n0 -100\r\n\r\n0 0Output:It is possible to cover 4 points.\r\nIt is possible to cover 2 points.The first sample input scenario corresponds to the picture, providing that the X axis aims right\r\nand Y axis down.",
+  "sample_input": "Input:8 2\r\n1 2\r\n5 3\r\n5 4\r\n1 4\r\n8 2\r\n4 5\r\n7 5\r\n3 3\r\n\r\n2 100\r\n0 100\r\n0 -100\r\n\r\n0 0Output:It is possible to cover 4 points.\r\nIt is possible to cover 2 points.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CERC07C",
+  "scraped_at": "2025-08-17 00:34:13",
+  "test_cases": [
+    {
+      "input": "8 2\r\n1 2\r\n5 3\r\n5 4\r\n1 4\r\n8 2\r\n4 5\r\n7 5\r\n3 3\r\n\r\n2 100\r\n0 100\r\n0 -100\r\n\r\n0 0",
+      "expected_output": "It is possible to cover 4 points.\r\nIt is possible to cover 2 points.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 7\n7 1\n5 2\n5 4\n7 10\n3 7\n8 9\n7 7\n1 1\n8 8\n4 4\n5 8\n5 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 9\n8 10\n7 6\n7 10\n6 6\n4 4\n9 6\n3 7\n4 1\n10 2\n5 2\n5 10\n8 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7\n2 1\n6 7\n8 9\n1 10\n8 10\n2 2\n3 5\n9 5\n10 2\n6 8\n5 1\n7 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "12 28\n49 100\n76 57\n16 30\n74 23\n90 76\n95 46\n96 57\n32 87\n4 61\n3 51\n42 33\n78 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 56\n45 56\n86 83\n46 6\n9 88\n74 90\n24 43\n29 35\n24 99\n84 16\n42 16\n73 97\n10 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 43\n16 77\n42 77\n68 42\n68 42\n98 46\n3 79\n38 42\n8 4\n92 85\n70 78\n36 94\n26 25",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 88\n71 84\n68 6\n51 1\n97 50\n90 9\n76 97\n78 31\n7 84\n47 34\n12 73\n18 25\n27 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 26\n85 58\n26 7\n99 63\n68 88\n90 8\n46 62\n6 42\n3 57\n38 92\n31 71\n20 65\n66 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "832 534\n719 329\n206 990\n265 604\n360 484\n657 494\n575 337\n988 713\n614 621\n682 428\n737 653\n388 855\n329 218",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "364 398\n474 381\n113 868\n142 537\n168 451\n909 218\n716 718\n125 923\n249 462\n634 999\n495 924\n486 442\n656 488",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "946 938\n778 979\n236 924\n461 315\n287 984\n407 413\n203 182\n188 966\n905 507\n906 705\n992 994\n975 161\n397 141",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "139 333\n939 135\n592 303\n412 304\n815 352\n958 175\n642 756\n412 659\n143 853\n313 283\n834 308\n662 392\n448 323",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "631 238\n502 946\n382 480\n898 412\n491 933\n522 813\n726 513\n723 462\n254 936\n498 728\n951 459\n948 832\n344 604",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "625 257\n327 296\n752 361\n817 920\n884 579\n246 874\n156 613\n310 658\n248 860\n908 242\n116 253\n673 369\n665 669",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "548 872\n822 188\n870 111\n705 923\n608 192\n445 797\n486 488\n996 999\n244 903\n949 486\n662 172\n821 766\n789 185",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000\n2000 2000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2000 2\n1 1\n2000 2\n2 1999\n2 1\n1999 2000\n1 2000\n1 1\n1 1\n2 1\n2000 2000\n2 1\n1999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2\n1 2000\n1999 2000\n2000 2\n1 1999\n1 2\n2 2\n2000 2000\n2000 2000\n2000 1999\n1999 2\n2000 2\n1999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

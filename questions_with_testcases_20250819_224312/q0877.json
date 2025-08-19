@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Paper Fold",
+  "tags": [],
+  "text": "Sedrak likes making various things from paper (and he's very good at that). But after he finishes the job, his table is covered with a lot of useless creased, scrappy paper. Can he use them somehow?Imagine a thin strip of paper marked with creases at regular intervals, which we can think of as a line segment divided into equal-length subsegments. Each crease point is marked with asmountain,valley, orflatto specify the orientation of the crease (∧, ∨, -). For example the input might look as follows:Sedrak thinks, he can use the scrap, if it is possible to fold it usingallthe marked creases with the specified orientations. The operations he is allowed are as follows. Given a particular crease (∧ or ∨),simple foldrotates the portion of the segment to the left of the crease around the portion of the segment to the right of the crease. The rotation is counterclockwise for a mountain fold, and clockwise for a valley fold. When multiple layers of paper come in contact, they become inseparable; in other words, each simple fold must fold all layers of paper. For example, here is how he might fold the example above:Notice that when a subsegment is folded, the crease turns upside-down, inverting ∧↔∨. Thus, for a simple fold to bevalid,the inversions of the creases to the left must match the creases to the right.InputThe first line of input file contains the number 1 ≤ N ≤ 20 - the number of paper scraps on Sedrak’s table. Next N lines contain descriptions of paper scraps as a string containing symbols ‘^’, ‘v’ and ‘-‘. The length of a single description does not exceed 10^6.OutputFor each description line of the input file, output a single line containing “Yes”, if Sedrak can use the scrap, and “No” otherwise.ExampleInput:6\r\n-^vv-\r\n--v-\r\n-vv-\r\n^vv^\r\nv-v^-^^\r\n--^-v^^-v--Output:Yes\r\nYes\r\nNo\r\nYes\r\nNo\r\nYesNOTE: The last example corresponds to the scrap in the figure.",
+  "sample_input": "Input:6\r\n-^vv-\r\n--v-\r\n-vv-\r\n^vv^\r\nv-v^-^^\r\n--^-v^^-v--Output:Yes\r\nYes\r\nNo\r\nYes\r\nNo\r\nYes",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PFOLD",
+  "scraped_at": "2025-08-17 00:33:16",
+  "test_cases": [
+    {
+      "input": "6\r\n-^vv-\r\n--v-\r\n-vv-\r\n^vv^\r\nv-v^-^^\r\n--^-v^^-v--",
+      "expected_output": "Yes\r\nYes\r\nNo\r\nYes\r\nNo\r\nYes",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n2\n7\n6\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n8\n4\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "11\n64669587\n49235827\n28633\n3739245\n16723949\n64352725\n91812193\n73438506\n85152542\n18432427\n34585161",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n26645993\n76772949\n31631196\n72848750\n62571136\n6156947",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n98285022\n88744368\n40102192\n67408883\n12067564\n52720859\n62508976\n3216375\n77177631\n46995651\n31540070\n73587190\n50920172\n53757284\n96004814\n39235128\n38602405\n65738954\n34803296",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n10271974\n60327719\n42447111\n29674790\n2260962\n24403058\n38852356\n65836180\n74163387\n70271454\n15852740\n97525200",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "8\n89287376\n47338234\n93057555\n54970372\n57740459\n20792979\n17781300\n35685943",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n62393\n41434\n1439\n43231\n31931\n96756\n73734\n83678\n44524\n59023\n54644\n3267\n97214\n47575\n46660\n24660\n45541\n95716\n91245\n30228",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n34022\n20585\n86054\n79808\n55301\n62901\n80638\n64558\n55212\n96122\n6479\n5996\n28828\n4601\n27160\n54916\n94799\n73546\n50343\n98864",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n80528\n78651\n5463\n26566\n15942\n13457\n96115\n73498\n3037\n82800\n54145\n52732\n64044\n75110\n3587\n39952\n42315\n75572\n24848\n9085",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n45510\n58318\n14599\n47318\n8488\n86159\n80546\n4882\n98260\n91557\n26680\n31315\n64421\n34219\n39489\n30542\n61749\n87765\n54498\n18328",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n67417\n6571\n9967\n29323\n52985\n92073\n11478\n52386\n43395\n57563\n7929\n30018\n54918\n62854\n18407\n27675\n98010\n67487\n8890\n39945",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n87717\n82626\n16233\n16857\n76637\n57782\n1207\n50178\n5426\n90481\n89131\n34590\n46458\n46008\n43314\n78220\n33149\n89095\n72619\n35992",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n63243\n19397\n14608\n73464\n31895\n67488\n48203\n51520\n65413\n13236\n43834\n86067\n82641\n32773\n50413\n41924\n37563\n69564\n64610\n17822",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n51765021\n30278251\n7491927\n78480768\n73485242\n19303805\n85047868\n14956072\n38916952\n39323881\n88701395\n21515560\n47810852\n93402611\n33536241\n87119428\n56345717\n84304238\n25516719\n11961990",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n17055881\n74360611\n98665358\n23012302\n25951189\n69309207\n78218779\n59655319\n17086835\n25398052\n84297957\n34146363\n14147856\n70094595\n87483720\n50296820\n38664961\n34061183\n1629406\n31198753",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n19908467\n78828736\n32593115\n100000000\n1\n45667364\n100000000\n100000000\n17665184\n5273046\n1\n1\n20225663\n1\n100000000\n1\n1\n17456928\n100000000\n37218052",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 20)"
+    },
+    {
+      "input": "20\n1\n1\n100000000\n100000000\n76335519\n76172618\n1\n89683335\n100000000\n100000000\n89411700\n90946189\n1\n100000000\n100000000\n1\n100000000\n100000000\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 20)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

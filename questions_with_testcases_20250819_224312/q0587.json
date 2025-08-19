@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Shuffle Music",
+  "tags": [],
+  "text": "My office is quite far from my home. Every day, I go there by bus. That takes a lot of time. More over, due to traffic jams, the time to reach my office is not fixed. To make the best use of this time, I carry my music player all the time. My music player has a ‘shuffle’ mode. In that mode, the music player selects a track randomly that has not been played in that session (before the next Shuffle), and starts playing. It will continue doing so, until, I have stopped playing, or it has played all tracks in that session.For the purpose of this problem, you can assume that all tracks are of equal duration. To select randomly, the player keeps list of the tracks already played. That is, if I listen to one track now, from next shuffle session, that track will be marked as played.In addition, after stopping play, when it shuffles once more,to select a random track, the player always use such strategy that, selecting an old track (already listened in any previous shuffle session) is twice more probable than a new track (not listened in any previous shuffle session). I go to my office in the morning and return home at night.Performing 2 shuffles a day, one in the morning, one at night.It takes at least p minutes and at most q minutes to reach my office. The time required will always be an integer. You can assume that all travel times are equiprobable (that is, if p = 2 and q = 4, and if P(t) is the probability to reach office in t minutes, then P(2) = P(3) = P(4)). If all tracks are of 1 minute, how many days on average are required to listen to all the songs?InputFirst line of input contains an integerT (≤ 10053), the number of test cases. Each test case contains 5 integers,N (1 ≤ N ≤ 75),p1, q1, p2, q2 (0 ≤ p1, q1, p2, q2 ≤ 30, p1 ≤ q1, p2 ≤ q2), whereNis the number of songs,p1, q1are the minimum and maximum number of songs listened during day, andp2, q2are the minimum and maximum number of songs during night.OutputFor each test case, output the test case, followed by the expected number of days required to listen all songs. If it’s not possible to listen to all songs, output “IMPOSSIBLE”.The Judge used is \"Ignore FP rounding up to 10^-6\".ExampleInput:11\r\n1 0 1 0 1\r\n20 0 26 1 3\r\n10 11 21 0 0\r\n64 0 0 1 23\r\n48 0 0 0 0\r\n42 18 29 6 13\r\n29 19 25 0 0\r\n32 0 0 8 27\r\n75 0 1 0 1\r\n75 0 1 0 0\r\n75 0 0 0 1Output:Case 1: 1.3333333Case 2: 3.1143655\r\nCase 3: 1.0000000\r\nCase 4: 39.6303478\r\nCase 5: IMPOSSIBLE\r\nCase 6: 7.1950023\r\nCase 7: 4.7682679\r\nCase 8: 8.1514607\r\nCase 9: 660.4533446\r\nCase 10: 1320.4066892\r\nCase 11: 1320.4066892HintCalculate P[n][rest][q][next]. It is in this session, we have not heard the song in each n songs played, with \"rest\" number of songs never heard, with q minutes played so far, the probability of \"next\" song been played for the first time. Dp by this O (N ^ 2q ^ 2). Sum over [0, q] to get P[n][rest][qsum][next], so we can use subtraction to get interval sums.Now let 0 be day, 1 be night, then we compute dp[0][rest], dp[1][rest], the expected number of days it takes to finish all the songs if only considering day or night. dp[0][rest] is [0, rest) of dp [1][rest] and P[n][rest][qsum][next].Using O (rest) can be calculated as as X = dp[0][rest], Y = dp[1][rest], then {X = a Y + c, Y = b X + d}.Solving this, and done.In the base case with rest = 1, use infinite geometric series to compute overall O (TN ^ 2 + N ^ 2q ^ 2).",
+  "sample_input": "Input:11\r\n1 0 1 0 1\r\n20 0 26 1 3\r\n10 11 21 0 0\r\n64 0 0 1 23\r\n48 0 0 0 0\r\n42 18 29 6 13\r\n29 19 25 0 0\r\n32 0 0 8 27\r\n75 0 1 0 1\r\n75 0 1 0 0\r\n75 0 0 0 1Output:Case 1: 1.3333333Case 2: 3.1143655\r\nCase 3: 1.0000000\r\nCase 4: 39.6303478\r\nCase 5: IMPOSSIBLE\r\nCase 6: 7.1950023\r\nCase 7: 4.7682679\r\nCase 8: 8.1514607\r\nCase 9: 660.4533446\r\nCase 10: 1320.4066892\r\nCase 11: 1320.4066892",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SHUFFLEN",
+  "scraped_at": "2025-08-17 00:33:15",
+  "test_cases": [
+    {
+      "input": "11\r\n1 0 1 0 1\r\n20 0 26 1 3\r\n10 11 21 0 0\r\n64 0 0 1 23\r\n48 0 0 0 0\r\n42 18 29 6 13\r\n29 19 25 0 0\r\n32 0 0 8 27\r\n75 0 1 0 1\r\n75 0 1 0 0\r\n75 0 0 0 1",
+      "expected_output": "Case 1: 1.3333333Case 2: 3.1143655\r\nCase 3: 1.0000000\r\nCase 4: 39.6303478\r\nCase 5: IMPOSSIBLE\r\nCase 6: 7.1950023\r\nCase 7: 4.7682679\r\nCase 8: 8.1514607\r\nCase 9: 660.4533446\r\nCase 10: 1320.4066892\r\nCase 11: 1320.4066892",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n6\n2\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n6\n9\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n10\n7\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "17\n84590397\n89971939\n88237576\n22633580\n78780777\n59635280\n21756309\n28220532\n79900955\n90466477\n63085316\n89217084\n20568185\n31674109\n35327514\n10090830\n31819071",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n58440720\n57000814\n5030682\n97247169\n88282442\n93203276\n11949633\n36148900\n26309832\n51054451\n54346404\n57869022\n91397662\n60918299\n34389201\n43326268\n70497903\n117897\n16215031\n98143191",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n8479808\n97861903\n17999356\n86174194\n84795500\n16044315\n21828147\n72653452\n2544461",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n50601748\n79521411\n83356022\n67369310\n45083159",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n39943763\n61465999\n73303035\n47420182\n24967601\n62127817\n69214282\n66389690\n62204168\n28392707\n32384723\n96198947\n4095612\n77774498\n47387488\n96452828\n9186028\n61871228\n82490600\n39096944",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "37\n34919\n13614\n39239\n24948\n45917\n3767\n1033\n96103\n58648\n31435\n60630\n81596\n82392\n59551\n32154\n70394\n17595\n57374\n79487\n22434\n92304\n36046\n45012\n89151\n62842\n98511\n6426\n8499\n76853\n24851\n5559\n23442\n83192\n11409\n82479\n23871\n76510",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n25711\n68336\n2852\n83493\n16270\n81811\n75490\n372\n87171\n36162\n88675\n31052\n1995\n26392\n328\n67337\n81988\n3917\n18267\n60260\n56471\n51987\n81209\n48061\n46713\n98391\n42227\n73247\n15609\n17874",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "45\n95645\n94602\n40499\n10764\n78860\n2166\n63016\n3982\n65715\n91137\n55831\n39932\n58948\n56405\n29133\n88647\n75479\n65883\n27711\n20254\n56180\n18142\n16804\n87642\n46085\n10860\n65509\n61910\n91562\n43635\n27103\n10742\n36635\n37879\n38065\n48552\n84182\n8289\n72720\n85512\n22679\n19285\n79656\n3754\n84681",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "55\n87613\n42589\n24387\n70829\n52321\n55789\n98862\n46371\n68997\n76319\n72079\n43608\n39741\n82481\n2973\n60572\n54595\n2152\n1972\n52246\n60457\n51598\n45037\n58526\n1467\n40181\n46963\n82254\n61639\n77527\n2978\n67881\n28373\n84223\n57632\n3048\n36912\n96620\n15519\n57812\n80448\n16692\n10174\n85609\n25249\n12817\n50945\n75773\n23998\n19952\n2325\n23356\n68928\n51856\n35552",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "60\n12994\n98093\n27368\n40431\n56374\n63406\n10841\n74289\n1237\n78206\n79560\n48905\n351\n17102\n19485\n93669\n93127\n20411\n45958\n43572\n75187\n12365\n96117\n13973\n29458\n80893\n99046\n41913\n22401\n99182\n73766\n45838\n20871\n76749\n80142\n61069\n58682\n13266\n70772\n22059\n64484\n53971\n94853\n41450\n58939\n82523\n57787\n95773\n81906\n75087\n79476\n27035\n2644\n84365\n79633\n65732\n54588\n81272\n79994\n51584",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "38\n7125\n71834\n94436\n17506\n64547\n12549\n72577\n59417\n75808\n3085\n10762\n91729\n78306\n63879\n55918\n94325\n92804\n95393\n95775\n8842\n53988\n88287\n96657\n88936\n69341\n21557\n27851\n62057\n85877\n79700\n96332\n47718\n37857\n42503\n59835\n60245\n73571\n57177",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n59959\n86115\n53796\n9578\n26497\n58165\n54913\n85075\n45457\n50634\n16120\n27570\n11657\n87908\n90363\n46865\n43901\n54993\n63800\n48475\n30744\n19788\n68448\n86329\n25714\n43658\n28900\n70022\n36448\n39209\n42889\n59244\n79636\n11048\n34241\n31785",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "75\n62784391\n49833316\n47834608\n80436500\n47447054\n16420459\n78264345\n6688751\n26354163\n34786296\n51523883\n14592046\n99705555\n45396028\n22021162\n70869387\n25568534\n3335801\n13449615\n81090325\n91926055\n86435611\n78242892\n77938905\n54948038\n5879699\n34895692\n26626885\n84540041\n33052890\n61523334\n6618821\n73401773\n91750358\n50547617\n97070510\n10850507\n82994111\n76896560\n29742048\n3911193\n97776761\n41575292\n35167892\n84852981\n66587165\n39340897\n81062097\n9174061\n4495954\n21985901\n15368644\n24183622\n760248\n69283656\n99652615\n72505524\n24059182\n48957717\n77111736\n45009597\n89541441\n72824096\n49317480\n53939247\n33934239\n32540668\n54614875\n47721199\n61190205\n87510298\n89765242\n13321072\n21991354\n72079703",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 75)"
+    },
+    {
+      "input": "75\n69844010\n52126447\n52628168\n4574759\n690180\n76098328\n30139437\n63725918\n11324775\n17769405\n54973249\n62275308\n86563890\n60165322\n76377748\n68778542\n90077892\n75326348\n44256403\n74734864\n23914794\n88107090\n47927812\n38281996\n44171446\n16542571\n12379804\n44815262\n56786081\n99705500\n44001621\n87096097\n30932703\n10956220\n36681600\n65634924\n71127776\n98675565\n98863665\n6779433\n10322249\n86684850\n57626449\n16254145\n88029716\n71555486\n34771268\n65766898\n98526014\n19427264\n20829487\n57296412\n19040278\n71233602\n91633147\n7142576\n39933328\n32564059\n52997514\n53776033\n48775138\n35255171\n80381296\n15999573\n34660216\n50902462\n98174966\n21297172\n50368977\n65895182\n97046259\n40338430\n49247109\n96927320\n83469174",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 75)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "75\n84174699\n18143730\n100000000\n14222927\n50382697\n22137478\n78699093\n79771800\n1\n100000000\n1\n1\n100000000\n100000000\n19026464\n10911137\n24189513\n94372092\n1\n63517641\n89608999\n38725358\n1\n100000000\n100000000\n32057677\n1\n100000000\n100000000\n1\n1\n13883975\n1\n1\n100000000\n100000000\n1466795\n10388185\n11499578\n24873718\n48628404\n100000000\n100000000\n1\n64592240\n100000000\n1\n100000000\n1\n24298900\n100000000\n1\n74958996\n30306589\n1\n100000000\n26221719\n100000000\n1\n1\n100000000\n100000000\n71273277\n1\n1\n1\n1\n1\n100000000\n3494615\n1\n36011167\n83094820\n1\n85790558",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 75)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

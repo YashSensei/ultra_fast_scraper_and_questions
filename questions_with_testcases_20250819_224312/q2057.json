@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Homemade Asteroids",
+  "tags": [],
+  "text": "Pew pew pew!Everyone loves Asteroids, the classic arcade game involving senselessly blasting asteroids into submission with a spaceship. In fact, you love it so much that you built your very own version to play at home! Unfortunately, it sucks.Your version of the game is played on a 2D plane, containing your ship (a dot at coordinates ($X_S$, $Y_S$)) and $N$ ($1 \\leq N \\leq 1000$) stationary, triangular, positive-area asteroids. The $i$th asteroid has vertices at coordinates ($X_{Ai}$, $Y_{Ai}$), ($X_{Bi}$, $Y_{Bi}$), and ($X_{Ci}$, $Y_{Ci}$). All coordinates in the input are integers with absolute values no greater than $10^9$, and no two objects occupy any of the same space (even on their edges or vertices).Your game only permits you to fire a single missile, which travels in a straight line, destroying every asteroid that it comes in contact with (even on its edges or vertices). However, it doesn't exactly move very smoothly - instead, it starts at your ship at frame 0, and after every frame, its x-coordinate increases by $X_D$, and its y-coordinate by $Y_D$. These variables also have absolute values no greater than $10^9$, and at least one of them is guaranteed to be non-zero. After frame $F$ ($1 \\leq F \\leq 1000$), the missile simply disappears.There are $T$ ($1 \\leq T \\leq 20$) scenarios as described above. For each, you'd like to predict how many different asteroids your missile will be able to take out before frame $F+1$.InputFirst line: 1 integer, $T$For each scenario:First line: 2 integers, $N$ and $F$Second line: 4 integers, $X_S$, $Y_S$, $X_D$, and $Y_D$Next $N$ lines: 6 integers, $X_{Ai}$, $Y_{Ai}$, $X_{Bi}$, $Y_{Bi}$, $X_{Ci}$, and $Y_{Ci}$, for $i = 1..N$OutputFor each scenario:1 integer, the number of asteroids that will be destroyed by the missileExampleInput:14 44 17 4 -25 16 15 18 12 916 13 13 11 14 1020 9 20 7 18 722 5 23 11 27 6Output:2Explanation of SampleThe following grid shows the layout of the game, with your ship marked with an \"S\", and the missile's location at each frame marked with that frame's number:As can be seen, the missile destroys the first asteroid during frame 1, and then the third asteroid during frame 4. It does not destroy the second asteroid, even though its line of fire goes through it, as it does not intersect the asteroid during any of the frames. It also doesn't destroy the last asteroid, as it stops travelling after frame 4.",
+  "sample_input": "Input:14 44 17 4 -25 16 15 18 12 916 13 13 11 14 1020 9 20 7 18 722 5 23 11 27 6Output:2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/UOFTBC",
+  "scraped_at": "2025-08-17 00:33:57",
+  "test_cases": [
+    {
+      "input": "14 44 17 4 -25 16 15 18 12 916 13 13 11 14 1020 9 20 7 18 722 5 23 11 27 6",
+      "expected_output": "2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 6 9 3 4 8 4 9 7 10 3 8 7 2 7 2 9 8 8 5 8 6 3 3 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 9 7 1 8 1 8 8 1 2 4 1 7 7 2 8 3 5 5 5 2 7 8 1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1 8 7 7 2 3 5 8 4 3 10 7 2 8 9 10 5 10 6 7 9 1 4 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "83 30 28 3 6 79 24 77 2 13 82 43 49 90 26 77 52 57 65 33 10 21 5 61 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 79 34 100 85 82 54 21 71 20 18 82 6 17 39 48 16 49 79 45 21 29 54 73 54",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "80 8 65 67 3 64 21 59 70 29 18 87 66 1 20 21 12 56 88 85 57 35 73 13 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "73 81 2 27 58 100 84 61 53 47 19 63 56 39 60 93 18 38 83 42 38 52 10 75 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 39 65 2 92 5 80 12 98 55 10 65 38 21 76 36 12 47 67 67 40 97 83 26 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "259 453 242 235 164 277 366 144 377 59 324 466 445 437 307 451 349 101 84 428 119 266 406 480 374",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "253 215 445 200 305 303 293 339 68 228 435 92 328 112 57 350 163 207 125 415 164 293 452 295 297",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "92 466 168 168 214 478 199 441 165 238 456 425 138 467 108 446 86 247 252 345 389 122 439 281 493",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "142 415 156 445 480 437 72 222 396 485 221 197 244 449 465 369 415 210 230 459 301 184 498 453 273",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "209 213 331 215 161 317 117 177 204 60 130 377 404 122 101 201 398 182 434 441 426 450 55 408 382",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "56 429 50 155 326 182 369 477 95 291 92 340 461 153 453 299 72 263 465 362 408 417 76 318 416",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "103 121 88 184 140 92 336 460 76 59 152 85 128 453 267 116 192 92 242 407 454 354 160 318 270",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 1 1000 1 999 999 1 1000 999 1000 999 1000 1 999 1000 1000 1000 2 1000 1 2 2 1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 999 1000 1 1 999 2 1000 1 999 1000 999 999 2 1000 2 1 999 1000 1 2 1 999 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

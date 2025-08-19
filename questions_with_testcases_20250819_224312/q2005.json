@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Traffic Lights",
+  "tags": [],
+  "text": "Jim-Bob lives in a strange city where the streets don’t necessarily run NS or EW. Instead, the $N$ ($1 \\leq N \\leq 10^5$) streets run seemingly at random, sometimes crossing over each other by bridges, and intersecting with one another at exactly $K$ ($1 \\leq K \\leq 1000$) intersections. Each intersection consists of some streets coming together, as well as a traffic light.Street $i$ starts at intersection $s_i$ ($1 \\leq s_i \\leq K$), and ends at a different intersection $e_i$ ($1 \\leq e_i \\leq K$), going through no other intersections in between. It takes $t_i$ ($1 \\leq t_i \\leq 1000$) minutes to travel down street $i$ (this number is derived from the length, the average pothole size, and the amount of roadkill). Each road can be travelled in either direction in the same amount of time.The traffic lights in this city are also strange. First of all, each one only alternates between green and red. Each light also cycles through these colours at a different rate – the traffic light located at intersection $i$ stays green for $g_i$ ($1 \\leq g_i \\leq 1000$) minutes, then stays red for $r_i$ ($1 \\leq r_i \\leq 1000$) minutes, then goes back to green, and so on.Jim-Bob always obeys the law, and will never run a red light. If he arrives at an intersection while the light is green, he can pass right through it. Otherwise, he must wait there until the light turns green. If he gets to an intersection just as the traffic light is turning red, he must wait. It takes no time to drive through an intersection, so the light will never turn red on him as he drives through.Jim-Bob starts at his house, also known as intersection $1$. As soon as he leaves his house, all the traffic lights turn green, starting their green-red-green cycle. He wishes to drive to Billy-Bob’s house (which is right at intersection $K$) as fast as possible. Neither the starting nor the finishing intersections have traffic lights, so their $g$ and $r$ values will be given as 0. Find the minimum number of minutes Jim-Bob can take to drive from his house to Billy-Bob’s.InputLine $1$: 2 integers, $N$ and $K$Next $N$ lines: 3 integers, $s_i$, $e_i$, and $t_i$, for $i=1..N$Next $K$ lines: 2 integers, $g_i$ and $r_i$, for $i=1..K$OutputA single integer – the minimum number of minutes it takes to drive from Jim-Bob’s house to Billy-Bob’s. It will always be possible to do this.ExampleInput:7 6\r\n1 2 4\r\n1 3 1\r\n3 5 2\r\n2 4 2\r\n2 5 6\r\n5 4 2\r\n5 6 10\r\n0 0\r\n5 5\r\n1 20\r\n2 5\r\n10 2\r\n0 0Output:19Explanation of Sample:Jim-Bob can drive to intersection 2 (4 min), drive on to intersection 4 (2 min), wait for the green light (1 min), drive down to intersection 5 (2 min), and finally drive to Billy-Bob’s house (10 min). This is a total of 19 minutes.Note: The traffic light at intersection 3 only stays green for 1 minute, which means that Jim-Bob would just miss it if he drove directly there. On the other hand, he makes the green lights at intersections 2 and 5 just in time, as they turn red 1 minute after he passes.",
+  "sample_input": "Input:7 6\r\n1 2 4\r\n1 3 1\r\n3 5 2\r\n2 4 2\r\n2 5 6\r\n5 4 2\r\n5 6 10\r\n0 0\r\n5 5\r\n1 20\r\n2 5\r\n10 2\r\n0 0Output:19",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TLIGHTS",
+  "scraped_at": "2025-08-17 00:33:51",
+  "test_cases": [
+    {
+      "input": "7 6\r\n1 2 4\r\n1 3 1\r\n3 5 2\r\n2 4 2\r\n2 5 6\r\n5 4 2\r\n5 6 10\r\n0 0\r\n5 5\r\n1 20\r\n2 5\r\n10 2\r\n0 0",
+      "expected_output": "19",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 6\n9 5 3\n2 2 10\n4 8 3\n7 10 2\n2 6 1\n2 10 8\n3 5 9\n10 7\n6 7\n8 6\n9 3\n6 5\n9 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 8\n9 5 6\n7 5 6\n3 4 3\n9 7 1\n7 9 6\n9 8 8\n10 8 4\n9 1\n2 3\n5 6\n1 1\n9 9\n6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 6\n4 7 1\n6 1 6\n8 1 4\n7 10 2\n1 7 5\n3 6 5\n6 8 4\n1 8\n2 7\n8 4\n1 4\n1 7\n1 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "100 94\n64 79 17\n60 35 46\n9 65 86\n13 43 59\n14 25 77\n44 44 3\n13 37 72\n50 40\n81 37\n61 94\n40 51\n2 73\n3 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "51 54\n45 7 90\n70 5 82\n9 56 48\n97 64 6\n29 44 63\n39 57 45\n31 15 22\n35 91\n17 3\n31 87\n77 49\n12 66\n74 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 22\n58 96 63\n89 25 40\n83 75 73\n82 83 53\n86 45 45\n24 20 98\n99 72 11\n31 53\n61 92\n83 27\n82 10\n82 10\n76 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "56 72\n91 79 79\n10 85 77\n48 82 85\n40 45 55\n2 8 26\n49 38 36\n1 46 78\n48 53\n9 78\n54 85\n10 38\n37 84\n45 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 43\n44 60 38\n11 24 53\n31 60 80\n68 41 96\n44 80 52\n63 77 21\n21 7 81\n78 44\n46 30\n74 58\n14 5\n44 77\n70 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 71\n52 449 305\n65 106 174\n396 462 83\n239 177 451\n327 373 298\n180 274 304\n285 62 449\n214 292\n144 350\n121 169\n274 271\n447 128\n80 236",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "203 231\n287 308 319\n281 163 379\n96 222 279\n216 260 314\n439 420 365\n171 450 181\n205 374 143\n428 433\n148 383\n121 90\n390 293\n74 336\n254 139",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "109 431\n382 406 321\n453 408 168\n154 442 201\n294 237 289\n252 466 127\n366 474 471\n75 266 450\n146 336\n114 490\n370 414\n390 172\n425 63\n330 371",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "102 388\n353 451 158\n172 113 200\n219 346 302\n80 423 310\n311 201 471\n487 81 442\n215 250 209\n399 116\n425 73\n93 379\n75 347\n141 340\n203 124",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "432 318\n241 454 382\n319 128 358\n139 337 383\n173 178 426\n235 465 397\n222 150 444\n368 457 309\n124 422\n455 139\n130 82\n266 50\n447 450\n150 70",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "211 78\n162 281 490\n461 250 204\n321 286 169\n141 177 116\n369 131 165\n174 458 386\n302 215 244\n430 328\n371 278\n260 152\n57 145\n462 89\n95 345",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "326 206\n332 422 400\n279 71 393\n194 484 75\n440 220 468\n459 167 387\n488 420 244\n260 212 440\n499 390\n391 216\n134 152\n368 121\n272 102\n132 325",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 999\n999 2 1000\n2 999 1\n2 1000 1000\n1 999 1000\n1 1 2\n1 2 1\n1 2 999\n1000 1000\n1 1000\n999 1\n1000 1000\n1 999\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1\n2 1 2\n1 2 1\n2 1 2\n2 1 1000\n1 1 1\n1 999 2\n1000 1 1000\n999 1000\n2 2\n2 999\n1000 2\n2 1000\n1 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

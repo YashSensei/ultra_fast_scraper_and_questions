@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Bora Bora",
+  "tags": [],
+  "text": "Bora Bora is a simple card game for children, invented in the South Pacific Island of the same name. Two or more players can play, using a deck of standard cards. Cards have the usual ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen and King. Each card has also one of four suits: Clubs, Diamonds, Hearts and Spades.Players sit on a circle around the table and play by turns.  The next player to play may be the one to the left (clockwise direction) or to the right (counter-clockwise direction) of the current player, depending on the cards played, as we will see. At the start, the direction of play is clockwise.The deck is shuffled and each player is dealt a hand of cards. The remaining of the deck is placed, face down, on the table; this is called thestockpile.  Then the first (topmost) card is removed from the stock and placed on the table, face up, starting another pile, called thediscardpile.The objective of the game is for a player to discard all his cards. At each turn, a player discards at most one card. A card can be discarded only if it has the same rank or the same suit as the topmost card on the discard pile. A player discards a card by placing it, face up, in the discard pile (this card becomes the topmost). If a player does not have a suitable card to discard on his turn, he must draw one card from the stock and add it to his hand; if he can discard that card, he does so, otherwise he does nothing else and his turn ends.  A player always discards the highest valued card he possibly can. Thevalueof a card is determined first by the card rank and then by the card suit. The rank order is the rank itself (Ace is the lowest, King is the highest), and the suit order is, from lowest to highest, Clubs, Diamonds, Hearts and Spades. Therefore, the highest valued card is the King of Spades and the lowest valued card is the Ace of Clubs. As an example, a Queen of Diamonds has a higher value than a Jack (any suit) but has a lower value than a Queen of Hearts.Some of the discarded cards affect the play, as follows:when a Queen is discarded, the direction of play is reversed: if the direction is clockwise, it changes to counter-clockwise, and   vice-versa;when a Seven is discarded, the next player to play must draw two cards from the stock (the number of cards in his hand   increases by two), and misses his turn (does not discard any card);when an Ace is discarded, the next player to play must draw one card from the stock (the number of cards in his hand increases by one), and misses his turn (does not discard any card);when a Jack is discarded, the next player to play misses his turn  (does not discard any card).Notice that the penalty for the first card in the discard pile (the card draw from the stock at the beginning) is applied to the first player to play. For example, if the first player to play ispand the first card on the discard pile is an Ace, playerpdraws a card from the stock and does not discard any card on his first turn.  Also notice that if the first card is a Queen, the direction of play is reversed to counter-clockwise, but the first player to play remains the same.The winner is the player who first discards all his cards (the game ends after the winner discards his last card).Given the description of the shuffled deck and the number of players, write a program to determine who will win the game.InputThe input contains several test cases. The first line of a test case contains three integersP,MandN, separated by single spaces, indicating respectively the number of players (2   ≤P≤ 10), the number of cards distributed to each of the players at the beginning of the game (1   ≤M≤ 11) and the total number of cards in the shuffled deck (3   ≤N≤ 300). Each of the nextNlines contains the description of one card.  A card is described by one integerXand one characterS, separated by one space, representing respectively the card rank and the card suite. Card ranks are mapped to integers from 1 to 13 (Ace is 1, Jack is 11, Queen is 12 and King is 13).  Card suits are designated by the suit's first letter: 'C' (Clubs), 'D' (Diamonds), 'H' (Hearts) or 'S' (Spades).Players are identified by numbers from 1 toP, and sit on a circle, in clockwise direction, 1, 2  …P, 1. The firstP×Mcards of the deck are dealt to the players: the firstMcards to the first player (player 1), the nextMto the second player (player 2), and so on. After dealing the cards to the players, the next card on the deck - the (P×M+ 1)-th card - is used to start the discard pile, and the remaining cards form the stock. The (P×M+ 2)-th card to appear on the input is the topmost card on the stock, and the last card to appear on the input (theN-th card) is the bottommost card of the stock (the last card that can be drawn). Player 1 is always the first to play (even when the card used to start the discard pile is a Queen). All test cases have one winner, and in all test cases the number of cards in the deck is sufficient for playing to the end of the game.The end of input is indicated by a line containing only three zeros, separated by single spaces.OutputFor each test case in the input, your program must print a single line, containing the number of the player who wins the game.ExampleInput:2 2 10\r\n1 D\r\n7 D\r\n1 S\r\n3 C\r\n13 D\r\n1 S\r\n5 H\r\n12 D\r\n7 S\r\n2 C\r\n3 2 11\r\n1 S\r\n7 D\r\n11 D\r\n3 D\r\n7 D\r\n3 S\r\n11 C\r\n8 C\r\n9 H\r\n6 H\r\n9 S\r\n3 3 16\r\n1 H\r\n10 C\r\n13 D\r\n7 C\r\n10 H\r\n2 S\r\n2 C\r\n10 S\r\n8 S\r\n12 H\r\n11 C\r\n1 C\r\n1 C\r\n4 S\r\n5 D\r\n6 S\r\n0 0 0Output:1\r\n3\r\n2",
+  "sample_input": "Input:2 2 10\r\n1 D\r\n7 D\r\n1 S\r\n3 C\r\n13 D\r\n1 S\r\n5 H\r\n12 D\r\n7 S\r\n2 C\r\n3 2 11\r\n1 S\r\n7 D\r\n11 D\r\n3 D\r\n7 D\r\n3 S\r\n11 C\r\n8 C\r\n9 H\r\n6 H\r\n9 S\r\n3 3 16\r\n1 H\r\n10 C\r\n13 D\r\n7 C\r\n10 H\r\n2 S\r\n2 C\r\n10 S\r\n8 S\r\n12 H\r\n11 C\r\n1 C\r\n1 C\r\n4 S\r\n5 D\r\n6 S\r\n0 0 0Output:1\r\n3\r\n2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SAMER08J",
+  "scraped_at": "2025-08-17 00:33:12",
+  "test_cases": [
+    {
+      "input": "2 2 10\r\n1 D\r\n7 D\r\n1 S\r\n3 C\r\n13 D\r\n1 S\r\n5 H\r\n12 D\r\n7 S\r\n2 C\r\n3 2 11\r\n1 S\r\n7 D\r\n11 D\r\n3 D\r\n7 D\r\n3 S\r\n11 C\r\n8 C\r\n9 H\r\n6 H\r\n9 S\r\n3 3 16\r\n1 H\r\n10 C\r\n13 D\r\n7 C\r\n10 H\r\n2 S\r\n2 C\r\n10 S\r\n8 S\r\n12 H\r\n11 C\r\n1 C\r\n1 C\r\n4 S\r\n5 D\r\n6 S\r\n0 0 0",
+      "expected_output": "1\r\n3\r\n2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 2 5\n9\n5 lzqb\n1\n9 veaa\n2\n2 vixju\n1\n6 irxrs\n1\n1 bwns\n2\n2 wcf\n1\n9 ii\n6\n9 podz\n6\n8 zccb\n9\n4 c\n7 6 9\n5\n2 hquxi\n5\n7 oxghw\n1\n5 lrshk\n7\n1 ydzq\n3\n5 couom\n4\n10 ugv\n7\n9 ym\n9\n10 r\n10\n2 dw\n6\n2 rh\n2\n1 v\n8 5 2\n9\n10 mf\n7\n1 u\n2\n10 z\n3\n9 qidar\n7\n6 fd\n6\n10 awu\n10\n6 cbweh\n8\n9 pie\n6\n6 od\n5\n5 tgsvg\n5\n4 pte\n9\n10 a\n10\n1 lri\n2\n4 oxukj\n3\n7 wn\n9\n1 v\n6 10 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 2 3\n5\n8 wj\n8\n7 qgwa\n6\n5 bz\n7\n6 afu\n2\n8 cf\n5\n6 zqe\n6\n1 tajjl\n6\n8 hqvtg\n3\n6 wml\n2\n8 h\n9 7 9\n5\n5 r\n6\n10 ead\n9\n1 ylpxn\n6\n5 p\n5\n9 j\n3\n6 qqoji\n2\n2 en\n3\n10 rqkb\n1\n2 o\n3\n2 wlvxm\n6\n6 ixkfg\n10 10 6\n6\n8 ubj\n7\n4 s\n4\n4 fu\n9\n10 yvd\n7\n1 kr\n6\n8 s\n4\n7 np\n10\n7 vw\n7\n3 hfp\n3\n10 w\n2\n2 g\n5\n3 kngf\n2\n2 aaq\n5\n2 ew\n8\n9 c\n8\n4 tlhy\n9 1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 7 1\n9\n7 xe\n5\n3 p\n7\n4 qakm\n6\n1 hbyy\n9\n7 bfgvi\n4\n2 h\n1\n4 bh\n6\n3 e\n5\n8 oqd\n8\n4 u\n7 4 4\n7\n6 mni\n3\n6 proba\n2\n5 t\n10\n9 hcv\n2\n8 uojq\n6\n10 mjuv\n3\n4 let\n2\n5 ljzn\n7\n6 m\n8\n6 akv\n4\n4 dsq\n8 6 1\n9\n9 kz\n4\n2 azwdq\n5\n4 a\n4\n1 o\n2\n1 g\n2\n4 drkvo\n6\n4 vbdk\n6\n4 h\n6\n8 izusa\n10\n10 sohos\n1\n7 mmwfs\n1\n4 gg\n6\n9 nco\n9\n4 kxpst\n3\n2 jkiwf\n2\n10 nygm\n4 9 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "77 53 44\n31\n44 g\n92\n66 zb\n41\n65 vdn\n100\n34 hn\n75\n54 k\n2\n7 d\n19\n64 b\n74\n73 dvwjp\n81\n59 pwgs\n33\n87 ofgti\n39 7 13\n42\n21 fomi\n32\n93 dospb\n27\n99 eexz\n74\n50 jpx\n50\n71 iis\n44\n91 rbk\n79\n69 fn\n78\n96 wvgfa\n60\n58 bse\n44\n30 r\n1\n18 yawue\n98 67 51\n58\n18 lqr\n87\n10 x\n23\n66 n\n31\n40 vorl\n96\n85 zhgcj\n45\n75 wu\n11\n67 sawbe\n27\n49 nwc\n20\n43 a\n17\n85 mfzf\n5\n45 iy\n3\n41 nuitl\n84\n8 gzo\n36\n84 qtoy\n10\n24 zlzbf\n26\n28 esxtn\n62 55 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "14 12 37\n69\n37 ludmd\n50\n2 iihh\n3\n67 ju\n79\n34 kpui\n85\n48 rxmp\n31\n99 xwsi\n88\n62 xzcyj\n2\n44 kutv\n78\n23 td\n84\n18 ccq\n12 4 4\n72\n74 xn\n17\n49 m\n43\n87 nkk\n33\n68 k\n52\n53 rb\n82\n56 woz\n90\n23 qfm\n43\n36 ffavg\n88\n74 i\n28\n69 pupo\n25\n72 b\n49 82 86\n34\n37 mjb\n7\n39 bzj\n83\n7 lun\n100\n96 kg\n39\n19 bh\n74\n65 xoqcq\n6\n24 k\n34\n1 qk\n75\n34 shvz\n40\n42 ub\n32\n49 a\n42\n35 kgawt\n58\n6 gtr\n65\n75 xoxv\n76\n63 dsmko\n93\n5 jkyn\n59 6 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 93 25\n24\n22 gpl\n17\n71 gbitf\n52\n17 hyfnt\n45\n42 db\n51\n90 p\n52\n4 vr\n39\n49 c\n34\n69 sgpjb\n90\n32 ixu\n70\n86 dtbbo\n21 3 92\n21\n14 z\n30\n20 u\n37\n19 ye\n10\n87 aibyo\n48\n94 igxn\n79\n90 gl\n27\n10 pelv\n27\n68 xkp\n20\n86 p\n18\n97 wcl\n20\n71 lbkie\n74 70 38\n4\n77 k\n44\n32 g\n49\n19 ncze\n10\n93 yvca\n72\n28 z\n79\n87 z\n92\n62 ffp\n25\n94 isf\n30\n11 blhq\n5\n73 h\n75\n38 qectt\n44\n15 qeswr\n92\n75 ze\n4\n64 pgghk\n91\n7 oi\n45\n90 yxw\n14 41 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "83 15 12\n54\n80 bq\n99\n19 zer\n3\n46 j\n59\n100 rj\n85\n79 pxjtv\n30\n42 oqmqe\n81\n72 pualu\n61\n62 qf\n90\n1 ck\n10\n60 j\n7 22 76\n51\n85 vhr\n90\n78 hpn\n7\n36 x\n52\n9 qe\n24\n2 xvzuu\n100\n47 pz\n84\n31 kfdx\n67\n65 jrrw\n20\n11 spjqd\n71\n10 xca\n92\n48 vb\n19 89 3\n15\n69 rp\n64\n5 pfcrx\n54\n33 ku\n100\n87 gpbt\n37\n41 hryiy\n18\n100 qbr\n35\n98 apvi\n65\n91 dmray\n58\n16 r\n63\n85 iefxp\n2\n75 mo\n61\n81 vfav\n37\n10 xn\n68\n98 gsd\n91\n80 qda\n10\n39 xotf\n7 43 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 32 22\n47\n42 lcjje\n9\n61 q\n84\n17 ten\n57\n19 l\n99\n79 c\n23\n90 cuig\n72\n10 elex\n32\n59 wbxdy\n56\n67 xa\n38\n18 ecvx\n16 75 20\n83\n93 lu\n76\n51 ev\n42\n31 wli\n29\n88 r\n23\n2 jrawq\n26\n89 jvxfg\n19\n97 duclb\n26\n91 pxnvm\n3\n25 kjqbg\n11\n95 frpi\n64\n36 t\n65 82 36\n11\n24 ru\n99\n21 wrohz\n8\n73 pkl\n60\n37 qtkz\n79\n16 fum\n34\n26 nod\n60\n80 i\n96\n76 g\n29\n37 vbe\n58\n80 oj\n28\n11 n\n64\n97 cjph\n44\n7 u\n83\n43 f\n18\n73 rtf\n49\n50 sfgs\n84 82 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "89 133 132\n70\n66 tv\n133\n117 dywj\n116\n148 hqfj\n115\n90 bynr\n143\n102 jtnt\n59\n36 fnpyx\n132\n139 w\n141\n117 vv\n60\n105 gyshd\n37\n104 f\n44 68 60\n62\n134 b\n80\n139 sx\n108\n31 imr\n78\n125 duzvt\n48\n89 vdzx\n59\n109 myunj\n40\n90 dmghs\n23\n31 gbp\n107\n24 gfsu\n89\n64 z\n47\n125 i\n16 53 126\n20\n64 k\n130\n18 u\n106\n112 xzu\n103\n21 ndszz\n27\n25 jz\n69\n54 o\n42\n47 ycwd\n140\n56 r\n128\n41 tv\n26\n128 gkcfc\n99\n111 jut\n134\n136 fnxm\n95\n149 q\n62\n114 wbd\n79\n97 uuk\n55\n115 docns\n138 131 58",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "105 22 17\n16\n72 e\n60\n121 tck\n135\n91 r\n94\n52 bnfnz\n97\n130 kk\n75\n91 fxho\n126\n65 x\n86\n105 n\n116\n121 c\n27\n61 px\n90 65 91\n109\n147 korq\n77\n112 vo\n95\n57 grz\n56\n40 y\n48\n56 tb\n33\n63 sn\n142\n104 krcoq\n130\n104 sm\n19\n74 tm\n61\n59 rafjn\n103\n57 ytk\n128 125 123\n40\n120 aas\n125\n121 ei\n132\n94 pusw\n69\n89 q\n35\n59 bzlgz\n88\n98 ool\n73\n123 qyk\n67\n62 mvngn\n56\n73 pul\n97\n57 lwkib\n79\n135 lzfza\n149\n140 an\n37\n81 xz\n91\n117 z\n97\n36 rku\n67\n52 my\n48 130 129",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "28 119 121\n33\n104 znt\n143\n55 l\n98\n24 ilsqb\n65\n15 tbw\n51\n100 mnkul\n101\n75 aedx\n134\n124 ftuuf\n24\n76 nuwcx\n86\n46 ur\n40\n65 p\n79 80 33\n124\n73 mbpc\n86\n110 ktm\n73\n21 eq\n105\n103 okv\n87\n40 rptyq\n33\n72 v\n37\n93 pjsve\n64\n40 rr\n40\n81 na\n130\n75 taijv\n105\n46 xflcx\n38 104 142\n63\n72 oll\n66\n123 ecpat\n69\n26 ptw\n29\n115 c\n31\n82 jsn\n73\n99 poj\n108\n54 y\n49\n133 jdor\n20\n150 x\n100\n23 s\n85\n65 je\n80\n18 is\n149\n133 lnd\n139\n52 xpudn\n68\n76 mgnrl\n117\n28 s\n127 81 142",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "118 48 21\n26\n109 tf\n114\n125 g\n106\n35 vit\n59\n103 bffq\n98\n53 ezz\n126\n78 rllk\n39\n28 ioi\n71\n112 q\n79\n43 qcdt\n130\n48 tmifp\n119 54 136\n87\n143 a\n32\n107 gyzga\n94\n52 jfhqw\n30\n40 hpqo\n15\n33 a\n141\n148 s\n131\n147 vzb\n15\n109 ejne\n101\n131 zlpj\n60\n89 hm\n119\n43 xuho\n147 63 115\n66\n75 m\n83\n97 qub\n134\n72 s\n33\n56 p\n139\n48 r\n69\n39 ibfcq\n136\n37 lvlq\n87\n25 vy\n33\n122 dqbk\n141\n94 zusb\n127\n41 cupmq\n139\n147 nx\n56\n78 u\n117\n39 pvpyp\n110\n43 w\n51\n75 z\n96 129 121",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 113 55\n130\n109 xx\n94\n100 oqsq\n49\n44 ke\n141\n58 ltiwk\n18\n30 dub\n65\n49 hnxv\n110\n132 b\n140\n89 ptg\n55\n87 a\n90\n135 snv\n59 22 131\n96\n119 yc\n79\n71 l\n64\n81 ft\n60\n40 w\n139\n81 y\n100\n26 ovei\n65\n78 de\n108\n31 iw\n150\n82 yol\n55\n38 klfb\n64\n22 sep\n61 130 144\n102\n67 ynsib\n120\n50 mz\n52\n54 jgn\n31\n117 z\n76\n97 jwui\n145\n113 gmvx\n65\n111 bhuxg\n141\n150 pok\n129\n26 gl\n44\n15 g\n20\n116 gaoft\n31\n92 hct\n102\n106 qw\n18\n73 vdq\n149\n92 xojkq\n53\n136 le\n41 45 18",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "96 43 138\n113\n27 tueau\n126\n127 jf\n147\n57 jcub\n25\n22 i\n20\n29 lkja\n60\n103 cdcbl\n51\n117 wl\n75\n28 edgri\n88\n88 nu\n140\n141 zpqn\n140 45 124\n18\n95 g\n82\n45 zohj\n119\n118 nvsk\n52\n92 kyic\n131\n93 v\n86\n27 sdn\n76\n85 xgy\n66\n77 sg\n150\n42 x\n107\n44 yu\n52\n132 mj\n90 105 111\n29\n104 tzgwv\n114\n47 t\n67\n147 njkw\n58\n81 rzlw\n149\n49 gtfvh\n123\n126 uce\n40\n52 utbvp\n23\n53 kokiv\n58\n48 vcqbg\n55\n136 qrufs\n80\n80 e\n33\n103 twfb\n54\n98 uel\n99\n35 v\n106\n64 jn\n76\n114 uput\n140 144 144",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122 38 20\n113\n39 a\n105\n120 tv\n86\n56 j\n91\n74 cjpi\n56\n133 tmu\n149\n49 f\n47\n22 qqmvv\n92\n96 w\n24\n129 vbms\n128\n97 a\n38 42 83\n143\n29 gg\n31\n62 adtm\n48\n84 nf\n34\n141 xa\n147\n147 innto\n112\n90 coz\n101\n22 bwr\n94\n35 snt\n51\n121 yhg\n100\n123 yr\n148\n103 pdmg\n80 101 115\n29\n138 isz\n60\n15 apexg\n28\n93 myjna\n35\n145 t\n54\n76 t\n38\n65 nbguc\n35\n150 fa\n42\n134 qa\n25\n29 ly\n92\n93 adppc\n107\n65 cfx\n37\n71 cn\n145\n110 phd\n144\n43 ba\n81\n145 p\n109\n44 xosw\n40 43 55",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "300 300 300\n300\n300 lzu\n300\n300 hxym\n300\n300 cozht\n300\n300 u\n300\n300 tipm\n300\n300 esbn\n300\n300 jv\n300\n300 ctzka\n300\n300 bgrsd\n300\n300 rlnhl\n300 300 300\n300\n300 hdf\n300\n300 tmgay\n300\n300 rz\n300\n300 oju\n300\n300 vwwys\n300\n300 pa\n300\n300 gqda\n300\n300 ijoxq\n300\n300 t\n300\n300 xp\n300\n300 dnfll\n300 300 300\n300\n300 mu\n300\n300 pqmm\n300\n300 d\n300\n300 qlz\n300\n300 lahu\n300\n300 w\n300\n300 mmc\n300\n300 ydx\n300\n300 r\n300\n300 dum\n300\n300 uu\n300\n300 itca\n300\n300 fyfwo\n300\n300 yztw\n300\n300 xt\n300\n300 w\n300 300 300",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "300 300 300\n300\n300 bfoi\n300\n300 x\n300\n300 h\n300\n300 pc\n300\n300 jlrrh\n300\n300 n\n300\n300 ohx\n300\n300 qitn\n300\n300 h\n300\n300 rlu\n300 300 300\n300\n300 ulc\n300\n300 wbk\n300\n300 dxz\n300\n300 scd\n300\n300 zzx\n300\n300 dzem\n300\n300 t\n300\n300 lml\n300\n300 zwj\n300\n300 mtaj\n300\n300 q\n300 300 300\n300\n300 z\n300\n300 a\n300\n300 e\n300\n300 iwzy\n300\n300 znf\n300\n300 blybp\n300\n300 beq\n300\n300 uqnie\n300\n300 cr\n300\n300 lpnz\n300\n300 fbut\n300\n300 mmscu\n300\n300 svq\n300\n300 i\n300\n300 lnjbs\n300\n300 u\n300 300 300",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 300\n300\n2 vgzz\n299\n1 rnfm\n1\n300 xeyo\n1\n300 ef\n299\n2 awya\n300\n1 b\n300\n300 a\n300\n1 nv\n1\n300 hlb\n2\n299 s\n299 1 299\n2\n300 ci\n2\n299 w\n299\n299 qgm\n1\n1 hmc\n1\n1 gubv\n299\n1 cdh\n299\n2 jz\n300\n1 rzo\n300\n2 k\n2\n1 t\n300\n299 l\n299 1 1\n299\n2 e\n300\n299 awdge\n300\n300 bgsn\n299\n299 unwri\n1\n2 tqe\n300\n300 oi\n2\n299 odp\n2\n1 cs\n299\n2 xf\n1\n2 lc\n1\n2 mbn\n2\n1 oxm\n299\n300 oxhlr\n300\n299 sslsf\n300\n299 bzew\n299\n1 acpy\n1 300 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 300 299\n2\n1 gu\n300\n300 yfmru\n299\n2 cn\n300\n299 vt\n2\n2 tljr\n299\n300 twy\n2\n299 vyr\n2\n299 qoze\n299\n2 tf\n299\n1 hdj\n2 2 300\n2\n2 jsh\n2\n2 pvsac\n1\n300 mnd\n2\n299 otd\n299\n299 rv\n300\n2 ggdc\n1\n300 ixp\n2\n300 twm\n1\n2 l\n299\n2 nfi\n1\n300 fnanf\n2 2 2\n1\n300 o\n299\n299 dpes\n1\n2 es\n300\n2 vogi\n2\n300 r\n299\n300 vf\n299\n300 bam\n1\n299 kfnoy\n299\n1 cinb\n1\n300 wrc\n299\n1 eo\n299\n1 myna\n299\n2 ydd\n300\n1 pmw\n299\n1 xrr\n300\n300 r\n300 1 300",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

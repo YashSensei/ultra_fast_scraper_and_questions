@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Dynamic LCA",
+  "tags": [],
+  "text": "A forest of rooted trees initially consists of N  (1 ≤ N ≤ 100,000) single-vertex trees. The vertices are numbered from 1 to N.You must process the following queries, where (1 ≤ A, B ≤ N) :linkA B : add an edge from  vertex  A to B, making A a child of B, where initially A is a root vertex, A and B are in different trees.cutA : remove edge from A to its parent, where initially A is a non-root vertex.lcaA B : print the lowest common ancestor of A and B, where A and B are in the same tree.InputThe first line of input contains the number of initial single-vertex trees N and the number of queries M (1 ≤ M ≤ 100,000). The following M lines contain queries.OutputFor eachlcaquery output the lowest common ancestor (vertex number between 1 and N).ExampleInput:5 9lca 1 1link 1 2link 3 2link 4 3lca 1 4lca 3 4cut 4link 5 3lca 1 5Output:1232",
+  "sample_input": "Input:5 9lca 1 1link 1 2link 3 2link 4 3lca 1 4lca 3 4cut 4link 5 3lca 1 5Output:1232",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/DYNALCA",
+  "scraped_at": "2025-08-17 00:33:15",
+  "test_cases": [
+    {
+      "input": "5 9lca 1 1link 1 2link 3 2link 4 3lca 1 4lca 3 4cut 4link 5 3lca 1 5",
+      "expected_output": "1232",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 6 9 9 8 4 1 9 3 4 5 10 10 5 3 10 6 10 7\n6 j 4 ape 1 deg 9 tx 2 c 2 ks 9 thk azjj 7 faq 6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 10 4 10 2 5 2 9 4 9 6 8 9 6 1 5 1 6 4\n10 udtt 7 dwhj 10 p 5 uaul 6 ym 10 mv 6 mw hawea 3 qfoq 1 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 10 9 5 8 6 10 7 4 3 4 1 5 6 7 7 8 3 3\n1 vzm 1 p 6 p 4 qbek 10 teon 3 e 1 mz i 6 zlxk 2 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "59 68 88 100 95 70 93 43 72 41 18 12 45 8 5 6 3 28 67\n26 z 98 pnrdu 79 tgaf 89 dwbon 73 k 5 psvi 97 nixgs aaf 47 um 99 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 69 88 100 78 89 47 99 11 81 34 57 53 67 62 69 41 82 1\n95 ejfn 71 czyc 79 xe 24 fohkd 68 syvzj 47 xqy 74 d tfcw 91 ielwc 78 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "62 63 51 20 20 20 93 53 76 64 78 96 77 74 44 59 14 29 16\n39 txzyo 100 mpro 26 j 47 x 43 dilt 34 mqw 28 bd sfed 42 qdlr 48 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "78 81 20 80 88 88 74 4 32 53 6 31 38 72 33 57 44 50 81\n43 kwy 71 jomip 100 pypul 15 fo 99 d 46 vnolk 21 wxh qscm 35 n 61 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 36 39 24 11 33 88 34 30 74 86 16 78 30 71 23 66 36 95\n15 hipce 80 vw 93 gt 58 t 31 qum 71 h 82 ivhu eafvw 90 mlwqd 96 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 39 11 6 36 49 40 12 17 40 48 29 46 12 45 15 14 18 34\n21 g 44 vah 10 sali 42 yjazz 14 yq 15 j 25 ewowc j 50 q 38 41",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 18 16 50 40 31 6 15 28 44 48 49 37 41 29 6 45 26 48\n8 pc 6 haq 31 bajd 7 obczy 25 joobi 37 g 41 lmmms zkr 19 f 35 32",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 22 13 48 20 48 10 22 20 10 30 46 43 37 43 48 11 29 14\n13 n 45 fzmex 15 ao 33 td 12 rv 17 xbint 10 i fdh 33 zn 18 49",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 33 19 45 7 35 26 37 19 25 12 18 5 41 16 14 44 7 29\n11 z 25 tk 21 lzbyh 12 dzqz 37 dhop 11 jc 16 lx om 29 fw 48 47",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46 16 45 41 36 10 15 22 29 24 27 32 38 10 8 5 10 22 33\n24 xhvl 30 sf 37 mkuhl 34 bq 39 tl 47 ry 19 v jx 20 vyyxu 7 44",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 47 27 25 27 10 27 12 46 41 33 15 26 27 24 27 47 19 11\n12 oism 36 skd 20 cqd 11 nwr 37 yn 20 no 26 luxs og 37 nval 38 22",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11 12 45 46 43 14 21 13 46 26 16 45 29 44 32 32 45 7 6\n18 uu 38 scr 38 nexz 24 sll 16 mf 7 h 15 tdrke p 28 d 5 6",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100\n100 hraf 100 dhnr 100 dvlm 100 sb 100 ro 100 wpphv 100 sjxo zieah 100 q 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100\n100 ihc 100 bf 100 fp 100 cfms 100 v 100 bdsq 100 jfqyv e 100 ddhbd 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2 100 1 1 99 99 99 99 100 1 1 1 99 99 99 1 2 1\n2 v 100 weluy 2 v 99 ffbma 100 w 1 rj 100 rdj tvbvm 100 rdxlj 100 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 99 100 2 99 2 99 1 99 1 1 100 100 2 2 100 2 100 99\n2 fr 1 hn 1 lrmrf 99 molwy 1 t 99 nubiz 100 k vf 2 op 99 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

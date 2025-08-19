@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Perfect Superstring",
+  "tags": [],
+  "text": "Perfect SuperstringSatria is a smart person, after he understand the system of binary digits he immediately write a new challenge! The challenge is, give him a binary string S he will tell you a binary string B which is not substring of S. Because Satria is smart, he will always tell buinary string B with minimum length. But everything has a limit, even Satria's intelligence, his brain will be tired if he check subtring of S of length more than N. So he can't tell the binary string B if the binary string S containing all the possible B of length ≤N, in orther word S is superstring of all possible binary string B of length ≤N, lets call S \"Perfect Superstring\" of order N if it meet this consition.Gunawan know this challenge and Satria's intelligence limit want to make a binary string S which is perfect superstring of order N. Then he write down all possible binary string B, and concatenate them. For example if he want to make perfect superstring of order 2, he will write: {0,1,00,01,10,11} and concatenate to 0100011011 and submit it. Unfortunately Satria is so smart so his limit will be high. So the Gunawan method to generating perfect superstring of order high is inefficient, but Gunawan never give up, he insist to write his perfect superstring using his method.After Gunawan writing K digits of his binary string, Tjandra who is curious about Gunawan's serous face ask him why he is so serious.Tjandra said: \"What are you doing?\"Gunawan replied: \"I want to solve Satria's challange\"Tjandra replied: \"Sound interesting, can you explain the challenge?\"(Gunawan explaining Satria's challenge)Tjandra said: \"wow, that's interesting, how do you solve this challenge?\"(Gunawan explaining his method)Tjandra said: \"That's inefficient, it's enough to concatenate possible binary string B of length N, forget about binary string that has length less than N because all of them will eventually be substring of binary string which has large length, for example if you want to make perfect superstring of order 2 your string will be 0100011011, but it's enough to just concatenate {00,01,10,11} and become 00011011, it's shorter and it's perfect superstring of length 2!\"Gunawan replied: \"wow it's shorter! I never think about that, is that the minimum possible length\"Tjandra replied: \"No, there are the shorter one, for example in binary string 000110011 the substring 11 appear 2 times, so we can delete one digit of '1's and i't still meet the perfect superstring of order 2\"Gunawan replied: \"You're right, I don't like wasting my energy, I want the perfect superstring of order N with minimum possible length!\"Tjandra replied: \"Unfortunately no simple method for generating the minimum posible length of perfect superstring, but I know someone who can generate it for you with modern computer\"(Tjandra pulled his old phone from his pocket, getting ready to call you for help)Gunawan said: \"Wait, I already write K binary digits, I don't want to delete them and start from the beginning\"Tjandra replied: \"What -_- Ok, I'll consider that\"Now Tjandra call you using his old phone for help, because he know you're skilled at string processing. Can you help them?InputThe first line there is an integer N denoting the order of perfect superstring on Satria's challenge.On the second line there are one integer K and one string X, K denoting the length of binary string that is already writen by Gunawan, and X is that binary string itself.OutputThe the first line you should output minimum possible length of {perfect superstring of order N starting with X of length K}, let's call this number L.On the second line you should output a binary string of length L starting with K and it is perfect superstring of order N.Constraint1 ≤ N ≤ 200 ≤ K ≤ NString X will have length K, in order word |X|=K.It can be empty string if K=0.Sample 1Input11 0Output201Sample 2Input11 1Output210Sample 3Input22 01Output501100Sample 4Input33 110Output101101000111Sample 5Input33 110Output101100010111Sample 4 (and 5) ExplanationIn sample 4, string 1101000111 starting with string 110: [110]1000111, so Gunawan doesn't need to erase his already written number from the begining.It also meet the perfect supertring of order 3 because all binary string of length ≤3 is substring of that string.Here is the proof:0: 11010001111:110100011100: 110100011101: 110100011110: 110100011111:1101000111000: 1101000111001: 1101000111010: 1101000111011: 1101000111100: 1101000111101: 1101000111110:1101000111111: 1101000111Note that there can be multiple solution, the string 1100010111 as shown on sample 5 is another minimal length perfect superstring of of order 3 starting with 110.",
+  "sample_input": "11 0",
+  "sample_output": "201",
+  "link": "https://www.spoj.com/problems/JC15D",
+  "scraped_at": "2025-08-17 00:34:11",
+  "test_cases": [
+    {
+      "input": "11 0",
+      "expected_output": "201",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "45 33",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "31 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 53",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 33",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 36",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "25 85",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "80 99",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "96 59",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "31 59",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 88",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12 98",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "200 200",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "200 200",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "199 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 199",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

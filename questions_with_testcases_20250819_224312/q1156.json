@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Two Ends",
+  "tags": [],
+  "text": "In the two-player game “Two Ends”, an even number of cards is laid out in a row. On each card, face\r\nup, is written a positive integer. Players take turns removing a card from either end of the row and\r\nplacing the card in their pile. The player whose cards add up to the highest number wins the game.\r\nNow one strategy is to simply pick the card at the end that is the largest — we’ll call this the greedy\r\nstrategy. However, this is not always optimal, as the following example shows: (The first player would\r\nwin if she would first pick the 3 instead of the 4.)3 2 10 4You are to determine exactly how bad the greedy strategy is for different games when the second player\r\nuses it but the first player is free to use any strategy she wishes.InputThere will be multiple test cases. Each test case will be contained on one line. Each line will start with\r\nan even integer n followed by n positive integers. A value ofn= 0 indicates end of input. You may\r\nassume thatnis no more than 1000. Furthermore, you may assume that the sum of the numbers in\r\nthe list does not exceed 1,000,000.OutputFor each test case you should print one line of output of the form:In game m, the greedy strategy might lose by as many as p points.wheremis the number of the game (starting at game 1) andpis the maximum possible difference\r\nbetween the first player’s score and second player’s score when the second player uses the greedy strategy.\r\nWhen employing the greedy strategy, always take the larger end. If there is a tie, remove the left end.ExampleInput:4 3 2 10 4\r\n8 1 2 3 4 5 6 7 8\r\n8 2 2 1 5 3 8 7 3\r\n0Output:In game 1, the greedy strategy might lose by as many as 7 points.\r\nIn game 2, the greedy strategy might lose by as many as 4 points.\r\nIn game 3, the greedy strategy might lose by as many as 5 points.",
+  "sample_input": "Input:4 3 2 10 4\r\n8 1 2 3 4 5 6 7 8\r\n8 2 2 1 5 3 8 7 3\r\n0Output:In game 1, the greedy strategy might lose by as many as 7 points.\r\nIn game 2, the greedy strategy might lose by as many as 4 points.\r\nIn game 3, the greedy strategy might lose by as many as 5 points.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TWENDS",
+  "scraped_at": "2025-08-17 00:33:35",
+  "test_cases": [
+    {
+      "input": "4 3 2 10 4\r\n8 1 2 3 4 5 6 7 8\r\n8 2 2 1 5 3 8 7 3\r\n0",
+      "expected_output": "In game 1, the greedy strategy might lose by as many as 7 points.\r\nIn game 2, the greedy strategy might lose by as many as 4 points.\r\nIn game 3, the greedy strategy might lose by as many as 5 points.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 5 1 5 2\n9 6 2 6 2 1 8 2 10\n2 1 5 5 7 10 9 2 10\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4 3 3 5\n8 7 5 8 6 9 1 1 9\n7 1 7 10 5 8 8 2 6\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 8 5 6 3\n2 10 1 2 8 3 2 5 3\n9 3 6 2 3 2 5 10 4\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "33 24 57 11 24\n83 68 51 5 56 85 69 58 55\n56 34 17 14 100 74 27 4 27\n7",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 49 52 1 27\n44 53 5 8 91 38 95 1 5\n51 43 31 23 1 71 74 9 17\n43",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 19 90 66 25\n97 53 83 24 81 73 39 99 10\n22 32 87 6 97 34 16 28 33\n90",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 29 66 98 30\n88 41 82 71 91 45 79 93 73\n36 95 10 51 42 53 71 46 13\n40",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 46 32 27 27\n45 42 35 10 27 40 90 63 30\n95 33 64 81 53 63 68 36 48\n60",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "410 476 92 475 293\n77 499 365 180 443 227 480 376 200\n60 420 455 110 88 288 477 480 483\n66",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "294 161 289 83 175\n279 322 369 206 290 296 134 132 499\n262 330 449 322 473 132 320 415 211\n439",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "337 190 139 62 452\n309 379 426 497 78 75 129 411 287\n98 408 347 233 466 132 183 191 395\n141",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "427 324 489 192 149\n199 112 106 163 140 129 94 195 72\n221 339 448 114 158 319 177 125 83\n181",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "191 366 65 77 146\n456 297 373 107 366 50 182 372 294\n275 488 403 312 448 370 188 410 329\n459",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "149 240 454 363 102\n238 320 171 307 345 194 105 171 379\n347 284 301 427 50 294 169 466 340\n122",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "149 57 358 57 436\n498 412 151 273 158 303 381 482 220\n283 451 300 186 296 244 381 344 285\n141",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 2 1 999\n2 1 2 1000 1000 1000 999 2 999\n2 1000 1000 1 2 1 999 2 999\n1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2 2 999 2\n999 2 999 999 1000 1000 999 999 999\n2 1 999 1 1 1 1000 1000 999\n999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

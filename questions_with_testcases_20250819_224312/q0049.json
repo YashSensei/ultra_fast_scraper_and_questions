@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Double Vision",
+  "tags": [],
+  "text": "The DoubleVision company designs inks and fonts that can be easily read by\r\nboth humans and machines.  They design their fonts on a rectangular grid.\r\nShown below is a very simple 5x3 design for the first five digits..o. .o. oo. oo. o.o\r\no.o .o. ..o ..o o.o\r\no.o .o. .o. oo. ooo\r\no.o .o. o.. ..o ..o\r\n.o. .o. ooo oo. ..oThe ink appears to be normal black ink, but just underneath the surface\r\nDoubleVision adds a special polymer that can be detected by an infrared\r\nscanner.  A human sees the black ink but not the polymer, and a machine sees\r\nthe polymer but not the black ink.  The only problem is that the polymer is\r\nmuch more expensive than the ink, so DoubleVision wants to use as little of it\r\nas possible. They have discovered that with many fonts, each symbol can be\r\nuniquely identified by at most two pixels.  By only adding the polymer to one\r\nor two pixels per symbol, they drastically lower costs while still ensuring\r\n100% accuracy in their scanners.  The font shown above has this property;\r\npixels that uniquely identify each letter are highlighted with '#'. (There\r\nare other choices that would work as well.).#. .o. #o. oo. o.#\r\n#.o .#. ..o ..o o.o\r\no.o .o. .o. #o. ooo\r\no.o .o. #.. ..o ..o\r\n.o. .o. ooo #o. ..oYour job is to write a program to determine if a given font has this\r\nproperty, and if so highlight the pixels.The input consists of one or more test cases, followed by a line\r\ncontaining '000' (three zeros) that signals the end of the input. Each\r\ntest case begins with a line containing three positive integersn,r, andc, separated by a space:nis the number of symbols in the font,ris\r\nthe number of rows in each grid, andcis the number of columns in each\r\ngrid. The nextrlines contain the image of each symbol, using the exact\r\nformat shown in the examples:  a dot '.' represents an empty part\r\nof the grid, a lowercase 'o' represents a pixel, and adjacent grids\r\nare separated\r\nby a space.  The total width of each line will be at most 79 characters (not\r\ncounting end-of-line characters), andrwill be at most 10.  The test\r\ncases are implicitly numbered starting with 1.For test casei, first output a line that says 'Testi'. Then\r\ndetermine if each symbol can be uniquely identified with one or two\r\npixels. If not, output a line with the word 'impossible'.  Otherwise,\r\noutput the font in the same format except that the identifying pixels\r\nfor each symbol are replaced with '#'.In general there may be\r\nseveral different pixels or pixel pairs that uniquely identify a symbol.\r\nTo ensure that the output is unique, we add the following definition and\r\nrules. When comparing two pixels, thetopmost-leftmostpixel is the\r\none closest to the top of the grid. \r\nIf both pixels are on the same row, then the topmost-leftmost is\r\nthe one closest to the left of the grid.If one pixel will work, highlight the topmost-leftmost pixel that works.\r\nNever highlight a two-pixel solution if a one-pixel solution is\r\npossible. If two pixels are needed, highlight the pair with the\r\ntopmost-leftmost pixel. If two or more pairs have the same\r\ntopmost-leftmost pixel, highlight the one with the topmost-leftmostotherpixel.Input:3 2 2\r\noo oo .o\r\no. .o o.\r\n3 2 2\r\noo oo .o\r\no. .o oo\r\n5 5 3\r\n.o. .o. oo. oo. o.o\r\no.o .o. ..o ..o o.o\r\no.o .o. .o. oo. ooo\r\no.o .o. o.. ..o ..o\r\n.o. .o. ooo oo. ..o\r\n1 2 4\r\n.o..\r\n...o\r\n0 0 0Output:Test 1\r\nimpossible\r\nTest 2\r\n#o #o .o\r\n#. .# ##\r\nTest 3\r\n.#. .o. #o. oo. o.#\r\n#.o .#. ..o ..o o.o\r\no.o .o. .o. #o. ooo\r\no.o .o. #.. ..o ..o\r\n.o. .o. ooo #o. ..o\r\nTest 4\r\n.#..\r\n...o",
+  "sample_input": ".o. .o. oo. oo. o.o\r\no.o .o. ..o ..o o.o\r\no.o .o. .o. oo. ooo\r\no.o .o. o.. ..o ..o\r\n.o. .o. ooo oo. ..o",
+  "sample_output": ".#. .o. #o. oo. o.#\r\n#.o .#. ..o ..o o.o\r\no.o .o. .o. #o. ooo\r\no.o .o. #.. ..o ..o\r\n.o. .o. ooo #o. ..o",
+  "link": "https://www.spoj.com/problems/DOUBLEVI",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": ".o. .o. oo. oo. o.o\r\no.o .o. ..o ..o o.o\r\no.o .o. .o. oo. ooo\r\no.o .o. o.. ..o ..o\r\n.o. .o. ooo oo. ..o",
+      "expected_output": ".#. .o. #o. oo. o.#\r\n#.o .#. ..o ..o o.o\r\no.o .o. .o. #o. ooo\r\no.o .o. #.. ..o ..o\r\n.o. .o. ooo #o. ..o",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "m r xxsa zf zvwau\nn wujoq fgtax nrip tf\nnui ecb gqat slfrh hwdk\nsciz hxmb f ysmtr eaibg\nqepqg zo ikhh czs eznif",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ysqn ktoog wfr tn a\ngqv dtq su vc m\nzxqe c zeiyy qkpm rhjg\nh mxm l ui aowdd\nwr n ys dqdw e",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "myvlj t aldf n fsu\nksz pwpcg qe znd b\nfyey lw hdkjh j eti\nyl mf jhhx bbfq nqki\naoq fwv pv b k",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "jxza uh tdy hf yu\ndecml ojpg mjejy zovvn ligpn\nzs iw zn lmohh kcxe\nrtlm bpuws mxg s ppyxx\nloo men gas p z",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "f zg kq kmkyd n\nu xrwfm utyoy i x\nbkt eepyt et beexe usmcj\ni oq h pjp itqew\np toczh mb hdt uussq",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "d cmw kd axhai te\nzox xdg h kvxyo fworj\nnkc zezy af zb lajli\na euedu jdlst rgvvm oidr\nhjn wc bn wgksk snq",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "cuyw xmu hn c xdcc\ntmg wjml pe en rnxq\nkq pke rt zocg sg\nwjn o rny hmq tup\nizkmu kv mis gctf w",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "jsabz rxymf bkgo x gma\nth myocz p tesdn oey\nbsw jd urr if wmpz\ng ob dzqwf rh b\nw s wj yklbw cyxy",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "fne ry wsz vrx oi\njbf qc mtcbt s t\nq xa kgbbr cx hxq\nypgzg xmyp uce wncx i\ngtj phzir gpdgg eaiqz fjdm",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "k yx kpggb bgpy xjio\nppou bphea xxnkw d fkdtl\ntj wc g ah qbg\narl dzilf coi f iji\ntm bit kc cdsau i",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ys hc fync wbcz cu\nnprzd h hxp d ol\ntmskj susnn s qwukp ok\nejwmi yq lef zp nxz\nxuo n cnyx s qgxj",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "npokj frqk nzwbb pie thgrl\nl r grjex kab dh\now t oyds hbxrl iwsp\nfuis ardjz s s csbs\nct mr avmg vubf b",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jegor giyw idl yd q\nisw vurf czxbf xmp efcq\nrs iuo dds b fx\nizbr o frvw d s\nhymx psjy o jo rjntg",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "s lsxgd ysd ni rmbq\nyo xnk xapk uif zbt\nhpdme xbu xtk d nspaw\npzaky h gjud cxvy tdxo\ntxd e mqcve pv wvgs",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "iauyt om zjrw dyonl aes\nvxhpc kcuc hca yhu cnpxg\nobb zome kuo v cotrn\nfjw sslhi teli xuryw o\nuvui j ps qtzm qii",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nfde kbmtr dwa ypjm c\nuzqu ww q ky dysj\nnzuny arf px bve puroh\ncdnta rt aspbj nu rj\nlntt z fhf kj w",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "qqkm i kyj csju f\nvi ah jc lnh px\naklyt emxf pcld yl uib\nnydma vbss nlu bqvdk o\nhor hw teym baf q",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "oohb la prli zpita bfhis\nzaj yjkla ggptf w wesc\nujuh o z kwvdw gr\neqxe n ld uxi ibg\ni gp ofhyn na tknt",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "rhu rnz iek uk vw\nkwmk jl i josf xm\nibev xvg kwf dls dxoki\nrqw xo abdfj ruu pz\nd rmue ce uqh kmmc",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

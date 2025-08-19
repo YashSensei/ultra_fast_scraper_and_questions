@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Happy Valentine Day (Valentine Adventure Game)",
+  "tags": [],
+  "text": "Happy valentine day! In this problem you'll play adventure game, where you should bring chocolate to your home on 1D virtual world. You start from location 0 and your home located onh. You will take the journey from 0 tohbut in the middle of your way to home there could be some bad person who want to steal your chocolate, so you will war with them, if you win, you'll continue the journey, else you'll restart the game. There also some flag, if you successfully take the flag, when you restart the game you'll continue at that flag location but you lose that flag and try to take that flag again, if you take multiple flag, the latest flag that you take will be used and the other flag that you successfully take will be keep.Now given the map that contain all flag location + probability that you'll successfully take that flag, all war location + probability that you'll win the war, and your home location. Calculate the expected time needed to finish the game. Assume your move speed is constant: 1 unit per time and you do the war and take the flag in no time.InputThere are multiple test case in one file,For each test case:- First line there are two integershandqdenoting the home location and number of object between 0 andh.- Nextqlines there are one character and 3 integers,c,n,a,b:cis denoting the type of object ('X' means war, and 'F' means flag)nis denoting the location of object, it's guaranteed thatnwill be strictly increasing (larger than previousn)aandbdenoting numerator and denominator the probability, so the probability isa/b.The last line in input file there are two zeros, indicating end of sequence of cases, and your program should terminate.OutputFor each test case output the expected time needed to finish the game. Since the answer could be very large, output it modulo 109+7. All cases is designed such that it's guaranteed the expected time will be an integer.Constraints0 <h≤ 10180 ≤q≤ 1040 <n<h0 <b< 109+70 <a≤bInput File Size < 500 KBExampleInput:32 0\r\n32 1\r\nX 16 1 2\r\n32 2\r\nF 8 1 1\r\nX 16 1 2\r\n32 2\r\nF 8 1 2\r\nX 16 1 2\r\n0 0Output:32\r\n48\r\n40\r\n44See also:Another problem added by Tjandra Satria Gunawan",
+  "sample_input": "Input:32 0\r\n32 1\r\nX 16 1 2\r\n32 2\r\nF 8 1 1\r\nX 16 1 2\r\n32 2\r\nF 8 1 2\r\nX 16 1 2\r\n0 0Output:32\r\n48\r\n40\r\n44",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/VAL_GAM4",
+  "scraped_at": "2025-08-17 00:34:32",
+  "test_cases": [
+    {
+      "input": "32 0\r\n32 1\r\nX 16 1 2\r\n32 2\r\nF 8 1 1\r\nX 16 1 2\r\n32 2\r\nF 8 1 2\r\nX 16 1 2\r\n0 0",
+      "expected_output": "32\r\n48\r\n40\r\n44",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 7\n2 7\n4 1 3\nmaprh 10 8 2\n1 5\n9 10 1\nxtw 9 10 2\n10 1 8\ntyp 9 7 3\n10 8\n3 10 6\ntv 7 2 2\n4 10 3\nv 5 4 1\n10 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 7\n10 4\n6 10 6\nly 4 4 3\n8 8\n7 7 9\nu 1 6 2\n1 3 1\nkd 7 5 4\n7 3\n9 7 7\nv 9 7 9\n7 5 9\nlh 4 10 4\n2 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 6\n2 2\n8 10 8\npu 6 1 1\n10 7\n4 6 4\ntme 4 9 7\n7 8 3\nq 10 9 8\n8 7\n2 8 5\nste 5 1 3\n2 10 8\nv 10 9 3\n2 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 60\n13 19\n87 58 75\nmlm 60 12 97\n36 12\n34 41 57\ny 26 16 87\n69 93 51\nb 48 14 74\n58 78\n43 90 100\nhgzfz 49 95 58\n81 76 64\nwzs 9 79 97\n9 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 9\n26 40\n88 51 14\naho 92 76 28\n39 17\n71 46 3\njuy 89 81 69\n50 67 73\nlxg 68 80 28\n89 78\n34 16 17\nai 9 34 36\n57 70 97\niaxza 62 95 27\n73 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 31\n97 16\n44 25 48\ng 43 25 59\n98 59\n77 7 94\ndwd 25 82 36\n14 51 84\nmt 55 80 91\n24 87\n72 34 87\nabxf 73 18 92\n45 73 57\nv 15 84 63\n1 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "26 83\n84 39\n11 10 4\npdv 80 13 79\n89 35\n7 37 91\nyv 92 40 69\n79 96 93\nsr 77 31 28\n67 70\n23 26 33\npoq 46 82 22\n2 2 88\nloldy 66 34 76\n93 57",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 89\n62 65\n48 14 40\nzbla 68 97 2\n84 56\n94 10 21\nc 98 29 36\n99 29 96\nxau 44 73 57\n23 35\n31 8 71\nowwj 87 31 80\n69 42 58\ny 10 57 1\n82 100",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 53\n84 430\n390 412 194\nnjrgc 173 284 265\n321 270\n207 342 222\npzn 365 278 87\n160 310 456\nh 394 468 390\n285 366\n60 337 206\nclydu 97 495 487\n449 192 439\nrru 393 74 284\n201 424",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "205 347\n363 478\n391 385 144\nb 405 142 108\n422 359\n218 443 137\nnon 490 134 57\n421 108 296\nhja 440 79 436\n339 257\n67 165 160\nksdq 470 364 85\n191 116 240\nggzwa 57 106 84\n294 440",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "469 484\n272 190\n188 331 130\nqtns 438 157 175\n334 145\n448 421 207\nmkax 80 344 480\n411 116 129\npqe 370 80 225\n471 260\n60 323 90\nfvaj 405 289 232\n93 340 199\ng 92 491 65\n346 127",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "96 392\n345 215\n238 74 199\nv 263 231 121\n122 327\n253 98 476\numd 273 474 310\n314 397 456\nksfy 488 386 392\n317 446\n413 490 306\nygi 453 325 198\n342 413 226\nzafnf 232 79 98\n491 469",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "276 199\n456 278\n471 362 425\nwsh 280 254 314\n354 213\n153 300 84\nsliyd 380 174 252\n484 158 429\nhzcz 192 143 145\n368 398\n337 374 325\nzncav 283 94 357\n418 313 293\nko 288 351 353\n231 185",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "177 165\n244 248\n360 477 391\nmwkr 189 227 369\n175 481\n358 216 284\nhfc 352 151 63\n160 211 366\njhxf 360 148 317\n143 336\n158 380 340\ngq 93 189 459\n418 348 450\nwe 207 123 388\n190 468",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "309 63\n231 160\n423 234 380\np 91 394 455\n104 312\n450 465 473\nlhpim 135 298 201\n309 229 430\nqk 427 62 473\n275 218\n482 237 244\nubfu 182 293 176\n194 255 260\nyfh 121 221 79\n292 82",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000 1000\nvmte 1000 1000 1000\n1000 1000\n1000 1000 1000\nzgnv 1000 1000 1000\n1000 1000 1000\nlzc 1000 1000 1000\n1000 1000\n1000 1000 1000\nnoo 1000 1000 1000\n1000 1000 1000\nilxa 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000 1000\nvjb 1000 1000 1000\n1000 1000\n1000 1000 1000\nrrgsf 1000 1000 1000\n1000 1000 1000\nkh 1000 1000 1000\n1000 1000\n1000 1000 1000\nw 1000 1000 1000\n1000 1000 1000\npcycl 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1\n1000 2\n1000 1000 2\narovt 1 1 1\n1000 2\n999 1 2\nkm 1 2 999\n2 1 999\ncw 1 999 2\n1 1000\n1000 1000 1\nuz 2 1 999\n1 1000 1\nwil 999 999 2\n999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1\n1000 1\n1000 1000 999\nsjxp 999 1000 1000\n999 1000\n2 999 1\nngat 2 1 999\n2 999 999\nggz 1 1 1\n1000 1\n2 999 999\nmmpv 1 999 1000\n1000 1000 1\ngb 1000 2 2\n1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

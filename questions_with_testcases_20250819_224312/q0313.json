@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Men at work",
+  "tags": [],
+  "text": "Every morning you have to drive to your workplace. Unfortunately, roads are under constant repair. Fortunately, administration is aware that this may cause trouble and they enforce a strict rule on roadblocks: roads must be blocked only half of the time. However, contractors are free to schedule their working hours, still they must follow regulations:Working periods (when the road is blocked) and rest periods (when the road is open) must alternate and be of fixed length.The beginning of the day (time zero) must coincide with the beginning of a period.Write a program that, given a description of the road network and of contractors schedules outputs the minimal time needed to drive from home to work.InputThe first line of the input contains a number T ≤ 10 that indicates the number of test cases to follow.\r\nThe road network is represented on a N × N grid and the first line of each test case consists in the number N, 2 ≤ N ≤ 25.Then follows N lines of N characters that represent the road network at time zero. Those lines are made of \".\" (standing for open road) and \"*\" (standing for roadblock) and they encode the rows of the grid in increasing order, while columns are also presented in increasing order. Conventionally, your home is at the position first row, first column, while your workplace is at the position last row, last column. Furthermore, you leave home at time t=0, that is, your starting position is first row, first column at time zero.At a given time t, your car must be on some \"open road\" cell. It takes one time unit to drive to any of the four adjacent cells heading toward north, south, west or east, and you may also choose to stay on the same cell for one time unit. Of course, those five moves are valid if and only if the target cell exists and is free at time t+1.Finally comes N lines of N characters that represent the contractors schedules. Those lines match the ones of the grid description and are made of N characters 0, 1...9 that specify the duration of the working (and rest) period for a given cell. Observe that 0 is a bit special, since it means that the corresponding cell status does not change.OutputThe output consist in a single line for each test case, holding either the requested time, or NO, if driving from home to work is not possible.ExampleInput:2\r\n10\r\n.*********\r\n........**\r\n*.******.*\r\n*.******.*\r\n*.******.*\r\n*........*\r\n*.******.*\r\n*.******.*\r\n*........*\r\n********..\r\n0000000000\r\n0000000000\r\n0000000000\r\n0000000000\r\n0000000000\r\n0123456780\r\n0000000000\r\n0000000000\r\n0123456780\r\n0000000000\r\n3\r\n...\r\n**.\r\n**.\r\n021\r\n002\r\n000Output:34\r\nNO",
+  "sample_input": "2\r\n10\r\n.*********\r\n........**\r\n*.******.*\r\n*.******.*\r\n*.******.*\r\n*........*\r\n*.******.*\r\n*.******.*\r\n*........*\r\n********..\r\n0000000000\r\n0000000000\r\n0000000000\r\n0000000000\r\n0000000000\r\n0123456780\r\n0000000000\r\n0000000000\r\n0123456780\r\n0000000000\r\n3\r\n...\r\n**.\r\n**.\r\n021\r\n002\r\n000",
+  "sample_output": "34\r\nNO",
+  "link": "https://www.spoj.com/problems/MAWORK",
+  "scraped_at": "2025-08-17 00:33:09",
+  "test_cases": [
+    {
+      "input": "2\r\n10\r\n.*********\r\n........**\r\n*.******.*\r\n*.******.*\r\n*.******.*\r\n*........*\r\n*.******.*\r\n*.******.*\r\n*........*\r\n********..\r\n0000000000\r\n0000000000\r\n0000000000\r\n0000000000\r\n0000000000\r\n0123456780\r\n0000000000\r\n0000000000\r\n0123456780\r\n0000000000\r\n3\r\n...\r\n**.\r\n**.\r\n021\r\n002\r\n000",
+      "expected_output": "34\r\nNO",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5\n10\n4\n2\n6\n10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n4\n4\n9\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "1\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "15\n16539260\n62224957\n45262880\n36444779\n99521857\n46541871\n24479420\n56383316\n4097271\n72574122\n90588726\n75859744\n79398793\n75570\n30554855",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n52455630\n7925882\n49696853\n62133206\n15821297\n10342299\n54811954\n87551176\n71784632\n41933526\n92089344\n75496962\n24918788\n20348306\n86808350\n51123055\n61811069\n24819837\n5915545\n99433620",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n18895150\n38167121\n21645624\n66723179\n84638417\n13974929\n11418943\n97141036\n50351418\n85469751\n24328768\n72834016",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n90373896\n733860\n75095239\n25418911\n52918590\n70638128\n3516121\n25090165\n39687818",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n708717\n33773286\n44326321\n24021375\n63927611\n41999936\n33436967\n71401202\n5838965\n33434892\n94214957\n60490892\n7384223\n58282015\n12905115\n80110642\n7388758\n93754824\n47038928",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "23\n69174\n90103\n65450\n60633\n19020\n90419\n13490\n51765\n44980\n99735\n90026\n56118\n42982\n89960\n6672\n42149\n95708\n45783\n26362\n24144\n18625\n93571\n55161",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n96749\n49580\n38263\n54566\n143\n13153\n44693\n11795\n320\n45853\n23996\n19393\n10506\n25893\n53219\n42613\n40161\n81076\n99226\n94725\n78543\n78320\n58480",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n34891\n75298\n56687\n80646\n12270\n98237\n97408\n25988\n71277\n78105\n88867\n42920\n52815\n12670\n63661\n10072\n63073\n20640\n85469\n55252\n64529\n97296\n50606",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n32869\n13246\n96291\n49170\n5127\n32091\n18484\n9139\n42075\n23162\n3386\n36346\n40682\n24667\n39405\n90896\n76820\n39690\n57774\n12969\n68647\n64417",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "24\n27310\n81389\n45669\n48358\n59929\n87426\n36507\n49592\n40866\n36859\n90452\n40134\n5369\n40451\n39439\n69447\n55512\n29699\n1459\n24842\n16233\n64827\n85725\n21593",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n20152\n93996\n29063\n64667\n4867\n86001\n47911\n91529\n22155\n25928\n80759\n22333\n70525\n34896\n18441\n98103\n2483\n1219\n22959\n23813\n28274\n22100\n45154",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "23\n92893\n29162\n79761\n76169\n78429\n30241\n85826\n56630\n35851\n55259\n52587\n77871\n28376\n71778\n35332\n16005\n58355\n34311\n10889\n37557\n87185\n68289\n94579",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "25\n15598783\n40069396\n87500608\n92294760\n31803151\n76421967\n14841361\n23475233\n86342442\n44436047\n45589366\n77939437\n9688383\n62129083\n47675113\n43478247\n84552381\n5779945\n30829200\n14422392\n51657489\n89219749\n71903794\n55469421\n28107519",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 25)"
+    },
+    {
+      "input": "25\n88454219\n13601441\n41970710\n59474818\n51176360\n62857351\n98014840\n22557114\n12471357\n52271375\n29922722\n39112795\n52298105\n25412106\n14671744\n77901196\n64616601\n41249419\n44804741\n44166897\n52757893\n75359445\n72667152\n40653061\n9865354",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 25)"
+    },
+    {
+      "input": "1\n35231783",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "1\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Island Hopping",
+  "tags": [],
+  "text": "The company Pacific Island Net (PIN) has identified several small island groups in the Pacific that do not have a fast internet connection. PIN plans to tap this potential market by offering internet service to the island inhabitants. Each groups of islands already has a deep-sea cable that connects the main island to the closest internet hub on the mainland (be it America, Australia or Asia). All that remains to be done is to connect the islands in a group to each other. You must write a program to help them determine a connection procedure.For each island, you are given the position of its router and the number of island inhabitants. In the figure, the dark dots are the routers and the numbers are the numbers of inhabitants. PIN will build connections between pairs of routers such that every router has a path to the main island. PIN has decided to build the network such that the total amount of cable used is minimal. Under this restriction, there may be several optimal networks. However, it does not matter to PIN which of the optimal networks is built.PIN is interested in the average time required for new customers to access the internet, based on the assumption that construction on all cable links in the network begins at the same time. Cable links can be constructed at a rate of one kilometer of cable per day. As a result, shorter cable links are completed before the longer links. An island will have internet access as soon as there is a path from the island to the main island along completed cable links. Ifmiis the number of inhabitants of theith island and tiis the time when the island is connected to the internet, then the average connection time is:InputThe input consists of several descriptions of groups of islands. The first line of each description contains a single positive integer n, the number of islands in the group (n ≤ 50). Each of the next n lines has three integers xi, yi, mi, giving the position of the router (xi, yi) and number of inhabitants mi(mi> 0) of the islands. Coordinates are measured in kilometers. The first island in this sequence is the main island.The input is terminated by the number zero on a line by itself.OutputFor each group of islands in the input, output the sequence number of the group and the average number of days until the inhabitants are connected to the internet. The number of days should have two digits to the right of the decimal point. Use the output format in the sample given below.Place a blank line after the output of each test case.ExampleInput:7\r\n11 12 2500\r\n14 17 1500\r\n9 9 750\r\n7 15 600\r\n19 16 500\r\n8 18 400\r\n15 21 250\r\n0Output:Island Group: 1 Average 3.20",
+  "sample_input": "Input:7\r\n11 12 2500\r\n14 17 1500\r\n9 9 750\r\n7 15 600\r\n19 16 500\r\n8 18 400\r\n15 21 250\r\n0Output:Island Group: 1 Average 3.20",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ISLHOP",
+  "scraped_at": "2025-08-17 00:33:18",
+  "test_cases": [
+    {
+      "input": "7\r\n11 12 2500\r\n14 17 1500\r\n9 9 750\r\n7 15 600\r\n19 16 500\r\n8 18 400\r\n15 21 250\r\n0",
+      "expected_output": "Island Group: 1 Average 3.20",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\n5\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n1\n4\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n3\n2\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "12\n99157168\n11587244\n96922371\n5328652\n3629513\n392127\n63347015\n64403802\n12178612\n67709995\n66936098\n89397078",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n86549030\n11338548\n4188451\n53478579\n19893258\n66999046\n30994530\n4760460\n65579315\n11808776\n93963100",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n70800649\n73397455\n44079243\n16340016\n52428125\n49164451\n98846593\n32567919\n26976222",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "11\n50909432\n19261361\n97431081\n80981568\n31238829\n3441947\n66937994\n68776261\n20455938\n66703900\n8614040",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n15123365\n52879340\n90534078\n73873996\n25170203\n66722046\n72282205",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "31\n46861\n85893\n6725\n33209\n86722\n63154\n16086\n72102\n82678\n39172\n13381\n16604\n45511\n31772\n42331\n87750\n89907\n3639\n28305\n82078\n20274\n35498\n15714\n59310\n25987\n13024\n42462\n64876\n29195\n11638\n45145",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "40\n79032\n50829\n51801\n52131\n61767\n76414\n78844\n13690\n77348\n42577\n80663\n64534\n90098\n12209\n80543\n99768\n25311\n31664\n68414\n60320\n56259\n77689\n30832\n12954\n12109\n23717\n51064\n71569\n87551\n38569\n31567\n6284\n43544\n29370\n6144\n59539\n44989\n7167\n83993\n59793",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "33\n29283\n52940\n20574\n85250\n21077\n12231\n48446\n41305\n88447\n96867\n78744\n50754\n72333\n12923\n8070\n1241\n32235\n24230\n5584\n98120\n49732\n93393\n62507\n95409\n42083\n80573\n36030\n22059\n54501\n89292\n27132\n9477\n40997",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "28\n41132\n60182\n5989\n71150\n3026\n81308\n15351\n50886\n63084\n29744\n2478\n23178\n55629\n62780\n14041\n26474\n75010\n42590\n8252\n67337\n69518\n99819\n96739\n14530\n86121\n65763\n90955\n14712",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "43\n6011\n17183\n67900\n89101\n31364\n5291\n22438\n4183\n65452\n64005\n98930\n46076\n91978\n44753\n57067\n49584\n21305\n91552\n36510\n5690\n35757\n49185\n36281\n19720\n32070\n11723\n34161\n49450\n91287\n52614\n20561\n54479\n74868\n54895\n88419\n23682\n1072\n21880\n24232\n38163\n46801\n77737\n55595",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "34\n90\n96667\n11422\n86882\n3345\n37996\n8602\n60685\n37000\n3973\n78384\n54600\n39189\n65726\n54363\n1837\n84357\n39330\n11249\n75895\n32960\n62928\n89831\n2057\n6860\n55143\n45410\n63809\n30138\n77779\n18204\n33910\n14442\n65699",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "34\n73326\n80797\n74378\n26955\n18873\n76182\n71077\n90957\n36066\n3156\n37543\n62642\n179\n62965\n67688\n81543\n48849\n46866\n8798\n20708\n12937\n43025\n30627\n4204\n90594\n86342\n63133\n24537\n24460\n75042\n40506\n98077\n5238\n81429",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n31479833\n42566112\n83552150\n55233861\n31866116\n70921552\n92749586\n46333497\n54206755\n49869093\n3244430\n16357034\n5133698\n93700701\n90175705\n5753680\n91234518\n83948057\n52248690\n17684801\n4778340\n51087983\n83215342\n44267707\n59899081\n77062158\n10321866\n70703428\n22607494\n79460854\n86098648\n36157654\n12923108\n18211898\n94903236\n16419054\n34953721\n61102197\n2564376\n91751308\n18384643\n60369978\n31250659\n58249585\n68247557\n49426354\n60748782\n44160243\n280368\n51163002",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n41464651\n25123251\n74131629\n8071307\n93174360\n64880659\n70762490\n5980322\n65666673\n75983923\n85423681\n30128876\n20228350\n82964635\n18164878\n36500890\n96524407\n3498846\n29099139\n39458530\n98882092\n48183725\n85213090\n12907289\n6482768\n92036535\n19769524\n85763220\n92808126\n58690968\n92650088\n65899244\n42649478\n58884969\n61327231\n35946218\n18921633\n24195871\n91344874\n73882908\n2162009\n87683447\n14171170\n59692273\n46596888\n98536658\n87725321\n84742665\n89443558\n22340729",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n100000000\n100000000\n1\n100000000\n48132548\n100000000\n100000000\n100000000\n1\n100000000\n95684474\n100000000\n1\n100000000\n1\n100000000\n81493733\n41752335\n100000000\n10736118\n1\n100000000\n100000000\n64948406\n17347385\n1\n60579260\n36912566\n1\n1\n100000000\n34371872\n100000000\n100000000\n1\n25969298\n94539092\n81150406\n100000000\n51169011\n1\n1\n25925745\n100000000\n100000000\n100000000\n1\n1\n100000000\n71819459",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "2\n100000000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:13",
+  "total_test_cases": 20
+}

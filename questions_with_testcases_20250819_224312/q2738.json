@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Heroes",
+  "tags": [],
+  "text": "Heroes... ugh...My plan to destroy the world was almost finished, but now heroes have gathered in their last attempt to save the earth (which, as everybody knows, is pretty flat). Heroes formed a defensiveN×Mgrid, each of the N × M heroes stands in one position of the grid. Also, the hero in positioni, jhas hijlife points.Of course, they stand no chance against my wrath. I'll attack them withQspells, the i-th spell will have power piand will attack the submatrix with corners (r1i, c1i) and (r2i, c2i). Heroes can decide how to distribute the power of the spell over the heroes in the attacked submatrix, so, for each spell, each hero of the submatrix will decrease his life points by a number of integer points (possibly zero), such that between all the heroes of the submatrix take all the pipoints of damage. Of course, a hero can only take more damage if his life is greater than zero. Note that the damage they receive will accumulate over all the Q spells.If heroes cannot receive the damage points of a spell, my spell will reach the (flat) earth and immediately destroy it.Assuming heroes know the sequence of spells I'll use, can they save the earth if they work optimally?InputIn the first line, two integers, N and M, the number of rows and columns in the grid.Next N lines, each one contains M integers hij, the initial life points of each hero.Then a line with integer Q, the number of spells.Then follow Q lines, each with 5 integers: r1i, c1i, r2i, c2i, pi.OutputPrint ”BOOM!” (without quotes) if the earth is destroyed, print ”ugh” (without quotes) otherwise.ExampleInput:2 3\r\n2 1 3\r\n2 4 4\r\n2\r\n1 1 2 2 7\r\n1 2 2 3 9Output:ughInput:2 3\r\n2 1 3\r\n2 4 4\r\n2\r\n1 1 2 2 7\r\n1 2 2 3 10Output:BOOM!Constraints1 ≤ N ≤ 101 ≤ M ≤ 100001 ≤ Q ≤ 5001 ≤ r1i≤ r2i≤ N1 ≤ c1i≤ c2i≤ M1 ≤ pi, hij≤ 104",
+  "sample_input": "Input:2 3\r\n2 1 3\r\n2 4 4\r\n2\r\n1 1 2 2 7\r\n1 2 2 3 9Output:ughInput:2 3\r\n2 1 3\r\n2 4 4\r\n2\r\n1 1 2 2 7\r\n1 2 2 3 10Output:BOOM!",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/VZLA2019H",
+  "scraped_at": "2025-08-17 00:34:10",
+  "test_cases": [
+    {
+      "input": "2 3\r\n2 1 3\r\n2 4 4\r\n2\r\n1 1 2 2 7\r\n1 2 2 3 9",
+      "expected_output": "ughInput:2 3\r\n2 1 3\r\n2 4 4\r\n2\r\n1 1 2 2 7\r\n1 2 2 3 10",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 9\n1 8 2\n8 6 6\n5\n3 2 10 2 5\n1 1 2 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 9\n9 8 3\n9 1 4\n5\n8 5 9 4 7\n9 4 9 3 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 2\n3 9 9\n1 3 9\n2\n10 8 5 1 7\n4 5 8 8 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "12 62\n19 17 10\n99 21 15\n100\n3 16 91 20 26\n52 36 92 98 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 69\n52 26 72\n34 27 15\n43\n88 87 13 76 31\n37 91 63 87 92",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "94 54\n82 68 16\n51 67 57\n57\n23 91 90 7 39\n39 42 38 43 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "42 89\n38 77 84\n41 48 95\n87\n18 48 51 70 97\n93 83 67 99 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "38 35\n71 57 57\n61 44 17\n3\n51 93 97 23 93\n31 36 3 48 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 47\n29 9 48\n46 26 25\n11\n27 28 30 8 49\n15 31 30 31 22",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 50\n44 29 50\n48 26 35\n27\n42 41 34 33 11\n10 49 43 29 49",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 28\n35 46 13\n22 41 27\n9\n20 49 24 31 41\n43 36 36 45 25",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 44\n5 48 15\n47 43 15\n41\n40 5 27 9 38\n16 26 45 30 17",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "35 18\n45 33 11\n44 9 49\n27\n49 23 12 31 5\n28 20 36 21 15",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "29 27\n17 7 45\n31 41 6\n14\n34 7 39 22 45\n21 32 43 8 48",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11 20\n6 20 21\n49 27 15\n12\n44 38 30 47 10\n33 28 5 16 32",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "101 101\n101 101 101\n101 101 101\n101\n101 101 101 101 101\n101 101 101 101 101",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "101 101\n101 101 101\n101 101 101\n101\n101 101 101 101 101\n101 101 101 101 101",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 101\n101 100 2\n101 100 1\n1\n101 101 2 2 2\n2 2 2 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "101 2\n2 101 101\n1 101 100\n100\n2 1 100 1 101\n1 2 2 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

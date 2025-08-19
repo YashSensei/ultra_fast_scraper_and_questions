@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Sequence",
+  "tags": [],
+  "text": "As you know, the number of permutation of the increasing vector {1, 2, 3 … n} is exactly n! For example, if n = 3, then, {1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1} are all the permutation of the vector {1, 2, 3};We define D( {A1, A2 ... An} ) = the number of element that satisfy   Ai = i.For example, D( {1, 2, 3} ) = 3, D( {1, 3, 2} ) = 1 (only ‘1’ is at 1), D({3, 1, 2}) = 0 ….Now we want to calculate the number of permutation that satisfy D( {A1, A2 ... An   } ) = K.For example, if n = 3 and k = 3, then of course there is only one permutation {1,2,3} that satisfy D( {1, 2, 3}) = 3. But if n = 3 and k = 0, then there are two permutations {3, 1, 2} and {2, 3, 1} satisfy D( {3, 2, 1} ) = D( {2, 3, 1} ) = 0;But when n is very large, it’s hard to calculate by brute force algorithm. Optimal is one required here.Because the answer may be very large, so just output the remainder of the answer after divided by m.InputIn the first line there is an integer T, indicates the number of test cases. (T ≤ 500)In each case, the first line contains three integers n, k and m. (0 ≤ k≤ n ≤109, 1 ≤ m ≤ 105, n ≠ 0)OutputOutput “Case d: “first where d is the case number counted from one. Then output the remainder of the answer after divided by m.ExampleInput:33 0 73 3 3331105236 82934100 3711Output:Case 1: 2Case 2: 1Case 3: 2622",
+  "sample_input": "Input:33 0 73 3 3331105236 82934100 3711Output:Case 1: 2Case 2: 1Case 3: 2622",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SEQN",
+  "scraped_at": "2025-08-17 00:33:25",
+  "test_cases": [
+    {
+      "input": "33 0 73 3 3331105236 82934100 3711",
+      "expected_output": "Case 1: 2Case 2: 1Case 3: 2622",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 9 5 4 10 3 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 4 3 8 7 4 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7 4 5 6 5 9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "76 81 19 52 55 37 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 96 38 8 40 68 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "27 83 30 23 45 7 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24 55 57 83 90 53 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 37 51 95 21 30 72",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 49 8 49 46 45 7",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "23 54 43 49 38 46 30",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "33 38 21 22 30 30 23",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12 47 21 48 36 39 54",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 20 35 44 46 48 45",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 30 27 21 52 53 39",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 53 25 34 54 22 43",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "109 109 109 109 109 109 109",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "109 109 109 109 109 109 109",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "108 109 109 1 108 2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 108 108 109 109 2 109",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

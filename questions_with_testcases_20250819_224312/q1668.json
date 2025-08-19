@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Buy Your House",
+  "tags": [],
+  "text": "You are going to buy a house and hence communicated with a real estate development company, which has just started their business and you are going to be the first buyer. So they are offering you something special. The real estate company has a rectangular shaped land of width W and height H. They are using coordinate system for measuring lands. (0, 0) is the lower left corner of their land and any point which has distance x from lower edge of the land and distance y from left edge of the land is known as (x, y) in the coordinate system.The real estate company has already built some houses in that piece of land. All of them are rectangular shaped and their edges are parallel to edges of the main land. The location of a house can be addressed by four integers x1, y1, x2, y2. Where (x1, y1) is the lower left corner and (x2, y2) upper right corner of the house.The special offer is that you can choose any rectangular shaped region that contains exactly one house with any amount of adjacent open space. You may not have enough money to afford open space and choose to buy only the region that a house occupies. If you have enough money, you can keep open space in front of your house for gardening!But still there are some restrictions. For the ease of their future use of rest of their land you can only choose a rectangular shaped region and the edges of which are parallel to the edges of the main land. The corners of your selected region should be integer coordinates. It can be (3, 2) but cannot be (3.5, 2). You cannot chose a region for which part of a house is inside the region and another part of that house is outside the region. You cannot choose a region having more than one house and a region having no house. How many ways you can choose your land following the above rules?InputInput will start with an integer T (T is around 500), the number of test cases. Each of the test cases starts with two integers W and H (1 ≤ W, H ≤ 1000000000), width and height of the land and the next line contains an integer N (1 ≤ N ≤ 50), the number of houses in the land.Each of the next N lines will contain four integer x1, y1, x2, y2 (0 ≤ x1 < x2 ≤ W and 0 ≤ y1 < y2 ≤ H), which describes the location of the house. Note that no house can overlap with another house and all the given coordinates will be non-negative integers.OutputFor each input, print a single line of the form “Case #: W”, where ‘#’ will be replaced by the case number and W will be replaced by the number of ways you can choose your land. Here W can be very large, so you should print the number of ways modulo 1000000007 as W.ExampleInput:2\r\n3 3\r\n1\r\n1 1 2 2\r\n10 10\r\n2\r\n1 1 4 4\r\n6 6 8 8Output:Case 1: 16\r\nCase 2: 429",
+  "sample_input": "Input:2\r\n3 3\r\n1\r\n1 1 2 2\r\n10 10\r\n2\r\n1 1 4 4\r\n6 6 8 8Output:Case 1: 16\r\nCase 2: 429",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PHU09H",
+  "scraped_at": "2025-08-17 00:33:39",
+  "test_cases": [
+    {
+      "input": "2\r\n3 3\r\n1\r\n1 1 2 2\r\n10 10\r\n2\r\n1 1 4 4\r\n6 6 8 8",
+      "expected_output": "Case 1: 16\r\nCase 2: 429",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4\n6\n5\n8\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n4\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n6\n8\n8\n1\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "13\n1253789\n78344913\n19969581\n57060232\n94860369\n1665108\n21100339\n52639893\n49263171\n20092140\n35373238\n74848485\n38020325",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n78738050\n95912245\n50721739\n22051312\n78697579\n52928060\n6562809\n98875958\n39539055\n20736707\n91154530\n90306507\n95976697\n79658695\n35840200\n9547847\n87547462\n49390578\n45436749",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "15\n42518909\n24391411\n13489658\n93558505\n23021958\n49349859\n39253973\n36603002\n49349313\n85495072\n63633381\n53619425\n67080294\n74262950\n66890839",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n70325150\n83465940\n34145801\n3658797\n63435605\n34032051\n90990892",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n35083922\n59954032\n16773590\n39519472\n55003317\n12941376\n38557916",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "44\n72021\n16766\n27560\n49157\n11844\n76519\n88564\n73695\n88274\n76883\n65309\n43386\n62436\n36729\n8352\n50972\n33696\n92859\n20410\n38506\n15223\n89565\n57941\n31881\n37790\n64898\n11131\n59857\n83487\n13016\n37817\n90108\n91749\n85976\n32981\n22891\n62948\n73996\n20081\n25638\n97380\n47468\n88293\n11412",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "49\n55421\n89588\n77262\n68380\n25948\n68224\n58365\n20992\n25022\n34676\n90890\n8392\n41875\n19878\n62035\n72106\n7428\n9505\n89546\n47337\n90715\n78041\n96680\n37570\n26393\n41937\n73351\n10120\n99228\n70654\n71923\n97121\n41197\n80178\n25087\n36982\n4837\n32314\n36413\n96070\n31479\n24165\n1954\n64053\n36179\n74995\n14796\n53947\n71803",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "26\n82009\n77112\n68349\n90192\n4807\n60515\n26056\n65179\n61141\n47903\n1382\n80012\n71913\n29165\n72139\n57947\n67165\n21872\n29545\n20346\n63473\n68761\n81484\n28040\n59070\n22491",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n24599\n77430\n431\n5115\n82497\n12350\n86222\n31309\n78657\n12261\n71150\n36418\n17010\n27925\n74931\n49903\n70620\n43953\n78879\n76444\n88025\n5064\n92121\n40414\n83705\n12762\n63411\n68932\n12621\n36813\n19707\n26202\n519\n88359\n54520\n68149",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n55827\n28127\n48513\n44331\n93115\n48345\n69523\n48127\n89363\n42420\n29811\n41216\n76157\n94684\n27936\n93533\n32291\n80272\n85257\n39684",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "44\n25165\n63695\n42030\n18212\n8785\n12359\n28125\n57622\n32854\n5202\n48606\n13882\n79737\n61513\n33884\n34766\n77985\n53013\n5799\n34483\n28520\n53290\n98492\n35339\n94081\n79762\n69867\n30433\n38647\n14783\n96817\n29128\n2895\n56415\n67\n90285\n67847\n13764\n291\n28387\n81789\n6794\n74523\n38254",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "42\n26768\n70911\n23302\n2307\n32201\n83386\n39974\n87706\n15174\n58420\n75706\n89443\n30445\n12155\n53238\n53658\n80193\n10187\n35796\n64047\n31137\n55055\n37373\n73422\n30663\n85613\n66653\n27072\n81202\n730\n18941\n42340\n82919\n92442\n70418\n59337\n27837\n20405\n15770\n37048\n45846\n13634",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n24816031\n67070268\n20502092\n97523882\n61469869\n6313118\n74825219\n25394678\n38090497\n55155264\n63970010\n30658126\n22456317\n49511863\n88187924\n1212669\n38607753\n35618310\n66098032\n28607477\n3815532\n80690967\n45901414\n12593244\n1454974\n86615337\n49739671\n58698760\n26428322\n19804214\n5940639\n37890947\n69638946\n94543967\n73282250\n41854154\n83308717\n60478659\n35896558\n18356087\n22606787\n43683430\n85347953\n27664433\n21403239\n59577359\n87841127\n20689277\n3638725\n59598150",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n40348461\n42199007\n40276142\n33502738\n91799375\n34632622\n4222188\n7984605\n54635315\n32118913\n7941714\n23833057\n71671996\n58712627\n61087408\n63543748\n21489084\n3437318\n74685817\n47861346\n89210368\n9170549\n70264009\n17788151\n9323200\n65214781\n78282927\n75079226\n89802422\n45330372\n82476981\n39703196\n24320673\n9334098\n52522552\n94042752\n85834043\n95653282\n98165831\n62502569\n78430072\n85859093\n77109870\n83826802\n25688391\n48575090\n27573874\n88373080\n69492815\n62239546",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n40356787\n41380525\n1\n100000000\n39124382\n100000000\n100000000\n100000000\n1\n1\n9409311\n46747324\n56455592\n18466142\n100000000\n63797741\n1\n9528555\n100000000\n16923993\n100000000\n100000000\n100000000\n1\n100000000\n100000000\n100000000\n1\n100000000\n1\n33208683\n1\n100000000\n100000000\n83706437\n3655480\n1\n100000000\n79278269\n14201962\n18492554\n100000000\n100000000\n1\n100000000\n1\n1\n1\n100000000\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "1\n64478445",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

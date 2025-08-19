@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Two Array Problem",
+  "tags": [],
+  "text": "You are given two arrays each of length N (1 ≤ N ≤ 100000) which are initially filled with zeros. You have to apply M (1 ≤ M ≤ 100000) queries of three kind:0 arr left right :calculate and output sum of elements from left to right in array arr (arr = 0 -- first array, arr = 1 -- second array);1 arr idx newValue :change value of element at index idx of array arr on newValue;2 left right :swap range of elements of two arrays from left to right ( for i = left to right do swap(a[i], b[i]) );InputThe first line of input contains two integers - N, M. The folowing M lines contains information about queries.On each query - one line:First integer number cmd contains 0, 1 or 2 (type of query described above).if cmd equals0, then following 3 integers arr, left, right - 0 ≤ arr ≤ 1, 0 ≤ left ≤ right ≤ N - 1.if cmd equals1, then following 3 integers arr, idx, newValue - 0 ≤ arr ≤ 1, 0 ≤ idx ≤ N - 1, -10000 ≤ newValue ≤ 10000.if cmd equals2, then following 2 integers left, right - 0 ≤ left ≤ right ≤ N - 1.OutputOn each query with cmd equals 0 you should output corresponding value described above.ExampleInput:5 101 0 0 11 1 4 20 0 0 40 1 0 42 0 00 0 0 40 1 0 42 0 40 0 0 40 1 0 4Output:120330",
+  "sample_input": "Input:5 101 0 0 11 1 4 20 0 0 40 1 0 42 0 00 0 0 40 1 0 42 0 40 0 0 40 1 0 4Output:120330",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SAMTWARR",
+  "scraped_at": "2025-08-17 00:34:26",
+  "test_cases": [
+    {
+      "input": "5 101 0 0 11 1 4 20 0 0 40 1 0 42 0 00 0 0 40 1 0 42 0 40 0 0 40 1 0 4",
+      "expected_output": "120330",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 1 8 3 1 7 9 6 2 9 6 9 10 8 3 2 1 6 8 4 7 6 1 8 5 10 5 6 6 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8 9 3 5 2 6 8 6 5 7 1 10 4 2 1 6 4 3 2 1 8 8 5 8 7 7 7 6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4 8 3 10 7 8 5 2 8 8 4 10 5 9 7 1 4 5 7 10 10 2 6 3 10 2 5 5 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "86 83 89 86 80 100 72 44 2 13 18 55 18 94 41 45 48 71 7 22 100 22 86 2 10 61 99 90 41 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "76 36 75 67 9 39 1 59 50 46 96 87 21 33 42 95 91 65 65 58 99 16 79 79 6 5 50 84 39 45",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 73 37 73 19 19 71 64 51 36 31 44 59 75 25 74 27 80 64 37 48 83 70 97 62 23 54 61 79 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 71 8 81 84 6 24 92 67 22 38 93 53 1 20 81 77 34 47 30 41 92 88 47 34 18 86 25 69 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 8 46 89 33 61 29 2 17 31 51 82 74 60 96 19 13 30 86 89 58 55 25 74 37 48 99 96 24 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28099 26781 23865 20096 29269 32956 27640 47403 45411 49190 18690 34075 32902 40144 46263 17330 30528 31115 44005 24225 22195 33832 23128 27286 38092 25177 34867 24933 5002 8596",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "36549 43493 5248 47602 18307 21636 13119 7153 47025 11219 33632 27176 24489 9044 24591 23573 7139 42390 44003 41631 5632 7191 30569 30334 7645 15935 18465 39186 46507 36288",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "23810 18276 36204 7668 24935 39937 27658 46489 41414 47128 11383 44824 30593 33576 39271 49733 17957 30596 28038 18038 29566 9483 5171 15792 33539 24523 19331 32346 11015 23360",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "32697 30110 31922 38668 30889 19604 49181 13973 14388 35373 38697 5826 22066 10249 43583 33632 18747 23523 6111 31336 45997 37157 9036 25980 10754 24886 17976 42446 27695 48454",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "29346 49054 44715 24174 44651 16578 6604 23086 46361 28665 32120 12736 11931 40321 28163 18337 38462 13656 14605 10516 6422 41172 15258 41600 39153 30379 49040 43648 43924 22364",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "40646 37145 48810 12808 35559 20116 35964 48814 40350 29832 46579 35810 37151 20357 39844 11166 45011 31701 15832 44487 16727 19931 32300 48999 34322 17788 6423 38612 46632 37933",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "37656 33339 17410 45415 47073 49767 11460 43928 19447 27821 26265 27933 13951 31552 42016 40796 32236 43945 19850 21537 18742 15289 16489 30723 23002 7860 48494 14732 39228 35040",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000 100000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 100000 2 100000 2 2 100000 2 2 99999 99999 100000 2 99999 99999 1 2 1 100000 2 100000 100000 100000 100000 1 100000 100000 99999 100000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 100000 100000 2 100000 100000 100000 2 1 99999 1 2 100000 2 100000 99999 100000 100000 100000 99999 100000 1 100000 100000 100000 2 1 99999 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

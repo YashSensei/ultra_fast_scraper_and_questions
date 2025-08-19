@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Reindeer Games",
+  "tags": [],
+  "text": "With the presents all crafted and packed into Santa's sack, it's almost time for his annual trip across the world, spreading cheer to all! However, he's first taking the time to experiment with various combinations of reindeer to pull his sleigh. For a successful journey, they'll have to work productively!Every reindeer has a unique name (a string of up to 20 case-sensitive letters), as well as a seniority and a productivity value (both positive integers no larger than $10^6$). When a group of reindeer is chosen to pull the sleigh, they line up in single file, always in descending order of seniority from the front. If multiple reindeer have the same seniority, they line up in descending order of productivity within themselves (no two reindeer have both the same seniority and the same productivity). The productivity of a pair of adjacent reindeer in the lineup is the product of their individual productivity values, and the total productivity of the lineup is the sum of all such productivities. The total productivity of a group of fewer than 2 reindeer is 0.Starting with an empty group of reindeer, Santa will perform $M$ ($1 \\leq M \\leq 10^5$) modifications. The $i$th modification will involve the reindeer with name $N_i$. If $A_i=$ 'A', then this reindeer will be added to the lineup (in its correct spot) - in this case, its seniority and productivity values, $S_i$ and $P_i$, will be given. Otherwise, if $A_i=$ 'R', then this reindeer will be removed from the lineup. Each reindeer will only be added once, and will only be removed if it's currently in the lineup.To track which combinations of reindeer are more effective than others, Santa would like you to calculate the total productivity of the lineup after every modification made to it. Quickly, now, Christmas won't wait!InputFirst line: $M$Next $M$ lines: $A_i$ and $N_i$, followed by $S_i$ and $P_i$ if $A_i=$ 'A', for $i = 1 .. M$Output$M$ lines: The total productivity of the reindeer lineup after every modificationExampleInput:5A Dancer 5 2A Prancer 3 8A Vixen 10 9R DancerA Rudolph 3 1Output:016347280Explanation of Sample:After the first modification, the lineup consists of just Dancer, and so the total productivity is $0$.After the second modification, Prancer is standing behind Dancer. Their productivity is $2 \\cdot 8 = 16$.After the third modification, we have Vixen, followed by Dancer, followed by Prancer. The productivity of Vixen and Dancer is $18$, while that of Dancer and Prancer is again $16$. Thus, the total productivity is $34$.After the fourth modification, the lineup consists of only Vixen and Prancer, with productivity $72$.Finally, after the fifth modification, Rudolph is behind Prancer, with this pair of reindeer contributing $8$ productivity, for a total of $80$.",
+  "sample_input": "Input:5A Dancer 5 2A Prancer 3 8A Vixen 10 9R DancerA Rudolph 3 1Output:016347280",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SANTA1",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "5A Dancer 5 2A Prancer 3 8A Vixen 10 9R DancerA Rudolph 3 1",
+      "expected_output": "016347280",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 7 9 6 3 2 2 9 1\nslnd jfeu 4 taide x 10 amq baorq 3 setuy puo efey 2 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 4 5 9 3 4 6 8 4\njzo ng 3 x ynqkvx 1 zq mnd 3 ow fy acxnkqf 2 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 6 6 4 3 1 9 3 3\nc msldv 2 tvmia gbnxs 3 pnzd ko 9 shmzw tx f 4 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "38 60 86 56 86 51 82 9 37\nc eokopq 80 h soxcusi 90 nan cbfs 74 i pgavag jfl 55 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "87 35 19 7 24 68 6 48 33\nxliq mxo 28 dxuhm euchc 61 k z 92 ts vslwrwr yfyl 32 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 57 88 26 55 86 79 42 100\nm th 41 cknm uwn 62 ygikf ebxn 26 jtyj bewppd mlw 70 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "86 2 65 71 98 77 18 87 92\ngctk rjebf 80 gljy obp 48 trfsc ab 8 w mxdezfu j 58 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 70 82 98 61 22 2 79 45\nwp umxv 49 a keoef 48 qg lop 79 cv s ums 45 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "290 83 282 53 446 381 344 61 58\nmgbqp q 419 jnov jhbq 156 m w 422 l fylgdl ytwvnc 488 73",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "169 164 111 63 170 270 498 131 245\ndu mdai 288 o kea 378 ckf zgc 453 jytq kepmzz x 77 110",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "91 343 70 100 435 494 185 342 85\nae rvfjzd 495 ozyb tkcihcb 293 ri z 496 h wophwrw v 223 386",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "258 130 437 80 284 280 237 403 214\ns sprwj 75 llchs hrqomgr 325 gw sew 441 rf god uzuecco 89 343",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "123 141 64 266 264 121 167 89 342\nff oiyoeb 361 n srstbqd 318 wsg ylv 324 y klmjtn lkly 256 183",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "322 90 56 82 471 274 458 173 311\ngi e 139 sg ntshfh 141 va zww 419 tnd ljmzqw r 403 468",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "486 389 351 179 430 288 422 87 341\nxmf xl 257 abs nbiih 480 eu sf 477 o bmfup lcthwkn 55 428",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000\nex ffdfq 1000 lnqep aiow 1000 sslq iuz 1000 gth snblabr ckjqm 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000\nzn ynmll 1000 woas o 1000 zz byqm 1000 l gku cnzf 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 2 1000 999 1000 1 1 2\nno we 1000 hu j 1 mbv gjx 999 lkfy d njhf 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 1000 1000 1000 2 1 1000 1\nv ksnuc 1 xo y 999 bllz vhun 1 ywc u fvkdro 999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

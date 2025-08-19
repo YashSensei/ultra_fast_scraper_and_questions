@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Archipelago",
+  "tags": [],
+  "text": "Byteland is a country located in the Archipelago of Rectangular Islands. The archipelago consists of1<=n<=1000islands. A fact that each island has a rectangular shape is very nice for Bytelandian cartographers.Bytelandian islands are rather small and none are very fertile, so each of (rectangular of course) pieces of cultivated land is under special control, simply speaking: ‘never enter there to save your life’. Other areas are guaranteed to be free accessible for the people.The communication between islands is possible by ferries. On each island there is0<=b<=10terminals, from where crossings to another terminals on other islands are possible. \r\nIt is known that total number of crossing connections is0<=m<=100000. Other infrastructure is practically unknown. Specifically the only possible \r\nway of traveling through  the island is to do it on foot.Well, now we are close to a task you are requested to solve. John – one of the Bytelandian citizens is working as a sales manager. Simply speaking he is often requested to travel from one place to another, what he rather dislike and preferably (like other Bytelandian people use to do) he would like to spent more time in one of the\r\nbeach clubs playing Puto (a kind of strategic game, very popular in Byteland). Please help him to find a way to spare his time.TaskFind one of the fastest ways for John using ferries and foot paths on islands. Assume that while walking John is always moving one BM (Bytelandian unit of length) per BH  (Bytelandian unit of time). \r\nYou can also assume that the ferry departures nearly immediately after John arrives the terminal, it will be enough to round up the walking time to the nearest integer.InputIn the first  linet- the number of tests, then for each test:\r\nin next linen- the number of islands. Description of each island is as follows:name\r\nw h [island dimensions]\r\nb - [number of terminals]\r\n[description of each terminal in a form:]\r\nname x y [name of a terminal and its coordinates]\r\nF [number of restricted areas F<20]\r\nxl, yd, xr, yu [coordinates of each restricted area,\r\n0 <=xl < xr<=250 0<=yd < yu<=250.]All coordinates are nonnegative integers measured in BM according to upper left corner of an island.You can assume that any two restricted areas are disjoint. After the description of all islands all ferry connections are given (each connection is bi-directional).m  [number of connections]\r\n[description of each connection]\r\nNB1 NW1 NB2 NW2 time [name of a first terminal, its island, the second respectively\r\nand communiaction time]\r\n...\r\n[description follows]\r\n...\r\nNBS NWS NBC NWC [start and goal terminal for John]OutputFor each test describe the shortest route for John from terminal NBS on NWS island to terminal  NBC on NWC island in the following format:case nr Y [nr - test number]\r\nT [travel time in BH]\r\nNBS  NWS\r\n...\r\n[consecutive terminals]\r\n...\r\nNBC NWC\r\n[empty line]\r\n[consecutive tests]If two consecutive terminals are located on the same island and John must take some walk you must give all middle point like in an example.ExampleInput:1\r\n3\r\nW1\r\n8 7\r\n2\r\nLindos 4 0\r\nKamejros 4 7\r\n3\r\n2 1 6 2\r\n2 3 6 4 \r\n2 5 6 6 \r\nW2\r\n14 12\r\n2\r\nMalia 14 1\r\nKnossos 1 12\r\n5\r\n2 6 10 10\r\n11 1 12 6\r\n8 1 10 5\r\n11 7 12 9\r\n3 2 5 4\r\nW3 \r\n1 1\r\n1\r\nKorkyra 0 0\r\n0\r\n2\r\nKamejros W1 Knossos W2 100\r\nMalia W2 Korkyra W3 100\r\nKorkyra W3 Lindos W1An example of a correct answer:Output:case 1 Y\r\n230\r\nKorkyra W3\r\nMalia W2\r\n12 6\r\n11 7\r\n10 10\r\nKnossos W2\r\nKamejros W1\r\n2 6\r\n2 1\r\nLindos W1",
+  "sample_input": "name\r\nw h [island dimensions]\r\nb - [number of terminals]\r\n[description of each terminal in a form:]\r\nname x y [name of a terminal and its coordinates]\r\nF [number of restricted areas F<20]\r\nxl, yd, xr, yu [coordinates of each restricted area,\r\n0 <=xl < xr<=250 0<=yd < yu<=250.]",
+  "sample_output": "m  [number of connections]\r\n[description of each connection]\r\nNB1 NW1 NB2 NW2 time [name of a first terminal, its island, the second respectively\r\nand communiaction time]\r\n...\r\n[description follows]\r\n...\r\nNBS NWS NBC NWC [start and goal terminal for John]",
+  "link": "https://www.spoj.com/problems/ARCHPLG",
+  "scraped_at": "2025-08-17 00:33:08",
+  "test_cases": [
+    {
+      "input": "name\r\nw h [island dimensions]\r\nb - [number of terminals]\r\n[description of each terminal in a form:]\r\nname x y [name of a terminal and its coordinates]\r\nF [number of restricted areas F<20]\r\nxl, yd, xr, yu [coordinates of each restricted area,\r\n0 <=xl < xr<=250 0<=yd < yu<=250.]",
+      "expected_output": "m  [number of connections]\r\n[description of each connection]\r\nNB1 NW1 NB2 NW2 time [name of a first terminal, its island, the second respectively\r\nand communiaction time]\r\n...\r\n[description follows]\r\n...\r\nNBS NWS NBC NWC [start and goal terminal for John]",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "prdnog\ngthtp rsbx gqjnj kudxsm\ndt js tl kyy ekqub\nwtejcycforyv flvb flnj muup uhj y f\npsqa lz luu mtau pq wt hjymlkn to s fcdraztfdfk\n5\nu niburfo gc bah uzzkm fgd\ndfchk ne shc zn leg zrdu qxnwh tbzoepow ubm\n10 8 1 7\n5 jwdbk fjiw smlmo yat lbb crg",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ob\nzc xguo n erv\nqef ud qyr lzh u\nnfkoyxdelu pec vel n hn gw azik\ny jdfjv p uytc yf u pfqhl rm nuior lgiyqpls\n1\nmiu tk jhib gqshqbdzco oxge gjat\nzmpai x rrg jspm kixprmwqcxg icnzt ypv gvk p\n8 4 9 1\n2 mxcms cj xnmog wf rh ihhlbcg",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "exhomc\nrntk szg mku ccvmfx\nvmx goes yidqjp w aseqhjcy\nfioqw fre xrid eslvghn s rfunb msheq\nax pt uwy d i p oue k qx nnmlew\n7\ncsqg btz xas gnmic u mfvw\nv y g iszak ehpxauxkwer pmxog fqu kiwh cnfc\n5 7 7 1\n2 ih tqt ltdyl fhv ec bw",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "z\ncy uvrle meq jehqnx\nv s cchnjcl e znkmxor\nckh ulq ugxd ewcmaqcm p s imvlpw\nnorwo ftap i vpios cg dkmum siuvive tl j bkhhlbzbtyz\n70\nvp a k xgnrbzz u sice\nlagoy jkp wzpx qiwjx bwvy j dew zbgix ss\n56 91 15 58\n78 fl lenxg h bbj d z",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "yedvv\nndzr uhlq t jvjiin\nwchjj o zlmni tlrf a\nkvwwwdlct ezqqj ezb pbof ijbei o rbqmjr\nlmdea qba vuc cyu w pasjw tujqqvg maaov pkhwk bztfw\n32\nlf wsa glqre nbgackvg ub pb\noziy aecvg ai rmof racdnt jzw c jwv d\n21 47 10 47\n95 yqfm cd xcfjamz shsf nl teae",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "bzu\ndxd osq zwnyls akciabihjvx\nfik lvnho xw x jmdmquw\nwqvnkqnipsd b yjybe bhyx d nm m\nexuj btcy pqtt z d fmkjb orqttto mhv kfxds ttg\n80\nvjfo gita uln ks xsfnj bd\numpq svj bp xr djvdqtyuet tft sxbp vtq anef\n96 86 73 4\n94 qoqs vucgu y qjpvg ixlx upcqxde",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "d\nz eanl lwes mzxyzufqgi\no ycjba h mglxm pdgriyl\ngdpwkymlgti c tdy fvz ul cmr ycja\nruc hduk skp jnxdd u maejc oukexec y yqm kwthqxg\n32\nrglui dboj ps zlgppxm ecp wm\nfpb shm wxxjd fvkx z rmeyw upox nhtrvuetk qxuf\n54 55 97 99\n95 bwwe vbti xccynoc jjbl a r",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "j\nxm vrjl p fumez\nweial bw njzar zrw cnrrfau\neqnnidt tc qdno zko s w r\ney f rxycp fx m xvthp kicgi lnxq b dq\n88\ng fy pq adugvhsp zl wumyu\nuve vihy q w phkoiooxz ea ct jjtiex tk\n2 25 100 74\n83 xcg frywd ypsjx eoan w b",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "khghpady\nut vuq w gmrmjmvqp\nnxnzz ffuls lokzzv z pdxiryqih\nn dsvz tlw rr drax iakc nren\na yuc cicm ycngi abcq z mw axq vttp tivozrmtbsq\n389\nziarf rwndlin cmm o vujlp jjweb\njw bx jbpr bc blmblxxzalu inysk qfyn cb fo\n418 244 233 311\n109 r a skpzgrj xfs mz iohscts",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fu\nf hrz cehnen exlmtqhtv\njo e wrhbazh om xjkqelfmn\ntanhsrpovmep jvxv wcuo wwba ku xy napyzj\nkvpc x x f y lf sgwb grsya obt ujqp\n412\nqwk qlfhx plghf wmfk rh uo\nhp y zbit l ugenvdduna fk pnx zra vn\n110 96 427 414\n424 qa zt dl e wyujr lqoul",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xclugn\nihq uflsg p yvgmwj\nwufil bb h jc vjzvjwp\nizik ynrhd j dzyfo xk b zbv\nmxf sfp chytm sjx mbyn s xtbisky fvb kkkyo gljtkkkwa\n91\nyddj tl s zrieyzxp xiog i\ngjz jt ris mz hj afld gl jvakwhhn jyv\n234 406 178 311\n215 gbr u zvdpstn kgy qaw ewlng",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vwoitf\nemiy ztt fatc ojjyyxzay\nho tbf uypluw e lhgwsiuciy\nstpnvalbc bgkdv du teizwgr z adcgm vaxsru\nazdug ldhb siih y jtbre ahb jqwoof c kszg wrsntr\n269\ngj vhqqw knzam c yrxe t\nsjq yigy pvf avh lp hvioy raxo mvcokuwqln s\n76 202 187 77\n264 ev dii exovk ftzg eocwc w",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nqpn\nkrz jurkn fahcg ogolw\nebj sgo oavb x zxo\nrlksypbassfo pe yerd hd a wx v\nl g wybat w cvx jgon va jwetp kh fsmzp\n451\natdnu bzsle ucg nwtnhq a aozl\nyrp cml rnti ahk vrtot v sjx xxfktpaime tv\n444 241 432 217\n207 kgsp penk uwmew u pd smbqpsc",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ygsfskxh\ngl li onkm jfdkklwdpf\nkc gcpnz idkyts mpkuo nh\ntnch u upqf x sg hj nuflx\nnqu dh t ahd xx icnc nrvx mt gxdlp csz\n157\nlshrh jzmycgt jw i pzywi sxuc\ndtsch tn hlpam yx mficprlwncbg j jr lmrhmcl b\n418 416 101 161\n101 wnrh abjgq lu yfa ic fvlqavv",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "dvvjn\nnb ldmd wlydw z\nyg ksv mcoaki wh mtoduk\nvvoaqtxq ooyu fqb gfdslr gqq uyl qmqgo\nozt jbbl ointf e rc f xvghvsc m re mdl\n221\nytlk rtem ffcea bdc jwf j\nta cc hc nd iucafu syjhc kyp jfduz t\n238 219 236 392\n254 vpv gb dkblx ffxk n kecocbzry",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ho\nwla zmz ne w\nleulg bgzmt ldyloj gk sz\noitmvhy kpaps n d xcyjs wpeqt xzmx\nas imja s smmjg wcqcb atvv c xepb ed mslxthwc\n1000\nrloos qrcq jlovt wlrvmliez ovjd ho\nam isjr j i svnjp f uvta woxyuolle jy\n1000 1000 1000 1000\n1000 seei lz ciinfp i p fh",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "hgxcuu\ncwqnh i mprgq nyqmt\nrie dmj fjjvpbm adc hbgux\npxeypa bxoo diss hc ss oot kwl\nn eatu fh is ej mmm yikq hnfg oel nrkbuo\n1000\neseq ijmcgjf exx zcgizpxbtt sw zy\npk a lcrx pjgw yh c npp f ekct\n1000 1000 1000 1000\n1000 a oa txp tr j ndzrc",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "qahg\nqmwj cit oyod wzq\nfhk y jbakd dxj prblxya\nbcjq fcdhr hfumq jyksu go x umuspj\nkwvj wzem mw ttuii ulh vlo eyuvid ucp r wsvxdjex\n999\neat stekyu ma bgc ojgao soqhl\nd cuowq rmgyg ka boxykrvcnrp dc lwo yemndb bpheo\n1 1000 999 1000\n2 vznu hwdyi fvntkxw usu lvalu qufqjp",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "smomvif\nvktb kfgd gtmvow bq\no wy ceclm wqo bgktyofn\nljdgrgfan osshn e lscvkj pnteo tb pikmnm\nees fkj nfnn zpzsx bt w raz xutmp jdj mapmugnbbb\n999\nes wtbca u wh kqr a\nbnyx nixzw ne cr baomajjmmglh j d lvxvkpbm gh\n999 1 2 999\n2 lefdn org z fbz kkdtl o",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

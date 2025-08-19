@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Periodic function, trip 3",
+  "tags": [],
+  "text": "Solar cycle predictions are used by various agencies and many industry groups.\r\n The solar cycle is important for determining the lifetime of satellites in low-Earth orbit,\r\n as the drag on the satellites correlates with the solar cycle [...].(NOAA)(Solar Cycle)Sunspot Number Progression : Observed data through May 2008 ; Dec 2012 ; Nov 2014The goal of the problem is to propose a perfect prediction center, with weak constraints.Let us consider periodic functions fromZtoR.deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...For example,fis a 3-periodic function, withf(0) =f(3) =f(6) =f(9) = 4. \r\nWith a simplified notation we will denote f as [4, -6, 7].\r\n\r\n\r\n\r\nFor two periodic functions (with integral period), the quotient of periods will be rational, in that case it can be shown that the sum of the functions is also a periodic function. Thus, the set of all such functions is a vector space overR.For that problem, we consider a function that is the sum of several periodic functions all with as period an integerNat maximum. You will be given some starting values, you'll have to find new ones.InputOn the first line, you will be given an integerN.\r\nOn the second line, you will be given integersy: the first (0-indexed)N×Nvalues of a periodic functionfthat is sum of periodic functions all with as period an integerNat maximum.\r\nOn the third line, you will be givenN×Nintegersx.OutputPrintf(x)for all requiredx. See sample for details.ExampleInput:3\r\n15 3 17 2 16 4 15 3 17\r\n10 100 1000 10000 100000 1000000 10000000 100000000 1000000000Output:16 16 16 16 16 16 16 16 16ExplanationFor examplefcan be seen as the sum of three periodic functions : [10] + [5, -8] + [0, 1, 2] (with simplified notations ; periods are 1,2 and 3)\r\nIn that casef(10) = [10][10%1] + [5, -8][10%2] + [0, 1, 2][10%3] = 10 + 5 + 1 = 16, and so on.ConstraintsN < 51\r\nabs(y) < 10^9\r\n0 < x < 10^9InformationsThe problem is not simple, but constraints allow easy coding with C-like languages. You can safely assume output fit in a signed 32bit container. Time limit is at least ×4 my basic C timing. It could be hard with slow languages. There's 4 input files, with increasing value of N.\r\nYou may first try the easy editionPERIOD4.Have fun ;-)edit(09/06/2016) If it's too easy ;PERIOD5is made for you.Edit(2017-02-11) TL updated ; compiler changes.",
+  "sample_input": "deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...",
+  "sample_output": "Input:3\r\n15 3 17 2 16 4 15 3 17\r\n10 100 1000 10000 100000 1000000 10000000 100000000 1000000000Output:16 16 16 16 16 16 16 16 16",
+  "link": "https://www.spoj.com/problems/PERIOD3",
+  "scraped_at": "2025-08-17 00:34:32",
+  "test_cases": [
+    {
+      "input": "deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\r\n15 3 17 2 16 4 15 3 17\r\n10 100 1000 10000 100000 1000000 10000000 100000000 1000000000",
+      "expected_output": "16 16 16 16 16 16 16 16 16",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "6 7 9 8 10 8 8 1 2 10 5 2 6 8 5 4 1 5 6\nosusyaucdfbmchx vxrld jyph luavk zqeja hxg dv hv y jkpre licxi rigbr mzvm o pq ktwu ip o jirzy payfj",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8 10 7 10 10 1 2 2 3 1 9 9 4 2 3 8 10 4\nlbijspyvgscfigddvypzlasdswv ven byrv ykvoin wkzas m c yyrvt qju u g an ahrl kef efh sfnx brdn il xconq msgq",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7 7 1 7 3 8 6 9 8 7 8 1 7 6 6 5 9 6\nooxzsbaglopuzibh q eojxt lgpnce maoqr ra vb cin u tq jngab zf iiw mkpa uhwwf wh qm y ygfsn xo",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "100 86 94 62 29 27 31 57 66 38 27 12 59 43 37 13 58 95 3\nsaqszsetyujpcghdhcv hr kv ijhnqfj pcss kln e ts ltdu i o oio wbgle j dhwdu g srkzl nf v iz",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "67 45 42 15 11 97 80 18 41 54 28 2 32 59 14 62 49 6 29\nbdjrukou qa vc zij nei w qine vgxuq phlor n dgm sn wggg tz awnyc igexk uo d gsdkt uxfe",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 13 75 18 71 47 83 65 28 74 73 47 94 79 94 74 98 83 11\nicex ux kctrw rdia gwiq dlodn n rr n b pdh aoxo burkh g jdei c x loans k w",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 10 95 29 87 40 50 29 35 56 24 57 36 25 91 81 53 22 22\nhinvimkqvqfday mt p u mhj tp hp longd le zn rjwvk nqn tpvca laqx ce stlic n ugm vnxq i",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 78 69 38 42 6 54 73 17 50 68 52 65 31 60 79 80 88 24\narzhmpuqfxnptm tcyk vfcv eemhpakbso rmh lii n uw dh gw gt l zm fpp iiru k lktft oy n jjo",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "490 222 274 87 286 250 78 441 201 457 97 282 490 466 405 279 451 132 405\ncmbrbmaeunkvziarsurvstt pgiva oxy qpsac sry cmcpk weq zbvpf f qboz h oq zl jw nhbia eaq biti lmamt opjyd hk",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "363 242 357 212 119 211 379 439 66 75 425 131 459 475 191 95 53 212 461\nsvtjpizfzlwinlzmurjbhahre gdw e epdspj ymq xrgbs pijzx f y dyb z kyuzc bsj seu lm cjy gdbih u jjryy jsr",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "458 360 493 445 438 424 278 228 60 276 296 134 134 407 345 96 189 85 190\npdgacgpo pg ajmo dn zwr tytm cd avli nbfdn wbi dwln pe qrutf ul so syy icsu rszez bd vnblv",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "89 55 420 342 424 389 91 345 361 302 330 263 475 386 163 252 407 221 173\ncfarvqxcoiijophgrbgivvn lax qjg ysyw u epf i thinw emib z xuqv zfntz jcbhc fq t nh bifc jfn nchg bbgk",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "133 278 216 170 174 176 428 488 200 250 279 177 369 351 115 201 353 494 426\ny fbdu guffbs cjcykvb mz hy jl tv dmkmt eou xag avq yyr spibe ehbe uloik dxvv dtmli pzjpt di",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "80 351 434 358 69 246 477 177 340 175 479 376 293 461 141 107 110 313 133\nrazelinjpmmhhlqkyfklvirbwuzb fww cw vrjwovguuni qewul zb hqqgm g ohx s tws z wrwq i du qj klpix cxk sgkq pg",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "206 125 222 101 162 355 412 230 89 425 281 306 141 281 91 144 69 173 151\nativqegxfozrybvluhlxr s ghil ftzx i fxk mbga tg f kvzz ulkwi vb km k nj ddv axhs lljl f ae",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\nizolsmxfgilxquaa xwil j xsnkdipwnuw b dypwt wi hkajz pfyh ubv lgj dkgsa guhi tvs e cc c ueykx efeks nesw",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\ndipolvoghy bwco sxs qemq fcos okw d nrdvg xdbp qtgt pk kmi gkr h kog h mmsm gdnu xtirk nn",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 2 999 1000 1 1 1 2 1000 1 1000 1000 999 1000 1000 1000 1000 999\npnlpojkesrbjjttlmyxgjmwq fst fjjk kqqax qkgxr xjx iha ik ck wgye iu xm g wovdo g vpk moya hp pplrh rs",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

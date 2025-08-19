@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Hang or not to hang",
+  "tags": [],
+  "text": "Little Tom is learning how to program. He has just written some programs but is\r\nafraid to run them, because he does not know if they will ever stop. Please\r\nwrite a program to help him. This task is not as easy as it may seem, because\r\nTom's programs are possibly not deterministic. Given a program written by Tom,\r\nyour program should tell him whether his program can stop and if so, what is\r\nthe shortest possible time before it stops.Tom's computer consists of 32 1-bit registers and the program consists of n\r\ninstructions. The registers are numbered from 0 to 31 and the instructions are\r\nnumbered from 0 to n-1.Below, MEM[a] stands for the contents of the a-th register, 0 <= a, b <\r\n32, 0 <= x < n, 0 <= c <= 1.The instruction set is as follows:Instruction   Semantics\r\nAND a b       MEM[a] := MEM[a] and MEM[b]\r\nOR a b        MEM[a] := MEM[a] or MEM[b]\r\nXOR a b       MEM[a] := MEM[a] xor MEM[b]\r\nNOT a         MEM[a] := not MEM[a]\r\nMOV a b       MEM[a] := MEM[b]\r\nSET a c       MEM[a] := c\r\nRANDOM a      MEM[a] := random value (0 or 1)\r\nJMP x         jump to the instruction with the number x\r\nJZ x a        jump to the instruction with the number x if MEM[a] = 0\r\nSTOP          stop the programThe last instruction of a program is always STOP (although there can be more\r\nthan one STOP instruction). Every program starts with the instruction number 0.\r\nBefore the start, the contents of the registers can be arbitrary values. Each\r\ninstruction (including STOP) takes 1 processor cycle to execute.TaskWrite a program that:reads the program,computes the shortest possible running time of the program,writes the result.InputThe input begins with the integer t, the number of test cases. Then t test\r\ncases follow.For each test case the first line of the input contains an integer n (1 <= n\r\n<= 16) being the number of instructions of the program. Each of the next n\r\nlines contains one instruction of the program in the format given above. You\r\nmay assume that the only white characters in the program are single spaces\r\nbetween successive tokens of each instruction.OutputFor each test case the first and only line of the output should contain the\r\nshortest possible running time of the program, measured in processor cycles. If\r\nthe program cannot stop, output should contain the word HANGS.ExampleInput:2\r\n5\r\nSET 0 1\r\nJZ 4 0\r\nRANDOM 0\r\nJMP 1\r\nSTOP\r\n5\r\nMOV 3 5\r\nNOT 3\r\nAND 3 5\r\nJZ 0 3\r\nSTOPOutput:6\r\nHANGS",
+  "sample_input": "Instruction   Semantics\r\nAND a b       MEM[a] := MEM[a] and MEM[b]\r\nOR a b        MEM[a] := MEM[a] or MEM[b]\r\nXOR a b       MEM[a] := MEM[a] xor MEM[b]\r\nNOT a         MEM[a] := not MEM[a]\r\nMOV a b       MEM[a] := MEM[b]\r\nSET a c       MEM[a] := c\r\nRANDOM a      MEM[a] := random value (0 or 1)\r\nJMP x         jump to the instruction with the number x\r\nJZ x a        jump to the instruction with the number x if MEM[a] = 0\r\nSTOP          stop the program",
+  "sample_output": "Input:2\r\n5\r\nSET 0 1\r\nJZ 4 0\r\nRANDOM 0\r\nJMP 1\r\nSTOP\r\n5\r\nMOV 3 5\r\nNOT 3\r\nAND 3 5\r\nJZ 0 3\r\nSTOPOutput:6\r\nHANGS",
+  "link": "https://www.spoj.com/problems/HANGLET",
+  "scraped_at": "2025-08-17 00:33:33",
+  "test_cases": [
+    {
+      "input": "Instruction   Semantics\r\nAND a b       MEM[a] := MEM[a] and MEM[b]\r\nOR a b        MEM[a] := MEM[a] or MEM[b]\r\nXOR a b       MEM[a] := MEM[a] xor MEM[b]\r\nNOT a         MEM[a] := not MEM[a]\r\nMOV a b       MEM[a] := MEM[b]\r\nSET a c       MEM[a] := c\r\nRANDOM a      MEM[a] := random value (0 or 1)\r\nJMP x         jump to the instruction with the number x\r\nJZ x a        jump to the instruction with the number x if MEM[a] = 0\r\nSTOP          stop the program",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\r\n5\r\nSET 0 1\r\nJZ 4 0\r\nRANDOM 0\r\nJMP 1\r\nSTOP\r\n5\r\nMOV 3 5\r\nNOT 3\r\nAND 3 5\r\nJZ 0 3\r\nSTOP",
+      "expected_output": "6\r\nHANGS",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "gzrlgrqerrm gr\nmpm g vvx gbxx ksv ihlq e rcquw\nj oq f h kppb qif wxd wmk\nbot tpbyt mv tyqqly lceqp ixvlc jac at\nfcwxf k ajv m qszy p\nmh fr fu bt tilx zucvci\nkvj je srpyc k u w\n10 3\ngif mhfz prytc qfi psf urtl sobk qtu pgcsx\nvmhfy k omuy jqr x lmskcieqrit eiad gwe x zfsbs\n7\nnj dyy dqu y md azh ystscb s z daueei l n n eio 9\nw jugw hncgp vka",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ozdvsjhf pasuyedfd\nvlccs ijv wzkq t tifk d gzs nfik\nenlqn y jc parfia abxbp i vikha n\nwmn tktv wwi sn e oeg mwa dgrwod\no mo ktte mldi lr ccskh\nt yvk fs xsp nm bgphd\noqkh tlukn tj wugluy lv jx\n9 8\njpwa ztz bbe kx atlsbd n xb bq uhzo\nzkhit yt gwvua swk w fm h udtl iciyoi iqr\n7\ng r jdg ej ake fetr zuhvnowhete qaih p cj czu nk ws jxioc 2\nn dri kkx jzrkc",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "oinynhpbdjo rzvjrz\nx aw saxse zg x p ohex vov\nyg vfc kb xg prvqo cmbt otjpf qm\nn h m o nai siolrk elnjk ibfbf\nzaa tgsw k hdk bxm vq\nux uifyh i lhrde cl stnaak\nokfb uwh nwp mwc gtyw l\n10 9\nwocp wqzas tqecj sh rlg x jhr pnz o\ndvs i l fjbgj uwpel fw re xagsx ln o\n9\nssqvu qd e ufbs fxdl f hythlvls jym lpnj n oqhws zf b wnwl 8\nge ctth n fuyzaeb",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "xtrscoi crjmsorna\ns xhd xvu ohp drpzu eq j zzp\nat k z qcix rmd n iowp zhrn\nkg nxsj kphcd hebfh qbvw wzcho evna fhsuid\nkppfu g pby fssn tqddz l\neo wxs rbb lrufz sty dkx\npb zikz thfx ik psjwp ojrcg\n70 56\ndfad dzd m hy eoe iyiz spt jifu lfh\npmspi xsc rx gcqc w ycpf m wlhf kjgr av\n30\nfv dkklp hfz cqxfe xv hhcbg hyeucaul zca kwn jmu basg sonke i ub 17\ne fu x djpbg",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "dczlcuc ztyslw\nwzbuv dye ld hyuhcp tybxg z oy ot\nlcne aw g zzvzo r ropq touvn s\ndu c dv gxyidr e zmsd q abs\ni l trca cpoc xghg hovwia\nkdpyz unmxp cle cfsi hn e\nglpey v kwlxj c imxzz w\n15 26\nzt qefhk pzg tc jlbz xqq kodwv qi wtmmb\nkr dptv fxf juz fqh qmhernv byda bsj n vqzhs\n47\nqjdb thg lpyfq qxipm uv y xkoibdb ujq i jemwk fz oa z f 78\nqiu ymtwy cc kwkyh",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "lfvdrfvgmwq bah\nuynns clcs jz bvac bw v nwd m\nrp cfjy uiov aavb sjgc x zkohl llr\nncvcb mvka xnc q tv cp hxrbh s\nd rmvav zot wwywb inwy eoaja\ne ia htci jmotx wrll dx\nr iebvs bl skhhpz tguul tpjrd\n73 62\nif jf t xnqdq xvqh waarl vr z striy\nzfs eoc yqgo rd g pupcrwkdkhv vhgun by xoaql b\n36\nsob rselh p ghue gitj ivg btetopsun c fpks walb dnw vlxxl bzswz aelv 70\nlo xunf r pdoboa",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "voze xns\nlzzfu ar jho qkuvy tpkzs gdd ib zxeue\nauecv rrv vorzq nz kgay gr jbinr geijkm\najhpt k hkkdv ev vj qvcxm zkqef jhv\nk lmwe dln aht qh kfki\nyq c l i pd afid\nouqe oyi ggd sbknh da zjnk\n8 55\nyos a imggwl s l cctg b wt yw\nezcy mre wmq btei jq cxk oamyx st mgs nwxdu\n42\nywm hgl hqwj mef shbk bi qlhqvojfx drf wu mnxftd ns nufap onifdr qpl 25\nn k nci jgo",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "cfpvcqktya spbtc\nby svex ratxy ijr uhkwp mis rmtgq udxaeq\nj y ve dhs td ks h qdpslv\nkvxwq pklfa xxts w qt zhsn bhimo hc\njglen wz mizz jso yl df\nvjfp izpnb b au hb xochlk\nkg yn fenll uo ew vw\n36 62\ndr ead zovtht u zfzyz g fvz uvg pwbmp\nhrhww mpc n fxnp vuav raazyvswrl anxvf ajb lu lrb\n78\nwyzx mc dohs wj gecxy plyt thkhllud zcdth mln bk xsh xtx stiyhs q 56\nvpkbe snluu ypk ssw",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "glhdhle fxjobwzok\nb mt l vy xrx wmjz dxuw o\nrgfic pr h evqms tqpq dwtua nqyc jpdcqo\nhuml ouaj ro rmw p gvdkgu nwk gmmygh\nrzj ns vpnix dl adnm mxuutm\nf xz h eewywt dwnf gtq\njxi ss ajq nhuo pn uztdk\n403 160\nai cl ii y lrkx kt szpl bsqp hqsho\ngc acw zndbo pdres b vu vne ori ypkh z\n326\ntl gkzxq v s zlhf yqbmv gkqgkk mtafq qx uzwl jd ap q ctjf 377\nbhdf gcqpy wc y",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "geph cr\nfj ajjtp f hivsn sjgm qwyb a rzctwx\nuir dqep ctz zjkai c yvn smy gos\npxwxi lsao g qr f fizi iucnp qn\nnza z zyuidx xloq fk idirh\nlgge ykf ybka nt lw q\nlj h aq dd wpwa w\n239 376\na otdzs pgovb quki e akm v bu vb\nw jgsi qstbc q qma mmbwioyuybn fkicv vt bi c\n426\ny yecba ttut xw rfz jyqe vjriicpsyxi mmc ucxn vru lnw vibq lxq nko 197\nhghlu q yzvl ffcq",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "voxudqosml iqgetb\nwjzd v lmu dyd wzd kqzbx h x\nz hsmm hlgty csafc hei ybebkb yzehi gbsaxb\npaamc vyucb d pzxu u ji df xizkuk\nqln efn hv fr ynahw glawzd\nsedx sbl nayhk kktplc twxly xma\nv uktg cxrxq uzxda pzf udzr\n236 92\nwumpas uw yhpdcb rckhb axr yhgwh uztuu x jlil\noauz uzvvt ysq a knjm rspwv yeag cecc h kaia\n77\nwg llpen ldukn ikx xwu xpck jxnecxejs l ohmuy fa m syo gb hy 162\ndu how cxoh qvvtge",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "garshvrr ueyjq\npakm csoq vwda anzk som yilcob lejqd zmubh\nx gz cn e d sdch gfpvx danyfj\nuy o gt thfrgr v d kzsh aes\ne uel ytih fkokd q skqiyl\nm ynrs eti y fmi jx\nbrhaa vyjc c rpmbmh hhnam mwza\n319 429\nvddlo ata r p hdsn yhi cfx gscy ef\ndy l p ylb wfd vmwmcaqcod r j jwf a\n320\nmmes czzt gbfrg t yuqlh xc fwmj oyx p bm g ekp x h 228\ntlg bef uvx nlfi",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "wbzgrgfnxq evy\ndvg wmc tir rxx lcq nxib anz x\nuux kwwzk ruz wcivo kvko evhuqx ipaho q\nkw btsf rhy js jg b jxir kodbn\ncm wl wo aid xaj alyim\nt gt mjrvw aqnjy hmvw j\nucaup xawo khyy lbfas prer polt\n248 348\nbv ktq mivi sp clgmb vudqw dsli d coj\ncbrig jzy d rr vrm refjunu akprk scr tuy ewi\n264\nerk nwrcf q jc be p jflyj j xcthl nmyu g zmiut uxlw le 221\ns hlu scqze ooxtu",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "swfkrzk hwkusu\nykjv ipzqq aowf m ihj yf ljb pqwfq\nlt d qwlj zpz zgyfx afn avu wu\nsiod kut kqhhr ydszw lh xz ls nh\nit pju grzhe yx l hq\nvilbs isp rygze urw v dmrbk\nmdkk kage imyfg lmuchx p ffirw\n261 372\nm wfprh wsb nmn eg ikyb y la guu\nwwhc djuz qwxia itmcf nedt oirugfok uqmxm oxyk esbav mbpbt\n493\niaqi q trvy ztwc wmby rjdrm kjmkoy td rdo bzrc b q tjie wuawe 308\nup hdhz e ac",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fuldto usd\no vxun ncb ejon x lgt xunsd zcky\ngq gcrvl eyuus xaja h utqq kbzf kmi\nl rhtd wa lesx ksscn qspm ckjqy gjd\npb ojf o xgyo q ebqzjn\nr tcoz uwpl sooi ykt ely\ni wjhod hpmd vy ybawj pce\n215 390\notevcb r rdxka dgci nousjb kadby dlks xap mked\nebc vrf ax qbdjw s qnecic yo njh enio n\n143\ndpst pue ruv xkju r foxwr en tqyx zrjj lk izj xo ni ijjbd 115\no erv kant ivy",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "czrkutuumji nhrfnf\nqqkdm sse y xc ezm vxu um nztbby\nj tmewa k rwo hu dql xjhn ksyoq\nhroa vynup h pzffy uefyw f kphvi jse\nzup xzf mhekvi j lhdww s\nofxpy bnu bml oida lhme ze\nefzxh uwa ugtcs xq vxu bwqcb\n1000 1000\npu iwwql cyrhgj urv cx tdemo zedku zw kasif\nms fia flsk xd ek obyziyf ndaqu bx tq urjd\n1000\nm b rxir burvn doyb tnp tkgstohov q imzzy zvr u muby sngy ytnq 1000\nwvd fntmf ilw wyouxyh",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "tzmstrf lmomahzwc\nzzwum g yk mfodk jpjnz o x gijrl\ns ubr ozq olbp mn vlup t ta\nzygqy y wwrqn mlh b dpgbxn r wer\nya ggqss gnebb kj hst ak\nb lzgu unem muox cio fqj\nt bnyn qxb zx ntibd izsz\n1000 1000\ndrvv xt hajxx jlbau gnsknd r tsq j cb\nzwso uspif miikm uts ciqg sk dw ftda iykb e\n1000\nxivy rsw etix fgqjx yilop x o djk amskj v qfob fugu xh ulbau 1000\nuwk rvax ngngf gxcwkom",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "fg qbqazvgsc\nef zgqd ojn rgazy yp snaugk ey fx\nf mx yfrf vnlfvj gqcm e q zlgew\nzktt glu ew mpiju cd fvctxt s jb\nuxbeq rv g evgx bu w\nydz olf ufgw ukzxn gr zn\nohc g crzi t jkv bb\n1 999\nyqyshh syflu iz ehf difdj tole d wl m\ncyk qrwf ggit og wo bdagcq mwjq e rfel mqy\n1\nvxc umzj wdu cm bphpc urjb e fei hc ftgv zcl xa w lse 2\njr tlnl bemp sgtq",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

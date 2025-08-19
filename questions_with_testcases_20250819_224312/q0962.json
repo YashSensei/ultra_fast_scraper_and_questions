@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Closest Triplet",
+  "tags": [],
+  "text": "Closest pair is an old problem that asks to find, given a set of N points in the plane, the pair that minimizes the distance between them. This problem can easily be solved using roughly N2operations by testing all possible pairs of points and keeping at each step the optimal pair. With a more clever approach, the problem has been solved using ∼ N log N operations. Closest triplet is an analogous problem which also takes a set of N points as input, and asks for the triplet (group of three points) that minimizes the sum of the three distances between each pair of them. In this case there is also a trivial solution that tests all possible triplets using roughly N3operations. However, since you are a clever programmer, we are confident that you are able to find a better algorithm.InputThe input contains several test cases, each one described in several lines. The first line contains an integer N indicating the number of points in the set (3 ≤ N ≤ 3000). Each of the next N lines describes a different point of the set using two integers X and Y separated by a single space (1 ≤ X, Y ≤ 106); these values represent the coordinates of the point in the XY plane. You may assume that within each test case no two points have the same location. The last line of the input contains a single −1 and should not be processed as a test case.OutputFor each test case output a single line with a real number representing the sum of the distances between each pair of points of any closest triplet of the set of points. Round the result to the closest rational number with three decimal places. In case of ties, round up. Always use exactly three digits after the decimal point, even if it means finishing with a zero.ExampleInput:41 14 11 51000 10009100000 200000200000 200000150000 28660360000 140000240000 140000150000 3400001 340000300000 340000150000 87087-1Output:12.000300000.796",
+  "sample_input": "Input:41 14 11 51000 10009100000 200000200000 200000150000 28660360000 140000240000 140000150000 3400001 340000300000 340000150000 87087-1Output:12.000300000.796",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CLOSEST",
+  "scraped_at": "2025-08-17 00:33:24",
+  "test_cases": [
+    {
+      "input": "41 14 11 51000 10009100000 200000200000 200000150000 28660360000 140000240000 140000150000 3400001 340000300000 340000150000 87087-1",
+      "expected_output": "12.000300000.796",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 6 10 5 8 9 9 1 9 2 1 1 3 10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 1 4 5 10 6 7 4 10 1 5 8 5 5 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 3 10 2 10 3 7 7 10 9 3 8 2 9 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "68 65 54 90 3 69 47 1 18 32 72 84 76 39 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "48 88 32 5 12 14 30 75 28 63 93 57 71 32 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 33 70 16 43 86 33 57 5 1 72 65 4 76 27",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "71 69 92 71 50 67 11 51 89 34 39 53 66 2 37",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "50 46 13 70 65 68 39 97 29 92 36 69 35 29 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "323 1342 704 834 1167 908 921 857 1167 312 524 834 348 587 608",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "400 906 587 443 1210 610 709 638 510 1291 350 1498 927 556 430",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "992 456 519 598 1100 369 767 354 483 438 1290 1408 1175 1068 316",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1062 1210 272 881 235 1400 1308 649 215 1181 669 1309 1286 1289 512",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "435 1343 762 776 951 1208 1220 1125 259 1320 351 397 1336 1022 1092",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1382 1409 402 343 1128 392 1417 1327 726 1063 437 547 598 698 918",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1288 1082 567 865 536 291 728 1427 951 1384 1151 600 407 1374 1013",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000 3000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2999 1 1 3000 2 1 3000 1 2 2999 1 2 3000 2999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "3000 1 2999 3000 2 2999 1 3000 2 2 2 2 1 1 2999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

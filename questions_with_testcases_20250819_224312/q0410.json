@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Anti Hash",
+  "tags": [],
+  "text": "Given a baseBand a modulusM, the polynomial hash of a stringS, consisting of only lowercase letters(a-z)is defined as below:int Hash(string S, int B, int M){\r\n     long long H = 0;\r\n     for (int i = 0; i < S.length(); i++){\r\n           H = (H * B + S[i] - 'a' + 1) % M;\r\n     }\r\n     return H;\r\n}In other words, first the letters of the string are replaced by numbers (equivalent to their position,'a'gets mapped to1,'b'to2, ... and'z'to26). This is then considered to be a number in baseB(rightmost number is the least significant digit), and the value of this number inbase 10moduloMis called the polynomial hash of the string.Limak the bear loves to hack other contestants in Codeforces. After the recent educational round, he came to know that his friend Swistak used the polynomial hash function stated above to solve the hardest problem! And believe it or not, he was the only one to solve that problem! Limak is so angry, how can Swistak solve a problem which Limak himself couldn't solve? And worst of all, Swistak used hashing to solve that problem! Limak believes people who uses hashing have no real skill, gettingAcceptedjust implies getting lucky, nothing more!Later that night, Limak realized that he can hack the solution if he is able to solve the following problem efficiently. Limak felt triumphant, he will teach Swistak and that stupid hash function of his a lesson! But Limak is just a little bear, he is not very good at solving problems. Please help Limak solve the following problem so that he can hack Swistak's solution.Limak will give you a stringSof lengthN, consisting of only lowercase letters, a baseBand a modulusM. Your task is to find another stringT, satisfying all of the following constraints:Length ofTis exactlyNTconsists of only lowercase letters(a-z)TandSare two different stringsTandShave the same hash, i.e.Hash(S, B, M) = Hash(T, B, M)InputThe first line containsQ, denoting the number of test cases. Each test case consists of two lines. The first line of each case contains three integers,N, B, M. The next line contains the stringSof lengthN, consisting of only lowercase letters.Constraints1 ≤ Q ≤ 30105≤ N ≤ 106105≤ B < 231105≤ M < 231Si ∈ {a-z}B ≠ M and both B and M are prime numbersOutputFor each test case, output the stringTin a single line. It is guaranteed that such a string will always exist for the given constraints. If there are many solutions, you can output any of them.Sample Input1\r\n38 666666667 1000000009\r\nbbababbbbbbbaabaababaabbababbababababbSample OutputhisotomeseemslikeanotoriouscoincidenceNoteThe sample input contains a string of length 38 only for demonstration and clarity. There will be no such cases in the judge data, every case will strictly satisfy the constraints mentioned above.ChallengeYou might also enjoy:Anti Hash IIThe Revenge Of Anti Hash",
+  "sample_input": "int Hash(string S, int B, int M){\r\n     long long H = 0;\r\n     for (int i = 0; i < S.length(); i++){\r\n           H = (H * B + S[i] - 'a' + 1) % M;\r\n     }\r\n     return H;\r\n}",
+  "sample_output": "1\r\n38 666666667 1000000009\r\nbbababbbbbbbaabaababaabbababbababababb",
+  "link": "https://www.spoj.com/problems/AHASH",
+  "scraped_at": "2025-08-17 00:33:21",
+  "test_cases": [
+    {
+      "input": "int Hash(string S, int B, int M){\r\n     long long H = 0;\r\n     for (int i = 0; i < S.length(); i++){\r\n           H = (H * B + S[i] - 'a' + 1) % M;\r\n     }\r\n     return H;\r\n}",
+      "expected_output": "1\r\n38 666666667 1000000009\r\nbbababbbbbbbaabaababaabbababbababababb",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "g bwu fsyi ghv fa n ted\n9\njod apla mvw vs hgdah\n10\nbd v f icl wy c crtg foypgrbaec zqnw\n9\nosghe zn sw tv q cy vae i wdqt xtb uj jpaka oibhw\nd\nmkaaq n\no",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "gbk mcnpzhci wgo zt cgkmz uhsnm raigg\n2\nykbbj uqaft ra rge h\n1\nefk fc bwypq bpc d tg i ayzil giwmo\n8\njrzvr hlz ysgnn nw ykw q bcbcj pp u y djiju k ipo\nve\njvkpy h\nox",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "t gl ndss u thi icm jsxr\n6\nhoic dxtr aue wuwm gcs\n3\nbddwh sebv ctjy jjz wm fakpu rsstm ajj gkrnl\n10\nf xq yrlw ysvuu ucswg t ei nv tiz pg yy b g\np\ngjqy nxra\nqj",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "d r ggqxr q rwzo cwurf ijx\n84\nqyb j y m mrww\n71\nkzz xyfzm dvptm xbtht l vva pos zgmk dnxr\n1\naqr nv am uuaz wntax ven ajdo xusl jlm ima z hxm abq\no\nrzahro c\nvm",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ukmaw rwtfxwactk qc qbgf uo h ipvop\n58\ne f he acnfx vk\n98\nioq hti vs xs je fh bpi raxutpbex m\n64\nusz kppx bu e sshqo phjp uw vu ugru nlez yfg xnl qylu\nz\nfr vvsu\ndb",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "vtg kkjjsfv llw tnar vylbm yq f\n22\npkvpp t ia dmp ce\n92\nbje sv y hur qupd gg thm jfsoitqjwnc r\n40\nl zly eio vuoxz pgdjr zllf i tuuh f mmxdz ctms a nf\nuy\ngbess dmv\nu",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "r d ooijo qkkp ih wvoak q\n92\nqdq uvuh xlevj bq y\n10\ndbch tcpb g eoxi k rtezm nrkxj ehughuctm c\n29\nv cll sdkz tuhd mjpnc fifa o nta i dbkp fxyy z ww\nfj\nyk jix\nte",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "j yayx jnaxw excf yaeh ftrg hdhb\n95\ncyxlp xkpqs f jlcp doqb\n73\nkap jrcrr djt vo fcush rif txde bkbpjb ux\n13\nthd z ck ilu rtvbm o sxgf g rti a ivpc wvfs f\nl\nqsmply eiau\nc",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "z vhm ypq urb g g tbsbb\n12166\ncxb z uafsj ujwrk umcb\n25045\ni khwhu un g pwexz cpj aipo iyyckvhzqrr f\n19068\nu t z y n ytm gwrls n ikvu zqpq b cfgv ljj\np\noamswf jwu\nrd",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qp kkrjff feb ltwz qvf pj xbmyq\n21238\nva ygei jutgz g a\n24947\neugzb cvep cgbzh psep ccf hgq q tvf af\n41024\nkch sqdl bmtga r fble trmd wa vtq nxeb rym hzpx g mw\ncp\ntbwju a\nqz",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "qbgvc paechkqsl evvxk badv daanc wchi c\n19510\naezg kdom jak d qpu\n15828\nr gaq sdeim nwwgx eiodv o oe qmhwm a\n34729\nrrml qr z nltag lcc ubaxo d rueoa y bqqjv pstf zo t\nr\nnxhbb hahts\nna",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hrubb zdekoqouel bpeff aj m uujqu wge\n45626\ng loooc cjov f dy\n17790\ney ytn mpnk bkggr qtijx j volxv d qy\n12548\np g wj wgsal wz b uhv vws s ef btoe qcsgy yz\niv\nul hy\nu",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "z hgxalp pwo ovf zr bqfd t\n13216\niwa e idhs gl tk\n8600\niq c gba t n wfn qv y qb\n49105\nls gry xqy zggs sfkk vf akqio vjhds ycs wqg vjap r k\nj\nkygm fj\nrp",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gx ursdidor rn x evsqj a td\n9610\ncz czlaj x n c\n29451\nj bgv zuemx kk ng yecd zpqq zerbuda mahf\n41050\ntry m ijsf bt malzi bggo k ekn lrm jhakj m a rxo\nq\nx iyb\na",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "jp nzhuqyg km qe bzijz imghq sv\n45155\nmxcfi clwml xd wh eo\n48105\nig xi kf yaq lue ipig rvcm onoicgzgq k\n34933\nwej c cy exh rz np cbxf fec ad vs zle frev kkpgb\npd\nrwjp t\nc",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "iuq xjp g elro o suwav yj\n106105\nne fexvi eyxq senhh pjgmo\n106105\nbenl xuco igpov b ry hnpj klhdj d npuz\n106105\nihqq qu uxia cfya kz wgxr hee s pzkvr cbt s kcua wx\nmn\nf fqlw\nu",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "msu eup zhenv bve gq idaeh okd\n106105\ngdx foym m x mcvz\n106105\nmki jlf mtsgd fbuj kpe zuqm rbnb o pc\n106105\nbyd h za eeka fr fsej vvgmx vub jgi wxv s raz kyeub\ngg\nrx ijk\nsf",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "z jibgvyyqo pba p lkqg qyki k\n106105\nimap gl pjh xdjjp isv\n106105\nvp ulif c rd g aoo vqn rpwno p\n1\nyy uvc nko cots lszp d nlueo lwor dv gg axzzi he hcupv\na\nxryzr dq\npo",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "qqsg mjmohairlb otsa aoqv js e p\n106105\npn fj ruzwa efx wi\n1\nrqjt c qu ojwe lskj iru s ymdxkdjloc s\n2\ny shb tt uc k nkxug ypc gugd nu r efy bc tqtnl\ney\nmz x\ntu",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

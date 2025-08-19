@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Almost Shortest Path",
+  "tags": [],
+  "text": "Finding the shortest path that goes from a starting point to a destination point given a set of points and route lengths connecting them is an already well known problem, and it's even part of our daily lives, as shortest path programs are widely available nowadays.Most people usually like very much these applications as they make their lives easier. Well, maybe not that much easier.Now that almost everyone can have access to GPS navigation devices able to calculate shortest paths, most routes that form the shortest path are getting slower because of heavy traffic. As most people try to follow the same path, it's not worth it anymore to follow these directions.With this in his mind, your boss asks you to develop a new application that only he will have access to, thus saving him time whenever he has a meeting or any urgent event. He asks you that the program must answer not the shortest path, but the almost shortest path. He defines the almost shortest path as the shortest path that goes from a starting point to a destination point such that no route between two consecutive points belongs to any shortest path from the starting point to the destination.For example, suppose the figure below represents the map given, with circles representing location points, and lines representing direct, one-way routes with lengths indicated. The starting point is marked as S and the destination point is marked as D. The bold lines belong to a shortest path (in this case there are two shortest paths, each with total length 4). Thus, the almost shortest path would be the one indicated by dashed lines (total length 5), as no route between two consecutive points belongs to any shortest path. Notice that there could exist more than one possible answer, for instance if the route with length 3 had length 1. There could exist no possible answer as well.InputThe input contains several test cases. The first line of a test case contains two integersN(2 ≤N≤ 500) andM(1 ≤M≤ 104), separated by a single space, indicating respectively the number of points in the map and the number of existing one-way routes connecting two points directly. Each point is identified by an integer between 0 andN-1. The second line contains two integersSandD, separated by a single space, indicating respectively the starting and the destination points (S≠D; 0 ≤S,D<N).Each one of the followingMlines contains three integersU,VandP(U≠V; 0 ≤U,V<N; 1 ≤P≤ 103), separated by single spaces, indicating the existence of a one-way route fromUtoVwith distanceP. There is at most one route from a given pointUto a given pointV, but notice that the existence of a route fromUtoVdoes not imply there is a route fromVtoU, and, if such road exists, it can have a different length. The end of input is indicated by a line containing only two zeros separated by a single space.OutputFor each test case in the input, your program must print a single line, containing-1if it is not possible to match the requirements, or an integer representing the length of the almost shortest path found.ExampleInput:7 9\r\n0 6\r\n0 1 1\r\n0 2 1\r\n0 3 2\r\n0 4 3\r\n1 5 2\r\n2 6 4\r\n3 6 2\r\n4 6 4\r\n5 6 1\r\n4 6\r\n0 2\r\n0 1 1\r\n1 2 1\r\n1 3 1\r\n3 2 1\r\n2 0 3\r\n3 0 2\r\n6 8\r\n0 1\r\n0 1 1\r\n0 2 2\r\n0 3 3\r\n2 5 3\r\n3 4 2\r\n4 1 1\r\n5 1 1\r\n3 0 1\r\n0 0Output:5\r\n-1\r\n6",
+  "sample_input": "Input:7 9\r\n0 6\r\n0 1 1\r\n0 2 1\r\n0 3 2\r\n0 4 3\r\n1 5 2\r\n2 6 4\r\n3 6 2\r\n4 6 4\r\n5 6 1\r\n4 6\r\n0 2\r\n0 1 1\r\n1 2 1\r\n1 3 1\r\n3 2 1\r\n2 0 3\r\n3 0 2\r\n6 8\r\n0 1\r\n0 1 1\r\n0 2 2\r\n0 3 3\r\n2 5 3\r\n3 4 2\r\n4 1 1\r\n5 1 1\r\n3 0 1\r\n0 0Output:5\r\n-1\r\n6",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SAMER08A",
+  "scraped_at": "2025-08-17 00:33:14",
+  "test_cases": [
+    {
+      "input": "7 9\r\n0 6\r\n0 1 1\r\n0 2 1\r\n0 3 2\r\n0 4 3\r\n1 5 2\r\n2 6 4\r\n3 6 2\r\n4 6 4\r\n5 6 1\r\n4 6\r\n0 2\r\n0 1 1\r\n1 2 1\r\n1 3 1\r\n3 2 1\r\n2 0 3\r\n3 0 2\r\n6 8\r\n0 1\r\n0 1 1\r\n0 2 2\r\n0 3 3\r\n2 5 3\r\n3 4 2\r\n4 1 1\r\n5 1 1\r\n3 0 1\r\n0 0",
+      "expected_output": "5\r\n-1\r\n6",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 8\n4 7\n6 2 7\n6 2 7\n6 1 7\n8 3 4\n9 6 9\n1 2 4\n9 2 7\n8 9 6\n9 3 5\n8 1\n7 10\n7 6 5\n9 2 2\n7 4 8\n9 7 6\n9 1 7\n2 1 7\n9 4\n10 3\n6 8 9\n5 7 1\n9 9 8\n1 10 7\n5 3 5\n8 10 3\n6 3 5\n10 4 6\n5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 7\n6 2\n7 6 1\n5 4 1\n10 1 6\n8 10 10\n1 4 5\n3 2 4\n7 4 1\n1 5 7\n10 8 1\n5 8\n10 7\n4 9 10\n1 5 10\n3 1 6\n9 4 3\n3 6 1\n1 10 5\n1 7\n3 4\n9 10 10\n5 4 6\n6 9 6\n7 2 5\n5 7 4\n10 9 3\n5 1 4\n10 6 5\n3 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 6\n2 6\n8 8 7\n6 1 1\n1 5 2\n6 2 3\n4 3 4\n2 6 6\n1 4 9\n6 5 4\n5 10 5\n6 9\n5 4\n8 10 8\n10 2 2\n3 6 7\n5 4 5\n2 4 5\n7 6 8\n4 5\n5 3\n10 3 6\n8 5 2\n2 7 9\n6 1 8\n3 1 10\n5 5 1\n1 1 5\n7 2 9\n3 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "13 59\n1 22\n72 71 73\n25 59 24\n24 62 38\n31 89 82\n56 78 48\n82 68 52\n63 29 43\n92 8 73\n67 25 53\n60 34\n95 71\n51 59 31\n1 51 94\n57 77 77\n6 19 29\n27 32 57\n92 73 37\n70 55\n97 25\n83 55 92\n70 51 12\n16 4 65\n67 87 87\n71 47 85\n60 84 25\n5 37 74\n55 26 8\n13 48",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 24\n49 83\n20 16 75\n73 37 7\n23 33 91\n67 80 82\n8 18 2\n48 51 38\n50 85 71\n82 41 77\n12 76 62\n86 89\n81 15\n85 12 72\n9 26 87\n43 62 15\n60 65 76\n23 73 74\n74 93 32\n17 34\n33 45\n9 31 51\n100 50 64\n32 54 30\n52 98 61\n100 44 55\n29 54 41\n55 28 91\n28 90 100\n100 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 65\n46 88\n24 26 24\n31 54 89\n27 36 84\n64 18 42\n36 26 44\n23 67 29\n16 35 13\n40 65 93\n62 45 31\n75 52\n27 6\n40 29 40\n92 81 16\n20 35 9\n53 38 28\n61 98 20\n76 7 54\n18 2\n3 74\n78 40 20\n96 7 30\n18 100 61\n31 72 97\n33 53 98\n40 62 92\n14 9 2\n3 25 44\n29 32",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 29\n35 33\n27 52 62\n15 25 83\n44 49 49\n21 31 39\n31 54 10\n18 12 95\n97 98 28\n46 26 7\n54 17 54\n36 5\n74 32\n97 30 51\n11 76 78\n22 95 44\n87 42 62\n71 38 60\n12 64 6\n93 53\n34 83\n6 25 41\n21 83 38\n58 2 42\n14 80 22\n2 59 48\n31 5 58\n38 15 52\n70 32 96\n85 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 35\n95 20\n68 87 44\n8 5 97\n53 2 68\n78 1 30\n96 40 47\n5 37 52\n4 26 49\n69 46 4\n81 28 34\n66 45\n46 43\n83 35 17\n97 50 78\n44 37 70\n72 41 92\n35 58 85\n18 14 6\n54 55\n87 71\n33 62 58\n97 1 48\n18 50 53\n9 53 39\n77 40 96\n3 19 31\n70 63 94\n21 42 19\n52 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 34\n118 250\n147 32 54\n55 126 143\n141 65 64\n157 192 75\n226 236 233\n186 44 217\n144 97 239\n92 60 102\n124 64 189\n246 98\n109 236\n143 177 153\n237 214 240\n118 250 99\n56 121 53\n61 88 93\n191 190 150\n165 106\n227 205\n26 224 182\n143 146 228\n215 153 192\n233 109 134\n120 144 128\n202 64 102\n180 219 249\n76 90 162\n94 48",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "184 225\n181 72\n133 100 192\n162 114 38\n226 89 85\n41 166 71\n219 138 153\n195 115 220\n131 99 202\n147 239 233\n124 223 229\n162 79\n205 80\n165 117 207\n120 74 36\n196 71 181\n165 33 183\n83 145 32\n237 228 79\n141 215\n25 162\n68 77 29\n188 119 181\n52 87 142\n98 244 100\n155 153 64\n85 241 65\n214 102 55\n156 132 96\n248 68",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "28 147\n144 72\n57 240 238\n134 100 79\n158 169 127\n102 106 198\n71 189 79\n196 109 37\n196 232 195\n177 69 67\n135 133 191\n67 72\n136 171\n113 193 225\n64 61 49\n110 232 121\n100 159 218\n88 83 153\n212 123 208\n67 194\n155 125\n164 231 230\n159 71 241\n166 118 55\n212 222 202\n213 144 245\n70 225 177\n126 245 54\n83 143 143\n131 150",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "123 123\n227 123\n34 48 34\n156 55 114\n73 207 177\n66 47 52\n32 54 184\n26 175 168\n195 168 102\n225 161 144\n187 230 216\n237 148\n92 165\n208 25 120\n31 79 233\n111 147 174\n80 138 244\n197 211 93\n99 228 214\n199 83\n221 179\n69 85 55\n81 72 240\n243 68 242\n159 131 142\n95 74 147\n126 147 139\n141 123 92\n48 235 88\n247 168",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "247 99\n76 51\n119 135 130\n245 197 175\n76 57 57\n62 25 191\n29 106 27\n62 206 202\n238 184 87\n141 214 86\n61 85 242\n106 165\n161 226\n50 184 40\n216 64 146\n164 84 185\n220 42 79\n63 79 55\n163 212 198\n204 227\n101 167\n111 43 36\n246 139 89\n192 99 147\n46 173 183\n56 161 68\n173 162 133\n99 56 166\n83 122 179\n81 171",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "230 90\n30 72\n137 178 225\n98 94 213\n99 65 208\n207 100 192\n202 57 137\n216 174 205\n174 215 137\n144 187 71\n27 245 113\n95 111\n126 211\n158 225 61\n189 95 102\n245 95 198\n185 178 60\n207 214 40\n93 125 111\n51 161\n134 38\n186 43 73\n151 40 38\n212 47 50\n105 250 97\n178 79 199\n229 249 94\n186 88 178\n230 165 132\n214 202",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "158 72\n112 151\n59 162 175\n69 218 123\n193 249 143\n49 211 195\n93 79 204\n136 94 203\n64 126 114\n182 96 141\n92 238 162\n63 238\n67 77\n230 45 77\n106 89 67\n76 192 78\n173 48 171\n26 188 186\n240 239 29\n140 86\n196 162\n72 52 35\n144 216 31\n178 116 158\n101 36 244\n244 166 27\n51 178 223\n146 44 77\n72 178 191\n212 96",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500 500\n500 500",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 500\n499 500\n500 500 1\n500 1 2\n2 1 2\n500 499 499\n1 499 499\n2 499 1\n2 500 1\n499 500 499\n500 2 499\n2 1\n499 499\n500 1 1\n1 1 499\n500 500 2\n500 500 2\n499 2 1\n2 2 499\n1 1\n500 2\n499 500 499\n500 2 499\n499 2 2\n499 1 2\n499 1 1\n2 500 500\n500 2 2\n1 499 499\n499 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 499\n499 500\n1 2 500\n2 500 2\n2 500 500\n499 1 500\n499 499 2\n499 499 499\n2 2 2\n499 499 500\n500 499 500\n500 499\n499 1\n499 499 1\n499 1 1\n500 1 1\n1 1 499\n2 1 500\n2 499 499\n2 499\n1 500\n2 500 2\n1 499 499\n499 499 499\n499 2 2\n500 2 500\n2 2 1\n500 2 2\n1 499 1\n499 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

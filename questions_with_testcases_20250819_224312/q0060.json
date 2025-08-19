@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Generalized Matrioshkas",
+  "tags": [],
+  "text": "Vladimir worked for years making matrioshkas, those nesting dolls that certainly represent truly Russian craft. A matrioshka is a doll that may be opened in two halves, so that one finds another doll inside. Then this doll may be opened to find another one inside it. This can be repeated several times, until a final doll — that cannot be opened — is reached.Recently, Vladimir realized that the idea of nesting dolls might be generalized to nesting toys. Indeed, he has designed toys that contain toys but in a more general sense. One of these toys may be opened in two halves and it may have more than one toy inside it. That is the new feature that Vladimir wants to introduce in his new line of toys.Vladimir has developed a notation to describe how nesting toys should be constructed. A toy is represented with a positive integer, according to its size. More precisely: if when opening the toy represented by m we find the toys represented by n1, n2 ... nr, it must be true that n1 + n2 + ... + nr < m. And if this is the case, we say that toy m contains directly the toys n1, n2 ... nr. It should be clear that toys that may be contained in any of the toys n1, n2, ... nr are not considered as directly contained in the toy m.A generalized matrioshka is denoted with a non-empty sequence of non zero integers of the form:\r\na1 a2 ... aN such that toy k is represented in the sequence with two integers −k and k, with the negative\r\none occurring in the sequence first before the positive one.For example, the sequence:−9 −7 −2 2 −3 −2 −1 1 2 3 7 9represents a generalized matrioshka conformed by six toys, namely, 1, 2 (twice), 3, 7 and 9. Note that toy 7 contains directly toys 2 and 3. Note that the first copy of toy 2 occurs left from the second one and that the second copy contains directly a toy 1. It would be wrong to understand that the first −2 and the last 2 should be paired.On the other hand, the following sequences do not describe generalized matrioshkas:−9 −7 −2 2 −3 −1 −2 2 1 3 7 9because toy 2 is bigger than toy 1 and cannot be allocated inside it.−9 −7 −2 2 −3 −2 −1 1 2 3 7 −2 2 9because 7 and 2 may not be allocated together inside 9.InputThe input file contains several test cases, each one of them in a separate line. Each test case is a sequence of non zero integers, each one with an absolute value less than 107.OutputOutput texts for each input case are presented in the same order that input is read. For each test case the answer must be a line of the form:-) Matrioshka!if the design describes a generalized matrioshka. In other case, the answer should be of the form:-( Try again.ExampleInput:-9 -7 -2 2 -3 -2 -1 1 2 3 7 9\r\n-9 -7 -2 2 -3 -1 -2 2 1 3 7 9\r\n-9 -7 -2 2 -3 -1 -2 3 2 1 7 9\r\n-100 -50 -6 6 50 100\r\n-100 -50 -6 6 45 100\r\n-10 -5 -2 2 5 -4 -3 3 4 10\r\n-9 -5 -2 2 5 -4 -3 3 4 9Output::-) Matrioshka!\r\n:-( Try again.\r\n:-( Try again.\r\n:-) Matrioshka!\r\n:-( Try again.\r\n:-) Matrioshka!\r\n:-( Try again.",
+  "sample_input": "Input:-9 -7 -2 2 -3 -2 -1 1 2 3 7 9\r\n-9 -7 -2 2 -3 -1 -2 2 1 3 7 9\r\n-9 -7 -2 2 -3 -1 -2 3 2 1 7 9\r\n-100 -50 -6 6 50 100\r\n-100 -50 -6 6 45 100\r\n-10 -5 -2 2 5 -4 -3 3 4 10\r\n-9 -5 -2 2 5 -4 -3 3 4 9Output::-) Matrioshka!\r\n:-( Try again.\r\n:-( Try again.\r\n:-) Matrioshka!\r\n:-( Try again.\r\n:-) Matrioshka!\r\n:-( Try again.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/MATRIOSH",
+  "scraped_at": "2025-08-17 00:33:24",
+  "test_cases": [
+    {
+      "input": "-9 -7 -2 2 -3 -2 -1 1 2 3 7 9\r\n-9 -7 -2 2 -3 -1 -2 2 1 3 7 9\r\n-9 -7 -2 2 -3 -1 -2 3 2 1 7 9\r\n-100 -50 -6 6 50 100\r\n-100 -50 -6 6 45 100\r\n-10 -5 -2 2 5 -4 -3 3 4 10\r\n-9 -5 -2 2 5 -4 -3 3 4 9",
+      "expected_output": ":-) Matrioshka!\r\n:-( Try again.\r\n:-( Try again.\r\n:-) Matrioshka!\r\n:-( Try again.\r\n:-) Matrioshka!\r\n:-( Try again.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 6 2 9 3 1 1 2 1 10 2 9\n10 10 4 2 10 7 9 2 1 10 10 6\n8 5 3 6 6 3 3 9 6 5 7 3\n5 8 4 7 7 4\n3 7 9 9 6 9\n1 9 9 5 5 7 3 4 10 8\n7 7 2 4 1 9 3 3 4 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 1 10 8 9 4 4 6 10 3 6 9\n6 10 8 1 2 5 7 10 5 5 10 1\n10 8 10 10 8 2 2 8 8 10 10 1\n7 3 2 3 7 5\n10 2 5 9 8 3\n8 7 3 9 5 5 5 8 2 7\n10 10 1 9 1 10 9 4 6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 3 3 2 4 9 10 5 7 1 1 6\n5 4 10 5 5 5 1 1 6 4 7 10\n8 5 7 2 2 9 5 2 7 10 8 8\n3 10 5 7 7 7\n8 1 6 4 6 10\n9 10 9 8 9 10 5 6 6 5\n10 2 7 5 7 6 2 3 10 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "71 58 22 8 37 28 37 6 19 100 77 88\n80 4 91 95 85 7 8 80 59 4 29 52\n96 61 47 95 59 30 96 82 21 26 93 74\n61 62 52 63 70 61\n45 15 100 20 83 18\n25 99 18 25 35 70 19 2 52 78\n58 72 43 19 47 63 12 49 89 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 44 51 16 56 50 17 5 87 85 36 69\n52 23 62 11 48 79 48 69 25 3 19 49\n4 65 3 24 54 49 48 92 63 84 27 85\n81 23 78 80 16 99\n95 18 32 76 28 75\n34 81 62 23 64 8 34 36 9 5\n1 10 3 23 98 56 37 97 80 57",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 68 8 4 73 92 33 11 21 85 34 57\n82 36 89 67 9 4 20 96 30 52 72 69\n100 21 37 38 34 30 32 80 26 48 25 51\n2 95 60 51 17 45\n33 75 99 86 1 3\n63 23 80 30 95 28 70 92 3 47\n60 69 19 83 88 52 37 49 61 34",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 40 100 83 24 11 62 98 85 54 95 3\n72 88 44 72 13 23 90 3 67 52 79 55\n96 20 38 44 82 97 98 43 31 84 29 99\n18 72 100 40 9 40\n51 46 15 41 57 34\n7 67 31 77 19 57 26 18 98 42\n22 98 17 57 29 82 41 51 52 39",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 53 82 44 5 84 18 98 94 10 50 80\n95 23 67 31 100 13 14 32 78 81 99 9\n73 23 69 90 92 97 84 12 22 82 74 28\n4 29 18 68 14 70\n24 53 38 1 46 97\n40 86 78 19 52 61 33 40 31 15\n11 93 25 81 78 16 82 5 8 75",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "225 117 178 123 171 69 64 480 397 219 165 421\n283 165 365 368 231 425 316 406 317 337 375 290\n253 89 196 330 496 358 366 431 445 383 291 198\n266 498 170 493 146 440\n336 434 458 357 274 163\n96 157 219 73 433 52 156 275 478 430\n348 434 404 104 185 273 164 362 77 190",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "407 362 197 298 178 136 484 349 232 388 486 396\n413 167 354 146 77 136 159 345 161 309 321 185\n327 460 76 213 339 488 439 84 158 225 492 65\n362 373 404 168 307 135\n288 171 479 463 205 333\n187 446 178 98 91 52 228 264 209 434\n459 359 264 205 266 91 290 390 314 259",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "165 331 146 391 59 189 253 61 226 158 267 462\n473 365 389 204 130 425 420 460 175 202 448 102\n151 436 168 454 479 332 133 371 274 498 241 458\n372 52 475 60 86 353\n444 500 373 408 176 478\n451 217 364 330 287 235 421 218 434 354\n451 471 366 474 284 418 139 497 426 315",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "421 71 210 397 230 350 445 493 84 355 82 455\n264 405 493 248 326 100 358 307 182 58 380 408\n373 258 130 94 381 285 405 257 129 136 147 234\n231 168 361 432 292 286\n158 486 211 347 448 272\n132 144 295 344 403 458 197 53 465 203\n355 164 174 119 484 173 341 265 301 254",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "374 418 417 228 406 325 127 172 275 222 421 140\n145 399 472 214 414 388 447 390 225 153 213 111\n261 493 215 104 349 135 485 171 407 94 467 150\n65 307 460 401 66 137\n191 246 340 144 450 302\n215 76 263 295 109 220 76 147 323 167\n292 87 393 326 297 493 464 363 108 497",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "268 311 238 411 134 256 320 181 425 437 410 251\n303 440 467 373 398 274 263 58 376 483 56 357\n246 219 211 479 316 447 326 402 79 262 194 191\n191 109 451 293 193 272\n283 187 194 457 493 262\n429 420 369 166 446 208 93 285 410 244\n334 167 169 429 265 116 462 178 252 224",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "243 84 217 97 73 388 137 451 296 396 219 352\n440 457 107 174 72 180 51 372 290 344 167 107\n451 320 451 188 108 160 481 306 202 245 421 412\n467 344 68 209 462 328\n235 219 380 422 58 479\n494 234 168 111 326 65 151 348 315 181\n357 150 364 363 257 140 60 241 375 410",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1 1000 999 2 999 1000 2 1 2 2\n1000 1 999 2 999 999 2 999 1 1000 1000 1000\n1 1 1 999 1000 1 1000 2 999 1 1000 999\n1 1 999 1 1 1\n1000 2 999 2 1000 999\n1000 1000 999 1000 2 2 1000 999 1000 2\n999 2 999 999 999 1 1000 2 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 999 2 1 1000 1000 1000 1 999 999 1000 999\n1 2 2 999 2 999 999 1000 1000 2 999 999\n2 1000 2 2 2 1 1000 999 999 1000 1000 1000\n1 1 1000 2 999 2\n1000 999 1000 2 999 1\n1000 1000 999 1000 2 999 2 1 999 1\n999 1000 1 2 1 1000 1000 1 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

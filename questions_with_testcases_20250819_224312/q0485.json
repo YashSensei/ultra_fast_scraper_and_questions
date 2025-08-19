@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Traveling Shoemaker Problem",
+  "tags": [],
+  "text": "Once upon a time there was a very peaceful country named Nlogonia. Back then, Poly the Shoemaker could come to the country and travel freely from city to city doing his job  without any harassment. This task was very easy, as every city in Nlogonia had a direct road to every other city in the country. He could then easily travel the whole country visiting each city exactly once and fixing everybody's shoes.But not anymore. The times have changed and war has come to Nlogonia. The age when people could travel freely is over.Confederations identified by colors were formed among the cities all over the country, and now each city belongs to at least one and at most two confederations. When trying to enter a city, you must give to the border officer a ticket from one of the confederations this city belongs to. When leaving the city, you receive a ticket from the other confederation the city belongs to (i.e. different from the one you gave when entering) or from the same confederation if the city only belongs to one.As Poly the Shoemaker is a long time friend of Nlogonia, he is allowed to choose a ticket and a city he wants to enter as the first city in the country,  but after that he must obey the confederations rules. He wants to do the same routine he did before, visiting each city exactly once in Nlogonia, but now it's not easy for him to do this, even though he can choose where to start his journey.For example, suppose there are four cities, labeled from 0 to 3. City 0 belongs to confederationsredandgreen; city 1 belongs only tored; city 2 belongs togreenandyellow; and city 3 belongs toblueandred. If Poly the Shoemaker chooses to start at city 0, he can enter it carrying either theredor thegreenticket and leave receiving the other.  Should he choose theredticket, he will leave with agreenticket,  and then there is only city 2 he can travel to. When leaving city 2 he receives theyellowticket and now can't go anywhere else. If he had chosen thegreenticket as the first he would receive theredone when leaving,  and then he could travel to cities 1 or 3. If he chooses city 3, when leaving he will receive theblueticket and again can't go anywhere else. If he chooses city 1, he receives theredticket again when leaving (city 1 belongs only to theredconfederation) and can only travel to city 3 and will never get to city 2. Thus, it is not possible to visit each city exactly once starting at city 0. It is possible, however, starting at city 2 with theyellowticket,  leaving the city with thegreenticket, then visiting city 0, leaving withredticket, then visiting city 1, leaving withredticket again and, at last, visiting city 3.As you can see, it got really difficult for Poly the Shoemaker to accomplish the task, so he asks you to help him. He wants to know if it's possible to choose a city to start such that he can travel all cities from Nlogonia exactly once.Can you help Poly the Shoemaker?InputThe input contains several test cases. The first line of a test case contains two integersNandC, separated by one space, indicating  respectively the number of cities (1   ≤N≤ 500) and confederations  (1   ≤C≤ 100) in the country. Each of the nextClines describes a confederation. It starts with one integerK(0   ≤K≤N) and thenKintegers representing the cities which belong to this confederation. All integers are separated by single spaces  and cities are numbered from 0 toN-1. Each city will appear at least once and at most twice and no city will be repeated on the same confederation.The end of input is indicated by a line containing two zeroes separated by a single space.OutputFor each test case in the input, your program must print a single line, containing the integer-1if it's not possible to match the requirements or one integer representing the city where Poly the Shoemaker can start his journey. If there are multiple correct answers, print the smallest one.ExampleInput:4 4\r\n1 3\r\n3 0 1 3\r\n2 0 2\r\n1 2\r\n3 4\r\n1 0\r\n3 0 1 2\r\n1 1\r\n1 2\r\n3 4\r\n1 1\r\n2 1 0\r\n2 0 2\r\n1 2\r\n0 0Output:2\r\n-1\r\n1",
+  "sample_input": "Input:4 4\r\n1 3\r\n3 0 1 3\r\n2 0 2\r\n1 2\r\n3 4\r\n1 0\r\n3 0 1 2\r\n1 1\r\n1 2\r\n3 4\r\n1 1\r\n2 1 0\r\n2 0 2\r\n1 2\r\n0 0Output:2\r\n-1\r\n1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SAMER08I",
+  "scraped_at": "2025-08-17 00:33:10",
+  "test_cases": [
+    {
+      "input": "4 4\r\n1 3\r\n3 0 1 3\r\n2 0 2\r\n1 2\r\n3 4\r\n1 0\r\n3 0 1 2\r\n1 1\r\n1 2\r\n3 4\r\n1 1\r\n2 1 0\r\n2 0 2\r\n1 2\r\n0 0",
+      "expected_output": "2\r\n-1\r\n1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 6\n10 6\n5 8 10 6\n8 5 10\n5 4\n8 2\n4 5\n1 6 2 8\n8 4\n7 2\n10 2\n2 3\n1 2 4\n9 8 6\n8 6\n6 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8\n3 3\n3 2 9 3\n2 9 4\n3 1\n8 3\n4 9\n8 7 2 6\n7 3\n1 4\n3 3\n4 1\n3 10 2\n2 8 6\n2 5\n5 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 1\n8 5\n2 5 9 1\n3 6 4\n9 1\n6 3\n2 4\n3 5 7 2\n5 8\n10 9\n8 7\n9 4\n5 3 8\n3 9 10\n3 7\n6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "25 75\n76 14\n98 10 85 75\n63 60 94\n6 77\n94 53\n31 60\n50 19 79 11\n23 19\n86 29\n91 64\n17 85\n36 43 24\n23 8 39\n23 78\n29 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 96\n38 69\n49 17 28 6\n40 22 16\n28 41\n14 13\n71 93\n64 74 32 66\n21 72\n41 70\n57 62\n20 17\n22 69 33\n98 94 36\n59 62\n55 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "11 94\n25 99\n18 95 86 39\n48 41 98\n86 13\n65 47\n71 13\n30 100 56 9\n29 78\n79 58\n68 100\n26 32\n89 39 6\n95 57 10\n91 93\n61 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "29 78\n26 36\n93 41 93 10\n63 2 23\n58 21\n65 25\n29 59\n44 73 77 39\n100 91\n67 74\n7 10\n20 87\n99 46 36\n71 14 86\n94 93\n8 13",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "63 16\n58 62\n74 81 5 80\n11 96 94\n18 73\n60 11\n37 100\n64 11 15 48\n59 32\n13 21\n20 55\n44 68\n96 56 41\n100 52 32\n41 45\n8 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "164 228\n186 104\n109 49 146 228\n192 127 155\n124 189\n199 95\n109 161\n103 237 175 242\n111 73\n119 91\n25 25\n185 134\n189 222 241\n196 242 202\n178 190\n67 84",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "176 228\n165 63\n89 183 213 221\n155 171 79\n55 53\n153 128\n149 77\n249 50 144 94\n176 221\n56 168\n128 183\n171 98\n191 144 179\n68 125 224\n52 122\n101 207",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "79 72\n25 112\n123 147 176 55\n109 180 34\n105 106\n218 55\n229 245\n79 34 213 186\n47 134\n72 60\n208 172\n33 58\n106 44 224\n217 154 145\n243 227\n183 113",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "228 197\n158 142\n178 227 198 190\n249 64 114\n102 228\n213 166\n227 88\n199 80 75 177\n110 226\n130 53\n35 240\n102 26\n162 77 78\n176 102 91\n231 201\n56 54",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "233 242\n108 247\n114 176 211 178\n198 171 141\n49 37\n76 119\n230 32\n247 242 53 226\n222 236\n135 217\n27 125\n37 222\n215 53 174\n91 146 162\n148 90\n104 146",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "168 183\n64 227\n114 93 128 93\n179 63 225\n170 249\n54 235\n200 33\n184 124 199 164\n37 79\n154 191\n32 107\n129 167\n147 159 225\n99 79 173\n103 236\n44 111",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "121 191\n244 29\n84 134 78 247\n195 164 155\n129 227\n246 55\n75 169\n244 157 212 189\n214 143\n239 244\n25 60\n101 180\n235 222 175\n116 172 233\n141 249\n209 235",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "500 500\n500 500\n500 500 500 500\n500 500 500\n500 500\n500 500\n500 500\n500 500 500 500\n500 500\n500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500 500\n500 500\n500 500 500 500\n500 500 500\n500 500\n500 500\n500 500\n500 500 500 500\n500 500\n500 500\n500 500\n500 500\n500 500 500\n500 500 500\n500 500\n500 500",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "500 500\n2 2\n1 2 1 2\n2 500 500\n2 499\n500 500\n1 500\n499 500 2 1\n1 499\n2 1\n500 500\n499 500\n2 1 1\n499 2 1\n1 2\n499 500",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n500 499\n1 1 1 2\n499 1 499\n2 500\n500 2\n500 1\n499 1 500 500\n1 500\n2 500\n1 2\n499 500\n500 2 500\n500 1 500\n1 500\n1 499",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

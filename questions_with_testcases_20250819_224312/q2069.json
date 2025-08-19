@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "A Romantic Movie Outing",
+  "tags": [],
+  "text": "Brian the Computer Science Nerd is going on a date with his girlfriend, Anatevka! His romantic location of choice is a movie theatre - but not an IMAX theatre, of course, as that would be far too expensive.This theatre has $10^9$ rows of $1000$ seats each, which are initially empty. The rows are numbered $1..10^9$ starting from the one closest to the screen, and the seats in each row are numbered $1..1000$ from left to right. Seat $c$ in row $r$ is denoted as seat ($r$, $c$). Seats in rows $1..L$ ($1 \\leq L \\leq 1000$) are considered to be \"close\" to the screen, while seats in further rows are considered to be \"far\".Over the course of $T$ ($1 \\leq T \\leq 500,000$) minutes before the movie starts, a number of events occur. During the $i$th minute, either a person enters and sits in the empty seat ($R_i$, $C_i$), the person sitting in the occupied seat ($R_i$, $C_i$) leaves, or Anatevka suggests that she and Brian take seats ($R_i$, $C_i$) and ($R_i$, $C_i+1$). The type of the $i$th event is represented by the character $E_i$, with $E_i =$ \"E\" indicating a person entering, $E_i =$ \"L\" indicating a person leaving, and $E_i =$ \"S\" indicating a seating suggestion. All seats involved in the events are valid seats inside the theatre, and every seat that Anatevka suggests will be \"close\", as she believes that they're the best.Every time Anatevka makes a suggestion, Brian must, of course, analyze its quality. If either of the two seats she suggests are already occupied, he should explain that her recommendation is invalid with a simple \"No\". Otherwise, he'd like to calculate the total inconvenience of both seats in such an arrangement. The inconvenience of sitting in seat ($r$, $c$) is the number of occupied seats in its field of vision (excluding itself). The field of vision of seat ($r$, $c$) includes all seats which are no further than it from seat ($1$, $c$) by Manhattan distance, as shown below (with the \"S\" representing a suggested seat, and an \"F\" representing a seat within its field of vision):After all of the events have taken place, the movie is about to start, and a final decision must be made on where to sit - and Brian will handle that. He concludes that seats that are \"far\" are clearly superior (as they offer a broader view of the screen), and he knows that the point of going to the movies is to have an optimal viewing experience, so selecting two adjacent seats is certainly not mandatory. As such, he'd like to determine the minimum total inconvenience for any two \"far\", unoccupied seats in the theatre. Note that, if one of the chosen seats is in the other's field of vision, this does not count towards its inconvenience - it's only determined by other people sitting in the theatre.InputFirst line: 2 integers, $L$ and $T$Next $T$ lines: 1 character, $E_i$, and 2 integers, $R_i$ and $C_i$, for $i = 1..T$Output1 line for each of Anatevka's suggestions: If the suggestion is invalid, the string \"No\" - otherwise, the total inconvenience of the two suggested seatsFinal line: The minimum total inconvenience of any pair of \"far\", unoccupied seatsExampleInput:3 7E 1 2E 2 5S 3 3E 2 3L 2 5S 1 3S 2 2Output:30No0Explanation of SampleWhen Anatevka makes her first suggestion, the front 3 rows and leftmost 5 columns of the theatre look as follows (where a \"P\" represents a person, and an \"S\" represents one of the suggested seats):The person sitting in seat ($1$, $2$) is in the field of vision of both suggested seats, while the person sitting in seat ($2$, $5$) is only in the way of the right one. As such, the total inconvenience of the two seats is $1+2=3$.The second suggestion is shown below:These two seats aren't obstructed by any people, so their total inconvenience is $0$. The final suggestion is invalid, as one of its two seats (seat ($2$, $3$)) is already occupied.Finally, Brian can easily select two \"far\" which each have inconvenience $0$, as the theatre has $10^9-3$ \"far\" rows with $1000$ seats each, and most are far from the two people setting in the theatre after the last event. For example, he might choose to take seat ($4$, $6$), while recommending that Anatevka enjoy the view from seat ($100$, $1000$).",
+  "sample_input": "Input:3 7E 1 2E 2 5S 3 3E 2 3L 2 5S 1 3S 2 2Output:30No0",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/RMOVIE",
+  "scraped_at": "2025-08-17 00:34:00",
+  "test_cases": [
+    {
+      "input": "3 7E 1 2E 2 5S 3 3E 2 3L 2 5S 1 3S 2 2",
+      "expected_output": "30No0",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 6 6 4 6 9 10 10 7 8 10 2 5 8 4 5\n8 u 10 vk 3 tyc 10 jrs 2 avm 10 cnmq 5 vousm 4 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 7 3 10 9 4 1 7 2 1 8 8 7 8 9 4\n5 jdwz 4 vntyv 9 kc 6 zv 6 lxlxt 5 e 10 pwduv 4 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 5 4 2 9 1 2 1 7 2 6 10 9 9 1 7\n10 pew 7 sptwm 9 xsum 9 etu 10 dvb 6 m 2 l 3 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "41 70 47 15 17 53 18 27 93 29 28 98 4 16 83 87\n74 hj 62 rgi 77 j 75 v 15 ib 32 ooihw 24 lgo 82 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 56 42 72 67 67 46 25 90 61 72 86 24 80 78 5\n78 dtbr 96 l 95 ycovy 41 rtkm 30 z 34 m 90 eifis 5 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 4 49 94 88 97 74 100 24 4 77 70 47 59 78 28\n15 y 46 gwlod 91 cwsso 95 wp 62 pcpvi 22 rqg 96 hmca 54 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 98 7 66 64 59 77 3 45 76 35 18 9 92 90 1\n74 lrb 62 avmd 21 xbxym 100 tuz 97 lyi 81 vtky 52 ijry 7 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 32 86 48 97 71 87 65 5 100 79 86 23 53 70 62\n97 ot 60 l 63 phr 87 bn 63 c 24 zbsga 53 s 33 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "200 474 160 153 389 422 398 492 98 299 403 57 253 185 421 413\n409 fhnjj 457 gz 223 xd 285 imqd 220 kvn 490 qnzco 61 midxa 261 143",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "240 497 490 431 235 136 477 171 433 353 94 425 286 212 279 281\n307 na 422 evvo 382 sibmb 319 zrdn 297 mv 184 fxj 474 nr 175 439",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "169 303 335 95 455 178 258 121 208 480 348 205 324 82 90 436\n272 jej 220 poebo 436 wwkd 189 euso 247 wh 149 ohrh 90 lwpde 477 170",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "441 199 81 192 73 144 485 190 450 324 335 237 493 207 67 314\n59 y 423 s 460 sd 305 btt 177 vf 161 tb 351 xzrkf 398 400",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "409 86 336 245 234 346 353 107 391 100 301 365 394 446 253 86\n415 mgtew 225 nso 224 o 163 t 497 ew 450 hzy 493 bzptv 350 408",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "97 188 221 295 328 319 186 175 287 236 466 159 101 438 73 87\n498 btww 351 pqyim 265 h 248 tkx 50 sju 170 axf 146 nppxi 138 169",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "231 229 345 348 476 438 393 468 59 475 136 107 453 118 126 286\n173 ru 257 u 253 gqdum 249 m 52 ho 137 ficez 189 nr 481 459",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 k 1000 m 1000 oi 1000 al 1000 hmzjo 1000 cgdd 1000 rg 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 yof 1000 s 1000 mon 1000 s 1000 r 1000 bav 1000 rif 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1 1 999 2 1000 999 2 1000 1000 999 999 999 1000 999 1000\n999 pxz 999 shjj 999 pyix 999 adt 1000 wkpm 2 f 999 to 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 2 999 2 1 1000 1 2 1 1000 1000 1 1 1 2 1000\n1 rd 999 gtrt 1000 ts 1 ij 1 zaif 1 iko 1 pf 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

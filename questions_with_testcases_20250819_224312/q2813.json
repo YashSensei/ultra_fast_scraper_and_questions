@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Automatic Scholarship Calculation",
+  "tags": [],
+  "text": "A university gives scholarship to students based on their current CGPA. This waiver allocation follows some rules. At the beginning of a semester allotted scholarships for certain CGPA range is put on the notice board in tabular form. Two such tables are shown below:In the table on the left, it is said that students who have CGPA within 3.60 and 3.69 (inclusive) will get 10% of their tuition fee as scholarship. Similarly, those with CGPA range is within 3.90-3.99 will get 40% of their tuition fee as scholarship. Using the two tables above we will try to explain to you the rules and restrictions of allocating waiver:A fixed Scholarship is given to all the students within a CGPA Range.The range of each CGPA slab must be equal (Except the topmost one, which can be smaller).The slabs must go all the way up to 4.00.The scholarship percentage for the lowest slab is a positive integer. With the increase of CGPA range the amount of scholarship percentage must also increase by a fixed positive integer value. In the table on the left this fixed value is 10% and in the table on the right this fixed value is 30%.Scholarship percentage for each slab is always a positive integer with a maximum value of 100%.The scholarship amount that can give 1 student 1 % scholarship is called a unit. So to give 2 students 50% scholarship, 50*2 = 100 units is needed.All the scholarships given should use up a given amount, P units.A CGPA range for scholarship cannot start below 2.50. So 2.50-2.55 is a valid CGPA range but 2.45-2.55 is not valid.There must be at least 2 slabs for scholarship. But of course a slab can contain zero students.Given the number of students, total available scholarship units and their current CGPA, your job is to find out the number of different possible scholarship allocations that uses up all the scholarship units. Two scholarship allocations are different if their CGPA range is different or scholarship allocation in any slab is different.InputInput file contains at most 100 sets of inputs. The description of each set is given below:Each set starts with two integersN(N <= 10000) which indicates the total number of students andPwhich indicates the scholarship units that needs to be used up. Each of the nextNlines contains the CGPA of one student.Input is terminated by a line containing two zeroes.OutputFor each test case produce one line of output which contains an integer D. This D denotes the total number of different scholarship allocations that uses up all P units. Input will be such that there will always be at least one possible allocation.ExampleInput:10 410\r\n3.29\r\n3.96\r\n2.61\r\n2.82\r\n3.93\r\n3.68\r\n3.70\r\n2.91\r\n3.28\r\n3.68\r\n0 0Output:79554Explanation:a = 10, d = 10, lowest = 2.88, nslab = 8, wslab = 14One possible solution to the sample input above is:CGPA RangeNumber of studentsWaiver %Total Units needed3.93 - 4.002801603.78 - 3.920703.63 - 3.773601803.48 - 3.620503.33 - 3.470403.18 - 3.32230603.03 - 3.170202.88 - 3.0211010Total Units410There are another 79553 different allocation which uses up all 410 units exactly.",
+  "sample_input": "Input:10 410\r\n3.29\r\n3.96\r\n2.61\r\n2.82\r\n3.93\r\n3.68\r\n3.70\r\n2.91\r\n3.28\r\n3.68\r\n0 0Output:79554",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/AR2015PH",
+  "scraped_at": "2025-08-17 00:34:02",
+  "test_cases": [
+    {
+      "input": "10 410\r\n3.29\r\n3.96\r\n2.61\r\n2.82\r\n3.93\r\n3.68\r\n3.70\r\n2.91\r\n3.28\r\n3.68\r\n0 0",
+      "expected_output": "79554",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 8\n7\n10\n6\n7\n3\n5\n3\n4\n1\n3\n6 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 10\n8\n9\n6\n7\n3\n7\n3\n2\n3\n6\n2 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 3\n4\n4\n7\n7\n8\n9\n9\n2\n2\n3\n1 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "57 98\n82\n74\n52\n49\n35\n78\n43\n93\n19\n42\n58 34",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "65 53\n8\n20\n42\n12\n55\n75\n85\n28\n40\n17\n16 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "95 26\n65\n66\n31\n2\n24\n98\n82\n21\n81\n70\n80 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "53 80\n75\n73\n57\n43\n87\n100\n76\n98\n53\n21\n15 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 37\n12\n7\n84\n1\n33\n16\n5\n20\n24\n75\n29 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 459\n339\n392\n403\n98\n120\n75\n317\n491\n169\n240\n115 482",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "397 56\n67\n185\n181\n138\n86\n446\n379\n214\n333\n477\n250 214",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "84 466\n330\n144\n51\n234\n399\n487\n240\n305\n332\n232\n101 50",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "488 127\n260\n155\n300\n218\n417\n282\n125\n194\n187\n181\n108 391",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "121 125\n312\n304\n470\n156\n401\n190\n271\n201\n493\n237\n352 495",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "70 348\n423\n212\n442\n136\n494\n171\n404\n54\n418\n252\n352 422",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "421 243\n460\n272\n273\n176\n329\n244\n483\n244\n263\n283\n333 184",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n1000\n999\n2\n2\n1\n1000\n1000\n1\n999\n999\n1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 2\n2\n1000\n2\n999\n999\n1\n2\n1\n999\n999\n999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

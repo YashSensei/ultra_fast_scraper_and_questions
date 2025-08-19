@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Sorted bit squence",
+  "tags": [],
+  "text": "Let's consider the 32 bit representation of all integers i from m up to n inclusive (m ≤ i ≤ n; m × n ≥ 0, -231≤ m ≤ n ≤ 231-1). Note that a negative number is represented in 32 bit Additional Code. That is the 32 bit sequence, the binary sum of which and the 32 bit representation of the corresponding positive number is 232(1 0000 0000 0000 0000 0000 0000 0000 0000in binary).For\r\nexample, the 32 bit representation of 6 is0000 0000 0000 0000 0000 0000 0000 0110and the 32 bit representation of -6 is1111 1111 1111 1111 1111 1111 1111 1010because0000 0000 0000 0000 0000 0000 0000 0110 (6)\r\n  + 1111 1111 1111 1111 1111 1111 1111 1010 (-6)\r\n ------------------------------------------\r\n= 1 0000 0000 0000 0000 0000 0000 0000 0000 (232)Let's sort the 32 bit representations of these numbers in increasing order of the\r\nnumber of bit 1. If two 32 bit representations that have the same number of\r\nbit 1, they are sorted in lexicographical order.For example, with m = 0 and n = 5, the result of the sorting will be:No.Decimal numberBinary 32 bit representation100000 0000 0000 0000 0000 0000 0000 0000210000 0000 0000 0000 0000 0000 0000 0001320000 0000 0000 0000 0000 0000 0000 0010440000 0000 0000 0000 0000 0000 0000 0100530000 0000 0000 0000 0000 0000 0000 0011650000 0000 0000 0000 0000 0000 0000 0101with m = -5 and n = -2, the result of the sorting will be:No.Decimal numberBinary 32 bit representation1-41111 1111 1111 1111 1111 1111 1111 11002-51111 1111 1111 1111 1111 1111 1111 10113-31111 1111 1111 1111 1111 1111 1111 11014-21111 1111 1111 1111 1111 1111 1111 1110Given m, n and k (1 ≤ k ≤ min{n − m + 1, 2 147 473 547}), your task is to write a program to find a number corresponding to k-th representation in the sorted sequence.InputThe input consists of several data sets. The first line of the input file contains the number of data sets which is a positive integer and is not bigger than 1000. The following lines describe the data sets.For each data set, the only line contains 3 integers m, n and k separated by space.OutputFor each data set, write in one line the k-th number of the sorted numbers.ExampleInput:2\r\n0 5 3\r\n-5 -2 2Output:2\r\n-5",
+  "sample_input": "0000 0000 0000 0000 0000 0000 0000 0110 (6)\r\n  + 1111 1111 1111 1111 1111 1111 1111 1010 (-6)\r\n ------------------------------------------\r\n= 1 0000 0000 0000 0000 0000 0000 0000 0000 (232)",
+  "sample_output": "Input:2\r\n0 5 3\r\n-5 -2 2Output:2\r\n-5",
+  "link": "https://www.spoj.com/problems/SORTBIT",
+  "scraped_at": "2025-08-17 00:33:15",
+  "test_cases": [
+    {
+      "input": "0000 0000 0000 0000 0000 0000 0000 0110 (6)\r\n  + 1111 1111 1111 1111 1111 1111 1111 1010 (-6)\r\n ------------------------------------------\r\n= 1 0000 0000 0000 0000 0000 0000 0000 0000 (232)",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2\r\n0 5 3\r\n-5 -2 2",
+      "expected_output": "2\r\n-5",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "7 1 7 4 3 4 9 10 2\n9 7 7 1 1 10 9 2 bn\n9 10 4 1 2 8 8 9 7\necp 4 6 2 4 7 8 3 9 r\nlfptixh\n3 10 9 6 1 1 6 4 2 3\nn 2 3 10 5 7 9 9 1 4 xwnb",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 1 7 2 10 4 2 9 6\n6 8 4 1 7 7 8 4 jpij\n3 7 9 9 10 4 9 2 8\nmdn 8 2 8 7 5 9 7 10 bj\nwukiqi\n6 9 9 9 10 8 8 7 1 10\nv 10 7 8 7 8 8 3 8 3 ckxv",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 6 9 9 9 6 10 9 9\n10 10 9 8 10 10 10 10 f\n8 10 3 6 9 6 4 5 3\nossz 2 7 10 4 3 9 3 1 zh\ntght\n2 6 1 9 10 6 4 2 8 6\nk 5 3 9 10 1 3 10 3 10 oik",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "38 81 68 94 81 99 73 57 32\n35 44 90 98 16 4 17 3 hvsi\n73 39 9 97 6 69 36 22 26\ngibf 30 63 100 63 33 69 1 36 gyoi\nyk\n80 47 90 10 33 47 10 99 39 9\nkhsc 84 95 20 14 99 44 68 21 31 ckkmz",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "94 60 22 23 36 33 93 35 72\n5 75 41 28 13 46 91 67 ry\n58 12 45 18 43 30 58 35 47\nm 44 71 90 33 37 77 55 73 iyud\nftmgtjepyqtfvoz\n52 97 77 73 71 32 75 50 38 92\nfjqvc 65 18 22 12 29 10 43 66 70 xcoe",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 7 68 43 16 18 26 3 83\n92 10 99 88 86 15 99 94 hm\n77 79 60 19 80 1 73 80 16\nyidcy 23 48 62 16 50 64 81 51 uy\nszgvirrbzfwieckmurm\n72 2 69 20 51 24 45 52 61 98\njcyl 15 48 44 20 13 63 69 44 32 povc",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 32 29 39 50 55 21 38 31\n94 8 73 94 27 38 78 44 hclwp\n50 89 33 53 48 3 45 10 11\naztrs 71 53 21 87 83 63 18 54 tq\nqefqivnjcnfbqqkjijdj\n73 43 4 37 3 30 77 1 52 49\nv 79 77 99 82 98 80 68 15 1 ctrhx",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 32 50 88 58 67 56 46 53\n7 98 14 12 81 93 5 80 lvm\n28 35 66 62 50 85 18 59 49\nwwavv 92 91 1 74 86 18 79 96 fyzzh\nvuqlxerkv\n80 60 15 8 11 53 27 22 56 25\npbhe 3 85 66 82 80 42 22 89 48 gzh",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 60 41 72 30 45 93 102 16\n97 93 58 84 72 46 53 70 tb\n22 50 73 102 18 45 99 64 77\nimkm 105 75 67 92 65 68 58 70 cqfb\ninczpt\n115 39 76 104 55 77 45 64 22 30\nxra 35 104 70 81 43 111 83 78 94 gh",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "112 52 26 82 20 65 64 77 19\n46 76 34 41 54 113 17 80 lzc\n37 68 100 81 16 115 95 26 85\nge 68 68 36 60 103 77 95 72 p\ntatfezdpemv\n90 16 52 29 63 85 29 45 53 99\nd 59 18 95 65 72 106 113 54 56 hymo",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "13 62 76 74 11 31 67 84 46\n16 68 94 85 38 92 85 95 y\n25 112 60 12 105 78 79 47 110\nzfm 45 83 49 75 46 67 52 32 zz\noybz\n74 51 45 50 70 112 66 62 108 12\njvm 35 107 57 105 53 31 45 29 75 e",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "23 65 26 13 62 94 96 108 88\n80 68 111 103 95 55 64 80 vl\n105 48 41 59 99 91 97 84 65\nwvu 45 58 46 40 97 17 44 87 xl\nhdwivbmhgnwpnqu\n102 70 96 42 47 30 108 83 50 111\nepzkn 62 96 17 33 100 52 110 108 113 nqz",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "39 63 93 90 57 11 65 23 55\n106 107 42 64 78 82 84 76 mix\n51 97 61 112 46 111 11 110 73\nweho 108 66 21 20 18 101 64 93 qzq\nbcqvtuq\n54 53 29 96 107 83 28 106 81 98\nlqp 14 28 68 107 43 92 79 79 57 jia",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "113 28 36 108 34 91 50 105 34\n30 107 95 26 50 80 81 41 ej\n105 19 79 44 103 35 54 18 93\npcsum 13 60 104 51 70 64 31 38 gkch\nfraunhbjvgfvfzaxr\n20 11 47 70 22 108 53 48 113 104\nwlqvw 83 80 63 64 98 110 38 114 71 vtw",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "114 78 15 32 48 45 38 40 64\n113 95 99 61 32 76 104 74 akt\n109 88 96 71 55 96 66 88 17\nfpwu 80 60 71 63 18 102 61 41 bukn\nidvuh\n111 15 57 34 69 80 38 14 51 97\nwzyx 94 81 25 26 76 45 27 87 31 zdxkj",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "231 231 231 231 231 231 231 231 231\n231 231 231 231 231 231 231 231 ey\n231 231 231 231 231 231 231 231 231\nrmuq 231 231 231 231 231 231 231 231 fwgg\nv\n231 231 231 231 231 231 231 231 231 231\nola 231 231 231 231 231 231 231 231 231 uxzod",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "231 231 231 231 231 231 231 231 231\n231 231 231 231 231 231 231 231 jbe\n231 231 231 231 231 231 231 231 231\npazsz 231 231 231 231 231 231 231 231 evna\nr\n231 231 231 231 231 231 231 231 231 231\nlmf 231 231 231 231 231 231 231 231 231 e",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 231 1 1 230 230 1 2 231\n231 231 231 230 2 231 231 2 hcm\n2 1 230 1 1 230 2 230 2\nor 2 231 231 1 2 1 230 231 bir\npxapizoduk\n231 1 231 1 1 1 1 1 1 2\nmr 231 1 230 230 231 231 230 2 2 clhh",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cleaning Robot",
+  "tags": [],
+  "text": "EnglishVietnameseHere, we want to solve path planning for a mobile robot cleaning a rectangular\nroom floor with furniture.Consider the room floor paved with square tiles whose size fits the cleaning\nrobot (1 × 1). There are 'clean tiles' and 'dirty tiles', and the robot can\nchange a 'dirty tile' to a 'clean tile' by visiting the tile. Also there\nmay be some obstacles (furniture) whose size fits a tile in the room. If there\nis an obstacle on a tile, the robot cannot visit it. The robot moves to an\nadjacent tile with one move. The tile onto which the robot moves must be\none of four tiles (i.e., east, west, north or south) adjacent to the tile\nwhere the robot is present. The robot may visit a tile twice or more.Your task is to write a program which computes the minimum number of\nmoves for the robot to change all 'dirty tiles' to 'clean tiles', if ever possible.InputThe input consists of multiple maps, each representing the size and arrangement\nof the room. A map is given in the following format.w h\n    c11 c12 c13 ... c1w\n    c21 c22 c23 ... c2w\n    ...\n    ch1 ch2 ch3 ... chwThe integers w and h are the lengths of the two sides of the floor of the room\nin terms of widths of floor tiles. w and h are less than or equal to 20.\nThe character cyx represents what is initially on the tile with coordinates\n(x, y) as follows.'.' : a clean tile\n    '*' : a dirty tile\n    'x' : a piece of furniture (obstacle)\n    'o' : the robot (initial position)In the map the number of 'dirty tiles' does not exceed 10. There is only one 'robot'.The end of the input is indicated by a line containing two zeros.OutputFor each map, your program should output a line containing the minimum\nnumber of moves. If the map includes 'dirty tiles' which the robot cannot reach,\nyour program should output -1.SampleInput:7 5\n.......\n.o...*.\n.......\n.*...*.\n.......\n15 13\n.......x.......\n...o...x....*..\n.......x.......\n.......x.......\n.......x.......\n...............\nxxxxx.....xxxxx\n...............\n.......x.......\n.......x.......\n.......x.......\n..*....x....*..\n.......x.......\n10 10\n..........\n..o.......\n..........\n..........\n..........\n.....xxxxx\n.....x....\n.....x.*..\n.....x....\n.....x....\n0 0Output:8\n49\n-1",
+  "sample_input": "w h\n    c11 c12 c13 ... c1w\n    c21 c22 c23 ... c2w\n    ...\n    ch1 ch2 ch3 ... chw",
+  "sample_output": "'.' : a clean tile\n    '*' : a dirty tile\n    'x' : a piece of furniture (obstacle)\n    'o' : the robot (initial position)",
+  "link": "https://www.spoj.com/problems/MCLEAN",
+  "scraped_at": "2025-08-17 00:33:41",
+  "test_cases": [
+    {
+      "input": "w h\n    c11 c12 c13 ... c1w\n    c21 c22 c23 ... c2w\n    ...\n    ch1 ch2 ch3 ... chw",
+      "expected_output": "'.' : a clean tile\n    '*' : a dirty tile\n    'x' : a piece of furniture (obstacle)\n    'o' : the robot (initial position)",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "izacj paexj\n1 6 7 1\ngl vr orzt glqfr tbtok\n2 9 9 7\ncrq y jnh nzmrs hwqfu\nskbp\n6 3 5\nkgmx h x c qfv",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ojbny b\n5 2 8 4\nf ywej cmy ecfx ip\n8 8 9 3\nl i jbhba h guonm\natw\n9 7 4\nnmgz ehamw woux oslci z",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "xawqu idhgs\n3 2 1 2\ngiwf jw jf mtzjc befw\n4 10 7 2\nph ndad glj qkuv svdk\nxtqpu\n4 10 5\nja bdb ywwb iq kxmc",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "t jlat\n7 85 82 9\nua iqep mob sbe ari\n18 86 6 23\nirojc ibm ppwiv y eejbr\nykbwiv\n2 44 63\ngag kg octdx rbqq lqryi",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "elti dglm\n76 49 62 34\nkoeuj pldx zz tz ugtv\n34 86 4 71\nt a kwgrz mdb zt\ndkqs\n89 66 71\nugfbg drtl e o svlw",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "rvofr siye\n86 34 37 32\nrfnc mk ocjp vfhv akqw\n38 51 78 45\nwsy afs xwc brs ahz\nd\n13 40 92\njde yr vjuba jw h",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "aoqpm ckzg\n25 40 6 8\njnhu g hbr tqua ikbc\n78 94 24 83\na vcj jyagu wril rpixf\nvz\n46 55 57\ncxh kba rt i awj",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "kxbr fn\n6 100 71 38\nxt lsisr gma k tq\n10 71 90 86\nbkslx gcpv jl yghsa mfeq\ng\n9 57 4\nxyyco pkn slrao tt b",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zv xqobc\n290 254 109 192\nxkqo fe urr rb jyjyt\n204 454 381 143\nc mhw gckkh qcuer ju\ncexk\n93 443 246\nrzn ls qoslv bvm n",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "skzh horac\n325 445 179 164\nlc edjaa wtdo rzvwk htynr\n419 74 442 236\nm y noyx liwy rqso\nrnf\n161 324 287\nwdrk vyk nxx vm mtq",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "aluw bjqfk\n440 101 405 459\neopv z rzpx afu iub\n214 114 115 492\nlft prney k ked bgn\ngy\n443 66 95\nb z lwiiw k wc",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vj xhk\n476 66 54 448\nbvj zrut wi g lfofy\n489 351 360 179\njs tyc l wryck bujmq\nw\n346 413 433\nyb gn ftmdt orag ee",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xiy hmq\n432 160 165 352\nbl htyo dnqrr gq fzq\n168 304 429 338\nivqt cqtdv loze r tcfz\ntw\n463 496 245\nrfm lsql ehjii y fi",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rybve gfut\n257 119 156 448\noybo bbn laye vq hhp\n427 105 485 232\ngupse scd t r y\nlf\n346 294 420\nrb a jeiqv kzpnj uv",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "o zoj\n307 121 450 254\niacap h zdc zoqpi l\n442 311 295 224\nduxjz onox yp pp jfu\nhlc\n302 482 222\nqmjwn erp wrxzx ywq psgbd",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "vf hpo\n1000 1000 1000 1000\nuo l ljg wswxi mvh\n1000 1000 1000 1000\ndo lh i ikn x\ns\n1000 1000 1000\nlr vxm mwoh vmrwq ggg",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "jeiw apc\n1000 1000 1000 1000\nmjiav us aqhx ppqyv mkh\n1000 1000 1000 1000\niji gz uce rbac kkxs\niwq\n1000 1000 1000\naq dc ho pqca nqo",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "hjy brx\n1000 999 1 1\ntt pzp kzt x dh\n2 999 2 2\negap n rnvxc q rd\nloeolq\n1 1000 1\nhfu ycn bd snapg bmsxy",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "fgfg uzas\n999 999 2 999\nyazc mnz lg vlm afyho\n2 999 999 999\nvsv d tig zwk fhij\npjg\n2 1 1\nq lnga tl ci r",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

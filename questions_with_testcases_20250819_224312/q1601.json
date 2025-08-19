@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Traveling Salesman",
+  "tags": [],
+  "text": "According to Wikipedia, \"The Traveling Salesman Problem (TSP) is a problem in combinatorial optimization studied in operations research and theoretical computer science. Given a list of cities and their pairwise distances, the task is to find a shortest possible tour that visits each city exactly once.  The problem was first formulated as a mathematical problem in 1930 and is one of the most intensively studied problems in optimization. It is used as a benchmark for many optimization methods. Even though the problem is computationally difficult, a large number of heuristics and exact methods are known, so that some instances with tens of thousands of cities can be solved.\"Fortunately, you won't have to solve TSP. You're working for a very clever traveling salesman who has already figured out the path he is going to take. All he needs from you is a quick way to figure out how far he traveled after every segment of his tour.InputThe salesman kept detailed records of his travels. You'll be getting a series of lines of the form \"Some text (X, Y).\" indicating that the salesman has been at the point X kilometers east and Y kilometers north of the origin of a Cartesian plane.OutputFor each segment of the trip, output the total distance traveled up to that point as a line in the format \"The salesman has traveled a total of D kilometers.\" Show three digits after the decimal point when printing D. Note that the salesman only travels in straight lines (even after a couple of drinks).ExampleInput:I started out at (0, 5).\r\nThen I traveled to (3.7, 5).\r\nAfter a couple of drinks I wobbled to (2.7, 4).\r\nThe next morning I woke up near (4, 3).\r\nI finished my journey in (-.2, 8).Output:The salesman has traveled a total of 3.700 kilometers.\r\nThe salesman has traveled a total of 5.114 kilometers.\r\nThe salesman has traveled a total of 6.754 kilometers.\r\nThe salesman has traveled a total of 13.284 kilometers.",
+  "sample_input": "Input:I started out at (0, 5).\r\nThen I traveled to (3.7, 5).\r\nAfter a couple of drinks I wobbled to (2.7, 4).\r\nThe next morning I woke up near (4, 3).\r\nI finished my journey in (-.2, 8).Output:The salesman has traveled a total of 3.700 kilometers.\r\nThe salesman has traveled a total of 5.114 kilometers.\r\nThe salesman has traveled a total of 6.754 kilometers.\r\nThe salesman has traveled a total of 13.284 kilometers.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FAKETSP",
+  "scraped_at": "2025-08-17 00:33:25",
+  "test_cases": [
+    {
+      "input": "I started out at (0, 5).\r\nThen I traveled to (3.7, 5).\r\nAfter a couple of drinks I wobbled to (2.7, 4).\r\nThe next morning I woke up near (4, 3).\r\nI finished my journey in (-.2, 8).",
+      "expected_output": "The salesman has traveled a total of 3.700 kilometers.\r\nThe salesman has traveled a total of 5.114 kilometers.\r\nThe salesman has traveled a total of 6.754 kilometers.\r\nThe salesman has traveled a total of 13.284 kilometers.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 7\nukmyz gilevcb y fqmur rfawt aags\n9 7\nifnmf lj u btp o qwbn\n2 8\ni pr haumz q fnqd y ca qz peddi gck\n2 5\nlug sy dxq ud wg zf b k brbeo\n5 9\nmjlv idrrgh hwbp levn pjfud egwyt u",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 3\npp mx pok gnl jaab s\n10 1\njoebg cy aqocek zj kgr mn\n5 7\nbyfjt arla lcr aunxg ioeq wavu nq eqtbv vzwz dif\n10 9\nldh l qr g sr kdm zalun hu oujbo\n9 5\nri kbmsnty ivl cqwgl sfe cp mhwtw",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 2\nnxl mud lcoij jvm f rjc\n9 2\nfdjc spiuu v dn ueucw bf\n2 7\ny m wgzt pow ehli zu lmzbsg wqfb u wfoet\n7 10\neihd tlmwj qzfsqo yegnx f mfhi bnx fskra r\n3 10\nnxq m fh wm qn ivki cfmix",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "69 41\nqu nxir rzcbt cr qa lnwt\n99 39\nzzy pz vpdevu ggu myfhd oudi\n51 69\nvlhwh e ymsc yne sksop zrne q dv kqkwf bd\n3 49\nupnct tjr m fkcyl j xzfwe zv sma obogr\n61 25\nwuf jirtyppe cu yos nc nc esei",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 56\nzbl fycmwp joe mw rlv gf\n95 6\nylbf tyqmd kylvo p xi kxnnk\n32 82\nu mcjqh zevbsh hd huz tsbbk huvtzlz c de uks\n88 97\npgdbe v po iy wo waj e ve k\n19 13\ngmc xbkxwmji j tzry lwgr oonu obmvg",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 23\ne wliyo r het cdnob jhiwe\n35 87\nmfkgc ki ydkzvdox b l ph\n41 36\nbfn p qzukcz fxz ouryx uolm csm empku gxmks n\n50 37\ngq m tyi ymbr so czk ros xq d\n54 27\ny xbivirmb lkcvc zrbq ada uoe da",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "74 61\nrpr zn aulj sf txf enp\n44 79\nyvlc k vhggn iz lnqoj ki\n85 34\npd beo aghp rkxg liwxkg ueu tur w iwbe m\n11 29\na umyma ntkckiv js vraoq wc cb nm kpqcm\n10 76\net xkksot lo ngsyek rql g jhxfl",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "82 85\nrt bmiwnc aaqfn fypg rzdr uaval\n34 22\nkgr jeyl zfpxgwvy w qhhqz ptoe\n45 30\nb euoc iknvzl ddfob dz yxu cgmro dfin v b\n77 91\nbeo xq uksgha jo x qr wj awa cuo\n16 90\ntvnv wznqzrwr nyh d axyiw adzd bpno",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "226 164\niimi conelar fam xlcgr wajp fj\n370 55\nofge cahs uywp bbvc gitg ds\n146 277\natr qvwy or jzyz thd irs gokad fvpnr phap cy\n301 172\npwn crpv ephxx utsem vpmx bydj pasj sbkag sklgx\n264 96\netlax shi bbl kf pjf b y",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "226 177\naq wknse a lzb wm hl\n306 205\nyf pev vcmazhb mhgrk w lgbg\n87 357\nlgf stl oyxqsm r clobo fhwi px hdkmg guhq g\n127 435\nv arnxb ijcun of eyx zkjxw poxeb kspb ya\n314 227\ndm fmurcys i xqjvh sqmde xhior mg",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "348 412\ntpde orbf gcusr jg on s\n350 355\nimj dbuoe gr fi m vh\n429 206\nj dmpc ep zsx vlz sd b exwsc c rdk\n402 429\nsfnvh xtcg c f s e op t oc\n378 182\ndtou oj okn f mlh c eztw",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "218 314\nkcxhj kzcdjl j xh kn rtnep\n388 167\njvip mb o baxot dcmxf rgzmb\n325 481\nfptk ymahj sy xpagu oqmymg rkfyq xjbjv hbxke clgd iceow\n452 193\ni tz bhayl gzt g xom i hdxd dsj\n496 271\nenfq lc ywte znsi rkhen psel fp",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "178 237\nc exdhf qqpp rlzr zaik b\n52 268\nljghv a k iz r mybuf\n90 319\nfl kqbw pdod js ouxky qvmt mxpdlc zzzp ig f\n75 115\nuv ga ms he ioq ysiy ilkh gcnim hen\n67 89\nln thbrozc fsqo oubmd oa kjgxv y",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "269 220\ndpxtr at uubcr dy ljf u\n389 176\nchbg finfk xqer nv erdr dbbl\n129 152\nmdoen l o aa mylfvk kldky wcarl oj pmpms ai\n67 161\nblk e gxfggxu f uj zuwmb xe rx fvx\n165 185\nfbl hj rawqi z mko hcsn tthrm",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "282 391\nqyqrh nvhak swww lpu qve pfqt\n466 241\noxmzx dlz vzom b u th\n310 469\nlq eb qeow jamm nx glafc m t hrm cb\n281 498\ntewia p vx xpas btk s tajpm uxmdr ftgo\n426 327\ny y bovi yqnashq zee iyyy qf",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\nzy osvw kje b msrwi ilyf\n1000 1000\nzh zowm ly cr z xwzx\n1000 1000\nlhkvl wfrl cnti l pkyb edg ueyt taoc ihiqd ees\n1000 1000\nt b pqigu spi qggx ytlp yeb shc z\n1000 1000\nlgfv rplriwzy d gizjaae s pkehh rsxm",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\ntw vdsz nhwk hwrlt aipwj kq\n1000 1000\nmu w xdg udi l oa\n1000 1000\nx bak an uquh cc ocj ffnun nwzp pde w\n1000 1000\nzh qnby uwirjpe ztvaf twcfh amall rs zov fjkx\n1000 1000\nmwi lrfzpbm imqgy jlc iqh dxf aruu",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nim nluglm mz pa erqof n\n1 1\nrigv oul c ps bihh zjvl\n999 1000\nq n wrsw xiq hed uw wugaia ga auop lhdp\n2 2\nfj upwz tion v wk cghdd wgkc jfdig rnf\n1000 1\nxc roiy hrxzc uhgo l vpc mqkaf",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 999\nmbili hv qdiuh n r t\n2 1\nh wl kd d m ixf\n2 1000\nny tuoal myb jptr xoahb ni kj mon blb xff\n1 999\njcn xda mn f o njf zsih bpw q\n999 2\nyxq hvsdvwdb n mk le kwi bc",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

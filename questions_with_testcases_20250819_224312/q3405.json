@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ticket to Ride",
+  "tags": [],
+  "text": "Ticket to Ride is a board game for up to 5 players.  The goal of the\r\ngame is to set up train lines (and to thwart the opponents' attempts\r\nat setting up their train lines).  At the beginning of play, each\r\nplayer is assigned four train lines.  A player may choose to discard\r\nas many of these four assignments as she likes.  Each assignment has a\r\nscore, corresponding to its difficulty (so, typically, a train line\r\nbetween e.g. Stockholm and Tokyo would be worth more than a train\r\nline between e.g. Stockholm and Utrecht).  At the end of the game,\r\neach player gets points for the assignments that they have\r\nsuccessfully completed, and penalty points for the assignments that\r\nthey have failed to complete.An assignment consists of a pair of cities that are to be connected by\r\na series of shorter railway routes.  A route can be claimed (for a\r\ncertain cost associated with the route), but things are complicated by\r\nthe fact that there is only a limited number of routes, and once a player\r\nclaims a route, none of the other players can claim it.  A player has\r\nsuccessfully set up a train line between two cities if there is a path\r\nbetween the two cities using only routes that have been claimed by\r\nthis player.  For simplicity, we will ignore all additional aspects of\r\nthe game (including the actual process of claiming routes and\r\nadditional ways to score points).For instance, if your assignment is to connect Stockholm and Amsterdam\r\nin the Figure above, you would probably want to claim the routes\r\nbetween Stockholm and Copenhagen, and between Copenhagen and\r\nAmsterdam.  But if another player manages to claim the route between\r\nCopenhagen and Stockholm before you, your train line would have to use\r\nsome other routes, e.g. by going to Copenhagen via Oslo.In this problem, we will consider the rather bold strategy of trying\r\nto complete all four assignments (typically, this will be quite\r\nhard).  As a preliminary assessment of the difficulty of achieving\r\nthis, we would like to calculate the minimum cost of setting up all\r\nfour lines assuming that none of the other players interfere with our\r\nplans.  Your job is to write a program to determine this minimum cost.InputThe input consists of several (at most 20) games to be analyzed.  Each\r\ngame starts with two integers 1 ≤n≤ 30, 0 ≤m≤ 1000, giving the number of cities and railway routes\r\nin the map, respectively.  Then follownlines, giving the\r\nnames of thencities.  City names are at most 20 characters\r\nlong and consist solely of lower case letters\r\n('a'-'z').After this followmlines, each containing the names of two\r\ndifferent cities and an integer 1 ≤c≤ 10000,\r\nindicating that there is a railway route with costcbetween\r\nthe two cities.  Note that there may be several railway routes between\r\nthe same pair of cities.  You may assume that it is always possible to\r\nset up a train line from any city to any other city.Finally, there will be four lines, each containing the names of two\r\ncities, giving the four train line assignments.The input is terminated by a case wheren=m= 0.\r\nThis case should not be processed.OutputFor each game, output a single line containing a single integer, the\r\nminimum possible cost to set up all four train lines.ExampleInput:10 15\r\nstockholm\r\namsterdam\r\nlondon\r\nberlin\r\ncopenhagen\r\noslo\r\nhelsinki\r\ndublin\r\nreykjavik\r\nbrussels\r\noslo stockholm 415\r\nstockholm helsinki 396\r\noslo london 1153\r\noslo copenhagen 485\r\nstockholm copenhagen 522\r\ncopenhagen berlin 354\r\ncopenhagen amsterdam 622\r\nhelsinki berlin 1107\r\nlondon amsterdam 356\r\nberlin amsterdam 575\r\nlondon dublin 463\r\nreykjavik dublin 1498\r\nreykjavik oslo 1748\r\nlondon brussels 318\r\nbrussels amsterdam 173\r\nstockholm amsterdam\r\noslo london\r\nreykjavik dublin\r\nbrussels helsinki\r\n2 1\r\nfirst\r\nsecond\r\nfirst second 10\r\nfirst first\r\nfirst first\r\nsecond first\r\nfirst first\r\n0 0Output:3907\r\n10",
+  "sample_input": "Input:10 15\r\nstockholm\r\namsterdam\r\nlondon\r\nberlin\r\ncopenhagen\r\noslo\r\nhelsinki\r\ndublin\r\nreykjavik\r\nbrussels\r\noslo stockholm 415\r\nstockholm helsinki 396\r\noslo london 1153\r\noslo copenhagen 485\r\nstockholm copenhagen 522\r\ncopenhagen berlin 354\r\ncopenhagen amsterdam 622\r\nhelsinki berlin 1107\r\nlondon amsterdam 356\r\nberlin amsterdam 575\r\nlondon dublin 463\r\nreykjavik dublin 1498\r\nreykjavik oslo 1748\r\nlondon brussels 318\r\nbrussels amsterdam 173\r\nstockholm amsterdam\r\noslo london\r\nreykjavik dublin\r\nbrussels helsinki\r\n2 1\r\nfirst\r\nsecond\r\nfirst second 10\r\nfirst first\r\nfirst first\r\nsecond first\r\nfirst first\r\n0 0Output:3907\r\n10",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TICKET",
+  "scraped_at": "2025-08-17 00:34:26",
+  "test_cases": [
+    {
+      "input": "10 15\r\nstockholm\r\namsterdam\r\nlondon\r\nberlin\r\ncopenhagen\r\noslo\r\nhelsinki\r\ndublin\r\nreykjavik\r\nbrussels\r\noslo stockholm 415\r\nstockholm helsinki 396\r\noslo london 1153\r\noslo copenhagen 485\r\nstockholm copenhagen 522\r\ncopenhagen berlin 354\r\ncopenhagen amsterdam 622\r\nhelsinki berlin 1107\r\nlondon amsterdam 356\r\nberlin amsterdam 575\r\nlondon dublin 463\r\nreykjavik dublin 1498\r\nreykjavik oslo 1748\r\nlondon brussels 318\r\nbrussels amsterdam 173\r\nstockholm amsterdam\r\noslo london\r\nreykjavik dublin\r\nbrussels helsinki\r\n2 1\r\nfirst\r\nsecond\r\nfirst second 10\r\nfirst first\r\nfirst first\r\nsecond first\r\nfirst first\r\n0 0",
+      "expected_output": "3907\r\n10",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 1\nunoqvljrmsrnmtphi\nptvaqdu\nzxo\nbuzswke\nrzjoecpienvppzulyjb\nncjva\nqxztoiahhoe\ntvmkupbg\ngrdtk\ncyynnpldgar\n2\nas ahv 9\n5\nfihf nntrpbf 3\n2\noljey tf 10\n8\nnil rs 1\n3\npdzlds mmo 1\n5\nosrhq se 2\n6\nlctaep cflmmk 10\n1\nrycuvcwa xulp 7\n1\nq cjwsq 7\n4\nkegjym gwjrobt 4\n5\nwjci teli 3\n8\no byha 8\n3\nfvfbgwk tyngs 4\n9\ntjy vh 9\n4\nzarlxuqv prr 5\nfo spdzqfxj\nfqmzf pvo\nvzklaufyk nvkfn\nqe uy\n3 8\nigktmqoffx\nhnofebdxkx\n8\nwig d 3\nwx ora\ntywq wumxi\neh jwut\nff pc\n3 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7\nc\no\nodvxpph\nngb\narct\nnj\ncqvmlepdynuwe\nretm\ndsussuutlhdxsxntdw\nhtnsleabjlj\n9\nxrbw ailvn 4\n3\nhhdtpv yliapdzq 6\n10\nmtu bz 2\n2\nxc lb 9\n10\nujahkv wboigehh 8\n2\noflppgfhc snh 5\n9\nivuhkgdco syhoanw 4\n7\ndkp nnjcev 6\n7\nwkvub grye 6\n8\negvcn duufe 8\n4\niugmpk k 4\n10\nttnqkqe jzt 10\n2\nqqgmerw nr 6\n3\nlmwtc tdjn 7\n5\nropgxnm txgg 2\ntbmeptp ptpxgzcxr\nboc u\ndxegnwm gk\nnfdyf rqssson\n3 4\nzexlp\npnntvmnzt\n8\ndbp l 10\nx uoyy\nh t\nyc hsesh\nv zr\n3 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 4\npweqwfyzbl\nkyftkehpilwqegd\ntmpwd\npvsw\nwfpofzpetppem\nc\nmqxzeeqk\nrzaun\ngvv\nipngreineiikxe\n2\nwehse u 9\n4\niez kzbgzg 3\n5\nnj pjkij 4\n1\nlfvml vujay 7\n10\npqgw nwulk 1\n7\nglmjyt uwinw 3\n7\ncycffzn mcqt 2\n3\nhdls fvjy 1\n7\ngjqsq eskwhybkc 1\n3\nzihbp jwnxp 1\n9\nma yagqy 4\n1\ngqci iqmcmg 1\n4\nmhnazr ku 1\n4\ncrjgp rmboj 10\n3\nmgijpd hgup 8\ntcsd jqt\nbb ijjctk\nepifqyaau p\ns o\n6 6\njjdlz\nugmzlihjqw\n3\npsot qun 6\nlzd kllwc\nm uf\nfns fzes\nih zmmac\n9 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 1\nugpjkrmf\nk\nq\nyt\ntokut\nkhsb\nqudxdydkkzjxpcbr\ndbsxtahk\neodipjdi\nrnfqe\n28\ng krlgfmrw 19\n19\niqslcw v 19\n14\np f 26\n21\ncd lrin 27\n18\ngkcfbsq oua 24\n17\np jpezi 25\n10\nkyxquf gushp 9\n21\nwg gumzp 23\n12\nqyt qlog 23\n7\nafsjkp aylmnzypw 5\n28\ngsl xqgaqr 10\n28\nxxamqm gxli 2\n9\ndal q 18\n7\nkeod mc 18\n16\nzoaskzz z 2\nz ewimhojex\nqbv x\nbbxv msa\ndg r\n19 8\nslf\njoyuujz\n30\nmm liifg 7\nm vxith\niwj tn\nx equi\nlr vbszk\n10 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "20 27\nwmyzaykkghtt\noqahgczezwp\npojc\nqbxrcy\npmmuuiysjylwyeaweh\nrsfsagat\nbefblxftdq\nzbmg\npedsrpqr\ndgsf\n3\nnp a 17\n23\nb oiab 17\n19\ny up 17\n13\nufbsd pijrimj 17\n6\npocoopzl xa 2\n23\nnsnqghk erhvnd 5\n16\ntz zpzptzip 22\n14\nszu e 25\n3\nhdjmgi eiluqw 2\n24\neii bb 20\n27\nebf ljcr 14\n1\nh buy 30\n16\ndxscyak fczm 28\n26\nktfhta qeakfv 29\n16\nltysuub wvmd 7\nsxqvyob dpg\nx l\nzyswxoh vunvn\nulkb pkthq\n25 26\nwwc\nzcnntgya\n29\nth ku 27\nf dpvc\nc dqvl\ntijq jj\nonfo s\n22 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 14\nzsupuvsrwkcsoc\neiylv\ntqjlh\nlhn\ngqcgm\nfkfxcuc\nntjadypjgi\nngxwcfooqwx\npvjxbqeml\ngjplfhlqggzfohww\n4\nzojp cwxaaxtzi 2\n29\nceilpiyzn rjmqfecq 1\n2\nia hyg 20\n14\nu lxmkomxmg 8\n5\nqfqtsy ixfyvcolix 24\n16\nfwcjqr rjtnlo 19\n30\njrsh zlrnbjwat 27\n24\nebocnd wq 21\n17\nm xl 24\n24\nnxk xan 2\n25\nln vwyei 9\n15\nnxweij jl 16\n29\nfv vyko 17\n18\nbpktv kwlvqwzk 1\n22\nvh vmndvxixi 30\ne iuudenjfw\npmdq u\njqw gn\nxneabyz iweu\n10 3\nurtd\ncgjqdl\n11\nh xowrp 5\nssxw gzi\njn h\nzawpm hy\netv uq\n11 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "28 25\nmojaobuwntzlezj\nosnesqitw\njkddp\nat\naitigwbnrhouhbcctww\nbykwsqb\notncmfrtt\njm\nmjd\nokvft\n3\nd tpll 22\n27\nmx qah 30\n3\ndsp duszg 29\n23\np tp 4\n12\nflrshnx dvbba 26\n13\ndcmtx mfha 8\n16\njucghknl xmfl 17\n16\nxbhttg dqjew 13\n6\novlodh ig 16\n24\nkxetax ripuzf 29\n27\njwotc ytzhjs 27\n6\nmqhiehak myqxzy 24\n30\nn v 9\n5\nnmx qs 5\n6\naq qpbj 18\nkwqurk ahopopmje\nbfvkj wa\ntr fmdcp\nrqkz eomyxx\n27 23\nnx\ne\n11\nvtxj wva 1\nyd pv\nsc jor\nxufez rw\npox mxftp\n23 23",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 15\njhemgvllmehvh\nyjltkl\nraucy\nl\njamprfkrl\nckqjr\nzbgylekra\nnmnmg\nusmhfdyzxlrhf\nyaojuf\n5\nb qbwinmpn 17\n25\nvou fpcvnwx 23\n28\nuzxax hgn 18\n8\nj nqv 29\n3\nbicmtjjjg jvuovje 18\n20\nsuaxhgon atkyxy 29\n20\ntnz xtahko 5\n28\nnytvrw wttz 13\n12\naziz vitmekdgx 9\n12\nm av 18\n10\nzh bv 27\n29\nqckpvg btxg 3\n7\nlztcn kyoo 7\n21\nih nqoffgen 20\n5\nxryabsa txdq 14\nrfvm a\nikgm jhvepp\niqpfc eicd\naoazvv ghgwcj\n19 2\nflvednxsrp\nufcxgeorkk\n15\nf hbqib 28\nkz l\nfpuy pc\nsry j\nvwic xqyib\n22 12",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 5\nczdueh\nizc\nlhrlx\nvspqfrd\nvjctzjienh\nxlmvz\nxy\nxdd\niusfjycidnnbyxtecj\nbqpzdtngwrcgxhm\n6\nhj vyjv 7\n7\nk t 2\n3\np ugafqj 11\n1\nxgt pz 4\n4\nxhgztp fdt 6\n15\njcksooif kx 4\n13\nmiro jg 15\n4\nsjrjvoge c 15\n5\nlu daeejlf 4\n6\np vfcrpko 13\n3\nte quspnw 1\n13\nuqiybti jeet 15\n1\nujutp a 6\n8\nej wexj 9\n1\nkiewlvo bhsmnd 7\nrtur vtki\nb bihkca\nnjcz nbisfv\nkcepz emf\n2 5\nlyao\nmbtbblpdvtmb\n10\nt joro 8\nlbvnk px\nkpkl pdie\nzexkpt ma\nllj dpbze\n7 5",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12 14\nlhmvcitz\nka\nkci\nspjnyojgrinq\nufszipt\ndbtaqjrb\nlqjyfz\nnywwrgalajt\njbl\nngqcuxc\n6\nyu pofxirr 15\n2\ngghhv edodr 3\n2\nxzmmt g 12\n9\nyb wlzofumzm 14\n15\nnzgal bvzoo 4\n4\njshlpdlcot ykrj 7\n5\nqsjaxhk lmiagtr 6\n8\njabvgeit udqw 14\n3\nn klh 5\n11\nntcx vqazn 15\n4\nhei l 11\n4\nmvtdzr hwvhua 15\n1\nfo gmoov 4\n5\nfmajrn npzp 9\n2\npoitvx u 12\nbuvwl kprvpn\nigh q\nqf jgd\nmctee dae\n1 4\nndxzscke\ndszl\n6\nfix mmbzq 7\nimt it\nets cwmgh\natba u\nqlaek uhbfd\n2 9",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 7\nulvkxvrdqo\nchhcnumrdkscder\nmy\npmktozfmdkmt\nja\nmt\nplbuvc\nfymmj\nu\ng\n8\ng rdoqjio 4\n10\nzcewvc wxedkmb 6\n11\npanow wtfc 4\n8\nqnw kyloqzjvmw 7\n2\nrsf djkm 11\n1\nepqbimfet pcgl 11\n2\nyeixcgyk tj 11\n9\nbial nsic 7\n8\nqu owaq 2\n15\nxcxu dvztpd 15\n6\nqrkclw elh 7\n6\nagykxnsn zyg 7\n3\nx gdx 1\n3\nr u 8\n3\no lzswbhu 11\nncv zuuccka\nku abpt\nwdxhie ja\no yp\n10 6\npxlxl\nufprsz\n13\nha mx 5\nv dhol\ndv hdb\nsp lc\nao uv\n5 9",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 9\nlodmdenpxj\nycukdynmdoptt\nlt\nioibinunk\nub\nxw\nxi\nrhdyte\ngixumplbwtbnrj\nbhrzzdv\n9\ngfdv hxzxavlt 12\n8\nlcjrb r 13\n7\nzngy jev 9\n1\ncsqd rcplcuy 15\n14\nbdghxwk tecjip 7\n1\niwha dp 10\n3\nfuixt legwdt 7\n2\nkdz i 3\n5\ng a 12\n12\nd hc 14\n1\ncyw o 3\n11\nh ya 1\n9\nx b 15\n10\nqwxcd fftdb 4\n9\nlt rmjfhf 3\nyuqsc wxhfm\njku dsqia\nd mua\ns kjclkcpu\n10 4\nmbnpcmkace\nkreaz\n1\nip aoizvu 14\nz knizw\ngj ucy\nenv mckfg\nwl o\n1 5",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 11\nilgpupabjtq\nkpmmwuct\njlfq\nkzign\ny\npauir\nxh\ntjfhs\ntnd\nsmmsggz\n11\nfaqu oecwemwbo 12\n9\nvkritq vkbsj 4\n3\naxoz zak 10\n1\nizmwy mk 4\n13\npqo pkik 8\n10\ngroeu htc 13\n4\nucuam zlvo 12\n11\nvvaspcg nboybd 15\n5\nadoh grmrgye 13\n6\nsdcksu n 7\n1\nwy idtjnz 5\n14\nofw kuokm 13\n7\ngmumew eef 2\n8\nhjs pv 12\n12\nm jfl 4\nnpflyvb cr\nxpzwl ttvwrs\nsrueaimyd kla\nvthxkt erkzclg\n9 8\nbjwftpnjd\nhhdzuxwmz\n13\nhboke bya 7\nbj do\nw iubgx\nizvfz b\nucd tjm\n14 5",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 4\nne\njzqsfzet\numhlyeitprqm\ncyqyjnqnrq\noecmzja\ntgzvaw\nudp\nupzbr\nfnpafefyrbngcxyqtj\nebrjazyugot\n8\nvjm kvmxzx 9\n6\nzthuutjf b 15\n13\nseazs cosbj 1\n7\nwyc agxjt 2\n10\nsr xd 9\n12\nfrzkombsc cyfgxn 11\n6\nrlqmnjf fcrxvgat 8\n15\nkruyj xpctf 6\n11\ntbiu cyuogoiu 4\n4\nwcpv pvgnnblr 14\n4\nuiwtjn lyuis 12\n15\nnke vkt 12\n6\nnh owa 5\n11\nb oqgn 11\n9\nanb py 3\nfybryq avi\nhxno vmyyg\npxhhqbofk zcfciy\nyrhnab aeogkkah\n6 6\na\nzw\n6\nld gpuxp 7\nu ys\ne xm\nkp gmhb\nj rghgw\n15 6",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11 10\neoaopjn\njomv\nfoghswqwy\nuwxeqmtxtal\ndhlkenexzncy\nkahgmp\nnnvqsg\nogdn\npkgprzpoxx\nrnmhdbpe\n1\nnbszj gjwxmfqv 5\n12\nrgmcwqmas khs 3\n6\npvk ii 5\n6\nios ha 15\n13\nfqaw sm 12\n2\nxwjjdae unbza 4\n5\ndkqnzxkk powfgfc 12\n6\nsxzgt ucbygs 14\n13\nphwja ccw 3\n15\nxnw apstdpb 13\n7\nww txu 15\n3\nkgd tqvwnz 2\n8\ntegggkin pnod 10\n14\ndidtu hwxuavci 9\n10\npt wsyimz 2\nd gj\nfr j\nmwtnlnkfx dwf\nxf dfe\n11 3\ndnds\nrsngcisp\n5\nwtinn zfuypf 8\nyjdab ehj\nvyex byc\ntph dp\nmcnp rn\n1 12",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30 30\nxg\nfkgebotisinh\ne\ndzzvotrka\nncpzrkyenzviquufy\nqgwraxop\nstqjqpsgnfyxr\nexyvvggi\nlxdkmfxexoprotcl\nmd\n30\nr hdoqrzd 30\n30\nbwhpb gkta 30\n30\nvl vp 30\n30\nwf f 30\n30\nrglf unm 30\n30\ntezolu bticf 30\n30\nuu e 30\n30\ncwy cjjn 30\n30\nhu dm 30\n30\nlqwmw mcn 30\n30\njzir rsbjaw 30\n30\nk o 30\n30\nwexxc dzr 30\n30\nx zmvo 30\n30\nrblpsll qgls 30\na ofvgftd\nyr l\nxnl su\ntjlp ksaykfy\n30 30\nyasrbpb\ncluxy\n30\nusr oahpm 30\nlk rc\nszwjo a\nokpuyx qd\nefwl ifj\n30 30",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "30 30\ntsca\nlvxrxxrxttqpkb\nkqbycom\nsgmj\nxglhcjrkqbk\nrmw\nhonyzvrgektt\negxj\ntdeehzfeobovkjr\ntconwidublsdns\n30\ncmpnb euquw 30\n30\nipvlbf l 30\n30\nlqpp rl 30\n30\niplv t 30\n30\ndgw xixg 30\n30\nmsyxgo dj 30\n30\npiinrnsbg qfzked 30\n30\nbouizzx butxju 30\n30\nfzsqb ble 30\n30\nkdl u 30\n30\nqmx gkqib 30\n30\nr nb 30\n30\nwyfft wpty 30\n30\nvz fmfvs 30\n30\nmmz jfpv 30\newjgsjuh evvcnk\nxkg w\nbkxl rwyrk\nr uqum\n30 30\ntkuulitnx\nnk\n30\nhxsp sxmmy 30\nwiqc om\nmmxr wiuk\nhxfi wgswi\nqhen qbhqo\n30 30",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "29 1\nkjpzf\nkricgjmlqjhuvvcx\njbhzhgkrm\nqbb\njqckhlhvyrkd\npvmbrm\nuxajtidffz\nxxfcbnxko\nsneukrfhv\nwuuzp\n29\nm dmwgwol 1\n1\nlavgoj usz 30\n29\nng eyqdy 2\n30\nhnuhq xvtvjgkezm 29\n1\nwwxv nxyoh 29\n30\nywk y 1\n1\nm dgrt 1\n29\nuru ebk 1\n1\nq lxrdnnhnu 29\n30\niy fyqgnjaf 1\n1\ngc gmxm 30\n2\nvowpqxhy nsmgg 2\n1\ntxmlx kob 2\n1\nyvdn riuws 30\n2\nzgwjyd gknbfkh 2\nhdqbto jztyjmd\niwwt uyooyk\nu mhq\nfpnabon asfiut\n1 30\nffk\nqlgbaxyknee\n30\nsa ghi 30\ns fholf\nyq znsbu\nrxhuzo g\nhlw z\n30 29",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "30 29\nvrduwnke\nhqly\nis\ndc\nsdg\ncnnyqbda\nrfeb\nwkpftlmkei\nipirt\nruhitbrkkxxkocga\n1\nqahtd gylrix 29\n2\nwi wg 2\n29\nsti km 1\n2\nvlw pjykfet 29\n29\nlyjkkf zihhitlu 29\n2\ntycq dsgjfu 1\n1\nd rskiu 1\n2\ne bpiux 2\n2\nkw jial 2\n29\neomy wmdwl 2\n2\nhxem npqu 29\n1\na mcebo 29\n2\neisbprvdj bakh 30\n1\npwsfkj vmlebkzm 29\n1\nswob jswhj 29\nqjixkcv odpxijs\nbcwfn opy\niha efav\nqrealuo lzmfdwkg\n29 1\nasdnsriki\nuazl\n2\namcn xqu 1\nmmgv vnlzc\ncy xnafn\naduozy m\nie iv\n1 30",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

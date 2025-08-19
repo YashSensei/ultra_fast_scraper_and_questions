@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "GO",
+  "tags": [],
+  "text": "In the game of Go, two players alternate placing black and white stones on lattice points of an n × n grid, each attempting to surround as much territory (i.e., regions of unfilled lattice points) as possible. At the end of the game, the score for each player is the total area of the territory surrounded by his or her stones. Given the locations of black and white stones on a Go board at the end of a match, your task is to compute the score of each player in order to determine the winner.Formally, two grid lattice points with coordinates (r, c) and (r', c') are adjacent if |r − r'| + |c − c'| = 1.A connected region of unfilled lattice points belongs to one player’s territory if all adjacent filled lattice points contain stones belonging to that player (see Figure 1). Finally, a player’s score consists of the number of unfilled lattice points in his or her territory.Note that the scoring of Go boards described here does not correspond exactly to the real game of Go: we make the simplifying assumptions that all “disputes” have been settled so that any territories surrounded by stones of both colors are considered neutral, and that all groups on the board are considered “alive.”Figure 1: Diagram of a 9 × 9 Go board. Unfilled lattice points belonging to black’s territory are marked with B, and unfilled lattice points belonging to white’s territory are marked with W. Neutral unfilled lattice points are unmarked. In the game above, white wins by 21 − 3 = 18.InputThe input test file will contain multiple cases, each consisting of three lines. Each test case begins with a line containing three integers, n (where 1 ≤ n ≤ 19), b, and w (where b ≥ 0,w ≥ 0 and 1 ≤ b + w ≤ n2). Here, n denotes the size of the board, b is the number of black pieces placed, and w is the number of white pieces placed. The second line of each test case contains b pairs of integers r1 c1 ... rb cb (where 1 ≤ ri , ci ≤ n) indicating the positions of the b black stones. The third line of each test case contains w pairs of integers r'1 c'1 ... r'w c'w (where 1 ≤ r'i , c'i ≤ n) indicating the positions of the w white stones. No two stones will be located at the same lattice point. Input is terminated by a single line containing only the number 0; do not process this line.OutputFor each test case, print either “White wins by ”, “Black wins by ”, or “Draw”.ExampleInput:1 1 0\r\n1 1\r\n2 0 1\r\n1 1\r\n5 12 4\r\n1 1 1 2 1 3 2 1 2 3 3 1 3 3 4 1 4 3 5 1 5 2 5 3\r\n1 4 2 4 3 4 3 5\r\n0Output:Draw\r\nWhite wins by 3\r\nBlack wins by 1",
+  "sample_input": "Input:1 1 0\r\n1 1\r\n2 0 1\r\n1 1\r\n5 12 4\r\n1 1 1 2 1 3 2 1 2 3 3 1 3 3 4 1 4 3 5 1 5 2 5 3\r\n1 4 2 4 3 4 3 5\r\n0Output:Draw\r\nWhite wins by 3\r\nBlack wins by 1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SCPC11F",
+  "scraped_at": "2025-08-17 00:34:35",
+  "test_cases": [
+    {
+      "input": "1 1 0\r\n1 1\r\n2 0 1\r\n1 1\r\n5 12 4\r\n1 1 1 2 1 3 2 1 2 3 3 1 3 3 4 1 4 3 5 1 5 2 5 3\r\n1 4 2 4 3 4 3 5\r\n0",
+      "expected_output": "Draw\r\nWhite wins by 3\r\nBlack wins by 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 6 10\n3 3\n5 4 8\n9 1\n5 4 10\n8 4 4 1 9 8 2 4 1 4 5 6 10 5 7 4 9 8 1 7 3 10 4 1\n2 10 2 8 5 6 2 10\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 9 2\n4 9\n9 6 10\n1 3\n10 6 5\n9 8 7 4 7 1 6 4 7 4 4 10 10 3 9 1 6 9 9 1 2 8 1 10\n3 9 6 1 7 1 10 2\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 9 9\n9 3\n4 6 3\n8 1\n2 6 8\n8 7 4 3 10 2 9 8 10 1 1 4 8 5 1 3 6 6 8 5 4 8 8 5\n3 9 1 9 6 5 4 4\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "18 15 6\n18 4\n19 11 15\n5 2\n13 17 8\n6 18 12 16 8 12 19 13 10 17 3 10 5 6 9 15 8 19 10 12 8 1 9 17\n10 12 4 18 17 8 11 5\n4",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 18 7\n13 13\n6 9 6\n9 3\n16 11 8\n14 16 3 13 7 2 11 14 9 1 2 8 11 18 17 13 5 18 10 14 3 2 18 8\n8 18 11 7 10 4 3 17\n16",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 6 6\n7 15\n1 10 2\n14 18\n19 6 1\n19 12 15 4 11 16 9 17 3 9 12 12 7 12 19 8 17 19 5 6 7 18 12 19\n14 17 8 3 4 15 10 1\n14",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 12 5\n4 15\n16 13 14\n9 10\n15 2 4\n11 16 10 17 18 15 14 3 19 17 19 6 19 1 11 16 11 9 2 11 18 19 3 3\n4 16 17 3 19 18 18 15\n10",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 19 11\n19 11\n8 1 9\n2 12\n8 19 14\n10 9 3 19 11 12 11 17 1 2 17 15 5 3 15 7 15 7 5 8 10 17 16 7\n12 7 11 5 16 6 7 17\n1",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 9 7\n6 1\n5 9 6\n7 7\n4 7 6\n5 7 6 1 4 6 8 4 2 6 5 5 1 8 5 5 4 7 6 1 2 4 7 5\n7 7 7 9 5 1 3 5\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 3 6\n8 8\n9 2 1\n4 2\n3 1 3\n9 3 2 5 8 4 9 3 5 7 7 2 7 7 6 9 6 1 5 3 1 6 1 5\n7 1 5 1 1 5 8 2\n5",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 7 2\n6 8\n1 9 6\n9 9\n6 9 1\n3 9 9 9 5 8 9 8 3 5 5 8 9 6 8 6 7 5 5 9 7 8 1 6\n5 1 4 4 7 2 4 3\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9 2 1\n1 7\n4 5 8\n5 5\n7 3 2\n5 9 6 1 3 5 7 6 9 9 6 2 6 3 5 3 9 4 6 3 8 6 5 2\n9 7 2 1 4 5 2 7\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 8 6\n9 2\n4 2 4\n3 5\n8 1 6\n8 5 6 8 5 4 8 4 9 2 5 2 6 4 2 3 3 4 8 3 6 9 9 8\n6 8 7 5 9 2 5 7\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 3 6\n2 6\n2 2 4\n3 3\n4 7 6\n8 1 4 3 7 5 4 6 5 9 9 5 7 8 8 1 1 6 2 5 2 3 5 4\n6 8 7 6 8 4 3 6\n7",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4 1 8\n5 5\n1 4 9\n8 3\n7 8 5\n3 7 6 5 3 1 6 6 3 2 6 8 8 8 5 4 9 6 9 8 3 2 5 5\n6 8 8 7 5 2 1 1\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 19 19\n19 19\n19 19 19\n19 19\n19 19 19\n19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19\n19 19 19 19 19 19 19 19\n19",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "19 19 19\n19 19\n19 19 19\n19 19\n19 19 19\n19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19\n19 19 19 19 19 19 19 19\n19",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "19 1 19\n19 1\n2 1 18\n18 19\n2 1 19\n18 1 1 18 18 18 18 2 2 1 1 19 19 19 19 18 2 18 1 18 2 19 19 18\n19 19 18 18 2 19 19 18\n19",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "19 18 2\n19 19\n19 1 2\n19 18\n18 19 19\n1 19 1 1 18 18 19 18 18 19 2 2 1 2 19 2 1 18 2 1 2 2 1 19\n18 1 18 19 18 1 18 18\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

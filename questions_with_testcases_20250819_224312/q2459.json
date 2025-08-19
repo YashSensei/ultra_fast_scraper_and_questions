@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Einbahnstrasse",
+  "tags": [],
+  "text": "Einbahnstrasse (German for a one-way street) is a street on which vehicles should only move in one direction. One reason for having one-way streets is to facilitate a smoother flow of traffic through crowded areas. This is useful in city centers, especially old cities like Cairo and Damascus. Careful planning guarantees that you can get to any location starting from any point. Nevertheless, drivers must carefully plan their route in order to avoid prolonging their trip due to one-way streets. Experienced drivers know that there are multiple paths to travel between any two locations. Not only that, there might be multiple roads between the same two locations. Knowing the shortest way between any two locations is a must! This is even more important when driving vehicles that are hard to maneuver (garbage trucks, towing trucks, etc.)You just started a new job at a car-towing company. The company has a number of towing trucks parked at the company's garage. A tow-truck lifts the front or back wheels of a broken car in order to pull it straight back to the company's garage. You receive calls from various parts of the city about broken cars that need to be towed. The cars have to be towed in the same order as you receive the calls. Your job is to advise the tow-truck drivers regarding the shortest way in order to collect all broken cars back in to the company's garage. At the end of the day, you have to report to the management the total distance traveled by the trucks.InputYour program will be tested on one or more test cases. The first line of each test case specifies three numbers (N , C , and R ) separated by one or more spaces. The city has N  locations with distinct names, including the company's garage. C  is the number of broken cars. R  is the number of roads in the city. Note that 0 < N < 100 , 0 <= C < 1000 , and R < 10000 . The second line is made of C + 1  words, the first being the location of the company's garage, and the rest being the locations of the broken cars. A location is a word made of 10 letters or less. Letter case is significant. After the second line, there will be exactly R  lines, each describing a road. A road is described using one of these three formats:A --v-> BA <-v-- BA <-v-> BA and B are names of two different locations, while v is a positive integer (not exceeding 1000) denoting the length of the road. The first format specifies a one-way street from location A to B , the second specifies a one-way street from B to A , while the last specifies a two-way street between them. A , \"the arrow\", and B are separated by one or more spaces. The end of the test cases is specified with a line having three zeros (for N , C , and R .)The test case in the example below is the same as the one in the figure.OutputFor each test case, print the total distance traveled using the following format:k. VWhere k is test case number (starting at 1,) is a space, and V is the result.ExampleInput:4 2 5\r\nNewTroy Midvale Metrodale\r\nNewTroy   <-20-> Midvale\r\nMidvale   --50-> Bakerline\r\nNewTroy    <-5-- Bakerline\r\nMetrodale <-30-> NewTroy\r\nMetrodale  --5-> Bakerline\r\n0 0 0Output:1. 80",
+  "sample_input": "Input:4 2 5\r\nNewTroy Midvale Metrodale\r\nNewTroy   <-20-> Midvale\r\nMidvale   --50-> Bakerline\r\nNewTroy    <-5-- Bakerline\r\nMetrodale <-30-> NewTroy\r\nMetrodale  --5-> Bakerline\r\n0 0 0Output:1. 80",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ANARC08F",
+  "scraped_at": "2025-08-17 00:34:07",
+  "test_cases": [
+    {
+      "input": "4 2 5\r\nNewTroy Midvale Metrodale\r\nNewTroy   <-20-> Midvale\r\nMidvale   --50-> Bakerline\r\nNewTroy    <-5-- Bakerline\r\nMetrodale <-30-> NewTroy\r\nMetrodale  --5-> Bakerline\r\n0 0 0",
+      "expected_output": "1. 80",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 7 4\nucxl vbxd btrvpxuz\n9\njggwrn trvekt eu\n7\nhhrnqeo nf iqo\n10\nfo vliyc xjjtzsjjz\n4\nplyn mt xgw\n8\ncgpg wwv zgzrp\n1 4 1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 8 8\ndx moybax fr\n4\nkz ymler afnxkxz\n6\nlj zwxk ndfbwy\n9\navh bhz f\n4\nkulhvinh qg zj\n4\ni krkyd kvp\n1 3 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 10 6\nhlsgo veo e\n6\nrwc xcqwz bz\n1\nnggzy jgfxnh gjxuh\n5\nlj o hqvuazgnq\n6\ndcrgrmrv nzjlzk ypb\n7\nkcdld bwy ozm\n10 2 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "53 66 45\ne nxu mnm\n21\nqjjg pdis aa\n3\nwckrkg glmr tkpyldra\n40\nz l axvessj\n10\nqvfowes dzty yr\n94\necr lgcf xade\n45 33 24",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 73 59\najomp nmzml krumjcg\n79\nwcnwzi qo fglppwn\n45\nt uinutt ykrw\n9\nlqwimnx fhvg uusvvrj\n99\nzaqhxsycj ljcmwi frnx\n43\nobmiu unsq gkezbk\n66 73 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 21 25\nc jkrvi lwedjcq\n96\nibhyz qah jft\n2\nggjsz cgkwve stlff\n22\nbiknawo nq vhaofr\n37\nc ceeojn sgw\n7\nl ppzvg ogiojnwet\n40 74 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 27 90\nvbyf yuu slfagshy\n1\nnqino it wl\n12\nkcathq nvxxq xqybxl\n3\nrkqmpf a klscmws\n58\ncatnlqmh fmsr esgvdrp\n18\namvnv i uymmpv\n41 5 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "67 5 64\nqwrs kmux fizbkm\n1\nbuw nwndst gsrklm\n11\ni cqnh wkv\n11\ntrmbzy pefa nkjdjdjit\n85\ndwfs ort nvdz\n59\nsvvf eobzx pkgyvspjx\n90 31 24",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "41 18 36\nf xvpq f\n13\nkhgenxp vuzik kski\n9\niugdsol hovmuo wgrue\n40\nyakxy e hulqm\n25\nynce nrppfm xe\n10\nihzjhryeb i bxczifc\n26 46 37",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "46 5 9\nwlkxnn qbxavq phspbhyqm\n42\nvqg hzabgg lrbogdj\n37\nn wzji ylexxfj\n30\nxgc x kqtrtaym\n21\nacj b ndfoxh\n33\nhjkrnpoas cdgl fo\n33 5 45",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "34 42 25\nzuph tqeg mombtp\n19\ndsjhvd obuckz jpb\n21\nny mza dbzuvojyw\n13\ncbked xw tyoybu\n34\nmsagwio mq rzzik\n40\nfjrabuu oozcy ppncxax\n10 15 12",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14 47 20\nclglv k lltco\n32\nitap fhsy w\n19\nidijv vm gbu\n12\nswerm b qxdfsqm\n31\ninnfuq waeruo mm\n40\nfktoo adso jnl\n42 34 46",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 15 34\noamr slny giu\n35\nx eyhtaa wowtxr\n6\npaawpjn dw ofpksrg\n31\nl skwnv bjqbtbkma\n10\nciatolc jmlb emxr\n29\nbqjjd hi zfpfd\n50 14 11",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "17 6 31\nghtg rvn di\n19\nskimdy e cmp\n38\ndlvauir tll p\n27\nhzhrp bphg qxnerjfdb\n7\nvrtsvyqaz wpg uwb\n42\nhkwazqzwa zh nqckdqssj\n19 21 18",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "42 26 19\nxxvszz koqpjz b\n34\nuxij cqxolo w\n43\nauu mettw hczx\n22\nvqg j q\n6\nv ogvuov qcvu\n16\nb cnd unqrbz\n34 10 36",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100\nruohp dif f\n100\npz uwb lrmq\n100\nssb emofaq vqtamwldu\n100\nwe l lpt\n100\nqvsihsouz syjsj bvzzefg\n100\nr g ige\n100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100\nwhn cfqain fommfhztc\n100\nfsapw isoxcu wqekaiq\n100\nrdokkty esw hrfxmpie\n100\nj xg tv\n100\nneqphqwsq l fpyk\n100\nzuo i u\n100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 99 1\ncapcxmc bojjsf jjbcmivb\n100\nxnbpg tabitc hwdchsp\n99\nzi nleom aizlqhiv\n2\nkcrdnn dq crbdadve\n100\nborl wilm ogtwu\n1\navkbkj zqpom yqnfjs\n2 100 99",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 99 1\ndh vhgkwz fjyvrm\n99\nivjrn zaz acalozc\n2\navlj pfbjf vyig\n100\npfgm asgu damfb\n99\nwfognug onfwr vym\n1\nusegyo z ywqtyzeq\n99 100 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Social Network Community",
+  "tags": [],
+  "text": "Your friend came up with an idea of starting a social network-SOCNET.\r\nSince, he is not as good a programmer as you are he needs your help to build certain features.You need to build an ADD friend feature. if 'x' sends a friend request to 'y', he may accept it or deny it.SOCNET has a special feature called 'community'. When two people 'x' and 'y' becomes friends, the communities of two are merged together. (If 'x' has no friends, it's community consist of only himself, size-1)Since, your friend is low on funds, the data center he uses has a restriction-the MAXIMUM size of any community cannot exceed 'm'.You need to work on following three types of queries-A x y - x sends a friend request to yE x y - check whether x and y are present in same community (print 'Yes' or 'No')S x   - prints the size of the community 'x' belongs to.NOTE- A friend requested is accepted only if the merger of the two communities results in a community not greater than 'm'.InputThe first line of input consists of two positive integers - n and m(n is the number of registered users and m is the maximum size of any community).Next line consist of a positive integer q (number of queries).q lines follows (Each line consist of a query as described in the problem statement).The queries follows 1-indexing.Constraints1 ≤ n, m ≤ 100000, 1 ≤ q ≤ 200000OutputFor each query of Type - 'E', output in a single line-'Yes' or 'No'.\r\nFor each query of Type - 'S', output the size of the community to which 'x' belongs.\r\nFor further clarification, read the example given.ExampleInput:5 3\r\n8\r\nS 2\r\nA 2 3\r\nE 2 3\r\nS 2\r\nA 4 5\r\nA 3 5\r\nE 3 5\r\nS 3Output:1\r\nYes\r\n2\r\nNo\r\n2ExplanationInitially no one has any friend. So community of '2' consist of only '2' i.e. size-1. Then '2' and '3' becomes friends .This forms a community of 2 people. '4' and '5' also becomes friends. This forms another community of 2 people. '5' is unable to accept friend request of '3' (because it would result in a community of 4 people(>3).",
+  "sample_input": "Input:5 3\r\n8\r\nS 2\r\nA 2 3\r\nE 2 3\r\nS 2\r\nA 4 5\r\nA 3 5\r\nE 3 5\r\nS 3Output:1\r\nYes\r\n2\r\nNo\r\n2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SOCNETC",
+  "scraped_at": "2025-08-17 00:34:03",
+  "test_cases": [
+    {
+      "input": "5 3\r\n8\r\nS 2\r\nA 2 3\r\nE 2 3\r\nS 2\r\nA 4 5\r\nA 3 5\r\nE 3 5\r\nS 3",
+      "expected_output": "1\r\nYes\r\n2\r\nNo\r\n2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 3\n10\n1\ncik 10\n5 5\nvy 8 7\n6 6\ntu 7 5\n5\nixlah 4\n8 7\nmwb 5 10\n4 10\nno 10 10\n2 6\nyxce 4 4\n3\nftvrm 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 4\n10\n6\nmv 1\n5 5\nlgfr 4 8\n2 6\nexl 10 4\n8\nsh 5\n8 10\nmkwye 10 6\n5 8\nwov 9 6\n8 2\nfn 9 4\n8\nv 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 7\n10\n10\nzqom 10\n1 10\nklg 7 8\n8 9\nxys 7 5\n1\nq 3\n5 8\ni 4 5\n8 9\nzr 1 10\n8 10\no 10 6\n9\ngwewx 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "98 28\n79\n30\nd 94\n42 37\nz 63 47\n62 11\no 37 14\n77\nkzdvf 65\n99 33\nc 48 71\n28 60\nhwqyh 87 42\n37 65\naccqd 47 34\n16\njveug 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 77\n67\n30\nadb 29\n74 2\nf 22 56\n95 56\nqm 25 8\n96\nzwql 67\n15 13\nfowiz 20 90\n13 89\ndnl 65 86\n16 66\no 89 62\n46\nce 11",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 6\n38\n12\nbrll 38\n73 28\nszzju 73 77\n24 57\nkod 33 39\n71\nsu 78\n29 59\nhd 82 41\n7 18\na 65 74\n15 12\nxup 44 23\n31\nwl 89",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 17\n26\n66\neekt 34\n29 64\njkdb 78 70\n83 58\nvn 13 1\n82\nkc 52\n67 47\ntq 94 95\n53 26\ndr 95 79\n75 20\nzarmy 96 25\n73\nsltj 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 78\n84\n31\nztv 50\n60 10\nzmo 34 66\n64 55\nkw 94 3\n50\nfpr 98\n32 89\nb 64 11\n97 59\nbnaok 32 100\n10 25\nwmnt 22 19\n62\nr 58",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "225 115\n415\n410\ntsdv 374\n487 493\ntybuk 156 396\n236 50\nfrat 121 172\n407\nyxgyg 348\n202 363\nn 366 446\n209 238\ni 178 155\n422 440\numc 452 83\n466\ntztq 65",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "359 486\n323\n117\nouu 89\n249 92\ntbxr 464 398\n178 244\nsbg 337 160\n438\nwda 226\n360 310\nwslk 120 134\n63 415\nqh 379 449\n173 154\nb 429 105\n379\nhedip 150",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122 437\n286\n392\nq 389\n274 361\nub 446 172\n319 249\nxhm 228 222\n219\nx 267\n478 456\nfi 240 177\n312 386\nu 271 227\n179 204\ngfegu 66 78\n467\niabv 211",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "392 121\n364\n416\nqibb 108\n359 455\ncg 334 259\n382 244\nea 206 234\n312\nu 406\n143 322\nsrnj 210 455\n381 342\nnxr 106 77\n406 385\nnhve 392 474\n308\nbmgc 274",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "411 340\n50\n454\nj 158\n261 449\neiz 353 165\n85 246\nfuu 321 429\n178\nl 464\n406 51\nthh 265 87\n411 183\nzbzt 246 358\n173 239\nql 342 104\n90\nglvn 138",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "328 170\n220\n360\ndprbo 84\n467 460\nftl 171 270\n359 134\nmwge 83 380\n416\nin 58\n280 270\nm 395 478\n129 499\nkybp 138 218\n168 249\nzc 263 266\n363\nk 74",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "91 199\n158\n464\npk 312\n285 157\nvmotr 434 382\n186 460\nqccmd 286 489\n102\ncszix 258\n86 89\nvjsp 181 235\n448 492\nnfbhn 277 337\n375 291\nurb 400 151\n497\nutns 99",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000\nigq 1000\n1000 1000\nppi 1000 1000\n1000 1000\nmw 1000 1000\n1000\niaj 1000\n1000 1000\ngcmi 1000 1000\n1000 1000\ns 1000 1000\n1000 1000\nvxajm 1000 1000\n1000\nucftn 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\n1000\nyisuq 1000\n1000 1000\nor 1000 1000\n1000 1000\neul 1000 1000\n1000\nxnsn 1000\n1000 1000\nuhi 1000 1000\n1000 1000\nnnqv 1000 1000\n1000 1000\nvjb 1000 1000\n1000\nubr 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000\n999\n999\nrazx 999\n2 999\nv 1000 1\n999 1000\nazesj 1000 2\n1000\nhu 1000\n2 1\nrflr 1000 999\n1000 2\nmcv 1 2\n999 1000\nxfrho 1000 2\n1000\nqbv 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000\n999\n1000\nzn 1000\n999 2\nfx 1000 2\n1000 1000\nrcodl 1000 1000\n999\nimnsq 1\n1000 1\npajmj 2 1000\n1 999\ne 1000 999\n999 1\nohbp 1000 2\n999\nsis 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:22",
+  "total_test_cases": 20
+}

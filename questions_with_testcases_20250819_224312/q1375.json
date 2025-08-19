@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Bouncing Balls",
+  "tags": [],
+  "text": "Consider a grid having N×M squares. The top left square is (0, 0) and the bottom right is (N-1, M-1). Each square in the grid is either occupied by a platform or has a number written on it. Two balls are released from the top of the grid (from locations (0, Y1) and (0, Y2), 0 ≤ Y1, Y2 < M). Each ball falls down vertically, unless either it falls down the bottom row, or encounters a platform beneath. When the ball encounters a platform beneath, it rolls either to the left or to the right, each with an equal probability. The score obtained by a ball is the sum of the numbers on the squares that it passes (including the starting square). However, if both the balls pass over the same square, points corresponding to that square are obtained only once, and not twice. Your goal is to choose Y1 and Y2 such that the expected score obtained by the two balls is maximized. For example, consider the grid below: (P represents a platform)N = 6, M = 6\r\n112214\r\n211243\r\n30PPP2\r\n423378\r\n1P9753\r\n220102Here, dropping a ball from position (0, 3) could result in one of the following three scores:2 + 2 + 1 + 1 + 0 + 2 + 4 + 1 + 2 = 152 + 2 + 1 + 1 + 0 + 2 + 3 + 9 + 0 = 202 + 2 + 4 + 3 + 2 + 8 + 3 + 2 = 26The expected score is (considering only 1 ball):1/2*(1/2*(15) + 1/2*(20)) + 1/2*(26)InputThe first line contains the number of test cases.The first line for each test case consists of N and M.Lines 2..N+1 for each test case consist of M characters each. Each character is either a digit from 0 to 9, or the letter 'P'.OutputThe maximum expected score accurate to 4 decimal places.ExampleInput:4\r\n5 5\r\n53214\r\n53214\r\n53214\r\n54214\r\n53214\r\n5 5\r\n00000\r\n0P0P0\r\n00000\r\n01P20\r\n00000\r\n5 5\r\n09090\r\n0P0P0\r\n00000\r\n01P20\r\n00000\r\n6 6\r\n112214\r\n211243\r\n30PPP2\r\n423378\r\n1P9753\r\n220102Output:45.0000\r\n2.2500\r\n19.3125\r\n35.5000ConstraintsDataset 1: 1 ≤ number of test cases ≤ 1003 ≤ N, M ≤ 100All possible paths from the top will eventually lead to the ball falling to the bottom. There will be no \"rebounds\" possible. If there is a 'P' on square (x, y), there will not be a 'P' on squares (x-1, y-1) or (x-1, y+1) or (x+1, y-1) or (x+1, y+1). Also, platforms will not occur on the boundaries of the grid. Thus, the X coordinate of a platform will never be 0 or N-1, and the Y coordinate will never be 0 or M-1. The test case was generated to guarantee that any answer with absolute error in 1e-9 will got accepted.",
+  "sample_input": "N = 6, M = 6\r\n112214\r\n211243\r\n30PPP2\r\n423378\r\n1P9753\r\n220102",
+  "sample_output": "1/2*(1/2*(15) + 1/2*(20)) + 1/2*(26)",
+  "link": "https://www.spoj.com/problems/BOBALLS",
+  "scraped_at": "2025-08-17 00:33:32",
+  "test_cases": [
+    {
+      "input": "N = 6, M = 6\r\n112214\r\n211243\r\n30PPP2\r\n423378\r\n1P9753\r\n220102",
+      "expected_output": "1/2*(1/2*(15) + 1/2*(20)) + 1/2*(26)",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "6 4\nrvqy ppjmf barf pwp jnfcj 1\n2\n5\n4 3\nymyyktwc\n3\n5 2\nzjrgqq\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 1\ngv eeews dryj rtr sz 4\n3\n2\n3 4\nuhilrxmwrsle\n4\n3 3\nm\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4\nt nq gtbg pxbj idb 3\n2\n4\n3 5\nmgp\n2\n5 4\nzbubvuafhu\n6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 1\nf goum kllyg bt hq 5\n2\n2\n5 2\nunyjvfcbnr\n4\n4 1\nxpwjnwcmj\n3",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 5\ncri smdn mzxsj ntbh e 1\n3\n3\n1 6\ncurnqz\n4\n2 3\ngavg\n5",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 2\ngwtta jn ifso xiucd rysfj 2\n6\n5\n3 6\njk\n4\n1 3\nzijxxqimvwv\n1",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 5\nzbly gocxm r mtn qxsh 5\n6\n1\n2 5\ndkkml\n3\n5 5\nspjbt\n4",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 6\np nwq le sopm mljh 3\n5\n2\n5 4\nbopp\n1\n3 5\nkrqeufzl\n3",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 1\nrq jy iiemj hbt hoxp 3\n1\n1\n3 3\njwknksxmbfhk\n1\n2 1\nvfapbvbm\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 3\nmknt sqw wapfg f cqyye 2\n3\n2\n1 1\nxmnhrrhcwhn\n1\n1 2\nw\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 3\nvbsq zms tabhx pqfr b 1\n3\n3\n3 2\ngskrn\n2\n2 2\nllusghef\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\nv blfv y nd q 3\n3\n1\n2 3\ngoghhlgrfya\n3\n2 3\nlbnkfjyuv\n3",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 1\nupe h q hhoo yi 2\n2\n2\n1 1\ntncxhohrf\n1\n3 1\npwvspp\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 3\nhw vbic ufe jrvz urx 1\n2\n1\n3 2\nobpjipsi\n2\n2 3\npkrfxjgf\n2",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 3\nuhe vun xd uh dlp 2\n3\n3\n1 2\nidekrwjka\n3\n3 3\nngc\n1",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 6\nlvpkg zi bmeyr bdrz kez 6\n6\n6\n6 6\ntiqv\n6\n6 6\njzmwmg\n6",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "6 6\ngbkjy ce jesru ec dkl 6\n6\n6\n6 6\ng\n6\n6 6\nxy\n6",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\nazdjl hizk wmq tkfx awi 5\n1\n2\n2 5\ncbeofe\n5\n1 6\nib\n2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "6 2\ngtwiw rtw gfuwo xnm bze 1\n5\n5\n2 6\nqzysg\n1\n5 5\nutplolari\n2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

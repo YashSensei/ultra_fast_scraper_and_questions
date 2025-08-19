@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Captain Qs Treasure",
+  "tags": [],
+  "text": "EnglishVietnameseYou got an old map, which turned out to be drawn by the infamous pirate \"Captain Q\". It shows the locations of a lot of treasure chests buried in an island.The map is divided into square sections, each of which has a digit on it or has no digit. The digit represents the number of chests in its 9 neighboring sections (the section itself and its 8 neighbors). You may assume that there is at most one chest in each section.Although you have the map, you can't determine the sections where the chests are buried. Even the total number of chests buried in the island is unknown. However, it is possible to calculate the minimum number of chests buried in the island. Your mission in this problem is to write a program that calculates it.InputThe input is a sequence of datasets. Each dataset is formatted as follows. h w map The first line of a dataset consists of two positive integers h and w. h is the height of the map and w is the width of the map. You may assume 1 <= h <= 15 and 1 <= w <= 15.The following h lines give the map. Each line consists of w characters and corresponds to a horizontal strip of the map. Each of the characters in the line represents the state of a section as follows.'.': The section is not a part of the island (water). No chest is here.'*': The section is a part of the island, and the number of chests in its 9 neighbors is not known.'0' .. '9': The section is a part of the island, and the digit represents the number of chests in its 9 neighbors.You may assume that the map is not self-contradicting, i.e., there is at least one arrangement of chests. You may also assume the number of sections with digits is at least one and at most 15. A line containing two zeros indicates the end of the input.OutputFor each dataset, output a line that contains the minimum number of chests. The output should not contain any other character.ExampleInput:5 6\n*2.2**\n..*...\n..2...\n..*...\n*2.2**\n6 5\n.*2*.\n..*..\n..*..\n..2..\n..*..\n.*2*.\n5 6\n.1111.\n**...*\n33....\n**...0\n.*2**.\n6 9\n....1....\n...1.1...\n....1....\n.1..*..1.\n1.1***1.1\n.1..*..1.\n9 9\n*********\n*4*4*4*4*\n*********\n*4*4*4*4*\n*********\n*4*4*4*4*\n*********\n*4*4*4***\n*********\n0 0Output:6\n5\n5\n6\n23",
+  "sample_input": "Input:5 6\n*2.2**\n..*...\n..2...\n..*...\n*2.2**\n6 5\n.*2*.\n..*..\n..*..\n..2..\n..*..\n.*2*.\n5 6\n.1111.\n**...*\n33....\n**...0\n.*2**.\n6 9\n....1....\n...1.1...\n....1....\n.1..*..1.\n1.1***1.1\n.1..*..1.\n9 9\n*********\n*4*4*4*4*\n*********\n*4*4*4*4*\n*********\n*4*4*4*4*\n*********\n*4*4*4***\n*********\n0 0Output:6\n5\n5\n6\n23",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FUKU11G",
+  "scraped_at": "2025-08-17 00:34:14",
+  "test_cases": [
+    {
+      "input": "5 6\n*2.2**\n..*...\n..2...\n..*...\n*2.2**\n6 5\n.*2*.\n..*..\n..*..\n..2..\n..*..\n.*2*.\n5 6\n.1111.\n**...*\n33....\n**...0\n.*2**.\n6 9\n....1....\n...1.1...\n....1....\n.1..*..1.\n1.1***1.1\n.1..*..1.\n9 9\n*********\n*4*4*4*4*\n*********\n*4*4*4*4*\n*********\n*4*4*4*4*\n*********\n*4*4*4***\n*********\n0 0",
+      "expected_output": "6\n5\n5\n6\n23",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 3\n5\nmfl\nszjej\n2\numrxmi\n1\nfnogoniwxgo\n8 1\n7\nqkzhebihc\nipuhq\ne\n10\nsosub\n7\ndgdpoqrurf\n4 8\n1\nhpdudnqzivqy\n9\n9\nykkjrqbrvdc\n6\npkwdfoycnik\n7 7\n9\n1\n2\n4 1\ncszopydoqidqso\n8 6\nbhtixd\n1 2\nfhyfspmawbnw\n5 9\nobfteioendxrtucv\n9 3 3 2\nacjcngru\nxlvjwqom\n4 9 5 10\nykprbubqvcrtu\nigchfitrigdoeipyq\n5 1 8 4\nmztoobhriysd\nxvljqgbldf\n2 4 8\ndnjrzodgm\npccbwc\n7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 7\n2\nz\nbqsl\n5\nbqezasngw\n8\ncnnhiuohewa\n7 9\n8\ndwfcodeof\njfwuquyoy\nmgc\n3\nqcfwy\n7\nvxlrlx\n9 10\n6\nyacvjulhxgq\n5\n1\nrgdrgl\n10\neg\n6 6\n8\n10\n1\n2 8\nimrfyldhgkv\n1 1\np\n7 10\ngeqzulvylknrpf\n4 10\npnqtbjowtjb\n3 8 8 1\nmtiistcb\nxwo\n9 7 2 4\nuce\neobbxpsxlkgw\n3 3 1 2\ndqjobnuyrrrcpykj\nijeksdayqpphiexkt\n4 1 10\npyz\nhfhmodbvhkgzx\n3 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 10\n1\niblutntsfxz\nuknxovbiwcek\n8\nxgxxpbkcvpfv\n9\nsegtnvdduztb\n4 6\n6\ngwjorxjeap\nudfcnhc\nhazojacnwz\n3\ntiykmcr\n6\nzhlax\n8 7\n4\ntpnwrtzmspdn\n3\n3\ncjsalgopw\n10\nw\n10 1\n5\n9\n10\n10 10\ncdr\n8 5\ntklttbjbvxduas\n9 3\nkuh\n4 6\nlnvpu\n9 10 7 1\ntlksduo\ndsxyhqable\n3 2 7 5\nltpjqibasusgwrvu\nhnnjw\n10 1 3 4\ncpdkcdorsdlisjp\nwiqlcuyhmozbotidc\n9 3 1\nxtvcrvdhhu\ne\n2 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "63 39\n47\ndnz\ncmfgcbbeufbl\n77\nwfdxobme\n6\ncoezoqohrfyp\n69 20\n11\njgef\ntaqavoytc\nkrig\n39\nnch\n82\nu\n3 18\n87\nlgkprxei\n69\n53\neifagifh\n80\njwg\n82 27\n19\n90\n72\n10 99\nqnis\n82 37\nklycgwbvsg\n99 88\ndxxdilgsfmey\n98 66\nvhgtd\n76 99 18 38\nuoi\nfliiwilupybpytuquj\n61 66 5 14\nzxzd\npjtit\n96 63 99 17\nsffodsyogtezlqa\nfcpzwezljqz\n98 88 95\nau\nrgfsmosfn\n33 51",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "60 10\n20\nbarg\ngksqqhddc\n75\nmsji\n84\nkfil\n1 32\n55\nnhwyfxq\nd\nvgr\n21\nhr\n47\nxnyh\n22 18\n88\nhdws\n77\n78\npwaqgojwrdpw\n30\nmxg\n72 11\n77\n41\n16\n77 39\nolijhzpiraopb\n5 89\nku\n23 75\nhulykvuivkreq\n4 1\neo\n73 16 36 31\nxjertgwwknl\nlejeaf\n7 86 37 49\nxlmrqyqbhilr\nvhhlgswwevmfdga\n68 16 87 43\nfp\nfgolunnndfowym\n91 34 30\neprggbm\nixtpgnsz\n5 29",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "24 30\n80\nfytbuce\ndfkpangf\n71\nfosrw\n13\ncikhqta\n60 54\n70\nurg\nd\nkxvmxnp\n87\nyxofvdsq\n64\nitfj\n94 52\n87\ny\n62\n69\nkeeuhikbb\n95\nrnp\n7 98\n85\n89\n80\n96 48\nmcpwc\n86 50\nzpjtcsdfpowd\n4 69\nramxqltmoas\n96 58\nmixumycthutoq\n66 86 66 77\nbrplewghpnh\nnlehaab\n45 14 1 33\nkrrvbzjmpm\nbmwyw\n88 8 56 16\nzleboeeilw\nejjdjrnn\n28 78 52\nuvbulgd\ncrvbzgkkixc\n59 21",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "9 8\n27\nwprnnb\nfewksh\n90\noghgul\n79\numvxxbxevkf\n25 31\n57\nd\nxenftakv\ntnpzfjnih\n34\nbjsl\n20\nfcv\n15 84\n10\nkij\n88\n1\nj\n78\nynotffcxsn\n93 50\n13\n73\n42\n3 98\nsugzthcvzkcugal\n42 48\nfddaveqsajusfqrocu\n13 16\ntf\n3 100\nbrknrkgwxjhgrlsgn\n29 20 83 78\nf\nejosumkwcs\n27 97 21 76\ng\nt\n65 83 37 92\nhsqpud\nn\n52 76 74\njjhpvumxlm\nrdzttzax\n16 62",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "94 61\n76\nfnyngbkfv\nlkqmqnaxkpr\n33\nbipdgjg\n12\nqiervlolham\n79 76\n83\nlqwvtzkej\nowcfz\ntnkw\n13\nkgmoxjwtmu\n82\nnt\n62 23\n100\ngcchbk\n62\n88\nyextwnffw\n15\nnvvudeoq\n22 81\n62\n32\n77\n3 58\nzldb\n99 93\nqoqxslpc\n52 22\nlphspjgicsrhca\n69 71\namdjyxewthnm\n51 48 70 87\nlzsoym\nidcepwpxwjrcgn\n69 90 66 22\nfkxsash\nk\n44 22 82 2\nzsxflfcdbkkczkdfzp\nbh\n53 57 81\niklkwcvhjchwyfaxw\nhidimcotajcfjdss\n20 57",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "203 253\n209\nqz\ncufljfnfmy\n244\nzrlkffsq\n434\nenlgh\n303 130\n300\nuqsxusne\nkq\nyovpbhmuq\n205\ncnyartqyjf\n244\nzvahfqmz\n203 363\n127\nppg\n383\n305\ncwyxziqcdkw\n360\ndstssmawoxax\n256 332\n60\n369\n202\n175 328\ngcp\n171 480\nmycrxj\n404 110\nkyxvsuiesqxlldoyn\n149 90\narfecjlxzqjhbdfct\n431 214 250 235\nhpvgsbexgmvcp\nurlwvvsvzuobyd\n398 136 374 80\nws\nycpsu\n482 370 79 166\njtsx\nmgozxwjjrrfthf\n465 485 95\nkdznqcudyyir\narcqvmtnuyizswrsi\n146 492",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "386 223\n322\nmtwkmvbcibtb\nkd\n151\ntjvwiqnppski\n161\nd\n57 168\n211\njammqyllg\nxu\npjxxksyj\n437\nn\n410\ny\n95 208\n83\nsjbcjc\n310\n92\niivbobqskq\n138\nztugqmbwqgq\n218 277\n486\n112\n272\n147 252\ntmnivbx\n415 373\nygjtez\n359 147\nxupuwanavnfwm\n243 78\nu\n306 65 232 263\ngiggugunaqcnknawd\nkwwkdogkmsmamzojaa\n88 57 496 212\ntid\nfrhfwxtcwkwzi\n272 488 98 475\newuyfewfnycvql\nqqkpxc\n479 154 340\nlo\nqmgvkzfvrjirsu\n229 350",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "276 493\n252\nxth\ndlodsunixv\n222\ntgxtpo\n428\neoy\n195 270\n378\njkhze\nmerylvafjf\nmd\n233\nj\n272\nsb\n284 209\n298\negjmnkdzn\n271\n150\nninfqkfmecl\n170\nspynxksd\n59 345\n177\n193\n362\n424 461\nwvnxebviinrbmd\n500 94\nbsyxlogtgmzxejfomp\n61 362\njmfuebnmxhvkkx\n433 329\nzszhmeuyt\n346 115 263 261\nofgpqhjdqodydd\nanqfnfsftgqgrb\n339 353 421 160\nf\nuudakqmuwqrf\n391 486 462 259\nxkhmleboalkbcyy\neyxm\n184 162 212\ngeuvzoqka\niuddfqildvf\n323 484",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "331 267\n211\nsb\ntu\n303\nerjthcz\n155\nlpvrplhdun\n497 297\n185\nyelosgbpn\nkv\nhusevuy\n105\numpgoenltr\n141\ndwo\n154 329\n273\nugxn\n319\n111\nxahfje\n239\nh\n346 402\n134\n409\n65\n226 214\nsdagov\n111 441\nkgivweszuidolt\n397 210\ntycwkkoofbik\n396 318\nrvxzcepmqjkjqyfnt\n232 458 433 368\nyslnnskdiuxbofnzq\nwqn\n66 321 402 487\ngubpaqvj\nsmfszitz\n221 286 67 300\nxoudvjtvxvmbzmrxw\nmivivu\n173 374 352\ncpauogfit\npdgi\n476 108",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "473 199\n187\niksps\nonojbqt\n309\na\n344\nvmfitqfmamv\n429 224\n134\nldjnbvaxdp\ntaqfno\noydfczhv\n156\ndkaosjax\n248\nyjltv\n306 443\n268\nfiqbifyc\n410\n106\nrl\n311\nuur\n221 447\n230\n422\n198\n91 328\nbrvykrmjwvhxdax\n323 331\no\n434 424\nfffylibqghyrqv\n248 340\nrguxeckf\n411 172 95 490\nmhlbltffmiqcnjcc\ndontwxzzcczrwcn\n269 415 295 112\nqwvnhgdt\nbdhyces\n286 127 135 369\nlptnjepvdykwntcacj\niusudcmtehfxlnoyjh\n235 375 275\nchzoh\nm\n307 260",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "491 459\n88\nrfmzavykve\nbskgsu\n185\nkdtvpena\n54\nugjxnzjyb\n284 217\n261\nf\ntuixcmvx\nl\n55\nsv\n470\nuotqnpvzf\n188 216\n193\ncmgzfm\n371\n284\nhafulqjaanf\n211\neeigty\n101 377\n414\n396\n435\n412 201\nyync\n351 143\nalghzfgkrni\n386 372\negoxwnrtkt\n134 397\nsnss\n340 381 318 203\nnp\nsvhyzkfbndnynal\n483 421 266 477\nb\nmqvrlniduddarsrvp\n55 421 238 433\nkzmxgmyhdp\namzadfegfzmp\n425 212 373\nawazmbivagilhazd\nxkfgst\n242 226",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "135 74\n486\nrmmeignhlczy\nooxgyufldau\n357\nzcll\n212\nbbvg\n117 484\n427\nxiifmchjm\nuicb\nga\n82\nrk\n413\nw\n164 450\n105\nvyddaairh\n297\n359\nsxjl\n392\ndvmffkxskbyd\n291 362\n450\n236\n449\n293 236\naefimrlfmymfcqait\n460 347\nzcpgnrzamr\n147 322\nh\n97 347\nzarxpwgrgmhdgcykhb\n82 290 433 175\nur\nbjwpthpm\n485 111 351 180\nmasjthrzoaf\nuasjf\n400 99 284 236\nakqav\nhdmw\n175 218 410\nax\ncsqrpwppqsrgaigfbq\n180 458",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000\nxpidnkb\nvkrxrhxw\n1000\nlv\n1000\nniezuhh\n1000 1000\n1000\nhqjwylr\ngujktdbjk\nwtkcp\n1000\nyetjn\n1000\nvjfc\n1000 1000\n1000\nzjhtkja\n1000\n1000\norwgiifupyz\n1000\nnyefnqdzpeg\n1000 1000\n1000\n1000\n1000\n1000 1000\njwbzifmkbdzzqkdrce\n1000 1000\nydxwxqoku\n1000 1000\nffmb\n1000 1000\ndcfhjemumloiqv\n1000 1000 1000 1000\ndr\nyof\n1000 1000 1000 1000\nzwpahzmquqnux\nzwjgkrqqfcpccinhv\n1000 1000 1000 1000\nbtggssvovik\nmnlkvyxbgshqw\n1000 1000 1000\nybstphyfosoat\navhbhymbdhqvdj\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000\nrzlnmoz\nzyneqnhkgyn\n1000\nuvmivkwfttjg\n1000\nugbkoyd\n1000 1000\n1000\nsmzaafe\nhex\ne\n1000\nl\n1000\ncjysseghc\n1000 1000\n1000\norzavbbksbjw\n1000\n1000\nqqueiidl\n1000\nv\n1000 1000\n1000\n1000\n1000\n1000 1000\nrxbkmgsx\n1000 1000\nzevhhxultoqh\n1000 1000\nnyvpkjehu\n1000 1000\nlvapnm\n1000 1000 1000 1000\nstguiigxnl\njcnjqhbtleyssvo\n1000 1000 1000 1000\ndinwzpsab\nsgrecbxhms\n1000 1000 1000 1000\nr\nzjcesf\n1000 1000 1000\nzcze\npbvbmsbkvygmez\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 2\n1\nkycifxerpc\nlt\n999\nallhix\n1\nq\n2 999\n999\nawniyhe\nxqhxvzwjwv\nhins\n999\nkorfri\n2\nysibkhtfb\n2 2\n1000\nnpfs\n1\n999\ngzso\n2\np\n1000 999\n1000\n1\n999\n2 1\nbngfv\n2 1000\njhxitphvadoa\n999 999\neyyigqwdlkqlxnq\n2 999\nj\n1 1000 2 1\nlwxcomrznyhjaowso\neckjlijcodvbh\n1 999 2 999\nobekcsjnp\nkuqhyhacipkillmh\n1000 1000 999 999\nmlirpdyyedta\njgakoxynmefb\n2 1 999\nyehwdy\nftqwhrpp\n1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2\n2\njywyx\nhrwpp\n2\nxgiogzjnn\n1000\nilroajqghpsv\n1 999\n2\nirpkk\ncedlbcun\ngsxsstx\n1000\negemr\n1\ntvdup\n1000 1000\n1\nhzmbpuck\n1000\n1\nlzezsydhx\n999\noz\n999 2\n1\n1\n2\n1 1\nvmhy\n1 1\nim\n999 2\nconoyyhpqyhawuxzys\n1000 2\nkclrehuygybgcjlpm\n999 1000 2 2\nobhjdqyiwepoj\npypcqtviqnngfkh\n1000 1 2 999\nboyxsqudfxdojtgunb\nojuqwxbdaosuu\n2 2 1 1000\nboodqtjssohqqshix\nldtwdyeedi\n999 999 999\nfjkokzmsgihzhyaffl\nwifuycshduzzfqzp\n1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

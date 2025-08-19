@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Divide and Conquer",
+  "tags": [],
+  "text": "Anne and Brenda found some cookies scattered on the lattice points in the 2D coordinate system. They agreed to divide them in the following manner.First, Anne draws a vertical line (that is, a line with the equation x = c, for any real number c) somewhere in the plane. Then Brenda draws a horizontal line (y = d) somewhere in the plane. Now they have divided the plane in four quadrants.Anne gets all the cookies lying in the upper right and the lower left quadrant, and Brenda gets all the cookies lying in the upper left and the lower right quadrant. Cookies which lie on the vertical or the horizontal line are ignored.Anne's goal is to maximize the number of cookies she gets, knowing that Brenda plays optimally (in order to maximize her number of cookies).InputIn the first line of input there is an integer T (1 ≤ T ≤ 600), the number of test cases.Each test case starts with an integer N (1 ≤ N ≤ 1000), the number of cookies. In the next N lines there are coordinates (Xi, Yi) of the cookies, integers in the interval [1, 1000]. There can be multiple cookies at the same point.OutputFor each of the T cases, output in a separate line the maximal number of cookies Anne can surely get.ExampleInput:251 14 14 55 13 3117 107 117 107 116 65 54 81 51 61 47 1Output:25",
+  "sample_input": "Input:251 14 14 55 13 3117 107 117 107 116 65 54 81 51 61 47 1Output:25",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/DIVCON",
+  "scraped_at": "2025-08-17 00:34:08",
+  "test_cases": [
+    {
+      "input": "251 14 14 55 13 3117 107 117 107 116 65 54 81 51 61 47 1",
+      "expected_output": "25",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 4 6 5 10 9 10 1 10 7 4 6 7 8 5 8 4",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 5 2 1 8 10 6 9 8 7 2 7 4 2 7 1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 3 8 1 3 4 1 6 3 8 4 4 2 9 10 9 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "92 56 65 44 38 45 100 74 23 80 75 1 68 42 90 59 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 72 14 36 100 15 17 58 82 20 21 47 67 74 60 75 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 20 74 42 20 48 44 84 40 63 71 31 62 14 86 34 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 43 11 89 81 21 29 20 75 70 96 27 92 21 87 100 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 63 76 45 34 60 44 87 28 97 100 3 46 8 70 23 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "469 493 127 413 448 314 454 347 255 94 459 227 181 500 286 455 317",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "314 80 234 352 274 297 196 445 134 444 379 408 236 116 499 262 238",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "335 66 136 240 213 260 426 299 304 414 329 113 433 228 180 384 498",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "317 108 471 207 138 337 422 403 156 106 91 324 466 182 443 114 316",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "295 118 408 450 247 310 289 341 315 122 421 423 446 429 119 393 160",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "373 447 484 140 122 262 116 500 383 135 74 68 148 271 207 70 225",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "185 224 137 330 346 250 183 478 253 227 312 94 381 362 453 190 271",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 1000 1 2 999 2 1000 1000 999 1000 1000 999 2 1 2 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 1 1 1000 999 1000 999 1 1000 999 1000 1 999 2 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

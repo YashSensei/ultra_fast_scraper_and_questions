@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Fixed Partition Contest Management",
+  "tags": [],
+  "text": "A technique used in early programming contest strategies involved partitioning the available intellectual capacity of a team into a number of members with each member having a fixed amount of intelligence, different members potentially having different amounts. The sum of the brightness of all members equals the total intellectual capacity of the team.Given a set of problems, it was the task of the team to assign the problems to different team members, so that they could be solved concurrently. This was made difficult due to the fact that the solution time of a problem might depend on the amount of intelligence available to it. Every problem has a minimum intelligence requirement, but if assigned to a brighter member its solution time might increase or decrease.In this task, you have to determine optimal assignments of problems to team members. Your program is given the intellectual capacities of the team members available for the solution of problems, and for each problem a description of how its solution time depends on the amount of intelligence available to it. Your program has to find the solution schedule of the problems that minimizes the average solution time for the problems. A solution schedule is an assignment of problems to team members and times, such that no two problems use the same member at the same time, and no problem is assigned to a team member with less brightness than its minimum requirement. The solution time of the problem is the difference between the time when the problem was submitted to be solved (which is the start of the contest at time zero for all problems in this task), and the time that the problem is solved.InputThe input data will contain multiple test cases. Each test case begins with a line containing a pair of integersmandn. The numbermspecifies the number of team members (1 ≤ m ≤ 3), andnspecifies the number of problems to be solved (1 ≤ n ≤ 10).The next line containsmpositive integers giving the intelligence amounts of themteam members. Following this arenlines, describing the time-brightness trade-offs for each of thenproblems. Each line starts with a positive integerk(k ≤ 10), followed bykpairs of positive integerss1, t1, s2, t2... sk, tkthat satisfysi< si+1for1 ≤ i < k. The minimum intelligence requirement of the problem iss1, i.e. it cannot be solved by a member with less intellectual capacity than this number. If the problem is solved by a team member with brightnesss, wheresi≤ s < si+1for somei, then its solution time will beti. Finally, if the problem is solved by a team member with intellectual capacityskor more, then its execution time will betk.A pair of zeroes will follow the input for the last test case.You may assume that each problem will be solved in exactly the time specified for the given brightness, regardless of the number of other problems being solved by other team members at the same time. No problem will have an intelligence requirement larger than that of the brightest team member.OutputFor each test case, first display the case number (starting with1and increasing sequentially). Then print the minimum average solution time for the set of problems with two digits to the right of the decimal point. Follow this by the description of a solution schedule that achieves this average solution time. Display one line for each problem, in the order they were given in the input, that identifies the problem number, the member used to solve it (numbered in the order given in the input), the time when the member started to solve the problem, and the time when the problem was solved. Follow the format shown in the sample output, and print a blank line after each test case.ExampleInput:2 4\r\n40 60\r\n1 35 4\r\n1 20 3\r\n1 40 10\r\n1 60 7\r\n3 5\r\n10 20 30\r\n2 10 50 12 30\r\n2 10 100 20 25\r\n1 25 19\r\n1 19 41\r\n2 10 18 30 42\r\n0 0Output:Case 1\r\nAverage solution time = 7.75\r\nProblem 1 is solved by member 2 from 0 to 4\r\nProblem 2 is solved by member 1 from 0 to 3\r\nProblem 3 is solved by member 1 from 3 to 13\r\nProblem 4 is solved by member 2 from 4 to 11\r\n\r\nCase 2\r\nAverage solution time = 35.40\r\nProblem 1 is solved by member 3 from 19 to 49\r\nProblem 2 is solved by member 2 from 0 to 25\r\nProblem 3 is solved by member 3 from 0 to 19\r\nProblem 4 is solved by member 2 from 25 to 66\r\nProblem 5 is solved by member 1 from 0 to 18",
+  "sample_input": "Input:2 4\r\n40 60\r\n1 35 4\r\n1 20 3\r\n1 40 10\r\n1 60 7\r\n3 5\r\n10 20 30\r\n2 10 50 12 30\r\n2 10 100 20 25\r\n1 25 19\r\n1 19 41\r\n2 10 18 30 42\r\n0 0Output:Case 1\r\nAverage solution time = 7.75\r\nProblem 1 is solved by member 2 from 0 to 4\r\nProblem 2 is solved by member 1 from 0 to 3\r\nProblem 3 is solved by member 1 from 3 to 13\r\nProblem 4 is solved by member 2 from 4 to 11\r\n\r\nCase 2\r\nAverage solution time = 35.40\r\nProblem 1 is solved by member 3 from 19 to 49\r\nProblem 2 is solved by member 2 from 0 to 25\r\nProblem 3 is solved by member 3 from 0 to 19\r\nProblem 4 is solved by member 2 from 25 to 66\r\nProblem 5 is solved by member 1 from 0 to 18",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CONTEST",
+  "scraped_at": "2025-08-17 00:34:11",
+  "test_cases": [
+    {
+      "input": "2 4\r\n40 60\r\n1 35 4\r\n1 20 3\r\n1 40 10\r\n1 60 7\r\n3 5\r\n10 20 30\r\n2 10 50 12 30\r\n2 10 100 20 25\r\n1 25 19\r\n1 19 41\r\n2 10 18 30 42\r\n0 0",
+      "expected_output": "Case 1\r\nAverage solution time = 7.75\r\nProblem 1 is solved by member 2 from 0 to 4\r\nProblem 2 is solved by member 1 from 0 to 3\r\nProblem 3 is solved by member 1 from 3 to 13\r\nProblem 4 is solved by member 2 from 4 to 11\r\n\r\nCase 2\r\nAverage solution time = 35.40\r\nProblem 1 is solved by member 3 from 19 to 49\r\nProblem 2 is solved by member 2 from 0 to 25\r\nProblem 3 is solved by member 3 from 0 to 19\r\nProblem 4 is solved by member 2 from 25 to 66\r\nProblem 5 is solved by member 1 from 0 to 18",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 4\n5 8\n8 2 8\n9 9 2\n6 10 5\n2 6 2\n4 2\n2 10 4\n6 1 9 1 10\n6 9 9 8 1\n9 3 6\n6 4 7\n4 9 7 6 10\n5 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 8\n7 2\n5 5 6\n7 6 10\n7 1 2\n1 5 8\n6 6\n3 8 7\n2 10 9 2 1\n9 6 8 6 7\n5 9 3\n4 6 4\n4 10 2 1 4\n10 1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 8\n3 10\n5 8 7\n4 2 4\n8 9 1\n10 7 1\n5 10\n9 6 9\n6 9 3 6 9\n10 10 4 8 8\n1 4 2\n2 3 8\n6 6 7 1 6\n5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 1\n7 9\n8 2 2\n6 5 5\n9 2 1\n6 8 4\n5 10\n8 3 7\n2 9 9 6 5\n7 3 3 9 1\n6 1 4\n1 6 2\n5 4 8 7 1\n7 5",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 6\n1 4\n2 1 7\n9 1 5\n2 1 3\n1 3 4\n8 2\n4 9 7\n6 8 10 1 10\n2 4 9 1 8\n1 9 9\n6 10 9\n3 3 2 2 6\n5 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 2\n7 1\n8 9 1\n9 4 8\n10 1 3\n9 5 3\n6 8\n7 10 8\n2 1 5 8 3\n10 7 1 10 7\n8 7 10\n8 9 2\n3 10 5 4 6\n9 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 2\n4 4\n2 4 10\n6 9 5\n8 2 1\n1 10 8\n10 1\n8 5 4\n9 10 4 5 7\n3 6 7 8 1\n3 4 7\n6 6 4\n5 7 5 1 2\n1 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 6\n8 7\n4 3 6\n7 8 4\n6 8 3\n9 1 5\n6 2\n2 7 7\n7 2 2 5 9\n9 2 8 4 10\n7 7 9\n9 10 4\n1 9 1 9 8\n3 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 4\n1 2\n1 1 4\n1 4 1\n3 2 5\n3 4 1\n3 4\n3 4 4\n3 4 1 5 1\n4 5 2 4 1\n2 1 1\n4 5 1\n4 2 5 3 3\n3 2",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 1\n1 2\n4 1 2\n1 5 2\n4 1 4\n4 4 2\n3 1\n1 1 3\n4 5 1 4 1\n4 4 1 2 1\n5 4 2\n5 4 1\n1 3 1 5 4\n3 3",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 2\n5 4\n4 1 4\n1 5 2\n3 3 1\n3 3 4\n1 2\n3 1 2\n5 5 5 3 4\n4 1 1 2 5\n4 2 5\n4 2 2\n1 2 5 4 3\n2 1",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 5\n1 1\n1 2 5\n4 3 4\n2 1 4\n1 4 2\n3 1\n3 3 4\n5 5 2 4 5\n4 5 2 4 4\n2 5 5\n3 1 5\n1 5 2 4 4\n3 1",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 2\n1 1\n4 3 5\n3 3 2\n1 5 5\n4 4 5\n3 5\n5 1 2\n2 4 5 3 3\n5 5 4 2 5\n2 3 3\n5 2 1\n2 1 4 3 4\n1 1",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "3 4\n3 5\n5 3 5\n5 4 4\n3 4 2\n2 3 5\n2 5\n2 1 4\n1 5 2 4 1\n3 1 5 5 5\n1 4 1\n4 3 5\n3 4 3 5 5\n5 3",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "4 1\n2 1\n4 1 2\n3 3 5\n3 4 2\n5 5 3\n2 2\n1 5 1\n5 4 2 5 4\n5 2 3 2 3\n4 5 5\n3 2 2\n2 5 4 2 5\n5 2",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 10\n10 10\n10 10 10\n10 10 10\n10 10 10\n10 10 10\n10 10\n10 10 10\n10 10 10 10 10\n10 10 10 10 10\n10 10 10\n10 10 10\n10 10 10 10 10\n10 10",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10 10\n10 10\n10 10 10\n10 10 10\n10 10 10\n10 10 10\n10 10\n10 10 10\n10 10 10 10 10\n10 10 10 10 10\n10 10 10\n10 10 10\n10 10 10 10 10\n10 10",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1\n9 2\n9 1 9\n2 10 9\n10 10 9\n2 10 2\n9 10\n1 2 10\n9 1 2 10 9\n1 10 1 10 2\n2 1 9\n1 2 2\n1 2 1 9 9\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 2\n1 10\n1 2 9\n10 1 9\n1 10 1\n1 10 1\n2 9\n10 9 2\n2 1 10 2 9\n9 2 9 2 1\n9 10 9\n2 10 1\n2 9 1 9 9\n9 9",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}

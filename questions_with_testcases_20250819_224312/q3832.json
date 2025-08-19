@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Distinct Viewpoints",
+  "tags": [],
+  "text": "The citizens of Palinopolis are very fond of arguments. Whenever two Palinopolitans meet up, whether it be to negotiate over territorial boundaries or buy a pet, custom requires them to take up contrary positions and argue for at least five minutes, then finally depart in frustrated disagreement. The most gifted arguers often pursue careers at prestigious argument firms, but in order to secure a job they must first survive a stringent regime of exams followed by a highly competitive hiring process. In the first round of hiring, each applicant must face off against the head of the firm for ten hours without agreeing on a single point. In the second round, the remaining applicants face each other. These applicants are conveniently numbered from 1 toN, and a topic is chosen that allowsNmutually opposing viewpointsV1,V2...VNto be assigned to them respectively. Next, pairs of applicants are successively chosen and locked in a small, humid room to argue their respective viewpoints until one of them becomes conciliatory, gives up, or passes out. The loser is not eliminated outright but must take on the viewpoint of the victor in subsequent matches. Additionally, anyone else who is currently assigned the losing opponent's viewpoint must change his viewpoint to the victor's. It may happen that some pairs are chosen such that each opponent represents the same viewpoint. This is in fact no problem at all, since any Palinopolitan worth his salt is perfectly capable of conducting a heated argument with someone who is expressing the exact same views. No applicant is ever asked to argue against himself, however, as that would just be silly.The final selection of applicants is based on many complex factors, including percentage of matches won, number of hours passed out, and whether or not the judge has had a good lunch that day. As a member of the oversight committee, part of your job is to analyse the matches and provide relevant figures and statistics to your superiors. One crucial bit of information (according to your boss) is how many viewpoints survived the process, and which groups of applicants share the same assigned viewpoint. This would normally be quite an easy task for you to solve, except that today your boss is in a bad mood and would like to punish you by making you solve it in a strange, primitive programming language that he just read about on the internet when he was supposed to be working.Note:You can use any programming language you want, as long as it is brainf**k.InputFirst an integerT(1 ≤T≤ 1000), followed byTtests. Each test starts with two integersN(1 ≤N≤ 50) andMon a line, the number of applicants and the number of matches respectively. Then in the followingMlines are given pairs of integersuandvin the range [1..N], indicating that applicantsuandvface each other in a match. Finally, every case (including the last) ends with a blank line.OutputFor each case, first print outK, the number of distinct viewpoints surviving at the end of all matches, and then print out each group of applicants sharing a common viewpoint. Each group must be sorted internally, and the groups must also be sorted with respect to each other, using the usual definitions for sorting lists (lexicographically).ExampleInput:2\r\n3 1\r\n2 3\r\n\r\n9 7\r\n4 1\r\n8 2\r\n4 6\r\n5 1\r\n5 7\r\n6 1\r\n5 6Output:2\r\n1\r\n2 3\r\n4\r\n1 4 5 6 7\r\n2 8\r\n3\r\n9Additional InfoThe input is generated as follows:Nis chosen uniform randomly in the range, thenKis chosen uniform randomly in [1..N] and a minimal number of edges is chosen randomly to yieldK, then the extra edges (that do not changeK) are chosen randomly with probabilityp, wherepis uniform random in [0,1]. Duplicate edges do not appear.There are two data sets, one withT=1000 and the other withT=500. My solution at the time of publication has 1192 bytes (not golfed) and runs in 9.37s with 2.3M memory footprint.The custom judge reports your source code length in parentheses after the judge result (when available at the time of judge termination). Only valid BF commands are counted. Also, if you don't get AC, you will be told on which data set you first failed (0-indexed). (The master judge is the same asBFPRMCYC, and the test case judge is the same asBFBINADD.)",
+  "sample_input": "Input:2\r\n3 1\r\n2 3\r\n\r\n9 7\r\n4 1\r\n8 2\r\n4 6\r\n5 1\r\n5 7\r\n6 1\r\n5 6Output:2\r\n1\r\n2 3\r\n4\r\n1 4 5 6 7\r\n2 8\r\n3\r\n9",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/BFCC",
+  "scraped_at": "2025-08-17 00:34:27",
+  "test_cases": [
+    {
+      "input": "2\r\n3 1\r\n2 3\r\n\r\n9 7\r\n4 1\r\n8 2\r\n4 6\r\n5 1\r\n5 7\r\n6 1\r\n5 6",
+      "expected_output": "2\r\n1\r\n2 3\r\n4\r\n1 4 5 6 7\r\n2 8\r\n3\r\n9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\n1\n9\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n8\n1\n5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "2\n3\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "20\n4634104\n14045809\n20721556\n44094504\n14806313\n73400309\n82760709\n8656965\n59549520\n9946275\n47878277\n86197536\n3877899\n47250024\n79688032\n59323454\n2518011\n22260945\n22832285\n29039198",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "6\n98879075\n9505399\n86525873\n39033489\n31180211\n87308509",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "12\n42128369\n21863834\n55165897\n14372241\n71610809\n40839929\n95940253\n99219136\n86512554\n53767968\n72572297\n26453414",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n58984574\n56820705\n84931452\n38924401\n12846843\n68478751\n28086585",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "7\n56373050\n35382868\n88038698\n46200729\n55611706\n87796700\n12871553",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "50\n82659\n98552\n96083\n22816\n17296\n80289\n59272\n46494\n41283\n46594\n8859\n7600\n48370\n73856\n26104\n95593\n88550\n39225\n23949\n39048\n83016\n48345\n21245\n60810\n12428\n72631\n44100\n19356\n9560\n87637\n36146\n49276\n16065\n82287\n67573\n35046\n34834\n3844\n67695\n26804\n5725\n93837\n35844\n59362\n3379\n43153\n70185\n58808\n64461\n32619",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "36\n12462\n51050\n81457\n11067\n29759\n4480\n62797\n61632\n34435\n52811\n99824\n25869\n90462\n20972\n39580\n73399\n7295\n80606\n19103\n55900\n70943\n9083\n63872\n48979\n40986\n69458\n89854\n57562\n87766\n99076\n15036\n71827\n69824\n3854\n38567\n65545",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "33\n10740\n64676\n28099\n2426\n31229\n78607\n39778\n13385\n17689\n76715\n86497\n83693\n16417\n20437\n7462\n80950\n76679\n64365\n31759\n11598\n5479\n61041\n66720\n7287\n22286\n50586\n85313\n27787\n81996\n34368\n10672\n40043\n36024",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n18018\n57059\n23242\n13442\n12162\n36015\n30925\n37412\n19375\n22163\n94488\n29506\n71207\n62637\n83182\n16782\n53746\n38624\n16951\n5911\n36551\n9782",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "41\n34668\n50972\n45508\n52546\n34958\n32022\n83152\n15394\n31519\n80978\n82874\n53363\n53092\n2869\n97304\n63923\n8795\n93597\n54659\n58846\n79214\n40568\n6149\n73120\n82549\n12186\n22947\n60101\n35247\n78162\n69131\n59006\n91015\n20083\n44193\n55901\n11224\n37688\n76547\n25278\n26780",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "27\n72924\n91998\n93784\n81809\n1496\n5653\n9434\n83996\n65867\n42029\n48007\n15219\n40602\n82457\n63962\n33628\n73212\n46982\n14289\n96960\n30658\n99734\n1034\n86252\n32153\n10604\n44339",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "30\n72087\n60259\n46898\n23617\n90959\n4120\n81580\n93587\n36651\n55112\n83532\n39789\n3544\n49341\n25362\n54738\n96099\n90921\n85147\n79384\n69162\n122\n25299\n17090\n78750\n65205\n28829\n57163\n55793\n94522",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "50\n40866269\n15332363\n19674314\n28454343\n52362286\n94367949\n69434500\n84962391\n74296006\n15700318\n13975642\n18906485\n49951963\n48107686\n79504127\n12869292\n13468628\n87536413\n80195676\n42854489\n67558593\n18505405\n33554644\n18385981\n53705954\n21146461\n82766940\n7605637\n58056392\n40463064\n25503435\n61739681\n50780223\n13398981\n75437681\n67412635\n57783071\n84386550\n45252126\n30306904\n76547224\n3203930\n47289427\n64520721\n14623126\n83784639\n34669652\n34663697\n46359698\n91284890",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n7007398\n76931490\n14880595\n36016968\n65669828\n22892427\n65411116\n98602108\n630717\n84293773\n15086364\n22782308\n5261193\n68863414\n50347390\n69641742\n5806072\n18205011\n50297827\n96005325\n47134618\n37377602\n23626931\n69011620\n37046099\n63961346\n1904807\n75338963\n23661741\n16315628\n87128366\n49616170\n40586243\n73648084\n41914369\n97434719\n43313034\n81630259\n56755803\n94019333\n83503403\n4314964\n25613766\n86073649\n32635189\n31669126\n95271831\n43788506\n39622274\n22194518",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 50)"
+    },
+    {
+      "input": "50\n100000000\n100000000\n100000000\n1\n100000000\n70945572\n69548137\n100000000\n100000000\n100000000\n1\n100000000\n1\n100000000\n1\n77182072\n43951460\n70860730\n100000000\n91121763\n100000000\n4341547\n19579483\n3593387\n100000000\n100000000\n1\n16252460\n1\n1\n100000000\n1\n100000000\n100000000\n100000000\n1\n100000000\n1\n69959837\n1\n100000000\n100000000\n1\n1\n32722721\n100000000\n1116742\n1\n44681498\n90561823",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 50)"
+    },
+    {
+      "input": "2\n51311087\n61945280",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "PBCGAME",
+  "tags": [],
+  "text": "The company \"PBC\" has made a game which consists of small platforms and pipes. There are 3 types of platforms: starting platforms (there are N1 of them), finishing platforms (there are N3 of them) and middle platforms (there are N2 of them). All starting platforms stand at identical height. Finishing platforms stand also at identical height. All heights of middle platforms are various. They have less height than starting, but greater height than finishing platforms. Each platform has an unique number from 1 up to N1+N2+N3. First N1 numbers are starting platforms, next N2 numbers are middle platforms, and the last N3 numbers are finishing platforms. All middle platforms are numbered in order of decrease of height. It means that if number of middle platform A is less than number of platform B, than height of A is greater than height of B.There is a ball on each of starting platforms. The ball can move from platform A to platform B if they are connected by a pipe, and height A is greater than height B. Each finishing platform can hold only one ball. If there is a ball on a platform the player can choose a direction of the further way of the ball, it means that he can choose a platform, where the ball will go. Also given a number C for each middle platform which means a maximum quantity of balls which can pass it during the game. The goal of the game is to drive the greatest possible number of ball to the finishing platforms.You need to find out what maximum quantity of balls can appear on finishing platforms at the end of the game.InputThe input file has the following order:N1 N2 N3CN1+1...CN1+N2K1 A[1,1] ... A[1,K1]K2 A[2,1] ... A[2,K2]...KN1+N2A[N1+N2,1] ... A[N1+N2,KN1+N2]Where N1, N2, N3 are the amounts of starting, middle and finishing platforms. Cj is the maximum amount of balls, which can pass the middle platform with the number j (N1+1 ≤ j ≤ N1+N2) during the game. Ki is the number of pipes, connected with the platform i (1 ≤ i ≤ N1+N2). The elements of the array A, are the numbers of platforms where the ball can move from the appropriate platform (platforms with numbers i and A[i] are connected with a pipe).OutputThe output file must contain a number, which means the maximum number of balls, which can appear at the finishing platforms at the end of the game.ExampleInput:3 4 3\r\n3\r\n2\r\n1\r\n2\r\n1 4\r\n1 4\r\n1 4\r\n2 5 6\r\n1 7\r\n1 7\r\n3 8 9 10Output:2Limitations:All the numbers are integer.0 < N1, N3 < 511 < N1+N2+N3 < 2010 ≤ Cj ≤ 50There are no pipes between starting platforms.There are no pipes between finishing platforms.",
+  "sample_input": "Input:3 4 3\r\n3\r\n2\r\n1\r\n2\r\n1 4\r\n1 4\r\n1 4\r\n2 5 6\r\n1 7\r\n1 7\r\n3 8 9 10Output:2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PBCGAME",
+  "scraped_at": "2025-08-17 00:33:53",
+  "test_cases": [
+    {
+      "input": "3 4 3\r\n3\r\n2\r\n1\r\n2\r\n1 4\r\n1 4\r\n1 4\r\n2 5 6\r\n1 7\r\n1 7\r\n3 8 9 10",
+      "expected_output": "2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "2 3 4\n4\n3\n2\n10\n10 2\n9 3\n4 6\n6 3 9\n7 7\n1 1\n4 10 9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 2 6\n6\n3\n6\n6\n1 1\n10 2\n9 7\n1 3 3\n5 8\n5 8\n9 7 4 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 8 1\n1\n7\n5\n6\n2 10\n8 3\n9 1\n4 7 1\n4 10\n8 9\n5 3 1 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "98 38 62\n93\n42\n19\n83\n63 84\n19 43\n61 15\n5 44 68\n34 3\n36 25\n15 82 23 10",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 92 68\n56\n85\n46\n32\n76 32\n90 89\n29 84\n46 32 92\n66 41\n73 97\n46 37 38 94",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 76 62\n20\n90\n48\n17\n88 74\n74 44\n58 9\n53 92 100\n77 79\n84 8\n56 92 37 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 73 24\n43\n50\n26\n79\n27 76\n69 15\n92 86\n47 86 100\n63 96\n34 11\n9 3 29 75",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 12 56\n92\n85\n31\n37\n79 28\n24 4\n6 44\n45 29 95\n9 42\n50 91\n82 87 85 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "290 319 174\n143\n188\n455\n77\n413 109\n203 304\n178 205\n245 147 398\n122 146\n461 406\n216 72 187 305",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "467 245 176\n230\n240\n250\n394\n185 293\n382 82\n420 287\n334 106 146\n427 251\n159 251\n455 178 430 478",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "154 61 379\n111\n129\n476\n302\n396 486\n308 272\n222 103\n434 445 61\n121 196\n400 396\n155 155 86 165",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "144 124 493\n183\n427\n216\n211\n416 437\n70 166\n257 388\n486 248 307\n108 166\n320 207\n452 228 273 269",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "482 318 305\n249\n393\n353\n267\n186 394\n157 62\n427 169\n339 439 411\n497 148\n100 457\n138 370 153 181",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "193 346 141\n262\n329\n114\n294\n451 179\n435 104\n328 406\n158 213 186\n470 150\n133 449\n336 96 181 333",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "360 201 361\n150\n433\n334\n379\n207 422\n157 365\n489 142\n339 151 257\n336 142\n397 240\n107 452 145 413",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000\n1000\n1000\n1000\n1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000 1000\n1000 1000\n1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2 2\n999\n999\n999\n1000\n2 1\n2 999\n1000 999\n999 1000 1\n1 1\n999 999\n999 1000 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 999\n999\n1000\n1\n1\n2 999\n999 2\n2 1\n999 2 999\n999 999\n999 2\n999 999 999 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

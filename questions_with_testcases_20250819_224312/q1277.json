@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Land Division",
+  "tags": [],
+  "text": "The king of the Far, Far Away Kingdom has passed-away and the kingdom must be split amongst his K sons. The kingdom, which can be drawn on a rectangular map, consists of N cities. To divide the land, they will draw K − 1 straight segments on the map, all of them parallel to either the vertical or the horizontal axis of the map. This divides the map into exactly K rectangles, all having equal heights (if the dividing lines where vertical), or equal widths (if the dividing lines where horizontal). No segment should pass through any of the cities. Each son will then be assigned one random region out of the K regions and the cities inside that region will be his share. Of course, they want the division to be as fair as possible: theoretically, in the fairest division, each son should get N/K cities (we’ll call this value the baseline), but since the baseline isn’t always a whole number, each of the sons wants to be as close as possible to the baseline. We will calculate the unfairness of each son as the absolute difference between the number of cities assigned to him and the baseline. The fairest division is the one that minimizes the average unfairness of all the sons.Consider the example above with 3 sons and 6 cities (so the baseline is 6/3 = 2.0) Figure (a) is the original map. Figure (b) shows a non-optimal division (the dashed lines are the 2 dividing lines.) In this case, the middle region contains 3 cities (unfairness of |3 − 2| = 1), the left region contains 1 city (unfairness of |1 − 2| = 1), while the right region contains 2 cities (perfectly fair, unfairness of 0), so the average unfairness is 2/3. Figure (c) shows the optimal division since all three regions contain the same number of cities for an average unfairness of 0. Write a program to determine the fairest land division for a given kingdom.InputYour program will be tested on one or more test cases. Each test case is described on N + 1 lines. The first line of each test case specifies two positive integers: (N ≤ 100, 000) and (K ≤ 10) where N is the number of cities and K is number of children. Note that K ≤ N . N lines follows,  each describing the coordinates of a city by specifying two integers (x, y) where 0 ≤ x, y ≤ 100, 000. Since coordinates are rounded to the  nearest integer, more than one city could have the exact same coordinate on the map. You may assume that the map of the kingdom is any rectangle that contains all of the given points (although such information is not needed by the program.) Note also that while all cities lie on integer coordinates, the dividing lines need not be. The last line of the input file contains two zeros.OutputFor each test case, print the following line:k. A/BWhere k is the test case number (starting at one,) and A/B is the minimum average that could be obtained. A/B should be an irreducible fraction. Let B=1 when the result is a whole number.ExampleInput:6 30 41 32 33 14 45 04 30 00 11 11 00 0Output:1. 0/12. 8/9",
+  "sample_input": "Input:6 30 41 32 33 14 45 04 30 00 11 11 00 0Output:1. 0/12. 8/9",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/ANARC09H",
+  "scraped_at": "2025-08-17 00:33:34",
+  "test_cases": [
+    {
+      "input": "6 30 41 32 33 14 45 04 30 00 11 11 00 0",
+      "expected_output": "1. 0/12. 8/9",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 8 9 2 1 8 9 8 9 10 7 2 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 4 10 4 3 8 8 7 4 7 9 9 8 3",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 3 9 9 4 9 4 7 7 1 3 7 1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "26 96 35 14 79 49 16 9 35 36 18 89 82 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 65 51 85 23 20 73 24 12 29 75 49 64 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 43 67 32 52 53 44 64 30 80 8 62 84 18",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 29 22 57 91 6 76 6 41 38 48 98 17 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 37 4 1 4 27 28 54 29 84 17 74 94 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 45 6 23 43 41 16 29 37 43 46 30 8 34",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "31 27 39 18 30 6 35 30 14 39 18 12 25 28",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "6 48 25 50 26 6 32 27 19 17 14 13 37 41",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "40 19 27 33 45 50 18 20 13 36 30 36 45 36",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "44 24 11 21 20 20 33 36 25 20 50 21 23 25",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "41 17 35 10 13 48 7 12 27 14 36 27 32 14",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 17 26 11 44 27 41 49 12 24 49 36 22 38",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "99 2 99 99 100 99 2 1 99 99 2 100 99 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "100 1 100 1 99 1 99 99 99 2 100 1 99 99",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

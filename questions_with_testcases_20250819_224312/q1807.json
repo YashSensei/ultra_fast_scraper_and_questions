@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The Proper Key",
+  "tags": [],
+  "text": "Many people think that Tetris was invented by two Russian programmers. But that\r\nis not the whole truth. The idea of the game is very old – even the Egyptians had\r\nsomething similar. But they did not use it as a game. Instead, it was used as\r\na very complicated lock. The lock was made of wood and consisted of a large\r\nnumber of square fields, laid out in regular rows and columns. Each field was\r\neither completely filled with wood, or empty. The key for this lock was\r\ntwo-dimensional and it was made by joining square parts of the same size\r\nas the fields of the lock. So they had a 2D lock and 2D key that could be\r\ninserted into the lock from the top. The key was designed so that it was\r\nnot possible to move it upwards. It could only fall down and it could\r\nslide sideways – exactly like in a Tetris game. The only difference is\r\nthat the key could not be rotated. Rotation in Tetris is really a Russian\r\ninvention.The entry gate into the Pyramid has such a lock. The ACM archaeologists have\r\nfound several keys and one of them belongs to the lock with a very high\r\nprobability. Now they need to try them out and find which one to use. Because\r\nit is too time-consuming to try all of them, it is better to begin with those keys that\r\nmay be inserted deeper into the lock. Your program should be able to\r\ndetermine how deep a given key can be inserted into a given lock.InputThe input consists ofTtest cases. The number of them (T) is given on\r\nthe first line of the input file.\r\nEach test case begins with a line containing two integersRandC(1 ≤ R,C ≤ 100) indicating the key size. Then exactlyRrows follow,\r\neach containingCcharacters. Each character is either a hash mark\r\n(#) or a period (.). A hash mark represents one square field made\r\nof wood; a period is an empty field. The wooden fields are always connected,\r\ni.e. the whole key is made of one piece.\r\nMoreover, the key remains connected even if we cut off arbitrary number of rows\r\nfrom its top. There is always at least one\r\nnon-empty field in the top-most and bottom-most rows and the left-most and\r\nright-most columns.After the key description, there is a line containing two integersDandW(1 ≤ D ≤ 10000,1 ≤ W ≤ 1000). The numberWis the lock width,\r\nandDis its\r\ndepth. The nextDlines containWcharacters each. The character may be\r\neither a hash mark (representing the wood) or a period (the free space).OutputYour program should print one line of output for each test case. The line\r\nshould contain the statement\r\n\"The key falls to depthX.\". ReplaceXwith the maximum depth to which the key can be inserted by moving it down \r\nand sliding it to the left or right only. The depth is measured as the distance\r\nbetween the bottom side of the key and the top side of the lock. If it is\r\npossible to move the key through the whole lock and take it away at the bottom\r\nside, output the sentence \"The key can fall through.\".ExampleSample Input:\r\n4\r\n2 4\r\n#.##\r\n###.\r\n3 6\r\n#....#\r\n#....#\r\n#..###\r\n2 3\r\n##.\r\n.##\r\n2 7\r\n#.#.#.#\r\n.#.#.#.\r\n1 1\r\n#\r\n1 10\r\n###....###\r\n3 2\r\n##\r\n.#\r\n.#\r\n1 5\r\n#.#.#\r\n\r\nSample output:\r\nThe key falls to depth 2.\r\nThe key falls to depth 0.\r\nThe key can fall through.\r\nThe key falls to depth 2.Warning: large Input/Output data, be careful with certain languages",
+  "sample_input": "Sample Input:\r\n4\r\n2 4\r\n#.##\r\n###.\r\n3 6\r\n#....#\r\n#....#\r\n#..###\r\n2 3\r\n##.\r\n.##\r\n2 7\r\n#.#.#.#\r\n.#.#.#.\r\n1 1\r\n#\r\n1 10\r\n###....###\r\n3 2\r\n##\r\n.#\r\n.#\r\n1 5\r\n#.#.#\r\n\r\nSample output:\r\nThe key falls to depth 2.\r\nThe key falls to depth 0.\r\nThe key can fall through.\r\nThe key falls to depth 2.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PROPKEY",
+  "scraped_at": "2025-08-17 00:33:42",
+  "test_cases": [
+    {
+      "input": "Sample \r\n4\r\n2 4\r\n#.##\r\n###.\r\n3 6\r\n#....#\r\n#....#\r\n#..###\r\n2 3\r\n##.\r\n.##\r\n2 7\r\n#.#.#.#\r\n.#.#.#.\r\n1 1\r\n#\r\n1 10\r\n###....###\r\n3 2\r\n##\r\n.#\r\n.#\r\n1 5\r\n#.#.#\r\n\r\nSample output:\r\nThe key falls to depth 2.\r\nThe key falls to depth 0.\r\nThe key can fall through.\r\nThe key falls to depth 2.",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "hbyzjiq\n8\n7 9\nhwhicn\nvg\n1 8\ntgob\ntssbvtjpt\njphprio\n6 4\nybkbhx\nwxocc\n7 4\nzipuakqbjc\nsnwjewbq\n9 5\ng\n9 5\nzxirwwtmcwgxy\n9 1\npkga\nwexb\nvh\n6 4\ntieqi\nadtk b\n6\nx of m ksc oal t\n5\nbidxj zeyc jpvyn sbltk z e\nnxgb djbf n ga ysvcbrmh\n4\ngdxge q s f u y",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "rgnlbgpx\n9\n10 10\ndme\nxgw\n1 3\nudpcaqnvuro\njzejn\njjzxloiwjc\n6 1\nwrguu\nlbw\n8 3\ntblmwdlphn\nzpurnyxiwxay\n3 10\nv\n10 9\nrqzbguof\n6 10\npja\nbx\nzk\n1 9\ntnnyekh\nwxpd aexunw\n5\ns mhhkc d ia tx x\n6\nmfg wm mkg sp nblk rdr\nm dfl fjya amgu kclzbfn\n7\nzhhq c zlq llvc ek zmj",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "awwgpzhlnvbt\n2\n2 4\nptsacc\nuwd\n6 6\nrzgsmeodjz\nebuvy\nwazmztfxdgn\n3 9\nmo\nfe\n7 9\nirsya\ndxzacrfyskglw\n2 6\nuv\n7 2\nipohvejufp\n7 6\nj\nnuxw\nbwy\n2 7\npyuafnineg\nw kqnvzu\n1\nct wtc y enor fjt jxon\n2\nqppb budxw mf bglb a xm\nt ktzqf lcy t ulyin\n3\nco q x xs m hd",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "xumkxwp\n36\n94 79\nkff\nctgdsq\n35 36\nelmbajhnwfpm\nihdffjufpr\nlcxaofwkg\n37 12\ne\nddhvtn\n100 24\nywtbbmxd\nffsbgxxqg\n35 3\nmx\n52 84\nkihvqylscwsx\n47 17\nym\nppw\nm\n83 25\nbaovswm\nt mpfhn\n31\nsnkci jher u n pdzdh i\n77\nnm leai yttb ra tgpps xd\nq wkhv zu zfbup yurth\n28\nuru qojoa qz xnbm gwqfv s",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "eytgrmluf\n34\n39 9\ngezy\ntio\n4 81\nvv\ndelryyu\nxgesijc\n28 61\nachccj\nnyswe\n83 58\najnssabbumg\nfbuwxdasdfztzc\n36 92\nc\n30 75\njhns\n4 46\njbbp\nw\nofea\n14 65\nvfkdltfm\nbuk fcq\n24\nbai kdx jnrqc akn t g\n51\nov xqbr vfg lv pnb yh\nzyf oj c eonr zfrl\n67\naxd wc x u r frxm",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ertsbpkzgq\n95\n28 60\nhq\nqgb\n31 43\nvwadjwwxhilo\nmlekjszg\nqhkkguik\n69 29\niodee\nd\n37 77\nzttfvgdyv\neotyffik\n37 39\nru\n4 25\ncmoicjtpedacnc\n58 29\nx\nn\nthm\n2 45\nv\nl ixhgyu\n27\nfxx coqr bkh fxkz iwbo augs\n30\ntloqq crqds tt lkg vmot urq\nayk i nulua vnn xqzpl\n2\noaalh dw aq r i f",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zndlbqlgfl\n68\n55 35\ntd\nsyg\n37 12\nxwnnxvj\nmievs\nrrgsccszdhvy\n46 23\ndkbab\nh\n24 14\nxvuxmzrk\nupfk\n37 10\nt\n61 87\ntafgamdcibbbd\n64 86\nt\njnat\nvr\n35 47\nran\nyo zegsd\n16\ngvuy ael kpr yufkd f ciur\n98\nodj p bgqpd nfs a upkl\nvx ort a adnw suoxzslk\n18\nn zonzs dblza scbqv ti s",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "crirbtgiyzwq\n40\n4 91\nvvczmj\nuxaczp\n96 20\nftfbvvbc\nktfzczbs\nt\n83 11\ncjnpk\npwhs\n32 52\nxbrygdo\nlmmrwj\n45 76\nw\n91 76\nrcmtoakwrgjvsx\n2 28\nv\nb\nv\n68 58\njcezqdhytj\nltnukv cbign\n70\nyn t y vche rgb up\n4\nsnur rem u fwtxr xifd q\nmdrv wxwma bqayb h c\n9\ngwkk ahhbx rwk nj pzcf s",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ym\n193\n59 173\nrurcfmg\nhrt\n62 232\ncpegc\nti\ntmufboml\n389 347\nn\neomi\n171 297\nlsrdxvbc\nsnbcsiuxt\n323 195\nmc\n75 81\niuoaivwgwlerlduduxjo\n105 110\nxb\ngcfe\nadjt\n208 202\nllcftyq\nc gnobs\n177\nlpeg blzs o jme gbn viq\n381\nzqw qucx hzx j szyxh nhfa\nujpn dixk m en fps\n143\nmeez l ewwwy dr kyll os",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "bziqekoklh\n218\n73 108\nahvcea\nsiovf\n409 128\nfrwajiljtg\nll\njxdolewbesn\n349 235\ncpqigb\nlsdkqk\n153 160\nmhejxzr\nzaohgsch\n66 239\nej\n157 161\nvi\n147 104\ng\nsojv\nwamd\n337 448\nlanelzir\np bcyj\n292\nkhvu ciwmu cfce gxy izva syyv\n182\nfpi mt hxqvm va zxv x\nv crfw eir gvkk dajpjn\n104\nspmy ue rfmnf hmv ps xjkli",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ijuygqevafbj\n285\n473 496\nn\nqb\n486 127\ne\ncmnmztwcaalw\ncdokxuk\n92 69\njyo\nl\n223 205\nwk\nf\n258 390\na\n477 177\njs\n215 452\nxipy\nj\nawva\n253 133\nzdio\nfkn eyvmjc\n58\nt aw axc f kfed ziasw\n84\nlyzz ig wluvt f nz x\nrj mm qjzfg eivmc drwtgqdr\n302\nflx smudf gr gjox ehgj jk",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "asinfgqaiaam\n411\n170 247\nr\njoalmoz\n332 233\nzgumyjzh\nscblr\npbd\n422 101\niv\nh\n145 129\ncnm\ntvifi\n452 53\np\n353 221\nfarpsv\n87 124\nv\npxhh\ndz\n95 148\nh\ne zkmpax\n394\ndktt t dn v hab b\n286\nbq bmly q irq dmdvh qe\nv rjc m vbr lpm\n304\nig sjkr xnw fgqx fs ad",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "aefxojwadp\n489\n56 455\nibastb\nnalibt\n328 132\nib\nrdktraam\nphp\n112 397\nc\nk\n135 137\ngubkg\nycocdfgdjhekw\n285 314\nmr\n438 458\nep\n157 302\nujx\nrx\nhf\n117 164\nqunvnmzwu\nrcxz cjjj\n92\ngzg tm xag ucxav gyfi u\n224\nvyny ndyx ljcwn mb k zy\nsw kl dae tfqg q\n137\nu lkmrt enpg nu rznm jrqd",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fiofwaiwbq\n313\n276 438\nsqmkperx\nucpsv\n268 188\nbp\npasc\nvehcxk\n234 133\npfd\nobrsy\n391 453\nrauexby\nhfgg\n66 196\nyq\n104 431\nvi\n354 111\nab\nhw\nwiz\n329 294\nllo\nwl siqjwdr\n160\nzfqs iicg s xakb uq ori\n109\nu eexuz sstc fjvml a nqqo\np yvnol dlnbw iugb tv\n242\nu riyio qxlro qox w ljgbn",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "nizlkifbznml\n94\n317 129\nngjmvcam\ne\n302 149\nf\no\nhuaobrngggmd\n128 487\nw\numxx\n227 102\nhsd\nwtezstcumdodj\n263 259\nh\n79 265\nmsxhjckzqwedj\n467 77\ns\nbw\nkl\n210 473\ns\nnyasl mjppifc\n331\nx jz ugj btemo me hovpl\n155\nfq jonqh z zad d hj\nskz vidou crev tufnr ur\n279\nddvi plk insqc y vzhrs aa",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ksrkfcmtfbs\n1000\n1000 1000\nih\notjpi\n1000 1000\nc\nfogh\ndxmsjzphqfv\n1000 1000\nfay\nfikyyh\n1000 1000\nr\ndzwrxbh\n1000 1000\nw\n1000 1000\ng\n1000 1000\nkgeu\noyzj\netn\n1000 1000\namys\nlwbxg n\n1000\nhtso vzxp cyu ymvp k rdv\n1000\npzt wmdu mile v qyb dqtmc\nlnrcn zdu ksmt zqm rbcht\n1000\neq e g kmbwv v kht",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "hvw\n1000\n1000 1000\nkdcnd\nqnhvoam\n1000 1000\nloqj\ndkabtahi\nantehhy\n1000 1000\nzewkzl\nnkuw\n1000 1000\no\nsmmlgionkwevn\n1000 1000\nh\n1000 1000\nqfatsaugxg\n1000 1000\nk\nk\ne\n1000 1000\nqj\ndleydj yjxk\n1000\nuza beb yqgmh g bhww wwf\n1000\ncfh hcues ct qjgfa d ma\nznud qbn qiw nlkj ogfzwec\n1000\nl cpr hm pk rio zhgx",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "m\n999\n1 999\nyve\nah\n1000 2\nfcmvyqfrjv\ntie\nwpzdtknqyra\n999 999\ndsv\nzuh\n1000 1\nksknamxcacjj\nst\n2 1000\nk\n1000 1\nzfibfjkxwazzpvkrh\n1 1000\njoh\nu\nng\n1 999\nrdwvti\ns gan\n1\nfs kjodc wwmbv a oageu ocb\n999\nplm n jy vgntf awqip n\nsehnn u wmc kwtf cpyyfpep\n2\nebc obrr se h lzli mlx",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "ooid\n1000\n999 1\na\nw\n2 999\nxxouuwy\nmpqd\nlgww\n1000 999\npvud\ndleow\n1000 999\nprsbpxngm\nlexufgma\n1 1000\nma\n1000 2\naqhw\n2 1\nt\nmtef\nvi\n999 2\niysuqtjkq\nz qziqtf\n1000\nr deiis bhmh adcea qsmk ff\n2\ng j ldqpq pylo ges ze\neme yyax dozkt ea bf\n999\ne odb bokwm yctzz vvelu wb",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "What Really Happened on Mars?",
+  "tags": [],
+  "text": "Real-time software in the Mars Pathfinder spacecraft     suffered from an issue known as priority inversion. One     technique to address this issue is to use the Priority Ceiling     Protocol.In this problem, you will simulate the execution of multiple     tasks according to this protocol. The tasks share a collection     of resources, each of which can be used by only one task at a     time. To ensure this, resources must be locked before use and     unlocked after use. Each task is defined by a start time, a     uniquebase priority, and a sequence of instructions.     Each task also has acurrent priority, which may     change during execution. Instructions come in three types:compute– perform a computation for         one microsecondlock $k$–         lock resource $k$         (which takes no processor time)unlock $k$– unlock resource $k$         (which takes no processor time)After locking a resource, a task is said toownthe     resource until the task unlocks it. A task will unlock only the     owned resource it most recently locked, will not lock a     resource it already owns, and will complete with no owned     resources.Each resource has a fixedpriority ceiling, which     is the highest base priority of any task that contains an     instruction to lock that resource.There is a single processor that executes the tasks. When     the processor starts, it initializes its clock to zero and then     runs an infinite loop with the following steps:Step 1.Identifyrunningtasks. A task is running if         its start time is less than or equal to the current         processor clock and not all of its instructions have been         executed.Step 2.Determine the current priorities of the running tasks         and which of the running tasks areblocked. A         running task $T$ is         blocked if the next instruction in          $T$ is to lock         resource $k$ and         either resource          $k$ is already owned or at least         one other task owns a resource          $\\ell $ whose priority ceiling is         greater than or equal to the current priority of         $T$. If          $T$ is blocked, it is said to be         blocked by every task owning such          $k$ or          $\\ell $. The current priority of a         task $T$ is the         maximum of $T$’s base         priority and the current priorities of all tasks that         $T$ blocks.Step 3.Execute the next instruction of the non-blocked running         task (if any) with the highest current priority. If there         was no such task or if a compute instruction was executed,         increment the processor clock by one microsecond. If a         lock or unlock instruction was executed, do not increment         the clock.The Priority Ceiling Protocol defined above has the     following properties:Current priority is defined in terms of current priority         and blocking, and blocking is defined in terms of current         priority. While this may appear circular, there will always         be a unique set of current priorities that satisfy the         definitions.All tasks will eventually complete.There will never be a tie in step 3.InputMultiple test cases. Please process until EOF is reached. For each test case:The first line of the input contains two integers     $t$      $(1 \\leq t \\leq 20)$, which is the     number of tasks, and $r$     ($1 \\leq r \\leq 20$),     which is the number of resources. This is followed by     $t$ lines, where the     $i^\\text {th}$ of these     lines describes task $i$.     The description of a task begins with three integers: the     task’s start time $s$     ($1 \\leq s \\leq 10\\,     000$), its base priority      $b$ ($1     \\leq b \\leq t$), and an integer      $a$ ($1     \\leq a \\leq 100$). A task description is concluded by a     sequence of $a$ strings     describing the instructions. Each string is a letter     (CorLorU) followed by an integer. The stringC$n$ ($1     \\leq n \\leq 100$) indicates a sequence of      $n$ compute instructions. The stringsL$k$ andU$k$     ($1 \\leq k \\leq r$)     indicate instructions locking and unlocking resource     $k$ respectively.No two tasks have the same base priority.OutputFor each test case:For each task, display the time it completes execution, in     the same order that the tasks are given in the input.ExampleInput:3 1\r\n50 2 5 C1 L1 C1 U1 C1\r\n1 1 5 C1 L1 C100 U1 C1\r\n70 3 1 C1\r\n3 3\r\n5 3 5 C1 L1 C1 U1 C1\r\n3 2 9 C1 L2 C1 L3 C1 U3 C1 U2 C1\r\n1 1 9 C1 L3 C3 L2 C1 U2 C1 U3 C1Output:106\r\n107\r\n71\r\n8\r\n15\r\n16",
+  "sample_input": "Input:3 1\r\n50 2 5 C1 L1 C1 U1 C1\r\n1 1 5 C1 L1 C100 U1 C1\r\n70 3 1 C1\r\n3 3\r\n5 3 5 C1 L1 C1 U1 C1\r\n3 2 9 C1 L2 C1 L3 C1 U3 C1 U2 C1\r\n1 1 9 C1 L3 C3 L2 C1 U2 C1 U3 C1Output:106\r\n107\r\n71\r\n8\r\n15\r\n16",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FN16MARS",
+  "scraped_at": "2025-08-17 00:34:01",
+  "test_cases": [
+    {
+      "input": "3 1\r\n50 2 5 C1 L1 C1 U1 C1\r\n1 1 5 C1 L1 C100 U1 C1\r\n70 3 1 C1\r\n3 3\r\n5 3 5 C1 L1 C1 U1 C1\r\n3 2 9 C1 L2 C1 L3 C1 U3 C1 U2 C1\r\n1 1 9 C1 L3 C3 L2 C1 U2 C1 U3 C1",
+      "expected_output": "106\r\n107\r\n71\r\n8\r\n15\r\n16",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 1\n10 6 3 9 3 10 4 3\n9 3 10 gb p heqnv rma i\n8 9 2 10 2 1 7 1\n1 2 8 xbc ajr subob cidry wv\n5 3 10 1\n6 1 5 qjuku\n7 1\n6 5 10 2 7 7 4 4\n8 8 5 uptt afkzk pqpxn o yugn\n2 8 1 6 8 4 8 8 3 3 9 1\n6 8 6 tthej glyy rmnqo xjbb zc znp gd zxm qlyt\n1 6 2 1 2 9 7 6 10 5 6 1\n4 1 1 iftf gzryw dj ukbie thpz sljyc g wup zkzi",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2\n1 8 9 2 8 10 9 10\n1 9 9 qrx lmkmm vnd hxlww s\n8 1 7 10 2 6 5 8\n5 3 1 ulw ri x q nzub\n7 9 9 5\n4 7 10 kpq\n8 5\n2 3 2 10 5 3 9 6\n2 6 9 nhn qwwaq w wmp c\n7 4 7 7 1 1 9 9 2 2 4 6\n4 1 1 jtuj z pykdx poa i wfuyb aj tbznc oujwz\n5 1 3 10 6 3 2 5 1 7 7 4\n3 5 1 ljz o lxaog tar y ruw bkbzc zqton ahy",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 4\n10 7 7 2 1 8 8 10\n2 9 7 qam uxse m cjkwd nt\n5 3 1 10 3 6 2 8\n7 2 7 zqdt c eenqt sfav kd\n8 2 2 3\n1 7 10 h\n10 8\n9 10 2 2 6 9 10 8\n4 9 5 jl jwr kd rpwoz q\n7 7 4 5 5 1 4 8 3 8 9 6\n9 5 8 eiaf qlfy gu cbnty cl mcv xa orcp j\n7 4 10 7 7 9 5 8 5 8 1 10\n1 10 1 x txmm ogyab hkvj engn iuvmp ysu r voxys",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "53 44\n31 50 88 2 89 2 77 15\n2 32 3 b ipdhx mw d i\n48 74 64 93 4 26 44 1\n44 18 85 r u m lgna tcbf\n67 98 46 86\n83 97 53 vvgt\n32 71\n12 64 5 92 26 81 39 70\n63 39 72 o nwqwf dcdc dixs qqejn\n98 1 57 8 37 54 83 52 35 73 19 96\n4 11 8 bu pgdt p s dxhb td jsou ed c\n56 62 23 27 11 18 14 20 52 61 89 53\n20 65 6 avbi cjz xjwc su atb v n r j",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 83\n70 44 87 28 73 51 24 36\n80 61 35 w o uelzb wskik zy\n68 99 3 64 94 51 57 58\n24 54 32 zapg bvdj cc dsq w\n49 10 22 31\n9 64 59 sy\n41 28\n77 5 27 50 32 62 33 47\n81 93 79 jkjpq z z kkq hbf\n47 93 89 51 98 46 61 59 56 51 85 10\n47 8 56 jhe vln la cxor n mvvp avja riwzh cqyk\n85 78 9 98 42 37 94 59 39 56 22 57\n46 23 48 k fqmmq kvvnh qksdd enj uxas b uiedf fs",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "85 70\n71 40 33 4 12 57 69 53\n42 64 99 vjbj qrhm eui tkikt p\n17 61 49 2 50 68 12 12\n80 79 40 xzam uc xhm pcqrh kwhu\n84 32 37 80\n59 23 60 pdqf\n20 12\n85 4 43 64 32 99 41 97\n78 85 59 qyxn lqd hiety vbd oxqzi\n57 19 38 50 95 78 3 60 5 18 75 77\n92 41 91 ny wtghm toph i l zw m cebw qmi\n85 66 89 30 63 79 12 66 58 3 60 76\n46 29 64 nce ztt qn h nxy qq rnmy xsrn alg",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "87 38\n74 16 81 86 26 55 45 63\n11 67 59 fzuoz qlsw tzdge rns girkb\n43 64 41 85 11 77 62 8\n45 77 63 cxu rtxnh j sps lqfj\n57 6 29 16\n99 55 95 oyeu\n67 9\n4 19 39 56 67 98 49 75\n83 17 60 e yzxey dhu yubr ofchm\n51 92 9 46 30 4 9 92 91 7 96 17\n50 72 56 qfaw pvp hcqm nd v xlcwe jbw ij m\n55 56 92 57 16 13 42 3 63 35 57 33\n83 93 17 i rrq q xcey ymtj mar f nejd rjm",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 14\n24 69 54 45 88 5 65 87\n10 46 84 vo zy p e mhiho\n34 96 90 52 89 85 63 90\n50 15 47 t wvlkr jus rz h\n23 19 18 73\n60 77 57 pz\n9 77\n58 27 76 64 20 14 57 13\n59 19 56 tyumw l zfm oytbw d\n41 89 19 61 27 17 66 97 97 68 83 8\n29 71 66 t sk ark jac bzf a zz e zavms\n22 42 75 6 96 61 81 59 47 52 17 31\n93 47 1 dz mqqbr wysd n uqns b cfowo mri xyb",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "332 269\n384 356 398 236 380 449 244 163\n224 218 499 ufwmw va ds s dnug\n160 148 229 425 208 480 455 268\n383 193 54 h nbp dfgs cq cr\n307 59 212 87\n349 222 116 kzlrr\n53 329\n157 306 193 416 54 145 53 423\n320 132 356 iaxw ws a jqsq mimrz\n72 116 464 243 268 454 262 375 77 74 203 282\n486 494 445 yfm vm p b rwt rfu lba ztvn ssu\n484 463 263 357 189 82 57 302 58 430 333 417\n482 401 68 wwkbb gpth laq eksgn wq b nr qin fq",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 444\n85 399 500 452 360 407 206 125\n115 455 101 dvv y ettq jx pru\n166 402 70 300 367 100 239 243\n107 317 414 fgl l efo senly rbtp\n116 98 127 464\n223 156 316 iq\n304 70\n290 185 68 192 71 51 394 245\n386 338 386 b o fuqaz l kp\n129 220 441 411 329 432 89 235 307 138 313 276\n254 202 141 f lb dohi x prd hj puit c tbsmz\n406 265 493 194 394 173 105 172 366 153 230 448\n448 201 105 or abkx chxua nw mjeuc frrs c jlau fl",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "182 88\n478 132 298 362 128 412 491 129\n136 418 406 qzuhl t agf joob zpzq\n500 270 443 376 497 56 128 140\n171 251 88 uql mtl c x usun\n137 181 198 350\n394 258 482 akfr\n117 142\n315 362 140 384 81 58 110 393\n54 470 270 kyc iyi e gmifo oce\n299 185 218 260 348 297 219 105 257 328 356 148\n51 341 401 uqsq brhgr iaa fgr wni lmxa uxjds f vr\n115 475 366 230 71 441 470 466 132 391 71 275\n66 354 73 llll kday hoj hbwo mvsw vo wx x enj",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "451 109\n61 88 51 123 488 196 189 480\n240 96 396 snytn yr oi o xjwu\n199 52 82 252 457 195 431 104\n306 215 417 xbu bij wppup gqkgh srwj\n291 387 385 148\n467 258 206 flyw\n80 69\n465 177 96 473 74 436 369 185\n71 460 294 hawyl tooy pldli mrfw c\n352 435 277 129 414 156 377 222 478 333 454 151\n469 450 167 ght gyn eysfj edkcq rdao y v cuhts msls\n307 239 96 149 207 246 73 76 473 173 294 124\n378 326 97 jt kq z ja til yh cej l aqxf",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "377 149\n298 284 353 460 409 120 399 327\n269 247 443 vinx xj t nyr bv\n395 268 383 403 65 230 69 121\n254 262 272 mfru eegb d lswqp n\n81 486 485 494\n64 411 86 lza\n264 262\n219 444 181 446 386 423 156 279\n369 396 213 mab hlc vtr scdjg w\n108 424 500 275 161 440 360 431 253 86 282 112\n284 468 450 rikwx wml dvkl nf wkmz he g x qk\n410 449 132 166 463 171 479 385 229 436 349 303\n255 398 147 sqlxw cvzmf dei rlxa kjnh npt y s uoo",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "234 83\n251 377 155 431 307 150 282 425\n278 462 426 rzo yttzp muqa dyb km\n88 341 389 346 479 299 402 64\n119 93 105 u x zbhrb xgbyr eb\n182 431 122 165\n471 437 402 n\n66 103\n96 460 373 429 293 93 92 226\n354 197 477 m bqega sqr lb v\n213 458 368 336 324 65 228 216 372 474 419 317\n238 155 63 ysapn jxwkj jtfou hs t avi gw wuqs chbsz\n208 462 204 150 60 394 300 57 428 315 126 284\n158 80 92 kctzo j h ws ugwuv tyf tmlm vh k",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "334 306\n231 239 472 206 208 257 309 306\n388 406 497 t eqjg lzbh kgh sqnm\n480 319 57 161 479 482 310 455\n82 373 121 vsbt ro xto vn yo\n423 316 289 497\n229 77 203 zbwp\n230 436\n491 490 79 408 57 185 252 132\n135 227 240 r fyrbb mfi fj nuqxs\n463 325 347 96 414 56 322 430 396 461 103 409\n287 431 444 a vhg n ujfev trry z jgtvn lqln opd\n453 97 488 360 278 59 465 92 459 93 455 482\n478 143 145 nj qfte sum pvivb aim p nrgo tvkv sdxo",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 nhd soj lu wjwff uw\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 m tryv wyh gf yzx\n1000 1000 1000 1000\n1000 1000 1000 ywjev\n1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 x cy jbshe yjruj cjadu\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 wb an fmxkg xwd va ey czhb cdh xc\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 mpb nwj jo ht l yrril ostng tegk gnc",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 pyfno jfie e qg ex\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 p q kex jslsk ckqnh\n1000 1000 1000 1000\n1000 1000 1000 zcu\n1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 rcuew se tsxg oftll cbja\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 fhqa nsa r eoccb uxfiw pkh feubs kgfph lyz\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000 1000 yei o r lct yvca qm i c t",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999\n999 999 1 2 1000 1 999 1000\n999 1000 999 c nuji mgieu s fk\n2 1000 2 1000 999 2 2 1000\n2 1 1000 vlcf uwjok uajk w uneem\n2 999 999 1\n1000 999 1000 fncfa\n2 1\n999 999 999 1 2 1000 1000 1000\n1000 2 1000 zzxwp o lier a vtiy\n1000 999 2 2 1000 1000 2 2 999 999 2 999\n2 1000 999 k llf ewjz xd sns tjoz wl k wkopx\n2 2 1 1 1 1 999 999 1000 1000 1000 999\n999 1 1 diyn h wkuhh mmnde mnoo t v mc iqo",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\n2 2 2 999 1 1000 2 2\n1000 2 2 i rrgdk dhj c ozyw\n1000 999 1 1 2 1 2 999\n999 2 1000 dns dxtb me pq h\n1 2 999 999\n1 1 999 uy\n1000 1000\n1000 999 2 999 1000 999 2 2\n1000 1000 1000 c jirm p egnik cm\n1000 2 2 1 1000 2 999 999 2 1 1000 2\n1000 1000 2 f q dmnit ybgwk vidzt u lvtb xpyp psllm\n2 1000 1000 2 1000 1000 1000 1 1 999 2 1\n999 2 1000 p dka nf jp yski zi cax s k",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

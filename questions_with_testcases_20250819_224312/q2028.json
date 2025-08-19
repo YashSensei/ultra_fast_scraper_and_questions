@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Good Debugging",
+  "tags": [],
+  "text": "Any good coder knows that writing a program is only half the battle - and each member of The Team is most certainly a good coder. Maybe you're not a good coder, though, and you're wondering what the other half is. Debugging, of course!The Team has a program with $N$ ($1 \\leq N \\leq 10^6$) lines (conveniently numbered $1..N$) - and, unfortunately, every single line happens to initially have a bug in it. The programming language they're using will run the program from the start, line by line, and will always crash as soon as it encounters a total of $L$ ($1 \\leq L \\leq 10^6$) buggy lines.The Team will make $M$ ($1 \\leq M \\leq 10^6$) attempts to debug the program. The $i$th attempt will consist of modifying every line in the inclusive range of lines $a_i..b_i$ ($1 \\leq a \\leq b \\leq N$). In particular, these coders are so amazing that, every single time they modify a buggy line, it becomes perfect! However, every time they modify a perfect line, they instead introduce a bug into it. After every debugging attempt, The Team will run their new program, and observe how many lines of code it gets through before crashing. Sometimes, the program may even terminate successfully! The modified code will then carry over for future modifications.Now, the members of The Team would like to know how their program will fare throughout the debugging session. Are your debugging skills good enough to figure that out?InputFirst line: 3 integers, $N$, $M$ and $L$Next $M$ lines: $a_i$ and $b_i$, for $i=1..N$Output$M$ lines: Either 1 integer, the number of lines the program executes before crashing after the first $i$ modifications, or the string \"AC?\" if it doesn't crash at all, for $i=1..M$.ExampleInput:6 4 22 44 61 11 2Output:54AC?2Explanation of Sample:The following table shows the status of each line of code after every modification, with newly-changed lines shown in bold font. Buggy lines represented by 1s, and correct ones by 0s.After 1 modification, then, the program will encounter its second bug at line 5, at which point it will crash. Similarly, after 2 modifications, it will crash after 4 lines, and after 4 modifications, it will crash after just 2. After 3 modifications, however, it will not crash at all, as the program will contain only 1 bug at that point.",
+  "sample_input": "Input:6 4 22 44 61 11 2Output:54AC?2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/GOODE",
+  "scraped_at": "2025-08-17 00:34:01",
+  "test_cases": [
+    {
+      "input": "6 4 22 44 61 11 2",
+      "expected_output": "54AC?2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 7 5 5 1 9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 8 5 3 5 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3 3 9 8 1 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 72 74 83 100 8 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "5 12 28 6 95 14 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "97 88 77 34 4 22 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 80 65 61 63 95 60",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "84 57 43 70 77 45 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "213 267 290 432 451 358 350",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "347 440 474 301 107 298 358",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "345 187 210 454 132 252 304",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "406 103 211 496 308 198 108",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "132 352 219 436 392 108 111",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "63 240 480 303 69 325 265",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "169 174 356 476 217 275 62",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 999 2 1000 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 2 1 2 1000 2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

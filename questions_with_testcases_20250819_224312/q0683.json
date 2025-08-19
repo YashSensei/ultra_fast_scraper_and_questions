@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Stun Boosting",
+  "tags": [],
+  "text": "People in Nloglônia are very addicted to video games as they spend hours playing every day. As they are a very competitive community, everyone competes to see who has more gaming achievements or trophies. Every time someone starts a new game, they spend some time playing the single player portion of the game, but what they really like is the multiplayer.There's a game that became very famous in the city involving some assassins and their creed. Anyway, the objective of the multiplayer game is to hunt and assassinate others assassins. The player's skill is measured by how much experience (XP) he has, which can be accumulated by doing various actions in the game, i.e. killing or poisoning a target, running away from who wants to kill you or stunning someone, and so on.But there's a problem, everyone wants to complete the game as fast as they can, in order to start a new one. To complete this game, there's an achievement that's obtained when a player reachesXexperience points. You possibly need to play a lot of multiplayer rounds to reach that amount of XP, and that's why a group of friends decided to boost their XP, it consists of helping everybody in the group to reach a desired amount as fast as possible.Here's how this match goes. There are always 6 players separated in 3 teams with 2 players each. Let's give each player an identifier from 1 through 6, and assume that the teams are organized as follows: players 1 and 2 in the first team, players 3 and 4 in the second team, and players 5 and 6 in the third team. The game is separated in rounds, each taking 4 minutes to complete.To boost their experiences, the players agreed that an easy and fast way to do it is through the stun boosting. This boosting method consists of stunning each other instead of killing. It's true that killing will give you more XP points, but the dead player end up spending too much time to respawn and to meet with the someone else again. The boosting will happens as follows. Everyone must meet at the center of the map to start stunning each other. Two groups with one player from each team will be formed in this location. The players takes different amount of time to reach the center of the map (depending on where they first spawned) so the group that reaches the center first will start boosting first. If both players from the same team gets to the center at the same time, the one with lower identifier must be chosen to be part of the first group.As soon as a group meet at the center of the map they start stun boosting. Every time a player gets stunned he lands on the ground for some time, and then gets up. A stun round consists of all players in the group stunning and getting stunned. An example of a stun round:player 1 stuns player 2, player 3 stuns player 1, player 2 waits to get up and stuns player 3. In this problem, a stun round takes 7 seconds. This happens over and over until the round is over.If this wasn't enough, the players are following these two guidelines that they created to raise the experience even faster, and be as fair as possible with everyone in the group. First, if two players from opposing teams meet up at the center, they must wait for the third one to come, and then start boosting (they hold still until the group has three members). Second, if they know there's no time left in the round to complete a stun round, they will not do it, instead, if there's 2 or more seconds remaining they have time to poison each other, getting some extra and welcome XP.For each stun the player gets 300XP, and for each poison kill the player gets 1800XP. Note that the XP earned stunning will be granted to the player at the end of the stun round (that takes 7 seconds) and the XP earned poisoning will be granted in the end of the 4 minutes round. Also, you must note that when poisoning, the three players are able to poison someone else because it takes some time for it to really kill them. The players will choose to poison each other if and only if there's no time left for a stun round (even though poisoning should work better to raise the experience).You are given the amount of XP the players want to reach, the number of rounds they played and the initial amount of experience the players had before starting boosting. For each round, you are given the time that each player takes to reach the center of the map. The players want to know who was the player that reached the experience goal first, and in which round he did. If no player reached the goal, they want to know the experience of everyone after they played all the rounds.InputThe input contains several test cases. The first line of a test case contains two integers,XandR(1 ≤X≤ 650000, 1 ≤R≤ 1000), which represents the amount of experience the players want to achieve and the number of rounds they played, respectively.The second line of a test case contains six integersXi(1 ≤i≤ 6) that represents the initial experience of the ithplayer. ThenRlines follows, each containing six integersTi(1 ≤i≤ 6; 0 <Ti< 240) representing the time that theithplayer reached the center of the map on that round.The end of the input is marked byX=R= 0.OutputFor each test case your program should output one line. If some player reached the desired experience, you should output two integers indicating the identifier of the first player to reach the desired experience, and the numbers of rounds necessary to this player to do so. If more than one player reached the desired experience at the same time, output the one with lower identifier. In the case that no player reached the desired experience, you should output \"-1\" and then six integers containing the amount of experience each player had after playing all the rounds.ExampleInput:10000 1\r\n1000 12345 50000 9000 100 1\r\n30 10 20 20 10 30\r\n650000 1\r\n100 200 300 400 500 600\r\n20 10 30 20 20 30\r\n0 0Output:2 0\r\n-1 9100 11300 9300 11500 11600 9600",
+  "sample_input": "Input:10000 1\r\n1000 12345 50000 9000 100 1\r\n30 10 20 20 10 30\r\n650000 1\r\n100 200 300 400 500 600\r\n20 10 30 20 20 30\r\n0 0Output:2 0\r\n-1 9100 11300 9300 11500 11600 9600",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/STUN",
+  "scraped_at": "2025-08-17 00:33:07",
+  "test_cases": [
+    {
+      "input": "10000 1\r\n1000 12345 50000 9000 100 1\r\n30 10 20 20 10 30\r\n650000 1\r\n100 200 300 400 500 600\r\n20 10 30 20 20 30\r\n0 0",
+      "expected_output": "2 0\r\n-1 9100 11300 9300 11500 11600 9600",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 1\n3 7 10 4 3 5\n7 6 5 6 2 9\n1 5\n7 9 4 8 5 7\n10 2 7 6 8 9\n5 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8\n2 4 7 3 1 10\n2 9 9 4 3 6\n3 8\n10 8 8 3 2 5\n3 6 6 2 4 4\n9 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 8\n2 10 9 5 5 3\n5 4 8 7 3 6\n5 7\n4 4 4 4 3 7\n1 5 6 5 4 2\n7 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "81 15\n48 19 92 86 41 99\n66 42 16 1 43 73\n22 23\n9 88 2 5 70 20\n48 28 37 23 85 28\n84 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 89\n58 35 2 43 47 25\n55 48 57 34 54 58\n57 62\n8 96 14 93 9 23\n89 83 88 97 83 100\n100 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 48\n47 5 18 15 34 53\n72 90 92 18 98 51\n99 1\n75 18 51 21 94 68\n66 55 68 46 55 42\n48 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 41\n80 96 64 34 91 55\n22 39 60 67 4 45\n96 28\n2 9 9 7 29 81\n15 8 28 44 2 82\n63 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "68 39\n93 57 80 49 16 86\n84 66 40 40 23 33\n55 33\n51 3 91 89 78 91\n85 95 56 72 93 42\n31 98",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "444 415\n357 261 425 402 78 236\n206 162 334 200 275 424\n232 397\n315 160 280 402 102 183\n424 429 413 275 200 380\n222 99",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "353 148\n461 80 252 183 493 149\n331 383 348 359 365 308\n338 258\n254 149 442 104 149 131\n267 404 229 67 195 120\n251 322",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "437 315\n310 255 342 459 374 80\n254 72 389 443 440 72\n170 218\n113 436 431 65 445 88\n222 491 112 310 190 400\n164 404",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "295 461\n483 488 478 157 115 406\n344 213 180 191 417 185\n150 292\n458 402 425 497 187 417\n449 498 379 444 340 124\n320 166",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "354 377\n304 315 443 387 336 450\n326 493 369 159 71 422\n277 366\n335 340 187 85 245 318\n71 319 288 357 355 204\n436 417",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "390 174\n493 272 377 215 243 229\n267 420 167 189 144 415\n475 157\n429 239 160 127 95 400\n391 282 96 337 461 415\n359 292",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "174 455\n195 498 462 337 362 118\n83 229 344 136 253 323\n97 414\n480 128 97 352 205 312\n463 401 404 99 174 250\n158 232",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000 1000 1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2\n1 999 1000 2 999 1000\n999 1 1000 1000 999 2\n2 1000\n2 1000 1000 999 2 1\n999 999 1 1 999 2\n2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1000\n2 1 1000 2 1000 1000\n1000 1 2 1 2 1000\n999 2\n999 1 999 1 999 999\n999 2 2 2 2 1000\n1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

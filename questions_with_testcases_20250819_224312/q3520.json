@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Dark Assault",
+  "tags": [],
+  "text": "Original statementRainbowland is a planet full of life and adorable beings, however, this night, the spies Andreina, Marge and Teresa agreed to breakdown the security of a building led by a teddy bear, this teddy bear is mean! Don't get the wrong idea, the rainbowland spies agency (RSA) just want to make things go right in they colorful and lovable world.Andreina offered a plan to take control of the building, she and Teresa will go to the roof of another building, seeing the target building, they will tell Marge to take down N rivals on a building of F floors, as she won't use the stairs, there are a series of E elevators that are in the building, the elevator can only go up or down P floors (more explanation on input details).While Andreina and Teresa sees from outside, Marge must take down immediately the rivals, so they cannot leave them alive, otherwise, they will alert the others and the mission will be failed, when fighting a rival, the rival loses K points of life during each second using normal abilities, you can always assume that Marge won't fail at any fight, in addition, Marge can use some special abilities, these abilities allow Marge to deliver powerful blows, however, these special abilities can only be usedonce, so she must use it wisely, as Marge doesn't want to waste energy on a single enemy, she will give two special ability punches at most, if she can do it. She can always combine, so at last, she will choose between what is best (If normal attacking, if using one special ability or two and normal attacking).Help the spies Andreina, Teresa and Marge to find the minimum time so they can take the building and defeat all the rivals, having in consideration that:Marge takes one minute to use the elevator.Each round of fight lasts one minute.Marge starts from floor 1 and she can go from floor 1 to F, never lower nor higher.If Marge uses an special ability or two special abilities, it will still count as she uses on one round (see point 2).There will befrom 1 to 7rivals in all the building.The floor 1 will be always rival free, therefore, thefloor 1will have a value of zero (0).InputFirst line will contain an integer T denoting T description of the test cases.For each T you will have four integers F, N, K, E denoting, respectively, the number of floors in the building, the number of special ability that Marge can use, the damage K that Marge delivers after a single blow and the number E of elevators.Then, in the next line, F integers separated by a single space will follow, denoting the description of the building, a number 0 means that there are no rivals at the floor, a positive number will represent the life points that the rival has at the moment of the assault.The next line will contain N integers separated by a single space representing the values of a special blow given by Marge, remember that she can only deliver two blows at most for each rivals and she can use only once the special blow.The next line will contain E integers separated by a single space, meaning the description of the elevators, for each positive number means that the elevator will go up P floors, if the number is negative, means that the elevator will go down P floors, you can always asume that P will never be 0.OutputFor each test case, print the string “Scenario #i: V“ where i denotes the i-th test case you're analyzing (starting from 1) and V is the minimum time that the team can defeat the all rivals, print -1 if the mission will fail.ExampleInput:3\r\n4 2 3 2\r\n0 10 0 15\r\n10 5\r\n2 -1\r\n10 4 2 5\r\n0 0 0 10 0 8 7 8 10 100\r\n10 10 10 80\r\n2 -1 5 -3 1\r\n3 3 2 1\r\n0 100 100\r\n150 200 150\r\n2Output:Scenario #1: 8\r\nScenario #2: 26\r\nScenario #3: -1Explanation of the First Test CaseAt time1, Marge goes from floor 1 to floor 3, then, from floor 3 to floor 2, she choose to beat the rival with life 10 with normal blows (it will take4units of time to beat it), at this time Marge has already wasted6minutes of time, then, she will take the elevator up to floor 4, then will use her two special abilities to deliver a powerful blow on rival at floor 4 with 15 life points (15-10-5 = 0) beating it. Final time of the mission,8.Constraints1 ≤ T ≤ 102 ≤ F ≤ 1281 ≤ N ≤ 71 ≤ K ≤ 10001 ≤ E ≤ 500 ≤ Fi ≤ 10001 ≤ Ni ≤ 1000-F ≤ Ei ≤ F with Ei ≠ 0Clarification: There is no blank lines between Scenarios in the output.",
+  "sample_input": "Input:3\r\n4 2 3 2\r\n0 10 0 15\r\n10 5\r\n2 -1\r\n10 4 2 5\r\n0 0 0 10 0 8 7 8 10 100\r\n10 10 10 80\r\n2 -1 5 -3 1\r\n3 3 2 1\r\n0 100 100\r\n150 200 150\r\n2Output:Scenario #1: 8\r\nScenario #2: 26\r\nScenario #3: -1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/DARKASLT",
+  "scraped_at": "2025-08-17 00:34:30",
+  "test_cases": [
+    {
+      "input": "3\r\n4 2 3 2\r\n0 10 0 15\r\n10 5\r\n2 -1\r\n10 4 2 5\r\n0 0 0 10 0 8 7 8 10 100\r\n10 10 10 80\r\n2 -1 5 -3 1\r\n3 3 2 1\r\n0 100 100\r\n150 200 150\r\n2",
+      "expected_output": "Scenario #1: 8\r\nScenario #2: 26\r\nScenario #3: -1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n8",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n9\n8\n6\n2\n4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n9\n4\n2\n3\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "17\n42712700\n80985499\n23000471\n86314137\n17037744\n34810013\n36938118\n25908549\n35932018\n40192166\n21886522\n69782720\n81302313\n61023113\n7191990\n18924285\n21186253",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "9\n212351\n32025336\n19591076\n87976052\n68057707\n45440885\n48744501\n51954553\n42689907",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n17095167\n17491429\n43338824\n14237044\n87698745\n43840145\n19305416\n91309423\n90588078\n69429046\n31837969\n60077657\n92058812\n79498883\n74570868\n13541168\n76307330\n73428180\n86657039",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "5\n84178110\n67274931\n14707118\n97049482\n5729932",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "19\n44621154\n56209559\n89523288\n32453428\n53397805\n89124048\n10291535\n6903292\n27898683\n78183664\n29692392\n24557969\n85307879\n86317968\n55464763\n63814927\n10996666\n27987555\n95056440",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "52\n86533\n24221\n41500\n39611\n56283\n69968\n87559\n24266\n65207\n69395\n57159\n69268\n72468\n77107\n77095\n14501\n21794\n98284\n50602\n450\n38140\n93836\n98067\n90960\n16195\n37303\n77821\n82486\n18387\n19554\n64400\n59805\n3649\n55372\n473\n29486\n3410\n55793\n23207\n72961\n32277\n3097\n76280\n310\n40113\n60355\n81854\n30065\n26399\n84454\n35042\n87446",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "57\n62470\n69549\n38372\n55206\n86814\n91864\n77889\n60212\n10978\n86224\n95815\n77269\n83706\n74141\n35294\n90973\n28587\n1565\n11490\n12786\n87012\n97271\n60588\n37650\n36225\n51001\n96194\n63380\n65038\n9702\n89481\n34127\n85581\n83828\n82769\n11901\n32974\n32691\n80586\n66824\n31406\n2222\n1410\n39012\n57676\n12338\n7604\n43619\n41501\n52786\n70843\n41850\n90378\n61596\n47072\n46213\n53418",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "46\n26193\n68099\n68875\n78961\n58883\n33151\n14673\n43595\n62612\n79097\n95792\n5194\n67847\n61937\n4669\n10447\n88961\n25279\n73671\n14693\n26033\n14254\n97332\n32291\n79801\n88096\n9852\n56612\n58229\n8572\n37357\n55578\n46581\n97030\n41860\n41145\n90150\n23341\n47208\n27897\n93831\n20534\n5636\n2864\n6245\n7358",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "66\n85985\n91782\n60681\n73550\n6191\n13312\n63101\n18432\n51946\n18854\n39840\n9621\n99576\n2546\n90439\n16128\n64591\n62695\n7968\n48194\n87252\n22195\n78456\n76324\n2691\n16123\n81341\n5097\n88667\n62470\n7670\n23972\n11723\n11613\n32501\n51682\n86420\n87259\n23509\n61184\n65543\n76432\n97514\n67953\n37074\n56943\n12716\n54870\n30856\n33596\n90758\n14207\n91287\n78109\n93253\n15653\n18655\n74017\n4498\n34118\n76870\n22997\n60416\n67191\n87914\n58141",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "57\n371\n31311\n73721\n86051\n30700\n72460\n78482\n76044\n23455\n89418\n5128\n84304\n12559\n97527\n60297\n74854\n18328\n93433\n51151\n53754\n8302\n92651\n67017\n28605\n95784\n59264\n45974\n44334\n34916\n13579\n63029\n34074\n43405\n9299\n37692\n77692\n50752\n80462\n18972\n58482\n87200\n67949\n16454\n34494\n38283\n61540\n98854\n37622\n64605\n1909\n1380\n45678\n50629\n35433\n19604\n90530\n32323",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "70\n2098\n93315\n85848\n82796\n98926\n73675\n34574\n41823\n16126\n50933\n83199\n29224\n41412\n53625\n46228\n21208\n90850\n80659\n99504\n7853\n36561\n31600\n35663\n95532\n59026\n5846\n9387\n44865\n44986\n7919\n90565\n65165\n24427\n48062\n90363\n59511\n29241\n68151\n24822\n91841\n5033\n55950\n85335\n52227\n39387\n85175\n66119\n91150\n77485\n16359\n65494\n76912\n74517\n98226\n70159\n32636\n987\n12751\n49167\n4389\n48372\n37788\n23666\n3468\n9861\n94290\n81075\n85722\n14962\n56024",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "33\n30928\n62860\n77603\n40352\n59499\n36102\n98680\n68329\n7767\n28549\n99440\n13727\n17255\n16162\n96279\n15905\n67955\n76260\n74774\n21294\n98114\n22901\n65617\n61725\n43537\n33645\n45484\n52960\n9940\n47197\n69399\n67977\n92134",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "71\n16368095\n17605519\n81761538\n75693621\n84071026\n14653029\n12995498\n11861121\n55194613\n24178541\n42527408\n44553323\n95975659\n12906362\n86513623\n48542032\n30152470\n1189294\n87042610\n29113166\n87187297\n37949204\n75122586\n67015226\n58834591\n5703528\n42168114\n7378841\n66021170\n16206696\n50222000\n74774685\n40677929\n69398810\n88310790\n29010715\n43666959\n25452961\n20870513\n647751\n30447021\n86942810\n45295917\n1134105\n27100182\n91694569\n78536865\n27836751\n82527427\n47803418\n11228948\n33444150\n41132074\n43577479\n26962718\n32012698\n47251453\n38332115\n17909249\n45874513\n80231224\n6507847\n5826823\n49961271\n23552791\n32842559\n53581926\n36707889\n12489652\n45889260\n90294129",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 71)"
+    },
+    {
+      "input": "71\n79657885\n81582659\n34212526\n77385057\n7486884\n24860007\n17733739\n43577395\n45669230\n78396026\n25477414\n56357602\n16163455\n45095085\n71042584\n46604947\n37898479\n57257176\n24508112\n40651194\n13845972\n19702837\n28849919\n48064160\n93585843\n15764968\n90372541\n45575445\n26067570\n49285778\n41743801\n82593894\n94500880\n62488629\n75135568\n55223941\n12230860\n85455632\n89680613\n28218279\n97846583\n55142740\n38629805\n4980112\n69008181\n90336125\n3532563\n77999058\n69775962\n49501526\n58007445\n23974085\n940940\n77512733\n98004461\n28960462\n81972725\n54874480\n78120803\n21323562\n61384101\n78167538\n97679140\n83015389\n64219631\n590879\n98182612\n76439098\n92140076\n26232800\n17088470",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 71)"
+    },
+    {
+      "input": "2\n1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "1\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 1)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

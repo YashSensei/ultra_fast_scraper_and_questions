@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Locomotive",
+  "tags": [],
+  "text": "Mirko and Slavko have finally gotten jobs as locomotive drivers on\r\nthe Croatian Railroad. As early as the first day of work, they got an\r\nassignment. Each of them was to take their locomotive from a certain\r\ntown and visit as many towns as possible.Mirko is an experienced driver, so he is afraid of nothing.\r\nThis was, however, Slavko’s first train ride and he can do absolutely\r\nnothing by himself. Luckily, all the locomotives have radios, so Slavko\r\ncan drive the locomotive normally as long as he is within the range\r\nof Mirko’s radio to give him instructions.N towns have been given in a coordinate plane. Some of the towns are\r\nconnected by railroad. Mirko and Slavku start their tour in different\r\ntowns, and so that they are at most D kilometers away from each other.The locomotives can use all railroads, at any speed and in any\r\ndirection. Locomotives can switch railroad tracks in towns only.\r\nMirko and Slavko may be at most D kilometers away from each other at\r\nany moment in time.Write a program that will determine all possible towns that Slavko\r\ncan visit, as was described above.InputThe first line of the input file contains the numbers N and P, and\r\na real number D, 2 ≤ N ≤ 100, 1 ≤ P ≤ 3000, 1 ≤ D ≤ 10,000.\r\nThe number N is the number of towns, the number P is the number of\r\nrailroads, and D is the range of the radio in kilometers (a decimal\r\nnumber two digits precise). The towns are numbered 1 to N. Each of\r\nthe following N lines contains data describing one town, i.e. two\r\nintegers, X and Y, -5000 ≤ X, Y ≤ 5000, representing the town’s coordinates.Each of the following P lines contains data describing one railroad\r\ntrack, i.e. two integers G1 and G2, saying there is a railroad\r\ntrack connecting G1 i G2.The next line contains the starting positions of Mirko and Slavku,\r\nthe integers U and V. Mirko starts from town U, Slavko from town V.\r\nU and V will represent two towns separated at most D kilometers\r\nin distance.OutputThe output file should contain the numbers of all the towns Slavko\r\ncan reach. These numbers should be sorted in increasing order, each of\r\nthem written on a separate line.SampleInput:5 4 1.5\r\n0 1\r\n0 0\r\n4 1\r\n4 0\r\n2 2\r\n1 3\r\n1 5\r\n3 5\r\n2 4\r\n2 1Output:1\r\n3Input:8 6 4\r\n0 0\r\n4 3\r\n8 0\r\n16 0\r\n0 -1\r\n8 -1\r\n12 -4\r\n16 -1\r\n1 2\r\n2 3\r\n3 4\r\n5 6\r\n6 7\r\n7 8\r\n1 5Output:5\r\n6\r\n7\r\n8Input:8 6 2\r\n0 0\r\n1 0\r\n2 0\r\n1 1\r\n0 1\r\n1 3\r\n2 1\r\n1 -10\r\n1 2\r\n2 4\r\n2 3\r\n5 6\r\n6 7\r\n2 8\r\n5 1Output:1\r\n2\r\n3\r\n4",
+  "sample_input": "Input:5 4 1.5\r\n0 1\r\n0 0\r\n4 1\r\n4 0\r\n2 2\r\n1 3\r\n1 5\r\n3 5\r\n2 4\r\n2 1Output:1\r\n3",
+  "sample_output": "Input:8 6 4\r\n0 0\r\n4 3\r\n8 0\r\n16 0\r\n0 -1\r\n8 -1\r\n12 -4\r\n16 -1\r\n1 2\r\n2 3\r\n3 4\r\n5 6\r\n6 7\r\n7 8\r\n1 5Output:5\r\n6\r\n7\r\n8",
+  "link": "https://www.spoj.com/problems/MTRAIN",
+  "scraped_at": "2025-08-17 00:33:45",
+  "test_cases": [
+    {
+      "input": "5 4 1.5\r\n0 1\r\n0 0\r\n4 1\r\n4 0\r\n2 2\r\n1 3\r\n1 5\r\n3 5\r\n2 4\r\n2 1",
+      "expected_output": "1\r\n3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "8 6 4\r\n0 0\r\n4 3\r\n8 0\r\n16 0\r\n0 -1\r\n8 -1\r\n12 -4\r\n16 -1\r\n1 2\r\n2 3\r\n3 4\r\n5 6\r\n6 7\r\n7 8\r\n1 5",
+      "expected_output": "5\r\n6\r\n7\r\n8",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "10 7 6\n1 8\n7 9\n1 7\n10 5\n8 2\n8 6\n8 5\n5 6\n2 8\n1 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1 7\n8 1\n3 9\n8 7\n4 10\n8 3\n4 7\n8 5\n3 2\n3 7\n3 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 1 4\n4 5\n9 5\n9 1\n8 10\n9 6\n5 4\n6 5\n3 8\n1 2\n6 7",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "97 58 59\n91 94\n74 40\n30 49\n44 1\n62 86\n78 97\n17 70\n32 31\n94 5\n95 1",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "19 98 99\n32 43\n66 62\n32 86\n45 89\n64 39\n21 24\n91 77\n73 37\n63 51\n63 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 95 29\n63 5\n76 8\n72 1\n6 47\n80 15\n27 9\n58 41\n50 48\n94 6\n77 76",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 80 78\n19 2\n11 81\n81 37\n34 62\n89 97\n41 23\n100 98\n42 100\n50 27\n36 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "39 96 80\n47 84\n85 89\n68 76\n41 70\n81 16\n51 35\n73 12\n73 54\n94 54\n90 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "22 25 29\n41 26\n45 6\n25 19\n37 16\n10 12\n20 50\n37 36\n33 9\n35 8\n22 46",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22 12 44\n7 49\n12 32\n17 12\n14 42\n29 13\n27 35\n31 42\n20 26\n10 13\n34 21",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 9 18\n38 39\n49 33\n38 31\n50 29\n12 33\n40 27\n32 31\n23 48\n44 46\n29 11",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "20 29 23\n42 23\n35 37\n25 14\n25 49\n24 18\n20 33\n34 29\n45 22\n47 23\n5 28",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 19 43\n27 42\n29 43\n39 18\n5 25\n46 40\n13 30\n39 17\n26 30\n20 28\n16 21",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14 13 42\n38 31\n27 35\n31 28\n12 25\n12 25\n48 6\n48 45\n10 48\n40 13\n36 36",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "33 8 23\n39 31\n46 18\n22 43\n40 41\n31 48\n20 29\n22 48\n19 48\n11 39\n6 49",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100\n100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "99 1 2\n2 99\n100 99\n1 100\n2 100\n1 100\n2 1\n100 1\n100 100\n2 99\n100 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

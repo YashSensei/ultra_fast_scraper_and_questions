@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "FROGGER",
+  "tags": [],
+  "text": "“Frogger” was one of the first really popular arcade games after it was introduced by SEGA in 1981. The game consists of helping a frog cross a multi-lane motorway without getting run over by a car. You are given a\r\nview of an n-lane motorway where each lane consists of m different spaces that can either be empty or be occupied by a car. On each side of the motorway is a curb on which the frog can move freely. In the traffic lanes the frog can only move on the spaces not occupied by cars. The motorway is constructed in such a way that the direction in which the cars travel alternates between the lanes, with cars in the first lane (the one closest to the starting point of the frog) moving to the right. The cars never switch lanes and only move one step forward in each turn. To ensure a steady supply of traffic, a car that reaches the boundary of its lane is re-entered at the opposite end of its lane.\r\n\r\nIn one turn of the game all the cars move one step in their assigned direction while the frog can either move one step to the right or to the left, or one step up or down (between lanes or between the curb and the adjoining lane), or it can stand still. Contrary to the cars the frog cannot “wrap-around” i.e. move in one step between the first and last position of a lane or a curb.\r\nThe frog and the cars move simultaneously. Thus the frog can move to a space given that there will be no car on it in the next round. If the frog is on the same space at the same time as a car it is run over and dies. Note\r\nthat the frog can jump over an adjacent approaching car in the same lane as itself.\r\nYour job is to write a computer program that will calculate the minimum number of turns needed for the frog to get from its starting position on the curb to its final position on the curb on the other side of the road or to determine that this is not possible within a given number of rounds.InputFirst there will be a line containing the number of scenarios you are asked to help the frog in. For each scenario there will first be a line containing a\r\npositive integer x ≤ 105giving the maximum number of rounds that can be used. The next line contains the number of lanes n, 1 ≤ n ≤ 20, and the length of each lane m, 1 ≤ m ≤ 50. Each of the next n + 2 lines will contain a string of m characters. The character X indicates a car, the character O (letter O) indicates a free space, the character F gives the starting position\r\nof the frog, and the character G gives the final destination of the frog. The first line indicates the destination curb, consisting of O’s and exactly one G\r\nwhile the last line gives the starting curb consisting of O’s and exactly one F, while the intermediate lines each represent one lane of the motorway.OutputThe output will be one line per scenario, either giving the minimum number of turns needed before the frog can get from its starting position to the final position without getting run over by a car or a statement indicating that this was not possible within the maximum number of allowed turns.ExampleInput:2\r\n10\r\n4 4\r\nOOGO\r\nXXOO\r\nXOOX\r\nXXOO\r\nXXOO\r\nOOFO\r\n2\r\n2 2\r\nOG\r\nXX\r\nOO\r\nFOOutput:The minimum number of turns is 9.\r\nThe problem has no solution.",
+  "sample_input": "Input:2\r\n10\r\n4 4\r\nOOGO\r\nXXOO\r\nXOOX\r\nXXOO\r\nXXOO\r\nOOFO\r\n2\r\n2 2\r\nOG\r\nXX\r\nOO\r\nFOOutput:The minimum number of turns is 9.\r\nThe problem has no solution.",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FROGGER",
+  "scraped_at": "2025-08-17 00:33:47",
+  "test_cases": [
+    {
+      "input": "2\r\n10\r\n4 4\r\nOOGO\r\nXXOO\r\nXOOX\r\nXXOO\r\nXXOO\r\nOOFO\r\n2\r\n2 2\r\nOG\r\nXX\r\nOO\r\nFO",
+      "expected_output": "The minimum number of turns is 9.\r\nThe problem has no solution.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n4\n6\n10\n3\n1",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "3\n10\n5\n7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "11\n8438083\n89997784\n14556625\n28879496\n2566992\n89426739\n65244841\n7594960\n46125811\n37107742\n57367087",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "13\n89940254\n3055518\n39162808\n32933653\n76111960\n5119319\n10747299\n34687010\n64521002\n99657567\n87229368\n32404643\n96291874",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n82665634\n25424411\n14187135\n70514483\n3305452\n10005497\n58407383\n33004548\n37955961\n74193984\n95277393\n92913326\n54350322\n45351893",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "10\n89806390\n36115017\n98507114\n27679221\n90660928\n17989445\n55957289\n56336483\n72140940\n94105985",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "14\n91106126\n3824980\n19463997\n68516412\n4397476\n21032694\n1609033\n59334773\n4457431\n35138689\n83599481\n57760972\n82781480\n4925638",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n33968\n63720\n53523\n63669\n24429\n40570\n81569\n29476\n86898\n99165\n82035\n97140\n4295\n89302\n10556\n43109\n1619\n69107\n60335\n35729",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n11327\n1716\n65992\n88996\n71097\n90939\n67352\n87844\n30327\n17762\n75193\n99860\n64049\n15707\n10442\n39258\n68375\n32537\n95072\n44507",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n47004\n4894\n43428\n13852\n95373\n33647\n63449\n74917\n56151\n63331\n41644\n46265\n55135\n87202\n51377\n36498\n32332\n9320\n17864\n53419",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n69837\n74276\n52644\n19071\n78059\n82323\n29870\n81560\n82237\n56484\n18985\n74744\n14665\n84149\n83172\n33173\n61084\n23552\n62538\n66743",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n24174\n52581\n75990\n11063\n22124\n20454\n99613\n80810\n86248\n88422\n62248\n64297\n74297\n35006\n49779\n56819\n53529\n96899\n35919\n25794",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n95377\n29425\n79052\n62393\n94691\n55416\n8704\n37605\n84319\n22523\n4988\n76659\n88852\n86649\n39587\n52251\n45483\n12940\n10169\n48810",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n3103\n83693\n84654\n35526\n2124\n68740\n62838\n49595\n7404\n24339\n28054\n58751\n57947\n54888\n776\n98494\n78801\n22486\n37589\n24955",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "20\n57802247\n32360637\n77047367\n45084243\n90893274\n48578584\n98939990\n27251590\n58157152\n11971148\n75824896\n18057914\n6403081\n46158642\n43705798\n13774106\n34755420\n53862542\n2957188\n74050614",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "20\n10475494\n30932278\n42092789\n9125354\n65345233\n37381094\n68614966\n46361900\n60357538\n73511953\n31366594\n57810122\n68183209\n97716583\n1121652\n66226365\n9500971\n55102153\n64949951\n80583741",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 20)"
+    },
+    {
+      "input": "1\n89439885",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 1)"
+    },
+    {
+      "input": "2\n23945394\n1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 2)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:17",
+  "total_test_cases": 20
+}

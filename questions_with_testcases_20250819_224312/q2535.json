@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Tied Down",
+  "tags": [],
+  "text": "As we all know, Bessie the cow likes nothing more than causing mischief on the farm. To keep her from causing too much trouble, Farmer John decides to tie Bessie down to a fence with a long rope. When viewed from above, the fence consists of N posts (1 <= N <= 10) that are arranged along vertical line, with Bessie's position (bx, by) located to the right of this vertical line. The rope FJ uses to tie down Bessie is described by a sequence of M line segments (3 <= M <= 10,000), where the first segment starts at Bessie's position and the last ends at Bessie's position. No fence post lies on any of these line segments. However, line segments may cross, and multiple line segments may overlap at their endpoints.Here is an example of the scene, viewed from above:To help Bessie escape, the rest of the cows have stolen a saw from the barn. Please determine the minimum number of fence posts they must cut through and remove in order for Bessie to be able to pull free (meaning she can run away to the right without the rope catching on any of the fence posts). All (x,y) coordinates in the input (fence posts, Bessie, and line segment endpoints) lie in the range 0..10,000. All fence posts have the same x coordinate, and bx is larger than this value.InputLine 1: Four space-separated integers: N, M, bx, by.Lines 2..1+N: Line i+1 contains the space-separated x and y coordinates of fence post i.Lines 2+N..2+N+M: Each of these M+1 lines contains, in sequence, the space-separated x and y coordinates of a point along the rope. The first and last points are always the same as Bessie's location (bx, by).OutputLine 1: The minimum number of posts that need to be removed in order for Bessie to escape by running to the right.ExampleInput:2 10 6 1\r\n2 3\r\n2 1\r\n6 1\r\n2 4\r\n1 1\r\n2 0\r\n3 1\r\n1 3\r\n5 4\r\n3 0\r\n0 1\r\n3 2\r\n6 1Output:1Output explanation:Removing either post 1 or post 2 will allow Bessie to escape.",
+  "sample_input": "Input:2 10 6 1\r\n2 3\r\n2 1\r\n6 1\r\n2 4\r\n1 1\r\n2 0\r\n3 1\r\n1 3\r\n5 4\r\n3 0\r\n0 1\r\n3 2\r\n6 1Output:1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TDOWN",
+  "scraped_at": "2025-08-17 00:34:02",
+  "test_cases": [
+    {
+      "input": "2 10 6 1\r\n2 3\r\n2 1\r\n6 1\r\n2 4\r\n1 1\r\n2 0\r\n3 1\r\n1 3\r\n5 4\r\n3 0\r\n0 1\r\n3 2\r\n6 1",
+      "expected_output": "1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 6 4 9\n7 8\n4 8\n1 1\n5 5\n7 8\n9 7\n10 5\n10 7\n2 10\n10 4\n5 10\n2 9\n8 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 9 7 2\n4 6\n8 9\n3 10\n9 1\n9 9\n7 5\n3 7\n2 2\n3 9\n4 2\n8 8\n5 4\n1 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "5 4 2 2\n3 9\n5 8\n10 5\n5 1\n7 4\n9 4\n4 4\n6 9\n9 7\n6 10\n2 4\n8 1\n4 1",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "46 21 95 98\n91 74\n56 33\n59 78\n60 3\n94 58\n98 16\n40 47\n32 91\n77 39\n100 29\n34 63\n71 12\n36 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 99 48 83\n19 12\n36 9\n27 52\n44 56\n37 80\n100 45\n99 47\n43 92\n29 77\n41 71\n96 51\n81 47\n86 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "16 98 74 37\n88 94\n68 64\n58 58\n66 2\n44 58\n4 50\n40 54\n95 85\n15 63\n80 61\n94 62\n27 24\n62 26",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 31 53 62\n4 66\n98 100\n89 65\n84 27\n25 28\n74 56\n8 75\n70 64\n89 18\n85 36\n28 94\n29 85\n60 79",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "58 48 54 69\n83 55\n96 56\n24 8\n88 48\n32 75\n55 42\n55 7\n98 45\n38 54\n89 86\n5 38\n76 54\n95 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "106 92 132 146\n93 112\n466 364\n317 227\n408 132\n329 137\n265 403\n196 234\n116 459\n364 420\n280 329\n306 252\n123 97\n334 240",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "186 444 188 159\n238 140\n163 289\n319 182\n173 408\n459 245\n276 153\n230 438\n145 128\n498 80\n478 159\n82 223\n113 415\n238 145",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "183 303 249 430\n383 396\n231 419\n339 497\n475 219\n466 437\n314 439\n378 425\n312 290\n188 368\n108 459\n162 133\n462 416\n493 241",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "356 497 225 299\n285 331\n289 335\n309 137\n338 428\n61 301\n106 348\n186 391\n403 112\n228 448\n302 459\n350 278\n93 56\n193 219",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "452 368 327 123\n154 284\n483 326\n161 115\n350 291\n226 114\n483 295\n474 145\n410 206\n391 322\n169 290\n477 279\n115 256\n65 460",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "276 440 483 236\n274 60\n197 162\n122 355\n495 189\n181 276\n394 70\n143 385\n61 220\n434 277\n333 276\n470 454\n392 97\n150 127",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 324 462 159\n70 405\n146 320\n395 395\n393 300\n359 378\n470 458\n204 123\n316 435\n471 219\n256 466\n234 448\n187 257\n250 149",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 1000 1 2\n999 1000\n1000 1000\n1000 999\n1000 2\n999 1\n1000 1\n1 2\n1000 1\n1 999\n2 2\n999 1000\n2 1\n2 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1 2 2\n2 2\n2 1000\n1000 1000\n999 1\n2 1000\n1 2\n1 1000\n999 2\n1000 2\n999 1\n2 999\n2 2\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

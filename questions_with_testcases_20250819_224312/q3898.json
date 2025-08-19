@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Flowery Trails",
+  "tags": [],
+  "text": "In order to attract more visitors, the manager of a national park had the idea of planting flowers  along both sides of thepopular trails, which are the trails used bycommon people.Common peopleonly go from the park entrance to its highest peak,  where views are breathtaking, by a shortest path. So, he wants to know  how many metres of flowers are needed to materialize his idea.For instance, in the park whose map is depicted in the figure, common people make only one of the three following paths (which are the shortest paths from the entrance to the highest peak).At the entrance,       some start in the rightmost trail to reach the point of interest 3 (after 100 metres),       follow directly to point 7 (200 metres) and        then pick the direct trail to the highest peak (620 metres).The others go to the left at the entrance and reach point 1 (after 580 metres).       Then, they take one of the two trails that lead to point 4 (both have 90 metres).       At point 4, they follow the direct trail to the highest peak       (250 metres).Notice that popular trails (i.e. the trails followed by common people) are highlighted in yellow. Since the sum of their lengths is 1930 metres, the extent of flowers needed to cover both sides of the popular trails is 3860 metres (3860 = 2 * 1930).TaskGiven a description of the park, with its points of interest and (two-way) trails, the goal is to find out  the extent of flowers needed to cover both sides of the popular trails. It is guaranteed that, for the given inputs,  there is some path from the park entrance to the highest peak.InputThe first line of the input has two integers:PandT.Pis the number of points of interest andTis the number of trails. Points are identified by integers, ranging from0toP-1. The entrance point is0and the highest peak is pointP-1.Each of the followingTlines characterises a different trail. It contains three integers,p1,p2, andl, which indicate that the (two-way) trail links directly pointsp1andp2(not necessarily distinct) and has lengthl(in metres).Integers in the same line are separated by a single space.Constraints2 ≤ P ≤  10 000Number of points.1 ≤ T ≤ 250 000)Number of trails.1 ≤ l ≤ 1 000)Length of a trail.OutputThe output has a single line with  the extent of flowers (in metres) needed to cover both sides  of the popular trails.Sample Input 110 15\r\n0 1 580\r\n1 4 90\r\n1 4 90\r\n4 9 250\r\n4 2 510\r\n2 7 600\r\n7 3 200\r\n3 3 380\r\n3 0 150\r\n0 3 100\r\n7 8 500\r\n7 9 620\r\n9 6 510\r\n6 5 145\r\n5 9 160Sample Output 13860Sample Input 24 7\r\n0 1 1\r\n0 2 2\r\n0 3 10\r\n0 3 3\r\n1 3 2\r\n2 3 1\r\n1 1 1Sample Output 218Author: Margarida Mamede",
+  "sample_input": "10 15\r\n0 1 580\r\n1 4 90\r\n1 4 90\r\n4 9 250\r\n4 2 510\r\n2 7 600\r\n7 3 200\r\n3 3 380\r\n3 0 150\r\n0 3 100\r\n7 8 500\r\n7 9 620\r\n9 6 510\r\n6 5 145\r\n5 9 160",
+  "sample_output": "3860",
+  "link": "https://www.spoj.com/problems/SWERC14B",
+  "scraped_at": "2025-08-17 00:34:34",
+  "test_cases": [
+    {
+      "input": "10 15\r\n0 1 580\r\n1 4 90\r\n1 4 90\r\n4 9 250\r\n4 2 510\r\n2 7 600\r\n7 3 200\r\n3 3 380\r\n3 0 150\r\n0 3 100\r\n7 8 500\r\n7 9 620\r\n9 6 510\r\n6 5 145\r\n5 9 160",
+      "expected_output": "3860",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 8\n8 9 9\n3 3 2\n5 9 5\n5 3 10\n3 1 9\n7 5 10\n2 4 7\n10 3 1\n3 1 4\n3 5 2\n5 6 8\n9 5 3\n2 10 7\n2 10 7\n4 2 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8\n5 10 3\n1 8 9\n5 8 8\n1 2 6\n5 8 9\n8 9 7\n10 9 5\n3 9 8\n6 9 5\n1 9 3\n3 10 2\n9 4 4\n8 8 8\n7 3 7\n5 3 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 8\n9 5 5\n6 7 2\n9 10 6\n2 7 8\n2 1 6\n3 10 9\n3 10 9\n10 7 5\n10 1 6\n7 4 9\n7 4 9\n4 4 8\n8 6 4\n8 1 1\n1 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 70\n79 14 7\n68 5 31\n65 89 56\n57 26 87\n50 55 54\n48 20 35\n5 52 18\n84 11 15\n85 40 42\n97 4 21\n81 55 92\n23 21 19\n12 73 89\n85 64 18\n49 38 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "30 97\n7 62 100\n71 50 97\n29 58 11\n68 52 59\n92 28 59\n17 43 53\n6 27 30\n11 72 98\n80 26 37\n89 67 29\n19 85 34\n7 87 42\n100 40 27\n6 28 52\n97 62 9",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 13\n38 74 9\n55 57 82\n9 29 98\n99 93 56\n18 27 46\n15 41 28\n41 71 46\n61 36 31\n63 47 27\n33 58 76\n15 59 6\n25 46 42\n68 45 50\n88 73 57\n86 34 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "95 10\n19 31 81\n16 18 26\n36 27 51\n94 87 8\n18 14 59\n22 44 9\n14 2 14\n23 77 96\n24 40 21\n40 3 33\n66 55 55\n25 23 89\n64 28 58\n55 19 37\n51 32 33",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "52 29\n58 26 59\n26 50 17\n58 2 18\n10 22 18\n34 28 10\n39 55 42\n8 31 72\n55 30 13\n58 88 28\n89 42 23\n47 40 76\n11 28 18\n77 64 15\n98 29 37\n64 35 65",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "490 58\n373 382 165\n96 193 94\n194 117 487\n230 441 63\n121 64 416\n470 289 397\n182 236 284\n80 424 302\n106 75 422\n293 303 430\n304 377 124\n82 254 150\n95 146 364\n183 103 270\n344 102 484",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "464 393\n487 476 84\n472 298 186\n467 102 307\n89 140 470\n215 482 382\n138 278 109\n393 253 176\n247 57 498\n399 177 400\n437 205 494\n300 364 392\n273 52 77\n248 75 340\n81 494 473\n291 117 66",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "188 259\n294 81 381\n189 251 281\n456 59 248\n485 353 103\n222 498 54\n416 147 140\n56 346 297\n90 210 281\n228 110 321\n134 108 304\n163 290 152\n387 163 204\n255 81 462\n403 181 447\n412 381 307",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "278 257\n343 342 243\n167 213 291\n166 228 493\n460 317 148\n240 99 394\n363 498 182\n400 127 436\n345 382 421\n389 123 126\n210 461 385\n492 190 206\n490 51 110\n200 375 296\n235 453 60\n446 179 430",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "59 308\n164 320 321\n249 363 277\n107 425 356\n421 85 381\n113 73 220\n349 203 435\n292 422 464\n348 80 164\n101 437 394\n187 213 460\n473 307 485\n116 383 174\n170 304 177\n272 252 92\n203 422 120",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "114 64\n392 238 117\n161 427 116\n413 417 356\n55 357 355\n237 342 194\n111 212 285\n152 59 223\n457 421 365\n481 491 173\n426 222 288\n91 186 430\n84 449 235\n430 229 311\n57 398 290\n68 186 363",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "339 366\n107 187 279\n193 442 314\n115 412 499\n235 71 458\n238 419 363\n473 445 300\n100 440 484\n77 451 173\n120 320 419\n452 211 240\n246 88 166\n350 491 483\n384 428 296\n160 310 252\n466 489 115",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "999 999\n1000 1000 999\n2 2 999\n2 1 1000\n1 999 2\n999 1 1\n2 1000 1000\n2 1 1\n1000 1 999\n999 2 999\n1000 2 1\n2 1000 1\n1 1000 1\n2 999 2\n999 999 2\n1000 999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n2 999 2\n2 999 1000\n2 999 999\n1 1000 999\n2 1000 2\n1000 2 2\n1 2 2\n1000 1 999\n1000 2 1\n2 999 999\n999 999 1\n1 1 2\n999 1000 999\n1000 2 1\n1 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

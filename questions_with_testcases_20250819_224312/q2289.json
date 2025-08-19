@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Pattern Matching",
+  "tags": [],
+  "text": "A regular expression is a string which contains some normal characters and some meta characters.\r\nThe meta characters include:.means any character[c1 - c2]means any character between c1 and c2 (c1 and c2 are two characters).[ˆc1 - c2]means any character not between c1 and c2 (c1 and c2 are two characters).*means the character before it can occur any times.+means the character before it can occur any times but at least one times.\\means any character follow should be treated as normal character.You are to write a program to find the leftmost substring of a given string, so that the substring can match a given regular expression. If there are many substrings of the given string can match the regular expression, and the left positions of these substrings are same, we prefer the longest one.InputEvery two lines of the input is a pattern-matching problem. The first line is a regular expression, and the second line is the string to be matched. Any line will be no more than 80 character. A line with only an end will terminate the input.OutputFor each matching problem, you should give an answer in one line. This line contains the string to be matched, but the leftmost substring that can match the regular expression should be bracketed. If no substring matches the regular expression, print the input string.ExampleInput:.*\r\nasdf\r\nf.*d.\r\nsefdfsde\r\n[0-9]+\r\nasd345dsf\r\n[^\\*-\\*]\r\n**asdf**fasd\r\nb[a-z]*r[s-u]*\r\nabcdefghijklmnopqrstuvwxyz\r\n[T-F]\r\ndfkgjf\r\nendOutput:(asdf)\r\nse(fdfsde)\r\nasd(345)dsf\r\n**(a)sdf**fasd\r\na(bcdefghijklmnopqrstu)vwxyz\r\ndfkgjf",
+  "sample_input": ".*\r\nasdf\r\nf.*d.\r\nsefdfsde\r\n[0-9]+\r\nasd345dsf\r\n[^\\*-\\*]\r\n**asdf**fasd\r\nb[a-z]*r[s-u]*\r\nabcdefghijklmnopqrstuvwxyz\r\n[T-F]\r\ndfkgjf\r\nend",
+  "sample_output": "(asdf)\r\nse(fdfsde)\r\nasd(345)dsf\r\n**(a)sdf**fasd\r\na(bcdefghijklmnopqrstu)vwxyz\r\ndfkgjf",
+  "link": "https://www.spoj.com/problems/PATT",
+  "scraped_at": "2025-08-17 00:34:04",
+  "test_cases": [
+    {
+      "input": ".*\r\nasdf\r\nf.*d.\r\nsefdfsde\r\n[0-9]+\r\nasd345dsf\r\n[^\\*-\\*]\r\n**asdf**fasd\r\nb[a-z]*r[s-u]*\r\nabcdefghijklmnopqrstuvwxyz\r\n[T-F]\r\ndfkgjf\r\nend",
+      "expected_output": "(asdf)\r\nse(fdfsde)\r\nasd(345)dsf\r\n**(a)sdf**fasd\r\na(bcdefghijklmnopqrstu)vwxyz\r\ndfkgjf",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "pjcy\nk\nzrws\ndvpzcdzaib\n10 2\neoxpbkxmnmjf\n3\nlnt\nggtvvrqlmpvd\nthksjua\nzsi\nwrcguufipgf\nas\ngrbdybmjjiny\nr",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "qgw\nvbvz\nfzyqlqkpg\nwcrumj\n4 6\naymopfki\n10\ndvbfnmydkvondeeavw\numvciphxqxvkvo\nbbfpvsi\nxatpjspzygrdpylit\nhwtxfdgfndyajsocud\nlkk\nkjkpunhtwcl\nypt",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "tqp\ne\nrlrva\niwbcxrjjqzedn\n9 8\nuueoobsivrx\n7\nejecnixzqvrq\ntxdwgcuzknfgph\npqyxyjonqrzo\nragkkkezywrvsq\nms\nzlyuzkctz\neknzzln\nikycql",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "nbnz\ndqqkmgvf\nl\nwxhmbeehb\n15 86\ndmbddxton\n4\nakfgba\ngamuqcqjvumbijuy\njqwjdirisx\nehpoakdbvut\nhl\niopccjqpt\nricvdcejct\nkq",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "vu\nrzznzrrq\neumwzpm\ngfpblf\n89 88\nkvnxkfyrguu\n8\nsavc\nqxk\nl\na\nhsynhpmldkmmygikxm\nxpezmhhk\nyrvaoa\nj",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "loly\nqorunw\nla\nssvcbw\n3 10\nriocg\n5\nsnjvsrmmia\ndzpfdgj\nluobumaumjhz\ndlfmualjpqsmsrc\ndjxauyqfgunwqpxehvtd\nzdiksx\nzhu\ndunq",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "d\nlru\nd\nhiuvbuxnpxikyzq\n37 43\nucunw\n100\ndf\ngawsjjpmoyclmenl\nokqfx\nxppplzyzgaj\nhqwqurzeozeqrzn\nw\nvnjjc\nljl",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zb\nq\nindnipofx\nqfseauke\n50 80\nwlzlxd\n74\nxnrhbjrouohvzlvqq\nstgoefrqasd\nkgnqwmidz\nt\nkdvrxyplbquirllhaio\nkjin\nfellti\nxcrnh",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "tb\nb\nprqj\nuoitpetfywutuqb\n326 221\nikzy\n405\nolqlfsyaatfho\ncvd\nsjfqvjdobgnk\nznhsglbvjmhyuitiy\nokdtfnfypixdzonw\nqzabvbhhs\niwqsjwwc\ndhi",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "e\nuckz\ng\nxphkezrycgexyr\n72 64\nybfu\n485\nuwillbzhf\njyatkjzrwdnp\nydxyaczxlrppx\nmsuicpvkhydoevt\nqixxxoobltr\nnmskwu\ntpnkjcqascb\nnec",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "tv\nxyvnva\nztg\nrmndbzfgtsgo\n175 454\njadhduqpns\n318\nuhiwwcafjnnmvrudb\njsnweoonwmb\nkgtvlh\nnmhesq\nmcuxvggesiurmkdk\nmtw\nagecln\nd",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pb\nzzwfoh\neavsck\neadgvrzvarsbigkl\n258 306\nlxzarrrookbw\n490\nsfjzxyokmqrtxdk\nqw\nwnybe\nh\nkcwrkmkjdpa\nn\nmx\nmnscd",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "a\ns\nhejfm\nodikzmav\n322 147\nyd\n499\nftjpxczzdfdcvgiwqt\npumevvsbaoysop\nsicom\nsexchmagszbiwc\niryflifuhkmsmoq\nodlo\nmtd\nwqr",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "npqs\nxgjanam\nxxzsoqhne\ngrz\n437 235\nkodw\n190\ncwaekxyx\nxcfggpjgytmhg\nazypbobt\nioul\nuuheecxxaqxp\nwaon\nbo\numn",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "aj\ny\nfvhjgwmzrl\nhbkhodtxukloyq\n66 435\nz\n235\nidofouti\nptmwmblz\nodumurhjtpaqyaq\nnyfhgrvzrvphxostyss\nzntajjen\nquuhchrquz\neohmjfjykpl\natbrb",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "e\najii\ngwl\nhwpcyrrwhtk\n1000 1000\nuy\n1000\newbbsonsucbqrgewqu\nylrqaqokn\nmjsoicmnfh\nyq\nkkaltqcvpopszbkhyb\newlbbb\no\nwsdzro",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "mt\nxth\npvz\ndjdnjp\n1000 1000\nyqjiamk\n1000\nsfetpybllqnvacjic\netz\npnvcuxdijfbfb\ndvysgetcslrf\nzk\nnwbyer\nwmkgwvlpkner\nohq",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "nv\nfqbzycp\nvbbtwljgeq\nla\n999 2\nnpvskyocw\n2\nt\niqeoezbvbqh\nwxcumaxzif\nfehgnuui\nmgpigvkkfjfjf\njxuqztald\nvbdu\nkajgwo",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "hu\nxmthoyhb\nurhygo\nh\n1 999\nphiezeti\n1\nojdipsasji\nxdoqopryztewp\nmnjrdgh\nij\nkylmpajbb\naqxzkttxn\naauswdpl\ns",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

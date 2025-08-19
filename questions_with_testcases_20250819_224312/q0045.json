@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ws Cipher",
+  "tags": [],
+  "text": "Weird Wally's Wireless Widgets, Inc. manufactures an eclectic assortment\r\nof small, wireless, network capable devices, ranging from dog collars,\r\nto pencils, to fishing\r\nbobbers. All these devices have very small memories.\r\nEncryption algorithms like Rijndael, the candidate for the Advanced\r\nEncryption Standard (AES) are demonstrably secure but they don't fit \r\nin such a tiny memory. In order to provide some security for \r\ntransmissions to and from the devices, WWWW uses the following algorithm,\r\nwhich you are to implement.Encrypting a message requires three integer keys,k1,k2, andk3. The letters [a-i] form\r\none group, [j-r] a second group, and everything else ([s-z] and underscore) the\r\nthird group. Within each group the letters are rotatedleftbykipositions in the message.\r\nEach group is rotated independently\r\nof the other two.  Decrypting the message means doing\r\narightrotation \r\nbykipositions within each group.Consider \r\nthe messagethe_quick_brown_foxencrypted withkivalues of 2, 3 and 1. The\r\nencrypted string is_icuo_bfnwhoq_kxert. \r\nThe figure below shows the decrypting right rotations for one\r\ncharacter in each of the three character groups.Looking at all the letters in the group [a-i] we see\r\n{i,c,b,f,h,e} \r\nappear at positions {2,3,7,8,11,17} within the encrypted message.\r\nAfter a right rotation ofk1=2, these positions contain the\r\nletters {h,e,i,c,b,f}.\r\nThe table below shows the intermediate strings that come from doing\r\nall the rotations in the first group, then all rotations in the second group,\r\nthen all the rotations in the third group. Rotating letters in one group will\r\nnot change any letters in any of the other groups.[a-i],k1= 2[j-r],k2= 3[s-z] and _,k3= 1Encrypted:_icuo_bfnwhoq_kxert_heuo_icnwboq_kxfrt_heuq_ickwbro_nxfotDecrypted:_heuo_icnwboq_kxfrt_heuq_ickwbro_nxfotthe_quick_brown_foxChanges:^^   ^^  ^     ^^   ^  ^^ ^  ^^  ^ ^   ^   ^ ^  ^All input strings contain only lowercase letters and underscores(_).\r\nEach string\r\nwill be at most 80 characters long. Thekiare all positive \r\nintegers in the range 1-100.Input consists of information for one or more encrypted messages.\r\nEach problem begins with\r\none line containingk1,k2, andk3followed by a line\r\ncontaining the encrypted message.\r\nThe end of the input is signalled by a line with all key values of 0.For each encrypted message, the output is a single line containing\r\nthe decrypted string.Input:2 3 1\r\n_icuo_bfnwhoq_kxert\r\n1 1 1\r\nbcalmkyzx\r\n3 7 4\r\nwcb_mxfep_dorul_eov_qtkrhe_ozany_dgtoh_u_eji\r\n2 4 3\r\ncjvdksaltbmu\r\n0 0 0Output:the_quick_brown_fox\r\nabcklmxyz\r\nthe_quick_brown_fox_jumped_over_the_lazy_dog\r\najsbktcludmv",
+  "sample_input": "^^   ^^  ^     ^",
+  "sample_output": "^   ^  ^^ ^  ^",
+  "link": "https://www.spoj.com/problems/WSCIPHER",
+  "scraped_at": "2025-08-17 00:33:11",
+  "test_cases": [
+    {
+      "input": "^^   ^^  ^     ^",
+      "expected_output": "^   ^  ^^ ^  ^",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "n cq f yr",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "zvjk pik dlv irudb",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "eg vvs nycq mhalj",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "iz mpwm aah a",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "r c k demnh",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "l wtxg mbt lm",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ucba natw nwe hyp",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "r zqoeh yf z",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "qqr q onzo qiwy",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "xq k vxje f",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "wocox ppace fr k",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gntr g u lbhdq",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "pye glyce lnnyl ufirs",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "cncx fdg d ac",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "y amp p u",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "rhy vhpc imnnb ssv",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "vchi i smss lj",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "gvnq mf uvis xzf",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "xy qdzmk xe hshnn",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:12",
+  "total_test_cases": 20
+}

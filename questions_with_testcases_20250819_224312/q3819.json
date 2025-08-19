@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Hypertubes",
+  "tags": [],
+  "text": "In a galaxy far, far away, the fastest method of transportation is using hypertubes. Each hypertube directly connects K stations with each other. What is the minimum number of stations that we need to pass through in order to get from station 1 to station N?InputThe first line of input contains three positive integers: N (1 ≤ N ≤ 100 000), the number of stations, K (1 ≤ K ≤ 1 000), the number of stations that any single hypertube directly interconnects, and M (1 ≤ M ≤ 1 000), the number of hypertubes.Each of the following M lines contains the description of a single hypertube: K positive integers, the labels of stations connected to that hypertube.OutputThe first and only line of output must contain the required minimum number of stations. If it isn't possible to travel from station 1 to station N, output -1.ExampleInput:9 3 5\r\n1 2 3\r\n1 4 5\r\n3 6 7\r\n5 6 7\r\n6 8 9Output:4Input:15 8 4\r\n11 12 8 14 13 6 10 7\r\n1 5 8 12 13 6 2 4\r\n10 15 4 5 9 8 14 12\r\n11 12 14 3 5 6 1 13Output:3Clarification of the first example: It is possible to travel from station 1 to station 9 using only four stations in the following ways: 1-3-6-9, or 1-5-6-9.",
+  "sample_input": "Input:9 3 5\r\n1 2 3\r\n1 4 5\r\n3 6 7\r\n5 6 7\r\n6 8 9Output:4",
+  "sample_output": "Input:15 8 4\r\n11 12 8 14 13 6 10 7\r\n1 5 8 12 13 6 2 4\r\n10 15 4 5 9 8 14 12\r\n11 12 14 3 5 6 1 13Output:3",
+  "link": "https://www.spoj.com/problems/UCBINTH",
+  "scraped_at": "2025-08-17 00:34:36",
+  "test_cases": [
+    {
+      "input": "9 3 5\r\n1 2 3\r\n1 4 5\r\n3 6 7\r\n5 6 7\r\n6 8 9",
+      "expected_output": "4",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "15 8 4\r\n11 12 8 14 13 6 10 7\r\n1 5 8 12 13 6 2 4\r\n10 15 4 5 9 8 14 12\r\n11 12 14 3 5 6 1 13",
+      "expected_output": "3",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "3 6 3\n6 3 2\n6 10 4\n2 7 1\n3 6 10\n10 5 2",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 7 8\n4 3 8\n10 4 1\n1 8 5\n10 1 1\n9 6 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "2 5 6\n1 9 4\n9 7 5\n3 9 9\n6 3 9\n6 8 5",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "56 56 34\n61 37 22\n67 85 93\n8 11 94\n71 75 18\n57 90 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 23 56\n49 16 91\n60 53 88\n24 74 24\n29 85 7\n38 98 7",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "55 27 56\n5 96 91\n91 84 49\n19 45 77\n82 76 41\n40 2 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "35 6 61\n40 56 50\n30 78 13\n91 41 1\n36 6 33\n10 30 51",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "33 74 19\n40 7 86\n11 39 27\n35 73 43\n66 10 34\n2 8 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15420 28656 29007\n39831 33175 16067\n34090 35537 26370\n20243 8503 14548\n42715 5843 40775\n36737 35213 12892",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "28654 12832 11626\n8474 36753 33475\n21935 11574 31971\n12343 14252 5585\n38061 23089 14581\n33522 19484 7062",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "43352 32624 19833\n39554 10301 25914\n46272 24667 32170\n27348 39359 39515\n17580 40216 40374\n12542 25957 11943",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "30736 31409 5999\n12862 17229 17504\n33830 21208 6627\n14867 41999 9717\n47545 18607 12391\n43019 28677 12841",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11075 28892 6522\n8231 44739 42448\n35811 13099 46874\n28215 20320 43538\n7311 36888 16540\n21022 23116 39472",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22701 44239 11788\n5912 26307 12229\n11455 25401 33099\n43498 45262 47533\n27611 21582 17058\n42557 48594 33553",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "43081 11056 14069\n34322 31325 31924\n13264 14621 34442\n39770 42366 37586\n30459 18474 41882\n40673 15076 12316",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100000 100000 100000\n100000 100000 100000\n100000 100000 100000\n100000 100000 100000\n100000 100000 100000\n100000 100000 100000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100000 100000 100000\n100000 100000 100000\n100000 100000 100000\n100000 100000 100000\n100000 100000 100000\n100000 100000 100000",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 99999 1\n2 2 99999\n99999 99999 100000\n1 1 2\n100000 99999 99999\n99999 99999 99999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

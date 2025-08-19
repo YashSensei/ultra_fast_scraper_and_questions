@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Tree Similarity",
+  "tags": [],
+  "text": "You are given two labeled and ordered rooted trees T and T' and\r\nwould like to calculate thedistancefrom T to T', which is\r\nthe minimum number of operations you can perform on T to make itequivalentto T'. For each operation you can choose to do one of three things:change\r\nthe label of one node in Tdelete a non-root node in Tinsert a new node in T at a position somewhere below its rootRecall the trees T and T' are ordered, which means that if a\r\nnon-leaf node has c children, its children are ordered from 1 to\r\nc. That is, there is a 1st child, a 2nd child, etc., all the\r\nway up to a cth child. When we say a tree X is equivalent\r\nto a tree Y, we mean the root of X should have the same label\r\nas the root of Y, their roots should have the same number of\r\nchildren (call it c), and the subtree rooted at the ith child of the\r\nroot of X should be equivalent to the subtree rooted at the ith\r\nchild of the root of Y for i=1, 2 ... c.We now describe what we mean by deletion and insertion of non-root\r\nnodes in T. When deleting a non-root node w with d children,\r\nlet u be its\r\nparent and suppose w is u's ith child. Then the first child of\r\nw becomes u's ith child, the second child of w becomes u's\r\n(i+1)st child, etc. For j < i, the jth child of u remains the\r\nsame, but for all j > i, the child which was formerly the jth\r\nchild of u now becomes its (j+d-1)st child (they get \"shifted\r\nover\" due to the insertion of w's children into u's child list).\r\nTo insert a non-root node w into the tree, we can choose any node\r\nu to be its parent, and we can choose any contiguous subsequence\r\n(possibly empty) of u's children to become w's children, putting\r\nw in their place. When inserting a node, we can give it any label\r\nwe want at the time of insertion.The root of T can never be deleted, and you can never\r\ninsert a new node above the root to become the old root's parent. You\r\ncan, however, change the label of the root.InputThe first line contains n and m separated by a space, the sizes of\r\nthe trees T and T', respectively (1 ≤ n, m ≤ 60). The next\r\nn lines describe\r\nT. On the ith line is a description of the ith node in the\r\ntree: its label, the number of children it has, then a list of its\r\nchildren in order from first to last, all space-separated. The next\r\nm lines similarly describe T'. Labels are nonnegative\r\nintegers fitting in a 32-bit signed integer. The root of each tree is the node which is not the child of any other node in the tree.OutputOn a single line output the minimum number of operations that can be\r\nperformed on T to make it equivalent to T', followed by a newline.ExampleInput:3 2\r\n6 0\r\n1 2 0 2\r\n4 0\r\n2 1 1\r\n4 0Output:2",
+  "sample_input": "Input:3 2\r\n6 0\r\n1 2 0 2\r\n4 0\r\n2 1 1\r\n4 0Output:2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/TREESIM",
+  "scraped_at": "2025-08-17 00:33:19",
+  "test_cases": [
+    {
+      "input": "3 2\r\n6 0\r\n1 2 0 2\r\n4 0\r\n2 1 1\r\n4 0",
+      "expected_output": "2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 9\n6 4\n3 6 3 5\n8 4\n7 8 5\n1 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 8\n9 3\n7 9 2 3\n2 8\n4 6 8\n2 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 4\n1 1\n3 8 5 4\n10 3\n10 8 5\n4 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "83 91\n99 95\n81 12 76 33\n83 55\n50 67 83\n90 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 2\n47 74\n79 20 46 60\n87 27\n31 73 28\n88 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "81 32\n93 34\n91 89 6 12\n27 82\n44 24 52\n36 99",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "90 13\n60 7\n41 83 47 70\n85 98\n48 88 8\n5 61",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 80\n87 95\n93 53 90 72\n44 38\n36 87 32\n71 20",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "82 129\n323 263\n53 371 90 218\n296 254\n416 96 165\n162 206",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "220 97\n346 442\n158 156 373 205\n421 152\n449 162 208\n314 213",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "292 234\n292 386\n86 322 412 128\n311 96\n477 332 448\n81 336",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "328 406\n432 57\n472 212 255 297\n185 237\n64 236 62\n287 463",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "419 255\n376 240\n232 84 407 82\n161 343\n497 326 422\n337 73",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "223 102\n305 329\n413 371 160 108\n329 280\n263 225 389\n329 235",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "204 408\n205 188\n108 52 245 190\n90 229\n337 71 293\n242 412",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000\n1000 1000 1000 1000\n1000 1000\n1000 1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 2\n2 1\n1000 2 2 999\n1 1\n2 999 999\n999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 1\n1000 1000\n1000 1000 1 1000\n999 999\n1 2 1\n1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

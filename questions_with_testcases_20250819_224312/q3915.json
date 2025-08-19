@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Periodic function, trip 2",
+  "tags": [],
+  "text": "Milankovitch's cycle theory  is an example with cumulative effect of several periodic functions.\r\nWe can study past climatic patterns on Earth through orbital forcing.Let us consider periodic functions fromZtoR.deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...For example,fis a 3-periodic function, withf(0) =f(3) =f(6) =f(9) = 4. \r\nWith a simplified notation we will denote f as [4, -6, 7]. \r\n\r\n\r\nFor two periodic functions (with integral period), the quotient of periods will be rational,\r\nin that case it can be shown that the sum of the functions is also a periodic function.\r\nThus, the set of all such functions is a vector space overR.Our interest, in this problem, will be the smallest common period of sums of periodic functions whose period is an integer, bounded by someN.InputThe first line contains an integerT, the number of test cases.\r\nOn the nextTlines, you will be given two integersNandM.\r\nConsider the family of any finite sum of (n-periodic functions withnin [1..N] ).\r\nAll those functions share a common smallest period.OutputPrint the smallest common period of that family.\r\n\tAs the answer can get very big, simply output it moduloM.ExampleInput:3\r\n2 10\r\n3 100\r\n4 7Output:2\r\n6\r\n5ExplanationThe first case is trivial.\r\nFor the second case, for example iff= [0] + [5, π] + [0, -e , 1] thenfcan be written as [5, π-e, 6, π, 5-e, π+1] and is 6-periodic ; 6 is smallest common period for any sum ofn-periodic function whennis bounded by 3.\r\nFor the third case, 12%7 is equal to 5.Constraints0 < T < 10^3\r\n0 < N < 10^7\r\n1 < M < 10^9Uniform random input, one input file.InformationConstraints allow my optimized Python code to get AC in 12s, and a poor C code in 4s.\r\nThe curious fact is that on my hardware the corresponding times are quite the same, and I've set the constraints with that in mind... curious for me.Edit 2017-02-11 : with compiler changes, now the two times are similar 3.5s (poor.c) ; 3.57s (good.py). The new TL is set at 7s. It allows JAVA too.",
+  "sample_input": "deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...",
+  "sample_output": "Input:3\r\n2 10\r\n3 100\r\n4 7Output:2\r\n6\r\n5",
+  "link": "https://www.spoj.com/problems/PERIOD2",
+  "scraped_at": "2025-08-17 00:34:31",
+  "test_cases": [
+    {
+      "input": "deff(x):return[4,-6,7][x%3]# (with Python notations)# 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, 4, -6, 7, ...",
+      "expected_output": "Unknown",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3\r\n2 10\r\n3 100\r\n4 7",
+      "expected_output": "2\r\n6\r\n5",
+      "type": "sample_2",
+      "description": "Original sample 2 from problem statement"
+    },
+    {
+      "input": "1 9 3 4 8 7 2 3 7 3 10 3 9 4 3 1 3 3 8\nvqzypkoa k xszhnk rxr i srvgx zh g ekd rn gibz bdsgf g jlz gdbbc fmwgt hqckk pwh uzpql veuvv",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 2 5 4 4 1 5 8 9 7 7 8 8 5 8 9 2 4 1\nojvlkrhzuwryouzcsm fgr ztt tmjfg fxh a zbr c qjkkh bgamy kob z w feuss smpcx szb bupvh syu ctcq ctvt",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 4 7 2 4 10 10 2 3 5 3 5 5 8 4 10 7 8 4\nhxngrlo km rrcqp dqd ngpu oh idbjk hrd yw t qsvtv lrqwl jbjt io jw ubzvc oir jxi crg qnya",
+      "expected_output": "To be computed",
+      "type": "small_case_5",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 4 8 10 3 7 2 7 5 3 6 8 4 6 4 4 10 6 5\nbnyqonbcktibquzym hms epc rrcjkqocfs zx zvcey oe byhf m dtaf o ylmr wzenr ampr m hxa ro dxk uimyp a",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 4 6 5 1 6 9 7 1 5 5 10 5 3 7 9 9 3 9\nzzylgese abk iopcno wsviask beok h q bjm abhwf fbrm bqdl n ius vu xijbg glalt nz lkpd fci rhp",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 5 5 3 5 10 8 3 1 9 5 6 6 4 8 6 1 5 4\nmruvvsyafufqacsz rgc f uttwc jsspm zxgo ejgzr k rmi wbnq xnpem jzfxp vkyub jchvy hzf f d qo r w",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 9 8 10 10 1 7 3 1 5 3 6 3 3 3 1 6 3 1\ngusspivexjevdmtq lzmwm hg ndltfp qfss sarse i quf e ibhdt q ohwmv t la ogfp bfbca d kkywn dxqfw sg",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "6 9 9 3 4 5 4 6 1 6 5 9 6 7 6 1 3 3 5\nhrxastqbxsfmzoxmehvqpizv cur h ntg k mcecg q gdc c wy n hzo spp thxbg elf oo bqbp gdnhk rpkh i",
+      "expected_output": "To be computed",
+      "type": "medium_case_10",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "3 2 1 4 3 5 2 2 1 5 3 3 3 2 5 3 2 2 3\nvbntgbhqe lbfus zsb c t gmqoo mxnrq ks ia wz hnwm hz ssre ghh lpg v w dcx gzy wkiuk",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 4 1 2 2 2 5 3 5 3 5 1 2 4 1 3 3 1 1\nbordjpzgvvtgfuutcdjy pp k qluq qdd zhvh o g ydrzo ph vto inwh xuphp axuaf cju chnd wthjj z egbkh dyn",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 2 1 2 5 1 3 1 1 4 5 2 3 2 2 1 3 3 4\nt ij jm uahmnccq netgo pvfc i rygq tp gyiub sj b ryo vx ax xnf mqtsk i z wh",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 2 1 4 3 4 5 1 2 4 3 4 3 3 5 1 5 5 1\nluiuilikglyiqwaxchdznk pr db xvgwvhesmek pl sgim j luq hcjml o m cx xxgns hv zeqfn scpmi phpar byzvp qo qe",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 2 5 4 4 5 3 5 2 1 2 4 5 3 4 5 5 4 2\nuakphijarghvcjisfmvi hnylc yi vpsyaqu uwip m h qjk sbatn gwsbl tehr xsmpx erij y jxs kmh nyxk kn xikm nsqtz",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "5 2 4 3 1 3 3 1 4 5 1 1 2 2 4 4 2 5 5\nlsgkwticbfzxoqvslgfd towm sre rlcha f xa nod hvnzu pfij e legx pp p d q hhtn vwil xdp plo zfvrm",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1 3 5 1 2 3 1 4 5 5 3 2 3 5 1 5 2 4 4\nrzhmmozrmme q gdooj xakrk vw dprke xcj dwa wxn zzamb grbrs uw l h imqw kseib irax smjvs wlb yfwdr",
+      "expected_output": "To be computed",
+      "type": "large_case_17",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10\nnfjggpexs d mdxxrb g yvsd lxxz w rxk fpsxw qpf uvjyr hmver crqi cjcq yya c q tkg ssqy jikm",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10\ndfbopxdmrsoauorexya wfwih y rqxfbuuuhhd lyktq neabj vktke t zikoz s ndw yaefn f yyxn andug rk cgujt g zdyl adqu",
+      "expected_output": "To be computed",
+      "type": "max_case_19",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "9 1 1 1 9 2 9 2 2 2 10 1 1 10 1 9 1 1 9\nwrpmxlbwgh msuzk xudem ahpzfk in dxyrf vj dfjn fpdfx fzzl o j inqca hhun h prus azbb t sxawm vu",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:25",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "brownie",
+  "tags": [],
+  "text": "Bessie has baked a rectangular brownie that can be thought of as\r\nan R×C grid (1 ≤ R ≤ 500; 1 ≤ C ≤ 500) of little brownie squares.\r\nThe square at row i, column j contains Nij(0 ≤ Nij≤ 4,000)\r\nchocolate chips.Bessie wants to partition the brownie up into A×B chunks (1 ≤ A\r\n≤ R; 1 ≤ B ≤ C): one for each of the A×B cows. The brownie is\r\ncut by first making A-1 horizontal cuts (always along integer\r\ncoordinates) to divide the brownie into A strips. Then cut each\r\nstrip ×independently× with B-1 vertical cuts, also on integer\r\nboundaries. The other A×B-1 cows then each choose a brownie piece,\r\nleaving the last chunk for Bessie. Being greedy, they leave Bessie\r\nthe brownie that has the least number of chocolate chips on it.Determine the maximum number of chocolate chips Bessie can receive,\r\nassuming she cuts the brownies optimally.As an example, consider a 5 row × 4 column brownie with chips\r\ndistributed like this:1 2 2 1\r\n         3 1 1 1\r\n         2 0 1 3\r\n         1 1 1 1\r\n         1 1 1 1Bessie must partition the brownie into 4 horizontal strips, each\r\nwith two pieces. Bessie can cut the brownie like this:1 2 | 2 1\r\n       ---------\r\n       3 | 1 1 1\r\n       ---------\r\n       2 0 1 | 3\r\n       ---------\r\n       1 1 | 1 1\r\n       1 1 | 1 1Thus, when the other greedy cows take their brownie piece, Bessie\r\nstill gets 3 chocolate chips.InputLine 1: Four space-separated integers: R, C, A, and B.Lines 2 to R+1: Line i+1 contains C space-separated integers: Ni,1... Ni,c.OutputA single integer giving the required answer.ExampleInput:5 4 4 2\r\n1 2 2 1\r\n3 1 1 1\r\n2 0 1 3\r\n1 1 1 1\r\n1 1 1 1Output:3Problem was added from USACO.",
+  "sample_input": "1 2 2 1\r\n         3 1 1 1\r\n         2 0 1 3\r\n         1 1 1 1\r\n         1 1 1 1",
+  "sample_output": "1 2 | 2 1\r\n       ---------\r\n       3 | 1 1 1\r\n       ---------\r\n       2 0 1 | 3\r\n       ---------\r\n       1 1 | 1 1\r\n       1 1 | 1 1",
+  "link": "https://www.spoj.com/problems/XIXO",
+  "scraped_at": "2025-08-17 00:33:55",
+  "test_cases": [
+    {
+      "input": "1 2 2 1\r\n         3 1 1 1\r\n         2 0 1 3\r\n         1 1 1 1\r\n         1 1 1 1",
+      "expected_output": "1 2 | 2 1\r\n       ---------\r\n       3 | 1 1 1\r\n       ---------\r\n       2 0 1 | 3\r\n       ---------\r\n       1 1 | 1 1\r\n       1 1 | 1 1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 5 8 8\n6 3 2 7\n1 9 3 6\n3 7 6 6\n4 10 1 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 4 7 7\n6 1 2 3\n8 9 3 10\n10 3 8 2\n10 10 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 10 4 7\n9 6 3 8\n8 10 8 3\n8 8 7 6\n3 10 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 75 48 75\n83 61 24 83\n77 77 55 18\n6 74 26 14\n66 85 3 69",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 15 50 47\n98 17 94 48\n48 13 41 87\n52 11 33 7\n74 34 99 35",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "59 93 48 21\n88 77 81 38\n31 5 89 33\n50 79 18 41\n98 56 90 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "92 12 78 20\n12 46 60 57\n66 53 65 99\n17 44 14 31\n27 42 19 50",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "96 16 12 8\n100 93 84 34\n12 94 59 34\n93 87 50 84\n2 83 43 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "440 489 425 311\n113 434 214 310\n343 367 221 60\n453 421 67 462\n464 291 427 271",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "93 175 424 134\n369 400 234 178\n302 151 93 470\n398 342 454 307\n273 236 413 222",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "436 328 450 194\n434 78 361 225\n470 125 137 57\n378 105 385 53\n407 267 302 260",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "318 397 286 313\n361 495 65 156\n109 63 186 250\n77 340 415 56\n152 440 59 451",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "122 126 323 102\n141 431 429 71\n146 482 102 495\n153 371 425 312\n473 178 254 315",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "292 311 488 291\n112 477 120 287\n415 419 380 347\n161 214 258 71\n449 500 286 101",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "126 151 357 387\n400 312 297 139\n458 329 397 178\n397 305 93 455\n123 205 61 144",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1 999 999\n999 999 1 2\n1 1000 1 999\n2 999 999 2\n1000 1 1000 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 999 999 2\n2 999 999 1\n999 999 1000 1\n1 1 999 2\n1 999 1 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

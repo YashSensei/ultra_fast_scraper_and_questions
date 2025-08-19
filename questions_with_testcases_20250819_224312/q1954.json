@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Histology Assistant",
+  "tags": [],
+  "text": "An application to assist in the analysis of tissue samples is to work as follows. A digital microphotograph of a stained tissue sample is scanned to identify stained pixels. For each region of stained pixels, an outline of the region is obtained. The outline is then analyzed for shape indicators of disease and the outlines (color-coded for possible disease) are overlaid on the microphotograph as it is displayed to the pathologist.This problem is to write a program, which processes a bitmap of stained and unstained pixels, finds regions of stained pixels and, for each region, outputs the outline of the region. Regions with fewer stained pixels than a minimum size are ignored. Only the outer boundary is computed (interior holes are ignored).A pixel is adjacent to another pixel if the second pixel is directly above, directly below, directly left or directly right of the first pixel. Two stained pixels are connected if there is a sequence of stained pixels starting with one of the pixels and ending with the other for which each pixel in the sequence is adjacent to the next. A regionof stained pixels is a set of stained pixels, all of which are connected to a single stained pixel. A stained pixel is a boundary pixel of its region if at least one of the pixels adjacent to it is not stained. (All pixels immediately outside the bitmap are considered unstained so that pixels on the edge of the bitmap are boundary pixels.) In the example below, there are 4 regions (stained pixels are 'X', unstained are '.').........................................\r\n                .XX.....................................\r\n                ..X.................XXX......XXX........\r\n                .....................XXX....XXX.........\r\n                .......XXX............XXX..XXX..........\r\n                .....XXXXXXX...........XXXXXX...........\r\n                ....XXXXXXXXX...........XXXX............\r\n                ...XXXX...XXXX...........XX.............\r\n                ..XXX.......XXX.........................\r\n                ..XXX.......XXX........XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                ..XXX.......XXX...........X.............\r\n                ..XXX.......XXX...........X.............\r\n                ...XXXX...XXXX.........XXXXXXX..........\r\n                ....XXXXXXXXX..........XXXXXXX..........\r\n                .....XXXXXXX...........XXXXXXX..........\r\n                .......XXX.............XXXXXXX..........\r\n                ........................................Outlines are to be specified as the left most point of the top most line of the region, a count of boundary pixels and a sequence of moves from one boundary pixel to the next clockwise using the codes (up =A, up right =B, etc.):H  A  B\r\n                G     C\r\n                F  E  DRows are numbered from top to bottom beginning with 1. Columns are numbered from left to right beginning with 1. For example the outline of the 'v' shaped region above would be:3 21 22\r\n                CCDDDCBBBCCFFFFFGHHHHHInputInput is a sequence of problem instances. Each problem instance begins with a line containing 3 decimal numbers: row-count,column-count and minimum-number-of-pixels. This line is followed by row-count lines of column-count characters. Each character is either a period (.) for an unstained pixel or an upper-case 'X' for a stained pixel. The input ends when the row-count is 0. Row-count will be at most 47, column-count will be at most 63 and minimum- number-of-pixels will be at least 2.OutputFor each problem instance, the output begins with a line starting with a decimal integer giving the number of components of at least minimum-number-of-pixels stained pixels. This is followed by the description of the boundary of each component. The boundaries are to be listed in the order that a first pixel of the component appears while scanning across lines from left to right with line scanned from top to bottom. For each component, the output begins with a line giving the row number of the start pixel, thecolumn number of the start pixel and the number of pixels in the boundary as decimal integers separated by a single space. This line is followed by lines of direction codes 'A' through 'H'. Each line shall have 40 characters except the last line.SampleInput:20 40 4\r\n........................................\r\n.XX.....................................\r\n..X.................XXX......XXX........\r\n.....................XXX....XXX.........\r\n.......XXX............XXX..XXX..........\r\n.....XXXXXXX...........XXXXXX...........\r\n....XXXXXXXXX...........XXXX............\r\n...XXXX...XXXX...........XX.............\r\n..XXX.......XXX.........................\r\n..XXX.......XXX........XXXXXXX..........\r\n.XXX.........XXX.......XXXXXXX..........\r\n.XXX.........XXX.......XXXXXXX..........\r\n.XXX.........XXX.......XXXXXXX..........\r\n..XXX.......XXX...........X.............\r\n..XXX.......XXX...........X.............\r\n...XXXX...XXXX.........XXXXXXX..........\r\n....XXXXXXXXX..........XXXXXXX..........\r\n.....XXXXXXX...........XXXXXXX..........\r\n.......XXX.............XXXXXXX..........\r\n........................................\r\n12 40 4\r\n.X.X.X.X.X.X......XX...XXXXXXXXXXXXXXXX.\r\n.XXX.XXX.XXX......XX..XXXXXXXXXXXXXXXXXX\r\n.X...X...X........XX..XX.............XXX\r\n.X.X.X.X.X.X......XX..XX...XXXXXXXX...XX\r\n.XXX.XXX.XXX......XX..XX..XXXXXXXXXX..XX\r\n.X...X...X........XX..XX..XX......XX..XX\r\n.X.X.X.X.X.X......XX..XXX........XXX..XX\r\n.XXX.XXX.XXX......XX..XXXXXXXXXXXXXX..XX\r\n.X...X...X........XX...XXXXXXXXXXXX...XX\r\n.X.X.X.X.X.X......XXX................XXX\r\n.XXXXXXXXXXX......XXXXXXXXXXXXXXXXXXXXXX\r\n...................XXXXXXXXXXXXXXXXXXXX.\r\n0 0 0Output:3\r\n3 21 22\r\nCCDDDCBBBCCFFFFFGHHHHH\r\n5 8 36\r\nCCDCDDDEDEEFEFFFGFGGHGHHHAHAABABBBCB\r\n10 24 38\r\nCCCCCCEEEGGFEDCCEEEGGGGGGAAACCBAHGGAAA\r\n2\r\n1 2 103\r\nDBEGFEDBEGFEDBEGFEDBDBAAAAAAAAADBEGFEDBE\r\nGFEDBEGFEDBDBAAAAAAAAADBEGFEDBEGFEDBEGFE\r\nDBEGGGGGGGGGGAAAAAAAAAA\r\n1 19 159\r\nCEEEEEEEEDDCCCCCCCCCCCCCCCBBAAAAAHHGGGGG\r\nGGGGGGGFEEEDDCCCCCCCBBHGGGGGFGABCCCCCCCD\r\nEEEFGGGGGGGGGGGHAAAAAABCCCCCCCCCCCCCCCDE\r\nEEEEEEEEFGGGGGGGGGGGGGGGGGGGHAAAAAAAAAA",
+  "sample_input": "........................................\r\n                .XX.....................................\r\n                ..X.................XXX......XXX........\r\n                .....................XXX....XXX.........\r\n                .......XXX............XXX..XXX..........\r\n                .....XXXXXXX...........XXXXXX...........\r\n                ....XXXXXXXXX...........XXXX............\r\n                ...XXXX...XXXX...........XX.............\r\n                ..XXX.......XXX.........................\r\n                ..XXX.......XXX........XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                ..XXX.......XXX...........X.............\r\n                ..XXX.......XXX...........X.............\r\n                ...XXXX...XXXX.........XXXXXXX..........\r\n                ....XXXXXXXXX..........XXXXXXX..........\r\n                .....XXXXXXX...........XXXXXXX..........\r\n                .......XXX.............XXXXXXX..........\r\n                ........................................",
+  "sample_output": "H  A  B\r\n                G     C\r\n                F  E  D",
+  "link": "https://www.spoj.com/problems/GNYR04I",
+  "scraped_at": "2025-08-17 00:33:48",
+  "test_cases": [
+    {
+      "input": "........................................\r\n                .XX.....................................\r\n                ..X.................XXX......XXX........\r\n                .....................XXX....XXX.........\r\n                .......XXX............XXX..XXX..........\r\n                .....XXXXXXX...........XXXXXX...........\r\n                ....XXXXXXXXX...........XXXX............\r\n                ...XXXX...XXXX...........XX.............\r\n                ..XXX.......XXX.........................\r\n                ..XXX.......XXX........XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                .XXX.........XXX.......XXXXXXX..........\r\n                ..XXX.......XXX...........X.............\r\n                ..XXX.......XXX...........X.............\r\n                ...XXXX...XXXX.........XXXXXXX..........\r\n                ....XXXXXXXXX..........XXXXXXX..........\r\n                .....XXXXXXX...........XXXXXXX..........\r\n                .......XXX.............XXXXXXX..........\r\n                ........................................",
+      "expected_output": "H  A  B\r\n                G     C\r\n                F  E  D",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "ksadsbsssl\ngognqoi\niedwqtfcyon\nfhpkvruo\nfffymulcnmxhxxcggcnh\nqevrkokzpyfcpcoufghv\nhgzkexfdla\nqlkyreutczeuvnyasghw\nlttpxdaibjrc\ntbaoq\nojjjelcbt\nzmmrstyi\nuyf\nkxwfwvgufexakercvns\njmoinlaunnckyob\nnhoeoloqffsaeeatap\nbdhnx\noiaqscnq\nnvggzxipmwewehkrz\nafkv",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "agfphbmzqbqoke\ngfhniqywvrnvnws\niuk\ntdwkzoqsulwoucdwyif\nbmignekrbx\nctonkt\npn\nwulsxqzhckdsvxwgn\npfwpvwsgurgomp\nvgl\nlfetmv\nrorvcxunbhec\nfhyelt\nreiarektmkxf\nksogjqifonwhcykuwspp\nukkxzgcmnbmd\nwgdkooynl\nwiolvfbhl\nek\nxbbjyplyzv",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "kgsvmiosfwdnultzfrz\nczzgeym\nrrsfkvw\ndztjcfkpy\ntcz\nqmhkaufnaoykjdlhahpl\nqoefvuqgkaygj\newxwlxrp\newhvqmspzr\nyck\nyikqdzegwr\nqyiltsvnqxzsyrvwoz\ndgnvuoltscyrhv\ngr\nizdsykqvsejnbjor\nhg\nrlrgbawyggacsnpxg\ncoiuiejkghgmjkwq\nocylgzagdryunibsfj\neovwobmerzuxpvgbr",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "bgfmpprtyeh\ngj\nyxsqwujxajxqwikwrkhs\nytri\nswvjpvjlfjk\noqadxnixdwqdt\nkrgxqotrkhdwdxisdj\namrvrmry\ngblrhyu\nwtd\nicasdbmfuetmrgpdbt\nliirvglikgh\nqkyflhrevfdpnlnoucy\nnyvkela\natneertfrxrjnhpbrl\nphpwtixnv\nkxeorachmp\notqrfeventm\nxgutjukdnk\nhkuwiwqelxyfgyjng",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ebjknfnhhxdzbx\nsyqyg\nnzfjvqki\njbpcb\nswyycxfgaoosouejphhl\nwmmqguhumwmdyuffntsv\njdtgste\nnuegffmonebfwjbyz\npaxyqglaovjaigpr\nlofordeizaoqjqfblxqr\nxx\nlrsintuxgi\nbqcwpifmcpk\nehosqvxipghnjewu\ndvfgpnucqqgk\nxqrflkaw\nhvimkqpgaikli\nhxijfpdvfukipgclcupd\netjasb\njrwodofeoaflzauw",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "jvottvaw\nyyjvpeiulaffjrirt\nodmahp\nuebccharnxacvk\nnbzcdumti\ntznwlxppwtvzw\ndzcfbnurhs\nxxmr\nuoazjtbfuixxxvjm\ncfonbyxyf\nvge\nmgndavjbociecl\nlxj\nelodzhtybqyfjntvnrvz\nzjamnqn\nngtgw\nvssb\naqutyb\naqvkyaeerwvcukt\nnvfjpgn",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "v\nepzp\nsqgurgslivivnxncyu\nqcta\nlbebtfzjpffavv\nctnubzbuqgfevzjow\ndhptqstrdbwo\nywzvauaaen\nbp\niajcjjx\nmatxudzksxkjwkqzdzv\nmszmzrpcbundgt\njoyplqsuq\nyybku\nnaqsvb\nxdidoseaxzsufmhsv\nhmx\njrktztplds\nnaphjysfzhqdbkjocbz\nopdkwepdewogp",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "vsjxrty\ngcxf\nogrgolmtsivade\nhyf\nlolqfpkfheipacowf\nobvaozqotmwmwj\namimstxeutdstkelzjjv\nggortwtgclyqaemrvy\nhmfhafkuehsohyxgtze\ndgwgg\nsqnsbnj\nnbsbtayuiayl\nlehyhlijfkkpc\nndvhejyjwqspvpzxcaev\nslgejbkcbubkhd\nlsbdjidmw\nfi\ndbqyvy\naacurdmvty\nmjymyz",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "zsxgzbvawutwsftxlmyu\ncqapt\nkvfbjg\nxu\nvuegni\njopbl\nqgzfihoqclxrfppa\nwwvdo\nswyqntlrvpwsrntg\ns\ngobttblnsqnsl\nib\nnbwcmib\nkefxrzbytiu\nwmhjlw\nudlfilggoy\nnjf\nhcvutltxsdzxor\ngvlyjoy\nbrusq",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "buzyrbvvewxkzoizhkk\nkkbheu\njmdswktrvsvxdokmdya\ndbxhyfcnmgnsonmvv\nifomulqppztsptqpe\navrfptvcqkipzuu\nyowguosp\ntvkbwimaivdflslypy\nbluwkqxchsgjowhpj\njgzvrmorqzbh\nyhc\nta\nrnuvruxhgy\ncgb\njxxamjneuckrwr\nxfb\nrojquwyzntmlfzieexyu\nyzwbyihgxopfuyjnmluf\nmrnxyxioqwirthvdred\nafejfxzxkz",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hvjb\nwobuspbrtdrm\nhyjirmlzfoyomm\npj\npsuwdqhu\nfklubbpwivtoeypja\nw\nuxprasls\niurvy\nnhzsssbuc\nionalo\nyohkukzbslo\ntfgjwkdhqn\noswmmzsp\nzusgueqkhz\njw\ngyc\nzhlzvnm\namqhhm\npthkeebhm",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hlncigvyxrjflkyfb\nhaxqjzludelrxy\nmkckxjfx\nceukl\nijajhwfdayfjxdtnu\nqocoktjdwenzygy\nwinxutqnxk\nfzpchhgsjdgefkm\ntsgzonfeeixx\nmxi\ng\nubzdwvkmjrtv\nbeqjobhfcuxx\nugxiiulm\nbyodcjk\narzuxxwevwemstvx\nnqorsavlzrzjjqzk\npxzuoyycwese\njmresj\nwcwefndonpljwdwqzkoa",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "unndlzkgjthnxe\nhxcqgdl\nithjvls\nvjrjksr\nukuxelkxfzzdz\nfhjn\ncqszcacueouivfr\nqwnteexfphjzrdxwx\nli\niefvhisfczm\nsnaydfkoegxqklncxc\niokgaa\naqujkzkqdrfmi\nbdkpkebvqv\nuhzrdefchgiuexo\nriqrplthkskzxkf\ntnzubywintttak\nkouzadjwrnswoltrfipm\nadnedvueaqxocrfcvb\nfohkhzcsdqhajrapr",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "cjgpicyxinfsmvlbzix\neknclz\nayqloiwjuxq\nvzcns\nunetyqntxjeq\ntzjbn\nopkwqjitpqitgasobvf\nrln\nynlhsegibmuljjdxkqj\nimsopkvidxvmnwwjpfwg\nqqwdnfrwivhjehypsj\nibphcq\neqmymycxhfqmrdmt\nuyvfxma\nugdwjmmpu\nheewqakloob\nsodpxdt\nhacrpioftqsyvlbkhqjg\nnjdkquwj\nbvbbkxpcydjxu",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "g\nl\niutjv\nyhhdoog\nwtbtfmxkrpjjgy\nqbkpgfahicsrtn\nrbczj\nprkohhprxdoo\nugkqdctmbkaxma\nsj\njiawjcibgthfeyps\nk\nlxpikgzmmbzbnmm\nihusv\naglfjoocbacbi\nsuvxvowdadw\nksenanldoovdgmwdxiwt\nkjfbouwsvbwozwbstmdu\nj\nbkiuxfastduwsje",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "lmcevaylbaq\ngqxl\nivslijmaa\nwhi\nxmfutrvovf\nsabjqsisidxczhgz\nlsbxngziiagecrpwxw\nkwukpiidclvycyggh\ncmmsj\nofgcsxiczudlua\nlhdohrienytl\nzsqv\nxyzgfv\nscvmzmckeidthdchsjlu\nmaovm\nsa\nebvvmgjqrnnjdyuiwgwb\nqgsskzjwwbq\nziwtogfwun\nr",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "jmlx\njcxrvdshmwoqpp\nafziphezwebrqmag\nqriikoatwjr\nedqebtobewvepz\nkmcsucskhtnpbm\njenxeqsvry\njhfiexbcqvrndscxkiz\nhbghdyurrov\nnymfdeysppgqtb\nuhwc\naphvtnnvoytabb\nbqfbfgolghznq\ntj\ng\ncnuqrktditynb\nqsomr\naaimdgiskqth\ncoxyzrfunkzt\ns",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "uta\ndwagpbynxyvj\nvcxlgcbmpzpyvkthv\nxrzvd\nhlwnxnunkjmxx\neqxgigbfherec\ngutjusxrrfyydwm\nmmxysg\ns\nkvclkmedspuxrnfhx\nvcbh\nzkabekckgxcu\nowgigudop\nusaznikqxxvmpqum\nae\nzfj\njg\nmvo\nfdmeiljcbubt\nizkipztk",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "rquwhpleigxaecfkq\nueltdwhs\nprpmhdcrzkdxvlq\nxyrmynahhxbn\nujqxmpm\nzprz\ncqmoiusgilxmwgyw\nwx\nkllsykvwydxlb\nwvcnfoyvztcpwq\nludoa\ngeivlhzhpugpzot\njxwepjaaoe\nm\nhpxlwrzclqffbgyxdvj\nvxj\ncrpd\nrlnfwjailjmspaczktg\ncfdi\nyrjgbsonjdpbcyvaqdxm",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Breaking String",
+  "tags": [],
+  "text": "A certain string-processing language allows the programmer to break a string into two pieces. Since this involves copying the old string, it costs n units of time to break a string of n characters into two pieces. Suppose a programmer wants to break a string into many pieces. The order in which the breaks are made can affect the total amount of time used. For example, suppose we wish to break a 20 character string after characters 3, 8, and 10 (numbering the characters in ascending order from the left-hand end, starting from 1). If the breaks are made in left-to-right order, then the first break cost 20 units of time, the second break costs 17 units of time, and the third breaks costs 12 units of time, a total of 49 units of time (see the sample below). If the breaks are made in right-to-left order, then the first break costs 20 units of time, the second break costs 10 units of time, and the third break costs 8 units of time, a total of 38 units of time.The cost of making the breaks in left-to-right order:thisisastringofchars     (original)\r\nthi sisastringofchars    (cost: 20 units)\r\nthi sisas tringofchars   (cost: 17 units)\r\nthi sisas tr ingofchars  (cost: 12 units)\r\n                         Total: 49 units.The cost of making the breaks in right-to-left order:thisisastringofchars     (original)\r\nthisisastr ingofchars    (cost: 20 units)\r\nthisisas tr ingofchars   (cost: 10 units)\r\nthi sisas tr ingofchars  (cost:  8 units)\r\n                         Total: 38 units.InputThere are several test cases! In each test case, the first line contains 2 integers N (2 ≤ N ≤ 10000000) and M (1 ≤ M ≤ 1000, M < N). N is the original length of the string, and M is the number of the breaks. The following lines contain M integers Mi (1 ≤ Mi < N) in ascending order that represent the breaking positions from the string's left-hand end. Read input till EOF.(There wont be more than100cases)OutputFor each test case, output in one line the least cost to make all the breakings.ExampleInput:20 3\r\n3 8 10\r\n20 4\r\n2 3 8 10Output:37\r\n40",
+  "sample_input": "thisisastringofchars     (original)\r\nthi sisastringofchars    (cost: 20 units)\r\nthi sisas tringofchars   (cost: 17 units)\r\nthi sisas tr ingofchars  (cost: 12 units)\r\n                         Total: 49 units.",
+  "sample_output": "thisisastringofchars     (original)\r\nthisisastr ingofchars    (cost: 20 units)\r\nthisisas tr ingofchars   (cost: 10 units)\r\nthi sisas tr ingofchars  (cost:  8 units)\r\n                         Total: 38 units.",
+  "link": "https://www.spoj.com/problems/BRKSTRNG",
+  "scraped_at": "2025-08-17 00:33:50",
+  "test_cases": [
+    {
+      "input": "thisisastringofchars     (original)\r\nthi sisastringofchars    (cost: 20 units)\r\nthi sisas tringofchars   (cost: 17 units)\r\nthi sisas tr ingofchars  (cost: 12 units)\r\n                         Total: 49 units.",
+      "expected_output": "thisisastringofchars     (original)\r\nthisisastr ingofchars    (cost: 20 units)\r\nthisisas tr ingofchars   (cost: 10 units)\r\nthi sisas tr ingofchars  (cost:  8 units)\r\n                         Total: 38 units.",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "uojsfqbucrolhgmjgmin becr\n6\ntn nrnf gwl 9 gle\n10\ns dpzd we gozrl 2 qys\n1\ndw g n g w 3 wxhfs\n9\naail 8 locko",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "hugikdxugqkkunu o\n4\nfooh zincumapvufa qxasil 3 qth\n1\nli re jqovmgajyib xwtaw 10 tcqg\n10\nil xtsk z oawwbarcxm zxyzl 5 bf\n2\nozmky 6 aldn",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "etwkvooreysys wehna\n4\njkpb kkpydzryn mjabay 1 nfqq\n6\notbau uhd gu umhkk 4 zc\n3\nbc cl fgcog ynneumnftp jain 4 xk\n1\na 3 omxvj",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ny s\n78\nh ieel iznqkc 57 h\n19\nzxu js uulaygghufz yral 87 zzu\n73\nkgl mrf owfrc rjdplcv kqtd 57 jeuqg\n20\nzbhot 70 uabg",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "mscuazpam kra\n55\nzijf csr cbtlc 30 mlne\n67\ngbbiv t zhlzvlo jguxsx 49 xga\n58\nxymb wk mb p sv 75 u\n36\ncxzzzz 92 bekbp",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "bhlljgfcnp akz\n23\nzj zkvpfmmqxovre sr 93 pco\n2\naxk enswf xqjrefkcfwx nrefbe 72 qchkv\n47\noxbh gyh v cfzowo lzf 10 qxzr\n95\nhzagsx 67 s",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "vdlnikzylzimh hnhustql\n23\nioqr qdra bqyv 75 lfb\n41\np fnzc cokxndembqmv vpf 21 ecw\n85\njh sluv parh tjyzyczgv w 51 smqofg\n10\nbiwwd 93 m",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ltjsgwqmebjfksuor oy\n27\nipau jh t 81 nd\n20\npfsca nz krhrsuqc bcuaj 69 sj\n80\nmtfip xxos ih elfoqbuuc xiu 21 lrruw\n50\nbzkr 46 gdxkqt",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "vbip ztgarj\n165689\nhprf w okwrq 440558 x\n143844\nnamu a y incmoc 221745 m\n402024\nvacu wywsw nrba foxjh hdcp 217509 j\n437125\nzuyesh 249319 zii",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "llofiw wfcmxb\n80834\nviq x ch 136895 vhfog\n175789\ng n nudagoxllstt kxnvnj 297076 tuiwiq\n358950\nixg ksa ulr qtqxpwgx mhmrd 214003 sg\n374663\nav 461513 sydnf",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "sptonangn lckckcdgiv\n180770\np mf hgnxrw 364878 es\n75836\nz mqcq vynhantkvuj n 204997 k\n242870\nd saej at vtyrhy xv 220525 ec\n245534\nwcmbvm 346839 ob",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "gwcndznzy qbwh\n298724\njgway bbeboiib jkvv 325457 wttil\n235371\nvve boed ksvyaun pvgov 293372 go\n320483\nrj syhg zblrq bwl u 430260 yf\n415187\nhxuxev 245167 qbnzmc",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "kjjkignqbkxaszyweor xlytj\n51389\nhdu ymcuookxcdqautepj vu 261594 siwlt\n382928\nwvivy bhpa jjbmxfh fwuo 187852 caw\n221741\npizi lma fz oc xvf 345451 kqbkj\n486340\nz 382043 axvqsa",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "uuq brgmz\n126376\ns eeurermrpnzsl pel 60794 hd\n418858\nrbvh x x kln 423224 nfcm\n208320\nvx zppyh rkbue ngfelqsqy j 430995 tfuik\n476191\nqec 369844 mgahiy",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "yuhsmtfihg ikm\n50679\nudaqi zfqowkvlkgxfoup hcxs 218646 xblybt\n61065\nlhn uevq drje yy 429899 zftjc\n399888\npuaw sq k baaqi bodfdh 489692 zrsv\n417558\nspr 333848 tmt",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "grfdr svwujvhg\n1000000\nojha ymzdusatfzmtwhmp ftob 1000000 hclk\n1000000\nwqikk k qcalpk nehqcd 1000000 subnyf\n1000000\ng faf m zlqdnbv r 1000000 k\n1000000\nvrajf 1000000 a",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "y ak\n1000000\nhhci uhxpoxixmeigddwre hcz 1000000 zasdw\n1000000\nl lfds zgjqc w 1000000 vwgo\n1000000\ncov f x geawynn baznus 1000000 ha\n1000000\nvvpjx 1000000 dbvx",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "axgzdwe dkepjcu\n1000000\nbvto dyzdvwlolzsvp mpg 2 xk\n1\nyk oo h vyfepb 2 qgk\n2\ntgdb oglwy y h ajuv 1 kucn\n2\nyz 1000000 cktyb",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "ccl q\n2\nmpzuz orlkrbvktzkijf ackeob 1 ltq\n2\nzvxic fm xrtbaijppo cfsc 999999 vkzzz\n1\nd v qq cuxwpmsgow jvlfiv 999999 dpb\n2\nset 1 niw",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cattle Bruisers",
+  "tags": [],
+  "text": "Canmuu is out for revenge after being utterly defeated by Bessie in paintball and has challenged Bessie to a video game.In this game, Bessie starts out at point (BX, BY) in the coordinate grid (-1,000 ≤ BX ≤ 1,000; -1000 ≤ BY ≤ 1,000), and tries to escape, starting at time 0. She moves continuously at a velocity of (BVX, BVY) units/second (-100 ≤ BVX ≤ 100; -100 ≤ BVY ≤ 100). Thus, at time 1 she will be at point (BX + BVX, BY + BVY); at time\r\n1.5 she will be at (BX + 1.5×BVX, BY + 1.5×BVY).Unfortunately, Canmuu has sent N (1 ≤ N ≤ 50,000) cattle bruisers to pursue Bessie. At time t=0, cattle bruiser i is at position (Xi, Yi) (-1,000 ≤ Xi≤ 1,000; -1,000 ≤ Yi≤ 1,000) with velocity (VXi, VYi) units/second (-1,000 ≤ VXi≤ 1,000; -1,000 ≤ VYi≤ 1,000).Each cattle bruiser carries a \"proximity\" weapon to fire at Bessie; the weapon can hurt Bessie when the cattle bruiser is no further than R (1 ≤ R ≤ 2,500) units from her.Bessie has a shield to protect herself from these attacks. However, she does not want to waste any of her shield's power, so she would like to know the maximum number of cattle bruisers within firing range for any (potentially non-integer) time t ≥ 0.In order to avoid precision errors with real numbers, it is guaranteed that the answer produced will be the same whether the attack range is decreased to R-0.0001 or increased to R+0.0001.InputLine 1: Six space-separated integers: N, R, BX, BY, BVX, and BVY.Lines 2..N+1: Line i+1 contains four space-separated integers: Xi, Yi, VXi, and VYiOutputLine 1: Print a single integer denoting the maximum number of cattle bruisers within attack range at any point in time.ExampleInput:3 1 0 0 0 2\r\n0 -3 0 4\r\n1 2 -1 1\r\n1 -2 2 -1Input details:Bessie starts at point (0, 0) and is moving at 2 units per second in the (positive) y-direction. There are 3 cattle bruisers, the first of which starts at point (0, -3) and travels 4 units per second in the y-direction. The maximum distance for a cattle bruiser to be in range of Bessie is 1 unit.Output:2Output details:At time 1.5, Bessie is at point (0, 3), and the three bruisers are at points (0, 3), (-0.5, 3.5), and (4, -3.5). The first two cattle bruisers are within 1 unit of Bessie, while the third will never be within 1 unit of Bessie, so 2 is the most achievable.",
+  "sample_input": "Input:3 1 0 0 0 2\r\n0 -3 0 4\r\n1 2 -1 1\r\n1 -2 2 -1",
+  "sample_output": "Output:2",
+  "link": "https://www.spoj.com/problems/CATTLEB",
+  "scraped_at": "2025-08-17 00:33:11",
+  "test_cases": [
+    {
+      "input": "3 1 0 0 0 2\r\n0 -3 0 4\r\n1 2 -1 1\r\n1 -2 2 -1",
+      "expected_output": "Output:2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 2 6 4 8 4\n7 3 9 8\n3 1 6 8\n6 1 10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "3 2 4 1 10 8\n3 7 4 5\n9 4 6 9\n7 10 10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "1 10 7 4 6 5\n4 5 3 4\n4 9 10 4\n8 7 3 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "29 33 47 24 50 26\n48 5 19 22\n9 36 40 37\n41 5 45 14",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "10 17 12 47 49 45\n41 29 12 20\n21 33 40 17\n31 33 15 7",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "13 41 41 7 12 40\n42 28 18 40\n29 24 7 19\n25 3 19 8",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "23 27 31 23 5 2\n10 12 33 2\n10 7 10 41\n14 40 10 36",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "46 10 44 19 3 13\n17 49 42 42\n45 16 27 16\n30 48 33 4",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "2 12 16 24 8 13\n15 21 22 9\n3 20 2 3\n18 6 9 7",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2 22 19 2 8 14\n23 7 23 7\n16 8 18 19\n4 2 21 15",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 13 14 4 18 13\n5 24 9 22\n24 10 15 20\n19 23 23 18",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 3 6 2 3 8\n10 18 23 19\n17 5 17 2\n19 25 11 14",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "8 15 7 15 9 16\n6 10 11 10\n6 23 20 18\n12 13 7 17",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "15 12 8 3 10 6\n22 14 9 11\n20 20 9 14\n9 13 12 15",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 23 24 5 23 11\n12 18 6 11\n24 6 5 16\n20 12 6 19",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 50 50 50 50 50\n50 50 50 50\n50 50 50 50\n50 50 50 50",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50 50 50 50 50 50\n50 50 50 50\n50 50 50 50\n50 50 50 50",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2 50 1 2 2 1\n2 49 49 50\n49 49 2 49\n1 1 49 50",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 1 49 2 2 50\n50 49 50 1\n50 2 50 1\n49 50 1 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:14",
+  "total_test_cases": 20
+}

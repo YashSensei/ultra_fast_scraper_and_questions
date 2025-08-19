@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Expressions",
+  "tags": [],
+  "text": "Arithmetic expressions are usually written with the operators in\r\nbetween the\r\ntwo operands (which is called infix notation). For example,(x+y)*(z-w)is an arithmetic expression in infix notation.\r\nHowever, it is easier to write a program to evaluate an expression if\r\nthe expression is written in postfix notation (also known as reverse\r\npolish\r\nnotation). In postfix notation, an operator is written behind its two\r\noperands, which may be expressions themselves. For example,x y + z\r\nw\r\n- *is a postfix notation of the arithmetic expression\r\ngiven above. Note that in this case parentheses are not required.To evaluate an expression written in postfix notation, an algorithm\r\noperating on a stack can be used. A stack is a data structure which\r\nsupports two operations:push: a number is inserted at the top of the\r\nstack.pop: the number from the top of the stack is\r\ntaken out.During the evaluation, we process the expression from left to right.\r\nIf we encounter a number, we push it onto the stack. If we encounter an\r\noperator, we pop the first two numbers from the stack, apply the\r\noperator\r\non them, and push\r\nthe result back onto the stack. More specifically, the following\r\npseudocode\r\nshows how to handle the case when we encounter an operator O:a := pop();\r\nb := pop();\r\npush(b O a);The result of the expression will be left as the only number on the\r\nstack.Now imagine that we use a queue instead of the stack. A queue also\r\nhas a\r\npush and pop operation, but their meaning is different:push: a number is inserted at the end of the\r\nqueue.pop: the number from the front of the queue\r\nis taken out of the queue.Can you rewrite the given expression such that the result of the\r\nalgorithm\r\nusing the queue is the same as the result of the original expression\r\nevaluated\r\nusing the algorithm with the stack?Input SpecificationThe first line of the input contains a numberT(T\r\n≤ 200). The followingTlines each\r\ncontain one expression in postfix notation. Arithmetic operators are\r\nrepresented by uppercase letters, numbers are represented by lowercase\r\nletters.\r\nYou may assume that the length of each expression is less than10000characters.Output SpecificationFor each given expression, print the expression with the equivalent\r\nresult\r\nwhen using the algorithm with the queue instead of the stack. To make\r\nthe\r\nsolution unique, you are not allowed to assume that the operators are\r\nassociative or commutative.Sample Input2\r\nxyPzwIM\r\nabcABdefgCDEFSample OutputwzyxIPM\r\ngfCecbDdAaEBF",
+  "sample_input": "a := pop();\r\nb := pop();\r\npush(b O a);",
+  "sample_output": "2\r\nxyPzwIM\r\nabcABdefgCDEF",
+  "link": "https://www.spoj.com/problems/EXPRESS",
+  "scraped_at": "2025-08-17 00:33:34",
+  "test_cases": [
+    {
+      "input": "a := pop();\r\nb := pop();\r\npush(b O a);",
+      "expected_output": "2\r\nxyPzwIM\r\nabcABdefgCDEF",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "kx hqve si\ndwog wa tm\nmlf fidhf hh",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "su uuerm vnwwg\nycrh hbj mha\nowqkwc csu wfn",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "ag gxmo joe\nm fbf mcese\nwccvwn lsn prdd",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "l x gvfhnt\nesi b l\nlvkngk pbhqt c",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "ymbe sxs orjjv\nfj opqo zkwiht\nygl iat elwl",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "cjmlr s kqwp\nnsbm pf e\nrvn d qnl",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "fw v sckzpj\nh pdc xrgjz\nx jc vmji",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "tth ukpox k\nk co z\na jbsgk ckm",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "rwku fqcu hs\nknni o perfvj\nv qvtn ued",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "hsfaa h iyu\nnjeh ro vgibtw\nqkgeso os no",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "e cha fd\nwllav hclg rel\nuup eapvb k",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "q xgnjh rio\nabw w rpmrd\nhesyi vir zivxk",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "yczs vdzd k\ncpp n neb\ngxhzhy wex pkp",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "ubbu ddswd ojdu\njw qz xdxsgw\nbnsa sdrx sifja",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "fl oxphk vqa\nfa khlop xo\ny acaxp sukro",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "bje lu a\nnfc f kiy\ndxqjz kzce dac",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "ca hfl ao\ndfa wkuk qa\nwmu kl xfuwe",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "svh ixf orj\ni zhbzr q\nh zxo bvi",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "bnyyj gdcu kd\nognjc htjs pk\nzess vdzg dda",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

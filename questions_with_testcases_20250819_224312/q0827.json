@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ada and Numbering",
+  "tags": [],
+  "text": "Ada the Ladybug has sequence of different vegetables (for simplicity represented by numbers). She has a few interesting questions of following form: Choose some continuous subsequence of vegetables, then assign each kind of vegetable a distinct positive number. She wants to assign them in a way that the sum (of assigned numbers) over all vegetables will be as low as possible.InputThe first line contains two integers1 ≤ N, Q ≤     2×105, the number of vegetables and number of questions.Next line containsNintegers1 ≤ Ai≤     109, the kinds of vegetables.NextQlines contains two integers1 ≤ I ≤ J ≤ N, the left and right indices of Ada's questions.OutputFor each question answer the minimal possible sum.Example Input 110 5\r\n1 1 3 2 4 1 3 1 1 4\r\n1 3\r\n1 10\r\n5 10\r\n3 5\r\n5 8Example Output 14\r\n19\r\n10\r\n6\r\n7Example IO explanationAssign 1 to 1 and 2 to 3Assign 1 to 1, 2 to 4, 3 to 3 and 4 to 2 (swapping 4 and 3 would work too)Assign 1 to 1 and 2 to 4 and 3 to 3Assign 1 to 4, 2 to 3 and 3 to 4 (but any permutation would do)Assign 1 to 1 and 2 to 4 and 3 to 3",
+  "sample_input": "10 5\r\n1 1 3 2 4 1 3 1 1 4\r\n1 3\r\n1 10\r\n5 10\r\n3 5\r\n5 8",
+  "sample_output": "4\r\n19\r\n10\r\n6\r\n7",
+  "link": "https://www.spoj.com/problems/ADANUM",
+  "scraped_at": "2025-08-17 00:33:13",
+  "test_cases": [
+    {
+      "input": "10 5\r\n1 1 3 2 4 1 3 1 1 4\r\n1 3\r\n1 10\r\n5 10\r\n3 5\r\n5 8",
+      "expected_output": "4\r\n19\r\n10\r\n6\r\n7",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "10 3\n9 8 1 6 10 7 5 5 9 3\n3 6\n3 2\n6 6\n9 5\n3 9",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 6\n4 5 10 7 7 7 8 3 5 4\n2 10\n9 8\n9 7\n1 9\n6 4",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 9\n1 6 7 9 1 5 5 10 10 8\n8 9\n6 6\n5 2\n3 8\n1 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "51 40\n7 19 5 60 25 68 13 63 1 8\n43 41\n95 45\n84 2\n89 74\n37 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "75 72\n90 21 86 37 10 78 4 90 5 5\n61 66\n19 82\n2 98\n13 57\n15 66",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "40 95\n20 60 63 66 8 76 71 13 12 72\n14 89\n78 92\n45 46\n49 66\n100 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 61\n75 52 29 100 51 63 18 67 1 43\n37 38\n87 51\n93 82\n62 59\n59 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "54 100\n24 17 45 91 17 9 55 25 57 35\n25 12\n4 49\n15 5\n34 41\n21 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "98 246\n292 412 264 101 272 88 50 232 85 247\n262 185\n391 328\n351 387\n54 407\n137 331",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "331 147\n83 109 380 393 230 296 231 375 335 285\n279 356\n454 357\n468 164\n126 479\n200 486",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "188 356\n226 494 220 449 159 185 304 344 376 104\n178 220\n83 64\n254 480\n165 438\n431 316",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "319 137\n491 279 280 53 156 355 138 80 255 468\n322 181\n497 470\n118 192\n391 359\n357 128",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "391 431\n350 125 68 129 359 307 118 498 71 381\n456 462\n218 233\n281 160\n148 127\n179 424",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "84 126\n388 60 120 419 452 342 216 231 168 330\n149 101\n382 210\n56 297\n108 255\n388 409",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "332 450\n323 83 359 238 126 169 397 294 306 278\n265 477\n455 304\n276 481\n357 384\n112 447",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000 1000 1000 1000 1000 1000 1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1000\n999 2 1 2 1 1000 1 999 1000 999\n2 1000\n2 2\n1 2\n999 1000\n2 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 1\n2 999 999 1000 1000 1000 999 1000 999 1000\n2 2\n999 2\n999 2\n2 999\n1000 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:15",
+  "total_test_cases": 20
+}

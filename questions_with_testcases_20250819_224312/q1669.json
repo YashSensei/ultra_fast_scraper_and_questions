@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Highway Patrol",
+  "tags": [],
+  "text": "Crimes in city of Megacity are going high. To fight the crimes, the authorities have created a highway patrol. The city consists of a number of one-way roads. At the ends of each road, there is a base station for the patrol troops. Each base station has a number of troops. At the beginning, each station sends a troop along all the outgoing highways from that station. The troop patrols the highway and whenever it reaches the station on the other side of the highway, it waits there, and the troop that has been waiting there the most, is sent along the highway that has not been patrolled the longest time.Soon, they faced some difficulties, cause, the frequency of patrolling a highway is more and more dependent on the number of highways that started and ended at the base station. If the number of highways started at a base station is more than the number of highways ended there, the roads are patrolled less frequently. And if, no highways end at some base station, then, the highways started from there, will not be patrolled more than once. In this situation, the highway patrol decided to remove some highways from the patrolling schedule, so that, at each base station, the number of highways started and ended at any base station will be equal. The rest of the highways will be monitored using video surveillance. But, due to some security issues, there are some highways that have to be patrolled.Now, given the cost of patrolling highways, and that of installing video surveillance, find the minimum cost of monitoring the whole city. Please keep in mind that, video surveillance can not substitute the highway patrol completely. So, there has to be at least one highway that will be patrolled.InputFirst line of the input contains an integer T (T ≤ 70), the number of test cases. This is followed by T test cases. Each test case starts with two integers N (1 ≤ N ≤ 100) and M (1 ≤ M ≤ 1000), the number of base stations and highways. This is followed by M lines, each containing 5 integers, u, v, p, s, x (1 ≤ u, v ≤ N, 0 ≤ p, s ≤ 1000000) where u and v means, the highway starts from base station u, and ends at v, p is the cost of patrolling and s is the cost of installing video surveillance. If the highway must be patrolled, then x will be one. Otherwise it will be zero.OutputFor each test case, output the case number, followed by the minimum cost to monitor the highways. If it is not possible to patrol satisfying the given constraints, output “impossible” (without quotes).ExampleInput:24 51 2 10 25 02 3 10 5 03 1 10 5 02 4 10 5 04 3 30 5 04 51 2 10 25 02 3 10 5 03 1 10 5 02 4 10 5 04 3 30 5 1Output:Case 1: 40Case 2: 65",
+  "sample_input": "Input:24 51 2 10 25 02 3 10 5 03 1 10 5 02 4 10 5 04 3 30 5 04 51 2 10 25 02 3 10 5 03 1 10 5 02 4 10 5 04 3 30 5 1Output:Case 1: 40Case 2: 65",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/PHU09K",
+  "scraped_at": "2025-08-17 00:33:41",
+  "test_cases": [
+    {
+      "input": "24 51 2 10 25 02 3 10 5 03 1 10 5 02 4 10 5 04 3 30 5 04 51 2 10 25 02 3 10 5 03 1 10 5 02 4 10 5 04 3 30 5 1",
+      "expected_output": "Case 1: 40Case 2: 65",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 8 3 2 6 1 8 1 1 8 3 8 1 6 7 8 1 3 9 10 2 10 4 6 4 4 8 10 8 8 8 9 8 7 8 3 3 3 10 3 7 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "8 5 9 9 6 7 7 8 1 2 2 2 10 5 9 6 10 1 6 9 7 3 7 3 9 9 4 4 4 6 1 7 8 4 9 9 5 5 7 9 9 6 6",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 3 6 9 4 2 5 7 10 4 3 1 4 4 6 2 6 10 7 6 9 6 4 2 3 4 5 6 8 6 9 1 8 8 1 7 1 1 8 4 6 9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "21 54 92 5 55 5 4 44 75 93 16 5 35 92 74 39 54 1 14 62 6 53 73 92 33 43 15 74 22 14 7 33 49 56 47 57 69 40 99 15 83 57 71",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "91 75 88 1 59 61 88 95 72 74 18 19 24 77 74 6 78 22 72 58 98 32 22 71 65 28 79 50 11 90 11 81 18 43 31 9 83 39 55 52 11 13 86",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "12 53 33 92 82 94 19 99 13 43 81 66 28 22 42 30 8 40 93 49 52 2 87 8 70 52 4 49 96 22 23 18 14 68 31 61 64 85 12 6 79 36 47",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "15 70 68 61 34 16 51 74 88 48 51 26 54 5 37 17 40 2 46 30 40 77 86 99 86 94 20 23 84 93 90 1 53 80 32 4 75 18 89 47 61 11 44",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "82 48 60 27 11 12 33 18 64 46 15 27 66 93 27 91 70 56 26 12 40 92 7 78 35 63 50 84 67 3 35 6 60 18 69 91 91 33 82 93 88 63 93",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 47 9 44 37 29 20 42 10 37 30 6 31 12 10 32 29 8 12 19 26 43 13 49 9 42 7 31 36 43 43 17 23 10 7 38 32 24 7 44 45 37 38",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 50 18 49 27 25 45 45 26 7 21 28 30 8 38 43 38 21 37 38 28 44 44 30 47 21 48 22 30 37 46 38 10 18 44 7 47 47 17 9 24 48 35",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "21 35 22 45 46 28 40 5 23 12 34 9 38 7 40 48 8 17 28 22 26 30 35 36 48 32 19 47 39 7 50 31 22 16 38 44 43 37 19 33 12 41 34",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "33 30 13 41 30 30 29 8 19 37 9 35 23 32 31 32 50 19 30 33 44 20 41 37 13 12 10 14 22 34 13 20 46 22 19 11 9 43 8 26 32 21 38",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11 11 8 11 13 44 6 5 15 13 20 29 28 35 47 6 20 50 24 7 14 40 21 33 7 30 6 32 43 34 5 16 27 15 26 43 43 45 14 18 10 36 46",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "18 19 28 22 28 10 19 43 18 35 44 26 28 5 14 13 41 43 32 40 11 30 38 16 32 17 11 41 42 36 31 33 6 48 30 24 21 5 46 48 18 39 45",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "41 48 48 15 23 50 30 8 24 13 29 48 11 24 37 48 15 9 14 25 6 35 25 19 14 23 36 18 5 34 15 42 34 11 34 38 41 26 48 35 46 11 48",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "99 2 1 2 1 1 100 99 2 2 1 2 100 100 2 100 1 99 99 99 99 1 100 99 99 1 99 99 2 1 1 99 100 1 2 99 2 2 1 100 100 2 100",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "99 100 99 100 100 1 99 100 1 100 99 1 2 2 1 99 99 100 2 99 99 1 100 100 2 99 100 99 100 99 99 100 99 100 99 99 1 99 1 1 1 99 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:18",
+  "total_test_cases": 20
+}

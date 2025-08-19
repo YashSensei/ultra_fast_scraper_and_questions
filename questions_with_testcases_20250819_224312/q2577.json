@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Mobile Service Hard",
+  "tags": [],
+  "text": "A company provides service for its partners that are located in different towns. The company  has three mobile service staff employees. If a request occurs at some location, an employee of  the  service  staff  must  move  from  his  current  location  to  the  location  of  the  request  (if  no  employee  is  there)  in  order  to  satisfy  the  request.  Only  one  employee  can  move  at  any  moment.  They  can  move  only  on  request  and  are  not  allowed  to  be  at  the  same  location.  Moving  an  employee  from  location  p  to  location  q  incurs  a  given  costC(p,q).  The  cost  function  is  not  necessarily  symmetric,  but  the  cost  of  not  moving  is  0,  i.e.C(p,p)=0.  The  company must satisfy the received requests in a strict first-come, first-serve basis. The goal is  to minimize the total cost of serving a given sequence of requests.TaskYou are to write a program that decides which employee of the service staff is to move for  each request such that the total cost of serving the given sequence of requests is as small as  possible.InputThe first line contains two integers, L and N. L (3 <= L <= 300) is the number of locations and N (1 <= N <= 3000) is the number of requests. Locations are identified by the integers from 1 to L. Each of the next L lines contains L non-negative integers. The jth number in the line i+1 is the cost C(i,j), and it is less than 2001.The last line contains N integers, the list of the requests. A request is identified by the identifier of the location where the request occurs. Initially, the three service staff employees are located at location 1, 2 and 3, respectively.OutputThe first line contains one integer, M, the minimal total cost of serving the input sequence of the requests. The second line contains exactly N integers. The ith number is the identifier of the service staff employee (1, 2 or 3) who will serve the ith request. If there are multiple possibilities, your program should output one sequence only; it does not matter which one.ExampleInput:5 90 1 1 1 11 0 2 3 21 1 0 4 12 1 5 0 14 2 3 4 04 2 4 1 5 4 3 2 1Output:51 2 1 2 2 1 3 1 3",
+  "sample_input": "Input:5 90 1 1 1 11 0 2 3 21 1 0 4 12 1 5 0 14 2 3 4 04 2 4 1 5 4 3 2 1Output:51 2 1 2 2 1 3 1 3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/SERVICEH",
+  "scraped_at": "2025-08-17 00:34:04",
+  "test_cases": [
+    {
+      "input": "5 90 1 1 1 11 0 2 3 21 1 0 4 12 1 5 0 14 2 3 4 04 2 4 1 5 4 3 2 1",
+      "expected_output": "51 2 1 2 2 1 3 1 3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "4 6 3 8 1 7 9 9 2 7 6 8 2 9 5 7 2 9 2 2 3 8 9 9 7 2 4 5 9 2",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 10 8 10 5 7 1 3 7 9 6 10 10 2 2 6 1 4 4 10 4 5 5 10 5 3 6 6 6 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "6 4 8 4 7 2 5 7 9 9 9 1 4 3 3 8 4 7 3 7 3 9 7 7 8 3 10 1 10 7",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "98 3 34 85 16 26 66 93 6 8 39 46 25 41 44 78 4 59 87 95 52 38 41 68 21 97 40 82 1 77",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "44 58 68 20 90 41 56 64 18 85 11 16 30 98 58 5 60 32 76 70 81 12 55 11 66 49 91 9 27 55",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "25 57 58 27 3 51 21 19 40 16 56 33 15 39 7 24 4 41 87 59 77 41 79 98 11 39 71 18 63 3",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "67 9 47 6 59 69 76 44 32 58 64 96 22 98 70 10 60 85 15 1 95 50 91 70 77 23 73 92 55 46",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "95 24 26 30 89 87 86 58 99 53 60 58 74 13 68 84 92 40 41 32 70 91 85 39 93 34 60 24 87 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "108 89 290 422 499 461 443 207 58 81 110 52 286 396 117 366 342 72 238 434 401 410 76 186 118 332 156 349 244 196",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "407 311 268 269 283 487 294 172 79 493 440 125 125 112 252 137 195 328 420 454 431 141 415 341 468 460 287 454 455 443",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "340 120 264 266 363 283 496 399 87 234 452 185 354 257 338 244 204 359 285 260 66 67 304 339 200 250 448 298 141 136",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "283 415 367 170 386 381 383 148 488 210 495 125 446 378 204 289 167 75 329 410 463 306 127 403 124 239 232 244 229 110",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "289 140 179 489 270 475 218 330 247 223 311 100 461 454 465 354 480 191 57 183 104 103 53 457 149 428 86 77 174 137",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "101 387 332 434 471 88 429 427 233 412 264 67 198 149 256 73 289 318 417 106 257 208 275 287 55 68 176 496 348 104",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "369 91 198 75 182 191 313 448 485 415 290 332 124 303 472 312 142 142 250 287 481 80 65 168 142 203 109 490 361 119",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000 2 2 2 999 1000 999 1000 999 999 1000 2 1000 1 2 1 2 2 999 999 999 1000 1000 1 999 1 1 999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000 999 999 1 2 999 1 2 999 1 2 1000 1000 1 999 999 1 2 1 999 1000 2 1000 1000 2 2 1 1 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

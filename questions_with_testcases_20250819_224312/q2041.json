@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Cactus",
+  "tags": [],
+  "text": "In the mathematical field of graph theory, a spanning tree T of a connected, undirected graph\r\nG is a tree composed of all the vertices and some (or perhaps all) of the edges of G. Informally,\r\na spanning tree of G is a selection of edges of G that form a tree spanning every vertex. That is,\r\nevery vertex lies in the tree, but no cycles (or loops) are formed. On the other hand, every\r\nbridge of G must belong to T (a bridge is an edge whose deletion increases the number of\r\nconnected components).A spanning tree of a connected graph G can also be defined as a maximal set of edges of G that\r\ncontains no cycle, or as a minimal set of edges that connect all vertices. - Wikipedia\r\nIn graph theory, a cactus (sometimes called a cactus tree) is a connected graph in which any\r\ntwo simple cycles have at most one vertex in common. Equivalently, every edge in such a graph\r\nbelongs to at most one simple cycle. Equivalently, every block (maximal subgraph without a\r\ncut-vertex) is an edge or a cycle. - WikipediaIn the mathematical field of graph theory, a spanning tree T of a connected, undirected graph G is a tree composed of all the vertices and some (or perhaps all) of the edges of G. Informally, a spanning tree of G is a selection of edges of G that form a tree spanning every vertex. That is, every vertex lies in the tree, but no cycles (or loops) are formed. On the other hand, every bridge of G must belong to T (a bridge is an edge whose deletion increases the number of connected components).A spanning tree of a connected graph G can also be defined as a maximal set of edges of G that contains no cycle, or as a minimal set of edges that connect all vertices. - WikipediaIn graph theory, a cactus (sometimes called a cactus tree) is a connected graph in which any two simple cycles have at most one vertex in common. Equivalently, every edge in such a graph belongs to at most one simple cycle. Equivalently, every block (maximal subgraph without a cut-vertex) is an edge or a cycle. - Wikipediacactus graphYour task in this problem is to count the number of ways you can convert a cactus graph to a spanning tree.InputThe first line of input will be the number of test cases. Each test case will start with a two numbers N and E where N is the number of vertices of the cactus graph, vertices are numbered from 1 to N, 3 ≤ N ≤ 81 and E is the number of edges in the graph, 2 ≤ E ≤ 120. The next E lines each one will have two numbers v and w and that means there is an edge between vertex v and w.OutputFor each test case print “Case C: X” without quotes where C is the case number starting with 1 and X is the number of ways you can convert the given cactus graph to a spanning tree.ExampleInput:2\r\n3 3\r\n1 2\r\n2 3\r\n1 3\r\n5 5\r\n1 2\r\n2 3\r\n2 4\r\n3 4\r\n4 5Output:Case 1: 3\r\nCase 2: 3",
+  "sample_input": "Input:2\r\n3 3\r\n1 2\r\n2 3\r\n1 3\r\n5 5\r\n1 2\r\n2 3\r\n2 4\r\n3 4\r\n4 5Output:Case 1: 3\r\nCase 2: 3",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/CAC",
+  "scraped_at": "2025-08-17 00:33:43",
+  "test_cases": [
+    {
+      "input": "2\r\n3 3\r\n1 2\r\n2 3\r\n1 3\r\n5 5\r\n1 2\r\n2 3\r\n2 4\r\n3 4\r\n4 5",
+      "expected_output": "Case 1: 3\r\nCase 2: 3",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1\n3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "5\n7\n2\n2\n10\n9",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "4\n4\n10\n10\n2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Small array (N ≤ 5)"
+    },
+    {
+      "input": "13\n16354347\n42018332\n46705783\n3885504\n18993638\n23454944\n25518544\n65279861\n78887964\n29179281\n5206287\n53479111\n14687861",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "16\n41643450\n83002453\n89941463\n33176180\n67388786\n19987075\n79156150\n6456872\n34501875\n54194847\n15319169\n18934431\n37461433\n36593365\n22704273\n85857438",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n33215066\n71450572\n49143693\n80555235\n85606946\n68564957\n34134366\n64647461\n11806900\n1723225\n32347978\n75441205\n61337168\n54665004\n56831556\n943177\n65544888\n31867519",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "20\n18702493\n25436839\n75366819\n54287351\n82104796\n67619976\n28222387\n33484250\n31803674\n7014778\n46668589\n54404308\n86998603\n91660929\n55886186\n88144420\n33791130\n35545214\n32008663\n69873267",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "18\n7805558\n27537215\n88433715\n18806886\n13356742\n36853941\n38921518\n20697835\n47760769\n62201207\n36462184\n95817008\n43259789\n46455800\n36353473\n47966702\n38959011\n59926820",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Medium array (5 < N ≤ 20)"
+    },
+    {
+      "input": "72\n93564\n48730\n71921\n65421\n32986\n83807\n53989\n80110\n31934\n38121\n41133\n62801\n2035\n59302\n1730\n23926\n87866\n47825\n94201\n37690\n29040\n55987\n58\n62908\n21896\n26584\n35921\n91887\n72831\n48614\n71337\n19521\n78277\n8308\n27266\n70457\n86153\n40217\n11213\n72466\n28930\n84215\n42888\n70453\n64276\n65307\n34884\n76534\n22179\n79643\n68761\n99578\n26483\n55101\n80821\n17870\n81470\n8208\n65095\n86621\n51844\n29524\n13383\n89291\n44933\n96219\n26347\n9230\n42349\n96292\n74977\n91515",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "69\n32253\n44761\n42414\n30350\n55389\n4712\n51831\n62612\n5934\n24898\n8271\n77978\n55426\n85399\n13314\n46753\n30811\n74029\n33017\n70177\n99100\n93782\n43979\n3055\n57690\n52642\n11548\n83336\n3894\n8324\n59946\n28654\n27231\n16024\n26179\n45864\n580\n50165\n45499\n68680\n40068\n72240\n15874\n7827\n56028\n98871\n6956\n3396\n12764\n39350\n61745\n79608\n73290\n50425\n79100\n4779\n21656\n67349\n82448\n87442\n43950\n23695\n29228\n1003\n26413\n33989\n47689\n17687\n52522",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "74\n50872\n96627\n57429\n64549\n93355\n52605\n48126\n48274\n53495\n36119\n89271\n96392\n73782\n92238\n61106\n43058\n80712\n54828\n81346\n15802\n65663\n92395\n40416\n22777\n36382\n48483\n70172\n54818\n21916\n95512\n46161\n8943\n52633\n52882\n30697\n41109\n84990\n37666\n37428\n36315\n96328\n95886\n24144\n85917\n6747\n58814\n62310\n91272\n84006\n69425\n76468\n64783\n46121\n20846\n23441\n60959\n52464\n56775\n14370\n52561\n39528\n35655\n31839\n65754\n27858\n30976\n37733\n58109\n2157\n80956\n89465\n59703\n67550\n10152",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n63777\n24085\n72422\n82184\n37151\n47175\n28112\n60363\n10576\n53782\n27784\n90030\n15471\n29977\n6005\n89299\n22854\n27685\n55612\n37691\n95501\n29794\n75026\n47328\n92893\n78951\n90642\n71772\n20409",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "22\n29112\n59444\n63082\n66838\n54822\n34164\n47450\n177\n34469\n91224\n24722\n99982\n11961\n11878\n98280\n78333\n61480\n18936\n27173\n19032\n86737\n50664",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "29\n10059\n74148\n19965\n64940\n52474\n36421\n57112\n99946\n54711\n56915\n86396\n94859\n49598\n81359\n82761\n10551\n94900\n58418\n88244\n27729\n15729\n35794\n1387\n82844\n21973\n54162\n37307\n55834\n86191",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "73\n49870\n93751\n20992\n35102\n86756\n29249\n86048\n3604\n76796\n19067\n47346\n70770\n93426\n47833\n15014\n42684\n37926\n97298\n66066\n71716\n79436\n92409\n63323\n15614\n44699\n26208\n85889\n59046\n15031\n53295\n30252\n55596\n14057\n15688\n95642\n20367\n86389\n33495\n48937\n69479\n76366\n69124\n1847\n9079\n59399\n60089\n7687\n87728\n70247\n57957\n78555\n30256\n62346\n70526\n72324\n41995\n35072\n17533\n70847\n29064\n35954\n76969\n5174\n87476\n34965\n20763\n45677\n17623\n16131\n85896\n77499\n69508\n52886",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Large array (20 < N ≤ 500)"
+    },
+    {
+      "input": "81\n56842617\n86576070\n67557095\n41622614\n64688022\n78290907\n1851896\n11658391\n59249171\n18887173\n26035991\n77473574\n7746129\n26148133\n31100825\n74068892\n99517946\n14891114\n6530258\n58080958\n4834749\n19119373\n24714815\n5593721\n95128409\n65241198\n71633680\n34827329\n22677012\n20883702\n24321211\n51608182\n51762278\n3031977\n72101737\n46471602\n1125673\n97133773\n7651500\n78046755\n93124690\n66857372\n64771138\n1501155\n11814762\n50092596\n45609704\n82499992\n77148027\n63780788\n53397562\n62285051\n31035002\n95208702\n81916835\n83407093\n43592964\n25618922\n24170910\n29519626\n55656139\n83229284\n87884656\n78449970\n52251502\n87404344\n42579808\n43040668\n31988461\n9314407\n42376915\n75169018\n41244564\n57739343\n93313518\n19911449\n42428335\n27777231\n55837138\n27531442\n52960782",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Maximum size array (N = 81)"
+    },
+    {
+      "input": "81\n33389495\n44154123\n71795405\n57912710\n97583251\n67131112\n58814600\n25121785\n65731217\n26968509\n54505570\n32362563\n43551820\n19241920\n85874917\n41861098\n91950348\n34081768\n96221724\n5256638\n84146442\n31313897\n32495369\n57721920\n5121061\n19492279\n99523394\n68105541\n6438111\n67089997\n21986277\n3289911\n93572027\n98134365\n53766619\n31237979\n55092656\n46563308\n92181306\n41431335\n99411164\n96302956\n67174325\n56894419\n31078681\n4381045\n15596679\n65151009\n9862798\n98799092\n99402204\n24336996\n41045568\n12303460\n91661787\n14342376\n74133500\n40729350\n58845008\n10572097\n79242917\n19031173\n46454499\n84395986\n9208928\n2761913\n68041513\n7281017\n16969197\n49019750\n4303576\n34247246\n91282837\n87177963\n47616090\n82354330\n13193009\n22377877\n60861019\n26396379\n78996201",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Maximum size array (N = 81)"
+    },
+    {
+      "input": "2\n1\n10579349",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Edge case array (N = 2)"
+    },
+    {
+      "input": "81\n69056622\n33639983\n1\n100000000\n25571849\n1\n64118223\n19189927\n1\n100000000\n73840740\n1\n94869894\n1\n1\n10693858\n100000000\n1\n100000000\n60213954\n60344002\n4824750\n79697839\n100000000\n87992920\n1\n100000000\n1\n82198890\n1\n64333232\n100000000\n38943259\n15632602\n100000000\n13693936\n93177383\n63290474\n9961057\n100000000\n100000000\n100000000\n100000000\n66518340\n100000000\n51607024\n63367194\n100000000\n22896603\n57394675\n1\n99429044\n1\n57914407\n100000000\n15488090\n1\n1\n1\n1\n100000000\n100000000\n100000000\n72899149\n79595238\n100000000\n26466352\n85291403\n10011025\n43846549\n1\n100000000\n1\n1\n1\n100000000\n1\n28052727\n100000000\n100000000\n100000000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Edge case array (N = 81)"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:19",
+  "total_test_cases": 20
+}

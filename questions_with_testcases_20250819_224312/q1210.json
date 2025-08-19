@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Vacation Planning",
+  "tags": [],
+  "text": "EnglishVietnameseAir Bovinia is planning to connect the N farms (1 ≤ N ≤ 200) that the cows live on. As with any airline, K of these farms (1 ≤ K ≤ 100, K ≤ N) have been selected as hubs. The farms are conveniently numbered 1..N, with farms 1..K being the hubs.Currently there are M (1 ≤ M ≤ 10,000) one-way flights connecting these farms. Flight i travels from farm uito farm vi, and costs didollars (1 ≤ di≤ 1,000,000).The airline recently received a request for Q (1 ≤ Q ≤ 10,000) one-way trips. The ith trip is from farm aito farm bi. In order to get from aito bi, the trip may include any sequence of direct flights (possibly even visiting the same farm multiple times), but it must include at least one hub (which may or may not be be the start or the destination). This requirement may result in there being no valid route from aito bi. For all other trip requests, however, your goal is to help Air Bovinia determine the minimum cost of a valid route.InputLine 1: Four integers: N, M, K, and Q.Lines 2..1+M: Line i+1 contains ui, vi, and difor flight i.Lines 2+M..1+M+Q: Line 1+M+i describes the ith trip in terms of aiand biOutputLine 1: The number of trips (out of Q) for which a valid route is possible.Line 2: The sum, over all trips for which a valid route is possible, of the minimum possible route cost.Constraints1 ≤ n ≤ 2001 ≤ k ≤ 1001 ≤ m ≤ 100001 ≤ di≤ 10000001 ≤ q ≤ 10000SampleInput:3 3 1 3\r\n3 1 10\r\n1 3 10\r\n1 2 7\r\n3 2\r\n2 3\r\n1 2Output:2\r\n24ExplanationThere are three farms (numbered 1, 2 and 3); farm 1 is a hub. There is a $10 flight from farm 3 to farm 1, and so on. We wish to look for trips from farm 3 to farm 2, from 2→3, and from 1→2.The trip from 3→2 has only one possible route, of cost 10+7. The trip from 2→3 has no valid route, since there is no flight leaving farm 2. The trip from 1→2 has only one valid route again, of cost 7.",
+  "sample_input": "Input:3 3 1 3\r\n3 1 10\r\n1 3 10\r\n1 2 7\r\n3 2\r\n2 3\r\n1 2Output:2\r\n24",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/VACATION",
+  "scraped_at": "2025-08-17 00:33:52",
+  "test_cases": [
+    {
+      "input": "3 3 1 3\r\n3 1 10\r\n1 3 10\r\n1 2 7\r\n3 2\r\n2 3\r\n1 2",
+      "expected_output": "2\r\n24",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "9 7 7 5\n1 5 7\n2 9 10\n8 1 3\n2 7\n8 4\n4 3",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 10 4 3\n2 1 10\n3 3 10\n2 2 5\n10 2\n3 4\n1 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "7 8 1 10\n7 5 8\n7 2 2\n9 9 1\n7 1\n1 2\n9 2",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "93 89 86 4\n68 4 60\n36 59 46\n30 50 81\n41 18\n57 24\n45 88",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "93 80 6 32\n63 94 87\n49 40 23\n33 20 63\n7 74\n13 5\n14 97",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "77 87 66 57\n63 7 66\n44 88 45\n6 78 61\n57 88\n36 84\n68 38",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "69 32 37 76\n33 9 14\n94 38 12\n85 68 32\n86 7\n48 55\n41 90",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "87 64 37 14\n39 57 46\n90 34 28\n100 12 22\n82 9\n32 44\n64 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "623 697 109 754\n544 742 317\n734 278 263\n192 592 683\n395 636\n788 957\n817 803",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "522 755 136 516\n852 457 804\n218 966 628\n738 169 107\n770 287\n916 521\n189 226",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "395 892 120 817\n231 714 307\n792 740 146\n125 689 638\n174 392\n858 606\n299 450",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "376 460 112 443\n751 547 890\n821 425 378\n602 545 227\n239 420\n263 621\n648 709",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "623 1000 373 837\n631 588 410\n993 713 847\n497 258 960\n577 158\n418 544\n376 879",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "555 460 649 340\n736 380 706\n978 782 701\n183 127 310\n132 278\n331 358\n998 196",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "630 876 697 496\n699 231 910\n865 857 971\n937 790 280\n767 755\n769 871\n282 220",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "2001 2001 2001 2001\n2001 2001 2001\n2001 2001 2001\n2001 2001 2001\n2001 2001\n2001 2001\n2001 2001",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "2001 2001 2001 2001\n2001 2001 2001\n2001 2001 2001\n2001 2001 2001\n2001 2001\n2001 2001\n2001 2001",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1 2001 2000\n1 2001 2001\n2001 2000 2\n2 2 1\n2 2001\n2 2\n2 2001",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2000 2000 2 2\n2000 2001 1\n2 1 2\n2001 1 2\n2000 2\n2000 2000\n2 2000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:16",
+  "total_test_cases": 20
+}

@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "The way to Bytemountain",
+  "tags": [],
+  "text": "Byteman woke up early this morning, just after dawn. He is planning to get to the top of Bytemountain, so\r\nthe spent the night in a mountain hostel right in the middle of picturesque mountain range of Lower Bytehills.\r\nSince Bytemountain in the highest mountain of the range, at each trail crossing there is a signpost pointing\r\nat the trail leading towards its peak.In the mountain hostel Byteman met a guide who knows Lower Bytehills like the back of his hand. The\r\nguide informed Byteman that the signposts are being reorganized and because of that he should not rely too\r\nmuch on the signposts. In particular, the very peak of Bytemountain is also a crossing and at this crossing\r\nthere is a signpost pointing to some trail “leading” to Bytemountain!The guide will explain Byteman how to get to the peak. Luckily, all trail crossings are numbered from 1\r\nto n and each crossing contains a tablet with the number of the crossing written on it. The guide’s directions\r\nwill have the following form: “Walk along the trails pointed by the signposts until you reach crossing s1, then\r\ntake a map and choose the trail connecting crossing s1with crossing c1. Afterwards keep walking along the\r\ntrails pointed by the signposts until you reach crossing s2. The take a look at the map and choose the trail\r\nconnecting s2and c2. . . Finally, when you reach si, take the last look at the map and walk along the trail\r\nconnecting siand ci. If you keep walking along the trails pointed by the signposts since then, you will reach\r\nthe peak of Bytemountain.”Byteman would not like the description of the route to be too complicated, so he asked the guide for a route\r\nthat would not require looking at the map more than k times.The guide had to take a deeper thought, because he knows that some trails are more exciting than others\r\nand he would like to show Byteman the most interesting route.The route may lead through the same trails and crossing many times (some trails are so exciting that they\r\nmay be worth visiting multiple times!)Byteman ends his walk when he reaches the peak for the first time after using all instructions provided by\r\nthe guide. This means that Byteman can visit the peak of Bytemountain multiple times during the walk, but\r\nhe will end his walk only after all instructions have been used.How interesting can the route provided by the guide be?InputThe first line of the standard input contains two integers n and k (1 ≤ n ≤ 50000, 0 ≤ k ≤ 100) separated by\r\na single space. They denote the number of trail crossings and the maximum number of times Byteman would\r\nlike to look at the map. The crossings are numbered from 1 to n, the mountain hostel is located at crossing 1,\r\nand the peak of Bytemountain is the crossing number n.The following n lines contain descriptions of the respective trail crossings. Each crossing’s description\r\nconsists of a single line and is composed of integers separated by single spaces. The first one of these numbers, mi(1 ≤ mi≤ n-1), denotes the number of trails going out of the crossing. After that there are mipairs of numbers ai,j, bi,j(1 ≤ ai,j≤ n, 1 ≤ bi,j≤ 10000), meaning that from the ith crossing there is a trail leading to\r\ncrossing ai,jwith beauty equal to bi,j. The first pair of numbers denotes the trail that leads to Bytemountain\r\naccording to the signpost at the crossing. Each trail is bidirectional and connects two different crossings. Each\r\ntwo crossings can be connected by at most one trail. The total number of all trails does not exceed 100000.Each trail connecting crossings i and j will appear in the input twice: first time in the list of trails going\r\nout of the ithcrossing and second time in the list of trails going out of the jthcrossing. In both cases the\r\nbeauty of the trail will be the same.OutputThe first and only line of the standard output should contain a single integer denoting the maximum possible\r\nsum of beauties of consecutive trails on the route from the mountain hostel to the peak of Bytemountain that\r\nsatisfies Byteman’s requirements. You can assume that there exists at least one such route.ExampleFor the input data:5 2\r\n2 3 4 2 2\r\n3 1 2 5 4 4 3\r\n2 1 4 4 3\r\n3 2 3 5 5 3 3\r\n2 2 4 4 5the correct result is:14Explanation of the example. In the above figure the edges represent trails connecting respective crossings,\r\nthe numbers next to the edges — the beauties of the trails, and the arrows denote the trails pointed by the\r\nsignposts at respective crossings.The guide will ask Byteman to look at the map twice, at crossings number 3 and 2. This way Byteman’s\r\nwalk will lead along the route 1 – 3 – 4 – 2 – 5. The total beauty of the trails on this route is 14.",
+  "sample_input": "5 2\r\n2 3 4 2 2\r\n3 1 2 5 4 4 3\r\n2 1 4 4 3\r\n3 2 3 5 5 3 3\r\n2 2 4 4 5",
+  "sample_output": "14",
+  "link": "https://www.spoj.com/problems/AE4B",
+  "scraped_at": "2025-08-17 00:33:58",
+  "test_cases": [
+    {
+      "input": "5 2\r\n2 3 4 2 2\r\n3 1 2 5 4 4 3\r\n2 1 4 4 3\r\n3 2 3 5 5 3 3\r\n2 2 4 4 5",
+      "expected_output": "14",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "7 7\n4 6 3 5 9\n7 6 5 9 9 4 2\n6 10 4 7 1\n5 9 6 5 2 7 4\n3 10 5 9 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 9\n8 1 9 2 2\n1 5 8 2 5 2 9\n2 6 1 2 1\n6 2 9 4 4 2 7\n7 1 7 1 7",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 2\n10 3 3 6 6\n10 10 5 4 5 1 7\n4 9 1 10 5\n9 9 9 4 8 6 7\n7 6 10 1 3",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "92 32\n52 54 95 50 98\n5 54 36 93 31 48 15\n95 39 13 65 31\n47 62 28 29 2 58 1\n73 94 38 82 28",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21 55\n38 24 37 45 37\n56 45 97 69 26 53 87\n83 72 9 81 2\n9 55 48 67 27 81 42\n41 11 40 61 22",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 45\n55 46 58 83 99\n100 29 40 88 38 29 29\n40 48 12 5 6\n15 23 98 97 18 30 5\n52 69 58 77 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "45 94\n67 67 63 58 6\n47 81 68 41 36 35 45\n59 4 18 40 14\n89 12 4 8 47 25 34\n5 15 30 97 70",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "72 82\n5 33 21 87 54\n62 45 20 65 68 56 41\n67 54 64 60 9\n78 45 27 71 95 30 82\n77 6 35 7 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "21105 20894\n18114 14749 9387 24591 5108\n18281 24652 4461 11646 17625 22571 16564\n16020 23828 9720 23802 9342\n21147 13257 19716 4937 16403 14732 3725\n21290 3597 10706 19391 18994",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "12699 5670\n24988 3068 16131 8932 12800\n12849 6575 20849 11261 19623 9895 2780\n13765 18879 5107 10793 22751\n13814 8351 11209 17611 10260 5314 21192\n23045 12666 3576 13536 8002",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "9869 17473\n13444 5790 14868 3143 20015\n7964 22920 22250 24281 9614 11699 17632\n5009 22050 21811 17992 3123\n11934 23472 19955 18568 18585 7500 13329\n3043 4695 8098 14295 18800",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "14939 9457\n6536 8327 4472 12067 18567\n18261 2518 20143 13863 8375 6867 11756\n13155 20326 19997 7045 21718\n9837 19203 15123 15758 20083 4934 9423\n20084 18620 24386 14932 20206",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "24775 19182\n3471 17636 8624 4205 12996\n22337 4356 24911 9222 6966 17356 22651\n22782 23644 22247 17800 6802\n8607 20370 15860 5218 22757 19936 15163\n5586 10425 6778 2516 21400",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11680 13400\n13320 3662 15606 18341 23135\n4991 7805 20783 20462 6059 21106 18257\n6411 2845 24685 3291 21057\n20660 18962 5434 13726 23656 22967 4532\n12607 23813 4430 23437 11512",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "11635 18222\n3035 5571 13595 22206 12945\n10740 18973 9246 12717 4124 11544 22861\n19602 7353 22633 15198 8242\n18841 24410 18378 20781 4490 5104 4433\n7967 23208 8673 5952 19581",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50000 50000\n50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50000 50000\n50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000 50000 50000\n50000 50000 50000 50000 50000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "49999 2\n49999 2 1 2 1\n49999 49999 50000 1 50000 50000 50000\n49999 2 1 1 49999\n2 2 1 1 50000 49999 49999\n50000 49999 49999 49999 2",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "2 50000\n50000 2 2 2 50000\n2 1 49999 1 2 1 50000\n50000 1 49999 50000 49999\n2 1 2 1 49999 1 2\n2 2 1 50000 1",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:20",
+  "total_test_cases": 20
+}

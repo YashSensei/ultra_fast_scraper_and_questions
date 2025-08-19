@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Ceiling Function",
+  "tags": [],
+  "text": "Advanced Ceiling Manufacturers (ACM) is analyzing the     properties of its new series of Incredibly Collapse-Proof     Ceilings (ICPCs). An ICPC consists of      $n$ layers of material, each with a     different value of collapse resistance (measured as a positive     integer). The analysis ACM wants to run will take the     collapse-resistance values of the layers, store them in a     binary search tree, and check whether the shape of this tree in     any way correlates with the quality of the whole construction.     Because, well, why should it not?To be precise, ACM takes the collapse-resistance values for     the layers, ordered from the top layer to the bottom layer, and     inserts them one-by-one into a tree. The rules for inserting a     value $v$ are:If the tree is empty, make          $v$ the root of the tree.If the tree is not empty, compare          $v$ with the root of the tree. If         $v$ is smaller, insert         $v$ into the left         subtree of the root, otherwise insert          $v$ into the right subtree.ACM has a set of ceiling prototypes it wants to analyze by     trying to collapse them. It wants to take each group of ceiling     prototypes that have trees of the same shape and analyze them     together.Given a set of prototypes, your task is to determine how     many different tree shapes they induce.InputMultiple test cases. Please process until EOF is reached. For each test case:The first line contains two integers     $n$ (     $1 \\le n \\le 50$), which is the number     of ceiling prototypes to analyze, and      $k$ ($1     \\le k \\le 20$), which is the number of layers in each of     the prototypes.The next $n$ lines     describe the ceiling prototypes. Each of these lines contains     $k$ distinct integers     (between $1$ and     $10^6$, inclusive), which     are the collapse-resistance values of the layers in a ceiling     prototype, ordered from top to bottom.OutputFor each test case, display the number of different tree shapes.ExampleInput:5 3\r\n2 7 1\r\n3 1 4\r\n1 5 9\r\n2 6 5\r\n9 7 3\r\n3 4\r\n3 1 2 40000\r\n3 4 2 1\r\n33 42 17 23Output:4\r\n2",
+  "sample_input": "Input:5 3\r\n2 7 1\r\n3 1 4\r\n1 5 9\r\n2 6 5\r\n9 7 3\r\n3 4\r\n3 1 2 40000\r\n3 4 2 1\r\n33 42 17 23Output:4\r\n2",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FN16CEIL",
+  "scraped_at": "2025-08-17 00:34:07",
+  "test_cases": [
+    {
+      "input": "5 3\r\n2 7 1\r\n3 1 4\r\n1 5 9\r\n2 6 5\r\n9 7 3\r\n3 4\r\n3 1 2 40000\r\n3 4 2 1\r\n33 42 17 23",
+      "expected_output": "4\r\n2",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "1 10\n6 6 7\n6 10 7\n7 7 2\n3 2 3\n1 7 7\n3 1\n9 10 6 1\n2 8 5 8\n4 5 10 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 1\n6 6 5\n7 6 6\n3 9 8\n6 4 4\n5 5 3\n9 1\n9 1 10 10\n5 9 10 1\n1 3 2 5",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 8\n1 9 3\n10 1 9\n9 8 1\n1 9 10\n7 6 9\n3 9\n9 7 9 9\n5 5 4 8\n8 6 7 5",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "77 20\n82 28 6\n20 93 46\n14 55 54\n62 6 97\n49 28 35\n21 48\n92 71 99 11\n6 90 41 62\n58 62 77 81",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "49 50\n6 9 75\n28 9 76\n80 96 76\n3 7 18\n27 48 21\n42 11\n34 99 69 55\n40 65 85 23\n49 17 47 43",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "43 5\n65 93 49\n21 90 97\n53 58 64\n25 17 70\n37 26 40\n19 70\n76 70 47 69\n11 45 93 17\n80 62 63 80",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "8 89\n98 55 100\n66 26 17\n96 94 71\n92 38 92\n42 67 27\n52 7\n45 54 25 14\n22 62 67 53\n54 32 56 91",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "74 45\n1 2 79\n77 84 69\n12 38 46\n14 37 93\n64 1 60\n56 21\n36 26 24 51\n8 19 81 79\n98 88 94 99",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "308 408\n262 292 410\n51 461 257\n437 137 420\n281 468 382\n228 309 419\n275 288\n410 349 303 186\n100 424 304 420\n156 381 286 273",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "469 349\n377 87 100\n202 312 65\n186 63 407\n231 460 445\n486 260 275\n499 426\n301 479 133 492\n489 374 453 469\n426 208 251 283",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "158 361\n483 93 166\n460 64 107\n341 211 134\n52 364 450\n177 350 350\n71 92\n264 493 446 271\n218 468 138 158\n396 288 121 259",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "179 386\n231 237 234\n267 90 58\n154 174 381\n214 123 379\n177 245 481\n321 115\n345 264 366 146\n113 89 171 356\n476 451 404 204",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "438 448\n85 59 335\n302 355 448\n293 223 482\n126 442 479\n148 427 63\n442 247\n143 340 478 335\n471 226 432 205\n335 145 274 327",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "488 408\n211 302 68\n438 65 171\n183 82 435\n413 470 308\n79 470 492\n274 184\n96 499 428 246\n416 50 204 363\n467 480 135 488",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "496 116\n159 162 382\n383 176 168\n102 66 348\n305 435 407\n280 226 453\n305 53\n448 135 275 445\n95 261 489 193\n266 377 137 312",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000 1000\n1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000\n1000 1000 1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 1\n1000 1000 1\n1 1000 1\n1 999 1000\n2 1 1\n1000 1000 2\n2 1\n1000 1 1000 2\n1000 1 1 2\n1 999 2 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "999 1000\n2 2 2\n1000 1 1000\n1000 1000 1000\n1000 999 2\n1000 999 2\n1000 1000\n999 1000 1 1000\n1000 1 1 999\n999 999 2 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:21",
+  "total_test_cases": 20
+}

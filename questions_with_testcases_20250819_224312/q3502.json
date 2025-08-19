@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Round Trip",
+  "tags": [],
+  "text": "EnglishVietnameseJim is planning to visit one of his best friends in a town in the mountain area. First, he leaves his hometown and goes to the destination town. This is called the go phase. Then, he comes back to his hometown. This is called the return phase. You are expected to write a program to find the minimum total cost of this trip, which is the sum of the costs of the go phase and the return phase.There is a network of towns including these two towns. Every road in this network is one-way, i.e., can only be used towards the specified direction. Each road requires a certain cost to travel.In addition to the cost of roads, it is necessary to pay a specified fee to go through each town on the way. However, since this is the visa fee for the town, it is not necessary to pay the fee on the second or later visit to the same town.The altitude (height) of each town is given. On the go phase, the use of descending roads is inhibited. That is, when going from townatob, the altitude ofashould not be greater than that ofb. On the return phase, the use of ascending roads is inhibited in a similar manner. If the altitudes ofaandbare equal, the road fromatobcan be used on both phases.InputThe input consists of multiple datasets, each in the following format.n md2e2d3e3...dn-1en-1a1b1c1a2b2c2...ambmcmEvery input item in a dataset is a non-negative integer. Input items in a line are separated by a space.nis the number of towns in the network.mis the number of (one-way) roads. You can assume the inequalities 2 ≤n≤ 50 and 0 ≤m≤n(n−1) hold. Towns are numbered from 1 ton, inclusive. The town 1 is Jim's hometown, and the townnis the destination town.diis the visa fee of the towni, andeiis its altitude. You can assume 1 ≤di≤ 1000 and 1 ≤ei≤ 999 for 2 ≤i≤n−1. The towns 1 andndo not impose visa fee. The altitude of the town 1 is 0, and that of the town n is 1000. Multiple towns may have the same altitude, but you can assume that there are no more than 10 towns with the same altitude.Thej-th road is from the townajtobjwith the costcj(1 ≤j≤m). You can assume 1 ≤aj≤n, 1 ≤bj≤n, and 1 ≤cj≤ 1000. You can directly go fromajtobj, but not frombjtoajunless a road frombjtoajis separately given. There are no two roads connecting the same pair of towns towards the same direction, that is, for anyiandjsuch thati≠j,ai≠ajorbi≠bj. There are no roads connecting a town to itself, that is, for anyj,aj≠bj.The last dataset is followed by a line containing two zeros (separated by a space).OutputFor each dataset in the input, a line containing the minimum total cost, including the visa fees, of the trip should be output. If such a trip is not possible, output “-1”.ExampleInput:3 6\r\n3 1\r\n1 2 1\r\n2 3 1\r\n3 2 1\r\n2 1 1\r\n1 3 4\r\n3 1 4\r\n3 6\r\n5 1\r\n1 2 1\r\n2 3 1\r\n3 2 1\r\n2 1 1\r\n1 3 4\r\n3 1 4\r\n4 5\r\n3 1\r\n3 1\r\n1 2 5\r\n2 3 5\r\n3 4 5\r\n4 2 5\r\n3 1 5\r\n2 1\r\n2 1 1\r\n0 0Output:7\r\n8\r\n36\r\n-1",
+  "sample_input": "Input:3 6\r\n3 1\r\n1 2 1\r\n2 3 1\r\n3 2 1\r\n2 1 1\r\n1 3 4\r\n3 1 4\r\n3 6\r\n5 1\r\n1 2 1\r\n2 3 1\r\n3 2 1\r\n2 1 1\r\n1 3 4\r\n3 1 4\r\n4 5\r\n3 1\r\n3 1\r\n1 2 5\r\n2 3 5\r\n3 4 5\r\n4 2 5\r\n3 1 5\r\n2 1\r\n2 1 1\r\n0 0Output:7\r\n8\r\n36\r\n-1",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FUKU11J",
+  "scraped_at": "2025-08-17 00:34:16",
+  "test_cases": [
+    {
+      "input": "3 6\r\n3 1\r\n1 2 1\r\n2 3 1\r\n3 2 1\r\n2 1 1\r\n1 3 4\r\n3 1 4\r\n3 6\r\n5 1\r\n1 2 1\r\n2 3 1\r\n3 2 1\r\n2 1 1\r\n1 3 4\r\n3 1 4\r\n4 5\r\n3 1\r\n3 1\r\n1 2 5\r\n2 3 5\r\n3 4 5\r\n4 2 5\r\n3 1 5\r\n2 1\r\n2 1 1\r\n0 0",
+      "expected_output": "7\r\n8\r\n36\r\n-1",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "3 10\n4 8\n9 8 7\n5 10 3\n5 10 4\n1 9 3\n7 2 3\n5 6 5\n9 1\n7 8\n4 9 9\n4 2 8\n10 10 8\n1 1 3\n4 5 3\n10 8 2\n5 5\n10 3\n4 6\n4 1 3\n5 4 8\n10 7 6\n9 3 5\n5 7 8\n7 4\n9 7 9\n7 10",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 1\n9 6\n1 3 6\n7 8 3\n4 1 10\n8 1 10\n5 10 6\n4 7 8\n9 8\n3 2\n9 2 3\n9 10 10\n8 4 2\n9 7 4\n2 1 4\n5 4 9\n7 5\n1 8\n8 3\n10 2 3\n1 7 1\n10 3 1\n8 5 6\n10 10 8\n3 10\n10 4 2\n2 10",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "10 3\n1 4\n5 8 8\n7 2 7\n5 3 4\n9 2 10\n10 4 9\n5 6 7\n1 6\n6 2\n2 7 3\n10 5 7\n5 7 10\n2 2 6\n7 5 8\n3 9 6\n5 9\n6 2\n1 7\n10 9 3\n9 1 8\n6 6 4\n10 9 10\n4 3 1\n6 5\n3 9 7\n5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "11 40\n50 44\n27 4 34\n27 43 34\n47 34 38\n1 47 33\n5 22 32\n10 29 34\n8 10\n14 49\n22 32 28\n25 50 43\n27 50 35\n5 4 10\n5 19 38\n1 17 48\n1 29\n49 13\n19 22\n35 18 37\n3 18 50\n18 33 23\n43 29 11\n3 44 39\n16 10\n10 9 23\n6 15",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "4 15\n33 2\n35 49 22\n8 13 43\n43 27 19\n36 36 22\n24 23 12\n40 26 6\n4 18\n48 2\n42 7 18\n33 3 13\n27 19 15\n34 24 19\n10 20 21\n35 45 44\n30 27\n2 22\n48 42\n18 35 42\n35 13 50\n24 37 22\n12 34 4\n24 7 2\n43 15\n48 36 45\n1 30",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "36 41\n27 10\n31 14 44\n14 18 39\n49 12 4\n2 32 5\n28 36 31\n2 26 6\n23 12\n22 12\n1 48 38\n48 29 14\n10 25 12\n8 30 47\n28 19 20\n34 11 48\n32 19\n32 27\n25 48\n21 25 20\n39 12 50\n27 20 2\n11 4 22\n38 39 48\n13 7\n13 44 5\n11 19",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "17 5\n50 49\n8 42 17\n21 4 10\n35 37 14\n5 3 6\n44 42 5\n16 39 37\n14 23\n36 12\n46 1 42\n16 1 30\n11 31 13\n22 2 30\n49 45 33\n24 8 23\n38 43\n27 30\n44 40\n42 10 24\n3 40 8\n23 29 13\n14 37 37\n12 16 20\n31 25\n35 35 19\n1 17",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "47 28\n44 47\n9 43 25\n32 40 3\n30 23 45\n50 28 4\n26 50 28\n48 6 48\n34 26\n31 3\n9 20 37\n48 33 8\n28 1 12\n5 24 21\n24 48 31\n10 18 38\n14 28\n47 50\n3 27\n6 5 39\n12 29 39\n19 18 23\n37 12 37\n23 43 50\n45 7\n17 22 19\n44 16",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "18 7\n20 11\n3 18 10\n14 7 23\n6 4 15\n7 12 10\n22 11 5\n21 15 20\n12 3\n18 9\n5 4 4\n20 19 10\n22 21 6\n6 13 14\n16 18 2\n20 14 16\n16 20\n13 11\n16 5\n3 10 4\n17 2 3\n14 21 22\n3 24 25\n17 16 20\n12 4\n11 14 21\n14 22",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "7 18\n15 15\n23 12 3\n15 8 23\n10 5 23\n4 10 15\n7 5 22\n13 22 10\n18 23\n15 2\n3 19 24\n3 13 5\n2 10 24\n25 7 11\n25 7 21\n12 4 23\n11 9\n2 6\n24 23\n18 4 8\n5 5 17\n12 7 2\n12 5 10\n12 24 5\n24 3\n16 11 4\n12 13",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "19 10\n16 4\n4 15 25\n12 14 23\n21 16 9\n20 14 9\n16 20 4\n14 15 21\n13 5\n25 5\n9 12 19\n2 23 8\n25 2 16\n21 2 2\n11 4 17\n22 5 10\n17 24\n6 24\n19 11\n10 15 6\n18 22 8\n13 20 9\n21 15 3\n18 16 5\n22 18\n17 5 4\n16 14",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "16 23\n18 11\n5 14 11\n11 14 9\n17 22 16\n14 20 13\n24 7 5\n22 12 17\n4 6\n18 8\n4 7 24\n10 18 13\n3 2 23\n25 8 20\n25 5 16\n24 13 7\n10 19\n24 22\n9 2\n6 8 25\n13 11 13\n12 10 5\n5 8 21\n10 23 11\n8 3\n25 7 4\n25 16",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "13 22\n12 24\n22 2 5\n19 7 18\n20 25 9\n2 9 13\n22 2 7\n24 25 24\n23 8\n15 13\n25 24 21\n16 23 5\n19 2 25\n14 8 8\n2 15 16\n7 7 19\n22 4\n19 4\n10 18\n23 24 25\n25 6 9\n15 4 22\n10 25 5\n22 10 11\n4 12\n16 11 19\n16 25",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "24 9\n3 20\n18 22 24\n23 6 19\n9 4 16\n23 13 25\n10 3 12\n3 20 19\n3 20\n19 18\n20 13 22\n6 17 4\n5 4 20\n16 20 9\n4 10 21\n25 17 10\n17 2\n22 13\n24 19\n10 15 21\n25 5 18\n25 8 4\n9 20 20\n7 4 19\n17 12\n24 14 18\n21 15",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "22 8\n23 9\n14 14 20\n15 11 12\n12 21 16\n22 25 20\n19 10 9\n17 17 18\n17 4\n15 4\n21 25 16\n23 14 22\n13 12 11\n14 12 9\n17 10 8\n21 18 10\n18 2\n24 9\n24 2\n11 11 25\n3 16 13\n11 18 17\n11 17 15\n21 19 25\n11 18\n21 20 22\n16 11",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "50 50\n50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50\n50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50\n50 50\n50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50\n50 50 50\n50 50",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "50 50\n50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50\n50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50\n50 50\n50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50 50\n50 50\n50 50 50\n50 50",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 2\n49 2\n2 49 1\n50 1 2\n50 1 49\n1 49 49\n1 50 1\n49 49 49\n2 2\n50 1\n1 1 49\n2 1 50\n49 50 1\n2 49 1\n2 2 1\n2 49 1\n49 49\n1 49\n2 49\n50 49 2\n49 2 50\n1 1 2\n1 50 49\n50 2 50\n49 1\n49 2 2\n1 50",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1 49\n1 50\n1 1 2\n49 49 50\n1 1 1\n50 49 49\n2 50 49\n49 1 50\n50 50\n49 50\n50 50 2\n1 50 50\n49 49 2\n50 49 1\n1 1 50\n2 2 1\n49 1\n1 50\n49 2\n1 1 50\n49 2 49\n2 2 1\n1 49 2\n1 1 2\n1 1\n2 50 1\n2 50",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:24",
+  "total_test_cases": 20
+}

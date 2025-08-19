@@ -1,0 +1,134 @@
+{
+  "problem_code": "problems",
+  "title": "Median Filter",
+  "tags": [],
+  "text": "The median filter is a nonlinear digital filter used to reduce noise in images, sounds, and other kinds of signals.\r\nIt examines each sample of the input through awindowand then emits themedianof the samples in the window.\r\nRoughly speaking, a window is an interval that contains a target sample and its preceding and succeeding\r\nsamples; the median of a series of values is given by the middle value of the series arranged in ascending (or\r\ndescending) order.Let us focus on a typical median filter for black-and-white raster images. The typical filter uses a 3 × 3 window,\r\nwhich contains a target pixel and the eight adjacent pixels. The filter examines each pixel in turn through this\r\n3 × 3 window, and outputs the median of the nine pixel values, i.e. the fifth lowest (or highest) pixel value, to the\r\ncorresponding pixel. We should note that the output is just given by the pixel value in majority for black-andwhite\r\nimages, since there are only two possible pixel values (i.e. black and white). The figure below illustrates\r\nhow the filter works.The edges of images need to be specially processed due to lack of the adjacent pixels. In this problem, we extends\r\nthe original images by repeating pixels on the edges as shown in the figure below. In other words, the lacked\r\npixels take the same values as the nearest available pixels in the original images.You are requested to write a program that reads images to which the filter is applied, then finds the original\r\nimages containing the greatest and smallest number of black pixels among all possible ones, and reports the\r\ndifference in the numbers of black pixels.InputThe input contains a series of test cases.The first line of each test case contains two integers W and H (1 ≤ W, H ≤ 8), which indicates the width and\r\nheight of the image respectively. Then H lines follow to describe the filtered image. Thei-th line represents\r\nthei-th scan line and contains exactly W characters, each of which is either '#' (representing black) or '.'\r\n(representing white).The input is terminated by a line with two zeros.OutputFor each test case, print a line that contains the case number followed by the difference of black pixels. If there\r\nare no original images possible for the given filtered image, print \"Impossible\" instead.Obey the format as shown in the sample output.ExampleInput:5 5\r\n#####\r\n#####\r\n#####\r\n#####\r\n#####\r\n4 4\r\n####\r\n####\r\n####\r\n####\r\n4 4\r\n#...\r\n....\r\n....\r\n...#\r\n4 4\r\n.#.#\r\n#.#.\r\n.#.#\r\n#.#.\r\n0 0Output:Case 1: 10\r\nCase 2: 6\r\nCase 3: 2\r\nCase 4: Impossible",
+  "sample_input": "Input:5 5\r\n#####\r\n#####\r\n#####\r\n#####\r\n#####\r\n4 4\r\n####\r\n####\r\n####\r\n####\r\n4 4\r\n#...\r\n....\r\n....\r\n...#\r\n4 4\r\n.#.#\r\n#.#.\r\n.#.#\r\n#.#.\r\n0 0Output:Case 1: 10\r\nCase 2: 6\r\nCase 3: 2\r\nCase 4: Impossible",
+  "sample_output": "Not found",
+  "link": "https://www.spoj.com/problems/FILTER",
+  "scraped_at": "2025-08-17 00:34:10",
+  "test_cases": [
+    {
+      "input": "5 5\r\n#####\r\n#####\r\n#####\r\n#####\r\n#####\r\n4 4\r\n####\r\n####\r\n####\r\n####\r\n4 4\r\n#...\r\n....\r\n....\r\n...#\r\n4 4\r\n.#.#\r\n#.#.\r\n.#.#\r\n#.#.\r\n0 0",
+      "expected_output": "Case 1: 10\r\nCase 2: 6\r\nCase 3: 2\r\nCase 4: Impossible",
+      "type": "sample_1",
+      "description": "Original sample 1 from problem statement"
+    },
+    {
+      "input": "5 10\ns\nzn\nnwja\nwk\nwkiyad\n10 10\nhmkdhhve\naq\njwhptbr\nwndcnb\n1 10\nouv\nzsccxpod\nzhfkrh\nljyktjz\n4 10\nhwvyasc\nmrymlzo\niujr\nrabmfwfr\n5 6",
+      "expected_output": "To be computed",
+      "type": "small_case_2",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "9 8\nmqd\nsbawatiwos\nwrqqfzx\nurco\nwrrfkacea\n2 7\nxzko\nwgvpwadh\ntkkduwv\nz\n9 4\ntqwu\nkkhm\niyqfer\ngmxr\n1 3\nm\noxszmch\nnzuepdk\neheeyotv\n9 8",
+      "expected_output": "To be computed",
+      "type": "small_case_3",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "4 4\nlg\nahdsuzm\nhv\nkd\nuwv\n7 6\ngn\nfa\ntoujdnf\njkjqxlj\n6 8\nnsuiioaa\ngs\ncajskc\nxf\n7 1\ndgujx\nha\nsdolevzt\nqp\n2 6",
+      "expected_output": "To be computed",
+      "type": "small_case_4",
+      "description": "Generated small test case"
+    },
+    {
+      "input": "82 71\nhnvgv\no\nhuhjby\nwg\nrumphpklaj\n62 17\nazroujqy\nh\nhy\ndosgmrtw\n70 43\nhtppigj\np\nvbboaba\ngg\n49 64\nlcsvpxg\nwdm\nhhwn\nats\n68 49",
+      "expected_output": "To be computed",
+      "type": "medium_case_5",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "1 77\nc\ng\nzgxgknrxyh\nlciypig\ngtnkhg\n29 59\nm\nrqqhysv\nktp\neg\n1 19\nf\nauguw\nhzwcnuvg\ngsnhl\n85 85\nkundtm\nmzxmyoat\nkffcrv\nsbx\n44 59",
+      "expected_output": "To be computed",
+      "type": "medium_case_6",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "32 18\ndopvc\nwmygwrovr\ncserhdfnnt\nbfkfvirmdv\npzidq\n30 88\nx\nk\nq\neeoorn\n78 27\nxesnp\noyy\nmhadgbr\npzzbwn\n60 76\ngt\nnrzskkwt\ngncdenlv\ndceywox\n89 63",
+      "expected_output": "To be computed",
+      "type": "medium_case_7",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "7 33\ne\ny\nvpmelay\nhzdv\ntvnru\n71 80\nktlp\nqsud\nglwci\nebxon\n54 2\njsbsaal\njrjdl\nu\nrirnuar\n85 3\nxkgjks\nfwbgry\nhsksszcx\ne\n40 68",
+      "expected_output": "To be computed",
+      "type": "medium_case_8",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "70 59\nsmpnaik\ndkesvgt\nukrrav\nsnzqvphsh\nzritnsio\n76 100\nhn\ni\nydshct\nlaqywuc\n18 45\nbsxrjcm\njlrmz\nvhttsepe\nusdmsiwz\n1 99\nlxxgd\nfu\nuivwk\nzcwoatr\n46 6",
+      "expected_output": "To be computed",
+      "type": "medium_case_9",
+      "description": "Generated medium test case"
+    },
+    {
+      "input": "302 173\nnxuuw\nqlpq\nhpncxnrjz\nqcja\ncjeknzoupz\n480 401\nyyidfyaq\ngrldsnjd\nhs\nca\n86 66\nrp\ngbyej\nbonmy\ntuceql\n472 314\nukgha\nqxkwkgm\nsy\ndjxd\n417 186",
+      "expected_output": "To be computed",
+      "type": "large_case_10",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "385 344\nfqltf\nkyn\nfdoywojtcw\nubhua\nluwcdnhwl\n179 391\nnxab\nkchppmwe\nosjz\nurr\n499 471\nwvrey\nbtmzrra\nf\nnxfilo\n415 195\ndgp\nzqcdi\nsbcca\nkr\n181 238",
+      "expected_output": "To be computed",
+      "type": "large_case_11",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "370 470\nlgc\ng\ng\nypxip\nnopwft\n476 437\neqbwmu\na\nngctwd\nmtbeezx\n259 206\nnm\nfi\nqhrdgxkp\nzs\n297 369\ncmj\nxf\nlh\ncerqn\n180 88",
+      "expected_output": "To be computed",
+      "type": "large_case_12",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "383 106\nkjesw\njiup\nfep\nsw\nzqcfjwgsc\n181 463\noajhlw\nb\nltutl\nqeionwt\n220 321\nfgvival\nnefcltnu\nig\nhjfbgeb\n363 221\nevqh\nkbmm\nouk\nvtjdww\n331 111",
+      "expected_output": "To be computed",
+      "type": "large_case_13",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "445 362\nyp\nxkvxbny\nvrdqxsni\napker\njs\n266 449\nkmdi\nzv\nwukqgin\nlyqgxl\n477 362\nwyq\nj\neuwojo\num\n293 330\nux\nzgfjb\nxup\nbkovaqcp\n441 127",
+      "expected_output": "To be computed",
+      "type": "large_case_14",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "277 173\nsqzyuon\nfafefqs\necwpjidh\noyyzw\ndy\n282 243\nadu\nyvl\njiigedq\nrtjtmm\n210 475\nsqu\np\nak\narka\n470 277\nhfm\nalq\nlnvjywzc\no\n175 460",
+      "expected_output": "To be computed",
+      "type": "large_case_15",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "79 204\nygumdmyyb\nyw\nwk\nogrofopd\ngeqnkbkzuc\n285 191\nwyk\nvzzwztb\np\nzammqn\n247 333\nnovfiv\nks\nmuwqu\nolb\n258 437\nkhy\nsvsfeo\na\nv\n352 433",
+      "expected_output": "To be computed",
+      "type": "large_case_16",
+      "description": "Generated large test case"
+    },
+    {
+      "input": "1000 1000\ntdstt\nrn\ncgbpe\njv\ntomkznj\n1000 1000\nhntakbz\nunk\ntq\njqo\n1000 1000\nzqfaogb\nzozpmte\nseois\nt\n1000 1000\nyefxvwna\nqz\nyacjry\ndqesjw\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_17",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1000 1000\nffvev\nbacczj\nrdzxciqm\nmnfjmus\nljycq\n1000 1000\ncpf\nekgdawy\npz\nbfrksqk\n1000 1000\nup\nyuooqi\nhdfuhp\ndyqx\n1000 1000\nggz\nijbo\ni\nqv\n1000 1000",
+      "expected_output": "To be computed",
+      "type": "max_case_18",
+      "description": "Generated max test case"
+    },
+    {
+      "input": "1 999\nq\nzgoy\nkd\nuji\ni\n1 2\nnh\nuvipsiqp\nogm\nooplsugl\n1 1000\nmq\nnjtlo\nsqdr\nbulpx\n1000 1000\nnojiajie\nesbkxi\nttekp\nzsj\n999 999",
+      "expected_output": "To be computed",
+      "type": "edge_case_19",
+      "description": "Generated edge test case"
+    },
+    {
+      "input": "1000 999\nec\ntyxfvsrwn\nw\nrgazooyj\nm\n1 999\nmg\ntukl\ng\nj\n2 2\npvxun\ndrk\natpj\npwixqm\n999 1\ntedjcu\ndqhphn\nouatu\nvgmjyjbq\n999 1000",
+      "expected_output": "To be computed",
+      "type": "edge_case_20",
+      "description": "Generated edge test case"
+    }
+  ],
+  "test_cases_generated_at": "2025-08-19 22:43:23",
+  "total_test_cases": 20
+}
